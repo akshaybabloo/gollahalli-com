@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "Jellyka BeesAntique Handwriting";
+    src: url('../fonts/Jellyka-Bees-Antique-Handwriting.ttf') format('truetype');
+}
+.navbar-brand {
+    font-family: 'Jellyka BeesAntique Handwriting' !important;
+    font-weight: 700;
+    font-size: 30px;
+    padding-left: 30px;
+    /*padding-bottom: 30px;*/
+    color: #f05f40;
+}
+
+.navbar-brand {
+    line-height: 50px;
+    height: 60px;
+    padding-top: 0;
+}
+
+.navbar-nav li a {
+    line-height: 60px;
+    height: 60px;
+    padding-top: 0;
+}
+
+.navbar-toggle{
+    margin-top: 12px;
+}
