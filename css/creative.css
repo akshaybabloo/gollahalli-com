@@ -114,6 +114,9 @@ aside {
 .navbar-default .nav>li.active>a:focus {
     color: #f05f40!important;
     background-color: transparent;
+    font-size: 15px;
+    text-decoration: none;
+    border-bottom: 3px solid;
 }
 
 .navbar-default .nav > li.active>a:hover,
