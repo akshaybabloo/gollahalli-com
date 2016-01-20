@@ -19,6 +19,18 @@ a:hover {
     border: 1px solid #fff;
 }
 
+@font-face {
+    font-family: "Jellyka BeesAntique Handwriting";
+    src: url('../fonts/Jellyka-Bees-Antique-Handwriting.ttf') format('truetype');
+}
+h1 {
+    font-family: 'Jellyka BeesAntique Handwriting' !important;
+    font-weight: 700;
+    font-size: 50px;
+    /*padding-left: 30px;*/
+    padding-bottom: 30px;
+    /*color: #f05f40;*/
+}
 
 /*
  * Base structure
@@ -27,12 +39,33 @@ a:hover {
 html,
 body {
     height: 100%;
-    background-color: #333;
+    background-color: #ffffff;
 }
 body {
-    color: #fff;
+    color: #000000;
     text-align: center;
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+.fa{
+    color: #000000;
+    font-size: 30px;
+    padding: 10px 10px;
+}
+
+.fa-facebook:hover,
+.fa-facebook:focus{
+    color: #3b5998;
+}
+
+.fa-twitter:hover,
+.fa-twitter:focus{
+    color: #61c5ec;
+}
+
+.fa-linkedin:hover,
+.fa-linkedin:focus{
+    color: #0077b5;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -41,8 +74,8 @@ body {
     width: 100%;
     height: 100%; /* For at least Firefox */
     min-height: 100%;
-    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    /*-webkit-box-shadow: inset 0 0 100px rgba(81, 180, 255, 0.5);*/
+    /*box-shadow: inset 0 0 100px rgba(81, 180, 255, 0.5);*/
 }
 .site-wrapper-inner {
     display: table-cell;
