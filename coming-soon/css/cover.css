@@ -19,10 +19,12 @@ a:hover {
     border: 1px solid #fff;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
 @font-face {
     font-family: "Jellyka BeesAntique Handwriting";
     src: url('../fonts/Jellyka-Bees-Antique-Handwriting.ttf') format('truetype');
 }
+
 h1 {
     font-family: 'Jellyka BeesAntique Handwriting' !important;
     font-weight: 700;
@@ -30,6 +32,10 @@ h1 {
     /*padding-left: 30px;*/
     padding-bottom: 30px;
     /*color: #f05f40;*/
+}
+
+.lead{
+    font-family: 'Roboto Mono' !important;
 }
 
 /*
@@ -44,7 +50,7 @@ body {
 body {
     color: #000000;
     text-align: center;
-    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    /*text-shadow: 0 1px 3px rgba(0,0,0,.5);*/
 }
 
 .fa{
