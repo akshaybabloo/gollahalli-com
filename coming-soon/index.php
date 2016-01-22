@@ -1,15 +1,15 @@
 <?php
-//    if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
-//        if(!headers_sent()) {
-//            header("Status: 301 Moved Permanently");
-//            header(sprintf(
-//                'Location: https://%s%s',
-//                $_SERVER['HTTP_HOST'],
-//                $_SERVER['REQUEST_URI']
-//            ));
-//            exit();
-//        }
-//    }
+    if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
+        if(!headers_sent()) {
+            header("Status: 301 Moved Permanently");
+            header(sprintf(
+                'Location: https://%s%s',
+                $_SERVER['HTTP_HOST'],
+                $_SERVER['REQUEST_URI']
+            ));
+            exit();
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <base href="https://www.gollahalli.me">-->
+    <base href="https://www.gollahalli.me">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Akshay Raj Gollahalli is a PhD student in AUT university and this website showcases his work.">
     <meta name="author" content="Akshay Raj Gollahalli">
@@ -85,7 +85,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/main/js/jquery.js"><\/script>')</script>
-<script src="/main/js/bootstrap.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
