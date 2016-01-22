@@ -32,8 +32,8 @@
 .bounce-class {
     width: 60px;
     display: block;
-    text-align: center;
-    color: #000000;
+    /*text-align: center;*/
+    color: #fff;
     font:normal 45px 'FontAwesome';
     line-height:60px;
     text-rendering: auto;
@@ -46,12 +46,12 @@
     left: 50% ;
     width: 50px;
     height: 50px ;
-    margin-left:-30px;
+    margin-left:-50px;
     animation: bounce 2s infinite;
     -webkit-animation: bounce 2s infinite;
     -moz-animation: bounce 2s infinite;
     -o-animation: bounce 2s infinite;
-    color: #000000;
+    color: #fff;
     text-decoration: none;
 }
 .bounce:hover,
@@ -80,4 +80,13 @@
     0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
     40% {transform: translateY(-30px);}
     60% {transform: translateY(-15px);}
+}
+
+.activity_rounded {
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border: 3px solid #fff;
 }
