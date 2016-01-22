@@ -127,10 +127,3 @@ table{
 section.noPadding{
     padding-bottom: 0%;
 }
-
-/*li.this:before{*/
-    /*content: "";*/
-    /*display: inline-block;*/
-    /*position: relative;*/
-    /*padding-left: 10px;*/
-/*}*/
