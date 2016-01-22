@@ -36,7 +36,12 @@ a:focus {
     color: #eb3812;
 }
 
-h1,
+/*@import url(https://fonts.googleapis.com/css?family=Raleway);*/
+
+h1{
+    font-family: 'Cousine', ;
+}
+
 h2,
 h3,
 h4,
@@ -181,7 +186,8 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background: url(../img/header.jpg) center;
+    /*background: url(../img/header.jpg) center;*/
+    background-color: #1b6d85;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
