@@ -93,9 +93,11 @@
 
 .fa-facebook,
 .fa-twitter,
-.fa-linkedin{
+.fa-linkedin,
+.fa-github{
     padding: 10px 10px;
     color: white;
+    font-size: 25px;
 }
 
 .fa-facebook:hover,
@@ -111,4 +113,13 @@
 .fa-linkedin:hover,
 .fa-linkedin:focus{
     color: #0077b5;
+}
+
+.fa-github:hover,
+.fa-github:focus{
+    color: #000000;
+}
+
+table{
+    font-size: 15px;
 }
