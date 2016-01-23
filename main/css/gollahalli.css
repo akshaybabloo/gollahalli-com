@@ -142,3 +142,14 @@ section.noPadding{
     -webkit-hyphens: auto;
     hyphens: auto;
 }
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background: rgba(188, 63, 33, 0.61);
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
