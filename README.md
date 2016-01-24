@@ -1,3 +1,3 @@
 # Gollahalli.me
 
-Web files for [http://www.gollahalli.com](http://www.gollahalli.me)
+Web files for [https://www.gollahalli.me](https://www.gollahalli.me)
