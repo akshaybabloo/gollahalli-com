@@ -128,6 +128,10 @@ section.noPadding{
     padding-bottom: 0%;
 }
 
+section.noPaddingUp{
+    padding-top: 0%;
+}
+
 .text-justify{
     word-wrap: break-word;
     /* These are technically the same, but use both */
@@ -152,4 +156,18 @@ section.noPadding{
 
 .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
     border: none;
+}
+
+.bg-primary a{
+    color: #ffffff;
+    text-decoration: underline;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.bg-primary a:hover,
+.bg-primary a:focus {
+    color: #000000;
+    font-weight: bolder;
 }
