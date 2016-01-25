@@ -1,0 +1,173 @@
+@font-face {
+    font-family: "Jellyka BeesAntique Handwriting";
+    src: url('../fonts/Jellyka-Bees-Antique-Handwriting.ttf') format('truetype');
+}
+.navbar-brand {
+    font-family: 'Jellyka BeesAntique Handwriting' !important;
+    font-weight: 700;
+    font-size: 30px;
+    padding-left: 30px;
+    /*padding-bottom: 30px;*/
+    color: #f05f40;
+}
+
+.navbar-brand {
+    line-height: 50px;
+    height: 60px;
+    padding-top: 0;
+}
+
+.navbar-nav li a {
+    line-height: 60px;
+    height: 60px;
+    padding-top: 0;
+}
+
+.navbar-toggle{
+    margin-top: 12px;
+}
+
+/*Bounce*/
+
+.bounce-class {
+    width: 60px;
+    display: block;
+    /*text-align: center;*/
+    color: #fff;
+    font:normal 45px 'FontAwesome';
+    line-height:60px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.bounce {
+    position: absolute;
+    bottom: 0px;
+    left: 50% ;
+    width: 50px;
+    height: 50px ;
+    margin-left:-50px;
+    animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    -moz-animation: bounce 2s infinite;
+    -o-animation: bounce 2s infinite;
+    color: #fff;
+    text-decoration: none;
+}
+.bounce:hover,
+.bounce:focus{
+    color: inherit;
+}
+
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+    40% {-webkit-transform: translateY(-30px);}
+    60% {-webkit-transform: translateY(-15px);}
+}
+
+@-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+    40% {-moz-transform: translateY(-30px);}
+    60% {-moz-transform: translateY(-15px);}
+}
+
+@-o-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+    40% {-o-transform: translateY(-30px);}
+    60% {-o-transform: translateY(-15px);}
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+
+.activity_rounded {
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.fa-facebook,
+.fa-twitter,
+.fa-linkedin,
+.fa-github{
+    padding: 10px 10px;
+    color: white;
+    font-size: 25px;
+}
+
+.fa-facebook:hover,
+.fa-facebook:focus{
+    color: #3b5998;
+}
+
+.fa-twitter:hover,
+.fa-twitter:focus{
+    color: #61c5ec;
+}
+
+.fa-linkedin:hover,
+.fa-linkedin:focus{
+    color: #0077b5;
+}
+
+.fa-github:hover,
+.fa-github:focus{
+    color: #000000;
+}
+
+table{
+    font-size: 15px;
+}
+
+section.noPadding{
+    padding-bottom: 0%;
+}
+
+section.noPaddingUp{
+    padding-top: 0%;
+}
+
+.text-justify{
+    word-wrap: break-word;
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background: rgba(188, 63, 33, 0.61);
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
+
+.bg-primary a{
+    color: #ffffff;
+    text-decoration: underline;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.bg-primary a:hover,
+.bg-primary a:focus {
+    color: #000000;
+    font-weight: bolder;
+}
