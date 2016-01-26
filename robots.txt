@@ -1,0 +1,3 @@
+Sitemap: https://www.gollahalli.me/sitemap.xml
+User-agent: *
+Disallow: /test/
