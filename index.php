@@ -775,6 +775,18 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 no-gutter text-center">
+                    <small class="text-muted">
+                        <?php
+                        $url = 'https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest';
+                        $options  = array('http' => array('user_agent'=> $_SERVER['HTTP_USER_AGENT']));
+                        $context  = stream_context_create($options);
+                        $response = file_get_contents($url, false, $context);
+
+                        $object = json_decode($response);
+
+                        echo "<a href='$object->html_url'>$object->tag_name</a>";
+                        ?>
+                    </small><br>
                     <small class="text-muted">Copyright &copy; 2016 &#124; Akshay Raj Gollahalli</small><br>
                     <small class="text-muted">All product and company names are trademarks&#8482; or registered&reg; trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them. </small>
                 </div>
