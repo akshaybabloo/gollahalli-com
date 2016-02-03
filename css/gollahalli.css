@@ -206,3 +206,7 @@ section.noPaddingUp{
 .modal-body a:focus{
     color: #ffffff;
 }
+
+.close{
+    color: #ffffff;
+}
