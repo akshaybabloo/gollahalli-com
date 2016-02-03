@@ -770,7 +770,7 @@
         </div>
     </section>
 
-    <!--========================= Footer ===========================-->
+    <!--========================= Footer & Model ===========================-->
     <footer class="bg-dark">
         <div class="container-fluid">
             <div class="row">
@@ -784,7 +784,7 @@
 
                         $object = json_decode($response);
 
-                        echo "<a href='$object->html_url'>$object->tag_name</a>";
+                        echo "<a href='#version_control' data-toggle=\"modal\" data-target=\"#version_control\">$object->tag_name</a>";
                         ?>
                     </small><br>
                     <small class="text-muted">Copyright &copy; 2016 &#124; Akshay Raj Gollahalli</small><br>
@@ -793,6 +793,40 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal fade" id="version_control" tabindex="-1" role="dialog" aria-labelledby="version_in">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="version_in"><?php echo $object->name ?></h4>
+                </div>
+                <div class="modal-body">
+                    <p><?php
+                        $string = $object->body;
+
+                        $replacer = str_replace("* ", "", $string);
+                        $bits = explode("\n", $replacer);
+
+                        $newstring = "<ul>";
+                        foreach($bits as $bit)
+                        {
+                            $newstring .= "<li>" . $bit . "</li>";
+                        }
+                        $newstring .= "</ul>";
+
+                        echo $newstring;
+                        ?>
+                    </p>
+                    <p class="text-center">
+                        <a href="<?php echo $object->zipball_url ?>"><i class="fa fa-2x fa-download"></i></a>
+                        <a href="https://github.com/akshaybabloo/gollahalli-me"><i class="fa fa-2x fa-github"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -807,6 +841,15 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
+
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"https://www.gollahalli.com/cookie-policy.html","theme":"dark-bottom"};
+    </script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+    <!-- End Cookie Consent plugin -->
+
 
 </body>
 
