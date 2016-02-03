@@ -94,7 +94,8 @@
 .fa-facebook,
 .fa-twitter,
 .fa-linkedin,
-.fa-github{
+.fa-github,
+.fa-download{
     padding: 10px 10px;
     color: white;
     font-size: 25px;
@@ -119,7 +120,9 @@
 }
 
 .fa-github:hover,
-.fa-github:focus{
+.fa-github:focus,
+.fa-download:hover,
+.fa-download:focus{
     color: #000000;
 }
 
@@ -173,4 +176,37 @@ section.noPaddingUp{
 .bg-primary a:focus {
     color: #000000;
     font-weight: bolder;
+}
+
+.modal-header {
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    background-color: #000000;
+    color: #ffffff;
+    border-bottom: 1px solid #000000;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-body
+{
+    background-color: #f05f40;
+    color: #ffffff;
+}
+
+.modal-body a{
+    color: #000000;
+}
+
+.modal-body a:hover,
+.modal-body a:focus{
+    color: #ffffff;
+}
+
+.close{
+    color: #ffffff;
 }
