@@ -11,7 +11,14 @@
     <meta name="author" content="Akshay Raj Gollahalli">
     <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli" />
 
-    <title>Akshay Raj Gollahalli - Home</title>
+    <meta property="og:title" content="Akshay Raj Gollahalli" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.gollahalli.me/" />
+    <meta property="og:image" content="http://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200" />
+    <meta property="og:image:secure_url" content="https://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200" />
+
+
+    <title>Akshay Raj Gollahalli</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
