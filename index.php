@@ -265,97 +265,104 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center">
-                    <table class="table table-hover borderless">
-                        <tr>
-                            <td>HTML</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".4s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Java</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Python</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Ruby</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>C</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>C++</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Matlab</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>CSS</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>SQL</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>SWIFT</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                    </table>
+            <div class="row text-center">
+                <div class="col-sm-6">
+                    <div class="table-responsive">
+                        <table class="table table-hover borderless ">
+                            <tbody>
+                            <tr>
+                                <td class="col-md-1">HTML</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".4s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Java</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Python</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Ruby</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">C</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">C++</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Matlab</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">CSS</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">SQL</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">SWIFT</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <table class="table table-hover borderless">
-                        <tr>
-                            <td>FileZilla</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".4s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Unity</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Weka</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Django</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Git</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Unreal Engine</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Maya</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Photoshop</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Illustrator</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Rails</td>
-                            <td><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i></td>
-                        </tr>
-                    </table>
+                <div class="col-sm-6">
+                    <div class="table-responsive">
+                        <table class="table table-hover borderless">
+                            <tbody>
+                            <tr>
+                                <td class="col-md-1">FileZilla</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".4s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Unity</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Weka</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Django</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Git</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Unreal Engine</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Maya</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Photoshop</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Illustrator</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-1">Rails</td>
+                                <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!--========================= Experience ===========================-->
@@ -803,7 +810,7 @@
                     <h4 class="modal-title" id="version_in"><?php echo $object->name ?></h4>
                 </div>
                 <div class="modal-body">
-                    <p><?php
+                    <?php
                         $string = $object->body;
 
                         $replacer = str_replace("* ", "", $string);
@@ -818,7 +825,6 @@
 
                         echo $newstring;
                         ?>
-                    </p>
                     <p class="text-center">
                         <a href="<?php echo $object->zipball_url ?>"><i class="fa fa-2x fa-download"></i></a>
                         <a href="https://github.com/akshaybabloo/gollahalli-me"><i class="fa fa-2x fa-github"></i></a>
