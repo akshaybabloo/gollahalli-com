@@ -1,7 +1,7 @@
 Order Allow,Deny 
 Deny from all 
 
-<FilesMatch "\.(css|js|html|jpg|gif|png|php)$">
+<FilesMatch "\.(css|js|html|jpg|gif|png|php|less)$">
 Order Deny,Allow
    Allow from all
 </FilesMatch>
