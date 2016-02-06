@@ -14,8 +14,10 @@
     <meta property="og:title" content="Akshay Raj Gollahalli" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.gollahalli.me/" />
-    <meta property="og:image" content="http://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200" />
-    <meta property="og:image:secure_url" content="https://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200" />
+    <meta property="og:image" content="http://www.gollahalli.me/img/logo.jpg" />
+    <meta property="og:image:secure_url" content="https://www.gollahalli.me/img/logo.jpg" />
+    <meta property="og:description" content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work." />
+    <meta property="fb:app_id" content="1562596197364195" />
 
 
     <title>Akshay Raj Gollahalli</title>
@@ -82,6 +84,23 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1562596197364195',
+                xfbml      : true,
+                version    : 'v2.5'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
