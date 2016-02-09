@@ -217,3 +217,7 @@ section.noPaddingUp{
 }
 
 .table-responsive{border: 0;}
+
+li{
+    font-size: 16px;
+}

@@ -243,6 +243,19 @@
                         </tr>
                     </table>
                 </div>
+
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h3 class="text-center">Research Area</h3>
+                    <hr class="light">
+
+                    <ul>
+                        <li>Brain Computer Interface</li>
+                        <li>Neuromorphic Systems</li>
+                        <li>Robotics</li>
+                        <li>Machine Learning</li>
+                        <li>Serious Games</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
