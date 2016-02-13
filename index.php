@@ -10,6 +10,7 @@
     <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
     <meta name="author" content="Akshay Raj Gollahalli">
     <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli" />
+    <meta name="theme-color" content="#f05f40" />
 
     <meta property="og:title" content="Akshay Raj Gollahalli" />
     <meta property="og:type" content="website" />
