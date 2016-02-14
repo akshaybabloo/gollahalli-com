@@ -10,6 +10,7 @@
     <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
     <meta name="author" content="Akshay Raj Gollahalli">
     <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli" />
+    <meta name="theme-color" content="#f05f40" />
 
     <meta property="og:title" content="Akshay Raj Gollahalli" />
     <meta property="og:type" content="website" />
@@ -39,6 +40,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/gollahalli.css" type="text/css">
     <link rel="stylesheet" href="css/creative.css" type="text/css">
+<!--    <link rel="stylesheet" href="css/reset.css" type="text/css">-->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <!-- For old IEs -->
     <link rel="shortcut icon" href="img/favicon/favicon.ico" />
@@ -221,27 +224,59 @@
                     <p>I constantly enjoy developing new software with functionality that would provide better user experience. I believe open sourcing software produces good and better results.</p>
                     <p>This website showcases my personal work, publications and tutorials. While you are at it, don't forget to see me blog and please feel free to <a class="page-scroll" href="#contact">contact me</a>.</p>
                 </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h3>Education</h3>
+                <div class="col-lg-12">
+                    <h3 class="text-center">Education</h3>
                     <hr class="light">
 
-                    <table class="table">
-                        <tr>
-                            <td class="col-md-4 text-left">Doctor of Philosophy (PhD)</td>
-                            <td class="col-md-5">Auckland University of Technology, Auckland</td>
-                            <td class="col-md-4 text-right">2016 - Present</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4 text-left">Master of Computer and Information Sciences (MCIS) (First Class Honors)</td>
-                            <td class="col-md-5">Auckland University of Technology, Auckland</td>
-                            <td class="col-md-4 text-right">2012 - 2015</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4 text-left">Bachelor of Technology (B.Tech)</td>
-                            <td class="col-md-5">Jawaharlal Nehru Technological University, Hyderabad</td>
-                            <td class="col-md-4 text-right">2007 - 2011</td>
-                        </tr>
-                    </table>
+                    <section id="cd-timeline" class="cd-container">
+                        <div class="cd-timeline-block">
+                            <div class="cd-timeline-img cd-picture">
+                                <img src="img/grad.png" alt="Grad-pic">
+                            </div> <!-- cd-timeline-img -->
+
+                            <div class="cd-timeline-content">
+                                <h4>Doctor of Philosophy (PhD)</h4>
+                                <p class="text-muted">Auckland University of Technology, Auckland</p>
+                                <span class="cd-date">2016 - Present</span>
+                            </div> <!-- cd-timeline-content -->
+                        </div> <!-- cd-timeline-block -->
+
+                        <div class="cd-timeline-block">
+                            <div class="cd-timeline-img cd-movie">
+                                <img src="img/grad.png" alt="Grad-pic">
+                            </div> <!-- cd-timeline-img -->
+
+                            <div class="cd-timeline-content">
+                                <h4>Master of Computer and Information Sciences (MCIS) (First Class Honors)</h4>
+                                <p class="text-muted">Auckland University of Technology, Auckland</p>
+                                <span class="cd-date">2014 - 2015</span>
+                            </div> <!-- cd-timeline-content -->
+                        </div> <!-- cd-timeline-block -->
+
+                        <div class="cd-timeline-block">
+                            <div class="cd-timeline-img cd-movie">
+                                <img src="img/grad.png" alt="Grad-pic">
+                            </div> <!-- cd-timeline-img -->
+
+                            <div class="cd-timeline-content">
+                                <h4>Postgraduate Diploma in Computer and Information Sciences (PgDipCIS)</h4>
+                                <p class="text-muted">Auckland University of Technology, Auckland</p>
+                                <span class="cd-date">2013 - 2014</span>
+                            </div> <!-- cd-timeline-content -->
+                        </div> <!-- cd-timeline-block -->
+
+                        <div class="cd-timeline-block">
+                            <div class="cd-timeline-img cd-movie">
+                                <img src="img/grad.png" alt="Grad-pic">
+                            </div> <!-- cd-timeline-img -->
+
+                            <div class="cd-timeline-content">
+                                <h4>Bachelor of Technology (B.Tech)</h4>
+                                <p class="text-muted">Jawaharlal Nehru Technological University, Hyderabad</p>
+                                <span class="cd-date">2007 - 2011</span>
+                            </div> <!-- cd-timeline-content -->
+                        </div> <!-- cd-timeline-block -->
+                    </section> <!-- cd-timeline -->
                 </div>
 
                 <div class="col-lg-8 col-lg-offset-2">
@@ -259,6 +294,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!--========================= Publication ===========================-->
     <section id="publication">
@@ -415,11 +452,46 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <p><b>Technical Support</b><br><i class="text-muted">2015 - Present</i><br>Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University. <br>Auckland, New Zealand.</p>
-                    <p><b>Research Assistant</b><br><i class="text-muted">July, 2015 - December, 2015</i><br>Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University. <br>Auckland, New Zealand.</p>
-                    <p><b>Jr. Systems Engineer</b><br><i class="text-muted">May, 2012 - February, 2013</i><br>Cheminnova Group of Companies.<br>Hyderabad, India.</p>
-                </div>
+                <div class="col-lg-12">
+                    <section id="cd-timeline" class="cd-container">
+                        <div class="cd-timeline-block">
+                            <div class="cd-timeline-img cd-picture">
+                                <img src="img/work.png" alt="Grad-pic">
+                            </div> <!-- cd-timeline-img -->
+
+                            <div class="cd-timeline-content">
+                                <h4>Technical Support</h4>
+                                <p class="text-muted">Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.<br>Auckland, New Zealand.</p>
+                                <span class="cd-date">2015 - Present</span>
+                            </div> <!-- cd-timeline-content -->
+                        </div> <!-- cd-timeline-block -->
+
+                        <div class="cd-timeline-block">
+                            <div class="cd-timeline-img cd-movie">
+                                <img src="img/work.png" alt="Grad-pic">
+                            </div> <!-- cd-timeline-img -->
+
+                            <div class="cd-timeline-content">
+                                <h4>Research Assistant</h4>
+                                <p class="text-muted">Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University. <br>Auckland, New Zealand.</p>
+                                <span class="cd-date">July, 2015 - December, 2015</span>
+                            </div> <!-- cd-timeline-content -->
+                        </div> <!-- cd-timeline-block -->
+
+                        <div class="cd-timeline-block">
+                            <div class="cd-timeline-img cd-movie">
+                                <img src="img/work.png" alt="Grad-pic">
+                            </div> <!-- cd-timeline-img -->
+
+                            <div class="cd-timeline-content">
+                                <h4>Jr. Systems Engineer</h4>
+                                <p class="text-muted">Cheminnova Group of Companies.<br>Hyderabad, India.</p>
+                                <span class="cd-date">May, 2012 - February, 2013</span>
+                            </div> <!-- cd-timeline-content -->
+                        </div> <!-- cd-timeline-block -->
+
+                    </section> <!-- cd-timeline -->
+                   </div>
             </div>
         </div>
     </section>
@@ -884,6 +956,8 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/jquery.fittext.js"></script>
     <script src="js/wow.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/main.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>

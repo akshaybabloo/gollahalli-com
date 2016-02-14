@@ -8,6 +8,7 @@ html,
 body {
     width: 100%;
     height: 100%;
+    background-color: #e9f0f5;
 }
 
 body {
@@ -85,7 +86,7 @@ aside {
 .navbar-default {
     border-color: rgba(34,34,34,.05);
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-    background-color: #fff;
+    background-color: #e9f0f5;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -157,7 +158,7 @@ aside {
 
     .navbar-default.affix {
         border-color: rgba(34,34,34,.05);
-        background-color: #fff;
+        background-color: #e9f0f5;
     }
 
     .navbar-default.affix .navbar-header .navbar-brand {
