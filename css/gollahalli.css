@@ -221,3 +221,13 @@ section.noPaddingUp{
 li{
     font-size: 16px;
 }
+
+
+.btn-group-lg>.btn, .btn-lg{
+    margin-top: 10px;
+    padding: 0px 16px;
+}
+
+.fa-download{
+    font-size: 20px;
+}

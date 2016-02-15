@@ -200,6 +200,7 @@
                 <hr class="light">
                 <h1>Akshay Raj Gollahalli</h1>
                 <p>
+                    <a href="https://www.gollahalli.me/downloads/Gollahalli-CV-Web.pdf" class="btn btn-lg btn-primary">Download CV<i class="fa fa-download"></i></a><br>
                     <a href="https://twitter.com/akshaybabloo"><i class="fa fa-twitter"></i></a>
                     <a href="https://nz.linkedin.com/in/gollahalli"><i class="fa fa-linkedin"></i></a>
                     <a href="https://github.com/akshaybabloo"><i class="fa fa-github"></i></a>
