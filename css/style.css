@@ -201,7 +201,7 @@ Main components
 .cd-timeline-content {
   position: relative;
   margin-left: 60px;
-  background: white;
+  background: #e9f0f5;
   border-radius: 0.25em;
   padding: 1em;
   box-shadow: 0 3px 0 #d7e4ed;
@@ -248,7 +248,7 @@ Main components
   height: 0;
   width: 0;
   border: 7px solid transparent;
-  border-right: 7px solid white;
+  border-right: 7px solid #e9f0f5;
 }
 @media only screen and (min-width: 768px) {
   .cd-timeline-content h2 {
@@ -287,7 +287,7 @@ Main components
     top: 24px;
     left: 100%;
     border-color: transparent;
-    border-left-color: white;
+    border-left-color: #e9f0f5;
   }
   .cd-timeline-content .cd-read-more {
     float: left;
@@ -309,7 +309,7 @@ Main components
     left: auto;
     right: 100%;
     border-color: transparent;
-    border-right-color: white;
+    border-right-color: #e9f0f5;
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
     float: right;
