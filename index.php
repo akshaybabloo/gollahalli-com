@@ -87,33 +87,8 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '1562596197364195',
-                xfbml      : true,
-                version    : 'v2.5'
-            });
-        };
 
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-72583688-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     <script src="js/queryloader2.min.js" type="text/javascript"></script>
 
     <script type="text/javascript">
@@ -285,10 +260,11 @@
                     <hr class="light">
 
                     <ul>
+                        <li>Machine Learning (Mainly in Spiking Neural Networks)</li>
+                        <li>Computational Neuroscience</li>
                         <li>Brain Computer Interface</li>
-                        <li>Neuromorphic Systems</li>
                         <li>Robotics</li>
-                        <li>Machine Learning</li>
+                        <li>Neuromorphic Systems</li>
                         <li>Serious Games</li>
                     </ul>
                 </div>
@@ -319,12 +295,12 @@
                     <h3>Abstract</h3>
                     <hr>
                     <ol class="text-justify">
-                        <li>Gollahalli, A. R., & Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland. Retrieved from <a href="http://www.aut.ac.nz/__data/assets/pdf_file/0018/525051/Booklet-NCEI15.pdf">http://www.aut.ac.nz/__data/assets/pdf_file/0018/525051/Booklet-NCEI15.pdf</a></li>
+                        <li>Gollahalli, A. R., &amp; Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland. Retrieved from <a href="http://www.aut.ac.nz/__data/assets/pdf_file/0018/525051/Booklet-NCEI15.pdf">http://www.aut.ac.nz/__data/assets/pdf_file/0018/525051/Booklet-NCEI15.pdf</a></li>
                     </ol>
                     <h3>Poster</h3>
                     <hr>
                     <ol class="text-justify">
-                        <li>Gollahalli, A. R., & Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland.</li>
+                        <li>Gollahalli, A. R., &amp; Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland.</li>
                     </ol>
                 </div>
             </div>
@@ -946,6 +922,38 @@
             </div>
         </div>
     </div>
+
+    <!-- Facebook app -->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1562596197364195',
+                xfbml      : true,
+                version    : 'v2.5'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-72583688-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- Twitter -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
