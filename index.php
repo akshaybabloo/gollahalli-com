@@ -976,7 +976,7 @@
 
                 if ($media) {
                     $url = $media->content->attributes();
-                    echo "<img class='hover_style3' src='$url' rel='$entry->title'>";
+                    echo "<img class='hover_style3' src='$url' alt='$entry->title'>";
                 }
 
                 echo "<div class='top-bar'><span><strong><i class='ion-person-stalker'></i></strong>" . " " . $dc->creator . "</span><span><i class='ion-clock'></i>" . " " . $newDateString . "</span></div>";
