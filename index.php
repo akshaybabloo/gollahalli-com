@@ -954,7 +954,7 @@
 </div>
 
 <!--========================= Blog ===========================-->
-<section class="bg-primary" id="blog">
+<section class="bg-primary less-bottom" id="blog">
     <div class="container text-center">
         <h2>Blog</h2>
         <hr class="light">
@@ -992,7 +992,7 @@
     </div>
 
     <p>
-        <a href="https://blog.gollahalli.me" class="btn btn-lg btn-default">Read more</i></a><br>
+        <a href="https://blog.gollahalli.me" class="btn center-block bigger">Read more</a>
     </p>
 </section>
 
