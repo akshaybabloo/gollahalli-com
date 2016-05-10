@@ -18,6 +18,13 @@
     <meta property="og:image" content="http://www.gollahalli.me/img/logo.jpg" />
     <meta property="og:image:secure_url" content="https://www.gollahalli.me/img/logo.jpg" />
     <meta property="og:description" content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Akshay Raj Gollahalli" />
+    <meta name="twitter:description" content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work." />
+    <meta name="twitter:image:src" content="https://www.gollahalli.me/img/logo.jpg" />
+    <meta name="twitter:url" content="https://www.gollahalli.me" />
+
     <meta property="fb:app_id" content="1562596197364195" />
 
 
@@ -155,11 +162,11 @@
                         <a class="page-scroll" href="#tutorial">Tutorials</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="https://blog.gollahalli.me">Blog</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
-                    <!--<li>-->
-                        <!--<a class="page-scroll" href="#blog">Blog</a>-->
-                    <!--</li>-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
