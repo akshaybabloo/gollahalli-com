@@ -224,7 +224,7 @@
                 <p>In the year 1998, I went out with my mother, who is a social worker, to a free plastic surgery camp
                     for poor in Hyderabad, India and then decided to become a doctor (a real one). That same year my
                     father, who is an engineer, took me to a steel rolling mill, and then I decided to become an
-                    engineer. On 12th October 1999, my father bought me a computer, Intell Pentium III with 256 MB RAM
+                    engineer. On 12th October 1999, my father bought me a computer, Intel Pentium III with 256 MB RAM
                     (WHAT!?). I instantly fell in love with it.</p>
                 <p>My journey started with computers nearly 17 years ago, and I am very passionate about it. My
                     interests are in research and development of Machine Learning, Neurocomputational Intelligence and
