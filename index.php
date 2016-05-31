@@ -11,7 +11,7 @@
     <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
     <meta name="author" content="Akshay Raj Gollahalli">
     <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli"/>
-    <meta name="theme-color" content="#f05f40"/>
+    <meta name="theme-color" content="#ef3939"/>
 
     <meta property="og:title" content="Akshay Raj Gollahalli"/>
     <meta property="og:type" content="website"/>
@@ -107,7 +107,7 @@
     <script type="text/javascript">
         window.addEventListener('DOMContentLoaded', function () {
             QueryLoader2(document.querySelector("body"), {
-                barColor: "#eb3812",
+                barColor: "#ef3939",
                 backgroundColor: "#000000",
                 percentage: true,
                 barHeight: 1,
