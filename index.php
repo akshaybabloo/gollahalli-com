@@ -550,6 +550,19 @@
                         </div> <!-- cd-timeline-img -->
 
                         <div class="cd-timeline-content">
+                            <h4>Teaching Assistant</h4>
+                            <p class="text-muted">Computer and Mathematical Sciences , AUT
+                                University. <br>Auckland, New Zealand.</p>
+                            <span class="cd-date">April, 2016 - Present</span>
+                        </div> <!-- cd-timeline-content -->
+                    </div> <!-- cd-timeline-block -->
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img cd-picture">
+                            <img src="img/work.png" alt="Grad-pic">
+                        </div> <!-- cd-timeline-img -->
+
+                        <div class="cd-timeline-content">
                             <h4>Research Assistant</h4>
                             <p class="text-muted">Knowledge Engineering and Discovery Research Institute (KEDRI), AUT
                                 University. <br>Auckland, New Zealand.</p>
