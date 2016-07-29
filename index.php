@@ -553,7 +553,7 @@
                             <h4>Teaching Assistant</h4>
                             <p class="text-muted">Computer and Mathematical Sciences , AUT
                                 University. <br>Auckland, New Zealand.</p>
-                            <span class="cd-date">April, 2016 - Present</span>
+                            <span class="cd-date">July, 2016 - Present</span>
                         </div> <!-- cd-timeline-content -->
                     </div> <!-- cd-timeline-block -->
 
