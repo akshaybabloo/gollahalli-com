@@ -11,7 +11,7 @@
     <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
     <meta name="author" content="Akshay Raj Gollahalli">
     <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli"/>
-    <meta name="theme-color" content="#f05f40"/>
+    <meta name="theme-color" content="#ef3939"/>
 
     <meta property="og:title" content="Akshay Raj Gollahalli"/>
     <meta property="og:type" content="website"/>
@@ -107,7 +107,7 @@
     <script type="text/javascript">
         window.addEventListener('DOMContentLoaded', function () {
             QueryLoader2(document.querySelector("body"), {
-                barColor: "#eb3812",
+                barColor: "#ef3939",
                 backgroundColor: "#000000",
                 percentage: true,
                 barHeight: 1,
@@ -115,6 +115,23 @@
                 fadeOutTime: 1000
             });
         });
+    </script>
+
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-72583688-1', 'auto');
+        ga('send', 'pageview');
     </script>
 
 </head>
@@ -224,7 +241,7 @@
                 <p>In the year 1998, I went out with my mother, who is a social worker, to a free plastic surgery camp
                     for poor in Hyderabad, India and then decided to become a doctor (a real one). That same year my
                     father, who is an engineer, took me to a steel rolling mill, and then I decided to become an
-                    engineer. On 12th October 1999, my father bought me a computer, Intell Pentium III with 256 MB RAM
+                    engineer. On 12th October 1999, my father bought me a computer, Intel Pentium III with 256 MB RAM
                     (WHAT!?). I instantly fell in love with it.</p>
                 <p>My journey started with computers nearly 17 years ago, and I am very passionate about it. My
                     interests are in research and development of Machine Learning, Neurocomputational Intelligence and
@@ -526,6 +543,33 @@
         <div class="row">
             <div class="col-lg-12">
                 <section id="cd-timeline" class="cd-container">
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img cd-picture">
+                            <img src="img/work.png" alt="Grad-pic">
+                        </div> <!-- cd-timeline-img -->
+
+                        <div class="cd-timeline-content">
+                            <h4>Teaching Assistant</h4>
+                            <p class="text-muted">Computer and Mathematical Sciences , AUT
+                                University. <br>Auckland, New Zealand.</p>
+                            <span class="cd-date">July, 2016 - Present</span>
+                        </div> <!-- cd-timeline-content -->
+                    </div> <!-- cd-timeline-block -->
+
+                    <div class="cd-timeline-block">
+                        <div class="cd-timeline-img cd-picture">
+                            <img src="img/work.png" alt="Grad-pic">
+                        </div> <!-- cd-timeline-img -->
+
+                        <div class="cd-timeline-content">
+                            <h4>Research Assistant</h4>
+                            <p class="text-muted">Knowledge Engineering and Discovery Research Institute (KEDRI), AUT
+                                University. <br>Auckland, New Zealand.</p>
+                            <span class="cd-date">April, 2016 - Present</span>
+                        </div> <!-- cd-timeline-content -->
+                    </div> <!-- cd-timeline-block -->
+
                     <div class="cd-timeline-block">
                         <div class="cd-timeline-img cd-picture">
                             <img src="img/work.png" alt="Grad-pic">
@@ -1097,23 +1141,6 @@
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<!-- Google Analytics -->
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-72583688-1', 'auto');
-    ga('send', 'pageview');
 </script>
 
 <!-- Twitter -->
