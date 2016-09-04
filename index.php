@@ -29,7 +29,10 @@
     <meta name="twitter:url" content="https://www.gollahalli.me"/>
 
     <meta property="fb:app_id" content="1562596197364195"/>
-
+    
+    <link rel="canonical" href="https://www.gollahalli.me/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://www.gollahalli.me/amp/" />
 
     <title>Akshay Raj Gollahalli</title>
 
