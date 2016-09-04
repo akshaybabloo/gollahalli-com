@@ -395,73 +395,50 @@
                 <div class="table-responsive">
                     <table class="table table-hover borderless ">
                         <tbody>
+
                         <tr>
-                            <td class="col-md-1">HTML</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".4s"></i></td>
-                        </tr>
-                        <tr>
+                            <td class="col-md-2">Programming:</td>
                             <td class="col-md-1">Java</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
                         </tr>
                         <tr>
+                            <td class="col-md-2"></td>
                             <td class="col-md-1">Python</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
                         </tr>
                         <tr>
+                            <td class="col-md-2"></td>
                             <td class="col-md-1">Ruby</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
                         </tr>
                         <tr>
+                            <td class="col-md-2"></td>
                             <td class="col-md-1">C</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
                         </tr>
                         <tr>
+                            <td class="col-md-2"></td>
                             <td class="col-md-1">C++</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
                         </tr>
                         <tr>
+                            <td class="col-md-2"></td>
                             <td class="col-md-1">Matlab</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
                         </tr>
                         <tr>
-                            <td class="col-md-1">CSS</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">SQL</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
+                            <td class="col-md-2"></td>
                             <td class="col-md-1">SWIFT</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-2">Web Development:</td>
+                            <td class="col-md-1">HTML</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-1">CSS</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-1">Django</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-1">Rails</td>
                         </tr>
                         </tbody>
                     </table>
@@ -472,68 +449,40 @@
                     <table class="table table-hover borderless">
                         <tbody>
                         <tr>
-                            <td class="col-md-1">FileZilla</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".4s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Unity</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
+                            <td class="col-md-2">Data Mining:</td>
                             <td class="col-md-1">Weka</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
                         </tr>
                         <tr>
-                            <td class="col-md-1">Django</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-1">NeuCube</td>
                         </tr>
                         <tr>
-                            <td class="col-md-1">Git</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
+                            <td class="col-md-2">Gaming Engines:</td>
                             <td class="col-md-1">Unreal Engine</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
                         </tr>
                         <tr>
-                            <td class="col-md-1">Maya</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-1">Unity</td>
                         </tr>
                         <tr>
+                            <td class="col-md-2">Graphics/3D Rendering:</td>
                             <td class="col-md-1">Photoshop</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
                         </tr>
                         <tr>
+                            <td class="col-md-2"></td>
                             <td class="col-md-1">Illustrator</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i></td>
                         </tr>
                         <tr>
-                            <td class="col-md-1">Rails</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i></td>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-1">Maya</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-2">Others:</td>
+                            <td class="col-md-1">Git</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-2"></td>
+                            <td class="col-md-1">SQL</td>
                         </tr>
                         </tbody>
                     </table>
@@ -1018,28 +967,28 @@
     <div class="container">
         <div class="row">
             <?php
-            $url = "https://blog.gollahalli.me/rss/";
-            $content = file_get_contents($url);
+                $url = "https://blog.gollahalli.me/rss/";
+                $content = file_get_contents($url);
 
-            $x = new SimpleXmlElement($content);
+                $x = new SimpleXmlElement($content);
 
-            foreach ($x->channel->item as $entry) {
-                echo "<div class='mas-container mas-col3'><div class='grid-sizer'></div><div class='blog-item3 item'>";
-                $nameSpace1 = $entry->getNameSpaces(True);
-                $media = $entry->children('media', True);
-                $dc = $entry->children($nameSpace1['dc']);
-                $newDateString = date_format(date_create_from_format('D, d M Y G:i:s T', $entry->pubDate), 'd M Y');
+                foreach ($x->channel->item as $entry) {
+                    echo "<div class='mas-container mas-col3'><div class='grid-sizer'></div><div class='blog-item3 item'>";
+                    $nameSpace1 = $entry->getNameSpaces(True);
+                    $media = $entry->children('media', True);
+                    $dc = $entry->children($nameSpace1['dc']);
+                    $newDateString = date_format(date_create_from_format('D, d M Y G:i:s T', $entry->pubDate), 'd M Y');
 
-                if ($media) {
-                    $url = $media->content->attributes();
-                    echo "<img class='hover_style3' src='$url' alt='$entry->title'>";
-                }
+                    if ($media) {
+                        $url = $media->content->attributes();
+                        echo "<img class='hover_style3' src='$url' alt='$entry->title'>";
+                    }
 
-                echo "<div class='top-bar'><span><strong><i class='ion-person-stalker'></i></strong>" . " " . $dc->creator . "</span><span><i class='ion-clock'></i>" . " " . $newDateString . "</span></div>";
-                echo "<a href='$entry->link' title='$entry->link'><h4><b>" . $entry->title . "</b></h4></a>";
-                echo "<p>" . $entry->description . "</p>";
-                echo "<div class='blog_readmore_btn_holder'><a href='$entry->link' class='more-link'><div class='blog_readmore_btn3'>" . "Continue reading" . "<i class='ion-arrow-right-c'></i></div></a></div>";
-                echo "</div></div>";
+                    echo "<div class='top-bar'><span><strong><i class='ion-person-stalker'></i></strong>" . " " . $dc->creator . "</span><span><i class='ion-clock'></i>" . " " . $newDateString . "</span></div>";
+                    echo "<a href='$entry->link' title='$entry->link'><h4><b>" . $entry->title . "</b></h4></a>";
+                    echo "<p>" . $entry->description . "</p>";
+                    echo "<div class='blog_readmore_btn_holder'><a href='$entry->link' class='more-link'><div class='blog_readmore_btn3'>" . "Continue reading" . "<i class='ion-arrow-right-c'></i></div></a></div>";
+                    echo "</div></div>";
             }
 
             ?>
