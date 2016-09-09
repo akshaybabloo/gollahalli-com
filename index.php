@@ -1,3 +1,5 @@
+<!-- PHP header -->
+<?php require 'pages/header.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-          content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work.">
+          content="<?php echo $results->about_me->name ?> is a Computer Science researcher currently doing his Ph.D. This website showcases his work.">
     <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
     <meta name="author" content="Akshay Raj Gollahalli">
     <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli"/>
@@ -29,12 +31,12 @@
     <meta name="twitter:url" content="https://www.gollahalli.me"/>
 
     <meta property="fb:app_id" content="1562596197364195"/>
-    
+
     <link rel="canonical" href="https://www.gollahalli.me/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     <link rel="amphtml" href="https://www.gollahalli.me/amp/" />
 
-    <title>Akshay Raj Gollahalli</title>
+    <title><?php echo $results->about_me->name ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -153,6 +155,8 @@
 
 <body id="page-top">
 
+
+
 <!-- Google Tag Manager -->
 <noscript>
     <iframe src="//www.googletagmanager.com/ns.html?id=GTM-56JZX4"
@@ -228,7 +232,7 @@
             <img src="https://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200"
                  class="img-circle activity_rounded" alt="Akshay Raj Gollahalli's photo">
             <hr class="light">
-            <h1>Akshay Raj Gollahalli</h1>
+            <h1><?php echo $results->about_me->name ?></h1>
             <p>
                 <a href="https://www.gollahalli.me/downloads/Gollahalli-CV-Web.pdf" class="btn btn-lg btn-primary">Download
                     CV<i class="fa fa-download"></i></a><br>
@@ -250,22 +254,7 @@
             <div class="col-lg-8 col-lg-offset-2 text-justify">
                 <h2 class="section-heading text-center">About Me</h2>
                 <hr class="light">
-                <p>My name is Akshay Raj Gollahalli (Akshay for short). I survive mostly on coffee. I am a designer,
-                    developer, software engineer, animal lover, <a
-                        href="http://www.kedri.aut.ac.nz/staff/students/akshay-raj-gollahalli">Ph.D. student</a>.
-                <p>In the year 1998, I went out with my mother, who is a social worker, to a free plastic surgery camp
-                    for poor in Hyderabad, India and then decided to become a doctor (a real one). That same year my
-                    father, who is an engineer, took me to a steel rolling mill, and then I decided to become an
-                    engineer. On 12th October 1999, my father bought me a computer, Intel Pentium III with 256 MB RAM
-                    (WHAT!?). I instantly fell in love with it.</p>
-                <p>My journey started with computers nearly 17 years ago, and I am very passionate about it. My
-                    interests are in research and development of Machine Learning, Neurocomputational Intelligence and
-                    Brain Computer Interface.</p>
-                <p>I constantly enjoy developing new software with functionality that would provide better user
-                    experience. I believe open sourcing software produces good and better results.</p>
-                <p>This website showcases my personal work, publications and tutorials. While you are at it, don't
-                    forget to see me blog and please feel free to <a class="page-scroll" href="#contact">contact me</a>.
-                </p>
+                <?php require 'pages/about_me.php' ?> <!-- page-scroll missing -->
             </div>
             <div class="col-lg-12">
                 <h3 class="text-center">Education</h3>
@@ -325,15 +314,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h3 class="text-center">Research Area</h3>
                 <hr class="light">
-
-                <ul>
-                    <li>Machine Learning (Mainly in Spiking Neural Networks)</li>
-                    <li>Computational Neuroscience</li>
-                    <li>Brain Computer Interface</li>
-                    <li>Robotics</li>
-                    <li>Neuromorphic Systems</li>
-                    <li>Serious Games</li>
-                </ul>
+                <?php require 'pages/research_area.php'?>
             </div>
         </div>
     </div>
@@ -353,30 +334,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h3>Thesis</h3>
-                <hr>
-                <ol class="text-justify">
-                    <li>Gollahalli, A. R. (2015). Brain-computer interfaces for virtual Quadcopters based on a
-                        spiking-neural network architecture - NeuCube. AUT University, Auckland. Retrieved from <a
-                            href="http://hdl.handle.net/10292/9249">http://hdl.handle.net/10292/9249</a></li>
-                </ol>
-                <h3>Abstract</h3>
-                <hr>
-                <ol class="text-justify">
-                    <li>Gollahalli, A. R., &amp; Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain
-                        Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on
-                        Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland. Retrieved from <a
-                            href="http://www.aut.ac.nz/__data/assets/pdf_file/0018/525051/Booklet-NCEI15.pdf">http://www.aut.ac.nz/__data/assets/pdf_file/0018/525051/Booklet-NCEI15.pdf</a>
-                    </li>
-                </ol>
-                <h3>Poster</h3>
-                <hr>
-                <ol class="text-justify">
-                    <li>Gollahalli, A. R., &amp; Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain
-                        Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on
-                        Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland.
-                    </li>
-                </ol>
+                <?php require 'pages/publication.php'?>
             </div>
         </div>
     </div>
@@ -394,103 +352,7 @@
     </div>
     <div class="container">
         <div class="row text-center">
-            <div class="col-sm-6">
-                <div class="table-responsive">
-                    <table class="table table-hover borderless ">
-                        <tbody>
-
-                        <tr>
-                            <td class="col-md-2">Programming:</td>
-                            <td class="col-md-1">Java</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">Python</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">Ruby</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">C</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">C++</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">Matlab</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">SWIFT</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2">Web Development:</td>
-                            <td class="col-md-1">HTML</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">CSS</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">Django</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">Rails</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="table-responsive">
-                    <table class="table table-hover borderless">
-                        <tbody>
-                        <tr>
-                            <td class="col-md-2">Data Mining:</td>
-                            <td class="col-md-1">Weka</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">NeuCube</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2">Gaming Engines:</td>
-                            <td class="col-md-1">Unreal Engine</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">Unity</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2">Graphics/3D Rendering:</td>
-                            <td class="col-md-1">Photoshop</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">Illustrator</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">Maya</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2">Others:</td>
-                            <td class="col-md-1">Git</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-2"></td>
-                            <td class="col-md-1">SQL</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <?php require 'pages/skills.php'?>
         </div>
     </div>
 </section>
@@ -969,32 +831,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <?php
-                $url = "https://blog.gollahalli.me/rss/";
-                $content = file_get_contents($url);
-
-                $x = new SimpleXmlElement($content);
-
-                foreach ($x->channel->item as $entry) {
-                    echo "<div class='mas-container mas-col3'><div class='grid-sizer'></div><div class='blog-item3 item'>";
-                    $nameSpace1 = $entry->getNameSpaces(True);
-                    $media = $entry->children('media', True);
-                    $dc = $entry->children($nameSpace1['dc']);
-                    $newDateString = date_format(date_create_from_format('D, d M Y G:i:s T', $entry->pubDate), 'd M Y');
-
-                    if ($media) {
-                        $url = $media->content->attributes();
-                        echo "<img class='hover_style3' src='$url' alt='$entry->title'>";
-                    }
-
-                    echo "<div class='top-bar'><span><strong><i class='ion-person-stalker'></i></strong>" . " " . $dc->creator . "</span><span><i class='ion-clock'></i>" . " " . $newDateString . "</span></div>";
-                    echo "<a href='$entry->link' title='$entry->link'><h4><b>" . $entry->title . "</b></h4></a>";
-                    echo "<p>" . $entry->description . "</p>";
-                    echo "<div class='blog_readmore_btn_holder'><a href='$entry->link' class='more-link'><div class='blog_readmore_btn3'>" . "Continue reading" . "<i class='ion-arrow-right-c'></i></div></a></div>";
-                    echo "</div></div>";
-            }
-
-            ?>
+            <?php require 'pages/blog_rss.php'?>
         </div>
 
     </div>
@@ -1062,20 +899,20 @@
                 <h4 class="modal-title" id="version_in"><?php echo $object->name ?></h4>
             </div>
             <div class="modal-body">
-                <?php
-                $string = $object->body;
-
-                $replacer = str_replace("* ", "", $string);
-                $bits = explode("\n", $replacer);
-
-                $newstring = "<ul>";
-                foreach ($bits as $bit) {
-                    $newstring .= "<li>" . $bit . "</li>";
-                }
-                $newstring .= "</ul>";
-
-                echo $newstring;
-                ?>
+<!--                --><?php
+//                $string = $object->body;
+//
+//                $replacer = str_replace("* ", "", $string);
+//                $bits = explode("\n", $replacer);
+//
+//                $newstring = "<ul>";
+//                foreach ($bits as $bit) {
+//                    $newstring .= "<li>" . $bit . "</li>";
+//                }
+//                $newstring .= "</ul>";
+//
+//                echo $newstring;
+//                ?>
                 <p class="text-center">
                     <a href="<?php echo $object->zipball_url ?>"><i class="fa fa-2x fa-download"></i></a>
                     <a href="https://github.com/akshaybabloo/gollahalli-me"><i class="fa fa-2x fa-github"></i></a>
