@@ -1,3 +1,5 @@
+<!-- PHP header -->
+<?php require 'pages/header.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-          content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work.">
+          content="<?php echo $results->about_me->name ?> is a Computer Science researcher currently doing his Ph.D. This website showcases his work.">
     <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
     <meta name="author" content="Akshay Raj Gollahalli">
     <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli"/>
@@ -30,8 +32,11 @@
 
     <meta property="fb:app_id" content="1562596197364195"/>
 
+    <link rel="canonical" href="https://www.gollahalli.me/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://www.gollahalli.me/amp/" />
 
-    <title>Akshay Raj Gollahalli</title>
+    <title><?php echo $results->about_me->name ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -94,15 +99,34 @@
     <link rel="icon" sizes="192x192" href="img/favicon/favicon-192.png">
 
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-
     <script src="js/queryloader2.min.js" type="text/javascript"></script>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Website",
+            "publisher": {
+                "@type": "People",
+                "name": "Akshay Raj Gollahalli",
+                "image": "https://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200",
+                "email" : "akshay@gollahalli.com",
+                "url": "https://www.gollahalli.me/"
+            },
+            "url": "https://www.gollahalli.me/",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://www.gollahalli.me"
+            }
+        }
+    </script>
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+            0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+            for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+        mixpanel.init("e3f103b7fbf943d7475c3b0529b5e16a");</script>
+    <!-- end Mixpanel -->
 
     <script type="text/javascript">
         window.addEventListener('DOMContentLoaded', function () {
@@ -137,6 +161,8 @@
 </head>
 
 <body id="page-top">
+
+
 
 <!-- Google Tag Manager -->
 <noscript>
@@ -213,7 +239,7 @@
             <img src="https://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200"
                  class="img-circle activity_rounded" alt="Akshay Raj Gollahalli's photo">
             <hr class="light">
-            <h1>Akshay Raj Gollahalli</h1>
+            <h1><?php echo $results->about_me->name ?></h1>
             <p>
                 <a href="https://www.gollahalli.me/downloads/Gollahalli-CV-Web.pdf" class="btn btn-lg btn-primary">Download
                     CV<i class="fa fa-download"></i></a><br>
@@ -235,22 +261,7 @@
             <div class="col-lg-8 col-lg-offset-2 text-justify">
                 <h2 class="section-heading text-center">About Me</h2>
                 <hr class="light">
-                <p>My name is Akshay Raj Gollahalli (Akshay for short). I survive mostly on coffee. I am a designer,
-                    developer, software engineer, animal lover, <a
-                        href="http://www.kedri.aut.ac.nz/staff/students/akshay-raj-gollahalli">Ph.D. student</a>.
-                <p>In the year 1998, I went out with my mother, who is a social worker, to a free plastic surgery camp
-                    for poor in Hyderabad, India and then decided to become a doctor (a real one). That same year my
-                    father, who is an engineer, took me to a steel rolling mill, and then I decided to become an
-                    engineer. On 12th October 1999, my father bought me a computer, Intel Pentium III with 256 MB RAM
-                    (WHAT!?). I instantly fell in love with it.</p>
-                <p>My journey started with computers nearly 17 years ago, and I am very passionate about it. My
-                    interests are in research and development of Machine Learning, Neurocomputational Intelligence and
-                    Brain Computer Interface.</p>
-                <p>I constantly enjoy developing new software with functionality that would provide better user
-                    experience. I believe open sourcing software produces good and better results.</p>
-                <p>This website showcases my personal work, publications and tutorials. While you are at it, don't
-                    forget to see me blog and please feel free to <a class="page-scroll" href="#contact">contact me</a>.
-                </p>
+                <?php require 'pages/about_me.php' ?> <!-- page-scroll missing -->
             </div>
             <div class="col-lg-12">
                 <h3 class="text-center">Education</h3>
@@ -310,15 +321,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h3 class="text-center">Research Area</h3>
                 <hr class="light">
-
-                <ul>
-                    <li>Machine Learning (Mainly in Spiking Neural Networks)</li>
-                    <li>Computational Neuroscience</li>
-                    <li>Brain Computer Interface</li>
-                    <li>Robotics</li>
-                    <li>Neuromorphic Systems</li>
-                    <li>Serious Games</li>
-                </ul>
+                <?php require 'pages/research_area.php'?>
             </div>
         </div>
     </div>
@@ -338,30 +341,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h3>Thesis</h3>
-                <hr>
-                <ol class="text-justify">
-                    <li>Gollahalli, A. R. (2015). Brain-computer interfaces for virtual Quadcopters based on a
-                        spiking-neural network architecture - NeuCube. AUT University, Auckland. Retrieved from <a
-                            href="http://hdl.handle.net/10292/9249">http://hdl.handle.net/10292/9249</a></li>
-                </ol>
-                <h3>Abstract</h3>
-                <hr>
-                <ol class="text-justify">
-                    <li>Gollahalli, A. R., &amp; Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain
-                        Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on
-                        Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland. Retrieved from <a
-                            href="http://www.aut.ac.nz/__data/assets/pdf_file/0018/525051/Booklet-NCEI15.pdf">http://www.aut.ac.nz/__data/assets/pdf_file/0018/525051/Booklet-NCEI15.pdf</a>
-                    </li>
-                </ol>
-                <h3>Poster</h3>
-                <hr>
-                <ol class="text-justify">
-                    <li>Gollahalli, A. R., &amp; Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain
-                        Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on
-                        Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland.
-                    </li>
-                </ol>
+                <?php require 'pages/publication.php'?>
             </div>
         </div>
     </div>
@@ -379,154 +359,7 @@
     </div>
     <div class="container">
         <div class="row text-center">
-            <div class="col-sm-6">
-                <div class="table-responsive">
-                    <table class="table table-hover borderless ">
-                        <tbody>
-                        <tr>
-                            <td class="col-md-1">HTML</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".4s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Java</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Python</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Ruby</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">C</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">C++</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Matlab</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">CSS</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">SQL</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">SWIFT</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="table-responsive">
-                    <table class="table table-hover borderless">
-                        <tbody>
-                        <tr>
-                            <td class="col-md-1">FileZilla</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".4s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Unity</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Weka</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Django</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Git</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".3s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Unreal Engine</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Maya</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Photoshop</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".2s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Illustrator</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-1">Rails</td>
-                            <td class="col-md-2"><i class="fa fa-star wow bounceIn"></i><i
-                                    class="fa fa-star wow bounceIn" data-wow-delay=".1s"></i></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <?php require 'pages/skills.php'?>
         </div>
     </div>
 </section>
@@ -1005,32 +838,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <?php
-            $url = "https://blog.gollahalli.me/rss/";
-            $content = file_get_contents($url);
-
-            $x = new SimpleXmlElement($content);
-
-            foreach ($x->channel->item as $entry) {
-                echo "<div class='mas-container mas-col3'><div class='grid-sizer'></div><div class='blog-item3 item'>";
-                $nameSpace1 = $entry->getNameSpaces(True);
-                $media = $entry->children('media', True);
-                $dc = $entry->children($nameSpace1['dc']);
-                $newDateString = date_format(date_create_from_format('D, d M Y G:i:s T', $entry->pubDate), 'd M Y');
-
-                if ($media) {
-                    $url = $media->content->attributes();
-                    echo "<img class='hover_style3' src='$url' alt='$entry->title'>";
-                }
-
-                echo "<div class='top-bar'><span><strong><i class='ion-person-stalker'></i></strong>" . " " . $dc->creator . "</span><span><i class='ion-clock'></i>" . " " . $newDateString . "</span></div>";
-                echo "<a href='$entry->link' title='$entry->link'><h4><b>" . $entry->title . "</b></h4></a>";
-                echo "<p>" . $entry->description . "</p>";
-                echo "<div class='blog_readmore_btn_holder'><a href='$entry->link' class='more-link'><div class='blog_readmore_btn3'>" . "Continue reading" . "<i class='ion-arrow-right-c'></i></div></a></div>";
-                echo "</div></div>";
-            }
-
-            ?>
+            <?php require 'pages/blog_rss.php'?>
         </div>
 
     </div>
@@ -1067,14 +875,17 @@
             <div class="col-lg-12 no-gutter text-center">
                 <small class="text-muted">
                     <?php
-                    $url = 'https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest';
-                    $options = array('http' => array('user_agent' => $_SERVER['HTTP_USER_AGENT']));
-                    $context = stream_context_create($options);
-                    $response = file_get_contents($url, false, $context);
+                    try {
+                        $url = 'https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest';
+                        $options = array('http' => array('user_agent' => $_SERVER['HTTP_USER_AGENT']));
+                        $context = stream_context_create($options);
+                        $response = file_get_contents($url, false, $context);
 
-                    $object = json_decode($response);
+                        $object = json_decode($response);
+                        echo "<a href='#version_control' data-toggle=\"modal\" data-target=\"#version_control\">$object->tag_name</a>";
+                    } catch (exception $e){
 
-                    echo "<a href='#version_control' data-toggle=\"modal\" data-target=\"#version_control\">$object->tag_name</a>";
+                    }
                     ?>
                 </small>
                 <br>
@@ -1098,20 +909,20 @@
                 <h4 class="modal-title" id="version_in"><?php echo $object->name ?></h4>
             </div>
             <div class="modal-body">
-                <?php
-                $string = $object->body;
-
-                $replacer = str_replace("* ", "", $string);
-                $bits = explode("\n", $replacer);
-
-                $newstring = "<ul>";
-                foreach ($bits as $bit) {
-                    $newstring .= "<li>" . $bit . "</li>";
-                }
-                $newstring .= "</ul>";
-
-                echo $newstring;
-                ?>
+<!--                --><?php
+//                $string = $object->body;
+//
+//                $replacer = str_replace("* ", "", $string);
+//                $bits = explode("\n", $replacer);
+//
+//                $newstring = "<ul>";
+//                foreach ($bits as $bit) {
+//                    $newstring .= "<li>" . $bit . "</li>";
+//                }
+//                $newstring .= "</ul>";
+//
+//                echo $newstring;
+//                ?>
                 <p class="text-center">
                     <a href="<?php echo $object->zipball_url ?>"><i class="fa fa-2x fa-download"></i></a>
                     <a href="https://github.com/akshaybabloo/gollahalli-me"><i class="fa fa-2x fa-github"></i></a>
