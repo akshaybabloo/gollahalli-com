@@ -8,3 +8,6 @@ function doMarkdownLinks($s) {
         return '<a href="' . $matches[2] . '">' . $matches[1] . '</a>';
     }, htmlspecialchars($s));
 }
+
+require 'about_me.php';
+require 'publication.php';
