@@ -12,7 +12,7 @@ function about_me_bio()
 
 function about_me_education()
 {
-    global $results;
+    global $results, $cdn;
     $ar = array();
     $ret = '';
     foreach ($results->about_me->education as $jsons) {
@@ -27,7 +27,7 @@ function about_me_education()
             } else {
                 $ret .= '<div class="cd-timeline-img cd-movie">';
             }
-            $ret .= '<img src="img/grad.png" alt="Grad-pic">
+            $ret .= '<img src="'. $cdn .'/img/grad.png" alt="Grad-pic">
                         </div>
                         <div class="cd-timeline-content">';
             $ret .= '<h4>' . $j->title . '</h4>';
