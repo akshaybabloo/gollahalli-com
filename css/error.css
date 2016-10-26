@@ -61,8 +61,8 @@ time, mark, audio, video {
 
 html {
     /* Set default font family to sans-serif */
-    font-family: sans-serif;
-
+    /*font-family: sans-serif;*/
+    font-family: 'Roboto', sans-serif;
     /* Prevent iOS text size adjust after orientation change, without disabling */
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -194,7 +194,8 @@ textarea {
 
 /* ---- 1.2 Basic ---- */
 body {
-    font-family: 'Montserrat', Helvetica, sans-serif;
+    /*font-family: 'Montserrat', Helvetica, sans-serif;*/
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     line-height: 2;
     background-color: #13151a;
