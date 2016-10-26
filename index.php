@@ -396,142 +396,74 @@
     </div>
     <div class="container-fluid">
         <div class="row no-gutter">
-            <div class="col-lg-4 col-sm-6">
-                <a href="#jcal_model" data-toggle="modal" data-target="#jcal_model" class="portfolio-box">
-                    <img src="img/portfolio/jcal.jpg" class="img-responsive" alt="JCal">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Software
-                            </div>
-                            <div class="project-name">
-                                JCal
-                            </div>
-                            <p><i class="text-faded">Mortgage Calculator</i></p>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#jmark_model" data-toggle="modal" data-target="#jmark_model" class="portfolio-box">
-                    <img src="img/portfolio/jmark.jpg" class="img-responsive" alt="JMark">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Software
-                            </div>
-                            <div class="project-name">
-                                JMark
-                            </div>
-                            <p><i class="text-faded">Markdown Editor</i></p>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#eegrotor_model" data-toggle="modal" data-target="#eegrotor_model" class="portfolio-box">
-                    <img src="img/portfolio/eegrotor.jpg" class="img-responsive" alt="EEGRotor-VE">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Games & Virtual Environment
-                            </div>
-                            <div class="project-name">
-                                EEGRotor-VE
-                            </div>
-                            <p><i class="text-faded">A Virtual Environment for Brain Computer Interface Applications</i>
-                            </p>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#smallurl_model" data-toggle="modal" data-target="#smallurl_model" class="portfolio-box">
-                    <img src="img/portfolio/smallurl.jpg" class="img-responsive" alt="SmallURL">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Django
-                            </div>
-                            <div class="project-name">
-                                SmallURL
-                            </div>
-                            <p><i class="text-faded">URL Shortening Tool</i></p>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <?php echo projects(); ?>
         </div>
     </div>
 </section>
 
 <!--========================= Model for Project ===========================-->
-<div class="modal fade" id="jcal_model" tabindex="-1" role="dialog" aria-labelledby="jcal_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="jcal_model_label">JCal</h4>
-            </div>
-            <div class="modal-body">
-                <p>JCal is a Mortgage calculator and Unit conversion software written purely in Java. You can fork the
-                    repository <a href="https://github.com/gollahalli/JCal">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="jmark_model" tabindex="-1" role="dialog" aria-labelledby="jmark_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="jmark_model_label">JMark</h4>
-            </div>
-            <div class="modal-body">
-                <p>JMark is a Markdown editor written purely in Java. You can fork the repository <a
-                        href="https://github.com/gollahalli/JMark">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="eegrotor_model" tabindex="-1" role="dialog" aria-labelledby="eegrotor_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="eegrotor_model_label">EEGRotor-VE</h4>
-            </div>
-            <div class="modal-body">
-                <p>EEGRotor was developed in Unity 4 using C# and Javascript for a Brain Computer Interface (BCI)
-                    software. You can fork the repository <a href="https://github.com/akshaybabloo/EEGRotor-VE">here</a>.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="smallurl_model" tabindex="-1" role="dialog" aria-labelledby="smallurl_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="smallurl_model_label">SmallURL</h4>
-            </div>
-            <div class="modal-body">
-                <p>SmallURL is a URL shortening tool written in Python3 using Django web framework. You can visit <a
-                        href="http://www.smallurl.cc">http://www.smallurl.cc</a> to test it.</p>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="modal fade" id="jcal_model" tabindex="-1" role="dialog" aria-labelledby="jcal_model_label">-->
+<!--    <div class="modal-dialog" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
+<!--                        aria-hidden="true">&times;</span></button>-->
+<!--                <h4 class="modal-title" id="jcal_model_label">JCal</h4>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <p>JCal is a Mortgage calculator and Unit conversion software written purely in Java. You can fork the-->
+<!--                    repository <a href="https://github.com/gollahalli/JCal">here</a>.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="modal fade" id="jmark_model" tabindex="-1" role="dialog" aria-labelledby="jmark_model_label">-->
+<!--    <div class="modal-dialog" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
+<!--                        aria-hidden="true">&times;</span></button>-->
+<!--                <h4 class="modal-title" id="jmark_model_label">JMark</h4>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <p>JMark is a Markdown editor written purely in Java. You can fork the repository <a-->
+<!--                        href="https://github.com/gollahalli/JMark">here</a>.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="modal fade" id="eegrotor_model" tabindex="-1" role="dialog" aria-labelledby="eegrotor_model_label">-->
+<!--    <div class="modal-dialog" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
+<!--                        aria-hidden="true">&times;</span></button>-->
+<!--                <h4 class="modal-title" id="eegrotor_model_label">EEGRotor-VE</h4>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <p>EEGRotor was developed in Unity 4 using C# and Javascript for a Brain Computer Interface (BCI)-->
+<!--                    software. You can fork the repository <a href="https://github.com/akshaybabloo/EEGRotor-VE">here</a>.-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="modal fade" id="smallurl_model" tabindex="-1" role="dialog" aria-labelledby="smallurl_model_label">-->
+<!--    <div class="modal-dialog" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
+<!--                        aria-hidden="true">&times;</span></button>-->
+<!--                <h4 class="modal-title" id="smallurl_model_label">SmallURL</h4>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <p>SmallURL is a URL shortening tool written in Python3 using Django web framework. You can visit <a-->
+<!--                        href="http://www.smallurl.cc">http://www.smallurl.cc</a> to test it.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<?php echo projects_models(); ?>
 
 <!--========================= Tutorial ===========================-->
 <section class="bg-dark" id="tutorial">
