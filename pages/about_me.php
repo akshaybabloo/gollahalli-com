@@ -1,5 +1,6 @@
 <?php
 
+
 function about_me_bio()
 {
     $ret = '';
@@ -19,8 +20,7 @@ function about_me_education()
         array_push($ar, $jsons);
     }
 
-    foreach (array_reverse($ar) as $k) {
-        foreach ($k as $j) {
+    foreach (array_reverse($ar) as $j) {
             $ret .= '<div class="cd-timeline-block">';
             if ($j->current) {
                 $ret .= '<div class="cd-timeline-img cd-picture">';
@@ -36,7 +36,6 @@ function about_me_education()
             $ret .= '<span class="cd-date">' . $j->from . ' - ' . $j->to . '</span>';
             $ret .= '</div></div>';
         }
-    }
     return $ret;
 }
 

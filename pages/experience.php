@@ -1,9 +1,5 @@
 <?php
 
-//$json = file_get_contents('content.json');
-//
-//$results = json_decode($json);
-
 function experience()
 {
     global $results;
@@ -13,8 +9,7 @@ function experience()
         array_push($ar, $jsons);
     }
 
-    foreach (array_reverse($ar) as $k) {
-        foreach ($k as $j) {
+    foreach (array_reverse($ar) as $j) {
             $ret .= '<div class="cd-timeline-block">';
             if ($j->current) {
                 $ret .= '<div class="cd-timeline-img cd-picture">';
@@ -30,8 +25,5 @@ function experience()
             $ret .= '<span class="cd-date">' . $j->from . ' - ' . $j->to . '</span>';
             $ret .= '</div></div>';
         }
-    }
     return $ret;
 }
-
-//echo experience();
