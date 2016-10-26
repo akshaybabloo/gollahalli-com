@@ -32,9 +32,9 @@
 
     <meta property="fb:app_id" content="1562596197364195"/>
 
-    <link rel="canonical" href="https://www.gollahalli.me/" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-    <link rel="amphtml" href="https://www.gollahalli.me/amp/" />
+    <link rel="canonical" href="https://www.gollahalli.me/"/>
+    <meta name="referrer" content="no-referrer-when-downgrade"/>
+    <link rel="amphtml" href="https://www.gollahalli.me/amp/"/>
 
     <title><?php echo $results->about_me->name ?></title>
 
@@ -54,6 +54,8 @@
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
     <link rel="stylesheet" href="css/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css"
+          href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.css"/>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/gollahalli.css" type="text/css">
@@ -119,12 +121,60 @@
                 "@id": "https://www.gollahalli.me"
             }
         }
+
+
     </script>
 
     <!-- start Mixpanel -->
-    <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
-            0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
-            for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+    <script type="text/javascript">(function (e, a) {
+            if (!a.__SV) {
+                var b = window;
+                try {
+                    var c, l, i, j = b.location, g = j.hash;
+                    c = function (a, b) {
+                        return (l = a.match(RegExp(b + "=([^&]*)"))) ? l[1] : null
+                    };
+                    g && c(g, "state") && (i = JSON.parse(decodeURIComponent(c(g, "state"))), "mpeditor" === i.action && (b.sessionStorage.setItem("_mpcehash", g), history.replaceState(i.desiredHash || "", e.title, j.pathname + j.search)))
+                } catch (m) {
+                }
+                var k, h;
+                window.mixpanel = a;
+                a._i = [];
+                a.init = function (b, c, f) {
+                    function e(b, a) {
+                        var c = a.split(".");
+                        2 == c.length && (b = b[c[0]], a = c[1]);
+                        b[a] = function () {
+                            b.push([a].concat(Array.prototype.slice.call(arguments,
+                                0)))
+                        }
+                    }
+
+                    var d = a;
+                    "undefined" !== typeof f ? d = a[f] = [] : f = "mixpanel";
+                    d.people = d.people || [];
+                    d.toString = function (b) {
+                        var a = "mixpanel";
+                        "mixpanel" !== f && (a += "." + f);
+                        b || (a += " (stub)");
+                        return a
+                    };
+                    d.people.toString = function () {
+                        return d.toString(1) + ".people (stub)"
+                    };
+                    k = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+                    for (h = 0; h < k.length; h++)e(d, k[h]);
+                    a._i.push([b, c, f])
+                };
+                a.__SV = 1.2;
+                b = e.createElement("script");
+                b.type = "text/javascript";
+                b.async = !0;
+                b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === e.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+                c = e.getElementsByTagName("script")[0];
+                c.parentNode.insertBefore(b, c)
+            }
+        })(document, window.mixpanel || []);
         mixpanel.init("e3f103b7fbf943d7475c3b0529b5e16a");</script>
     <!-- end Mixpanel -->
 
@@ -161,7 +211,6 @@
 </head>
 
 <body id="page-top">
-
 
 
 <!-- Google Tag Manager -->
@@ -775,7 +824,7 @@
 
                         $object = json_decode($response);
                         echo "<a href='#version_control' data-toggle=\"modal\" data-target=\"#version_control\">$object->tag_name</a>";
-                    } catch (exception $e){
+                    } catch (exception $e) {
 
                     }
                     ?>
@@ -874,17 +923,15 @@
 <script src="js/creative.js"></script>
 
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "This website uses cookies to ensure you get the best experience on our website",
-        "dismiss": "Got it!",
-        "learnMore": "More info",
-        "link": "https://www.gollahalli.me/cookie-policy.html",
-        "theme": "dark-bottom"
-    };
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.js"></script>
+<script>
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {"background": "#000"},
+            "button": {"background": "#f1d600"}
+        }, "theme": "edgeless", "content": {"href": "https://www.gollahalli.me/cookie-policy.html"}
+    });
 </script>
-<script type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
 <!-- End Cookie Consent plugin -->
 
 
