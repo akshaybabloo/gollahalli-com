@@ -97,24 +97,23 @@
     <script src="<?php echo $cdn ?>/js/queryloader2.min.js" type="text/javascript"></script>
 
     <!-- Schema.org -->
-    <script type="application/ld+json">
+
+    <script type='application/ld+json'>
         {
-            "@context": "https://schema.org",
-            "@type": "Website",
-            "publisher": {
-                "@type": "People",
-                "name": "Akshay Raj Gollahalli",
-                "image": "https://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200",
-                "email" : "akshay@gollahalli.com",
-                "url": "https://www.gollahalli.me/"
-            },
-            "url": "https://www.gollahalli.me/",
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "https://www.gollahalli.me"
-            }
+          "@context": "http://www.schema.org",
+          "@type": "person",
+          "name": "Akshay Raj Gollahalli",
+          "image" : "https://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200",
+          "url": "https://www.gollahalli.me/",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Auckland",
+            "addressCountry": "New Zealand"
+          },
+          "email": "akshay@gollahalli.com"
         }
-    </script>
+     </script>
+
 
     <!-- start Mixpanel -->
     <script type="text/javascript">(function (e, a) {
