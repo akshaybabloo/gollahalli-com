@@ -13,3 +13,4 @@ require 'about_me.php';
 require 'publication.php';
 require 'experience.php';
 require 'skills.php';
+require 'blog_rss.php';
