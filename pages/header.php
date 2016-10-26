@@ -11,3 +11,5 @@ function doMarkdownLinks($s) {
 
 require 'about_me.php';
 require 'publication.php';
+require 'experience.php';
+require 'skills.php';
