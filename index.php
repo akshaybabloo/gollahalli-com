@@ -261,67 +261,21 @@
             <div class="col-lg-8 col-lg-offset-2 text-justify">
                 <h2 class="section-heading text-center">About Me</h2>
                 <hr class="light">
-                <?php require 'pages/about_me.php' ?> <!-- page-scroll missing -->
+                <?php echo about_me_bio() ?> <!-- page-scroll missing -->
             </div>
             <div class="col-lg-12">
                 <h3 class="text-center">Education</h3>
                 <hr class="light">
 
                 <section id="cd-timeline" class="cd-container">
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-picture">
-                            <img src="img/grad.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Doctor of Philosophy (PhD)</h4>
-                            <p class="text-muted">Auckland University of Technology, Auckland</p>
-                            <span class="cd-date">2016 - Present</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-movie">
-                            <img src="img/grad.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Master of Computer and Information Sciences (MCIS) (First Class Honors)</h4>
-                            <p class="text-muted">Auckland University of Technology, Auckland</p>
-                            <span class="cd-date">2014 - 2015</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-movie">
-                            <img src="img/grad.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Postgraduate Diploma in Computer and Information Sciences (PgDipCIS)</h4>
-                            <p class="text-muted">Auckland University of Technology, Auckland</p>
-                            <span class="cd-date">2013 - 2014</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-movie">
-                            <img src="img/grad.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Bachelor of Technology (B.Tech)</h4>
-                            <p class="text-muted">Jawaharlal Nehru Technological University, Hyderabad</p>
-                            <span class="cd-date">2007 - 2011</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
+                    <?php echo about_me_education(); ?>
                 </section> <!-- cd-timeline -->
             </div>
 
             <div class="col-lg-8 col-lg-offset-2">
                 <h3 class="text-center">Research Area</h3>
                 <hr class="light">
-                <?php require 'pages/research_area.php'?>
+                <?php echo about_me_research_area(); ?>
             </div>
         </div>
     </div>
@@ -341,7 +295,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <?php require 'pages/publication.php'?>
+                <?php echo publications(); ?>
             </div>
         </div>
     </div>
