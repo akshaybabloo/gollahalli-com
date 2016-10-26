@@ -18,8 +18,8 @@
     <meta property="og:title" content="Akshay Raj Gollahalli"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://www.gollahalli.me/"/>
-    <meta property="og:image" content="http://www.gollahalli.me/img/logo.jpg"/>
-    <meta property="og:image:secure_url" content="https://www.gollahalli.me/img/logo.jpg"/>
+    <meta property="og:image" content="<?php echo $cdn ?>/img/logo.jpg"/>
+    <meta property="og:image:secure_url" content="<?php echo $cdn ?>/img/logo.jpg"/>
     <meta property="og:description"
           content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
 
@@ -27,7 +27,7 @@
     <meta name="twitter:title" content="Akshay Raj Gollahalli"/>
     <meta name="twitter:description"
           content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
-    <meta name="twitter:image:src" content="https://www.gollahalli.me/img/logo.jpg"/>
+    <meta name="twitter:image:src" content="<?php echo $cdn ?>/img/logo.jpg"/>
     <meta name="twitter:url" content="https://www.gollahalli.me"/>
 
     <meta property="fb:app_id" content="1562596197364195"/>
@@ -39,62 +39,62 @@
     <title><?php echo $results->about_me->name ?></title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/bootstrap.min.css" type="text/css">
 
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,900" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" href="<?php echo $cdn ?>/font-awesome/css/font-awesome.min.css" type="text/css">
 
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
-    <link rel="stylesheet" href="css/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/ionicons.min.css" type="text/css">
     <link rel="stylesheet" type="text/css"
           href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.css"/>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/gollahalli.css" type="text/css">
-    <link rel="stylesheet" href="css/creative.css" type="text/css">
-    <!--    <link rel="stylesheet" href="css/reset.css" type="text/css">-->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/gollahalli.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/creative.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/style.css" type="text/css">
 
     <!-- For old IEs -->
-    <link rel="shortcut icon" href="img/favicon/favicon.ico"/>
+    <link rel="shortcut icon" href="<?php echo $cdn ?>/img/favicon/favicon.ico"/>
 
     <!-- For new browsers - multisize ico  -->
-    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="img/favicon/favicon.ico">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="<?php echo $cdn ?>/img/favicon/favicon.ico">
 
     <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/favicon/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $cdn ?>/img/favicon/favicon-152.png">
 
     <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/favicon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $cdn ?>/img/favicon/favicon-144.png">
 
     <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/favicon/favicon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo $cdn ?>/img/favicon/favicon-120.png">
 
     <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicon/favicon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $cdn ?>/img/favicon/favicon-114.png">
 
     <!-- For iPhone 6+ -->
-    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="img/favicon/favicon-180.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php echo $cdn ?>/img/favicon/favicon-180.png">
 
     <!-- For first- and second-generation iPad: -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/favicon-72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $cdn ?>/img/favicon/favicon-72.png">
 
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-57.png">
+    <link rel="apple-touch-icon-precomposed" href="<?php echo $cdn ?>/img/favicon/favicon-57.png">
 
     <!-- For Old Chrome -->
-    <link rel="icon" href="img/favicon/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="<?php echo $cdn ?>/img/favicon/favicon-32.png" sizes="32x32">
 
     <!-- For IE10 Metro -->
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="favicon/img/favicon-144.png">
+    <meta name="msapplication-TileImage" content="<?php echo $cdn ?>/favicon/img/favicon-144.png">
 
     <!-- Chrome for Android -->
-    <link rel="icon" sizes="192x192" href="img/favicon/favicon-192.png">
+    <link rel="icon" sizes="192x192" href="<?php echo $cdn ?>/img/favicon/favicon-192.png">
 
 
-    <script src="js/queryloader2.min.js" type="text/javascript"></script>
+    <script src="<?php echo $cdn ?>/js/queryloader2.min.js" type="text/javascript"></script>
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -114,8 +114,6 @@
                 "@id": "https://www.gollahalli.me"
             }
         }
-
-
     </script>
 
     <!-- start Mixpanel -->
@@ -283,7 +281,7 @@
             <hr class="light">
             <h1><?php echo $results->about_me->name ?></h1>
             <p>
-                <a href="<?php echo $results->about_me->cv ?>" class="btn btn-lg btn-primary">Download
+                <a href="<?php echo $cdn.'/'.$results->about_me->cv ?>" class="btn btn-lg btn-primary">Download
                     CV<i class="fa fa-download"></i></a><br>
                 <a href="<?php echo $results->about_me->twitter ?>"><i class="fa fa-twitter"></i></a>
                 <a href="<?php echo $results->about_me->linkedin ?>i"><i class="fa fa-linkedin"></i></a>
@@ -549,20 +547,20 @@
     }(document, "script", "twitter-wjs");</script>
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="<?php echo $cdn ?>/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="<?php echo $cdn ?>/js/bootstrap.min.js"></script>
 
 <!-- Plugin JavaScript -->
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/jquery.fittext.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/modernizr.js"></script>
-<script src="js/main.js"></script>
+<script src="<?php echo $cdn ?>/js/jquery.easing.min.js"></script>
+<script src="<?php echo $cdn ?>/js/jquery.fittext.js"></script>
+<script src="<?php echo $cdn ?>/js/wow.min.js"></script>
+<script src="<?php echo $cdn ?>/js/modernizr.js"></script>
+<script src="<?php echo $cdn ?>/js/main.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="js/creative.js"></script>
+<script src="<?php echo $cdn ?>/js/creative.js"></script>
 
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.js"></script>
@@ -575,8 +573,5 @@
     });
 </script>
 <!-- End Cookie Consent plugin -->
-
-
 </body>
-
 </html>

@@ -9,6 +9,8 @@ function doMarkdownLinks($s) {
     }, htmlspecialchars($s));
 }
 
+$cdn ='https://gollahalli-lh0kueshznj0hpg0fqay.netdna-ssl.com';
+
 require 'about_me.php';
 require 'publication.php';
 require 'experience.php';
