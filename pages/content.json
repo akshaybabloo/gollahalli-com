@@ -190,11 +190,11 @@
       "long_description": "A tutorial on Ruby 4. You can fork the repository [here](https://github.com/akshaybabloo/Ruby-notes)."
     },
     "2": {
-      "title": "Python 3",
+      "title": "Python3",
       "long_description": "A tutorial on Python 3. You can fork the repository [here](https://github.com/akshaybabloo/Python3-notes)."
     },
     "3": {
-      "title": "Unreal Engine 4",
+      "title": "UnrealEngine",
       "long_description": "A tutorial on using node based Unreal Engine 4. You can fork the repository [here](https://github.com/akshaybabloo/UnrealEngine_4_Notes)."
     },
     "4": {
@@ -214,7 +214,7 @@
       "long_description": "A tutorial on Swift programming language. You can fork the repository [here](https://github.com/akshaybabloo/Swift-notes)."
     },
     "8": {
-      "title": "Gear VR",
+      "title": "GearVR",
       "long_description": "A tutorial on Gear VR with Unreal Engine 4. You can fork the repository [here](https://github.com/akshaybabloo/GearVR-UnrealEngine4)."
     }
   }
