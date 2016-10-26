@@ -313,7 +313,7 @@
     </div>
     <div class="container">
         <div class="row text-center">
-            <?php require 'pages/skills.php'?>
+            <?php echo skills(); ?>
         </div>
     </div>
 </section>
@@ -331,69 +331,7 @@
             <div class="col-lg-12">
                 <section id="cd-timeline" class="cd-container">
 
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-picture">
-                            <img src="img/work.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Teaching Assistant</h4>
-                            <p class="text-muted">Computer and Mathematical Sciences , AUT
-                                University. <br>Auckland, New Zealand.</p>
-                            <span class="cd-date">July, 2016 - Present</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-picture">
-                            <img src="img/work.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Research Assistant</h4>
-                            <p class="text-muted">Knowledge Engineering and Discovery Research Institute (KEDRI), AUT
-                                University. <br>Auckland, New Zealand.</p>
-                            <span class="cd-date">April, 2016 - Present</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-picture">
-                            <img src="img/work.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Technical Support</h4>
-                            <p class="text-muted">Knowledge Engineering and Discovery Research Institute (KEDRI), AUT
-                                University.<br>Auckland, New Zealand.</p>
-                            <span class="cd-date">2015 - Present</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-movie">
-                            <img src="img/work.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Research Assistant</h4>
-                            <p class="text-muted">Knowledge Engineering and Discovery Research Institute (KEDRI), AUT
-                                University. <br>Auckland, New Zealand.</p>
-                            <span class="cd-date">July, 2015 - December, 2015</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-movie">
-                            <img src="img/work.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Jr. Systems Engineer</h4>
-                            <p class="text-muted">Cheminnova Group of Companies.<br>Hyderabad, India.</p>
-                            <span class="cd-date">May, 2012 - February, 2013</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
+                    <?php echo experience(); ?>
 
                 </section> <!-- cd-timeline -->
             </div>
