@@ -15,3 +15,4 @@ require 'experience.php';
 require 'skills.php';
 require 'blog_rss.php';
 require 'projects.php';
+require 'tutorials.php';
