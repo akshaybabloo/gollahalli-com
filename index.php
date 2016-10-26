@@ -290,11 +290,11 @@
             <hr class="light">
             <h1><?php echo $results->about_me->name ?></h1>
             <p>
-                <a href="https://www.gollahalli.me/downloads/Gollahalli-CV-Web.pdf" class="btn btn-lg btn-primary">Download
+                <a href="<?php echo $results->about_me->cv ?>" class="btn btn-lg btn-primary">Download
                     CV<i class="fa fa-download"></i></a><br>
-                <a href="https://twitter.com/akshaybabloo"><i class="fa fa-twitter"></i></a>
-                <a href="https://nz.linkedin.com/in/gollahalli"><i class="fa fa-linkedin"></i></a>
-                <a href="https://github.com/akshaybabloo"><i class="fa fa-github"></i></a>
+                <a href="<?php echo $results->about_me->twitter ?>"><i class="fa fa-twitter"></i></a>
+                <a href="<?php echo $results->about_me->linkedin ?>i"><i class="fa fa-linkedin"></i></a>
+                <a href="<?php echo $results->about_me->github ?>"><i class="fa fa-github"></i></a>
             </p>
         </div>
     </div>
