@@ -72,95 +72,77 @@
     "github": "https://github.com/akshaybabloo",
     "cv": "/downloads/Gollahalli-CV-Web.pdf",
     "education": {
-      "1": [
-        {
-          "title": "Bachelor of Technology (B.Tech)",
-          "current": false,
-          "where": "Auckland University of Technology",
-          "from": 2007,
-          "to": 2011
-        }
-      ],
-      "2": [
-        {
-          "title": "Postgraduate Diploma in Computer and Information Sciences (PgDipCIS)",
-          "current": false,
-          "where": "Auckland University of Technology",
-          "from": 2013,
-          "to": 2014
-        }
-      ],
-      "3": [
-        {
-          "title": "Master of Computer and Information Sciences (MCIS) (First Class Honors)",
-          "current": false,
-          "where": "Auckland University of Technology",
-          "from": 2014,
-          "to": 2015
-        }
-      ],
-      "4": [
-        {
-          "title": "Doctor of Philosophy (PhD)",
-          "current": true,
-          "where": "Auckland University of Technology",
-          "from": 2016,
-          "to": "Present"
-        }
-      ]
+      "1": {
+        "title": "Bachelor of Technology (B.Tech)",
+        "current": false,
+        "where": "Auckland University of Technology",
+        "from": 2007,
+        "to": 2011
+      },
+      "2": {
+        "title": "Postgraduate Diploma in Computer and Information Sciences (PgDipCIS)",
+        "current": false,
+        "where": "Auckland University of Technology",
+        "from": 2013,
+        "to": 2014
+      },
+      "3": {
+        "title": "Master of Computer and Information Sciences (MCIS) (First Class Honors)",
+        "current": false,
+        "where": "Auckland University of Technology",
+        "from": 2014,
+        "to": 2015
+      },
+      "4": {
+        "title": "Doctor of Philosophy (PhD)",
+        "current": true,
+        "where": "Auckland University of Technology",
+        "from": 2016,
+        "to": "Present"
+      }
     }
   },
   "experience": {
-    "1": [
-      {
-        "title": "Jr. Systems Engineer",
-        "company": "Cheminnova Group of Companies.",
-        "where": "Hyderabad, India",
-        "from": "May, 2012",
-        "to": "February, 2013",
-        "current": false
-      }
-    ],
-    "2": [
-      {
-        "title": "Research Assistant",
-        "company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
-        "where": "Auckland, New Zealand",
-        "from": "July, 2015",
-        "to": "December, 2015",
-        "current": false
-      }
-    ],
-    "3": [
-      {
-        "title": "Technical Support",
-        "company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
-        "where": "Auckland, New Zealand",
-        "from": "2015",
-        "to": "Present",
-        "current": true
-      }
-    ],
-    "4": [
-      {
-        "title": "Research Assistant",
-        "company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
-        "where": "Auckland, New Zealand",
-        "from": "April, 2016",
-        "to": "Present",
-        "current": true
-      }
-    ],
-    "5": [
-      {
-        "title": "Teaching Assistant",
-        "company": "Computer and Mathematical Sciences , AUT University.",
-        "where": "Auckland, New Zealand",
-        "from": "July, 2016",
-        "to": "Present",
-        "current": true
-      }
-    ]
+    "1": {
+      "title": "Jr. Systems Engineer",
+      "company": "Cheminnova Group of Companies.",
+      "where": "Hyderabad, India",
+      "from": "May, 2012",
+      "to": "February, 2013",
+      "current": false
+    },
+    "2": {
+      "title": "Research Assistant",
+      "company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
+      "where": "Auckland, New Zealand",
+      "from": "July, 2015",
+      "to": "December, 2015",
+      "current": false
+    },
+    "3": {
+      "title": "Technical Support",
+      "company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
+      "where": "Auckland, New Zealand",
+      "from": "2015",
+      "to": "Present",
+      "current": true
+    },
+    "4": {
+      "title": "Research Assistant",
+      "company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
+      "where": "Auckland, New Zealand",
+      "from": "April, 2016",
+      "to": "Present",
+      "current": true
+    },
+    "5": {
+      "title": "Teaching Assistant",
+      "company": "Computer and Mathematical Sciences , AUT University.",
+      "where": "Auckland, New Zealand",
+      "from": "July, 2016",
+      "to": "Present",
+      "current": true
+    }
   },
   "projects": {
     "1": {
