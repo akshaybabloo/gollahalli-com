@@ -178,7 +178,7 @@
       "long_description": "EEGRotor was developed in Unity 4 using C# and Javascript for a Brain Computer Interface (BCI) software. You can fork the repository [here](https://github.com/akshaybabloo/EEGRotor-VE)"
     },
     "4": {
-      "title": "JCal",
+      "title": "SmallURL",
       "category": "software",
       "short_description": "Mortgage Calculator",
       "long_description": "SmallURL is a URL shortening tool written in Python3 using Django web framework. You can visit [http://www.smallurl.cc](http://www.smallurl.cc)"
