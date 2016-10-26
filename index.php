@@ -402,67 +402,6 @@
 </section>
 
 <!--========================= Model for Project ===========================-->
-<!--<div class="modal fade" id="jcal_model" tabindex="-1" role="dialog" aria-labelledby="jcal_model_label">-->
-<!--    <div class="modal-dialog" role="document">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
-<!--                        aria-hidden="true">&times;</span></button>-->
-<!--                <h4 class="modal-title" id="jcal_model_label">JCal</h4>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                <p>JCal is a Mortgage calculator and Unit conversion software written purely in Java. You can fork the-->
-<!--                    repository <a href="https://github.com/gollahalli/JCal">here</a>.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<div class="modal fade" id="jmark_model" tabindex="-1" role="dialog" aria-labelledby="jmark_model_label">-->
-<!--    <div class="modal-dialog" role="document">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
-<!--                        aria-hidden="true">&times;</span></button>-->
-<!--                <h4 class="modal-title" id="jmark_model_label">JMark</h4>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                <p>JMark is a Markdown editor written purely in Java. You can fork the repository <a-->
-<!--                        href="https://github.com/gollahalli/JMark">here</a>.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<div class="modal fade" id="eegrotor_model" tabindex="-1" role="dialog" aria-labelledby="eegrotor_model_label">-->
-<!--    <div class="modal-dialog" role="document">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
-<!--                        aria-hidden="true">&times;</span></button>-->
-<!--                <h4 class="modal-title" id="eegrotor_model_label">EEGRotor-VE</h4>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                <p>EEGRotor was developed in Unity 4 using C# and Javascript for a Brain Computer Interface (BCI)-->
-<!--                    software. You can fork the repository <a href="https://github.com/akshaybabloo/EEGRotor-VE">here</a>.-->
-<!--                </p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<div class="modal fade" id="smallurl_model" tabindex="-1" role="dialog" aria-labelledby="smallurl_model_label">-->
-<!--    <div class="modal-dialog" role="document">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
-<!--                        aria-hidden="true">&times;</span></button>-->
-<!--                <h4 class="modal-title" id="smallurl_model_label">SmallURL</h4>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                <p>SmallURL is a URL shortening tool written in Python3 using Django web framework. You can visit <a-->
-<!--                        href="http://www.smallurl.cc">http://www.smallurl.cc</a> to test it.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 <?php echo projects_models(); ?>
 
 <!--========================= Tutorial ===========================-->
