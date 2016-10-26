@@ -9,7 +9,11 @@ function doMarkdownLinks($s) {
     }, htmlspecialchars($s));
 }
 
-$cdn ='https://gollahalli-lh0kueshznj0hpg0fqay.netdna-ssl.com';
+if( isset($_SERVER['HTTPS'] ) ) {
+    $cdn = 'https://gollahalli-lh0kueshznj0hpg0fqay.netdna-ssl.com';
+}else{
+    $cdn = 'http://cdn.gollahalli.me';
+}
 
 require 'about_me.php';
 require 'publication.php';
