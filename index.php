@@ -730,7 +730,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <?php require 'pages/blog_rss.php'?>
+            <?php echo blog(); ?>
         </div>
 
     </div>
@@ -801,20 +801,20 @@
                 <h4 class="modal-title" id="version_in"><?php echo $object->name ?></h4>
             </div>
             <div class="modal-body">
-<!--                --><?php
-//                $string = $object->body;
-//
-//                $replacer = str_replace("* ", "", $string);
-//                $bits = explode("\n", $replacer);
-//
-//                $newstring = "<ul>";
-//                foreach ($bits as $bit) {
-//                    $newstring .= "<li>" . $bit . "</li>";
-//                }
-//                $newstring .= "</ul>";
-//
-//                echo $newstring;
-//                ?>
+                <?php
+                    $string = $object->body;
+
+                    $replacer = str_replace("* ", "", $string);
+                    $bits = explode("\n", $replacer);
+
+                    $newstring = "<ul>";
+                    foreach ($bits as $bit) {
+                        $newstring .= "<li>" . $bit . "</li>";
+                    }
+                    $newstring .= "</ul>";
+
+                    echo $newstring;
+                ?>
                 <p class="text-center">
                     <a href="<?php echo $object->zipball_url ?>"><i class="fa fa-2x fa-download"></i></a>
                     <a href="https://github.com/akshaybabloo/gollahalli-me"><i class="fa fa-2x fa-github"></i></a>
