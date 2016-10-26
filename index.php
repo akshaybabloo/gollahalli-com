@@ -448,7 +448,7 @@
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <i class="fa fa-envelope-o fa-3x wow bounceIn"></i>
-                <p><a href="mailto:akshay@gollahalli.com">akshay@gollahalli.com</a></p>
+                <p><a href="mailto:<?php echo $results->about_me->contact?>"><?php echo $results->about_me->contact ?></a></p>
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <a class="twitter-timeline" href="https://twitter.com/akshaybabloo" data-widget-id="690023186424012800">Tweets
