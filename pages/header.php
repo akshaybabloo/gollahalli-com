@@ -15,6 +15,8 @@ if( isset($_SERVER['HTTPS'] ) ) {
     $cdn = 'http://cdn.gollahalli.me';
 }
 
+$photo = 'http://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_200,q_auto:best,w_200/v1477524340/akshay_b8wb1x.jpg';
+
 require 'about_me.php';
 require 'publication.php';
 require 'experience.php';

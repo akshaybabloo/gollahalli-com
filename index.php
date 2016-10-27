@@ -103,7 +103,7 @@
           "@context": "http://www.schema.org",
           "@type": "person",
           "name": "Akshay Raj Gollahalli",
-          "image" : "https://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200",
+          "image" : "<?php echo $photo ?>",
           "url": "https://www.gollahalli.me/",
           "address": {
             "@type": "PostalAddress",
@@ -275,7 +275,7 @@
 <header>
     <div class="header-content">
         <div class="header-content-inner">
-            <img src="https://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200"
+            <img src="<?php echo $photo ?>"
                  class="img-circle activity_rounded" alt="Akshay Raj Gollahalli's photo">
             <hr class="light">
             <h1><?php echo $results->about_me->name ?></h1>
