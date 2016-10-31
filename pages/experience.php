@@ -2,7 +2,7 @@
 
 function experience()
 {
-    global $results;
+    global $results, $cdn;
     $ar = array();
     $ret = '';
     foreach ($results->experience as $jsons) {
@@ -16,7 +16,7 @@ function experience()
             } else {
                 $ret .= '<div class="cd-timeline-img cd-movie">';
             }
-            $ret .= '<img src="img/grad.png" alt="Grad-pic">
+            $ret .= '<img src="'. $cdn .'/img/grad.png" alt="Grad-pic">
                         </div>
                         <div class="cd-timeline-content">';
             $ret .= '<h4>' . $j->title . '</h4>';

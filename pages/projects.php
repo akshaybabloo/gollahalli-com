@@ -2,13 +2,13 @@
 
 function projects()
 {
-    global $results;
+    global $results, $cdn;
     $ret = '';
 
     foreach ($results->projects as $jsons) {
         $ret .= '<div class="col-lg-4 col-sm-6">
                 <a href="#' . $jsons->title . '_model" data-toggle="modal" data-target="#' . $jsons->title . '_model" class="portfolio-box">
-                <img src="img/portfolio/' . $jsons->title . '.jpg" class="img-responsive" alt="' . $jsons->title . '">';
+                <img src="'. $cdn .'/img/portfolio/' . $jsons->title . '.jpg" class="img-responsive" alt="' . $jsons->title . '">';
         $ret .= '<div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-category text-faded">
