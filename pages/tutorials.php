@@ -1,9 +1,5 @@
 <?php
 
-//$json = file_get_contents('content.json');
-//
-//$results = json_decode($json);
-
 function tutorials()
 {
     global $results;
@@ -45,5 +41,3 @@ function tutorials_models()
     }
     return $ret;
 }
-
-//echo tutorials();
