@@ -16,7 +16,7 @@ function blog()
 
         if ($media) {
             $url = $media->content->attributes();
-            $ret .= "<img class='hover_style3' src='$url' alt='$entry->title'>";
+            $ret .= "<img class='hover_style3' src=' " . addScheme($url) . " ' alt='$entry->title'>";
         }
 
         $ret .= "<div class='top-bar'><span><strong><i class='ion-person-stalker'></i></strong>" . " " . $dc->creator . "</span><span><i class='ion-clock'></i>" . " " . $newDateString . "</span></div>";

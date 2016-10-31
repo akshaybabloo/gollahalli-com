@@ -9,6 +9,12 @@ function doMarkdownLinks($s) {
     }, htmlspecialchars($s));
 }
 
+function addScheme($url, $scheme = 'http://')
+{
+    return parse_url($url, PHP_URL_SCHEME) === null ?
+        $scheme . $url : $url;
+}
+
 if( isset($_SERVER['HTTPS'] ) ) {
     $cdn = 'https://gollahalli-lh0kueshznj0hpg0fqay.netdna-ssl.com';
 }else{
