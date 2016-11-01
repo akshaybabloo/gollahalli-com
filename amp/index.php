@@ -242,6 +242,80 @@
         }
 
         /**---------------------
+         *
+         * Table Responsive
+         *
+         *---------------------**/
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent;
+        }
+
+        td, th { padding: 0; }
+
+        th{ text-align: left; }
+
+        table td,
+        table th {
+            padding: .75rem;
+            line-height: 1.5;
+            vertical-align: top;
+            /*border-top: 1px solid #eceeef;*/
+        }
+
+        table thead th {
+            vertical-align: bottom;
+            /*border-bottom: 2px solid #eceeef;*/
+        }
+
+
+        .table-inverse td,
+        .table-inverse th,
+        .table-inverse thead th {
+            border-right: #55595c;
+        }
+
+        .table-inverse td,
+        .table-inverse th,
+        .table-inverse thead th {
+            border-color: #55595c;
+        }
+
+        .thead-inverse th {
+            color: #fff;
+            background-color: #373a3c;
+        }
+
+        .thead-default th {
+            color: #55595c;
+            background-color: #eceeef;
+        }
+
+        .table-responsive {
+            display: block;
+            width: 100%;
+            min-height: .01%;
+            overflow-x: auto;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .table-bordered td, .table-bordered th {
+            border: 1px solid #eceeef;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+
+        /**---------------------
           *
           * Header Styles
           *
@@ -557,6 +631,21 @@
     <div class="row">
         <div class="col-xs-12">
             <?php echo publications(); ?>
+        </div><!-- COL-XS-12 ENDS -->
+    </div><!-- ROW ENDS -->
+
+    <!-- Skills -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="bordered-title">
+                <h2>Skills</h2>
+            </div><!-- TITLE ENDS -->
+        </div><!-- COL-XS-12 ENDS -->
+    </div><!-- ROW ENDS -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <?php echo skills(); ?>
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
