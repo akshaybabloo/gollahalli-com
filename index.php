@@ -11,11 +11,11 @@
     <meta name="description"
           content="<?php echo $results->about_me->name ?> is a Computer Science researcher currently doing his Ph.D. This website showcases his work.">
     <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
-    <meta name="author" content="Akshay Raj Gollahalli">
-    <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli"/>
+    <meta name="author" content="<?php echo $results->about_me->name ?>">
+    <meta name="rights" content="All rights reserved by <?php echo $results->about_me->name ?>"/>
     <meta name="theme-color" content="#ef3939"/>
 
-    <meta property="og:title" content="Akshay Raj Gollahalli"/>
+    <meta property="og:title" content="<?php echo $results->about_me->name ?>"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://www.gollahalli.me/"/>
     <meta property="og:image" content="<?php echo $cdn ?>/img/logo.jpg"/>
@@ -24,9 +24,9 @@
           content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
 
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Akshay Raj Gollahalli"/>
+    <meta name="twitter:title" content="<?php echo $results->about_me->name ?>"/>
     <meta name="twitter:description"
-          content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
+          content="<?php echo $results->about_me->name ?> is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
     <meta name="twitter:image:src" content="<?php echo $cdn ?>/img/logo.jpg"/>
     <meta name="twitter:url" content="https://www.gollahalli.me"/>
 
@@ -102,7 +102,7 @@
         {
           "@context": "http://www.schema.org",
           "@type": "person",
-          "name": "Akshay Raj Gollahalli",
+          "name": "<?php echo $results->about_me->name ?>",
           "image" : "<?php echo $photo ?>",
           "url": "https://www.gollahalli.me/",
           "address": {
