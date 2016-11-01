@@ -1,5 +1,5 @@
 <?php
-$json = file_get_contents('../pages/content.json');
+$json = file_get_contents('../content.json');
 
 $results = json_decode($json);
 
