@@ -649,6 +649,21 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
+    <!-- Experience -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="bordered-title">
+                <h2>Experience</h2>
+            </div><!-- TITLE ENDS -->
+        </div><!-- COL-XS-12 ENDS -->
+    </div><!-- ROW ENDS -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <?php echo experience(); ?>
+        </div><!-- COL-XS-12 ENDS -->
+    </div><!-- ROW ENDS -->
+
     <div class="row">
         <div class="col-xs-12">
             <div class="bordered-title">

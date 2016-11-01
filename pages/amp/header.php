@@ -27,3 +27,4 @@ require 'blog_rss.php';
 require 'about_me.php';
 require 'publication.php';
 require 'skills.php';
+require 'experience.php';
