@@ -37,32 +37,6 @@
     <meta name="apple-mobile-web-app-status-bar-style"
           content="black">
 
-    <!-- iPad retina portrait startup image -->
-    <link href="assets/img/splashScreens/apple-touch-startup-image-1536x2008.png"
-          media="(device-width: 768px) and (device-height: 1024px)
-	                 and (-webkit-device-pixel-ratio: 2)
-	                 and (orientation: portrait)"
-          rel="apple-touch-startup-image">
-
-    <!-- iPhone 6 Plus portrait startup image -->
-    <link href="assets/img/splashScreens/apple-touch-startup-image-1242x2148.png"
-          media="(device-width: 414px) and (device-height: 736px)
-	                 and (-webkit-device-pixel-ratio: 3)
-	                 and (orientation: portrait)"
-          rel="apple-touch-startup-image">
-
-    <!-- iPhone 6 startup image -->
-    <link href="assets/img/splashScreens/apple-touch-startup-image-750x1294.png"
-          media="(device-width: 375px) and (device-height: 667px)
-	                 and (-webkit-device-pixel-ratio: 2)"
-          rel="apple-touch-startup-image">
-
-    <!-- iPhone 5 startup image -->
-    <link href="assets/img/splashScreens/apple-touch-startup-image-640x1096.png"
-          media="(device-width: 320px) and (device-height: 568px)
-	                 and (-webkit-device-pixel-ratio: 2)"
-          rel="apple-touch-startup-image">
-
     <!--*
         *   Fonts
         **-->
