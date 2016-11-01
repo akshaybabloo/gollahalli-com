@@ -25,3 +25,4 @@ $photo = 'http://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_100
 
 require 'blog_rss.php';
 require 'about_me.php';
+require 'publication.php';

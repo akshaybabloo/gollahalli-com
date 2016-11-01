@@ -506,7 +506,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="bordered-title">
-                <h3>About Me</h3>
+                <h2>About Me</h2>
             </div><!-- TITLE ENDS -->
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
@@ -517,10 +517,10 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
-<!--     TimeLine      -->
+    <!--    Education   -->
     <div class="row">
         <div class="col-xs-12">
-                <h3>Education</h3>
+                <h2>Education</h2>
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
@@ -531,6 +531,34 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
+    <!--    Research Area   -->
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Research Area</h2>
+        </div><!-- COL-XS-12 ENDS -->
+    </div><!-- ROW ENDS -->
+
+    <!--    Research Area   -->
+    <div class="row">
+        <div class="col-xs-12">
+            <?php echo about_me_research_area(); ?>
+        </div><!-- COL-XS-12 ENDS -->
+    </div><!-- ROW ENDS -->
+
+    <!-- Publications -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="bordered-title">
+                <h2>Publications</h2>
+            </div><!-- TITLE ENDS -->
+        </div><!-- COL-XS-12 ENDS -->
+    </div><!-- ROW ENDS -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <?php echo publications(); ?>
+        </div><!-- COL-XS-12 ENDS -->
+    </div><!-- ROW ENDS -->
 
     <div class="row">
         <div class="col-xs-12">
