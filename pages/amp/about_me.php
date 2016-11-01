@@ -35,7 +35,6 @@ function about_me_education()
                 role="button"
                 tabindex="0"></amp-img>';
 
-        $ret .= '<amp-image-lightbox id="timeline_lightbox_1" layout="nodisplay"></amp-image-lightbox>';
         $ret .= '<h4 class="margin-0">' . $j->title . '<small>'. ' ' . $j->from . '-'. $j->to .'</small></h4>';
         $ret .= '<p class="margin-0">' . $j->where . '</p>';
         $ret .= '</div>';
