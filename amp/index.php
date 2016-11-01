@@ -513,7 +513,6 @@
 
     <div class="row">
         <div class="col-xs-12">
-<!--            <p class="minus-margin-top-bottom-15">Many video content providers are supported by AMP. Here's a Vimeo example. Important thing about this feature is video will not load and slow down loading of the page, only When user may see.</p>-->
             <?php echo about_me_bio(); ?>
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
@@ -521,13 +520,11 @@
 <!--     TimeLine      -->
     <div class="row">
         <div class="col-xs-12">
-            <div class="bordered-title">
-                <h3>History</h3>
-                <h5>Company Time-line</h5>
-            </div><!-- TITLE ENDS -->
+                <h3>Education</h3>
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
+    <!--    Education   -->
     <div class="row">
         <div class="col-xs-12">
             <?php echo about_me_education(); ?>
@@ -622,6 +619,7 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
+    <!--    Blog    -->
     <div class="row">
         <div class="col-xs-12">
             <amp-carousel class="blog-carousel" layout="fixed-height" height=200>
