@@ -575,6 +575,7 @@
     <a class="pull-right fa fa-envelope" href="mailto:<?php echo $results->about_me->name ?>"></a>
 </header><!-- TOP NAVBAR ENDS -->
 
+<!--************************************ Contents ************************************-->
 <div class="container-fluid">
     <div class="space-3"></div>
     <div class="row">
@@ -591,7 +592,7 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
-    <!--    Education   -->
+    <!--************************************ Education ************************************-->
     <div class="row">
         <div class="col-xs-12">
                 <h2>Education</h2>
@@ -605,7 +606,7 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
-    <!--    Research Area   -->
+    <!--************************************ Research Area ************************************-->
     <div class="row">
         <div class="col-xs-12">
             <h2>Research Area</h2>
@@ -619,7 +620,7 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
-    <!-- Publications -->
+    <!--************************************ Publications ************************************-->
     <div class="row">
         <div class="col-xs-12">
             <div class="bordered-title">
@@ -634,7 +635,7 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
-    <!-- Skills -->
+    <!--************************************ Skills ************************************-->
     <div class="row">
         <div class="col-xs-12">
             <div class="bordered-title">
@@ -649,7 +650,7 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
-    <!-- Experience -->
+    <!--************************************ Experience ************************************-->
     <div class="row">
         <div class="col-xs-12">
             <div class="bordered-title">
@@ -664,7 +665,7 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
-    <!-- Project  -->
+    <!--************************************ Project  ************************************-->
     <div class="row">
         <div class="col-xs-12">
             <div class="bordered-title">
@@ -681,7 +682,7 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
-    <!-- Experience -->
+    <!--************************************ Experience ************************************-->
     <div class="row">
         <div class="col-xs-12">
             <div class="bordered-title">
@@ -698,7 +699,7 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
-    <!--    Blog    -->
+    <!--************************************ Blog ************************************-->
     <div class="row">
         <div class="col-xs-12">
             <div class="bordered-title">
@@ -717,6 +718,7 @@
 
     <div class="space-2"></div>
 
+    <!--************************************ Footer ************************************-->
     <div class="text-center">
         <a href="<?php echo $results->about_me->twitter ?>" class="social-ball fa fa-twitter"></a>
         <a href="<?php echo $results->about_me->linkedin ?>" class="social-ball fa fa-linkedin"></a>
@@ -732,6 +734,7 @@
     <div class="space-2"></div>
 </div>
 
+<!--************************************ Sidebar ************************************-->
 <amp-sidebar id='mainSideBar' layout='nodisplay'>
     <figure class="primary-bg">
         <amp-img class="circle" src="<?php echo $photo ?>" width="60" height="60" layout="fixed" attribution="Mobius Studio"></amp-img>
@@ -766,9 +769,5 @@
     </div><!-- SOCIAL ICONS ENDS -->
 </amp-sidebar><!-- SIDEBAR ENDS -->
 
-<!--<amp-install-serviceworker src="sw.js"
-                           data-iframe-src="http://localhost/pinna/LTR/dist/sw.html"
-                           layout="nodisplay">
-</amp-install-serviceworker>-->
 </body>
 </html>
