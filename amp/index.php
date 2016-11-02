@@ -578,7 +578,7 @@
 <!--************************************ Contents ************************************-->
 <div class="container-fluid">
     <div class="space-3"></div>
-    <div class="row">
+    <div class="row" id="about_me">
         <div class="col-xs-12">
             <div class="bordered-title">
                 <h2>About Me</h2>
@@ -593,7 +593,7 @@
     </div><!-- ROW ENDS -->
 
     <!--************************************ Education ************************************-->
-    <div class="row">
+    <div class="row" id="education">
         <div class="col-xs-12">
                 <h2>Education</h2>
         </div><!-- COL-XS-12 ENDS -->
@@ -607,7 +607,7 @@
     </div><!-- ROW ENDS -->
 
     <!--************************************ Research Area ************************************-->
-    <div class="row">
+    <div class="row" id="research_area">
         <div class="col-xs-12">
             <h2>Research Area</h2>
         </div><!-- COL-XS-12 ENDS -->
@@ -621,7 +621,7 @@
     </div><!-- ROW ENDS -->
 
     <!--************************************ Publications ************************************-->
-    <div class="row">
+    <div class="row" id="publications">
         <div class="col-xs-12">
             <div class="bordered-title">
                 <h2>Publications</h2>
@@ -636,7 +636,7 @@
     </div><!-- ROW ENDS -->
 
     <!--************************************ Skills ************************************-->
-    <div class="row">
+    <div class="row" id="skills">
         <div class="col-xs-12">
             <div class="bordered-title">
                 <h2>Skills</h2>
@@ -651,7 +651,7 @@
     </div><!-- ROW ENDS -->
 
     <!--************************************ Experience ************************************-->
-    <div class="row">
+    <div class="row" id="experience">
         <div class="col-xs-12">
             <div class="bordered-title">
                 <h2>Experience</h2>
@@ -666,7 +666,7 @@
     </div><!-- ROW ENDS -->
 
     <!--************************************ Project  ************************************-->
-    <div class="row">
+    <div class="row" id="projects">
         <div class="col-xs-12">
             <div class="bordered-title">
                 <h2>Projects</h2>
@@ -682,8 +682,8 @@
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
-    <!--************************************ Experience ************************************-->
-    <div class="row">
+    <!--************************************ Tutorials ************************************-->
+    <div class="row" id="tutorials">
         <div class="col-xs-12">
             <div class="bordered-title">
                 <h2>Tutorials</h2>
@@ -700,7 +700,7 @@
     </div><!-- ROW ENDS -->
 
     <!--************************************ Blog ************************************-->
-    <div class="row">
+    <div class="row" id="blog">
         <div class="col-xs-12">
             <div class="bordered-title">
                 <h2>Blog</h2>
@@ -746,13 +746,13 @@
     </figure><!-- NAVBAR USER CARD ENDS -->
 
     <nav id="menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a href="index.html">About Me</a>
-        <a href="about-us.html">Publications</a>
-        <a href="services.html">Skills</a>
-        <a href="services.html">Experience</a>
-        <a href="services.html">Projects</a>
-        <a href="services.html">Tutorials</a>
-        <a href="services.html">Blog</a>
+        <a href="#about_me">About Me</a>
+        <a href="#publications">Publications</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#tutorials">Tutorials</a>
+        <a href="#blog">Blog</a>
     </nav><!-- MENU ENDS -->
 
     <div class="divider colored"></div>
