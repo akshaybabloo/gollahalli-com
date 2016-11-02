@@ -6,8 +6,8 @@ Web files for [https://www.gollahalli.me](https://www.gollahalli.me)
 
 ### Normal
 
-![Screenshot](https://cdn.gollahalli.me/screenshot/screen.png)
+![Screenshot](hhttps://raw.githubusercontent.com/akshaybabloo/gollahalli-me/dev/screenshot/screen.png)
 
 ### Google AMP
 
-![Screenshot](https://cdn.gollahalli.me/screenshot/screen-amp.png)
+![Screenshot](https://raw.githubusercontent.com/akshaybabloo/gollahalli-me/dev/screenshot/screen-amp.png)
