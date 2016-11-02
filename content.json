@@ -177,35 +177,43 @@
   "tutorials": {
     "1": {
       "title": "Ruby",
-      "long_description": "A tutorial on Ruby 4. You can fork the repository [here](https://github.com/akshaybabloo/Ruby-notes)."
+      "long_description": "A tutorial on Ruby 4. You can fork the repository [here](https://github.com/akshaybabloo/Ruby-notes).",
+      "link": "https://github.com/akshaybabloo/Ruby-notes"
     },
     "2": {
       "title": "Python3",
-      "long_description": "A tutorial on Python 3. You can fork the repository [here](https://github.com/akshaybabloo/Python3-notes)."
+      "long_description": "A tutorial on Python 3. You can fork the repository [here](https://github.com/akshaybabloo/Python3-notes).",
+      "link": "https://github.com/akshaybabloo/Python3-notes"
     },
     "3": {
       "title": "UnrealEngine",
-      "long_description": "A tutorial on using node based Unreal Engine 4. You can fork the repository [here](https://github.com/akshaybabloo/UnrealEngine_4_Notes)."
+      "long_description": "A tutorial on using node based Unreal Engine 4. You can fork the repository [here](https://github.com/akshaybabloo/UnrealEngine_4_Notes).",
+      "link": "https://github.com/akshaybabloo/UnrealEngine_4_Notes"
     },
     "4": {
       "title": "Java",
-      "long_description": "A tutorial on using Java 8 and JDBC. You can fork the repository [here](https://github.com/akshaybabloo/Java-JDBC-notes)."
+      "long_description": "A tutorial on using Java 8 and JDBC. You can fork the repository [here](https://github.com/akshaybabloo/Java-JDBC-notes).",
+      "link": "https://github.com/akshaybabloo/Java-JDBC-notes"
     },
     "5": {
       "title": "JavaFX",
-      "long_description": "A tutorial on using JavaFX 8. You can fork the repository [here](https://github.com/akshaybabloo/JavaFX)."
+      "long_description": "A tutorial on using JavaFX 8. You can fork the repository [here](https://github.com/akshaybabloo/JavaFX).",
+      "link": "https://github.com/akshaybabloo/JavaFX"
     },
     "6": {
       "title": "OpenGL",
-      "long_description": "A tutorial on using OpenGL with Python 3. You can fork the repository [here](https://github.com/akshaybabloo/Python-opengl-notes)."
+      "long_description": "A tutorial on using OpenGL with Python 3. You can fork the repository [here](https://github.com/akshaybabloo/Python-opengl-notes).",
+      "link": "https://github.com/akshaybabloo/Python-opengl-notes"
     },
     "7": {
       "title": "Swift",
-      "long_description": "A tutorial on Swift programming language. You can fork the repository [here](https://github.com/akshaybabloo/Swift-notes)."
+      "long_description": "A tutorial on Swift programming language. You can fork the repository [here](https://github.com/akshaybabloo/Swift-notes).",
+      "link": "https://github.com/akshaybabloo/Swift-notes"
     },
     "8": {
       "title": "GearVR",
-      "long_description": "A tutorial on Gear VR with Unreal Engine 4. You can fork the repository [here](https://github.com/akshaybabloo/GearVR-UnrealEngine4)."
+      "long_description": "A tutorial on Gear VR with Unreal Engine 4. You can fork the repository [here](https://github.com/akshaybabloo/GearVR-UnrealEngine4).",
+      "link": "https://github.com/akshaybabloo/GearVR-UnrealEngine4"
     }
   }
 }
