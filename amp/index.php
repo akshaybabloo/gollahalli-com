@@ -16,6 +16,7 @@
         **-->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#1e1e1e">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="<?php echo $cdn ?>/img/favicon/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $cdn ?>/img/favicon/favicon-152.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $cdn ?>/img/favicon/favicon-144.png">
     <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo $cdn ?>/img/favicon/favicon-120.png">
