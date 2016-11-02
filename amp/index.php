@@ -5,9 +5,9 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo $results->about_me->name ?></title>
-    <meta name="author" content="Mobius Studio" />
-    <meta name="description" content="Pinna is a website template for smart phones and tablets. It is built with HTML5, CSS3 and Google&#39;s AMP project rules." />
-    <meta name="keywords" content="premium template, html5, css3, responsive, amp, accelerated mobile pages" />
+    <meta name="author" content="<?php echo $results->about_me->name ?>" />
+    <meta name="description" content="<?php echo $results->about_me->name ?> is a Computer Science researcher currently doing his Ph.D. This website showcases his work." />
+    <meta name="keywords" content="computer science, brain computer interface, artificial intelligence" />
     <link rel="canonical" href="https://www.gollahalli.me" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1">
 
@@ -738,7 +738,7 @@
 <!--************************************ Sidebar ************************************-->
 <amp-sidebar id='mainSideBar' layout='nodisplay'>
     <figure class="primary-bg">
-        <amp-img class="circle" src="<?php echo $photo ?>" width="60" height="60" layout="fixed" attribution="Mobius Studio"></amp-img>
+        <amp-img class="circle" src="<?php echo $photo ?>" width="60" height="60" layout="fixed" attribution="<?php echo $results->about_me->name ?>"></amp-img>
         <figcaption>
             <h3 class="light-color"><?php echo $results->about_me->name ?></h3>
         </figcaption>
