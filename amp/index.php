@@ -685,7 +685,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="bordered-title">
-                <h2>Projects</h2>
+                <h2>Tutorials</h2>
             </div><!-- TITLE ENDS -->
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
