@@ -341,8 +341,7 @@ li{
     border: 1px solid white;
     display: block;
     text-align: center;
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size: 15px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;

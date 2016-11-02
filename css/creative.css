@@ -12,7 +12,8 @@ body {
 }
 
 body {
-    font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+    /*font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;*/
+    font-family: 'Roboto', sans-serif;
 }
 
 hr {
@@ -40,7 +41,8 @@ a:focus {
 /*@import url(https://fonts.googleapis.com/css?family=Raleway);*/
 
 h1{
-    font-family: 'Cousine', ;
+    /*font-family: 'Cousine', ;*/
+    font-family: 'Roboto', sans-serif;
 }
 
 h2,
@@ -49,7 +51,8 @@ h4,
 h5,
 h6,
 table{
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    /*font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;*/
+    font-family: 'Roboto', sans-serif;
 }
 
 p {
@@ -85,7 +88,8 @@ aside {
 
 .navbar-default {
     border-color: rgba(34,34,34,.05);
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    /*font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;*/
+    font-family: 'Roboto', sans-serif;
     background-color: #ffffff;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
@@ -94,7 +98,8 @@ aside {
 
 .navbar-default .navbar-header{
     /*text-transform: uppercase;*/
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    /*font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;*/
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     color: #ef3939;
 }
@@ -301,7 +306,8 @@ header .header-content .header-content-inner p {
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
     padding: 0 15px;
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    /*font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;*/
+    font-family: 'Roboto', sans-serif;
 }
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
@@ -451,7 +457,8 @@ fieldset[disabled] .btn-primary.active {
     border: 0;
     border-radius: 300px;
     text-transform: uppercase;
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    /*font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;*/
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
 
@@ -484,4 +491,3 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #222;
 }
-

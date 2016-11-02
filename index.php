@@ -11,120 +11,160 @@
     <meta name="description"
           content="<?php echo $results->about_me->name ?> is a Computer Science researcher currently doing his Ph.D. This website showcases his work.">
     <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
-    <meta name="author" content="Akshay Raj Gollahalli">
-    <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli"/>
+    <meta name="author" content="<?php echo $results->about_me->name ?>">
+    <meta name="rights" content="All rights reserved by <?php echo $results->about_me->name ?>"/>
     <meta name="theme-color" content="#ef3939"/>
 
-    <meta property="og:title" content="Akshay Raj Gollahalli"/>
+    <meta property="og:title" content="<?php echo $results->about_me->name ?>"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://www.gollahalli.me/"/>
-    <meta property="og:image" content="http://www.gollahalli.me/img/logo.jpg"/>
-    <meta property="og:image:secure_url" content="https://www.gollahalli.me/img/logo.jpg"/>
+    <meta property="og:image" content="<?php echo $cdn ?>/img/logo.jpg"/>
+    <meta property="og:image:secure_url" content="<?php echo $cdn ?>/img/logo.jpg"/>
     <meta property="og:description"
           content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
 
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Akshay Raj Gollahalli"/>
+    <meta name="twitter:title" content="<?php echo $results->about_me->name ?>"/>
     <meta name="twitter:description"
-          content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
-    <meta name="twitter:image:src" content="https://www.gollahalli.me/img/logo.jpg"/>
+          content="<?php echo $results->about_me->name ?> is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
+    <meta name="twitter:image:src" content="<?php echo $cdn ?>/img/logo.jpg"/>
     <meta name="twitter:url" content="https://www.gollahalli.me"/>
 
     <meta property="fb:app_id" content="1562596197364195"/>
 
-    <link rel="canonical" href="https://www.gollahalli.me/" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-    <link rel="amphtml" href="https://www.gollahalli.me/amp/" />
+    <link rel="canonical" href="https://www.gollahalli.me/"/>
+    <meta name="referrer" content="no-referrer-when-downgrade"/>
+    <link rel="amphtml" href="https://www.gollahalli.me/amp/index.php"/>
 
     <title><?php echo $results->about_me->name ?></title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/bootstrap.min.css" type="text/css">
 
     <!-- Custom Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Cousine' rel='stylesheet' type='text/css'>
-    <link
-        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-        rel='stylesheet' type='text/css'>
-    <link
-        href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
-        rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,900" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" href="<?php echo $cdn ?>/font-awesome/css/font-awesome.min.css" type="text/css">
 
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
-    <link rel="stylesheet" href="css/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css"
+          href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.css"/>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/gollahalli.css" type="text/css">
-    <link rel="stylesheet" href="css/creative.css" type="text/css">
-    <!--    <link rel="stylesheet" href="css/reset.css" type="text/css">-->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/gollahalli.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/creative.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/style.min.css" type="text/css">
 
     <!-- For old IEs -->
-    <link rel="shortcut icon" href="img/favicon/favicon.ico"/>
+    <link rel="shortcut icon" href="<?php echo $cdn ?>/img/favicon/favicon.ico"/>
 
     <!-- For new browsers - multisize ico  -->
-    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="img/favicon/favicon.ico">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="<?php echo $cdn ?>/img/favicon/favicon.ico">
 
     <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/favicon/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $cdn ?>/img/favicon/favicon-152.png">
 
     <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/favicon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $cdn ?>/img/favicon/favicon-144.png">
 
     <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/favicon/favicon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo $cdn ?>/img/favicon/favicon-120.png">
 
     <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicon/favicon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $cdn ?>/img/favicon/favicon-114.png">
 
     <!-- For iPhone 6+ -->
-    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="img/favicon/favicon-180.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php echo $cdn ?>/img/favicon/favicon-180.png">
 
     <!-- For first- and second-generation iPad: -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/favicon-72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $cdn ?>/img/favicon/favicon-72.png">
 
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-57.png">
+    <link rel="apple-touch-icon-precomposed" href="<?php echo $cdn ?>/img/favicon/favicon-57.png">
 
     <!-- For Old Chrome -->
-    <link rel="icon" href="img/favicon/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="<?php echo $cdn ?>/img/favicon/favicon-32.png" sizes="32x32">
 
     <!-- For IE10 Metro -->
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="favicon/img/favicon-144.png">
+    <meta name="msapplication-TileImage" content="<?php echo $cdn ?>/favicon/img/favicon-144.png">
 
     <!-- Chrome for Android -->
-    <link rel="icon" sizes="192x192" href="img/favicon/favicon-192.png">
+    <link rel="icon" sizes="192x192" href="<?php echo $cdn ?>/img/favicon/favicon-192.png">
 
 
-    <script src="js/queryloader2.min.js" type="text/javascript"></script>
+    <script src="<?php echo $cdn ?>/js/queryloader2.min.js" type="text/javascript"></script>
 
     <!-- Schema.org -->
-    <script type="application/ld+json">
+
+    <script type='application/ld+json'>
         {
-            "@context": "https://schema.org",
-            "@type": "Website",
-            "publisher": {
-                "@type": "People",
-                "name": "Akshay Raj Gollahalli",
-                "image": "https://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200",
-                "email" : "akshay@gollahalli.com",
-                "url": "https://www.gollahalli.me/"
-            },
-            "url": "https://www.gollahalli.me/",
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "https://www.gollahalli.me"
-            }
+          "@context": "http://www.schema.org",
+          "@type": "person",
+          "name": "<?php echo $results->about_me->name ?>",
+          "image" : "<?php echo $photo ?>",
+          "url": "https://www.gollahalli.me/",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Auckland",
+            "addressCountry": "New Zealand"
+          },
+          "email": "akshay@gollahalli.com"
         }
-    </script>
+     </script>
+
 
     <!-- start Mixpanel -->
-    <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
-            0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
-            for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+    <script type="text/javascript">(function (e, a) {
+            if (!a.__SV) {
+                var b = window;
+                try {
+                    var c, l, i, j = b.location, g = j.hash;
+                    c = function (a, b) {
+                        return (l = a.match(RegExp(b + "=([^&]*)"))) ? l[1] : null
+                    };
+                    g && c(g, "state") && (i = JSON.parse(decodeURIComponent(c(g, "state"))), "mpeditor" === i.action && (b.sessionStorage.setItem("_mpcehash", g), history.replaceState(i.desiredHash || "", e.title, j.pathname + j.search)))
+                } catch (m) {
+                }
+                var k, h;
+                window.mixpanel = a;
+                a._i = [];
+                a.init = function (b, c, f) {
+                    function e(b, a) {
+                        var c = a.split(".");
+                        2 == c.length && (b = b[c[0]], a = c[1]);
+                        b[a] = function () {
+                            b.push([a].concat(Array.prototype.slice.call(arguments,
+                                0)))
+                        }
+                    }
+
+                    var d = a;
+                    "undefined" !== typeof f ? d = a[f] = [] : f = "mixpanel";
+                    d.people = d.people || [];
+                    d.toString = function (b) {
+                        var a = "mixpanel";
+                        "mixpanel" !== f && (a += "." + f);
+                        b || (a += " (stub)");
+                        return a
+                    };
+                    d.people.toString = function () {
+                        return d.toString(1) + ".people (stub)"
+                    };
+                    k = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+                    for (h = 0; h < k.length; h++)e(d, k[h]);
+                    a._i.push([b, c, f])
+                };
+                a.__SV = 1.2;
+                b = e.createElement("script");
+                b.type = "text/javascript";
+                b.async = !0;
+                b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === e.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+                c = e.getElementsByTagName("script")[0];
+                c.parentNode.insertBefore(b, c)
+            }
+        })(document, window.mixpanel || []);
         mixpanel.init("e3f103b7fbf943d7475c3b0529b5e16a");</script>
     <!-- end Mixpanel -->
 
@@ -161,7 +201,6 @@
 </head>
 
 <body id="page-top">
-
 
 
 <!-- Google Tag Manager -->
@@ -236,16 +275,16 @@
 <header>
     <div class="header-content">
         <div class="header-content-inner">
-            <img src="https://gravatar.com/avatar/457c55bc8c6bff07894da51767e408fb?s=200"
+            <img src="<?php echo $photo ?>"
                  class="img-circle activity_rounded" alt="Akshay Raj Gollahalli's photo">
             <hr class="light">
             <h1><?php echo $results->about_me->name ?></h1>
             <p>
-                <a href="https://www.gollahalli.me/downloads/Gollahalli-CV-Web.pdf" class="btn btn-lg btn-primary">Download
+                <a href="<?php echo $cdn.'/'.$results->about_me->cv ?>" class="btn btn-lg btn-primary">Download
                     CV<i class="fa fa-download"></i></a><br>
-                <a href="https://twitter.com/akshaybabloo"><i class="fa fa-twitter"></i></a>
-                <a href="https://nz.linkedin.com/in/gollahalli"><i class="fa fa-linkedin"></i></a>
-                <a href="https://github.com/akshaybabloo"><i class="fa fa-github"></i></a>
+                <a href="<?php echo $results->about_me->twitter ?>"><i class="fa fa-twitter"></i></a>
+                <a href="<?php echo $results->about_me->linkedin ?>i"><i class="fa fa-linkedin"></i></a>
+                <a href="<?php echo $results->about_me->github ?>"><i class="fa fa-github"></i></a>
             </p>
         </div>
     </div>
@@ -261,67 +300,21 @@
             <div class="col-lg-8 col-lg-offset-2 text-justify">
                 <h2 class="section-heading text-center">About Me</h2>
                 <hr class="light">
-                <?php require 'pages/about_me.php' ?> <!-- page-scroll missing -->
+                <?php echo about_me_bio() ?> <!-- page-scroll missing -->
             </div>
             <div class="col-lg-12">
                 <h3 class="text-center">Education</h3>
                 <hr class="light">
 
                 <section id="cd-timeline" class="cd-container">
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-picture">
-                            <img src="img/grad.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Doctor of Philosophy (PhD)</h4>
-                            <p class="text-muted">Auckland University of Technology, Auckland</p>
-                            <span class="cd-date">2016 - Present</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-movie">
-                            <img src="img/grad.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Master of Computer and Information Sciences (MCIS) (First Class Honors)</h4>
-                            <p class="text-muted">Auckland University of Technology, Auckland</p>
-                            <span class="cd-date">2014 - 2015</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-movie">
-                            <img src="img/grad.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Postgraduate Diploma in Computer and Information Sciences (PgDipCIS)</h4>
-                            <p class="text-muted">Auckland University of Technology, Auckland</p>
-                            <span class="cd-date">2013 - 2014</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-movie">
-                            <img src="img/grad.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Bachelor of Technology (B.Tech)</h4>
-                            <p class="text-muted">Jawaharlal Nehru Technological University, Hyderabad</p>
-                            <span class="cd-date">2007 - 2011</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
+                    <?php echo about_me_education(); ?>
                 </section> <!-- cd-timeline -->
             </div>
 
             <div class="col-lg-8 col-lg-offset-2">
                 <h3 class="text-center">Research Area</h3>
                 <hr class="light">
-                <?php require 'pages/research_area.php'?>
+                <?php echo about_me_research_area(); ?>
             </div>
         </div>
     </div>
@@ -341,7 +334,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <?php require 'pages/publication.php'?>
+                <?php echo publications(); ?>
             </div>
         </div>
     </div>
@@ -359,7 +352,7 @@
     </div>
     <div class="container">
         <div class="row text-center">
-            <?php require 'pages/skills.php'?>
+            <?php echo skills(); ?>
         </div>
     </div>
 </section>
@@ -377,69 +370,7 @@
             <div class="col-lg-12">
                 <section id="cd-timeline" class="cd-container">
 
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-picture">
-                            <img src="img/work.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Teaching Assistant</h4>
-                            <p class="text-muted">Computer and Mathematical Sciences , AUT
-                                University. <br>Auckland, New Zealand.</p>
-                            <span class="cd-date">July, 2016 - Present</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-picture">
-                            <img src="img/work.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Research Assistant</h4>
-                            <p class="text-muted">Knowledge Engineering and Discovery Research Institute (KEDRI), AUT
-                                University. <br>Auckland, New Zealand.</p>
-                            <span class="cd-date">April, 2016 - Present</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-picture">
-                            <img src="img/work.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Technical Support</h4>
-                            <p class="text-muted">Knowledge Engineering and Discovery Research Institute (KEDRI), AUT
-                                University.<br>Auckland, New Zealand.</p>
-                            <span class="cd-date">2015 - Present</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-movie">
-                            <img src="img/work.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Research Assistant</h4>
-                            <p class="text-muted">Knowledge Engineering and Discovery Research Institute (KEDRI), AUT
-                                University. <br>Auckland, New Zealand.</p>
-                            <span class="cd-date">July, 2015 - December, 2015</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
-
-                    <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-movie">
-                            <img src="img/work.png" alt="Grad-pic">
-                        </div> <!-- cd-timeline-img -->
-
-                        <div class="cd-timeline-content">
-                            <h4>Jr. Systems Engineer</h4>
-                            <p class="text-muted">Cheminnova Group of Companies.<br>Hyderabad, India.</p>
-                            <span class="cd-date">May, 2012 - February, 2013</span>
-                        </div> <!-- cd-timeline-content -->
-                    </div> <!-- cd-timeline-block -->
+                    <?php echo experience(); ?>
 
                 </section> <!-- cd-timeline -->
             </div>
@@ -455,142 +386,13 @@
     </div>
     <div class="container-fluid">
         <div class="row no-gutter">
-            <div class="col-lg-4 col-sm-6">
-                <a href="#jcal_model" data-toggle="modal" data-target="#jcal_model" class="portfolio-box">
-                    <img src="img/portfolio/jcal.jpg" class="img-responsive" alt="JCal">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Software
-                            </div>
-                            <div class="project-name">
-                                JCal
-                            </div>
-                            <p><i class="text-faded">Mortgage Calculator</i></p>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#jmark_model" data-toggle="modal" data-target="#jmark_model" class="portfolio-box">
-                    <img src="img/portfolio/jmark.jpg" class="img-responsive" alt="JMark">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Software
-                            </div>
-                            <div class="project-name">
-                                JMark
-                            </div>
-                            <p><i class="text-faded">Markdown Editor</i></p>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#eegrotor_model" data-toggle="modal" data-target="#eegrotor_model" class="portfolio-box">
-                    <img src="img/portfolio/eegrotor.jpg" class="img-responsive" alt="EEGRotor-VE">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Games & Virtual Environment
-                            </div>
-                            <div class="project-name">
-                                EEGRotor-VE
-                            </div>
-                            <p><i class="text-faded">A Virtual Environment for Brain Computer Interface Applications</i>
-                            </p>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#smallurl_model" data-toggle="modal" data-target="#smallurl_model" class="portfolio-box">
-                    <img src="img/portfolio/smallurl.jpg" class="img-responsive" alt="SmallURL">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Django
-                            </div>
-                            <div class="project-name">
-                                SmallURL
-                            </div>
-                            <p><i class="text-faded">URL Shortening Tool</i></p>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <?php echo projects(); ?>
         </div>
     </div>
 </section>
 
 <!--========================= Model for Project ===========================-->
-<div class="modal fade" id="jcal_model" tabindex="-1" role="dialog" aria-labelledby="jcal_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="jcal_model_label">JCal</h4>
-            </div>
-            <div class="modal-body">
-                <p>JCal is a Mortgage calculator and Unit conversion software written purely in Java. You can fork the
-                    repository <a href="https://github.com/gollahalli/JCal">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="jmark_model" tabindex="-1" role="dialog" aria-labelledby="jmark_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="jmark_model_label">JMark</h4>
-            </div>
-            <div class="modal-body">
-                <p>JMark is a Markdown editor written purely in Java. You can fork the repository <a
-                        href="https://github.com/gollahalli/JMark">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="eegrotor_model" tabindex="-1" role="dialog" aria-labelledby="eegrotor_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="eegrotor_model_label">EEGRotor-VE</h4>
-            </div>
-            <div class="modal-body">
-                <p>EEGRotor was developed in Unity 4 using C# and Javascript for a Brain Computer Interface (BCI)
-                    software. You can fork the repository <a href="https://github.com/akshaybabloo/EEGRotor-VE">here</a>.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="smallurl_model" tabindex="-1" role="dialog" aria-labelledby="smallurl_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="smallurl_model_label">SmallURL</h4>
-            </div>
-            <div class="modal-body">
-                <p>SmallURL is a URL shortening tool written in Python3 using Django web framework. You can visit <a
-                        href="http://www.smallurl.cc">http://www.smallurl.cc</a> to test it.</p>
-            </div>
-        </div>
-    </div>
-</div>
+<?php echo projects_models(); ?>
 
 <!--========================= Tutorial ===========================-->
 <section class="bg-dark" id="tutorial">
@@ -600,235 +402,13 @@
     </div>
     <div class="container-fluid">
         <div class="row no-gutter">
-            <div class="col-lg-1 col-lg-offset-2">
-                <a href="#ruby_model" data-toggle="modal" data-target="#ruby_model" class="portfolio-box">
-                    <img src="img/portfolio/tut/ruby.jpg" class="img-responsive" alt="Ruby 4">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                Ruby
-                            </div>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-1">
-                <a href="#python_model" data-toggle="modal" data-target="#python_model" class="portfolio-box">
-                    <img src="img/portfolio/tut/python.jpg" class="img-responsive" alt="Python 3">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                Python
-                            </div>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-1">
-                <a href="#ue_model" data-toggle="modal" data-target="#ue_model" class="portfolio-box">
-                    <img src="img/portfolio/tut/unreal.jpg" class="img-responsive" alt="Unreal Engine 4">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                UE4
-                            </div>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-1">
-                <a href="#java_model" data-toggle="modal" data-target="#java_model" class="portfolio-box">
-                    <img src="img/portfolio/tut/java.jpg" class="img-responsive" alt="Java">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                Java
-                            </div>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-1">
-                <a href="#javafx_model" data-toggle="modal" data-target="#javafx_model" class="portfolio-box">
-                    <img src="img/portfolio/tut/FX.jpg" class="img-responsive" alt="JavaFX">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                JavaFX
-                            </div>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-1">
-                <a href="#opengl_model" data-toggle="modal" data-target="#opengl_model" class="portfolio-box">
-                    <img src="img/portfolio/tut/opengl.jpg" class="img-responsive" alt="OpenGL">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                OpenGL
-                            </div>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-1">
-                <a href="#swift_model" data-toggle="modal" data-target="#swift_model" class="portfolio-box">
-                    <img src="img/portfolio/tut/swift.jpg" class="img-responsive" alt="Swift">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                Swift
-                            </div>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-1">
-                <a href="#gearvr_model" data-toggle="modal" data-target="#gearvr_model" class="portfolio-box">
-                    <img src="img/portfolio/tut/gearvr.jpg" class="img-responsive" alt="Gear VR">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                Gear VR
-                            </div>
-                            <i class="fa fa-clone port"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <?php echo tutorials(); ?>
         </div>
     </div>
 </section>
 
 <!--========================= Model for Tutorial ===========================-->
-<div class="modal fade" id="ruby_model" tabindex="-1" role="dialog" aria-labelledby="ruby_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="ruby_model_label">Ruby</h4>
-            </div>
-            <div class="modal-body">
-                <p>A tutorial on Ruby 4. You can fork the repository <a
-                        href="https://github.com/akshaybabloo/Ruby-notes">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="python_model" tabindex="-1" role="dialog" aria-labelledby="python_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="python_model_label">Python 3</h4>
-            </div>
-            <div class="modal-body">
-                <p>A tutorial on Python 3. You can fork the repository <a
-                        href="https://github.com/akshaybabloo/Python3-notes">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="ue_model" tabindex="-1" role="dialog" aria-labelledby="ue_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="ue_model_label">Unreal Engine 4</h4>
-            </div>
-            <div class="modal-body">
-                <p>A tutorial on using node based Unreal Engine 4. You can fork the repository <a
-                        href="https://github.com/akshaybabloo/UnrealEngine_4_Notes">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="java_model" tabindex="-1" role="dialog" aria-labelledby="java_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="java_model_label">Java 8 and JDBC</h4>
-            </div>
-            <div class="modal-body">
-                <p>A tutorial on using Java 8 and JDBC. You can fork the repository <a
-                        href="https://github.com/akshaybabloo/Java-JDBC-notes">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="javafx_model" tabindex="-1" role="dialog" aria-labelledby="javafx_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="javafx_model_label">JavaFX 8</h4>
-            </div>
-            <div class="modal-body">
-                <p>A tutorial on using JavaFX 8. You can fork the repository <a
-                        href="https://github.com/akshaybabloo/JavaFX">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="opengl_model" tabindex="-1" role="dialog" aria-labelledby="opengl_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="opengl_model_label">OpenGL</h4>
-            </div>
-            <div class="modal-body">
-                <p>A tutorial on using OpenGL with Python 3. You can fork the repository <a
-                        href="https://github.com/akshaybabloo/Python-opengl-notes">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="swift_model" tabindex="-1" role="dialog" aria-labelledby="swift_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="swift_model_label">Swift</h4>
-            </div>
-            <div class="modal-body">
-                <p>A tutorial on Swift programming language. You can fork the repository <a
-                        href="https://github.com/akshaybabloo/Swift-notes">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="gearvr_model" tabindex="-1" role="dialog" aria-labelledby="gearvr_model_label">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="gearvr_model_label">Gear VR</h4>
-            </div>
-            <div class="modal-body">
-                <p>A tutorial on Gear VR with Unreal Engine 4. You can fork the repository <a
-                        href="https://github.com/akshaybabloo/GearVR-UnrealEngine4">here</a>.</p>
-            </div>
-        </div>
-    </div>
-</div>
+<?php echo tutorials_models(); ?>
 
 <!--========================= Blog ===========================-->
 <section class="bg-primary less-bottom" id="blog">
@@ -838,7 +418,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <?php require 'pages/blog_rss.php'?>
+            <?php echo blog(); ?>
         </div>
 
     </div>
@@ -858,7 +438,7 @@
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <i class="fa fa-envelope-o fa-3x wow bounceIn"></i>
-                <p><a href="mailto:akshay@gollahalli.com">akshay@gollahalli.com</a></p>
+                <p><a href="mailto:<?php echo $results->about_me->contact?>"><?php echo $results->about_me->contact ?></a></p>
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <a class="twitter-timeline" href="https://twitter.com/akshaybabloo" data-widget-id="690023186424012800">Tweets
@@ -883,7 +463,7 @@
 
                         $object = json_decode($response);
                         echo "<a href='#version_control' data-toggle=\"modal\" data-target=\"#version_control\">$object->tag_name</a>";
-                    } catch (exception $e){
+                    } catch (exception $e) {
 
                     }
                     ?>
@@ -909,20 +489,20 @@
                 <h4 class="modal-title" id="version_in"><?php echo $object->name ?></h4>
             </div>
             <div class="modal-body">
-<!--                --><?php
-//                $string = $object->body;
-//
-//                $replacer = str_replace("* ", "", $string);
-//                $bits = explode("\n", $replacer);
-//
-//                $newstring = "<ul>";
-//                foreach ($bits as $bit) {
-//                    $newstring .= "<li>" . $bit . "</li>";
-//                }
-//                $newstring .= "</ul>";
-//
-//                echo $newstring;
-//                ?>
+                <?php
+                    $string = $object->body;
+
+                    $replacer = str_replace("* ", "", $string);
+                    $bits = explode("\n", $replacer);
+
+                    $newstring = "<ul>";
+                    foreach ($bits as $bit) {
+                        $newstring .= "<li>" . $bit . "</li>";
+                    }
+                    $newstring .= "</ul>";
+
+                    echo $newstring;
+                ?>
                 <p class="text-center">
                     <a href="<?php echo $object->zipball_url ?>"><i class="fa fa-2x fa-download"></i></a>
                     <a href="https://github.com/akshaybabloo/gollahalli-me"><i class="fa fa-2x fa-github"></i></a>
@@ -966,36 +546,31 @@
     }(document, "script", "twitter-wjs");</script>
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="<?php echo $cdn ?>/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="<?php echo $cdn ?>/js/bootstrap.min.js"></script>
 
 <!-- Plugin JavaScript -->
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/jquery.fittext.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/modernizr.js"></script>
-<script src="js/main.js"></script>
+<script src="<?php echo $cdn ?>/js/jquery.easing.min.js"></script>
+<script src="<?php echo $cdn ?>/js/jquery.fittext.min.js"></script>
+<script src="<?php echo $cdn ?>/js/wow.min.js"></script>
+<script src="<?php echo $cdn ?>/js/modernizr.min.js"></script>
+<script src="<?php echo $cdn ?>/js/main.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="js/creative.js"></script>
+<script src="<?php echo $cdn ?>/js/creative.min.js"></script>
 
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "This website uses cookies to ensure you get the best experience on our website",
-        "dismiss": "Got it!",
-        "learnMore": "More info",
-        "link": "https://www.gollahalli.me/cookie-policy.html",
-        "theme": "dark-bottom"
-    };
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.js"></script>
+<script>
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {"background": "#000"},
+            "button": {"background": "#f1d600"}
+        }, "theme": "edgeless", "content": {"href": "https://www.gollahalli.me/cookie-policy.html"}
+    });
 </script>
-<script type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
 <!-- End Cookie Consent plugin -->
-
-
 </body>
-
 </html>

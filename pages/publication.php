@@ -1,11 +1,17 @@
 <?php
 
-foreach ($results->publication as $key => $jsons) {
-    echo '<h3>' . ucwords($key) . '</h3>';
-    echo '<hr>';
-    echo '<ol class="text-justify">';
-    foreach ($jsons as $value) {
-        echo '<li>' . $value . '</li>';
+function publications()
+{
+    global $results;
+    $ret = '';
+    foreach ($results->publication as $key => $jsons) {
+        $ret .= '<h3>' . ucwords($key) . '</h3>';
+        $ret .= '<hr>';
+        $ret .= '<ol class="text-justify">';
+        foreach ($jsons as $value) {
+            $ret .= '<li>' . $value . '</li>';
+        }
+        $ret .= '</ol>';
     }
-    echo '</ol>';
+    return $ret;
 }
