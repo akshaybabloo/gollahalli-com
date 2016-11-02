@@ -753,7 +753,6 @@
         <a href="services.html">Projects</a>
         <a href="services.html">Tutorials</a>
         <a href="services.html">Blog</a>
-        <a href="services.html">Contact</a>
     </nav><!-- MENU ENDS -->
 
     <div class="divider colored"></div>
