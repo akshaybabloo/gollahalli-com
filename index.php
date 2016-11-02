@@ -52,9 +52,9 @@
           href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.css"/>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?php echo $cdn ?>/css/gollahalli.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo $cdn ?>/css/creative.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo $cdn ?>/css/style.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/gollahalli.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/creative.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/css/style.min.css" type="text/css">
 
     <!-- For old IEs -->
     <link rel="shortcut icon" href="<?php echo $cdn ?>/img/favicon/favicon.ico"/>
@@ -553,13 +553,13 @@
 
 <!-- Plugin JavaScript -->
 <script src="<?php echo $cdn ?>/js/jquery.easing.min.js"></script>
-<script src="<?php echo $cdn ?>/js/jquery.fittext.js"></script>
+<script src="<?php echo $cdn ?>/js/jquery.fittext.min.js"></script>
 <script src="<?php echo $cdn ?>/js/wow.min.js"></script>
-<script src="<?php echo $cdn ?>/js/modernizr.js"></script>
-<script src="<?php echo $cdn ?>/js/main.js"></script>
+<script src="<?php echo $cdn ?>/js/modernizr.min.js"></script>
+<script src="<?php echo $cdn ?>/js/main.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo $cdn ?>/js/creative.js"></script>
+<script src="<?php echo $cdn ?>/js/creative.min.js"></script>
 
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.js"></script>
