@@ -730,7 +730,7 @@
 
     <div class="text-center">
         <small>Copyright © 2016 by <?php echo $results->about_me->name ?></small> <br/>
-        <small><a href="<?php echo $results->about_me->url ?>">Desktop view</a></small>
+        <small><a href="<?php echo $results->about_me->url ?>">Desktop View</a></small>
     </div><!-- TEXT-CENTER/COPYRIGHT ENDS -->
 
     <div class="space-2"></div>
