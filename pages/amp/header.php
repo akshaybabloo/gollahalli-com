@@ -9,19 +9,18 @@ function doMarkdownLinks($s) {
     }, htmlspecialchars($s));
 }
 
-function addScheme($url, $scheme = 'http://')
+function addScheme($url, $scheme = 'https:')
 {
-    return parse_url($url, PHP_URL_SCHEME) === null ?
-        $scheme . $url : $url;
+    return preg_replace("/^http:/i", $scheme, $url);
 }
 
 if( isset($_SERVER['HTTPS'] ) ) {
-    $cdn = 'https://gollahalli-lh0kueshznj0hpg0fqay.netdna-ssl.com';
+    $cdn = 'https://cdn.gollahalli.me';
 }else{
     $cdn = 'http://cdn.gollahalli.me';
 }
 
-$photo = 'http://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_100,q_auto:best,w_100/v1477524340/akshay_b8wb1x.jpg';
+$photo = 'https://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_100,q_auto:best,w_100/v1477524340/akshay_b8wb1x.jpg';
 
 require 'blog_rss.php';
 require 'about_me.php';
