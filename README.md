@@ -6,8 +6,8 @@ Web files for [https://www.gollahalli.me](https://www.gollahalli.me)
 
 ### Normal
 
-![Screenshot](http://cdn.gollahalli.me/screenshot/screen.png)
+![Screenshot](http://gollahalli.lh0kueshznj0hpg0fqay.netdna-cdn.com/screenshot/screen.png)
 
 ### Google AMP
 
-![Screenshot](http://cdn.gollahalli.me/screenshot/screen-amp.png)
+![Screenshot](http://gollahalli.lh0kueshznj0hpg0fqay.netdna-cdn.com/screenshot/screen-amp.png)
