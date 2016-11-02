@@ -13,7 +13,7 @@ function blog()
 
         if ($media) {
             $url = $media->content->attributes();
-            $ret .= "<amp-img  src='$url' width=125 height=150></amp-img>";
+            $ret .= "<amp-img  src=" . addScheme($url). " width=125 height=150></amp-img>";
         }else{
             $ret .= "<amp-img  src='#' width=125 height=150></amp-img>";
         }
