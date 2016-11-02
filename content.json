@@ -149,25 +149,29 @@
       "title": "JCal",
       "category": "software",
       "short_description": "Mortgage Calculator",
-      "long_description": "JCal is a Mortgage calculator and Unit conversion software written purely in Java. You can fork the repository [here](https://github.com/gollahalli/JCal)"
+      "long_description": "JCal is a Mortgage calculator and Unit conversion software written purely in Java. You can fork the repository [here](hhttps://github.com/akshaybabloo/JCal)",
+      "link": "https://github.com/akshaybabloo/JCal"
     },
     "2": {
       "title": "JMark",
       "category": "software",
       "short_description": "Markdown Editor",
-      "long_description": "JMark is a Markdown editor written purely in Java. You can fork the repository [here](https://github.com/gollahalli/JMark)"
+      "long_description": "JMark is a Markdown editor written purely in Java. You can fork the repository [here](https://github.com/akshaybabloo/JMark)",
+      "link": "https://github.com/akshaybabloo/JMark"
     },
     "3": {
       "title": "EEGRotor-VE",
       "category": "Games & Virtual Environment",
       "short_description": "A Virtual Environment for Brain Computer Interface Applications",
-      "long_description": "EEGRotor was developed in Unity 4 using C# and Javascript for a Brain Computer Interface (BCI) software. You can fork the repository [here](https://github.com/akshaybabloo/EEGRotor-VE)"
+      "long_description": "EEGRotor was developed in Unity 4 using C# and Javascript for a Brain Computer Interface (BCI) software. You can fork the repository [here](https://github.com/akshaybabloo/EEGRotor-VE)",
+      "link": ""
     },
     "4": {
       "title": "SmallURL",
       "category": "software",
       "short_description": "Mortgage Calculator",
-      "long_description": "SmallURL is a URL shortening tool written in Python3 using Django web framework. You can visit [http://www.smallurl.cc](http://www.smallurl.cc)"
+      "long_description": "SmallURL is a URL shortening tool written in Python3 using Django web framework. You can visit [http://www.smallurl.cc](http://www.smallurl.cc)",
+      "link": ""
     }
   },
   "tutorials": {
