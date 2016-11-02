@@ -34,7 +34,7 @@
 
     <link rel="canonical" href="https://www.gollahalli.me/"/>
     <meta name="referrer" content="no-referrer-when-downgrade"/>
-    <link rel="amphtml" href="https://www.gollahalli.me/amp/"/>
+    <link rel="amphtml" href="https://www.gollahalli.me/amp/index.php"/>
 
     <title><?php echo $results->about_me->name ?></title>
 
