@@ -29,3 +29,4 @@ require 'publication.php';
 require 'skills.php';
 require 'experience.php';
 require 'projects.php';
+require 'tutorials.php';
