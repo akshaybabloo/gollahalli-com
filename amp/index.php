@@ -667,91 +667,28 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="bordered-title">
-                <h3>Features</h3>
-                <h5>Things You'll Love</h5>
-            </div><!-- TITLE ENDS -->
-        </div><!-- COL-XS-12 ENDS -->
-    </div><!-- ROW ENDS -->
-
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="icon-info-box">
-                <i class="fa fa-fighter-jet"></i>
-                <div>
-                    <h4>Speed is Key</h4>
-                    <p>None other mobile template is faster than the Pinna. Test with your mobile connection!</p>
-                </div>
-            </div><!-- ICON INFO BOX ENDS -->
-        </div><!-- COL-SM-6 ENDS -->
-        <div class="col-sm-6">
-            <div class="icon-info-box">
-                <i class="fa fa-battery-full"></i>
-                <div>
-                    <h4>Battery Efficent</h4>
-                    <p>Pinna will never drain your customers battery like other mobile templates.</p>
-                </div>
-            </div><!-- ICON INFO BOX ENDS -->
-        </div><!-- COL-SM-6 ENDS -->
-    </div><!-- ROW ENDS -->
-
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="icon-info-box">
-                <i class="fa fa-users"></i>
-                <div>
-                    <h4>Never Loose Customers</h4>
-                    <p>Pinna will deliver content to your customers so fast. Your customers won't bounce anymore!</p>
-                </div>
-            </div><!-- ICON INFO BOX ENDS -->
-        </div><!-- COL-SM-6 ENDS -->
-        <div class="col-sm-6">
-            <div class="icon-info-box">
-                <i class="fa fa-tint"></i>
-                <div>
-                    <h4>Smooth Experience</h4>
-                    <p>Even old phones will run Pinna smoothly because of the AMP and you will profit more!</p>
-                </div>
-            </div><!-- ICON INFO BOX ENDS -->
-        </div><!-- COL-SM-6 ENDS -->
-    </div><!-- ROW ENDS -->
-
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="icon-info-box">
-                <i class="fa fa-check"></i>
-                <div>
-                    <h4>SEO Optimized</h4>
-                    <p>Search engines will love your site because the template is so light and UX friendly.</p>
-                </div>
-            </div><!-- ICON INFO BOX ENDS -->
-        </div><!-- COL-SM-6 ENDS -->
-        <div class="col-sm-6">
-            <div class="icon-info-box">
-                <i class="fa fa-hand-peace-o"></i>
-                <div>
-                    <h4>Structured Data</h4>
-                    <p>Give search engines more advanced data to show them on their search list.</p>
-                </div>
-            </div><!-- ICON INFO BOX ENDS -->
-        </div><!-- COL-SM-6 ENDS -->
-    </div><!-- ROW ENDS -->
-
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="bordered-title">
-                <h3>Blog</h3>
-                <h5>Posts Carousel</h5>
+                <h2>Projects</h2>
             </div><!-- TITLE ENDS -->
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
     <div class="row">
         <div class="col-xs-12">
-            <p class="minus-margin-top-bottom-15">Here's a <strong>cool carousel</strong> example with Pinna. AMP is not allowing you to use custom javascript but this doesn't mean you can't create <strong>rich web pages</strong>.</p>
+            <amp-carousel class="blog-carousel" layout="fixed-height" height=200>
+                <?php echo projects(); ?>
+            </amp-carousel><!-- BLOG CAROUSEL ENDS -->
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
 
     <!--    Blog    -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="bordered-title">
+                <h2>Blog</h2>
+            </div><!-- TITLE ENDS -->
+        </div><!-- COL-XS-12 ENDS -->
+    </div><!-- ROW ENDS -->
+
     <div class="row">
         <div class="col-xs-12">
             <amp-carousel class="blog-carousel" layout="fixed-height" height=200>
@@ -759,22 +696,6 @@
             </amp-carousel><!-- BLOG CAROUSEL ENDS -->
         </div><!-- COL-XS-12 ENDS -->
     </div><!-- ROW ENDS -->
-
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="bordered-title">
-                <h3>Videos</h3>
-                <h5>Smart Loading</h5>
-            </div><!-- TITLE ENDS -->
-        </div><!-- COL-XS-12 ENDS -->
-    </div><!-- ROW ENDS -->
-
-    <div class="row">
-        <div class="col-xs-12">
-            <p class="minus-margin-top-bottom-15">Many video content providers are supported by AMP. Here's a Vimeo example. Important thing about this feature is video will not load and slow down loading of the page, only When user may see.</p>
-        </div><!-- COL-XS-12 ENDS -->
-    </div><!-- ROW ENDS -->
-    <div class="divider colored"></div>
 
     <div class="space-2"></div>
 
