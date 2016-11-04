@@ -64,7 +64,7 @@
           "name": "Akshay Raj Gollahalli",
           "image" : "<?php echo $photo ?>",
           "url": "https://www.gollahalli.me/",
-          "address": {
+          "homeLocation": {
             "@type": "PostalAddress",
             "addressLocality": "Auckland",
             "addressCountry": "New Zealand"
