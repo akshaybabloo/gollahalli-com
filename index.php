@@ -105,7 +105,7 @@
           "name": "<?php echo $results->about_me->name ?>",
           "image" : "<?php echo $photo ?>",
           "url": "https://www.gollahalli.me/",
-          "address": {
+          "homeLocation": {
             "@type": "PostalAddress",
             "addressLocality": "Auckland",
             "addressCountry": "New Zealand"
