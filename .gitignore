@@ -47,4 +47,6 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 *.db
-Node.js/
+app/Node.js/
+
+/vendor/
