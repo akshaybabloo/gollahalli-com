@@ -16,18 +16,18 @@
         **-->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#1e1e1e">
-    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="<?php echo $cdn ?>/img/favicon/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $cdn ?>/img/favicon/favicon-152.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $cdn ?>/img/favicon/favicon-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo $cdn ?>/img/favicon/favicon-120.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $cdn ?>/img/favicon/favicon-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php echo $cdn ?>/img/favicon/favicon-180.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $cdn ?>/img/favicon/favicon-72.png">
-    <link rel="apple-touch-icon-precomposed" href="<?php echo $cdn ?>/img/favicon/favicon-57.png">
-    <link rel="icon" href="<?php echo $cdn ?>/img/favicon/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="<?php echo $cdn ?>/assets/img/favicon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $cdn ?>/assets/img/favicon/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $cdn ?>/assets/img/favicon/favicon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo $cdn ?>/assets/img/favicon/favicon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $cdn ?>/assets/img/favicon/favicon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php echo $cdn ?>/assets/img/favicon/favicon-180.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $cdn ?>/assets/img/favicon/favicon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="<?php echo $cdn ?>/assets/img/favicon/favicon-57.png">
+    <link rel="icon" href="<?php echo $cdn ?>/assets/img/favicon/favicon-32.png" sizes="32x32">
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="<?php echo $cdn ?>/favicon/img/favicon-144.png">
-    <link rel="icon" sizes="192x192" href="<?php echo $cdn ?>/img/favicon/favicon-192.png">
+    <meta name="msapplication-TileImage" content="<?php echo $cdn ?>/assets/img/favicon/favicon-144.png">
+    <link rel="icon" sizes="192x192" href="<?php echo $cdn ?>/assets/img/favicon/favicon-192.png">
     <link rel="manifest" href="manifest.json">
 
     <!-- Allow web app to be run in full-screen mode. -->

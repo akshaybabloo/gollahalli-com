@@ -17,7 +17,7 @@ function experience()
         } else {
             $ret .= 'class="no-false"';
         }
-        $ret .= ' src="'. $cdn .'/img/grad.png"
+        $ret .= ' src="'. $cdn .'/assets/img/grad.png"
                 width="30"
                 height="30"
                 layout="fixed"
