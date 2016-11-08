@@ -134,4 +134,6 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+/gollahalli_me/settings/local.py
 
+/gollahalli_me/db.sqlite3
