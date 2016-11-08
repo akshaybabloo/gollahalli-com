@@ -137,3 +137,5 @@ fabric.properties
 /gollahalli_me/settings/local.py
 
 /gollahalli_me/db.sqlite3
+
+.idea/workspace.xml
