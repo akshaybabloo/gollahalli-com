@@ -5,9 +5,7 @@
 <body data-gr-c-s-loaded="true">
 <div class="wrapper">
     <div class="container">
-        <header class="header-primary">
-            <a href="https://www.gollahalli.me" rel="home"><img class="logo" src="//cdn.gollahalli.me/img/logo-sm.png" alt="logo"></a>
-        </header>
+        <?php echo header_image(); ?>
 
         <div class="content-primary">
             <h1 class="title">Forbidden</h1>
