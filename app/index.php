@@ -27,7 +27,7 @@
     <meta name="twitter:title" content="<?php echo $results->about_me->name ?>"/>
     <meta name="twitter:description"
           content="<?php echo $results->about_me->name ?> is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
-    <meta name="twitter:image:src" content="<?php echo $cdn ?>/img/logo.jpg"/>
+    <meta name="twitter:image:src" content="<?php echo $cdn ?>/assets/img/logo.jpg"/>
     <meta name="twitter:url" content="https://www.gollahalli.me"/>
 
     <meta property="fb:app_id" content="1562596197364195"/>
@@ -534,7 +534,7 @@
 <script src="<?php echo $cdn ?>/assets/js/main.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo $cdn ?>/js/creative.min.js"></script>
+<script src="<?php echo $cdn ?>/assets/js/creative.min.js"></script>
 
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.js"></script>
