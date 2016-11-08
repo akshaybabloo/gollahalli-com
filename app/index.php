@@ -66,7 +66,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $cdn ?>/assets/img/favicon/favicon-72.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo $cdn ?>/assets/img/favicon/favicon-57.png">
     <link rel="icon" href="<?php echo $cdn ?>/assets/img/favicon/favicon-32.png" sizes="32x32">
-    <link rel="icon" sizes="192x192" href="<?php echo $cdn ?>/img/favicon/favicon-192.png">
+    <link rel="icon" sizes="192x192" href="<?php echo $cdn ?>/assets/img/favicon/favicon-192.png">
 
 
     <script src="<?php echo $cdn ?>/assets/js/queryloader2.min.js" type="text/javascript"></script>
