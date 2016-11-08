@@ -16,7 +16,7 @@ function experience()
             } else {
                 $ret .= '<div class="cd-timeline-img cd-movie">';
             }
-            $ret .= '<img src="'. $cdn .'/img/grad.png" alt="Grad-pic">
+            $ret .= '<img src="'. $cdn .'/assets/img/grad.png" alt="Grad-pic">
                         </div>
                         <div class="cd-timeline-content">';
             $ret .= '<h4>' . $j->title . '</h4>';

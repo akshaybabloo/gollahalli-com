@@ -18,8 +18,8 @@
     <meta property="og:title" content="<?php echo $results->about_me->name ?>"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://www.gollahalli.me/"/>
-    <meta property="og:image" content="<?php echo $cdn ?>/img/logo.jpg"/>
-    <meta property="og:image:secure_url" content="<?php echo $cdn ?>/img/logo.jpg"/>
+    <meta property="og:image" content="<?php echo $cdn ?>/assets/img/logo.jpg"/>
+    <meta property="og:image:secure_url" content="<?php echo $cdn ?>/assets/img/logo.jpg"/>
     <meta property="og:description"
           content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
 
@@ -39,62 +39,37 @@
     <title><?php echo $results->about_me->name ?></title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="<?php echo $cdn ?>/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/assets/css/bootstrap.min.css" type="text/css">
 
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,900" rel="stylesheet" type='text/css'>
-    <link rel="stylesheet" href="<?php echo $cdn ?>/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/assets/font-awesome/css/font-awesome.min.css" type="text/css">
 
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="<?php echo $cdn ?>/css/animate.min.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo $cdn ?>/css/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/assets/css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/assets/css/ionicons.min.css" type="text/css">
     <link rel="stylesheet" type="text/css"
           href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.css"/>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?php echo $cdn ?>/css/gollahalli.min.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo $cdn ?>/css/creative.min.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo $cdn ?>/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/assets/css/gollahalli.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/assets/css/creative.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $cdn ?>/assets/css/style.min.css" type="text/css">
 
-    <!-- For old IEs -->
-    <link rel="shortcut icon" href="<?php echo $cdn ?>/img/favicon/favicon.ico"/>
 
-    <!-- For new browsers - multisize ico  -->
-    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="<?php echo $cdn ?>/img/favicon/favicon.ico">
-
-    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $cdn ?>/img/favicon/favicon-152.png">
-
-    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $cdn ?>/img/favicon/favicon-144.png">
-
-    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo $cdn ?>/img/favicon/favicon-120.png">
-
-    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $cdn ?>/img/favicon/favicon-114.png">
-
-    <!-- For iPhone 6+ -->
-    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php echo $cdn ?>/img/favicon/favicon-180.png">
-
-    <!-- For first- and second-generation iPad: -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $cdn ?>/img/favicon/favicon-72.png">
-
-    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <link rel="apple-touch-icon-precomposed" href="<?php echo $cdn ?>/img/favicon/favicon-57.png">
-
-    <!-- For Old Chrome -->
-    <link rel="icon" href="<?php echo $cdn ?>/img/favicon/favicon-32.png" sizes="32x32">
-
-    <!-- For IE10 Metro -->
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="<?php echo $cdn ?>/favicon/img/favicon-144.png">
-
-    <!-- Chrome for Android -->
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="<?php echo $cdn ?>/assets/img/favicon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $cdn ?>/assets/img/favicon/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $cdn ?>/assets/img/favicon/favicon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo $cdn ?>/assets/img/favicon/favicon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $cdn ?>/assets/img/favicon/favicon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php echo $cdn ?>/assets/img/favicon/favicon-180.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $cdn ?>/assets/img/favicon/favicon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="<?php echo $cdn ?>/assets/img/favicon/favicon-57.png">
+    <link rel="icon" href="<?php echo $cdn ?>/assets/img/favicon/favicon-32.png" sizes="32x32">
     <link rel="icon" sizes="192x192" href="<?php echo $cdn ?>/img/favicon/favicon-192.png">
 
 
-    <script src="<?php echo $cdn ?>/js/queryloader2.min.js" type="text/javascript"></script>
+    <script src="<?php echo $cdn ?>/assets/js/queryloader2.min.js" type="text/javascript"></script>
 
     <!-- Schema.org -->
 
@@ -546,17 +521,17 @@
     }(document, "script", "twitter-wjs");</script>
 
 <!-- jQuery -->
-<script src="<?php echo $cdn ?>/js/jquery.js"></script>
+<script src="<?php echo $cdn ?>/assets/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo $cdn ?>/js/bootstrap.min.js"></script>
+<script src="<?php echo $cdn ?>/assets/js/bootstrap.min.js"></script>
 
 <!-- Plugin JavaScript -->
-<script src="<?php echo $cdn ?>/js/jquery.easing.min.js"></script>
-<script src="<?php echo $cdn ?>/js/jquery.fittext.min.js"></script>
-<script src="<?php echo $cdn ?>/js/wow.min.js"></script>
-<script src="<?php echo $cdn ?>/js/modernizr.min.js"></script>
-<script src="<?php echo $cdn ?>/js/main.min.js"></script>
+<script src="<?php echo $cdn ?>/assets/js/jquery.easing.min.js"></script>
+<script src="<?php echo $cdn ?>/assets/js/jquery.fittext.min.js"></script>
+<script src="<?php echo $cdn ?>/assets/js/wow.min.js"></script>
+<script src="<?php echo $cdn ?>/assets/js/modernizr.min.js"></script>
+<script src="<?php echo $cdn ?>/assets/js/main.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="<?php echo $cdn ?>/js/creative.min.js"></script>
