@@ -1,0 +1,16 @@
+{
+    "name": "gollahalli/me",
+    "description": "Gollahalli.me website files",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "akshay raj gollahalli",
+            "email": "akshaybabloo@gmail.com"
+        }
+    ],
+    "require": {},
+    
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*"
+    }
+}
