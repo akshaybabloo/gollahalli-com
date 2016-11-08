@@ -27,7 +27,7 @@
     <meta name="twitter:title" content="<?php echo $results->about_me->name ?>"/>
     <meta name="twitter:description"
           content="<?php echo $results->about_me->name ?> is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
-    <meta name="twitter:image:src" content="<?php echo $cdn ?>/img/logo.jpg"/>
+    <meta name="twitter:image:src" content="<?php echo $cdn ?>/assets/img/logo.jpg"/>
     <meta name="twitter:url" content="https://www.gollahalli.me"/>
 
     <meta property="fb:app_id" content="1562596197364195"/>
@@ -66,7 +66,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $cdn ?>/assets/img/favicon/favicon-72.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo $cdn ?>/assets/img/favicon/favicon-57.png">
     <link rel="icon" href="<?php echo $cdn ?>/assets/img/favicon/favicon-32.png" sizes="32x32">
-    <link rel="icon" sizes="192x192" href="<?php echo $cdn ?>/img/favicon/favicon-192.png">
+    <link rel="icon" sizes="192x192" href="<?php echo $cdn ?>/assets/img/favicon/favicon-192.png">
 
 
     <script src="<?php echo $cdn ?>/assets/js/queryloader2.min.js" type="text/javascript"></script>
@@ -534,7 +534,7 @@
 <script src="<?php echo $cdn ?>/assets/js/main.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo $cdn ?>/js/creative.min.js"></script>
+<script src="<?php echo $cdn ?>/assets/js/creative.min.js"></script>
 
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.js"></script>
