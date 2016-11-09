@@ -1,1 +1,1 @@
-web: gunicorn Abies.wsgi
+web: gunicorn gollahalli_me.wsgi
