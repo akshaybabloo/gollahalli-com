@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    context = {}
+    template = "index.html"
+    return render(request, template, context)
