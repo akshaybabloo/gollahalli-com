@@ -22,6 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = In secrets.py
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -35,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'reader',
+    'editor',
+    'viewer',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +55,22 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'gollahalli_me.urls'
+
+# TEMPLATES = [
+#     {
+#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+#         'DIRS': [],
+#         'APP_DIRS': True,
+#         'OPTIONS': {
+#             'context_processors': [
+#                 'django.template.context_processors.debug',
+#                 'django.template.context_processors.request',
+#                 'django.contrib.auth.context_processors.auth',
+#                 'django.contrib.messages.context_processors.messages',
+#             ],
+#         },
+#     },
+# ]
 
 WSGI_APPLICATION = 'gollahalli_me.wsgi.application'
 
