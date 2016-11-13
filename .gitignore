@@ -50,3 +50,7 @@ fabric.properties
 app/Node.js/
 
 /vendor/
+
+*.pyc
+
+*.py
