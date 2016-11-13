@@ -1,6 +1,6 @@
 from django.db import models
 
 
-class Content(models.Model):
-    content_name = models.CharField(max_length=200, unique=False, default='Name of the field')
+class ContentModel(models.Model):
+    ref_id = models.CharField(primary_key=True, max_length=120, default='1', unique=True)
     content = models.TextField(default="Write about you.")
