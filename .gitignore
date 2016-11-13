@@ -54,3 +54,5 @@ app/Node.js/
 *.pyc
 
 *.py
+
+gollahalli_me/db.sqlite3
