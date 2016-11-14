@@ -10,3 +10,9 @@ def index(request):
     except ContentModel.DoesNotExist as e:
         return render(request, template, context)
     return render(request, template, context)
+
+
+def login(request):
+    context = {}
+    template = "editor/login.html"
+    return render(request, template, context)
