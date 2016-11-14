@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from editor.models import ContentModel
+from django.core.exceptions import ObjectDoesNotExist
+
 
 
 def index(request):
@@ -9,7 +11,7 @@ def index(request):
         a = ContentModel.objects.get(ref_id='1')
     except ContentModel.DoesNotExist as e:
         return render(request, template, context)
-    except ContentModel.ProgrammingError as e:
+    except ObjectDoesNotExist as e:
         return render(request, template, context)
     return render(request, template, context)
 
