@@ -9,8 +9,8 @@ def index(request):
     template = "viewer/home.html"
     try:
         a = ContentModel.objects.get(ref_id='1')
-    except ContentModel.DoesNotExist as e:
-        return render(request, template, context)
+    except Exception as e:
+        print(repr(e))
     return render(request, template, context)
 
 
