@@ -27,5 +27,5 @@ ALLOWED_HOSTS = ['*']
 
 SHARE_URL = "http://www.gollahalli.me/"
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
