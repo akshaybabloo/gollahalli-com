@@ -119,7 +119,7 @@ AWS_HEADERS = {
 }
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_QUERYSTRING_AUTH = False
-AWS_S3_CUSTOM_DOMAIN = 'https://gollahalli-me-test-ypyxfkub.stackpathdns.com'
+AWS_S3_CUSTOM_DOMAIN = 'gollahalli-me-test-ypyxfkub.stackpathdns.com'
 
 # heroku config:set AWS_ACCESS_KEY_ID=AKIAIPQQUJGYXMFFOASA AWS_SECRET_ACCESS_KEY=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
 
