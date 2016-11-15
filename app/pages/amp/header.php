@@ -15,9 +15,9 @@ function addScheme($url, $scheme = 'https:')
 }
 
 if( isset($_SERVER['HTTPS'] ) ) {
-    $cdn = 'https://cdn.gollahalli.me';
+    $cdn = 'https://www.gollahalli.me';
 }else{
-    $cdn = 'http://cdn.gollahalli.me';
+    $cdn = 'http://www.gollahalli.me';
 }
 
 $photo = 'https://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_100,q_auto:best,w_100/v1477524340/akshay_b8wb1x.jpg';
