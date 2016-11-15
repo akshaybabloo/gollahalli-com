@@ -666,9 +666,11 @@ label small{
 .logo-container .logo{
     overflow: hidden;
     border-radius: 50%;
-    border: 1px solid #333333;
-    width: 60px; 
     float: left;
+}
+.logo img{
+    height: 60px;
+    width: 60px;
 }
 .logo-container .brand{
     font-size: 18px;
@@ -676,7 +678,7 @@ label small{
     line-height: 20px;
     float: left;
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     width: 60px
 }
 
