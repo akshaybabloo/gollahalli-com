@@ -3,7 +3,6 @@ from editor.models import ContentModel
 from django.core.exceptions import ObjectDoesNotExist
 
 
-
 def index(request):
     context = {}
     template = "editor/home.html"
