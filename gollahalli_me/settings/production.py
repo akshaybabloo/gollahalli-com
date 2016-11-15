@@ -29,6 +29,4 @@ SHARE_URL = "http://www.gollahalli.me/"
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
+# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
