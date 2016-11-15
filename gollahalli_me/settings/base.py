@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'storages',  # django-storages
     'editor',
     'viewer',
+    'welcome',
 ]
 
 MIDDLEWARE_CLASSES = [
