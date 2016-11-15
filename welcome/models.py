@@ -1,7 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
 class WelcomeToAbies(models.Model):
     ref_id = models.CharField(primary_key=True, max_length=120, default='1', unique=True)
     firs_name = models.CharField(max_length=120, name='welcome_first_name')
