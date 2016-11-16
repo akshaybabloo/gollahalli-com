@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.conf import settings
 from editor.models import ContentModel
+from welcome.views import index
 
 
 def index(request):
@@ -9,7 +10,7 @@ def index(request):
     try:
         a = ContentModel.objects.get(ref_id='1')
     except Exception as e:
-        print(repr(e))
+        return redirect('/welcome/')
     return render(request, template, context)
 
 
