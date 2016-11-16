@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
 from editor.models import ContentModel
-from welcome.views import index
 
 
 def index(request):
