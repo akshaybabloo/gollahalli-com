@@ -4,7 +4,8 @@ from django.db import models
 class WelcomeToAbies(models.Model):
     ref_id = models.CharField(primary_key=True, max_length=120, default='1', unique=True)
     firs_name = models.CharField(max_length=120, default='null', name='welcome_first_name')
-    image_location = models.CharField(max_length=240, default='null', name='welcome_image_location')
+    profile_image_location = models.CharField(max_length=240, default='null', name='welcome_profile_image_location')
+    company_logo_location = models.CharField(max_length=240, default='null', name='welcome_company_logo_location')
     last_name = models.CharField(max_length=120, default='null', name='welcome_last_name')
     email_id = models.EmailField(name='welcome_email_id')
     company_name = models.CharField(max_length=240, default='null', name='welcome_company_name')
