@@ -428,9 +428,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 no-gutter text-center">
-                <small class="text-muted">
                     <?php
                     try {
+                        echo "<small class=\"text-muted\">";
                         $url = 'https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest';
                         $options = array('http' => array('user_agent' => $_SERVER['HTTP_USER_AGENT']));
                         $context = stream_context_create($options);
@@ -438,12 +438,11 @@
 
                         $object = json_decode($response);
                         echo "<a href='#version_control' data-toggle=\"modal\" data-target=\"#version_control\">$object->tag_name</a>";
+                        echo "</small><br>";
                     } catch (exception $e) {
 
                     }
                     ?>
-                </small>
-                <br>
                 <small class="text-muted">Copyright &copy; 2016 &#124; Akshay Raj Gollahalli</small>
                 <br>
                 <small class="text-muted">All product and company names are trademarks&#8482; or registered&reg;
@@ -478,10 +477,10 @@
 
                     echo $newstring;
                 ?>
-                <p class="text-center">
-                    <a href="<?php echo $object->zipball_url ?>"><i class="fa fa-2x fa-download"></i></a>
-                    <a href="https://github.com/akshaybabloo/gollahalli-me"><i class="fa fa-2x fa-github"></i></a>
-                </p>
+<!--                <p class="text-center">-->
+<!--                    <a href="--><?php //echo $object->zipball_url ?><!--"><i class="fa fa-2x fa-download"></i></a>-->
+<!--                    <a href="https://github.com/akshaybabloo/gollahalli-me"><i class="fa fa-2x fa-github"></i></a>-->
+<!--                </p>-->
             </div>
         </div>
     </div>
