@@ -431,13 +431,9 @@
                     <?php
                     try {
                         echo "<small class=\"text-muted\">";
-                        $url = 'https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest';
-                        $options = array('http' => array('user_agent' => $_SERVER['HTTP_USER_AGENT']));
-                        $context = stream_context_create($options);
-                        $response = file_get_contents($url, false, $context);
+                        $object = get_repo();
 
-                        $object = json_decode($response);
-                        echo "<a href='#version_control' data-toggle=\"modal\" data-target=\"#version_control\">$object->tag_name</a>";
+                        echo "<a href='#version_control' data-toggle=\"modal\" data-target=\"#version_control\">".$object->tag_name."</a>";
                         echo "</small><br>";
                     } catch (exception $e) {
 
@@ -465,17 +461,8 @@
             <div class="modal-body">
                 <?php
                     $string = $object->body;
-
-                    $replacer = str_replace("* ", "", $string);
-                    $bits = explode("\n", $replacer);
-
-                    $newstring = "<ul>";
-                    foreach ($bits as $bit) {
-                        $newstring .= "<li>" . $bit . "</li>";
-                    }
-                    $newstring .= "</ul>";
-
-                    echo $newstring;
+                    $Parsedown = new Parsedown();
+                    echo $Parsedown->text($string);
                 ?>
 <!--                <p class="text-center">-->
 <!--                    <a href="--><?php //echo $object->zipball_url ?><!--"><i class="fa fa-2x fa-download"></i></a>-->
