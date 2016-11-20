@@ -139,3 +139,4 @@ fabric.properties
 /gollahalli_me/db.sqlite3
 
 .idea/workspace.xml
+/vendor/
