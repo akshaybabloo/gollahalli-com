@@ -6,6 +6,7 @@ function blog()
     $content = file_get_contents($url);
 
     $ret = '';
+    $bol = true;
 
     try {
         $x = new SimpleXmlElement($content);
@@ -29,6 +30,8 @@ function blog()
         }
     } catch (Exception $e) {
         $ret = 'Under Maintenance';
+        $bol = false;
     }
-    return $ret;
+    $array = ["ret" => $ret, "bol" => $bol];
+    return $array;
 }

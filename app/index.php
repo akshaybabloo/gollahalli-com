@@ -393,14 +393,22 @@
     </div>
     <div class="container">
         <div class="row">
-            <?php echo blog(); ?>
+            <?php
+            $blog = blog();
+            echo $blog['ret'];
+            ?>
         </div>
 
     </div>
 
-    <p>
-        <a href="https://blog.gollahalli.me" class="btn center-block bigger">Read more</a>
-    </p>
+    <?php
+
+    if ($blog['bol']) {
+        echo "<p>";
+        echo "<a href = \"https://blog.gollahalli.me\" class=\"btn center-block bigger\" > Read more </a>";
+        echo "</p>";
+    }
+    ?>
 </section>
 
 <!--========================= Contact Me ===========================-->
