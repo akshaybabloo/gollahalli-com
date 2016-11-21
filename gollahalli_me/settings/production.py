@@ -38,7 +38,7 @@ AWS_HEADERS = {
 }
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_QUERYSTRING_AUTH = False
-AWS_S3_CUSTOM_DOMAIN = 'gollahalli-me-test-ypyxfkub.stackpathdns.com'
+AWS_S3_CUSTOM_DOMAIN = 'gollahalli-heroku-django-ypyxfkub.stackpathdns.com'
 
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
