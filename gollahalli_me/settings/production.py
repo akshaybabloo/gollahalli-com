@@ -31,7 +31,7 @@ SHARE_URL = "http://www.gollahalli.me/"
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = 'AKIAIPQQUJGYXMFFOASA'
 AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'gollahalli'
+AWS_STORAGE_BUCKET_NAME = 'gollahalli-me-django'
 AWS_HEADERS = {
     'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
     'Cache-Control': 'max-age=86400',
