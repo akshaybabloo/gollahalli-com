@@ -3,8 +3,10 @@
 #
 # Copyright 2016 Akshay Raj Gollahalli
 
-from django.conf import settings
 import os
+
+import dj_database_url
+from django.conf import settings
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -15,7 +17,7 @@ TEMPLATE_DEBUG = False
 DATABASES = settings.DATABASES
 
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
+
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
 DATABASES['default'] = dj_database_url.config()
