@@ -1,11 +1,11 @@
 from django.db import models
 
 
-class WelcomeToAbies(models.Model):
+class AbiesModel(models.Model):
     ref_id = models.CharField(primary_key=True, max_length=120, default='1', unique=True)
 
     # page 1
-    firs_name = models.CharField(max_length=120, default='null', name='first_name')
+    first_name = models.CharField(max_length=120, default='null', name='first_name')
     last_name = models.CharField(max_length=120, default='null', name='last_name')
     email = models.EmailField(name='welcome_email_id')
     profile_image_location = models.ImageField(upload_to='images', name='profile_image_location')
