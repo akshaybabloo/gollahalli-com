@@ -34,4 +34,5 @@ class WelcomeForm(forms.Form):
 class WelcomeFormModel(forms.ModelForm):
     class Meta:
         model = AbiesModel
-        fields = ('first_name', 'last_name',)
+        fields = ('first_name', 'last_name', 'profile_image_location', 'email', 'username', 'password', 'company_name',
+                  'company_logo_location', 'city', 'country')
