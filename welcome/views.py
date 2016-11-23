@@ -4,6 +4,10 @@ import operator
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
 import random
+# from .forms import WelcomeFormModel
+from .forms import WelcomeForm
+from django.core.files.storage import FileSystemStorage
+
 
 COUNTRY_LIST = {"AF": "Afghanistan", "AX": "\u00c5land Islands", "AL": "Albania", "DZ": "Algeria",
                 "AS": "American Samoa", "AD": "Andorra", "AO": "Angola", "AI": "Anguilla", "AQ": "Antarctica",
@@ -62,8 +66,43 @@ COUNTRY_LIST = {"AF": "Afghanistan", "AX": "\u00c5land Islands", "AL": "Albania"
 
 def index(request):
     avatars = [av for av in os.listdir(settings.STATIC_ROOT + os.sep + 'img' + os.sep + 'avatar')]
-    temp = 'img' + os.sep + 'avatar' + os.sep + random.choice(avatars)
-    avatar_img = static(temp)
-    context = {'avatar_img': avatar_img, 'county_list': sorted(COUNTRY_LIST.items(), key=operator.itemgetter(1))}
+    random_image_location = 'img' + os.sep + 'avatar' + os.sep + random.choice(avatars)
+    avatar_img = static(random_image_location)
     template = "welcome.html"
+
+    if request.method == 'POST':
+        form = WelcomeForm(request.POST)
+        if form.is_valid():
+            # firs_name = form.cleaned_data['first_name']
+            pic = request.FILES['profile_image_location']
+            # print(firs_name)
+            # print(pic.name)
+            fs = FileSystemStorage()
+            filename = fs.save(pic.name, pic)
+            uploaded_file_url = fs.url(filename)
+        else:
+            print('not valid')
+    else:
+        form = WelcomeForm()
+
+    context = {'avatar_img': avatar_img, 'county_list': sorted(COUNTRY_LIST.items(), key=operator.itemgetter(1))}
     return render(request, template, context)
+
+
+# def index(request):
+#
+#     template = "name.html"
+#
+#     if request.method == 'POST':
+#         form = WelcomeForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             firs_name = request.FILES['profile_image_location']
+#             # fs = FileSystemStorage()
+#             print(firs_name)
+#         else:
+#             print('not valid')
+#     else:
+#         form = WelcomeForm()
+#
+#     context = {'form':form}
+#     return render(request, template, context)
