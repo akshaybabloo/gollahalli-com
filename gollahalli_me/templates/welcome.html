@@ -10,7 +10,17 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
     <meta name="viewport" content="width=device-width"/>
 
-    <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="{% static "img/welcomeFavicons/favicon.ico" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{% static "img/welcomeFavicons/favicon-152.png" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "img/welcomeFavicons/favicon-144.png" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{% static "img/welcomeFavicons/favicon-120.png" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "img/welcomeFavicons/favicon-114.png" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="{% static "img/welcomeFavicons/favicon-180.png" %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static "img/welcomeFavicons/favicon-57.png" %}">
+    <link rel="icon" href="{% static "img/welcomeFavicons/favicon-32.png" %}" sizes="32x32">
+    <link rel="manifest" href="{% static "json/welcome/manifest.json" %}">
+    <link rel="icon" sizes="192x192" href="{% static "img/welcomeFavicons/favicon-192.png" %}">
+
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'css/viewerWelcome.css' %}" rel="stylesheet"/>
 
@@ -159,7 +169,6 @@
                                                     {% for key, value in county_list %}
                                                         <option value="{{ key }}">{{ value }}</option>
                                                     {% endfor %}
-                                                    
                                                 </select>
                                             </div>
                                         </div>
