@@ -94,6 +94,19 @@ function validateFirstStep(){
 			email: {
 				required: true,
 				email: true
+			},
+            password: {
+                required: true,
+                minlength: 5
+            },
+            confirm_password: {
+				required: true,
+				minlength: 5,
+				equalTo: "#password"
+			},
+            username: {
+				required: true,
+				minlength: 2
 			}
 			
 /*  other possible input validations
@@ -123,6 +136,19 @@ function validateFirstStep(){
 			firstname: "Please enter your First Name",
 			lastname: "Please enter your Last Name",
 			email: "Please enter a valid email address",
+            username: {
+				required: "Please enter a username",
+				minlength: "Your username must consist of at least 2 characters"
+			},
+			password: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long"
+			},
+			confirm_password: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long",
+				equalTo: "Please enter the same password as above"
+			}
 
 /*   other posible validation messages
 			username: {
@@ -167,7 +193,6 @@ function validateSecondStep(){
 	}); 
 	
 	if(!$(".wizard-card form").valid()){
-    	console.log('invalid');
     	return false;
 	}
 	return true;
@@ -188,7 +213,7 @@ function readURL(input) {
 
         reader.onload = function (e) {
             $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
-        }
+        };
         reader.readAsDataURL(input.files[0]);
     }
 }
