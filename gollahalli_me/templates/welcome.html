@@ -82,14 +82,14 @@
                             <div class="tab-content">
                                 <div class="tab-pane" id="about">
                                     <div class="row">
-                                        <h4 class="info-text"> Let's start with the basic information (with
-                                            validation)</h4>
+                                        <h4 class="info-text"> Let's start with the basic information</h4>
                                         <div class="col-sm-4 col-sm-offset-1">
                                             <div class="picture-container">
                                                 <div class="picture">
                                                     <img src="{{ avatar_img }}" class="picture-src"
                                                          id="wizardPicturePreview" title=""/>
-                                                    <input name="profile_image_location" type="file" id="wizard-picture">
+{#                                                    <input name="profile_image_location" type="file" id="wizard-picture">#}
+                                                    {{ form.profile_image_location }}
                                                 </div>
                                                 <h6>Choose Picture</h6>
                                             </div>
@@ -99,13 +99,15 @@
                                                 <label>First Name
                                                     <small>(required)</small>
                                                 </label>
-                                                <input id="id_firs_name" name="first_name" type="text" class="form-control">
+{#                                                <input id="id_firs_name" name="first_name" type="text" class="form-control">#}
+                                                {{ form.first_name }}
                                             </div>
                                             <div class="form-group">
                                                 <label>Last Name
                                                     <small>(required)</small>
                                                 </label>
-                                                <input name="last_name" type="text" class="form-control">
+{#                                                <input name="last_name" type="text" class="form-control">#}
+                                                {{ form.last_name }}
                                             </div>
                                         </div>
                                         <div class="col-sm-10 col-sm-offset-1">
@@ -113,7 +115,8 @@
                                                 <label>Email
                                                     <small>(required)</small>
                                                 </label>
-                                                <input name="email" type="email" class="form-control">
+{#                                                <input name="email" type="email" class="form-control">#}
+                                                {{ form.email }}
                                             </div>
                                         </div>
                                     </div>
@@ -126,13 +129,15 @@
                                                 <label>Username
                                                     <small>(required)</small>
                                                 </label>
-                                                <input name="username" type="text" class="form-control">
+{#                                                <input name="username" type="text" class="form-control">#}
+                                                {{ form.username }}
                                             </div>
                                             <div class="form-group">
                                                 <label>password
                                                     <small>(required)</small>
                                                 </label>
-                                                <input id="password" name="password" type="password" class="form-control">
+{#                                                <input id="password" name="password" type="password" class="form-control">#}
+                                                {{ form.password }}
                                             </div>
                                             <div class="form-group">
                                                 <label>Retype Password
@@ -146,35 +151,38 @@
                                 {#                                Tab 3#}
                                 <div class="tab-pane" id="address">
                                     <div class="row">
-                                        <div class="col-sm-12">
-                                            <h4 class="info-text"> Are you living in a nice area? </h4>
-                                        </div>
+{#                                        <div class="col-sm-12">#}
+{#                                            <h4 class="info-text"> Are you living in a nice area? </h4>#}
+{#                                        </div>#}
                                         <div class="col-sm-5 col-sm-offset-1">
                                             <div class="form-group">
                                                 <label>Company Name</label>
-                                                <input name="company_name" type="text" class="form-control">
+                                                {{ form.company_name }}
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
                                             <div class="form-group">
                                                 <label>Company Logo</label>
-                                                <input name="company_logo_location" type="file" class="form-control" id="file"/>
+{#                                                <input name="company_logo_location" type="file" class="form-control" id="file"/>#}
+                                                {{ form.company_logo_location }}
                                             </div>
                                         </div>
                                         <div class="col-sm-5 col-sm-offset-1">
                                             <div class="form-group">
                                                 <label>City</label>
-                                                <input name="city" type="text" class="form-control">
+{#                                                <input name="city" type="text" class="form-control">#}
+                                                {{ form.city }}
                                             </div>
                                         </div>
                                         <div class="col-sm-5">
                                             <div class="form-group">
                                                 <label>Country</label><br>
-                                                <select name="country" class="form-control">
-                                                    {% for key, value in county_list %}
-                                                        <option value="{{ key }}">{{ value }}</option>
-                                                    {% endfor %}
-                                                </select>
+{#                                                <select name="country" class="form-control">#}
+{#                                                    {% for key, value in county_list %}#}
+{#                                                        <option value="{{ key }}">{{ value }}</option>#}
+{#                                                    {% endfor %}#}
+{#                                                </select>#}
+                                                {{ form.country }}
                                             </div>
                                         </div>
                                     </div>
@@ -186,7 +194,7 @@
                                     <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm'
                                            name='next' value='Next'/>
                                     <input type='submit' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm'
-                                           name='finish' value='Submit'/>
+                                           name='finish' value='Finish'/>
 
                                 </div>
 
