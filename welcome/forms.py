@@ -4,14 +4,15 @@
 # Copyright 2016 Akshay Raj Gollahalli
 
 from django import forms
-from .models import WelcomeToAbies
+
+from .models import AbiesModel
 
 
 class WelcomeForm(forms.Form):
     # page 1
     first_name = forms.CharField(max_length=120, required=False)
     last_name = forms.CharField(max_length=120, required=False)
-    profile_image_location = forms.FileField(required=False)
+    profile_image_location = forms.ImageField(required=False)
     email = forms.EmailField(required=False)
 
     # page 2
@@ -24,12 +25,13 @@ class WelcomeForm(forms.Form):
 
     # page 3
     company_name = forms.CharField(max_length=240, required=False)
-    company_logo_location = forms.FileField(required=False)
+    company_logo_location = forms.ImageField(required=False)
     city = forms.CharField(max_length=120, required=False)
     country = forms.CharField(max_length=120, required=False)
+    # country = forms.ChoiceField(choices=COUNTRY_LIST, label=u'Country')
 
 
-# class WelcomeFormModel(forms.ModelForm):
-#     class Meta:
-#         model = WelcomeToAbies
-#         fields = ('welcome_first_name', 'welcome_last_name')
+class WelcomeFormModel(forms.ModelForm):
+    class Meta:
+        model = AbiesModel
+        fields = ('first_name', 'last_name',)
