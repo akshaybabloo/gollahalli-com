@@ -140,3 +140,5 @@ fabric.properties
 
 .idea/workspace.xml
 /vendor/
+
+gollahalli_me/templates/test.html
