@@ -80,6 +80,7 @@ def index(request):
             fs = FileSystemStorage()
             filename = fs.save(pic.name, pic)
             uploaded_file_url = fs.url(filename)
+
         else:
             print('not valid')
     else:

@@ -19,7 +19,6 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
-MEDIA_URL = '/media/'
 
 TEMPLATES = [
     {
