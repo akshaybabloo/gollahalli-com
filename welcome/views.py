@@ -1,14 +1,13 @@
-from django.shortcuts import render
-import os
 import operator
+import os
+import random
+
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
-import random
-# from .forms import WelcomeFormModel
-from .forms import WelcomeForm
-from .models import WelcomeToAbies
-from django.core.files.storage import FileSystemStorage
+from django.shortcuts import render
 
+from .forms import WelcomeForm
+from .models import AbiesModel
 
 COUNTRY_LIST = {"AF": "Afghanistan", "AX": "\u00c5land Islands", "AL": "Albania", "DZ": "Algeria",
                 "AS": "American Samoa", "AD": "Andorra", "AO": "Angola", "AI": "Anguilla", "AQ": "Antarctica",
@@ -66,15 +65,12 @@ COUNTRY_LIST = {"AF": "Afghanistan", "AX": "\u00c5land Islands", "AL": "Albania"
 
 
 def index(request):
-
     if request.method == 'POST':
         form = WelcomeForm(request.POST, request.FILES)
         if form.is_valid():
             # firs_name = form.cleaned_data['first_name']
-            firs_name = request.FILES['profile_image_location']
-            newdoc = WelcomeToAbies(welcome_profile_image_location=request.FILES['profile_image_location'])
+            newdoc = AbiesModel(welcome_profile_image_location=request.FILES['profile_image_location'])
             newdoc.save()
-            # print(firs_name)
         else:
             print('not valid')
     else:
@@ -84,24 +80,6 @@ def index(request):
     random_image_location = 'img' + os.sep + 'avatar' + os.sep + random.choice(avatars)
     avatar_img = static(random_image_location)
     template = "welcome.html"
-    context = {'avatar_img': avatar_img, 'county_list': sorted(COUNTRY_LIST.items(), key=operator.itemgetter(1))}
+    context = {'avatar_img': avatar_img, 'county_list': sorted(COUNTRY_LIST.items(), key=operator.itemgetter(1)),
+               'form': form}
     return render(request, template, context)
-
-
-# def index(request):
-#
-#     template = "name.html"
-#
-#     if request.method == 'POST':
-#         form = WelcomeForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             firs_name = request.FILES['profile_image_location']
-#             # fs = FileSystemStorage()
-#             print(firs_name)
-#         else:
-#             print('not valid')
-#     else:
-#         form = WelcomeForm()
-#
-#     context = {'form':form}
-#     return render(request, template, context)
