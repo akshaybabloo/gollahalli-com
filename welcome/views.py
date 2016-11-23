@@ -71,7 +71,7 @@ def index(request):
     template = "welcome.html"
 
     if request.method == 'POST':
-        form = WelcomeForm(request.POST)
+        form = WelcomeForm(request.POST, request.FILES)
         if form.is_valid():
             # firs_name = form.cleaned_data['first_name']
             pic = request.FILES['profile_image_location']
