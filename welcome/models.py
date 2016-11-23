@@ -7,7 +7,7 @@ class AbiesModel(models.Model):
     # page 1
     first_name = models.CharField(max_length=120, default='null', name='first_name')
     last_name = models.CharField(max_length=120, default='null', name='last_name')
-    email = models.EmailField(name='welcome_email_id')
+    email = models.EmailField(name='email')
     profile_image_location = models.ImageField(upload_to='images', name='profile_image_location')
 
     # page 2
