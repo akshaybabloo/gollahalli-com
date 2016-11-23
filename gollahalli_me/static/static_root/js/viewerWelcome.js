@@ -89,25 +89,25 @@ function validateFirstStep(){
     
     $(".wizard-card form").validate({
 		rules: {
-			firstname: "required",
-			lastname: "required",
-			email: {
-				required: true,
-				email: true
-			},
-            password: {
-                required: true,
-                minlength: 5
-            },
-            confirm_password: {
-				required: true,
-				minlength: 5,
-				equalTo: "#password"
-			},
-            username: {
-				required: true,
-				minlength: 2
-			}
+			// firstname: "required",
+			// lastname: "required",
+			// email: {
+			// 	required: true,
+			// 	email: true
+			// },
+            // password: {
+             //    required: true,
+             //    minlength: 5
+            // },
+            // confirm_password: {
+			// 	required: true,
+			// 	minlength: 5,
+			// 	equalTo: "#password"
+			// },
+            // username: {
+			// 	required: true,
+			// 	minlength: 2
+			// }
 			
 /*  other possible input validations
 			,username: {
