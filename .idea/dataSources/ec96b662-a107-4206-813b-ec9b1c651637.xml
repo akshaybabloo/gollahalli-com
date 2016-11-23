@@ -396,35 +396,23 @@ model</columns>
       <mandatory>1</mandatory>
       <data-type>VARCHAR(240)(0,-1)|12</data-type>
     </column>
-    <column id="96" parent="14" name="welcome_title_same_as_company">
-      <mandatory>1</mandatory>
-      <data-type>BOOL(0,-1)|4</data-type>
-    </column>
-    <column id="97" parent="14" name="welcome_AWS_SECRET">
-      <mandatory>1</mandatory>
-      <data-type>VARCHAR(120)(0,-1)|12</data-type>
-    </column>
-    <column id="98" parent="14" name="welcome_AWS_SECRET_KEY">
-      <mandatory>1</mandatory>
-      <data-type>VARCHAR(120)(0,-1)|12</data-type>
-    </column>
-    <column id="99" parent="14" name="welcome_AWS_S3_BUCKET_NAME">
-      <mandatory>1</mandatory>
-      <data-type>VARCHAR(120)(0,-1)|12</data-type>
-    </column>
-    <column id="100" parent="14" name="welcome_root_password">
+    <column id="96" parent="14" name="welcome_root_password">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(30)(0,-1)|12</data-type>
     </column>
-    <column id="101" parent="14" name="welcome_image_location">
-      <mandatory>1</mandatory>
-      <data-type>VARCHAR(240)(0,-1)|12</data-type>
-    </column>
-    <column id="102" parent="14" name="welcome_root_username">
+    <column id="97" parent="14" name="welcome_root_username">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(120)(0,-1)|12</data-type>
     </column>
-    <key id="103" parent="14">
+    <column id="98" parent="14" name="welcome_profile_image_location">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(240)(0,-1)|12</data-type>
+    </column>
+    <column id="99" parent="14" name="welcome_company_logo_location">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(240)(0,-1)|12</data-type>
+    </column>
+    <key id="100" parent="14">
       <columns>ref_id</columns>
       <primary>1</primary>
     </key>
