@@ -16,7 +16,7 @@
     <table id="11" parent="1" name="django_session"/>
     <table id="12" parent="1" name="editor_contentmodel"/>
     <table id="13" parent="1" name="sqlite_sequence"/>
-    <table id="14" parent="1" name="welcome_welcometoabies"/>
+    <table id="14" parent="1" name="welcome_abiesmodel"/>
     <column id="15" parent="2" name="id">
       <mandatory>1</mandatory>
       <data-type>INTEGER(0,-1)|4</data-type>
@@ -380,39 +380,47 @@ model</columns>
       <mandatory>1</mandatory>
       <data-type>VARCHAR(120)(0,-1)|12</data-type>
     </column>
-    <column id="92" parent="14" name="welcome_first_name">
+    <column id="92" parent="14" name="first_name">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(120)(0,-1)|12</data-type>
     </column>
-    <column id="93" parent="14" name="welcome_last_name">
+    <column id="93" parent="14" name="last_name">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(120)(0,-1)|12</data-type>
     </column>
-    <column id="94" parent="14" name="welcome_email_id">
+    <column id="94" parent="14" name="email">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(254)(0,-1)|12</data-type>
     </column>
-    <column id="95" parent="14" name="welcome_company_name">
+    <column id="95" parent="14" name="profile_image_location">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(100)(0,-1)|12</data-type>
+    </column>
+    <column id="96" parent="14" name="company_logo_location">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(100)(0,-1)|12</data-type>
+    </column>
+    <column id="97" parent="14" name="company_name">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(240)(0,-1)|12</data-type>
     </column>
-    <column id="96" parent="14" name="welcome_root_password">
+    <column id="98" parent="14" name="password">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(30)(0,-1)|12</data-type>
     </column>
-    <column id="97" parent="14" name="welcome_root_username">
+    <column id="99" parent="14" name="city">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(240)(0,-1)|12</data-type>
+    </column>
+    <column id="100" parent="14" name="country">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR(240)(0,-1)|12</data-type>
+    </column>
+    <column id="101" parent="14" name="username">
       <mandatory>1</mandatory>
       <data-type>VARCHAR(120)(0,-1)|12</data-type>
     </column>
-    <column id="98" parent="14" name="welcome_profile_image_location">
-      <mandatory>1</mandatory>
-      <data-type>VARCHAR(240)(0,-1)|12</data-type>
-    </column>
-    <column id="99" parent="14" name="welcome_company_logo_location">
-      <mandatory>1</mandatory>
-      <data-type>VARCHAR(240)(0,-1)|12</data-type>
-    </column>
-    <key id="100" parent="14">
+    <key id="102" parent="14">
       <columns>ref_id</columns>
       <primary>1</primary>
     </key>
