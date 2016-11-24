@@ -30,7 +30,6 @@ ALLOWED_HOSTS = ['*']
 SHARE_URL = "http://www.gollahalli.me/"
 
 # S3
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = 'AKIAIPQQUJGYXMFFOASA'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'gollahalli-me-django'
@@ -38,7 +37,6 @@ AWS_HEADERS = {
     'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
     'Cache-Control': 'max-age=86400',
 }
-# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_CUSTOM_DOMAIN = 'gollahalli-heroku-django-ypyxfkub.stackpathdns.com'
 
