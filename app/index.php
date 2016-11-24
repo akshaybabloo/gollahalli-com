@@ -58,11 +58,16 @@
 
 
     <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="<?php echo $cdn ?>/assets/img/favicon/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $cdn ?>/assets/img/favicon/favicon-152.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $cdn ?>/assets/img/favicon/favicon-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo $cdn ?>/assets/img/favicon/favicon-120.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $cdn ?>/assets/img/favicon/favicon-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php echo $cdn ?>/assets/img/favicon/favicon-180.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="<?php echo $cdn ?>/assets/img/favicon/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="<?php echo $cdn ?>/assets/img/favicon/favicon-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="<?php echo $cdn ?>/assets/img/favicon/favicon-120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="<?php echo $cdn ?>/assets/img/favicon/favicon-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180"
+          href="<?php echo $cdn ?>/assets/img/favicon/favicon-180.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $cdn ?>/assets/img/favicon/favicon-72.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo $cdn ?>/assets/img/favicon/favicon-57.png">
     <link rel="icon" href="<?php echo $cdn ?>/assets/img/favicon/favicon-32.png" sizes="32x32">
@@ -87,7 +92,8 @@
           },
           "email": "akshay@gollahalli.com"
         }
-     </script>
+
+    </script>
 
 
     <!-- start Mixpanel -->
@@ -168,9 +174,16 @@
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
         ga('create', 'UA-72583688-1', 'auto');
+        ga('require', 'linkid', {
+            'cookieName': '_ela',
+            'duration': 45,
+            'levels': 5
+        });
         ga('send', 'pageview');
+
     </script>
 
 </head>
@@ -255,7 +268,7 @@
             <hr class="light">
             <h1><?php echo $results->about_me->name ?></h1>
             <p>
-                <a href="<?php echo $cdn.'/'.$results->about_me->cv ?>" class="btn btn-lg btn-primary">Download
+                <a href="<?php echo $cdn . '/' . $results->about_me->cv ?>" class="btn btn-lg btn-primary">Download
                     CV<i class="fa fa-download"></i></a><br>
                 <a href="<?php echo $results->about_me->twitter ?>"><i class="fa fa-twitter"></i></a>
                 <a href="<?php echo $results->about_me->linkedin ?>i"><i class="fa fa-linkedin"></i></a>
@@ -421,7 +434,9 @@
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <i class="fa fa-envelope-o fa-3x wow bounceIn"></i>
-                <p><a href="mailto:<?php echo $results->about_me->contact?>"><?php echo $results->about_me->contact ?></a></p>
+                <p>
+                    <a href="mailto:<?php echo $results->about_me->contact ?>"><?php echo $results->about_me->contact ?></a>
+                </p>
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <a class="twitter-timeline" href="https://twitter.com/akshaybabloo" data-widget-id="690023186424012800">Tweets
@@ -436,17 +451,17 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 no-gutter text-center">
-                    <?php
-                    try {
-                        echo "<small class=\"text-muted\">";
-                        $object = get_repo();
+                <?php
+                try {
+                    echo "<small class=\"text-muted\">";
+                    $object = get_repo();
 
-                        echo "<a href='#version_control' data-toggle=\"modal\" data-target=\"#version_control\">".$object->tag_name."</a>";
-                        echo "</small><br>";
-                    } catch (exception $e) {
+                    echo "<a href='#version_control' data-toggle=\"modal\" data-target=\"#version_control\">" . $object->tag_name . "</a>";
+                    echo "</small><br>";
+                } catch (exception $e) {
 
-                    }
-                    ?>
+                }
+                ?>
                 <small class="text-muted">Copyright &copy; 2016 &#124; Akshay Raj Gollahalli</small>
                 <br>
                 <small class="text-muted">All product and company names are trademarks&#8482; or registered&reg;
@@ -468,14 +483,15 @@
             </div>
             <div class="modal-body">
                 <?php
-                    $string = $object->body;
-                    $Parsedown = new Parsedown();
-                    echo $Parsedown->text($string);
+                $string = $object->body;
+                $Parsedown = new Parsedown();
+                echo $Parsedown->text($string);
                 ?>
-<!--                <p class="text-center">-->
-<!--                    <a href="--><?php //echo $object->zipball_url ?><!--"><i class="fa fa-2x fa-download"></i></a>-->
-<!--                    <a href="https://github.com/akshaybabloo/gollahalli-me"><i class="fa fa-2x fa-github"></i></a>-->
-<!--                </p>-->
+                <!--                <p class="text-center">-->
+                <!--                    <a href="-->
+                <?php //echo $object->zipball_url ?><!--"><i class="fa fa-2x fa-download"></i></a>-->
+                <!--                    <a href="https://github.com/akshaybabloo/gollahalli-me"><i class="fa fa-2x fa-github"></i></a>-->
+                <!--                </p>-->
             </div>
         </div>
     </div>
