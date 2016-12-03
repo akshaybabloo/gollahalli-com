@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://www.gollahalli.me/</loc>
+        <lastmod>2016-11-02T22:14:01+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0000</priority>
+    </url>
+    <url>
+        <loc>https://cdn.gollahalli.me/assets/downloads/Gollahalli-CV-Web.pdf</loc>
+        <lastmod>2016-02-21T22:14:01+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8000</priority>
+    </url>
+</urlset>
