@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cfea67ae33aba1e073ba0703e025af7a",
-    "content-hash": "b8158e773603ec8a19145f6a9dc40a8a",
+    "hash": "d1fb24d471d6a1a9056638ccce81578d",
+    "content-hash": "5c7a13f3bcf40820f35da2b1ffa9390d",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -48,21 +48,81 @@
                 "parser"
             ],
             "time": "2016-11-02 15:56:58"
+        },
+        {
+            "name": "simplepie/simplepie",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/simplepie/simplepie.git",
+                "reference": "2a24b6e74aa9bf33243020f52895fe77efe94ccf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/simplepie/simplepie/zipball/2a24b6e74aa9bf33243020f52895fe77efe94ccf",
+                "reference": "2a24b6e74aa9bf33243020f52895fe77efe94ccf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4 || ~5"
+            },
+            "suggest": {
+                "mf2/mf2": "Microformat module that allows for parsing HTML for microformats"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SimplePie": "library"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan Parman",
+                    "homepage": "http://ryanparman.com/",
+                    "role": "Creator, alumnus developer"
+                },
+                {
+                    "name": "Geoffrey Sneddon",
+                    "homepage": "http://gsnedders.com/",
+                    "role": "Alumnus developer"
+                },
+                {
+                    "name": "Ryan McCue",
+                    "email": "me@ryanmccue.info",
+                    "homepage": "http://ryanmccue.info/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple Atom/RSS parsing library for PHP",
+            "homepage": "http://simplepie.org/",
+            "keywords": [
+                "atom",
+                "feeds",
+                "rss"
+            ],
+            "time": "2016-11-27 01:39:18"
         }
     ],
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
-            "version": "v114",
+            "version": "v116",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "a2222b58a1591c789fc987e797cc824e5a7e125d"
+                "reference": "adf2e944e11fcbc8b665f0b1d5461f7df920404b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/a2222b58a1591c789fc987e797cc824e5a7e125d",
-                "reference": "a2222b58a1591c789fc987e797cc824e5a7e125d",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/adf2e944e11fcbc8b665f0b1d5461f7df920404b",
+                "reference": "adf2e944e11fcbc8b665f0b1d5461f7df920404b",
                 "shasum": ""
             },
             "bin": [
@@ -93,7 +153,7 @@
                 "nginx",
                 "php"
             ],
-            "time": "2016-11-10 23:19:38"
+            "time": "2016-12-01 08:39:54"
         }
     ],
     "aliases": [],
