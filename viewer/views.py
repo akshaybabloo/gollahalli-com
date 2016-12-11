@@ -5,7 +5,7 @@ from editor.models import ContentModel
 
 def index(request):
     context = {}
-    template = "viewer/index.html"
+    template = "viewer/home.html"
     try:
         a = ContentModel.objects.get(ref_id='1')
         print(a.content)
