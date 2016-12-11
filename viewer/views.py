@@ -5,9 +5,10 @@ from editor.models import ContentModel
 
 def index(request):
     context = {}
-    template = "viewer/home.html"
+    template = "viewer/index.html"
     try:
         a = ContentModel.objects.get(ref_id='1')
+        print(a.content)
     except Exception as e:
         return redirect('/welcome/')
     return render(request, template, context)
@@ -30,3 +31,8 @@ def server_error(request):
                "error_message": "Sorry, but the requested page is unavailable <br/> due to a server hiccup.",
                "home_link": home_link}
     return render(request, template, context)
+
+
+class Decode:
+    def __init__(self, json):
+        pass
