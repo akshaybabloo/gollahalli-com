@@ -1,16 +1,21 @@
-from django.shortcuts import render, redirect
+import json
+
+import markdown
 from django.conf import settings
+from django.shortcuts import render, redirect
+
 from editor.models import ContentModel
 
 
 def index(request):
-    context = {}
     template = "viewer/home.html"
     try:
-        a = ContentModel.objects.get(ref_id='1')
-        print(a.content)
+        json_content = ContentModel.objects.get(ref_id='1')
+        json_object = json.loads(json_content.content)
+        content_object = ContentDecode(json_object)
     except Exception as e:
         return redirect('/welcome/')
+    context = {'content': content_object}
     return render(request, template, context)
 
 
@@ -33,6 +38,6 @@ def server_error(request):
     return render(request, template, context)
 
 
-class Decode:
+class ContentDecode:
     def __init__(self, json):
         pass
