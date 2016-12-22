@@ -43,8 +43,12 @@ class ContentDecode:
     def __init__(self, json_object):
         self.json = json_object
 
+    # Bio
     def get_name(self):
         return self.json['about_me']['name']
+
+    def get_bio(self):
+        return "".join([markdown.markdown(a) for a in self.json['about_me']['bio']])
 
     def get_twitter(self):
         return self.json['about_me']['twitter']
