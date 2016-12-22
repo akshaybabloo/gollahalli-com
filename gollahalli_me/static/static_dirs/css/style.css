@@ -500,7 +500,7 @@ body.dark-color .menu-items > li > a:before{
 	margin-bottom:35px;
 	position:relative;
 	line-height:1em;
-	letter-spacing:6px;
+	letter-spacing:3px;
 	vertical-align:middle;
 }
 .intro-text > .pre-heading{
@@ -1250,7 +1250,7 @@ body.dark-color .menu-items > li > a:before{
 }
 @media (max-width:1024px){
 	.intro-text > .name{
-		font-size:80px;
+		font-size:50px;
 	}
 	.intro-text > .pre-heading{
 		font-size:40px;
