@@ -39,5 +39,8 @@ def server_error(request):
 
 
 class ContentDecode:
-    def __init__(self, json):
-        pass
+    def __init__(self, json_object):
+        self.json = json_object
+
+    def get_name(self):
+        return self.json['about_me']['name']
