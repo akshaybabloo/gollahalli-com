@@ -39,8 +39,18 @@ def server_error(request):
 
 
 class ContentDecode:
+    # ToDo: Change this into nested classes
     def __init__(self, json_object):
         self.json = json_object
 
     def get_name(self):
         return self.json['about_me']['name']
+
+    def get_twitter(self):
+        return self.json['about_me']['twitter']
+
+    def get_linkedin(self):
+        return self.json['about_me']['linkedin']
+
+    def get_github(self):
+        return self.json['about_me']['github']
