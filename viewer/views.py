@@ -78,6 +78,12 @@ class ContentDecode:
                                                                      width=200, x=0, y=0, zoom=0.75, crop="thumb",
                                                                      alt="Akshay Raj Gollahalli")
 
+    def get_experience(self):
+        json_data = self.json['experience']
+        print(json_data)
+        a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
+        return a
+
     # Blog
     @staticmethod
     def get_blog():

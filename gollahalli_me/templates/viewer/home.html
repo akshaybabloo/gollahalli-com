@@ -669,44 +669,21 @@
 
 								<ul class='timeline' >
 
-									<li>
-										<div class='timeline-content' >
-											<h4>Themeforest</h4>
-											<em>
-												<span>Author</span>
-												<span>2014 - 2016</span>
-											</em>
-											<p>
-												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.
-											</p>
-										</div>
-									</li>
 
-									<li>
+                                    {% for data in content.get_experience %}
+                                        <li>
 										<div class='timeline-content' >
-											<h4>CodeCanyon</h4>
+											<h4>{{ data.company }}</h4>
 											<em>
-												<span>Author</span>
-												<span>2014 - 2015</span>
+												<span>{{ data.title }} - {{ data.where }}</span>
+												<span>{{ data.from }} - {{ data.to }}</span>
 											</em>
-											<p>
-												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.
-											</p>
+{#											<p>#}
+{#												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.#}
+{#											</p>#}
 										</div>
 									</li>
-
-									<li>
-										<div class='timeline-content' >
-											<h4>Blogger</h4>
-											<em>
-												<span>Blogging</span>
-												<span>2011 - 2013</span>
-											</em>
-											<p>
-												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.
-											</p>
-										</div>
-									</li>
+                                    {% endfor %}
 
 								</ul>
 							</div>
