@@ -80,7 +80,6 @@ class ContentDecode:
 
     def get_experience(self):
         json_data = self.json['experience']
-        print(json_data)
         a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
         return a
 
