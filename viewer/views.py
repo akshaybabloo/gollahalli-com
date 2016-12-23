@@ -1,9 +1,9 @@
 import json
 
-import markdown
-import feedparser
 import cloudinary
 import cloudinary.api
+import feedparser
+import markdown
 from django.conf import settings
 from django.shortcuts import render, redirect
 
@@ -63,20 +63,20 @@ class ContentDecode:
         return self.json['about_me']['github']
 
     def get_education(self):
-
         json_data = self.json['about_me']['education']
         a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
         return a
 
     def get_my_image(self):
-
         cloudinary.config(
             cloud_name='gollahalli',
             api_key='623378689359255',
             api_secret='bJPo6rNjc9IIDB5ihoyK-ogsRic'
         )
 
-        return cloudinary.CloudinaryImage("akshay_b8wb1x.png").image(gravity="center", opacity=100, radius="max", width=200, x=0, y=0, zoom=0.75, crop="thumb", alt="Akshay Raj Gollahalli")
+        return cloudinary.CloudinaryImage("akshay_b8wb1x.png").image(gravity="center", opacity=100, radius="max",
+                                                                     width=200, x=0, y=0, zoom=0.75, crop="thumb",
+                                                                     alt="Akshay Raj Gollahalli")
 
     # Blog
     @staticmethod
