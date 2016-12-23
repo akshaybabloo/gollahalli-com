@@ -643,48 +643,19 @@
 								<ul class='timeline' >
 
                                     {% for data in content.get_education %}
-                                        {{ data }}
+                                        <li>
+										<div class='timeline-content' >
+											<h4>{{ data.where }}</h4>
+											<em>
+												<span>{{ data.title }}</span>
+												<span>{{ data.from }} - {{ data.to }}</span>
+											</em>
+{#											<p>#}
+{#												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.#}
+{#											</p>#}
+										</div>
+									</li>
                                     {% endfor %}
-
-
-									<li>
-										<div class='timeline-content' >
-											<h4>CSS Collge Larkana</h4>
-											<em>
-												<span>Masters Degree</span>
-												<span>2013 - 2016</span>
-											</em>
-											<p>
-												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.
-											</p>
-										</div>
-									</li>
-
-									<li>
-										<div class='timeline-content' >
-											<h4>QAPS Tech Larkana</h4>
-											<em>
-												<span>Masters Degree</span>
-												<span>2011 - 2013</span>
-											</em>
-											<p>
-												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.
-											</p>
-										</div>
-									</li>
-
-									<li>
-										<div class='timeline-content' >
-											<h4>Perl School Dokri</h4>
-											<em>
-												<span>Masters Degree</span>
-												<span>2009 - 2011</span>
-											</em>
-											<p>
-												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.
-											</p>
-										</div>
-									</li>
 
 								</ul>
 							</div>
