@@ -1250,10 +1250,10 @@ body.dark-color .menu-items > li > a:before{
 }
 @media (max-width:1024px){
 	.intro-text > .name{
-		font-size:50px;
+		font-size:40px;
 	}
 	.intro-text > .pre-heading{
-		font-size:40px;
+		font-size:30px;
 	}
 }
 @media(min-width:992px){
