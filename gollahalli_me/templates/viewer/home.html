@@ -645,9 +645,9 @@
                                     {% for data in content.get_education %}
                                         <li>
 										<div class='timeline-content' >
-											<h4>{{ data.where }}</h4>
+											<h4>{{ data.title }}</h4>
 											<em>
-												<span>{{ data.title }}</span>
+												<span>{{ data.where }}</span>
 												<span>{{ data.from }} - {{ data.to }}</span>
 											</em>
 {#											<p>#}
@@ -673,9 +673,9 @@
                                     {% for data in content.get_experience %}
                                         <li>
 										<div class='timeline-content' >
-											<h4>{{ data.company }}</h4>
+											<h4>{{ data.title }}</h4>
 											<em>
-												<span>{{ data.title }} - {{ data.where }}</span>
+												<span>{{ data.company }} - {{ data.where }}</span>
 												<span>{{ data.from }} - {{ data.to }}</span>
 											</em>
 {#											<p>#}
