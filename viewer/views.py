@@ -2,6 +2,8 @@ import json
 
 import markdown
 import feedparser
+import cloudinary
+import cloudinary.api
 from django.conf import settings
 from django.shortcuts import render, redirect
 
@@ -60,7 +62,21 @@ class ContentDecode:
     def get_github(self):
         return self.json['about_me']['github']
 
-    def get_blog(self):
+    def get_education(self):
+        return self.json['about_me']['education']
+
+    def get_my_image(self):
+
+        cloudinary.config(
+            cloud_name='gollahalli',
+            api_key='623378689359255',
+            api_secret='bJPo6rNjc9IIDB5ihoyK-ogsRic'
+        )
+
+        return cloudinary.CloudinaryImage("akshay_b8wb1x.png").image(gravity="center", opacity=100, radius="max", width=200, x=0, y=0, zoom=0.75, crop="thumb", alt="Akshay Raj Gollahalli")
+
+    # Blog
+    @staticmethod
+    def get_blog():
         data = feedparser.parse("https://blog.gollahalli.me/?format=rss")
         return data.entries
-

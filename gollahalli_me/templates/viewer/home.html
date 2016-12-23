@@ -149,7 +149,8 @@
 						<div class='person-img text-center' >
 
 							<!-- Your Image -->
-							<img src='img/man-round.png' alt>
+{#							<img src='http://res.cloudinary.com/gollahalli/image/upload/c_thumb,g_center,h_200,o_100,r_max,w_200,x_0,y_0,z_0.75/v1477524340/akshay_b8wb1x.png' alt="Akshay Raj Gollahalli">#}
+                            {{ content.get_my_image | safe }}
 
 						</div>
 
@@ -640,6 +641,11 @@
 								</div>
 
 								<ul class='timeline' >
+
+                                    {% for data in content.get_education %}
+                                        {{ data }}
+                                    {% endfor %}
+
 
 									<li>
 										<div class='timeline-content' >
