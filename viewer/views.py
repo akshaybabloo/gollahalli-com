@@ -1,6 +1,7 @@
 import json
 
 import markdown
+import feedparser
 from django.conf import settings
 from django.shortcuts import render, redirect
 
@@ -58,3 +59,8 @@ class ContentDecode:
 
     def get_github(self):
         return self.json['about_me']['github']
+
+    def get_blog(self):
+        data = feedparser.parse("https://blog.gollahalli.me/?format=rss")
+        return data.entries
+

@@ -9,7 +9,7 @@
 		=============================================-->
 		<div id='preloader' >
 			<div class='loader' >
-				<img src='img/loader.gif' alt>
+				<img src='{% static 'img/loader.gif' %}' alt>
 			</div>
 		</div>
 
@@ -141,7 +141,7 @@
 							<h2>About Me</h2>
 
 							<div class='divider' >
-								<img src='img/wave.png' alt>
+								<img src='{% static 'img/wave.png' %}' alt>
 							</div>
 
 						</div>
@@ -215,7 +215,7 @@
 							<h2>My Services</h2>
 
 							<div class='divider' >
-								<img src='img/wave.png' alt>
+								<img src='{% static 'img/wave.png' %}' alt>
 							</div>
 
 						</div>
@@ -344,7 +344,7 @@
 						<div class='section-header text-center' >
 							<h2>My Skills</h2>
 							<div class='divider' >
-								<img src='img/wave.png' alt>
+								<img src='{% static 'img/wave.png' %}' alt>
 							</div>
 						</div>
 
@@ -420,7 +420,7 @@
 					<div class='section-header text-center' >
 						<h2>My Portfolio</h2>
 						<div class='divider' >
-							<img src='img/wave.png' alt>
+							<img src='{% static 'img/wave.png' %}' alt>
 						</div>
 					</div>
 
@@ -626,7 +626,7 @@
 						<div class='section-header text-center' >
 							<h2>My Resume</h2>
 							<div class='divider' >
-								<img src='img/wave.png' alt>
+								<img src='{% static 'img/wave.png' %}' alt>
 							</div>
 						</div>
 
@@ -743,7 +743,7 @@
 						<div class='section-header text-center' >
 							<h2>Testimonials</h2>
 							<div class='divider' >
-								<img src='img/wave.png' alt>
+								<img src='{% static 'img/wave.png' %}' alt>
 							</div>
 						</div>
 
@@ -819,197 +819,49 @@
 					<div class='section-header text-center' >
 						<h2>My Blog</h2>
 						<div class='divider' >
-							<img src='img/wave.png' alt>
+							<img src='{% static 'img/wave.png' %}' alt>
 						</div>
 					</div>
 
 					<div class='blog-posts' >
 
-						<div class='blog-post' >
-							<div class='inner' >
-								<figure>
-									<img src='img/blog-1.jpg' alt>
-								</figure>
-								<div class='content' >
-									<h4>Get Powerful Blog</h4>
-									<ul class='post-icons' >
-										<li>
-											<i class='ion-ios-person-outline' ></i>
-											<span>Admin</span>
-										</li>
-										<li>
-											<i class='ion-ios-pricetag-outline' ></i>
-											<span>Lifestyle, Work</span>
-										</li>
-										<li>
-											<i class='ion-ios-clock-outline' ></i>
-											<span>14th June</span>
-										</li>
-									</ul>
-									<p>
-										Lorem ipsum dolor sit amet, id electram reprimique his, dicta saepe oporteat eos an, esse erat doming at lam. Ei constituam theophrastus per, sea dolorum disput ationi in.
-									</p>
-									<a href='#' class='read-more' >
-										Read More <i class='ion-ios-arrow-thin-right' ></i>
-									</a>
-								</div>
-							</div>
-						</div>
 
-						<div class='blog-post' >
-							<div class='inner' >
-								<figure>
-									<img src='img/blog-2.jpg' alt>
-								</figure>
-								<div class='content' >
-									<h4>An Image Post</h4>
-									<ul class='post-icons' >
-										<li>
-											<i class='ion-ios-person-outline' ></i>
-											<span>Admin</span>
-										</li>
-										<li>
-											<i class='ion-ios-pricetag-outline' ></i>
-											<span>Lifestyle, Work</span>
-										</li>
-										<li>
-											<i class='ion-ios-clock-outline' ></i>
-											<span>14th June</span>
-										</li>
-									</ul>
-									<p>
-										Lorem ipsum dolor sit amet, id electram reprimique his, dicta saepe oporteat eos an, esse erat doming at lam.
-									</p>
-									<a href='#' class='read-more' >
-										Read More <i class='ion-ios-arrow-thin-right' ></i>
-									</a>
-								</div>
-							</div>
-						</div>
 
-						<div class='blog-post' >
-							<div class='inner' >
-								<figure>
-									<iframe src='https://player.vimeo.com/video/23107791?byline=0&portrait=0' width='640' height='360' allowfullscreen></iframe>
-								</figure>
-								<div class='content' >
-									<h4>Vimeo Video Post</h4>
-									<ul class='post-icons' >
-										<li>
-											<i class='ion-ios-person-outline' ></i>
-											<span>Admin</span>
-										</li>
-										<li>
-											<i class='ion-ios-pricetag-outline' ></i>
-											<span>Lifestyle, Work</span>
-										</li>
-										<li>
-											<i class='ion-ios-clock-outline' ></i>
-											<span>14th June</span>
-										</li>
-									</ul>
-									<p>
-										Lorem ipsum dolor sit amet, id electram reprimique his, dicta saepe oporteat eos an, esse erat doming at lam.
-									</p>
-									<a href='#' class='read-more' >
-										Read More <i class='ion-ios-arrow-thin-right' ></i>
-									</a>
-								</div>
-							</div>
-						</div>
+                        {% for data in content.get_blog %}
 
-						<div class='blog-post' >
+                            <div class='blog-post' >
 							<div class='inner' >
-								<figure>
-									<iframe width='560' height='315' src='https://www.youtube.com/embed/0pXYp72dwl0' allowfullscreen></iframe>
+                                {% if 'media_content' in data %}
+                                    <figure>
+									<img src='{{ data.media_content.0.url }}' alt>
 								</figure>
+                                {% endif %}
 								<div class='content' >
-									<h4>YouTube video Post</h4>
+									<h4>{{ data.title }}</h4>
 									<ul class='post-icons' >
 										<li>
 											<i class='ion-ios-person-outline' ></i>
-											<span>Admin</span>
+											<span>{{ data.author }}</span>
 										</li>
-										<li>
-											<i class='ion-ios-pricetag-outline' ></i>
-											<span>Lifestyle, Work</span>
-										</li>
+{#										<li>#}
+{#											<i class='ion-ios-pricetag-outline' ></i>#}
+{#											<span>Lifestyle, Work</span>#}
+{#										</li>#}
 										<li>
 											<i class='ion-ios-clock-outline' ></i>
-											<span>14th June</span>
+											<span>{{ data.published }}</span>
 										</li>
 									</ul>
 									<p>
-										Lorem ipsum dolor sit amet, id electram reprimique his, dicta saepe oporteat eos an, esse erat doming at lam.
+                                        {{ data.description }}
 									</p>
-									<a href='#' class='read-more' >
+									<a href='{{ data.link }}' class='read-more' >
 										Read More <i class='ion-ios-arrow-thin-right' ></i>
 									</a>
 								</div>
 							</div>
 						</div>
-
-						<div class='blog-post' >
-							<div class='inner' >
-								<figure>
-									<img src='img/blog-3.jpg' alt>
-								</figure>
-								<div class='content' >
-									<h4>Just an image post</h4>
-									<ul class='post-icons' >
-										<li>
-											<i class='ion-ios-person-outline' ></i>
-											<span>Admin</span>
-										</li>
-										<li>
-											<i class='ion-ios-pricetag-outline' ></i>
-											<span>Lifestyle, Work</span>
-										</li>
-										<li>
-											<i class='ion-ios-clock-outline' ></i>
-											<span>14th June</span>
-										</li>
-									</ul>
-									<p>
-										Lorem ipsum dolor sit amet, id electram reprimique his, dicta saepe oporteat eos an, esse erat doming at lam.
-									</p>
-									<a href='#' class='read-more' >
-										Read More <i class='ion-ios-arrow-thin-right' ></i>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<div class='blog-post' >
-							<div class='inner' >
-								<figure>
-									<img src='img/blog-4.jpg' alt>
-								</figure>
-								<div class='content' >
-									<h4>A Cool Title here</h4>
-									<ul class='post-icons' >
-										<li>
-											<i class='ion-ios-person-outline' ></i>
-											<span>Admin</span>
-										</li>
-										<li>
-											<i class='ion-ios-pricetag-outline' ></i>
-											<span>Lifestyle, Work</span>
-										</li>
-										<li>
-											<i class='ion-ios-clock-outline' ></i>
-											<span>14th June</span>
-										</li>
-									</ul>
-									<p>
-										Lorem ipsum dolor sit amet, id electram reprimique his, dicta saepe oporteat eos an, esse erat doming at lam.
-									</p>
-									<a href='#' class='read-more' >
-										Read More <i class='ion-ios-arrow-thin-right' ></i>
-									</a>
-								</div>
-							</div>
-						</div>
+                        {% endfor %}
 
 					</div>
 				</div>
@@ -1024,7 +876,7 @@
 					<div class='section-header text-center' >
 						<h2>Contact Me</h2>
 						<div class='divider' >
-							<img src='img/wave.png' alt>
+							<img src='{% static 'img/wave.png' %}' alt>
 						</div>
 					</div>
 
