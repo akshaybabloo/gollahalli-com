@@ -67,7 +67,8 @@ class ContentDecode:
         a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
         return a
 
-    def get_my_image(self):
+    @staticmethod
+    def get_my_image():
         cloudinary.config(
             cloud_name='gollahalli',
             api_key='623378689359255',
