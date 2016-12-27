@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from editor.models import ContentModel
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def index(request):
     context = {}
     template = "editor/home.html"
