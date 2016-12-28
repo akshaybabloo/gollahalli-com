@@ -10,6 +10,9 @@ from django.shortcuts import render, redirect
 from editor.models import ContentModel
 
 
+DEFAULT_BASE_URL = "https://api.github.com/users/akshaybabloo/repos"
+
+
 def index(request):
     template = "viewer/home.html"
     try:
@@ -89,3 +92,19 @@ class ContentDecode:
     def get_blog():
         data = feedparser.parse("https://blog.gollahalli.me/?format=rss")
         return data.entries
+
+
+# ============================================================================================
+#                                       GitHub Repo
+# ============================================================================================
+
+class GitHub:
+    def __init__(self):
+        pass
+
+
+def get_github_repo(request):
+
+    template = "viewer/repo.html"
+    context = {'content': False}
+    return render(request, template, context)

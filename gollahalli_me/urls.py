@@ -6,7 +6,7 @@ from django.contrib.auth.views import login, logout
 from .sitemaps import *
 
 sitemaps = {
-    'pages': Sitemap(['index']),
+    'pages': Sitemap(['index', 'repo']),
 }
 
 urlpatterns = [
