@@ -5,7 +5,7 @@ function get_repo()
     // A token that you could generate from your own github
     // go here https://github.com/settings/applications and create a token
     // then replace the next string
-    $token = '8dc33695f58ca9513736c37126871ab6376e7c0e';
+    $token = '6e018b6f5662c45e4e23c9255c6b854bc604e826';
 
     // We generate the url for curl
     $curl_url = 'https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest';
