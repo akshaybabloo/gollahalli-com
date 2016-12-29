@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'storages',  # django-storages
+    'markdown_deux',  # django markdown filter
     'editor',
     'viewer',
 ]
