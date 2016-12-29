@@ -99,7 +99,7 @@ class ContentDecode:
 #                                       GitHub Repo
 # ============================================================================================
 
-class GitHub:
+class GitHubRepo:
     def __init__(self):
 
         response = urlopen(DEFAULT_BASE_URL)
@@ -123,5 +123,5 @@ class GitHub:
 def get_github_repo(request):
 
     template = "viewer/repo.html"
-    context = {'content': GitHub}
+    context = {'content': GitHubRepo}
     return render(request, template, context)
