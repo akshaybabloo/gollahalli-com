@@ -1,4 +1,5 @@
 import json
+from urllib.request import urlopen
 
 import cloudinary
 import cloudinary.api
@@ -100,11 +101,27 @@ class ContentDecode:
 
 class GitHub:
     def __init__(self):
-        pass
+
+        response = urlopen(DEFAULT_BASE_URL)
+        data = response.read().decode("utf-8")
+
+        self.data = json.loads(data)
+        self.index = len(self.data)
+        del response
+        del data
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index == 0:
+            raise StopIteration
+        self.index -= 1
+        return self.data[self.index]
 
 
 def get_github_repo(request):
 
     template = "viewer/repo.html"
-    context = {'content': False}
+    context = {'content': GitHub}
     return render(request, template, context)

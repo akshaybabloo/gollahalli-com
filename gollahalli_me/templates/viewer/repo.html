@@ -6,6 +6,13 @@
 </head>
 <body>
 
+{% for foo in content %}
+    Name = {{ foo.full_name }}<br>
+    Description = {{ foo.description }}<br>
+    Stars = {{ foo.watchers_count }}<br>
+    Forks = {{ foo.forks_count }} <br>
+    Repo = {{ foo.svn_url }}<br><br>
+{% endfor %}
 
 </body>
 </html>
