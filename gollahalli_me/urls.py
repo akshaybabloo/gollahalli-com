@@ -2,6 +2,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.auth.views import login, logout
+from django.http import HttpResponse
+
 
 from .sitemaps import *
 
@@ -17,6 +19,8 @@ urlpatterns = [
         name='django.contrib.sitemaps.views.sitemap'),
     url(r'^accounts/login/$', login, {'template_name': 'admin/login.html'}, name="my_login"),
     url(r'^accounts/logout/$', logout),
+    url(r'^robots.txt', lambda x: HttpResponse("Sitemap: https://www.gollahalli.me/sitemap.xml\nUser-agent: *\nDisallow: /admin/", content_type="text/plain"),
+        name="robots_file"),
 ]
 
 handler404 = 'viewer.views.page_not_found'
