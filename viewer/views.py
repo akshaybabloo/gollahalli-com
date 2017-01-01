@@ -74,6 +74,34 @@ class ContentDecode:
         return a
 
     @staticmethod
+    def get_meta():
+        return """
+        <meta name="description"
+          content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work.">
+    <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
+    <meta name="author" content="Akshay Raj Gollahalli">
+    <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli"/>
+    <meta name="theme-color" content="#ef3939"/>
+
+    <meta property="og:title" content="Akshay Raj Gollahalli"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.gollahalli.me/"/>
+    <meta property="og:image" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
+    <meta property="og:image:secure_url" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
+    <meta property="og:description"
+          content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
+
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Akshay Raj Gollahalli"/>
+    <meta name="twitter:description"
+          content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
+    <meta name="twitter:image:src" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
+    <meta name="twitter:url" content="https://www.gollahalli.me"/>
+
+    <meta property="fb:app_id" content="1562596197364195"/>
+        """
+
+    @staticmethod
     def get_my_image():
         cloudinary.config(
             cloud_name='gollahalli',
