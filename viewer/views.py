@@ -1,5 +1,6 @@
 import json
 import requests
+import re
 from urllib.request import urlopen
 
 import cloudinary
@@ -109,9 +110,9 @@ class ContentDecode:
             api_secret='bJPo6rNjc9IIDB5ihoyK-ogsRic'
         )
 
-        return cloudinary.CloudinaryImage("akshay_b8wb1x.png").image(gravity="center", opacity=100, radius="max",
-                                                                     width=200, x=0, y=0, zoom=0.75, crop="thumb",
-                                                                     alt="Akshay Raj Gollahalli")
+        return re.sub(r'\bheight="[^"]+|\bwidth="[^"]+', '',
+               cloudinary.CloudinaryImage("akshay_b8wb1x.png").image(radius="max",
+                                                                     width=200, height=200, crop="thumb", alt="Akshay Raj Gollahalli"))
 
     def get_experience(self):
         json_data = self.json['experience']
