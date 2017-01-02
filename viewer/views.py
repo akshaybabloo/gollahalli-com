@@ -12,7 +12,6 @@ from django.shortcuts import render, redirect
 
 from editor.models import ContentModel
 
-
 DEFAULT_BASE_URL = "https://api.github.com/users/akshaybabloo/repos"
 GITHUB_KEY = "4921a93fdc0a50ec345ef541a715bf07000303d1"
 
@@ -111,8 +110,9 @@ class ContentDecode:
         )
 
         return re.sub(r'\bheight="[^"]+|\bwidth="[^"]+', '',
-               cloudinary.CloudinaryImage("akshay_b8wb1x.png").image(radius="max",
-                                                                     width=200, height=200, crop="thumb", alt="Akshay Raj Gollahalli"))
+                      cloudinary.CloudinaryImage("akshay_b8wb1x.png").image(radius="max",
+                                                                            width=200, height=200, crop="thumb",
+                                                                            alt="Akshay Raj Gollahalli"))
 
     def get_experience(self):
         json_data = self.json['experience']
@@ -132,7 +132,6 @@ class ContentDecode:
 
 class GitHubRepo:
     def __init__(self):
-
         response = urlopen(DEFAULT_BASE_URL)
         data = response.read().decode("utf-8")
 
@@ -152,7 +151,6 @@ class GitHubRepo:
 
 
 def get_github_repo(request):
-
     template = "viewer/repo.html"
     context = {'content': GitHubRepo}
     return render(request, template, context)
@@ -165,7 +163,7 @@ def get_github_repo(request):
 class GitHubReleases:
     def __init__(self):
         response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases',
-                         auth=('akshaybabloo', GITHUB_KEY))
+                                auth=('akshaybabloo', GITHUB_KEY))
 
         self.data = json.loads(response.text)
         self.index = len(self.data)
@@ -182,7 +180,6 @@ class GitHubReleases:
 
 
 def get_gollahalli_me_change_log(request):
-
     template = "viewer/change-log.html"
     context = {'content': GitHubReleases}
     return render(request, template, context)
