@@ -46,6 +46,9 @@ def server_error(request):
                "home_link": home_link}
     return render(request, template, context)
 
+# ============================================================================================
+#                                       Website Content Decoder
+# ============================================================================================
 
 class ContentDecode:
     # ToDo: Change this into nested classes
@@ -73,33 +76,45 @@ class ContentDecode:
         a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
         return a
 
+    def get_experience(self):
+        json_data = self.json['experience']
+        a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
+        return a
+
+    # Blog
+    @staticmethod
+    def get_blog():
+        data = feedparser.parse("https://blog.gollahalli.me/?format=rss")
+        return data.entries
+
+    # Other
     @staticmethod
     def get_meta():
         return """
-        <meta name="description"
-          content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work.">
-    <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
-    <meta name="author" content="Akshay Raj Gollahalli">
-    <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli"/>
-    <meta name="theme-color" content="#ef3939"/>
+            <meta name="description"
+              content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work.">
+        <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
+        <meta name="author" content="Akshay Raj Gollahalli">
+        <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli"/>
+        <meta name="theme-color" content="#ef3939"/>
 
-    <meta property="og:title" content="Akshay Raj Gollahalli"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://www.gollahalli.me/"/>
-    <meta property="og:image" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
-    <meta property="og:image:secure_url" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
-    <meta property="og:description"
-          content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
+        <meta property="og:title" content="Akshay Raj Gollahalli"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://www.gollahalli.me/"/>
+        <meta property="og:image" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
+        <meta property="og:image:secure_url" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
+        <meta property="og:description"
+              content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
 
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Akshay Raj Gollahalli"/>
-    <meta name="twitter:description"
-          content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
-    <meta name="twitter:image:src" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
-    <meta name="twitter:url" content="https://www.gollahalli.me"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:title" content="Akshay Raj Gollahalli"/>
+        <meta name="twitter:description"
+              content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
+        <meta name="twitter:image:src" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
+        <meta name="twitter:url" content="https://www.gollahalli.me"/>
 
-    <meta property="fb:app_id" content="1562596197364195"/>
-        """
+        <meta property="fb:app_id" content="1562596197364195"/>
+            """
 
     @staticmethod
     def get_my_image():
@@ -113,17 +128,6 @@ class ContentDecode:
                       cloudinary.CloudinaryImage("akshay_b8wb1x.png").image(gravity="center", opacity=100, radius="max",
                                                                             width=200, height=200, x=0, y=0, zoom=0.75,
                                                                             crop="thumb", alt="Akshay Raj Gollahalli"))
-
-    def get_experience(self):
-        json_data = self.json['experience']
-        a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
-        return a
-
-    # Blog
-    @staticmethod
-    def get_blog():
-        data = feedparser.parse("https://blog.gollahalli.me/?format=rss")
-        return data.entries
 
 
 # ============================================================================================
