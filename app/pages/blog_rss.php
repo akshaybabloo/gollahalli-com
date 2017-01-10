@@ -12,14 +12,14 @@ function blog()
     $bol = true;
 
     try {
-        foreach ($feed->get_items() as  $entry) {
+        foreach ($feed->get_items() as $entry) {
             $ret .= "<div class='mas-container mas-col3'><div class='grid-sizer'></div><div class='blog-item3 item'>";
             $newDateString = $entry->get_date('j F Y | g:i a');
 
             if ($enclosure = $entry->get_enclosure())
             {
                 if(!$enclosure->get_link() == ""){
-                    $ret .= "<img class='hover_style3' src=' " . $enclosure->get_link() . " ' alt=" . $entry->get_title() . ">";
+                    $ret .= "<img class='hover_style3' src=' " . addScheme($enclosure->get_link()) . " ' alt=" . $entry->get_title() . ">";
                 }
             }
 
