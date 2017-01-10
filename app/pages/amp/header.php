@@ -25,3 +25,5 @@ require 'skills.php';
 require 'experience.php';
 require 'projects.php';
 require 'tutorials.php';
+
+require_once ('../../vendor/autoload.php');
