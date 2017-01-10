@@ -36,7 +36,7 @@
     function header_image(){
         $ret = '';
         $ret .= '<header class="header-primary">';
-        $ret .= '<a href="https://cdn.gollahalli.me" rel="home"><img class="logo" src="//cdn.gollahalli.me/assets/img/logo-sm.png" alt="logo"></a>';
+        $ret .= '<a href="https://www.gollahalli.me" rel="home"><img class="logo" src="//cdn.gollahalli.me/assets/img/logo-sm.png" alt="logo"></a>';
         $ret .= '</header>';
 
         return $ret;
