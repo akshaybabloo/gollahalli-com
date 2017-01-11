@@ -157,9 +157,7 @@
                         <div class='col-md-6 col-md-offset-3'>
 
                             <div class='about-text'>
-                                <p>
-                                    {{ content.get_bio | safe }}
-                                </p>
+                                    {{ content.get_bio | safe }}  {# comes with the P tag #}
                             </div>
 
                         </div>
@@ -502,9 +500,7 @@
                                                     <!--project popup title-->
                                                     <h4>{{ data.title }}</h4>
                                                     <!--project popup description-->
-                                                    <p>
-                                                        {{ data.long_description | safe }}
-                                                    </p>
+                                                        {{ data.long_description | safe }} {# comes with the P tag #}
                                                 </div>
                                             </div>
 
