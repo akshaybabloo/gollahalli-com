@@ -84,12 +84,10 @@ class ContentDecode:
         return a
 
     def get_skills(self):
-        json_data = self.json['skills']
-        return json_data
+        return self.json['skills']
 
     def get_research_area(self):
-        json_data = self.json['research_area']
-        return json_data
+        return self.json['research_area']
 
     # Portfolio
     def get_portfolio(self):
