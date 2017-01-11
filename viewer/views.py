@@ -46,9 +46,11 @@ def server_error(request):
                "home_link": home_link}
     return render(request, template, context)
 
+
 # ============================================================================================
 #                                       Website Content Decoder
 # ============================================================================================
+
 
 class ContentDecode:
     # ToDo: Change this into nested classes
@@ -80,6 +82,33 @@ class ContentDecode:
         json_data = self.json['experience']
         a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
         return a
+
+    # Portfolio
+    def get_portfolio(self):
+        json_data = self.json['projects']
+        json_data1 = self.json['tutorials']
+        a_data = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
+
+        b1 = 0
+        for a1 in a_data:
+            a_data[b1]['long_description'] = markdown.markdown(a1['long_description'])
+            b1 += 1
+
+        a_data1 = [json_data1[a] for a in sorted(json_data1.keys(), reverse=True)]
+
+        b2 = 0
+        for a2 in a_data1:
+            a_data1[b2]['long_description'] = markdown.markdown(a2['long_description'])
+            b2 += 1
+
+        a_data += a_data1
+
+        category = []
+        for a in a_data:
+            category.append(a['category'])
+        list(set(category))
+
+        return {'portfolio': a_data, 'category': list(set(category))}
 
     # Blog
     @staticmethod

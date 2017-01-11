@@ -432,18 +432,17 @@
 								<li>
 									<a href='#' data-group='all' class='active' >All</a>
 								</li>
+                                {% for data in content.get_portfolio.category %}
 								<li>
-									<a href='#' data-group='tech' >Tech</a>
+									<a href='#' data-group='{{data}}' >{{data}}</a>
 								</li>
-								<li>
-									<a href='#' data-group='web' >Web</a>
-								</li>
-								<li>
-									<a href='#' data-group='photography' >Photography</a>
-								</li>
-								<li>
-									<a href='#' data-group='art' >Art</a>
-								</li>
+                                {% endfor %}
+{#								<li>#}
+{#									<a href='#' data-group='Games-VE' >Games &amp; Virtual Environment</a>#}
+{#								</li>#}
+{#                                <li>#}
+{#									<a href='#' data-group='tutorial' >Tutorials</a>#}
+{#								</li>#}
 							</ul>
 
 						</div>
@@ -451,25 +450,26 @@
 
 							<ul class='portfolio-items' >
 
-								<li data-groups='["tech","art"]' >
+                                {% for data in content.get_portfolio.portfolio %}
+                                    <li data-groups='["{{data.category}}"]' >
 									<div class='inner' >
 
-										<img src='img/portfolio/1.jpg' alt>
+										<img src='{% static 'img/portfolio/'|add:data.file_name %}' alt>
 
 										<div class='overlay' >
-											<a href='#popup-1' class='has-popup view-project' >View Project</a>
+											<a href='#popup-{{ forloop.counter }}' class='has-popup view-project' >View Project</a>
 
-											<div id='popup-1' class='popup-box zoom-anim-dialog mfp-hide'>
+											<div id='popup-{{ forloop.counter }}' class='popup-box zoom-anim-dialog mfp-hide'>
 												<figure>
 													<!--project popup image-->
-													<img src='img/portfolio/1.jpg' alt>
+													<img src='{% static 'img/portfolio/'|add:data.file_name %}' alt>
 												</figure>
 												<div class='content'>
 													<!--project popup title-->
-													<h4>My Project Title</h4>
+													<h4>{{ data.title }}</h4>
 													<!--project popup description-->
 													<p>
-														Consul latine iudicabit eu vel. Cu has animal eruditi voluptatibus. Eu volumus explicari sed. Mel mutat vituperata suscipiantur et, et fabellas explicari adipiscing quo, no mucius euismod vis. Cu vim quem quod cibo.
+														{{ data.long_description | safe }}
 													</p>
 												</div>
 											</div>
@@ -477,138 +477,7 @@
 										</div>
 									</div>
 								</li>
-
-								<li data-groups='["web","art"]' >
-									<div class='inner' >
-
-										<img src='img/portfolio/2.jpg' alt>
-
-										<div class='overlay' >
-											<a href='#popup-2' class='has-popup view-project' >View Project</a>
-
-											<div id='popup-2' class='popup-box zoom-anim-dialog mfp-hide'>
-												<figure>
-													<!--project popup video-->
-													<iframe src='https://player.vimeo.com/video/23107791?byline=0&portrait=0' width='640' height='360' allowfullscreen></iframe>
-												</figure>
-												<div class='content'>
-													<!--project popup title-->
-													<h4>My Project Title</h4>
-													<!--project popup description-->
-													<p>
-														Consul latine iudicabit eu vel. Cu has animal eruditi voluptatibus. Eu volumus explicari sed. Mel mutat vituperata suscipiantur et, et fabellas explicari adipiscing quo, no mucius euismod vis. Cu vim quem quod cibo.
-													</p>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</li>
-
-								<li data-groups='["tech","web"]' >
-									<div class='inner' >
-
-										<img src='img/portfolio/3.jpg' alt>
-
-										<div class='overlay' >
-											<a href='#popup-3' class='has-popup view-project' >View Project</a>
-											<div id='popup-3' class='popup-box zoom-anim-dialog mfp-hide'>
-												<figure>
-													<!--project popup video-->
-													<iframe width='560' height='315' src='https://www.youtube.com/embed/0pXYp72dwl0' allowfullscreen></iframe>
-												</figure>
-												<div class='content'>
-													<!--project popup title-->
-													<h4>My Project Title</h4>
-													<!--project popup description-->
-													<p>
-														Consul latine iudicabit eu vel. Cu has animal eruditi voluptatibus. Eu volumus explicari sed. Mel mutat vituperata suscipiantur et, et fabellas explicari adipiscing quo, no mucius euismod vis. Cu vim quem quod cibo.
-													</p>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</li>
-
-								<li data-groups='["photography","web"]' >
-									<div class='inner' >
-
-										<img src='img/portfolio/4.jpg' alt>
-
-										<div class='overlay' >
-											<a href='#popup-4' class='has-popup view-project' >View Project</a>
-											<div id='popup-4' class='popup-box zoom-anim-dialog mfp-hide'>
-												<figure>
-													<!--project popup image-->
-													<img src='img/portfolio/4.jpg' alt>
-												</figure>
-												<div class='content'>
-													<!--project popup title-->
-													<h4>My Project Title</h4>
-													<!--project popup description-->
-													<p>
-														Consul latine iudicabit eu vel. Cu has animal eruditi voluptatibus. Eu volumus explicari sed. Mel mutat vituperata suscipiantur et, et fabellas explicari adipiscing quo, no mucius euismod vis. Cu vim quem quod cibo.
-													</p>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</li>
-
-								<li data-groups='["photography","art"]' >
-									<div class='inner' >
-
-										<img src='img/portfolio/5.jpg' alt>
-
-										<div class='overlay' >
-											<a href='#popup-5' class='has-popup view-project' >View Project</a>
-
-											<div id='popup-5' class='popup-box zoom-anim-dialog mfp-hide'>
-												<figure>
-													<!--project popup image-->
-													<img src='img/portfolio/5.jpg' alt>
-												</figure>
-												<div class='content'>
-													<!--project popup title-->
-													<h4>My Project Title</h4>
-													<!--project popup description-->
-													<p>
-														Consul latine iudicabit eu vel. Cu has animal eruditi voluptatibus. Eu volumus explicari sed. Mel mutat vituperata suscipiantur et, et fabellas explicari adipiscing quo, no mucius euismod vis. Cu vim quem quod cibo.
-													</p>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</li>
-
-								<li data-groups='["tech","photography"]' >
-									<div class='inner' >
-
-										<img src='img/portfolio/6.jpg' alt>
-
-										<div class='overlay' >
-											<a href='#popup-6' class='has-popup view-project' >View Project</a>
-											<div id='popup-6' class='popup-box zoom-anim-dialog mfp-hide'>
-												<figure>
-													<!--project popup image-->
-													<img src='img/portfolio/1.jpg' alt>
-												</figure>
-												<div class='content'>
-													<!--project popup title-->
-													<h4>My Project Title</h4>
-													<!--project popup description-->
-													<p>
-														Consul latine iudicabit eu vel. Cu has animal eruditi voluptatibus. Eu volumus explicari sed. Mel mutat vituperata suscipiantur et, et fabellas explicari adipiscing quo, no mucius euismod vis. Cu vim quem quod cibo.
-													</p>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</li>
+                                {% endfor %}
 
 							</ul>
 						</div>
