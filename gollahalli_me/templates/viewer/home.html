@@ -338,7 +338,36 @@
             {#					</div>#}
             {#				</div>#}
 
-            <div class='section-block skills-block'>
+            <div class='section-block services-block'>
+                <div class='container-fluid'>
+
+                    <div class='section-header text-center'>
+                        <h2>Research Area</h2>
+                        <div class='divider'>
+                            <img src='{% static 'img/wave.png' %}' alt>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class='col-md-12'>
+
+                            <div class='skills-main'>
+
+                                <div class='skill'>
+
+                                    {% for data in content.get_research_area %}
+                                        <h4>{{ data }}</h4>
+                                    {% endfor %}
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class='section-block skills-block'>
                 <div class='container-fluid'>
 
                     <div class='section-header text-center'>
