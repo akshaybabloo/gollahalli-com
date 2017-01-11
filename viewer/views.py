@@ -89,6 +89,9 @@ class ContentDecode:
     def get_research_area(self):
         return self.json['research_area']
 
+    def get_publications(self):
+        return self.json['publication']
+
     # Portfolio
     def get_portfolio(self):
         json_data = self.json['projects']

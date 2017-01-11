@@ -476,6 +476,7 @@
                         </ul>
 
                     </div>
+
                     <div class='col-md-9'>
 
                         <ul class='portfolio-items'>
@@ -589,85 +590,45 @@
                 </div>
             </div>
 
-            <div class='section-block testimonials-block'>
+
+            <div class='section-block timeline-block'>
                 <div class='container-fluid'>
 
                     <div class='section-header text-center'>
-                        <h2>Testimonials</h2>
+                        <h2>Publication</h2>
                         <div class='divider'>
                             <img src='{% static 'img/wave.png' %}' alt>
                         </div>
                     </div>
 
                     <div class='row'>
-                        <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
-                            <div class='testimonials-slider'>
 
-                                <div class='testimonial'>
-                                    <div class='author-image'>
-                                        <img src='img/person1.jpg' alt>
-                                    </div>
-                                    <p>
-                                        Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex
-                                        vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem
-                                        ullum postulant, ex doming laboramus.
-                                    </p>
-                                    <div class='author'>
-                                        <h4>Jake Doe</h4>
-                                        <span>CEO at Company</span>
-                                    </div>
-                                </div>
-
-                                <div class='testimonial'>
-                                    <div class='author-image'>
-                                        <img src='img/person2.jpg' alt>
-                                    </div>
-                                    <p>
-                                        Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex
-                                        vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem
-                                        ullum postulant, ex doming laboramus.
-                                    </p>
-                                    <div class='author'>
-                                        <h4>Jake Doe</h4>
-                                        <span>CEO at Company</span>
-                                    </div>
-                                </div>
-
-                                <div class='testimonial'>
-                                    <div class='author-image'>
-                                        <img src='img/person3.jpg' alt>
-                                    </div>
-                                    <p>
-                                        Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex
-                                        vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem
-                                        ullum postulant, ex doming laboramus.
-                                    </p>
-                                    <div class='author'>
-                                        <h4>Jake Doe</h4>
-                                        <span>CEO at Company</span>
-                                    </div>
-                                </div>
-
-                                <div class='testimonial'>
-                                    <div class='author-image'>
-                                        <img src='img/person4.jpg' alt>
-                                    </div>
-                                    <p>
-                                        Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex
-                                        vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem
-                                        ullum postulant, ex doming laboramus.
-                                    </p>
-                                    <div class='author'>
-                                        <h4>Jake Doe</h4>
-                                        <span>CEO at Company</span>
-                                    </div>
-                                </div>
-
+                        <div class='col-md-12'>
+                            {% for key, data in content.get_publications.items %}
+                                <div class='timeline-header'>
+                                <i class='ion-ios-paper-outline'></i>
+                                <h4>{{ key }}</h4>
                             </div>
+                                {% for inner_data in data %}
+                                    <ul class='timeline'>
+
+                                    <li>
+                                        <div class='timeline-content'>
+                                            <h5>{{ inner_data | safe }}</h5>
+                                        </div>
+                                    </li>
+                            </ul>
+                                {% endfor %}
+
+
+                            {% endfor %}
+
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
 
         <!--=============================================
