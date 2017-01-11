@@ -563,11 +563,12 @@ body.dark-color .menu-items > li > a:before{
 .about-text{
 	margin-top:40px;
 	text-align:justify;
-	-webkit-text-align-last: center;
-	-moz-text-align-last: center;
-	-ms-text-align-last: center;
-	-o-text-align-last: center;
-	text-align-last: center;
+	-webkit-text-align-last: justify;
+	-moz-text-align-last: justify;
+	-ms-text-align-last: justify;
+	-o-text-align-last: justify;
+	text-align-last: justify;
+	text-justify: inter-word;
 }
 .about-text > p{
 	margin:0;
