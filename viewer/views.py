@@ -83,6 +83,10 @@ class ContentDecode:
         a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
         return a
 
+    def get_skills(self):
+        json_data = self.json['skills']
+        return json_data
+
     # Portfolio
     def get_portfolio(self):
         json_data = self.json['projects']

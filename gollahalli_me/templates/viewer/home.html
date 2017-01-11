@@ -1,750 +1,772 @@
 {% extends 'viewer/base.html' %}
 {% block body %}
-{% load staticfiles %}
-
-    	<body>
-
-		<!--=============================================
-			Preloader
-		=============================================-->
-		<div id='preloader' >
-			<div class='loader' >
-				<img src='{% static 'img/loader.gif' %}' alt>
-			</div>
-		</div>
-
-		<!--=============================================
-			Hire Btn
-		=============================================-->
-		<a href='#contact' class='hire-me font-alt section-link' >
-			Hire Me
-		</a>
-
-		<!--=============================================
-			Menu Button
-		=============================================-->
-		<a href='#' class='menu-btn' >
-			<span class='l1' ></span>
-			<span class='l2' ></span>
-			<span class='l3' ></span>
-		</a>
-
-		<!--=============================================
-			Navigation
-		=============================================-->
-		<nav class='nav' >
-			<div class='v-align' >
-				<div class='inner' >
-					<ul class='menu-items' >
-						<li>
-							<a class='active' href='#home' >
-								<i class='icon-basic-home' ></i>
-								Home
-							</a>
-						</li>
-						<li>
-							<a href='#about' >
-								<i class='icon-basic-info' ></i>
-								<span>About</span>
-							</a>
-						</li>
-						<li>
-							<a href='#portfolio' >
-								<i class='icon-basic-case' ></i>
-								<span>Portfolio</span>
-							</a>
-						</li>
-						<li>
-							<a href='#resume' >
-								<i class='icon-ecommerce-receipt' ></i>
-								<span>Resume</span>
-							</a>
-						</li>
-						<li>
-							<a href='#blog' >
-								<i class='icon-basic-book-pen' ></i>
-								<span>Blog</span>
-							</a>
-						</li>
-						<li>
-							<a href='#contact' >
-								<i class='icon-basic-mail' ></i>
-								<span>Contact</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-
-		<!--=============================================
-			Main Wrapper
-		=============================================-->
-		<div id='main-wrapper' >
-
-			<!--=============================================
-				Home Section
-			=============================================-->
-			<section id='home' class='section main-section active' data-bg='#3F51B5' >
-				<div class='container-fluid' >
-					<div class='v-align' >
-						<div class='inner' >
-							<div class='row' >
-								<div class='col-md-offset-1 col-sm-offset-1 text-left' >
-
-									<div class='intro-text' >
-
-										<span class='pre-heading' >Hi, I am</span>
-
-										<!-- Your Name -->
-										<h2 class='name' >
-											{{ content.get_name }}.
-										</h2>
-
-										<!-- Social Icons -->
-										<ul class='main-social' >
-											<li>
-												<a href='{{ content.get_twitter }}' >
-													<i class='ion-social-twitter-outline' ></i>
-												</a>
-											</li>
-											<li>
-												<a href='{{ content.get_github }}' >
-													<i class='ion-social-github-outline' ></i>
-												</a>
-											</li>
-											<li>
-												<a href='{{ content.get_linkedin }}' >
-													<i class='ion-social-linkedin-outline' ></i>
-												</a>
-											</li>
-										</ul>
-
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!--=============================================
-				About Section
-			=============================================-->
-			<section id='about' class='section about-section' data-bg='#D7CCC8' data-color='dark' >
-				<div class='section-block about-block' >
-					<div class='container-fluid' >
-
-						<div class='section-header text-center' >
-
-							<h2>About Me</h2>
-
-							<div class='divider' >
-								<img src='{% static 'img/wave.png' %}' alt>
-							</div>
-
-						</div>
-
-						<div class='person-img text-center' >
-
-							<!-- Your Image -->
-                            {{ content.get_my_image | safe }}
-
-						</div>
-
-						<div class='row' >
-							<div class='col-md-6 col-md-offset-3' >
-
-								<div class='about-text' >
-									<p>
-                                        {{ content.get_bio | safe }}
-									</p>
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-				</div>
-
-
-{#				<div class='section-block funfacts-block' >#}
-{#					<div class='container-fluid' >#}
-{#						<div class='row' >#}
-{##}
-{#							<!-- Funfacts -->#}
-{##}
-{#							<div class='col-md-3 col-sm-6' >#}
-{#								<div class='funfact' >#}
-{#									<h4>290</h4>#}
-{#									<p>Awards Won</p>#}
-{#								</div>#}
-{#							</div>#}
-{##}
-{#							<div class='col-md-3 col-sm-6' >#}
-{#								<div class='funfact' >#}
-{#									<h4>198</h4>#}
-{#									<p>Happy Customers</p>#}
-{#								</div>#}
-{#							</div>#}
-{##}
-{#							<div class='col-md-3 col-sm-6' >#}
-{#								<div class='funfact' >#}
-{#									<h4>374</h4>#}
-{#									<p>Songs Listened</p>#}
-{#								</div>#}
-{#							</div>#}
-{##}
-{#							<div class='col-md-3 col-sm-6' >#}
-{#								<div class='funfact' >#}
-{#									<h4>582</h4>#}
-{#									<p>Games Played</p>#}
-{#								</div>#}
-{#							</div>#}
-{##}
-{#						</div>#}
-{#					</div>#}
-{#				</div>#}
-
-{#				<div class='section-block services-block' >#}
-{#					<div class='container-fluid' >#}
-{##}
-{#						<div class='section-header text-center' >#}
-{##}
-{#							<h2>My Services</h2>#}
-{##}
-{#							<div class='divider' >#}
-{#								<img src='{% static 'img/wave.png' %}' alt>#}
-{#							</div>#}
-{##}
-{#						</div>#}
-{##}
-{#						<div class='row inline-block' >#}
-{##}
-{#							<div class='col-lg-4 col-md-6' >#}
-{##}
-{#								<div class='service' >#}
-{##}
-{#									<div class='icon' >#}
-{#										<i class='icon-basic-photo' ></i>#}
-{#									</div>#}
-{##}
-{#									<div class='content' >#}
-{#										<h4>Photography</h4>#}
-{#										<p>#}
-{#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
-{#										</p>#}
-{#									</div>#}
-{##}
-{#								</div>#}
-{##}
-{#							</div>#}
-{##}
-{#							<div class='col-lg-4 col-md-6' >#}
-{##}
-{#								<div class='service' >#}
-{##}
-{#									<div class='icon' >#}
-{#										<i class='icon-basic-keyboard' ></i>#}
-{#									</div>#}
-{##}
-{#									<div class='content' >#}
-{#										<h4>Programming</h4>#}
-{#										<p>#}
-{#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
-{#										</p>#}
-{#									</div>#}
-{##}
-{#								</div>#}
-{##}
-{#							</div>#}
-{##}
-{#							<div class='col-lg-4 col-md-6' >#}
-{##}
-{#								<div class='service' >#}
-{##}
-{#									<div class='icon' >#}
-{#										<i class='icon-basic-smartphone' ></i>#}
-{#									</div>#}
-{##}
-{#									<div class='content' >#}
-{#										<h4>App Development</h4>#}
-{#										<p>#}
-{#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
-{#										</p>#}
-{#									</div>#}
-{##}
-{#								</div>#}
-{#							</div>#}
-{##}
-{##}
-{#							<div class='col-lg-4 col-md-6' >#}
-{##}
-{#								<div class='service' >#}
-{##}
-{#									<div class='icon' >#}
-{#										<i class='icon-ecommerce-bag-check' ></i>#}
-{#									</div>#}
-{##}
-{#									<div class='content' >#}
-{#										<h4>Shopping</h4>#}
-{#										<p>#}
-{#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
-{#										</p>#}
-{#									</div>#}
-{##}
-{#								</div>#}
-{#							</div>#}
-{##}
-{#							<div class='col-lg-4 col-md-6' >#}
-{##}
-{#								<div class='service' >#}
-{##}
-{#									<div class='icon' >#}
-{#										<i class='icon-music-microphone' ></i>#}
-{#									</div>#}
-{##}
-{#									<div class='content' >#}
-{#										<h4>Singing</h4>#}
-{#										<p>#}
-{#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
-{#										</p>#}
-{#									</div>#}
-{##}
-{#								</div>#}
-{#							</div>#}
-{##}
-{#							<div class='col-lg-4 col-md-6' >#}
-{##}
-{#								<div class='service' >#}
-{##}
-{#									<div class='icon' >#}
-{#										<i class='icon-basic-todolist-pen' ></i>#}
-{#									</div>#}
-{##}
-{#									<div class='content' >#}
-{#										<h4>Writing</h4>#}
-{#										<p>#}
-{#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
-{#										</p>#}
-{#									</div>#}
-{##}
-{#								</div>#}
-{##}
-{#							</div>#}
-{##}
-{#						</div>#}
-{#					</div>#}
-{#				</div>#}
-
-				<div class='section-block skills-block' >
-					<div class='container-fluid' >
-
-						<div class='section-header text-center' >
-							<h2>My Skills</h2>
-							<div class='divider' >
-								<img src='{% static 'img/wave.png' %}' alt>
-							</div>
-						</div>
-
-						<div class='row' >
-							<div class='col-md-6' >
-
-								<div class='skills-main' >
-
-									<div class='skill' >
-										<h4>HTML/CSS</h4>
-{#										<div class='bar' >#}
-{#											<div class='percent' style='width:90%;' ></div>#}
-{#										</div>#}
-									</div>
-
-									<div class='skill' >
-										<h4>php</h4>
-										<div class='bar' >
-											<div class='percent' style='width:85%;' ></div>
-										</div>
-									</div>
-
-									<div class='skill' >
-										<h4>WordPress</h4>
-										<div class='bar' >
-											<div class='percent' style='width:95%;' ></div>
-										</div>
-									</div>
-
-								</div>
-							</div>
-
-
-							<div class='col-md-6' >
-
-								<div class='skills-main' >
-
-									<div class='skill' >
-										<h4>jQuery</h4>
-										<div class='bar' >
-											<div class='percent' style='width:95%;' ></div>
-										</div>
-									</div>
-
-									<div class='skill' >
-										<h4>JavaScript</h4>
-										<div class='bar' >
-											<div class='percent' style='width:80%;' ></div>
-										</div>
-									</div>
-
-									<div class='skill' >
-										<h4>SEO</h4>
-										<div class='bar' >
-											<div class='percent' style='width:85%;' ></div>
-										</div>
-									</div>
-
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!--=============================================
-				Portfolio Section
-			=============================================-->
-			<section id='portfolio' class='section portfolio-section' data-bg='#B2DFDB' data-color='dark' >
-				<div class='container-fluid' >
-
-					<div class='section-header text-center' >
-						<h2>My Portfolio</h2>
-						<div class='divider' >
-							<img src='{% static 'img/wave.png' %}' alt>
-						</div>
-					</div>
-
-					<div class='row' >
-
-						<div class='col-md-3' >
-
-							<ul class='portfolio-filters' >
-								<li>
-									<a href='#' data-group='all' class='active' >All</a>
-								</li>
-                                {% for data in content.get_portfolio.category %}
-								<li>
-									<a href='#' data-group='{{data}}' >{{data}}</a>
-								</li>
-                                {% endfor %}
-							</ul>
-
-						</div>
-						<div class='col-md-9' >
-
-							<ul class='portfolio-items' >
-
-                                {% for data in content.get_portfolio.portfolio %}
-                                    <li data-groups='["{{data.category}}"]' >
-									<div class='inner' >
-
-										<img src='{% static 'img/portfolio/'|add:data.file_name %}' alt>
-
-										<div class='overlay' >
-											<a href='#popup-{{ forloop.counter }}' class='has-popup view-project' >View Project</a>
-
-											<div id='popup-{{ forloop.counter }}' class='popup-box zoom-anim-dialog mfp-hide'>
-												<figure>
-													<!--project popup image-->
-													<img src='{% static 'img/portfolio/'|add:data.file_name %}' alt>
-												</figure>
-												<div class='content'>
-													<!--project popup title-->
-													<h4>{{ data.title }}</h4>
-													<!--project popup description-->
-													<p>
-														{{ data.long_description | safe }}
-													</p>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</li>
-                                {% endfor %}
-
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!--=============================================
-				Resume Section
-			=============================================-->
-			<section id='resume' class='section resume-section' data-bg='#E1BEE7' data-color='dark'  >
-				<div class='section-block timeline-block' >
-					<div class='container-fluid' >
-
-						<div class='section-header text-center' >
-							<h2>My Resume</h2>
-							<div class='divider' >
-								<img src='{% static 'img/wave.png' %}' alt>
-							</div>
-						</div>
-
-						<div class='row' >
-
-							<div class='col-md-6' >
-
-								<div class='timeline-header' >
-									<i class='icon-basic-book' ></i>
-									<h4>Education</h4>
-								</div>
-
-								<ul class='timeline' >
-
-                                    {% for data in content.get_education %}
+    {% load staticfiles %}
+
+    <body>
+
+    <!--=============================================
+        Preloader
+    =============================================-->
+    <div id='preloader'>
+        <div class='loader'>
+            <img src='{% static 'img/loader.gif' %}' alt>
+        </div>
+    </div>
+
+    <!--=============================================
+        Hire Btn
+    =============================================-->
+    <a href='#contact' class='hire-me font-alt section-link'>
+        Hire Me
+    </a>
+
+    <!--=============================================
+        Menu Button
+    =============================================-->
+    <a href='#' class='menu-btn'>
+        <span class='l1'></span>
+        <span class='l2'></span>
+        <span class='l3'></span>
+    </a>
+
+    <!--=============================================
+        Navigation
+    =============================================-->
+    <nav class='nav'>
+        <div class='v-align'>
+            <div class='inner'>
+                <ul class='menu-items'>
+                    <li>
+                        <a class='active' href='#home'>
+                            <i class='icon-basic-home'></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href='#about'>
+                            <i class='icon-basic-info'></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='#portfolio'>
+                            <i class='icon-basic-case'></i>
+                            <span>Portfolio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='#resume'>
+                            <i class='icon-ecommerce-receipt'></i>
+                            <span>Resume</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='#blog'>
+                            <i class='icon-basic-book-pen'></i>
+                            <span>Blog</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='#contact'>
+                            <i class='icon-basic-mail'></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--=============================================
+        Main Wrapper
+    =============================================-->
+    <div id='main-wrapper'>
+
+        <!--=============================================
+            Home Section
+        =============================================-->
+        <section id='home' class='section main-section active' data-bg='#3F51B5'>
+            <div class='container-fluid'>
+                <div class='v-align'>
+                    <div class='inner'>
+                        <div class='row'>
+                            <div class='col-md-offset-1 col-sm-offset-1 text-left'>
+
+                                <div class='intro-text'>
+
+                                    <span class='pre-heading'>Hi, I am</span>
+
+                                    <!-- Your Name -->
+                                    <h2 class='name'>
+                                        {{ content.get_name }}.
+                                    </h2>
+
+                                    <!-- Social Icons -->
+                                    <ul class='main-social'>
                                         <li>
-										<div class='timeline-content' >
-											<h4>{{ data.title }}</h4>
-											<em>
-												<span>{{ data.where }}</span>
-												<span>{{ data.from }} - {{ data.to }}</span>
-											</em>
-{#											<p>#}
-{#												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.#}
-{#											</p>#}
-										</div>
-									</li>
-                                    {% endfor %}
-
-								</ul>
-							</div>
-
-							<div class='col-md-6' >
-
-								<div class='timeline-header' >
-									<i class='icon-basic-case' ></i>
-									<h4>Experience</h4>
-								</div>
-
-								<ul class='timeline' >
-
-
-                                    {% for data in content.get_experience %}
+                                            <a href='{{ content.get_twitter }}'>
+                                                <i class='ion-social-twitter-outline'></i>
+                                            </a>
+                                        </li>
                                         <li>
-										<div class='timeline-content' >
-											<h4>{{ data.title }}</h4>
-											<em>
-												<span>{{ data.company }} - {{ data.where }}</span>
-												<span>{{ data.from }} - {{ data.to }}</span>
-											</em>
-{#											<p>#}
-{#												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.#}
-{#											</p>#}
-										</div>
-									</li>
-                                    {% endfor %}
+                                            <a href='{{ content.get_github }}'>
+                                                <i class='ion-social-github-outline'></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='{{ content.get_linkedin }}'>
+                                                <i class='ion-social-linkedin-outline'></i>
+                                            </a>
+                                        </li>
+                                    </ul>
 
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+                                </div>
 
-				<div class='section-block testimonials-block' >
-					<div class='container-fluid' >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-						<div class='section-header text-center' >
-							<h2>Testimonials</h2>
-							<div class='divider' >
-								<img src='{% static 'img/wave.png' %}' alt>
-							</div>
-						</div>
+        <!--=============================================
+            About Section
+        =============================================-->
+        <section id='about' class='section about-section' data-bg='#D7CCC8' data-color='dark'>
+            <div class='section-block about-block'>
+                <div class='container-fluid'>
 
-						<div class='row' >
-							<div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1' >
-								<div class='testimonials-slider' >
+                    <div class='section-header text-center'>
 
-									<div class='testimonial' >
-										<div class='author-image' >
-											<img src='img/person1.jpg' alt>
-										</div>
-										<p>
-											Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem ullum postulant, ex doming laboramus.
-										</p>
-										<div class='author' >
-											<h4>Jake Doe</h4>
-											<span>CEO at Company</span>
-										</div>
-									</div>
+                        <h2>About Me</h2>
 
-									<div class='testimonial' >
-										<div class='author-image' >
-											<img src='img/person2.jpg' alt>
-										</div>
-										<p>
-											Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem ullum postulant, ex doming laboramus.
-										</p>
-										<div class='author' >
-											<h4>Jake Doe</h4>
-											<span>CEO at Company</span>
-										</div>
-									</div>
+                        <div class='divider'>
+                            <img src='{% static 'img/wave.png' %}' alt>
+                        </div>
 
-									<div class='testimonial' >
-										<div class='author-image' >
-											<img src='img/person3.jpg' alt>
-										</div>
-										<p>
-											Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem ullum postulant, ex doming laboramus.
-										</p>
-										<div class='author' >
-											<h4>Jake Doe</h4>
-											<span>CEO at Company</span>
-										</div>
-									</div>
+                    </div>
 
-									<div class='testimonial' >
-										<div class='author-image' >
-											<img src='img/person4.jpg' alt>
-										</div>
-										<p>
-											Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem ullum postulant, ex doming laboramus.
-										</p>
-										<div class='author' >
-											<h4>Jake Doe</h4>
-											<span>CEO at Company</span>
-										</div>
-									</div>
+                    <div class='person-img text-center'>
 
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+                        <!-- Your Image -->
+                        {{ content.get_my_image | safe }}
 
-			<!--=============================================
-				Blog Section
-			=============================================-->
-			<section id='blog' class='section blog-section' data-bg='#F0F0F0' data-color='dark' >
-				<div class='container-fluid' >
+                    </div>
 
-					<div class='section-header text-center' >
-						<h2>My Blog</h2>
-						<div class='divider' >
-							<img src='{% static 'img/wave.png' %}' alt>
-						</div>
-					</div>
+                    <div class='row'>
+                        <div class='col-md-6 col-md-offset-3'>
 
-					<div class='blog-posts' >
+                            <div class='about-text'>
+                                <p>
+                                    {{ content.get_bio | safe }}
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
 
+            {#				<div class='section-block funfacts-block' >#}
+            {#					<div class='container-fluid' >#}
+            {#						<div class='row' >#}
+            {##}
+            {#							<!-- Funfacts -->#}
+            {##}
+            {#							<div class='col-md-3 col-sm-6' >#}
+            {#								<div class='funfact' >#}
+            {#									<h4>290</h4>#}
+            {#									<p>Awards Won</p>#}
+            {#								</div>#}
+            {#							</div>#}
+            {##}
+            {#							<div class='col-md-3 col-sm-6' >#}
+            {#								<div class='funfact' >#}
+            {#									<h4>198</h4>#}
+            {#									<p>Happy Customers</p>#}
+            {#								</div>#}
+            {#							</div>#}
+            {##}
+            {#							<div class='col-md-3 col-sm-6' >#}
+            {#								<div class='funfact' >#}
+            {#									<h4>374</h4>#}
+            {#									<p>Songs Listened</p>#}
+            {#								</div>#}
+            {#							</div>#}
+            {##}
+            {#							<div class='col-md-3 col-sm-6' >#}
+            {#								<div class='funfact' >#}
+            {#									<h4>582</h4>#}
+            {#									<p>Games Played</p>#}
+            {#								</div>#}
+            {#							</div>#}
+            {##}
+            {#						</div>#}
+            {#					</div>#}
+            {#				</div>#}
 
-                        {% for data in content.get_blog %}
+            {#				<div class='section-block services-block' >#}
+            {#					<div class='container-fluid' >#}
+            {##}
+            {#						<div class='section-header text-center' >#}
+            {##}
+            {#							<h2>My Services</h2>#}
+            {##}
+            {#							<div class='divider' >#}
+            {#								<img src='{% static 'img/wave.png' %}' alt>#}
+            {#							</div>#}
+            {##}
+            {#						</div>#}
+            {##}
+            {#						<div class='row inline-block' >#}
+            {##}
+            {#							<div class='col-lg-4 col-md-6' >#}
+            {##}
+            {#								<div class='service' >#}
+            {##}
+            {#									<div class='icon' >#}
+            {#										<i class='icon-basic-photo' ></i>#}
+            {#									</div>#}
+            {##}
+            {#									<div class='content' >#}
+            {#										<h4>Photography</h4>#}
+            {#										<p>#}
+            {#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
+            {#										</p>#}
+            {#									</div>#}
+            {##}
+            {#								</div>#}
+            {##}
+            {#							</div>#}
+            {##}
+            {#							<div class='col-lg-4 col-md-6' >#}
+            {##}
+            {#								<div class='service' >#}
+            {##}
+            {#									<div class='icon' >#}
+            {#										<i class='icon-basic-keyboard' ></i>#}
+            {#									</div>#}
+            {##}
+            {#									<div class='content' >#}
+            {#										<h4>Programming</h4>#}
+            {#										<p>#}
+            {#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
+            {#										</p>#}
+            {#									</div>#}
+            {##}
+            {#								</div>#}
+            {##}
+            {#							</div>#}
+            {##}
+            {#							<div class='col-lg-4 col-md-6' >#}
+            {##}
+            {#								<div class='service' >#}
+            {##}
+            {#									<div class='icon' >#}
+            {#										<i class='icon-basic-smartphone' ></i>#}
+            {#									</div>#}
+            {##}
+            {#									<div class='content' >#}
+            {#										<h4>App Development</h4>#}
+            {#										<p>#}
+            {#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
+            {#										</p>#}
+            {#									</div>#}
+            {##}
+            {#								</div>#}
+            {#							</div>#}
+            {##}
+            {##}
+            {#							<div class='col-lg-4 col-md-6' >#}
+            {##}
+            {#								<div class='service' >#}
+            {##}
+            {#									<div class='icon' >#}
+            {#										<i class='icon-ecommerce-bag-check' ></i>#}
+            {#									</div>#}
+            {##}
+            {#									<div class='content' >#}
+            {#										<h4>Shopping</h4>#}
+            {#										<p>#}
+            {#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
+            {#										</p>#}
+            {#									</div>#}
+            {##}
+            {#								</div>#}
+            {#							</div>#}
+            {##}
+            {#							<div class='col-lg-4 col-md-6' >#}
+            {##}
+            {#								<div class='service' >#}
+            {##}
+            {#									<div class='icon' >#}
+            {#										<i class='icon-music-microphone' ></i>#}
+            {#									</div>#}
+            {##}
+            {#									<div class='content' >#}
+            {#										<h4>Singing</h4>#}
+            {#										<p>#}
+            {#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
+            {#										</p>#}
+            {#									</div>#}
+            {##}
+            {#								</div>#}
+            {#							</div>#}
+            {##}
+            {#							<div class='col-lg-4 col-md-6' >#}
+            {##}
+            {#								<div class='service' >#}
+            {##}
+            {#									<div class='icon' >#}
+            {#										<i class='icon-basic-todolist-pen' ></i>#}
+            {#									</div>#}
+            {##}
+            {#									<div class='content' >#}
+            {#										<h4>Writing</h4>#}
+            {#										<p>#}
+            {#											Ex primis postulant theophrastus est, iudico populo mandamus duo et. Oratio essent et sed, salutatus.#}
+            {#										</p>#}
+            {#									</div>#}
+            {##}
+            {#								</div>#}
+            {##}
+            {#							</div>#}
+            {##}
+            {#						</div>#}
+            {#					</div>#}
+            {#				</div>#}
 
-                            <div class='blog-post' >
-							<div class='inner' >
+            <div class='section-block skills-block'>
+                <div class='container-fluid'>
+
+                    <div class='section-header text-center'>
+                        <h2>My Skills</h2>
+                        <div class='divider'>
+                            <img src='{% static 'img/wave.png' %}' alt>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class='col-md-6'>
+
+                            <div class='skills-main'>
+
+                                <div class='skill'>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover borderless">
+                                            <tbody>
+                                            {#                                            {% with "true" as bool %}#}
+                                            {% for data, key in content.get_skills.t1.items %}
+                                                {% for data_of_key in key %}
+                                                    <tr>
+                                                        {% if forloop.first %}
+                                                            <td class="col-md-2"><h4>{{ data | title }}</h4></td>
+                                                        {% else %}
+                                                            <td class="col-md-2"></td>
+                                                        {% endif %}
+                                                        <td class="col-md-1"><h4>{{ data_of_key }}</h4></td>
+                                                    </tr>
+                                                {% endfor %}
+                                            {% endfor %}
+                                            {#                                            {% endwith %}#}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    {#										<div class='bar' >#}
+                                    {#											<div class='percent' style='width:90%;' ></div>#}
+                                    {#										</div>#}
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class='col-md-6'>
+
+                            <div class='skills-main'>
+
+                                <div class='skill'>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover borderless">
+                                            <tbody>
+                                            {#                                            {% with "true" as bool %}#}
+                                            {% for data, key in content.get_skills.t2.items %}
+                                                {% for data_of_key in key %}
+                                                    <tr>
+                                                        {% if forloop.first %}
+                                                            <td class="col-md-2"><h4>{{ data | title }}</h4></td>
+                                                        {% else %}
+                                                            <td class="col-md-2"></td>
+                                                        {% endif %}
+                                                        <td class="col-md-1"><h4>{{ data_of_key }}</h4></td>
+                                                    </tr>
+                                                {% endfor %}
+                                            {% endfor %}
+                                            {#                                            {% endwith %}#}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    {#										<div class='bar' >#}
+                                    {#											<div class='percent' style='width:90%;' ></div>#}
+                                    {#										</div>#}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=============================================
+            Portfolio Section
+        =============================================-->
+        <section id='portfolio' class='section portfolio-section' data-bg='#B2DFDB' data-color='dark'>
+            <div class='container-fluid'>
+
+                <div class='section-header text-center'>
+                    <h2>My Portfolio</h2>
+                    <div class='divider'>
+                        <img src='{% static 'img/wave.png' %}' alt>
+                    </div>
+                </div>
+
+                <div class='row'>
+
+                    <div class='col-md-3'>
+
+                        <ul class='portfolio-filters'>
+                            <li>
+                                <a href='#' data-group='all' class='active'>All</a>
+                            </li>
+                            {% for data in content.get_portfolio.category %}
+                                <li>
+                                    <a href='#' data-group='{{ data }}'>{{ data }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+                    <div class='col-md-9'>
+
+                        <ul class='portfolio-items'>
+
+                            {% for data in content.get_portfolio.portfolio %}
+                                <li data-groups='["{{ data.category }}"]'>
+                                    <div class='inner'>
+
+                                        <img src='{% static 'img/portfolio/'|add:data.file_name %}' alt>
+
+                                        <div class='overlay'>
+                                            <a href='#popup-{{ forloop.counter }}' class='has-popup view-project'>View
+                                                Project</a>
+
+                                            <div id='popup-{{ forloop.counter }}'
+                                                 class='popup-box zoom-anim-dialog mfp-hide'>
+                                                <figure>
+                                                    <!--project popup image-->
+                                                    <img src='{% static 'img/portfolio/'|add:data.file_name %}' alt>
+                                                </figure>
+                                                <div class='content'>
+                                                    <!--project popup title-->
+                                                    <h4>{{ data.title }}</h4>
+                                                    <!--project popup description-->
+                                                    <p>
+                                                        {{ data.long_description | safe }}
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=============================================
+            Resume Section
+        =============================================-->
+        <section id='resume' class='section resume-section' data-bg='#E1BEE7' data-color='dark'>
+            <div class='section-block timeline-block'>
+                <div class='container-fluid'>
+
+                    <div class='section-header text-center'>
+                        <h2>My Resume</h2>
+                        <div class='divider'>
+                            <img src='{% static 'img/wave.png' %}' alt>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+
+                        <div class='col-md-6'>
+
+                            <div class='timeline-header'>
+                                <i class='icon-basic-book'></i>
+                                <h4>Education</h4>
+                            </div>
+
+                            <ul class='timeline'>
+
+                                {% for data in content.get_education %}
+                                    <li>
+                                        <div class='timeline-content'>
+                                            <h4>{{ data.title }}</h4>
+                                            <em>
+                                                <span>{{ data.where }}</span>
+                                                <span>{{ data.from }} - {{ data.to }}</span>
+                                            </em>
+                                            {#											<p>#}
+                                            {#												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.#}
+                                            {#											</p>#}
+                                        </div>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+
+                        <div class='col-md-6'>
+
+                            <div class='timeline-header'>
+                                <i class='icon-basic-case'></i>
+                                <h4>Experience</h4>
+                            </div>
+
+                            <ul class='timeline'>
+
+
+                                {% for data in content.get_experience %}
+                                    <li>
+                                        <div class='timeline-content'>
+                                            <h4>{{ data.title }}</h4>
+                                            <em>
+                                                <span>{{ data.company }} - {{ data.where }}</span>
+                                                <span>{{ data.from }} - {{ data.to }}</span>
+                                            </em>
+                                            {#											<p>#}
+                                            {#												Sea vide autem dolor ei. Pro melius integre ei. Enim pertinax democritum sea no, ut unum quando qui, nec dolorem vivendo ad.#}
+                                            {#											</p>#}
+                                        </div>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='section-block testimonials-block'>
+                <div class='container-fluid'>
+
+                    <div class='section-header text-center'>
+                        <h2>Testimonials</h2>
+                        <div class='divider'>
+                            <img src='{% static 'img/wave.png' %}' alt>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
+                            <div class='testimonials-slider'>
+
+                                <div class='testimonial'>
+                                    <div class='author-image'>
+                                        <img src='img/person1.jpg' alt>
+                                    </div>
+                                    <p>
+                                        Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex
+                                        vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem
+                                        ullum postulant, ex doming laboramus.
+                                    </p>
+                                    <div class='author'>
+                                        <h4>Jake Doe</h4>
+                                        <span>CEO at Company</span>
+                                    </div>
+                                </div>
+
+                                <div class='testimonial'>
+                                    <div class='author-image'>
+                                        <img src='img/person2.jpg' alt>
+                                    </div>
+                                    <p>
+                                        Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex
+                                        vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem
+                                        ullum postulant, ex doming laboramus.
+                                    </p>
+                                    <div class='author'>
+                                        <h4>Jake Doe</h4>
+                                        <span>CEO at Company</span>
+                                    </div>
+                                </div>
+
+                                <div class='testimonial'>
+                                    <div class='author-image'>
+                                        <img src='img/person3.jpg' alt>
+                                    </div>
+                                    <p>
+                                        Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex
+                                        vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem
+                                        ullum postulant, ex doming laboramus.
+                                    </p>
+                                    <div class='author'>
+                                        <h4>Jake Doe</h4>
+                                        <span>CEO at Company</span>
+                                    </div>
+                                </div>
+
+                                <div class='testimonial'>
+                                    <div class='author-image'>
+                                        <img src='img/person4.jpg' alt>
+                                    </div>
+                                    <p>
+                                        Pro aperiri indoctum in, ubique adipisci et mea. Prima partiendo cotidieque ex
+                                        vel, per semper detraxit legendos no, ut vim vidit debetir debitis. Nec ut autem
+                                        ullum postulant, ex doming laboramus.
+                                    </p>
+                                    <div class='author'>
+                                        <h4>Jake Doe</h4>
+                                        <span>CEO at Company</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=============================================
+            Blog Section
+        =============================================-->
+        <section id='blog' class='section blog-section' data-bg='#F0F0F0' data-color='dark'>
+            <div class='container-fluid'>
+
+                <div class='section-header text-center'>
+                    <h2>My Blog</h2>
+                    <div class='divider'>
+                        <img src='{% static 'img/wave.png' %}' alt>
+                    </div>
+                </div>
+
+                <div class='blog-posts'>
+
+
+                    {% for data in content.get_blog %}
+
+                        <div class='blog-post'>
+                            <div class='inner'>
                                 {% if 'media_content' in data %}
                                     <figure>
-									<img src='{{ data.media_content.0.url }}' alt>
-								</figure>
+                                        <img src='{{ data.media_content.0.url }}' alt>
+                                    </figure>
                                 {% endif %}
-								<div class='content' >
-									<h4>{{ data.title }}</h4>
-									<ul class='post-icons' >
-										<li>
-											<i class='ion-ios-person-outline' ></i>
-											<span>{{ data.author }}</span>
-										</li>
-{#										<li>#}
-{#											<i class='ion-ios-pricetag-outline' ></i>#}
-{#											<span>Lifestyle, Work</span>#}
-{#										</li>#}
-										<li>
-											<i class='ion-ios-clock-outline' ></i>
-											<span>{{ data.published }}</span>
-										</li>
-									</ul>
-									<p>
+                                <div class='content'>
+                                    <h4>{{ data.title }}</h4>
+                                    <ul class='post-icons'>
+                                        <li>
+                                            <i class='ion-ios-person-outline'></i>
+                                            <span>{{ data.author }}</span>
+                                        </li>
+                                        {#										<li>#}
+                                        {#											<i class='ion-ios-pricetag-outline' ></i>#}
+                                        {#											<span>Lifestyle, Work</span>#}
+                                        {#										</li>#}
+                                        <li>
+                                            <i class='ion-ios-clock-outline'></i>
+                                            <span>{{ data.published }}</span>
+                                        </li>
+                                    </ul>
+                                    <p>
                                         {{ data.description }}
-									</p>
-									<a href='{{ data.link }}' class='read-more' >
-										Read More <i class='ion-ios-arrow-thin-right' ></i>
-									</a>
-								</div>
-							</div>
-						</div>
-                        {% endfor %}
+                                    </p>
+                                    <a href='{{ data.link }}' class='read-more'>
+                                        Read More <i class='ion-ios-arrow-thin-right'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
 
-					</div>
-				</div>
-			</section>
+                </div>
+            </div>
+        </section>
 
-			<!--=============================================
-				Contact Section
-			=============================================-->
-			<section id='contact' class='section contact-section' data-bg='#FFF9C4' data-color='dark' >
-				<div class='container-fluid' >
+        <!--=============================================
+            Contact Section
+        =============================================-->
+        <section id='contact' class='section contact-section' data-bg='#FFF9C4' data-color='dark'>
+            <div class='container-fluid'>
 
-					<div class='section-header text-center' >
-						<h2>Contact Me</h2>
-						<div class='divider' >
-							<img src='{% static 'img/wave.png' %}' alt>
-						</div>
-					</div>
+                <div class='section-header text-center'>
+                    <h2>Contact Me</h2>
+                    <div class='divider'>
+                        <img src='{% static 'img/wave.png' %}' alt>
+                    </div>
+                </div>
 
-					<div class='row' >
-						<div class='col-md-8 col-md-offset-2' >
+                <div class='row'>
+                    <div class='col-md-8 col-md-offset-2'>
 
-							<form id='contact-form' class='contact-form font-alt' data-toggle='validator' method='post' >
+                        <form id='contact-form' class='contact-form font-alt' data-toggle='validator' method='post'>
 
-								<!--contact-form-result-->
-								<div id='contact-form-result' ></div>
+                            <!--contact-form-result-->
+                            <div id='contact-form-result'></div>
 
-								<div class='row' >
+                            <div class='row'>
 
-									<div class='col-md-6' >
-										<div class='form-group' >
-											<input type='text' name='name' class='form-control' placeholder='Name' required>
-											<div class='help-block with-errors' ></div>
-										</div>
-									</div>
+                                <div class='col-md-6'>
+                                    <div class='form-group'>
+                                        <input type='text' name='name' class='form-control' placeholder='Name' required>
+                                        <div class='help-block with-errors'></div>
+                                    </div>
+                                </div>
 
-									<div class='col-md-6' >
-										<div class='form-group' >
-											<input type='email' name='email' class='form-control' placeholder='Email' required>
-											<div class='help-block with-errors' ></div>
-										</div>
-									</div>
+                                <div class='col-md-6'>
+                                    <div class='form-group'>
+                                        <input type='email' name='email' class='form-control' placeholder='Email'
+                                               required>
+                                        <div class='help-block with-errors'></div>
+                                    </div>
+                                </div>
 
-								</div>
+                            </div>
 
-								<div class='form-group' >
-									<input type='text' name='subject' class='form-control' placeholder='Subject' required>
-									<div class='help-block with-errors' ></div>
-								</div>
+                            <div class='form-group'>
+                                <input type='text' name='subject' class='form-control' placeholder='Subject' required>
+                                <div class='help-block with-errors'></div>
+                            </div>
 
-								<div class='form-group' >
-									<textarea class='form-control' name='message' rows='6' placeholder='Message' required></textarea>
-									<div class='help-block with-errors' ></div>
-								</div>
+                            <div class='form-group'>
+                                <textarea class='form-control' name='message' rows='6' placeholder='Message'
+                                          required></textarea>
+                                <div class='help-block with-errors'></div>
+                            </div>
 
-								<div class='form-group text-center' >
-									<button type='submit' class='btn-custom' >
-										Send Message
-									</button>
-								</div>
+                            <div class='form-group text-center'>
+                                <button type='submit' class='btn-custom'>
+                                    Send Message
+                                </button>
+                            </div>
 
-							</form>
-						</div>
-					</div>
-				</div>
-			</section>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		</div>
+    </div>
 
 
 
