@@ -157,7 +157,7 @@
                         <div class='col-md-6 col-md-offset-3'>
 
                             <div class='about-text'>
-                                    {{ content.get_bio | safe }}  {# comes with the P tag #}
+                                {{ content.get_bio | safe }} {# comes with the P tag #}
                             </div>
 
                         </div>
@@ -365,7 +365,7 @@
                 </div>
             </div>
 
-        <div class='section-block skills-block'>
+            <div class='section-block skills-block'>
                 <div class='container-fluid'>
 
                     <div class='section-header text-center'>
@@ -501,7 +501,7 @@
                                                     <!--project popup title-->
                                                     <h4>{{ data.title }}</h4>
                                                     <!--project popup description-->
-                                                        {{ data.long_description | safe }} {# comes with the P tag #}
+                                                    {{ data.long_description | safe }} {# comes with the P tag #}
                                                 </div>
                                             </div>
 
@@ -606,18 +606,18 @@
                         <div class='col-md-12'>
                             {% for key, data in content.get_publications.items %}
                                 <div class='timeline-header'>
-                                <i class='ion-ios-paper-outline'></i>
-                                <h4>{{ key }}</h4>
-                            </div>
+                                    <i class='ion-ios-paper-outline'></i>
+                                    <h4>{{ key }}</h4>
+                                </div>
                                 {% for inner_data in data %}
                                     <ul class='timeline'>
 
-                                    <li>
-                                        <div class='timeline-content'>
-                                            <h5>{{ inner_data | safe }}</h5>
-                                        </div>
-                                    </li>
-                            </ul>
+                                        <li>
+                                            <div class='timeline-content'>
+                                                <h5>{{ inner_data | safe }}</h5>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 {% endfor %}
 
 
