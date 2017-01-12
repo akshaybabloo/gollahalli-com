@@ -1,4 +1,5 @@
 {% extends 'viewer/base.html' %}
+{% load custom_tags %}
 {% block body %}
     {% load staticfiles %}
 
@@ -467,13 +468,13 @@
                                             <i class='ion-ios-person-outline'></i>
                                             <span>{{ data.author }}</span>
                                         </li>
-                                        {#										<li>#}
-                                        {#											<i class='ion-ios-pricetag-outline' ></i>#}
-                                        {#											<span>Lifestyle, Work</span>#}
-                                        {#										</li>#}
+                                        <li>
+                                            <i class='ion-ios-pricetag-outline' ></i>
+                                            <span>{{ data.category }}</span>
+                                        </li>
                                         <li>
                                             <i class='ion-ios-clock-outline'></i>
-                                            <span>{{ data.published }}</span>
+                                            <span>{{ data.published | custom_date}}</span>
                                         </li>
                                     </ul>
                                     <p>
