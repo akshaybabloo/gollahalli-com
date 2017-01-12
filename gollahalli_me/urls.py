@@ -19,8 +19,7 @@ urlpatterns = [
     url(r'^robots.txt',
         lambda x: HttpResponse("Sitemap: https://www.gollahalli.me/sitemap.xml\nUser-agent: *\nDisallow: /admin/",
                                content_type="text/plain"), name="robots_file"),
-    url(r'^sitemap\.xml$', views.index, {'sitemaps': sitemaps},
-        name='django.contrib.sitemaps.views.sitemap'),
+    url(r'^sitemap\.xml$', views.index, {'sitemaps': sitemaps, 'template_name': 'sitemap-index.xml'}),
     url(r'^sitemap-(?P<section>.+).xml$', views.sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
 ]
