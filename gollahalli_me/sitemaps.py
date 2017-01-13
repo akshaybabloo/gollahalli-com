@@ -5,8 +5,9 @@ from django.urls import reverse
 
 
 class Sitemap(sitemaps.Sitemap):
-    def __init__(self, names):
+    def __init__(self, names, priority):
         self.names = names
+        self.priority = priority
 
     def items(self):
         return self.names
@@ -19,6 +20,3 @@ class Sitemap(sitemaps.Sitemap):
 
     def location(self, obj):
         return reverse(obj)
-
-    def priority(self, obj):
-        return 1.0
