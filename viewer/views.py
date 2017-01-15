@@ -92,6 +92,14 @@ class ContentDecode:
     def get_publications(self):
         return self.json['publication']
 
+    @staticmethod
+    def get_version():
+        response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest',
+                                auth=('akshaybabloo', GITHUB_KEY))
+
+        return json.loads(response.text)
+
+
     # Portfolio
     def get_portfolio(self):
         json_data = self.json['projects']

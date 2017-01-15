@@ -60,12 +60,17 @@
 {#<script src='{% static 'js/gollahalli.js' %}'></script>#}
 
 <script>
-        $(function () {
-            "use strict";
+    $(function () {
+        "use strict";
 
-            var content = '<footer class="footer">\
-              <div class="container-fluid">\
-                <small class="text-muted" >{{ content.get_version }} <br>\
+        var content = '<footer class="footer">\
+             <small class="text-center text-muted"> <div class="container-fluid">\
+                    <a href="#popup-334" class="has-popup view-project">{{ content.get_version.tag_name }}</a>\
+                    <div id="popup-334" class="popup-box zoom-anim-dialog mfp-hide">\
+                    <div class="content">\
+                        <h4>{{ content.get_version.name }}</h4>\
+                    </div>\
+                    </div><br>\
                 Copyright &copy; {% now 'Y' %} &#124; {{ content.get_name }} <br>\
                 All product and company names are trademarks&#8482; or registered&reg;\
                 trademarks of their respective holders. Use of them does not imply any affiliation with or\
@@ -73,33 +78,33 @@
               </div>\
             </footer>';
 
-            $('#contact-me').on('click', function () {
-                $('#footer').html(content);
-            });
-
-            $('#about-me').on('click', function () {
-                $('#footer').html(content);
-            });
-
-            $('#portfolio-me').on('click', function () {
-                $('#footer').html(content);
-            });
-
-            $('#resume-me').on('click', function () {
-                $('#footer').html(content);
-            });
-
-            $('#blog-me').on('click', function () {
-                $('#footer').html(content);
-            });
-
-
-            $('#home-me').on('click', function () {
-                $('#footer').html('');
-            });
+        $('#contact-me').on('click', function () {
+            $('#footer').html(content);
         });
 
-    </script>
+        $('#about-me').on('click', function () {
+            $('#footer').html(content);
+        });
+
+        $('#portfolio-me').on('click', function () {
+            $('#footer').html(content);
+        });
+
+        $('#resume-me').on('click', function () {
+            $('#footer').html(content);
+        });
+
+        $('#blog-me').on('click', function () {
+            $('#footer').html(content);
+        });
+
+
+        $('#home-me').on('click', function () {
+            $('#footer').html('');
+        });
+    });
+
+</script>
 
 </body>
 </html>
