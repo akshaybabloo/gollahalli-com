@@ -57,7 +57,49 @@
 <script src='{% static 'js/owl.carousel.min.js' %}'></script>
 <script src='{% static 'js/validator.min.js' %}'></script>
 <script src='{% static 'js/script.js' %}'></script>
-<script src='{% static 'js/gollahalli.js' %}'></script>
+{#<script src='{% static 'js/gollahalli.js' %}'></script>#}
+
+<script>
+        $(function () {
+            "use strict";
+
+            var content = '<footer class="footer">\
+              <div class="container-fluid">\
+                <small class="text-muted" >{{ content.get_version }} <br>\
+                Copyright &copy; {% now 'Y' %} &#124; {{ content.get_name }} <br>\
+                All product and company names are trademarks&#8482; or registered&reg;\
+                trademarks of their respective holders. Use of them does not imply any affiliation with or\
+                endorsement by them.</small>\
+              </div>\
+            </footer>';
+
+            $('#contact-me').on('click', function () {
+                $('#footer').html(content);
+            });
+
+            $('#about-me').on('click', function () {
+                $('#footer').html(content);
+            });
+
+            $('#portfolio-me').on('click', function () {
+                $('#footer').html(content);
+            });
+
+            $('#resume-me').on('click', function () {
+                $('#footer').html(content);
+            });
+
+            $('#blog-me').on('click', function () {
+                $('#footer').html(content);
+            });
+
+
+            $('#home-me').on('click', function () {
+                $('#footer').html('');
+            });
+        });
+
+    </script>
 
 </body>
 </html>
