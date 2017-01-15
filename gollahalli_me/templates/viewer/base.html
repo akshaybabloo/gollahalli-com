@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load custom_tags %}
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -29,7 +30,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="manifest" href="{% static 'img/favicons/manifest.json' %}">
-    <link rel="icon" sizes="192x192" href="{% static 'img/favicons/favicon-192.png' %}f">
+    <link rel="icon" sizes="192x192" href="{% static 'img/favicons/favicon-192.png' %}">
 
     <!--=============================================
         CSS Stylesheets
@@ -69,6 +70,9 @@
                     <div id="popup-334" class="popup-box zoom-anim-dialog mfp-hide">\
                     <div class="content">\
                         <h4>{{ content.get_version.name }}</h4>\
+                        {% spaceless %}
+                        {{ content.get_version.body | markdown_data | safe }}\
+                        {% endspaceless %}
                     </div>\
                     </div><br>\
                 Copyright &copy; {% now 'Y' %} &#124; {{ content.get_name }} <br>\
