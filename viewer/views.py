@@ -134,7 +134,6 @@ class ContentDecode:
         <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
         <meta name="author" content="Akshay Raj Gollahalli">
         <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli"/>
-        <meta name="theme-color" content="#ef3939"/>
 
         <meta property="og:title" content="Akshay Raj Gollahalli"/>
         <meta property="og:type" content="website"/>
