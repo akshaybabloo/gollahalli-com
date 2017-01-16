@@ -23,3 +23,7 @@
 .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
     border: 0
 }
+
+.cookie-policy{
+    font-family:'Roboto Mono', monospace;
+}
