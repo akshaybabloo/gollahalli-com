@@ -137,7 +137,7 @@ class ContentDecode:
     @staticmethod
     def get_meta():
         return """
-            <meta name="description"
+        <meta name="description"
               content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work.">
         <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
         <meta name="author" content="Akshay Raj Gollahalli">
@@ -173,6 +173,72 @@ class ContentDecode:
                       cloudinary.CloudinaryImage("akshay_b8wb1x.png").image(gravity="center", opacity=100, radius="max",
                                                                             width=200, height=200, x=0, y=0, zoom=0.75,
                                                                             crop="thumb", alt="Akshay Raj Gollahalli"))
+
+    def get_site_performance(self):
+        return """
+        <!-- Schema.org -->
+
+    <script type='application/ld+json'>
+        {
+          "@context": "http://www.schema.org",
+          "@type": "person",
+          "name": "Akshay Raj Gollahalli",
+          "image" : "https://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_200,q_auto:best,w_200/v1477524340/akshay_b8wb1x.jpg",
+          "url": "https://www.gollahalli.me/",
+          "homeLocation": {
+            "@type": "PostalAddress",
+            "addressLocality": "Auckland",
+            "addressCountry": "New Zealand"
+          },
+          "email": "akshay@gollahalli.com"
+        }
+
+    </script>
+
+            <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-72583688-1', 'auto');
+        ga('require', 'linkid', {
+            'cookieName': '_ela',
+            'duration': 45,
+            'levels': 5
+        });
+        ga('send', 'pageview');
+
+    </script>
+
+
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-56JZX4"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-56JZX4');</script>
+<!-- End Google Tag Manager -->
+        """
 
 
 # ============================================================================================
