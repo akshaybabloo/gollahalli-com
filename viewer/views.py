@@ -328,3 +328,13 @@ def get_gollahalli_me_change_log(request):
     template = "viewer/change-log.html"
     context = {'content': GitHubReleases}
     return render(request, template, context)
+
+
+# ============================================================================================
+#                                       Change Log
+# ============================================================================================
+
+def get_cookie_policy(request):
+    template = "cookie-policy.html"
+    context = {}
+    return render(request, template, context)
