@@ -43,28 +43,7 @@
     <link rel='stylesheet' type='text/css' href='{% static 'css/style.css' %}'>
     <link rel='stylesheet' type='text/css' href='{% static 'css/gollahalli.css' %}'>
 
-    <link rel="stylesheet" type="text/css"
-          href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <script>
-        window.addEventListener("load", function () {
-            window.cookieconsent.initialise({
-                "palette": {
-                    "popup": {
-                        "background": "#343c66",
-                        "text": "#cfcfe8"
-                    },
-                    "button": {
-                        "background": "#f71559"
-                    }
-                },
-                "theme": "edgeless",
-                "content": {
-                    "href": "https://www.gollahalli.me/cookie-policy"
-                }
-            })
-        });
-    </script>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
 
     {{ content.get_site_performance_header | safe }}
 
@@ -86,6 +65,26 @@
 <script src='{% static 'js/validator.min.js' %}'></script>
 <script src='{% static 'js/script.js' %}'></script>
 {#<script src='{% static 'js/gollahalli.js' %}'></script>#}
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+    window.addEventListener("load", function () {
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#343c66",
+                    "text": "#cfcfe8"
+                },
+                "button": {
+                    "background": "#f71559"
+                }
+            },
+            "theme": "edgeless",
+            "content": {
+                "href": "{% url 'cookie-policy' %}"
+            }
+        })
+    });
+</script>
 
 <script>
     $(function () {
