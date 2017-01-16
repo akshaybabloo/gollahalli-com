@@ -470,12 +470,12 @@
                                             <span>{{ data.author }}</span>
                                         </li>
                                         <li>
-                                            <i class='ion-ios-pricetag-outline' ></i>
+                                            <i class='ion-ios-pricetag-outline'></i>
                                             <span>{{ data.category }}</span>
                                         </li>
                                         <li>
                                             <i class='ion-ios-clock-outline'></i>
-                                            <span>{{ data.published | custom_date}}</span>
+                                            <span>{{ data.published | custom_date }}</span>
                                         </li>
                                     </ul>
                                     <p>
@@ -509,49 +509,60 @@
                 <div class='row'>
                     <div class='col-md-8 col-md-offset-2'>
 
-                        <form id='contact-form' class='contact-form font-alt' data-toggle='validator' method='post'>
-
-                            <!--contact-form-result-->
-                            <div id='contact-form-result'></div>
-
-                            <div class='row'>
-
-                                <div class='col-md-6'>
-                                    <div class='form-group'>
-                                        <input type='text' name='name' class='form-control' placeholder='Name' required>
-                                        <div class='help-block with-errors'></div>
-                                    </div>
-                                </div>
-
-                                <div class='col-md-6'>
-                                    <div class='form-group'>
-                                        <input type='email' name='email' class='form-control' placeholder='Email'
-                                               required>
-                                        <div class='help-block with-errors'></div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class='form-group'>
-                                <input type='text' name='subject' class='form-control' placeholder='Subject' required>
-                                <div class='help-block with-errors'></div>
-                            </div>
-
-                            <div class='form-group'>
-                                <textarea class='form-control' name='message' rows='6' placeholder='Message'
-                                          required></textarea>
-                                <div class='help-block with-errors'></div>
-                            </div>
-
-                            <div class='form-group text-center'>
-                                <button type='submit' class='btn-custom'>
-                                    Send Message
-                                </button>
-                            </div>
-
-                        </form>
+                        {#                        <form id='contact-form' class='contact-form font-alt' data-toggle='validator' method='post'>#}
+                        {##}
+                        {#                            <!--contact-form-result-->#}
+                        {#                            <div id='contact-form-result'></div>#}
+                        {##}
+                        {#                            <div class='row'>#}
+                        {##}
+                        {#                                <div class='col-md-6'>#}
+                        {#                                    <div class='form-group'>#}
+                        {#                                        <input type='text' name='name' class='form-control' placeholder='Name' required>#}
+                        {#                                        <div class='help-block with-errors'></div>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {##}
+                        {#                                <div class='col-md-6'>#}
+                        {#                                    <div class='form-group'>#}
+                        {#                                        <input type='email' name='email' class='form-control' placeholder='Email'#}
+                        {#                                               required>#}
+                        {#                                        <div class='help-block with-errors'></div>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {##}
+                        {#                            </div>#}
+                        {##}
+                        {#                            <div class='form-group'>#}
+                        {#                                <input type='text' name='subject' class='form-control' placeholder='Subject' required>#}
+                        {#                                <div class='help-block with-errors'></div>#}
+                        {#                            </div>#}
+                        {##}
+                        {#                            <div class='form-group'>#}
+                        {#                                <textarea class='form-control' name='message' rows='6' placeholder='Message'#}
+                        {#                                          required></textarea>#}
+                        {#                                <div class='help-block with-errors'></div>#}
+                        {#                            </div>#}
+                        {##}
+                        {#                            <div class='form-group text-center'>#}
+                        {#                                <button type='submit' class='btn-custom'>#}
+                        {#                                    Send Message#}
+                        {#                                </button>#}
+                        {#                            </div>#}
+                        {##}
+                        {#                        </form>#}
+                        <div class="font-alt text-center">
+                            <h2>
+                                <i class="ion-ios-email-outline"></i>
+                                <a href="mailto:akshay@gollahalli.com">akshay@gollahalli.com</a>
+                            </h2>
+                        </div>
                     </div>
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                            <a class="twitter-timeline" data-dnt="true" data-theme="dark" href="https://twitter.com/akshaybabloo"
+                               data-widget-id="690023186424012800">Tweets
+                                by @akshaybabloo</a>
+                        </div>
                 </div>
             </div>
         </section>
