@@ -174,7 +174,8 @@ class ContentDecode:
                                                                             width=200, height=200, x=0, y=0, zoom=0.75,
                                                                             crop="thumb", alt="Akshay Raj Gollahalli"))
 
-    def get_site_performance(self):
+    @staticmethod
+    def get_site_performance_header():
         return """
         <!-- Schema.org -->
 
@@ -218,9 +219,12 @@ class ContentDecode:
         ga('send', 'pageview');
 
     </script>
+        """
 
-
-<!-- Google Tag Manager -->
+    @staticmethod
+    def get_site_performance_body():
+        return """
+        <!-- Google Tag Manager -->
 <noscript>
     <iframe src="//www.googletagmanager.com/ns.html?id=GTM-56JZX4"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -238,6 +242,32 @@ class ContentDecode:
         f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-56JZX4');</script>
 <!-- End Google Tag Manager -->
+        """
+
+    @staticmethod
+    def get_site_performance_footer():
+        return """
+        <!-- Facebook app -->
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1562596197364195',
+            xfbml: true,
+            version: 'v2.5'
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
         """
 
 

@@ -4,6 +4,7 @@
     {% load staticfiles %}
 
     <body>
+    {{ content.get_site_performance_body | safe }}
 
     <!--=============================================
         Preloader

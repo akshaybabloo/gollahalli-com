@@ -66,10 +66,14 @@
         });
     </script>
 
+    {{ content.get_site_performance_header | safe }}
+
 </head>
 
 {% block body %}
 {% endblock %}
+
+{{ content.get_site_performance_footer | safe}}
 
 <!--=============================================
     JavaScript Files
