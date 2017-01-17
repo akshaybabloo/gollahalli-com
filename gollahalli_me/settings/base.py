@@ -108,7 +108,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 
 # heroku config:set AWS_ACCESS_KEY_ID=AKIAIPQQUJGYXMFFOASA AWS_SECRET_ACCESS_KEY=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
 
