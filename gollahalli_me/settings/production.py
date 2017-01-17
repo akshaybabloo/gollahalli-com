@@ -28,24 +28,24 @@ ALLOWED_HOSTS = ['*']
 SHARE_URL = "http://www.gollahalli.me/"
 
 # S3
-# AWS_ACCESS_KEY_ID = 'AKIAIPQQUJGYXMFFOASA'
-# AWS_SECRET_ACCESS_KEY = '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'
-# AWS_STORAGE_BUCKET_NAME = 'gollahalli-me-django'
-# AWS_HEADERS = {
-#     'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
-#     'Cache-Control': 'max-age=86400',
-# }
-# AWS_QUERYSTRING_AUTH = False
-# AWS_S3_CUSTOM_DOMAIN = 'gollahalli-heroku-django-ypyxfkub.stackpathdns.com'
-# # AWS_S3_CUSTOM_DOMAIN = 's3.amazonaws.com/gollahalli-me-django'
+AWS_ACCESS_KEY_ID = 'AKIAIPQQUJGYXMFFOASA'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'gollahalli-me-django'
+AWS_HEADERS = {
+    'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
+    'Cache-Control': 'max-age=86400',
+}
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_CUSTOM_DOMAIN = 'gollahalli-heroku-django-ypyxfkub.stackpathdns.com'
+# AWS_S3_CUSTOM_DOMAIN = 's3.amazonaws.com/gollahalli-me-django'
 
-# STATICFILES_LOCATION = 'static'
-# STATICFILES_STORAGE = 'custom_storage.StaticStorage'
-# STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storage.StaticStorage'
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
-# MEDIAFILES_LOCATION = 'media'
-# MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-# DEFAULT_FILE_STORAGE = 'custom_storage.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'custom_storage.MediaStorage'
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'  # Uncomment this for local storage insted of AWS S3
