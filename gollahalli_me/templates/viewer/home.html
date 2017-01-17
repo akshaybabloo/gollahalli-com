@@ -1,7 +1,7 @@
 {% extends 'viewer/base.html' %}
 {% load custom_tags %}
+{% load staticfiles %}
 {% block body %}
-    {% load staticfiles %}
 
     <body>
     {{ content.get_site_performance_body | safe }}
