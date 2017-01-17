@@ -14,7 +14,7 @@ function addScheme($url, $scheme = 'https:')
     return preg_replace("/^http:/i", $scheme, $url);
 }
 
-$cdn = 'https://cdn.gollahalli.me';
+$cdn = 'https://gollahalli-heroku-php-ypyxfkub.stackpathdns.com';
 
 $photo = 'https://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_200,q_auto:best,w_200/v1477524340/akshay_b8wb1x.jpg';
 
