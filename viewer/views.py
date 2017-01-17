@@ -9,6 +9,7 @@ import feedparser
 import markdown
 from django.conf import settings
 from django.shortcuts import render, redirect
+from django.http import HttpResponseServerError, HttpResponse
 
 from editor.models import ContentModel
 
@@ -17,13 +18,20 @@ GITHUB_KEY = "4921a93fdc0a50ec345ef541a715bf07000303d1"
 
 
 def index(request):
-    template = "viewer/home.html"
     try:
         json_content = ContentModel.objects.get(ref_id='1')
         json_object = json.loads(json_content.content)
         content_object = ContentDecode(json_object)
     except Exception as e:
-        return redirect('/welcome/')
+        raise HttpResponseServerError
+
+    if request.GET.get('format') == 'amp':
+        template = "viewer/amp.html"
+    elif request.GET.get('format') == 'json':
+        return HttpResponse(json.dumps(json_object, indent=4, sort_keys=True), content_type="application/json")
+    else:
+        template = "viewer/base.html"
+
     context = {'content': content_object}
     return render(request, template, context)
 
