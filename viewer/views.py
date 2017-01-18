@@ -107,7 +107,6 @@ class ContentDecode:
 
         return json.loads(response.text)
 
-
     # Portfolio
     def get_portfolio(self):
         json_data = self.json['projects']
@@ -187,95 +186,95 @@ class ContentDecode:
         return """
         <!-- Schema.org -->
 
-    <script type='application/ld+json'>
-        {
-          "@context": "http://www.schema.org",
-          "@type": "person",
-          "name": "Akshay Raj Gollahalli",
-          "image" : "https://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_200,q_auto:best,w_200/v1477524340/akshay_b8wb1x.jpg",
-          "url": "https://www.gollahalli.me/",
-          "homeLocation": {
-            "@type": "PostalAddress",
-            "addressLocality": "Auckland",
-            "addressCountry": "New Zealand"
-          },
-          "email": "akshay@gollahalli.com"
-        }
+        <script type='application/ld+json'>
+            {
+              "@context": "http://www.schema.org",
+              "@type": "person",
+              "name": "Akshay Raj Gollahalli",
+              "image" : "https://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_200,q_auto:best,w_200/v1477524340/akshay_b8wb1x.jpg",
+              "url": "https://www.gollahalli.me/",
+              "homeLocation": {
+                "@type": "PostalAddress",
+                "addressLocality": "Auckland",
+                "addressCountry": "New Zealand"
+              },
+              "email": "akshay@gollahalli.com"
+            }
 
-    </script>
+        </script>
 
             <!-- Google Analytics -->
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-72583688-1', 'auto');
-        ga('require', 'linkid', {
-            'cookieName': '_ela',
-            'duration': 45,
-            'levels': 5
-        });
-        ga('send', 'pageview');
+            ga('create', 'UA-72583688-1', 'auto');
+            ga('require', 'linkid', {
+                'cookieName': '_ela',
+                'duration': 45,
+                'levels': 5
+            });
+            ga('send', 'pageview');
 
-    </script>
+        </script>
         """
 
     @staticmethod
     def get_site_performance_body():
         return """
         <!-- Google Tag Manager -->
-<noscript>
-    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-56JZX4"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<script>(function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-            'gtm.start': new Date().getTime(), event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src =
-            '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-56JZX4');</script>
-<!-- End Google Tag Manager -->
+        <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-56JZX4"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(), event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-56JZX4');</script>
+        <!-- End Google Tag Manager -->
         """
 
     @staticmethod
     def get_site_performance_footer():
         return """
         <!-- Facebook app -->
-<script>
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: '1562596197364195',
-            xfbml: true,
-            version: 'v2.5'
-        });
-    };
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '1562596197364195',
+                    xfbml: true,
+                    version: 'v2.5'
+                });
+            };
 
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {
-            return;
-        }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         """
 
 
