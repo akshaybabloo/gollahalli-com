@@ -19,5 +19,4 @@ def markdown_data(value):
 @register.filter()
 def url_replace(value):
     value = value.replace("http://", "https://")
-    print(value)
     return value
