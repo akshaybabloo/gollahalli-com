@@ -757,6 +757,60 @@
 			</div><!-- COL-XS-12 ENDS -->
 		</div><!-- ROW ENDS -->
 
+        <!--************************************ Projects ************************************-->
+
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="bordered-title">
+					<h3>Projects</h3>
+				</div><!-- TITLE ENDS -->
+			</div><!-- COL-XS-12 ENDS -->
+		</div><!-- ROW ENDS -->
+
+		<div class="row">
+			<div class="col-xs-12">
+				<amp-carousel class="blog-carousel" layout="fixed-height" height=200>
+                    {% for data in content.get_projects_amp %}
+                        <a href="{{ data.link }}/?format=amp">
+                        <div class="blog-carousel-item">
+                            <amp-img  src="{% static 'img/portfolio/'|add:data.file_name %}" width=150 height=150></amp-img>
+                            <div class="blog-carousel-item-caption text-center">
+                                <h5 class="margin-0">{{ data.title }}</h5>
+                                <small>Read More..</small>
+                            </div>
+                        </div></a>
+                    {% endfor %}
+				</amp-carousel><!-- BLOG CAROUSEL ENDS -->
+			</div><!-- COL-XS-12 ENDS -->
+		</div><!-- ROW ENDS -->
+
+    <!--************************************ Projects ************************************-->
+
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="bordered-title">
+					<h3>Tutorials</h3>
+				</div><!-- TITLE ENDS -->
+			</div><!-- COL-XS-12 ENDS -->
+		</div><!-- ROW ENDS -->
+
+		<div class="row">
+			<div class="col-xs-12">
+				<amp-carousel class="blog-carousel" layout="fixed-height" height=200>
+                    {% for data in content.get_tutorials_amp %}
+                        <a href="{{ data.link }}/?format=amp">
+                        <div class="blog-carousel-item">
+                            <amp-img  src="{% static 'img/portfolio/'|add:data.file_name %}" width=150 height=150></amp-img>
+                            <div class="blog-carousel-item-caption text-center">
+                                <h5 class="margin-0">{{ data.title }}</h5>
+                                <small>Read More..</small>
+                            </div>
+                        </div></a>
+                    {% endfor %}
+				</amp-carousel><!-- BLOG CAROUSEL ENDS -->
+			</div><!-- COL-XS-12 ENDS -->
+		</div><!-- ROW ENDS -->
+
         <!--************************************ Blog ************************************-->
 
 		<div class="row">
