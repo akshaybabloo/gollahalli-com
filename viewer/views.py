@@ -281,7 +281,8 @@ class ContentDecode:
         </script>
         """
 
-    def get_meta_amp(self):
+    @staticmethod
+    def get_meta_amp():
         return """
         <title>Akshay Raj Gollahalli</title>
         <meta name="author" content="Akshay Raj Gollahalli" />
@@ -291,6 +292,14 @@ class ContentDecode:
         <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1">
 
         """
+
+    def get_projects_amp(self):
+        json_data = self.json['projects']
+        return [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
+
+    def get_tutorials_amp(self):
+        json_data = self.json['tutorials']
+        return [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
 
 
 # ============================================================================================
