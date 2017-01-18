@@ -458,7 +458,7 @@
                             <div class='inner'>
                                 {% if 'media_content' in data %}
                                     <figure>
-                                        <img src='{{ data.media_content.0.url }}' alt>
+                                        <img src='{{ data.media_content.0.url | url_replace}}' alt>
                                     </figure>
                                 {% endif %}
                                 <div class='content'>

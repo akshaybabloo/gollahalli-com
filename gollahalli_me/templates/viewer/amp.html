@@ -774,7 +774,7 @@
                         <a href="{{ data.link }}/?format=amp">
                         <div class="blog-carousel-item">
                             {% if 'media_content' in data %}
-                                <amp-img  src="{{ data.media_content.0.url }}" width=150 height=150></amp-img>
+                                <amp-img  src="{{ data.media_content.0.url | url_replace }}" width=150 height=150></amp-img>
                             {% else %}
                                 <amp-img  src="{% static 'img/square.jpg' %}" width=150 height=150></amp-img>
                             {% endif %}

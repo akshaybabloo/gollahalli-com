@@ -14,3 +14,10 @@ def custom_date(value):
 @register.filter()
 def markdown_data(value):
     return markdown.markdown(value)
+
+
+@register.filter()
+def url_replace(value):
+    value = value.replace("http://", "https://")
+    print(value)
+    return value
