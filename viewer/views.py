@@ -182,7 +182,7 @@ class ContentDecode:
                                                                             crop="thumb", alt="Akshay Raj Gollahalli"))
 
     @staticmethod
-    def get_site_performance_header():
+    def get_schema_data():
         return """
         <!-- Schema.org -->
 
@@ -202,7 +202,11 @@ class ContentDecode:
             }
 
         </script>
+        """
 
+    @staticmethod
+    def get_site_performance_header():
+        return """
             <!-- Google Analytics -->
         <script>
             (function (i, s, o, g, r, a, m) {

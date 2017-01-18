@@ -45,6 +45,7 @@
 
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
 
+    {{ content.get_schema_data | safe }}
     {{ content.get_site_performance_header | safe }}
 
 </head>
