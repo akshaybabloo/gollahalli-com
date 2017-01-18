@@ -592,7 +592,7 @@
 
         <!--************************************ About Me ************************************-->
 
-        <div class="row">
+        <div class="row" id="about_me">
 			<div class="col-xs-12">
 				<div class="bordered-title">
 					<h3>About Me</h3>
@@ -608,7 +608,7 @@
 
         <!--************************************ Education ************************************-->
 
-		<div class="row">
+		<div class="row" id="education">
 			<div class="col-xs-12">
 				<div class="bordered-title">
 					<h3>Education</h3>
@@ -633,7 +633,7 @@
 
         <!--************************************ Research Area ************************************-->
 
-		<div class="row">
+		<div class="row" id="research">
 			<div class="col-xs-12">
 				<div class="bordered-title">
 					<h3>Research Area</h3>
@@ -655,7 +655,7 @@
 
         <!--************************************ Publications ************************************-->
 
-        <div class="row">
+        <div class="row" id="publications">
 			<div class="col-xs-12">
 				<div class="bordered-title">
 					<h3>Publications</h3>
@@ -680,7 +680,7 @@
 
     <!--************************************ Skills ************************************-->
 
-		<div class="row">
+		<div class="row" id="skills">
 			<div class="col-xs-12">
 				<div class="bordered-title">
 					<h3>Skills</h3>
@@ -733,11 +733,10 @@
 			</div><!-- COL-XS-12 ENDS -->
 		</div><!-- ROW ENDS -->
 
-        <div class="space-2"></div>
 
         <!--************************************ Experience ************************************-->
 
-        <div class="row">
+        <div class="row" id="experience">
 			<div class="col-xs-12">
 				<div class="bordered-title">
 					<h3>Experience</h3>
@@ -759,7 +758,7 @@
 
         <!--************************************ Projects ************************************-->
 
-		<div class="row">
+		<div class="row" id="projects">
 			<div class="col-xs-12">
 				<div class="bordered-title">
 					<h3>Projects</h3>
@@ -784,9 +783,9 @@
 			</div><!-- COL-XS-12 ENDS -->
 		</div><!-- ROW ENDS -->
 
-    <!--************************************ Projects ************************************-->
+    <!--************************************ Tutorials ************************************-->
 
-		<div class="row">
+		<div class="row" id="tutorials">
 			<div class="col-xs-12">
 				<div class="bordered-title">
 					<h3>Tutorials</h3>
@@ -813,7 +812,7 @@
 
         <!--************************************ Blog ************************************-->
 
-		<div class="row">
+		<div class="row" id="blog">
 			<div class="col-xs-12">
 				<div class="bordered-title">
 					<h3>Blog</h3>
@@ -867,83 +866,37 @@
 
     <amp-sidebar id='mainSideBar' layout='nodisplay'>
         <figure class="primary-bg">
-            <amp-img class="circle" src="assets/img/author_150x150.jpg" width="60" height="60" layout="fixed" attribution="Mobius Studio"></amp-img>
+            <amp-img class="circle" src="https://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_100,q_auto:best,w_100/v1477524340/akshay_b8wb1x.jpg" width="60" height="60" layout="fixed" attribution="{{ content.get_name }}"></amp-img>
             <figcaption>
-                <h3 class="light-color">Melena Aaberg</h3>
-                <h5 class="light-color-2">Tech-Geek/Nerd</h5>
+                <h3 class="light-color">{{ content.get_name }}</h3>
+                <h5 class="light-color-2">PhD Student</h5>
             </figcaption>
 
             <button on='tap:mainSideBar.toggle' class="fa fa-caret-left light-color"></button>
         </figure><!-- NAVBAR USER CARD ENDS -->
 
         <nav id="menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-            <a href="index.html"><i class="fa fa-home"></i>Home</a>
-            <a href="about-us.html"><i class="fa fa-building"></i>About Us</a>
-            <a href="services.html"><i class="fa fa-diamond"></i>Services</a>
-            <amp-accordion>
-                <section>
-                    <h6><span><i class="fa fa-rss"></i>Blog</span></h6>
-                    <div>
-                        <a href="blog.html">Blog List</a>
-                        <a href="blog-detail-sample-post.html">Sample Post</a>
-                        <a href="blog-detail-carousel-post.html">Carousel Post</a>
-                        <a href="blog-detail-video-post.html">Video Post</a>
-                        <a href="blog-detail-twitter-post.html">Twitter Post</a>
-                    </div>
-                </section>
-            </amp-accordion>
-            <amp-accordion>
-                <section>
-                    <h6><span><i class="fa fa-cubes"></i>Features</span></h6>
-                    <div>
-                        <a href="feature-accordion.html">Accordion</a>
-                        <a href="feature-ad.html">Ads</a>
-                        <a href="feature-anim.html">Animation</a>
-                        <a href="feature-audio.html">Audio</a>
-                        <a href="feature-brightcove.html">Brightcove</a>
-                        <a href="feature-button.html">Buttons</a>
-                        <a href="feature-carousel.html">Carousel</a>
-                        <a href="feature-dailymotion.html">Dailymotion</a>
-                        <a href="feature-facebook.html">Facebook</a>
-                        <a href="feature-grid.html">Grid</a>
-                        <a href="feature-icons.html">Icons</a>
-                        <a href="feature-iframe.html">iFrame</a>
-                        <a href="feature-image.html">Image</a>
-                        <a href="feature-image-lightbox.html">Image Lightbox</a>
-                        <a href="feature-instagram.html">Instagram</a>
-                        <a href="feature-lightbox.html">Lightbox</a>
-                        <a href="offline.html">Offline Page</a>
-                        <a href="404.html">Page Not Found</a>
-                        <a href="feature-pinterest.html">Pinterest</a>
-                        <a href="feature-table-responsive.html">Responsive Tables</a>
-                        <a href="feature-social-share.html">Social Share</a>
-                        <a href="feature-soundcloud.html">Soundcloud</a>
-                        <a href="feature-twitter.html">Twitter</a>
-                        <a href="feature-user-notification.html">User Notifications</a>
-                        <a href="feature-video.html">Videos</a>
-                        <a href="feature-vimeo.html">Vimeo</a>
-                        <a href="feature-youtube.html">Youtube</a>
-                    </div>
-                </section>
-            </amp-accordion>
-            <a href="contact.html"><i class="fa fa-envelope"></i>Contact</a>
+            <a href="#about_me"><i class="fa fa-home"></i>About Me</a>
+            <a href="#education"><i class="fa fa-building"></i>Education</a>
+            <a href="#research"><i class="fa fa-diamond"></i>Research Area</a>
+            <a href="#publications"><i class="fa fa-envelope"></i>Publications</a>
+            <a href="#skills"><i class="fa fa-envelope"></i>Skills</a>
+            <a href="#experience"><i class="fa fa-envelope"></i>Experience</a>
+            <a href="#projects"><i class="fa fa-envelope"></i>Projects</a>
+            <a href="#tutorials"><i class="fa fa-envelope"></i>Tutorials</a>
+            <a href="#blog"><i class="fa fa-envelope"></i>Blog</a>
         </nav><!-- MENU ENDS -->
 
         <div class="divider colored"></div>
 
         <div>
-            <p class="margin-top-0"><strong>Address:</strong> Lipsum Street Lorem<br>Way PO 60009 Dolor/ALASKA</p>
-            <p><strong>Phone:</strong> <a href="tel:+12345678">+1 234 56 78</a></p>
-            <p><strong>Fax:</strong> +1 876 54 32</p>
-            <p class="margin-bottom-0"><strong>E-Mail:</strong> <a href="mailto:amp@mobius.studio">amp@mobius.studio</a></p>
+            <p class="margin-bottom-0"><strong>E-Mail:</strong> <a href="mailto:akshay@gollahalli.com">akshay@gollahalli.com</a></p>
         </div><!-- CONTACT INFORMATION ENDS -->
 
         <div>
-            <a href="#" class="social-ball fa fa-facebook"></a>
-            <a href="#" class="social-ball fa fa-twitter"></a>
-            <a href="#" class="social-ball fa fa-linkedin"></a>
-            <a href="#" class="social-ball fa fa-behance"></a>
-            <a href="#" class="social-ball fa fa-dribbble"></a>
+            <a href="{{ content.get_github }}" class="social-ball fa fa-github"></a>
+            <a href="{{ content.get_twitter }}" class="social-ball fa fa-twitter"></a>
+            <a href="{{ content.get_linkedin }}" class="social-ball fa fa-linkedin"></a>
         </div><!-- SOCIAL ICONS ENDS -->
     </amp-sidebar><!-- SIDEBAR ENDS -->
 
