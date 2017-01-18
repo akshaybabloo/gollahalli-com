@@ -30,7 +30,7 @@ def index(request):
     elif request.GET.get('format') == 'json':
         return HttpResponse(json.dumps(json_object, indent=4, sort_keys=True), content_type="application/json")
     else:
-        template = "viewer/base.html"
+        template = "viewer/home.html"
 
     context = {'content': content_object}
     return render(request, template, context)

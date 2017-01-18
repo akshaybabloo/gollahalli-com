@@ -1,0 +1,571 @@
+{% extends 'viewer/base.html' %}
+{% load staticfiles %}
+{% load custom_tags %}
+{% block body %}
+<body>
+    {{ content.get_site_performance_body | safe }}
+
+    <!--=============================================
+        Preloader
+    =============================================-->
+    <div id='preloader'>
+        <div class='loader'>
+            <img src='{% static 'img/loader.gif' %}' alt>
+        </div>
+    </div>
+
+    <!--=============================================
+        Menu Button
+    =============================================-->
+    <a href='#' class='menu-btn'>
+        <span class='l1'></span>
+        <span class='l2'></span>
+        <span class='l3'></span>
+    </a>
+
+    <!--=============================================
+        Navigation
+    =============================================-->
+    <nav class='nav'>
+        <div class='v-align'>
+            <div class='inner'>
+                <ul class='menu-items'>
+                    <li>
+                        <a id="home-me" class='active' href='#home'>
+                            <i class='icon-basic-home'></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a id="about-me" href='#about'>
+                            <i class='icon-basic-info'></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="portfolio-me" href='#portfolio'>
+                            <i class='icon-basic-case'></i>
+                            <span>Portfolio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="resume-me" href='#resume'>
+                            <i class='icon-ecommerce-receipt'></i>
+                            <span>Resume</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="blog-me" href='#blog'>
+                            <i class='icon-basic-book-pen'></i>
+                            <span>Blog</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="contact-me" href='#contact'>
+                            <i class='icon-basic-mail'></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--=============================================
+        Main Wrapper
+    =============================================-->
+    <div id='main-wrapper'>
+
+        <!--=============================================
+            Home Section
+        =============================================-->
+        <section id='home' class='section main-section active' data-bg='#3F51B5'>
+            <div class='container-fluid'>
+                <div class='v-align'>
+                    <div class='inner'>
+                        <div class='row'>
+                            <div class='col-md-offset-1 col-sm-offset-1 text-left'>
+
+                                <div class='intro-text'>
+
+                                    <span class='pre-heading'>Hi, I am</span>
+
+                                    <!-- Your Name -->
+                                    <h2 class='name'>
+                                        {{ content.get_name }}.
+                                    </h2>
+
+                                    <!-- Social Icons -->
+                                    <ul class='main-social'>
+                                        <li>
+                                            <a href='{{ content.get_twitter }}'>
+                                                <i class='ion-social-twitter-outline'></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='{{ content.get_github }}'>
+                                                <i class='ion-social-github-outline'></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='{{ content.get_linkedin }}'>
+                                                <i class='ion-social-linkedin-outline'></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=============================================
+            About Section
+        =============================================-->
+        <section id='about' class='section about-section' data-bg='#D7CCC8' data-color='dark'>
+            <div class='section-block about-block'>
+                <div class='container-fluid'>
+
+                    <div class='section-header text-center'>
+
+                        <h2>About Me</h2>
+
+                        <div class='divider'>
+                            <img src='{% static 'img/wave.png' %}' alt>
+                        </div>
+
+                    </div>
+
+                    <div class='person-img text-center'>
+
+                        <!-- Your Image -->
+                        {{ content.get_my_image | safe }}
+
+                    </div>
+
+                    <div class='row'>
+                        <div class='col-md-6 col-md-offset-3'>
+
+                            <div class='about-text'>
+                                {{ content.get_bio | safe }} {# comes with the P tag #}
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class='section-block services-block-custom'>
+                <div class='container-fluid'>
+
+                    <div class='section-header text-center'>
+                        <h2>Research Area</h2>
+                        <div class='divider'>
+                            <img src='{% static 'img/wave.png' %}' alt>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class='col-md-12'>
+
+                            <div class='skills-main'>
+
+                                <div class='skill'>
+
+                                    {% for data in content.get_research_area %}
+                                        <h4>{{ data }}</h4>
+                                    {% endfor %}
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='section-block skills-block-custom'>
+                <div class='container-fluid'>
+
+                    <div class='section-header text-center'>
+                        <h2>My Skills</h2>
+                        <div class='divider'>
+                            <img src='{% static 'img/wave.png' %}' alt>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class='col-md-6'>
+
+                            <div class='skills-main'>
+
+                                <div class='skill'>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover borderless">
+                                            <tbody>
+                                            {% for data, key in content.get_skills.t1.items %}
+                                                {% for data_of_key in key %}
+                                                    <tr>
+                                                        {% if forloop.first %}
+                                                            <td class="col-md-2"><h5>{{ data | title }}</h5></td>
+                                                        {% else %}
+                                                            <td class="col-md-2"></td>
+                                                        {% endif %}
+                                                        <td class="col-md-1"><h5>{{ data_of_key }}</h5></td>
+                                                    </tr>
+                                                {% endfor %}
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class='col-md-6'>
+
+                            <div class='skills-main'>
+
+                                <div class='skill'>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover borderless">
+                                            <tbody>
+                                            {% for data, key in content.get_skills.t2.items %}
+                                                {% for data_of_key in key %}
+                                                    <tr>
+                                                        {% if forloop.first %}
+                                                            <td class="col-md-2"><h5>{{ data | title }}</h5></td>
+                                                        {% else %}
+                                                            <td class="col-md-2"></td>
+                                                        {% endif %}
+                                                        <td class="col-md-1"><h5>{{ data_of_key }}</h5></td>
+                                                    </tr>
+                                                {% endfor %}
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=============================================
+            Portfolio Section
+        =============================================-->
+        <section id='portfolio' class='section portfolio-section' data-bg='#B2DFDB' data-color='dark'>
+            <div class='container-fluid'>
+
+                <div class='section-header text-center'>
+                    <h2>My Portfolio</h2>
+                    <div class='divider'>
+                        <img src='{% static 'img/wave.png' %}' alt>
+                    </div>
+                </div>
+
+                <div class='row'>
+
+                    <div class='col-md-3'>
+
+                        <ul class='portfolio-filters'>
+                            <li>
+                                <a href='#' data-group='all' class='active'>All</a>
+                            </li>
+                            {% for data in content.get_portfolio.category %}
+                                <li>
+                                    <a href='#' data-group='{{ data }}'>{{ data }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+
+                    <div class='col-md-9'>
+
+                        <ul class='portfolio-items'>
+
+                            {% for data in content.get_portfolio.portfolio %}
+                                <li data-groups='["{{ data.category }}"]'>
+                                    <div class='inner'>
+
+                                        <img src='{% static 'img/portfolio/'|add:data.file_name %}' alt>
+
+                                        <div class='overlay'>
+                                            <a href='#popup-{{ forloop.counter }}' class='has-popup view-project'>View
+                                                Project</a>
+
+                                            <div id='popup-{{ forloop.counter }}'
+                                                 class='popup-box zoom-anim-dialog mfp-hide'>
+                                                <figure>
+                                                    <!--project popup image-->
+                                                    <img src='{% static 'img/portfolio/'|add:data.file_name %}' alt>
+                                                </figure>
+                                                <div class='content'>
+                                                    <!--project popup title-->
+                                                    <h4>{{ data.title }}</h4>
+                                                    <!--project popup description-->
+                                                    {{ data.long_description | safe }} {# comes with the P tag #}
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=============================================
+            Resume Section
+        =============================================-->
+        <section id='resume' class='section resume-section' data-bg='#E1BEE7' data-color='dark'>
+            <div class='section-block timeline-block'>
+                <div class='container-fluid'>
+
+                    <div class='section-header text-center'>
+                        <h2>My Resume</h2>
+                        <div class='divider'>
+                            <img src='{% static 'img/wave.png' %}' alt>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+
+                        <div class='col-md-6'>
+
+                            <div class='timeline-header'>
+                                <i class='icon-basic-book'></i>
+                                <h4>Education</h4>
+                            </div>
+
+                            <ul class='timeline'>
+
+                                {% for data in content.get_education %}
+                                    <li>
+                                        <div class='timeline-content'>
+                                            <h4>{{ data.title }}</h4>
+                                            <em>
+                                                <span>{{ data.where }}</span>
+                                                <span>{{ data.from }} - {{ data.to }}</span>
+                                            </em>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+
+                        <div class='col-md-6'>
+
+                            <div class='timeline-header'>
+                                <i class='icon-basic-case'></i>
+                                <h4>Experience</h4>
+                            </div>
+
+                            <ul class='timeline'>
+
+
+                                {% for data in content.get_experience %}
+                                    <li>
+                                        <div class='timeline-content'>
+                                            <h4>{{ data.title }}</h4>
+                                            <em>
+                                                <span>{{ data.company }} - {{ data.where }}</span>
+                                                <span>{{ data.from }} - {{ data.to }}</span>
+                                            </em>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class='section-block timeline-block'>
+                <div class='container-fluid'>
+
+                    <div class='section-header text-center'>
+                        <h2>Publication</h2>
+                        <div class='divider'>
+                            <img src='{% static 'img/wave.png' %}' alt>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+
+                        <div class='col-md-12'>
+                            {% for key, data in content.get_publications.items %}
+                                <div class='timeline-header'>
+                                    <i class='ion-ios-paper-outline'></i>
+                                    <h4>{{ key }}</h4>
+                                </div>
+                                {% for inner_data in data %}
+                                    <ul class='timeline'>
+
+                                        <li>
+                                            <div class='timeline-content'>
+                                                <h5>{{ inner_data | safe }}</h5>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                {% endfor %}
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--=============================================
+            Blog Section
+        =============================================-->
+        <section id='blog' class='section blog-section' data-bg='#F0F0F0' data-color='dark'>
+            <div class='container-fluid'>
+
+                <div class='section-header text-center'>
+                    <h2>My Blog</h2>
+                    <div class='divider'>
+                        <img src='{% static 'img/wave.png' %}' alt>
+                    </div>
+                </div>
+
+                <div class='blog-posts'>
+
+
+                    {% for data in content.get_blog %}
+
+                        <div class='blog-post'>
+                            <div class='inner'>
+                                {% if 'media_content' in data %}
+                                    <figure>
+                                        <img src='{{ data.media_content.0.url }}' alt>
+                                    </figure>
+                                {% endif %}
+                                <div class='content'>
+                                    <h4>{{ data.title }}</h4>
+                                    <ul class='post-icons'>
+                                        <li>
+                                            <i class='ion-ios-person-outline'></i>
+                                            <span>{{ data.author }}</span>
+                                        </li>
+                                        <li>
+                                            <i class='ion-ios-pricetag-outline'></i>
+                                            <span>{{ data.category }}</span>
+                                        </li>
+                                        <li>
+                                            <i class='ion-ios-clock-outline'></i>
+                                            <span>{{ data.published | custom_date }}</span>
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        {{ data.description }}
+                                    </p>
+                                    <a href='{{ data.link }}' class='read-more'>
+                                        Read More <i class='ion-ios-arrow-thin-right'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+
+        <!--=============================================
+            Contact Section
+        =============================================-->
+        <section id='contact' class='section contact-section' data-bg='#FFF9C4' data-color='dark'>
+            <div class='container-fluid'>
+
+                <div class='section-header text-center'>
+                    <h2>Contact Me</h2>
+                    <div class='divider'>
+                        <img src='{% static 'img/wave.png' %}' alt>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='col-md-8 col-md-offset-2'>
+
+                        {#                        <form id='contact-form' class='contact-form font-alt' data-toggle='validator' method='post'>#}
+                        {##}
+                        {#                            <!--contact-form-result-->#}
+                        {#                            <div id='contact-form-result'></div>#}
+                        {##}
+                        {#                            <div class='row'>#}
+                        {##}
+                        {#                                <div class='col-md-6'>#}
+                        {#                                    <div class='form-group'>#}
+                        {#                                        <input type='text' name='name' class='form-control' placeholder='Name' required>#}
+                        {#                                        <div class='help-block with-errors'></div>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {##}
+                        {#                                <div class='col-md-6'>#}
+                        {#                                    <div class='form-group'>#}
+                        {#                                        <input type='email' name='email' class='form-control' placeholder='Email'#}
+                        {#                                               required>#}
+                        {#                                        <div class='help-block with-errors'></div>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {##}
+                        {#                            </div>#}
+                        {##}
+                        {#                            <div class='form-group'>#}
+                        {#                                <input type='text' name='subject' class='form-control' placeholder='Subject' required>#}
+                        {#                                <div class='help-block with-errors'></div>#}
+                        {#                            </div>#}
+                        {##}
+                        {#                            <div class='form-group'>#}
+                        {#                                <textarea class='form-control' name='message' rows='6' placeholder='Message'#}
+                        {#                                          required></textarea>#}
+                        {#                                <div class='help-block with-errors'></div>#}
+                        {#                            </div>#}
+                        {##}
+                        {#                            <div class='form-group text-center'>#}
+                        {#                                <button type='submit' class='btn-custom'>#}
+                        {#                                    Send Message#}
+                        {#                                </button>#}
+                        {#                            </div>#}
+                        {##}
+                        {#                        </form>#}
+                        <div class="font-alt text-center">
+                            <h3>
+                                <i class="ion-ios-email-outline"></i>
+                                <a href="mailto:akshay@gollahalli.com">akshay@gollahalli.com</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                            <a class="twitter-timeline" data-dnt="true" data-theme="dark" href="https://twitter.com/akshaybabloo"
+                               data-widget-id="690023186424012800">Tweets
+                                by @akshaybabloo</a>
+                        </div>
+                </div>
+            </div>
+        </section>
+        {# footer content see gollahalli.js #}
+        <div id="footer"></div>
+    </div>
+{% endblock %}
