@@ -281,6 +281,17 @@ class ContentDecode:
         </script>
         """
 
+    def get_meta_amp(self):
+        return """
+        <title>Akshay Raj Gollahalli</title>
+        <meta name="author" content="Akshay Raj Gollahalli" />
+        <meta name="description" content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work." />
+        <meta name="keywords" content="computer science, brain computer interface, artificial intelligence" />
+        <link rel="canonical" href="https://www.gollahalli.me" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1">
+
+        """
+
 
 # ============================================================================================
 #                                       GitHub Repo
