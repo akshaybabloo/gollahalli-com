@@ -81,25 +81,6 @@
     <script async  src="https://cdn.ampproject.org/v0.js"></script>
 
     <!--*
-        *   Google Analytics
-        **-->
-    <amp-analytics type="googleanalytics">
-    <script type="application/json">
-    {
-      "vars": {
-        "account": "UA-72583688-1"
-      },
-      "triggers": {
-        "trackPageview": {
-          "on": "visible",
-          "request": "pageview"
-        }
-      }
-    }
-    </script>
-    </amp-analytics>
-
-    <!--*
         *   Structured Data
         **-->
     {{ content.get_schema_data | safe }}
@@ -599,6 +580,24 @@
     </style>
 </head>
 <body dir="ltr">
+    <!--*
+        *   Google Analytics
+        **-->
+    <amp-analytics type="googleanalytics">
+    <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-72583688-1"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
+    }
+    </script>
+    </amp-analytics>
     <!--************************************ Contents ************************************-->
 
     <header itemscope itemtype="https://schema.org/WPHeader" class="dark-bg">
