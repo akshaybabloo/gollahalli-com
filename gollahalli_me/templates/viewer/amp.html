@@ -338,7 +338,7 @@
             padding: 0 5px;
 
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5782c9+0,442672+100 */
-            background: rgb(87,130,201); /* Old browsers */
+{#            background: rgb(87,130,201); /* Old browsers */#}
         }
 
         header .fa{
@@ -581,7 +581,7 @@
 <body dir="ltr">
     <!--************************************ Contents ************************************-->
 
-    <header itemscope itemtype="https://schema.org/WPHeader">
+    <header itemscope itemtype="https://schema.org/WPHeader" class="dark-bg">
         <button class="pull-left fa fa-bars" on='tap:mainSideBar.toggle'></button>
         <a id="logo" href="/?format=amp"><amp-img src="{% static 'img/logo.png' %}" width="46" height="14"></amp-img></a>
         <a class="pull-right fa fa-envelope" href="mailto:akshay@gollahalli.com"></a>
@@ -866,7 +866,7 @@
     <!--************************************ Menu ************************************-->
 
     <amp-sidebar id='mainSideBar' layout='nodisplay'>
-        <figure class="primary-bg">
+        <figure class="dark-bg">
             <amp-img class="circle" src="https://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_100,q_auto:best,w_100/v1477524340/akshay_b8wb1x.jpg" width="60" height="60" layout="fixed" attribution="{{ content.get_name }}"></amp-img>
             <figcaption>
                 <h3 class="light-color">{{ content.get_name }}</h3>
