@@ -1,7 +1,6 @@
 from django import template
 import markdown
 import datetime
-from bs4 import BeautifulSoup
 
 register = template.Library()
 
@@ -20,12 +19,3 @@ def markdown_data(value):
 @register.filter()
 def url_replace(value):
     return value.replace("http://", "https://")
-
-
-@register.filter()
-def html_src_replace(value):
-    html = BeautifulSoup(value, 'html.parser')
-    changed_url = url_replace(html.img['src'])
-    return """
-    <img src="{}" alt="Akshay Raj Gollahalli"/>
-    """.format(changed_url)

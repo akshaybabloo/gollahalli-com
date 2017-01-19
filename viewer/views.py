@@ -173,7 +173,8 @@ class ContentDecode:
         cloudinary.config(
             cloud_name='gollahalli',
             api_key='623378689359255',
-            api_secret='bJPo6rNjc9IIDB5ihoyK-ogsRic'
+            api_secret='bJPo6rNjc9IIDB5ihoyK-ogsRic',
+            secure=True
         )
 
         return re.sub(r'\bwidth="[^"]+"|\bheight="[^"]+"', '',
