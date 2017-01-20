@@ -95,13 +95,13 @@
     $(function () {
         "use strict";
 
-        var content = '<footer class="footer">\
+        var content = '<footer class="footer text-center">\
              <small class="text-center text-muted"> <div class="container-fluid">\
                     <a href="#popup-334" class="has-popup view-project">{{ content.get_version.tag_name }}</a>\
                     <div id="popup-334" class="popup-box zoom-anim-dialog mfp-hide">\
                     <div class="content">\
                         <h4>{{ content.get_version.name }}</h4>\
-                        {% spaceless %} {{ content.get_version.body | markdown_data | safe }} {% endspaceless %}\
+                        {% spaceless %}{{ content.get_version.body | markdown_data | safe}}{% endspaceless %}\
                     </div>\
                     </div><br>\
                 Copyright &copy; {% now 'Y' %} &#124; {{ content.get_name }} <br>\
