@@ -563,11 +563,11 @@ body.dark-color .menu-items > li > a:before{
 .about-text{
 	margin-top:40px;
 	text-align:justify;
-	-webkit-text-align-last: justify;
-	-moz-text-align-last: justify;
-	-ms-text-align-last: justify;
-	-o-text-align-last: justify;
-	text-align-last: justify;
+	-webkit-text-align-last: left;
+	-moz-text-align-last: left;
+	-ms-text-align-last: left;
+	-o-text-align-last: left;
+	text-align-last: left;
 	text-justify: inter-word;
 }
 .about-text > p{
@@ -924,7 +924,6 @@ body.dark-color .menu-items > li > a:before{
 	Resume Section
 ===============================================*/
 .timeline-block{
-	padding:110px 0;
 	padding-bottom:50px;
 }
 .timeline-block .section-header{
