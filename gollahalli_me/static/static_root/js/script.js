@@ -1,36 +1,23 @@
 $(function(){
 	"use strict";
-	
+
 	var portfolio = $('.portfolio-items'),
 		blog = $('.blog-posts'),
 		$testimonials = $('.testimonials-slider');
-	
-	
+
+
 	/*=========================================================================
 		Responsive Videos
 	=========================================================================*/
 	$('figure').fitVids();
-	
-	/*=========================================================================
-		Magnific Popup (Project Popup initialization)
-	=========================================================================*/
-	$('.has-popup').magnificPopup({
-		type: 'inline',
-		fixedContentPos: false,
-		fixedBgPos: true,
-		overflowY: 'auto',
-		closeBtnInside: true,
-		preloader: false,
-		midClick: true,
-		removalDelay: 300,
-		mainClass: 'my-mfp-zoom-in'
-	});
-	
+
+
+
 	/*=========================================================================
 		Section navigation by URL Hash
 	=========================================================================*/
 	var sect = window.location.hash;
-	if ( $(sect).length == 1 ){
+	if ( $("section"+sect).length == 1 ){
 		$('.section.active').removeClass('active');
 		$(sect).addClass('active');
 		$('.menu-items > li > a.active').removeClass('active');
@@ -40,21 +27,21 @@ $(function(){
 		}else{
 			$('body').removeClass('dark-color');
 		}
-		$('body, .nav').css('background-color', $(sect).data('bg'));	
+		$('body, .nav').css('background-color', $(sect).data('bg'));
 	}
-	
+
 	$(window).on('load', function(){
-		
+
 		/* Blog Grid */
 		blog.shuffle();
-		
+
 		/* Portfolio Grid */
 		portfolio.shuffle();
-		
+
 		$('body').addClass('loaded');
 	});
-	
-	
+
+
 	/*=========================================================================
 		Portfolio Filters
 	=========================================================================*/
@@ -65,15 +52,15 @@ $(function(){
 		$(this).addClass('active');
 		portfolio.shuffle('shuffle', groupName );
 	});
-	
-	
+
+
 	/*=========================================================================
 		Testimonials Initialize
 	=========================================================================*/
 	$testimonials.owlCarousel({
 		items:1
 	});
-	
+
 	/*=========================================================================
 		Menu Functions
 	=========================================================================*/
@@ -144,13 +131,13 @@ $(function(){
 			var $this = $(this),
 				//You can edit alerts here
 				alerts = {
-					success: 
+					success:
 					"<div class='form-group' >\
 						<div class='alert alert-success' role='alert'> \
 							<strong>Message Sent!</strong> We'll be in touch as soon as possible\
 						</div>\
 					</div>",
-					error: 
+					error:
 					"<div class='form-group' >\
 						<div class='alert alert-danger' role='alert'> \
 							<strong>Oops!</strong> Sorry, an error occurred. Try again.\
@@ -189,6 +176,6 @@ $(function(){
 			});
 		}
 	});
-	
-	
+
+
 });
