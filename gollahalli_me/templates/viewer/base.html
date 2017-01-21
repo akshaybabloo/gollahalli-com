@@ -95,46 +95,35 @@
     $(function () {
         "use strict";
 
-        var content = '<footer class="footer text-center">\
+        var content = '<footer class="footer">\
              <small class="text-center text-muted"> <div class="container-fluid">\
-                    <a href="#popup-334" class="has-popup view-project">{{ content.get_version.tag_name }}</a>\
-                    <div id="popup-334" class="popup-box zoom-anim-dialog mfp-hide">\
-                    <div class="content">\
-                        <h4>{{ content.get_version.name }}</h4>\
-                        {% spaceless %}{{ content.get_version.body | markdown_data | safe}}{% endspaceless %}\
-                    </div>\
-                    </div><br>\
-                Copyright &copy; {% now 'Y' %} &#124; {{ content.get_name }} <br>\
+                    <a href="#popup-334" class="has-popup">{{ content.get_version.name }}</a>\
+                    <br>\
+                Copyright &copy; 2017 &#124; Akshay Raj Gollahalli <br>\
                 All product and company names are trademarks&#8482; or registered&reg;\
                 trademarks of their respective holders. Use of them does not imply any affiliation with or\
                 endorsement by them.</small>\
               </div>\
             </footer>';
 
-        $('#contact-me').on('click', function () {
-            $('#footer').html(content);
-        });
-
-        $('#about-me').on('click', function () {
-            $('#footer').html(content);
-        });
-
-        $('#portfolio-me').on('click', function () {
-            $('#footer').html(content);
-        });
-
-        $('#resume-me').on('click', function () {
-            $('#footer').html(content);
-        });
-
-        $('#blog-me').on('click', function () {
-            $('#footer').html(content);
-        });
+         $('.section:not(.main-section)').append(content);
 
 
-        $('#home-me').on('click', function () {
-            $('#footer').html('');
-        });
+         /*=========================================================================
+      		Magnific Popup (Project Popup initialization)
+      	=========================================================================*/
+      	$('.has-popup').magnificPopup({
+      		type: 'inline',
+      		fixedContentPos: false,
+      		fixedBgPos: true,
+      		overflowY: 'auto',
+      		closeBtnInside: true,
+      		preloader: false,
+      		midClick: true,
+      		removalDelay: 300,
+      		mainClass: 'my-mfp-zoom-in'
+      	});
+
     });
 
 </script>

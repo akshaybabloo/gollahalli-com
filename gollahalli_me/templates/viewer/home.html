@@ -566,6 +566,14 @@
             </div>
         </section>
         {# footer content see gollahalli.js #}
-        <div id="footer"></div>
+        <div id="popup-334" class="popup-box zoom-anim-dialog mfp-hide">
+           <div class="content">
+
+               <h4>{{ content.get_version.name }}</h4>
+
+               {{ content.get_version.body | markdown_data | safe}}
+
+           </div>
+        </div>
     </div>
 {% endblock %}
