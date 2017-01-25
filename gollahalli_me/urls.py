@@ -8,7 +8,6 @@ from .sitemaps import *
 
 sitemaps = {
     'pages': Sitemap(['index'], 1.0),
-    'static': Sitemap([''], 0.8),
     'other': Sitemap(['repo', 'change-log'], 0.5)
 }
 
