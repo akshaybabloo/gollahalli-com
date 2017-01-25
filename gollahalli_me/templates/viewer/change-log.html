@@ -1,4 +1,4 @@
-{% load markdown_deux_tags %}
+{% load custom_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
 {% for log in content reversed %}
     {{ log.name }} <br>
     {{ log.tag_name }} <br>
-    {{ log.body|markdown }} <br><br>
+    {{ log.body | markdown_data | safe}} <br><br>
 {% endfor %}
 
 
