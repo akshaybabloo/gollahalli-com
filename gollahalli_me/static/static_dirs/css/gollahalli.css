@@ -24,6 +24,8 @@
     border: 0
 }
 
+.table-responsive{border: 0;}
+
 .cookie-policy{
     font-family:'Roboto Mono', monospace;
 }
