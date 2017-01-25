@@ -1,0 +1,143 @@
+{% load staticfiles %}
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ content.get_meta|safe }}
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{{ content.get_name }}</title>
+
+    <!--=============================================
+        Favicons
+    =============================================-->
+
+    <link rel="shortcut icon" href="{% static 'img/favicons/favicon.ico' %}"/>
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="{% static 'img/favicons/favicon.ico' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{% static 'img/favicons/favicon-152.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'img/favicons/favicon-144.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{% static 'img/favicons/favicon-120.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'img/favicons/favicon-114.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="{% static 'img/favicons/favicon-180.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'img/favicons/favicon-72.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'img/favicons/favicon-57.png' %}">
+    <link rel="icon" href="{% static 'img/favicons/favicon-32.png' %}" sizes="32x32">
+
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="{% static 'img/favicons/favicon-144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="manifest" href="{% static 'img/favicons/manifest.json' %}">
+    <link rel="icon" sizes="192x192" href="{% static 'img/favicons/favicon-192.png' %}">
+
+    <link rel="canonical" href="https://www.gollahalli.me/"/>
+    <meta name="referrer" content="no-referrer-when-downgrade"/>
+    <link rel="amphtml" href="https://www.gollahalli.me/?format=amp"/>
+
+    <!--=============================================
+        CSS Stylesheets
+    =============================================-->
+    <link rel='stylesheet' type='text/css' href='{% static 'bootstrap/css/bootstrap.min.css' %}'>
+    <link rel='stylesheet' type='text/css' href='{% static 'css/ionicons.min.css' %}'>
+    <link rel='stylesheet' type='text/css' href='{% static 'css/linea.css' %}'>
+    <link rel='stylesheet' type='text/css' href='{% static 'css/magnific-popup.css' %}'>
+    <link rel='stylesheet' type='text/css' href='{% static 'css/owl.carousel.css' %}'>
+    <link rel='stylesheet' type='text/css' href='{% static 'css/style.css' %}'>
+    <link rel='stylesheet' type='text/css' href='{% static 'css/gollahalli.css' %}'>
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
+
+    {{ content.get_schema_data | safe }}
+    {{ content.get_site_performance_header | safe }}
+
+</head>
+
+{% block body %}
+{% endblock %}
+
+{{ content.get_site_performance_footer | safe}}
+
+<!--=============================================
+    JavaScript Files
+=============================================-->
+<script src='{% static 'js/jquery.min.js' %}'></script>
+<script src='{% static 'js/jquery.shuffle.min.js' %}'></script>
+<script src='{% static 'js/jquery.magnific-popup.min.js' %}'></script>
+<script src='{% static 'js/fitvids.js' %}'></script>
+<script src='{% static 'js/owl.carousel.min.js' %}'></script>
+<script src='{% static 'js/validator.min.js' %}'></script>
+<script src='{% static 'js/script.js' %}'></script>
+{#<script src='{% static 'js/gollahalli.js' %}'></script>#}
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+    window.addEventListener("load", function () {
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#343c66",
+                    "text": "#cfcfe8"
+                },
+                "button": {
+                    "background": "#f71559"
+                }
+            },
+            "theme": "edgeless",
+            "content": {
+                "href": "{% url 'cookie-policy' %}"
+            }
+        })
+    });
+</script>
+
+<script>
+    $(function () {
+        "use strict";
+
+        var content = '<footer class="footer">\
+             <small class="text-muted"> <div class="container-fluid">\
+                    <a href="#popup-334" class="has-popup">{{ content.get_version.tag_name }}</a>\
+                    <br>\
+                Copyright &copy; 2017 &#124; Akshay Raj Gollahalli <br>\
+                All product and company names are trademarks&#8482; or registered&reg;\
+                trademarks of their respective holders. Use of them does not imply any affiliation with or\
+                endorsement by them.</small>\
+              </div>\
+            </footer>';
+
+         $('.section:not(.main-section)').append(content);
+
+
+         /*=========================================================================
+      		Magnific Popup (Project Popup initialization)
+      	=========================================================================*/
+      	$('.has-popup').magnificPopup({
+      		type: 'inline',
+      		fixedContentPos: false,
+      		fixedBgPos: true,
+      		overflowY: 'auto',
+      		closeBtnInside: true,
+      		preloader: false,
+      		midClick: true,
+      		removalDelay: 300,
+      		mainClass: 'my-mfp-zoom-in'
+      	});
+
+    });
+
+</script>
+
+<!-- Twitter -->
+<script>!function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + "://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, "script", "twitter-wjs");</script>
+
+</body>
+</html>

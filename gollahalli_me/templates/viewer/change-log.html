@@ -1,0 +1,17 @@
+{% load markdown_deux_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Log</title>
+</head>
+<body>
+{% for log in content reversed %}
+    {{ log.name }} <br>
+    {{ log.tag_name }} <br>
+    {{ log.body|markdown }} <br><br>
+{% endfor %}
+
+
+</body>
+</html>

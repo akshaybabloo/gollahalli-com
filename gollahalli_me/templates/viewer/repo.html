@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Akshay Raj Gollahalli | My public repositories</title>
+</head>
+<body>
+
+{% for foo in content %}
+    Name = {{ foo.full_name }}<br>
+    Description = {{ foo.description }}<br>
+    Stars = {{ foo.watchers_count }}<br>
+    Forks = {{ foo.forks_count }} <br>
+    Repo = {{ foo.svn_url }}<br><br>
+{% endfor %}
+
+</body>
+</html>

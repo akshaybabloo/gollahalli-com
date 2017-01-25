@@ -1,13 +1,68 @@
-# Gollahalli.me
+# Gollahalli Website
 
-Web files for [https://www.gollahalli.me](https://www.gollahalli.me)
+## 1 Django Template Tags
 
-## Screenshot
+These are the tags that were used in this project:
 
-### Normal
+1. To get name
 
-![Screenshot](https://raw.githubusercontent.com/akshaybabloo/gollahalli-me/dev/screenshot/screen.png)
+  ```python
+  {{ content.get_name }}
+  ```
+2. To get Twitter
 
-### Google AMP
+  ```python
+  {{ content.get_twitter }}
+  ```
+3. To get GitHub
 
-![Screenshot](https://raw.githubusercontent.com/akshaybabloo/gollahalli-me/dev/screenshot/screen-amp.png)
+  ```python
+  {{ content.get_github }}
+  ```
+4. To get Linkedin
+
+  ```python
+  {{ content.get_linkedin }}
+  ```
+5. To get my image
+
+  ```
+  {{ content.get_my_image | safe }}
+  ```
+6. To get my Bio
+
+  ```
+  {{ content.get_bio | safe }}
+  ```
+
+7. To get my skills
+
+For Table 1
+
+```
+{% for data, key in content.get_skills.t1.items %}
+  {% for data_of_key in key %}
+      {% if forloop.first %}
+        {{ data | title }}
+      {% else %}
+          {# Do something #}
+      {% endif %}
+        {{ data_of_key }}
+  {% endfor %}
+{% endfor %}
+```
+
+For Table 2
+
+```
+{% for data, key in content.get_skills.t2.items %}
+  {% for data_of_key in key %}
+      {% if forloop.first %}
+        {{ data | title }}
+      {% else %}
+          {# Do something #}
+      {% endif %}
+        {{ data_of_key }}
+  {% endfor %}
+{% endfor %}
+```

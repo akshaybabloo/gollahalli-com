@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 app/
+web: gunicorn gollahalli_me.wsgi
