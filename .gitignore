@@ -142,3 +142,4 @@ fabric.properties
 /vendor/
 
 gollahalli_me/templates/test.html
+/node_modules/
