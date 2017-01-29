@@ -18,6 +18,20 @@ gulp.task('pack-js', function () {
         .pipe(gulp.dest('gollahalli_me/static/static_dirs/js'));
 });
 
+gulp.task('pack-js-external', function () {
+    return gulp.src([
+        'gollahalli_me/static/static_dirs/external/prism.js'
+    ])
+        .pipe(minify({
+            ext: {
+                min: '.js'
+            },
+            noSource: true
+        }))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('gollahalli_me/static/static_dirs/external'));
+});
+
 gulp.task('pack-css', function () {
     return gulp.src([
         'gollahalli_me/static/static_dirs/css/gollahalli.css',
@@ -31,4 +45,13 @@ gulp.task('pack-css', function () {
         .pipe(gulp.dest('gollahalli_me/static/static_dirs/css'));
 });
 
-gulp.task('default', ['pack-js', 'pack-css']);
+gulp.task('pack-css-external', function () {
+    return gulp.src([
+        'gollahalli_me/static/static_dirs/external/prism.css'
+    ])
+        .pipe(cleanCss())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('gollahalli_me/static/static_dirs/external'));
+});
+
+gulp.task('default', ['pack-js', 'pack-css', 'pack-js-external', 'pack-css-external']);
