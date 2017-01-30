@@ -13,7 +13,7 @@ def index(request):
     template = "editor/home.html"
     try:
         json_content = ContentModel.objects.get(ref_id='1')
-    except Exception as e:
+    except Exception:
         raise HttpResponseServerError
 
     context = {'content': json_content.content}
