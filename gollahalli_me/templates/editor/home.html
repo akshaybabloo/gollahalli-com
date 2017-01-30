@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Editor | </title>
+    <title>Editor | Akshay Raj Gollahalli</title>
   <style type="text/css" media="screen">
     .ace_editor {
         position: relative !important;
@@ -37,9 +37,8 @@
   </style>
 </head>
 <body>
-Hello!
 {% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }}  <a href="{% url 'logout' %}">[logout]</a></p>
+    <p>Welcome, {{ user.username | title }}  [<a href="{% url 'logout' %}">logout</a></p>]
 {% else %}
     <p>Welcome, Guest <a href="{% url 'login' %}">[login]</a></p>
 {% endif %}
