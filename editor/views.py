@@ -1,19 +1,40 @@
-from django.shortcuts import render
-from editor.models import ContentModel
-from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseServerError
+from django.shortcuts import redirect
+from django.shortcuts import render, HttpResponseRedirect
+
+from .models import ContentModel
+from .forms import ContentFormModel
+import json
+
+# ============================================================================================
+#                                       Form Main
+# ============================================================================================
 
 
 @login_required
 def index(request):
-    context = {}
     template = "editor/home.html"
+
     try:
-        a = ContentModel.objects.get(ref_id='1')
-    except ContentModel.DoesNotExist as e:
-        return render(request, template, context)
-    except ObjectDoesNotExist as e:
-        return render(request, template, context)
+        json_content = ContentModel.objects.get(ref_id='1')
+    except Exception:
+        raise HttpResponseServerError
+
+    if request.method == 'POST':
+        form = ContentFormModel(request.POST)
+        if form.is_valid():
+            form_data = form.cleaned_data.get('content')
+            new_content, created = ContentModel.objects.update_or_create(ref_id='1')
+            new_content.content = form_data
+            new_content.save()
+
+            return HttpResponseRedirect('/editor')
+    else:
+        form = ContentFormModel()
+
+    context = {'content': json.dumps(json_content.content), 'form': form}
     return render(request, template, context)
 
 
@@ -21,3 +42,8 @@ def login(request):
     context = {}
     template = "editor/login.html"
     return render(request, template, context)
+
+
+def log_out(request):
+    logout(request)
+    return redirect('index')

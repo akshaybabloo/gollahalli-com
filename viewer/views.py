@@ -20,15 +20,14 @@ GITHUB_KEY = "4921a93fdc0a50ec345ef541a715bf07000303d1"
 def index(request):
     try:
         json_content = ContentModel.objects.get(ref_id='1')
-        json_object = json.loads(json_content.content)
-        content_object = ContentDecode(json_object)
-    except Exception as e:
+        content_object = ContentDecode(json_content.content)
+    except ContentModel.DoesNotExist as e:
         raise HttpResponseServerError
 
     if request.GET.get('format') == 'amp':
         template = "viewer/amp.html"
     elif request.GET.get('format') == 'json':
-        return HttpResponse(json.dumps(json_object, indent=4, sort_keys=True), content_type="application/json")
+        return HttpResponse(json.dumps(json_content.content, indent=4, sort_keys=True), content_type="application/json")
     else:
         template = "viewer/home.html"
 
@@ -149,6 +148,7 @@ class ContentDecode:
         <meta name="keywords" content="computer science, brain computer interface, artificial intelligence"/>
         <meta name="author" content="Akshay Raj Gollahalli">
         <meta name="rights" content="All rights reserved by Akshay Raj Gollahalli"/>
+        <meta name="pocket-site-verification" content="4b775d75ad6c86203b944b08a92d21" />
 
         <meta property="og:title" content="Akshay Raj Gollahalli"/>
         <meta property="og:type" content="website"/>

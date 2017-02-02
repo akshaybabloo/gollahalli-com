@@ -8,6 +8,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index_main'),
+    url(r'^$', views.index, name='editor_main'),
+    url(r'logout/', views.log_out, name='logout'),
     # url(r'^login/', views.login, name='index_login'),  # for custom login's
 ]
