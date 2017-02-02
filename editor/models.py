@@ -1,13 +1,8 @@
 from django.db import models
+from django.contrib.postgres.fields import JSONField
 
 
 class ContentModel(models.Model):
-    ref_id = models.CharField(primary_key=True, max_length=120, unique=True)
-    content = models.TextField()
+    ref_id = models.IntegerField(primary_key=True)
+    content = JSONField()
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
-
-    def __str__(self):
-        return self.content
-
-    class Meta:
-        unique_together = ("content", "ref_id")
