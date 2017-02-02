@@ -9,13 +9,5 @@ def is_json(my_json):
         return False
     return True
 
-
-def convert_to_json(value):
-    value.replace("\u2018", "").encode("utf-8")
-    print(value)
-    # a = json.loads(value, strict=False)
-    # print(a)
-    return value
-
 # if __name__ == '__main__':
 #     convert_to_json()
