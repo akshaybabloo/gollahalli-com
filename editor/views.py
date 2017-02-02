@@ -6,7 +6,7 @@ from django.shortcuts import render, HttpResponseRedirect
 
 from .models import ContentModel
 from .forms import ContentFormModel
-import utility
+import json
 
 # ============================================================================================
 #                                       Form Main
@@ -34,7 +34,7 @@ def index(request):
     else:
         form = ContentFormModel()
 
-    context = {'content': json_content.content, 'form': form}
+    context = {'content': json.dumps(json_content.content), 'form': form}
     return render(request, template, context)
 
 
