@@ -2,7 +2,6 @@ from django import forms
 
 import utility
 from .models import ContentModel
-import json
 
 
 class ContentForm(forms.Form):
