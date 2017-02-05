@@ -1,1 +1,1 @@
-web: newrelic-admin run-program gunicorn gollahalli_me.wsgi
+web: newrelic-admin run-program gunicorn gollahalli_com.wsgi

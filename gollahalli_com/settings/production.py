@@ -24,18 +24,18 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-SHARE_URL = "http://www.gollahalli.me/"
+SHARE_URL = "http://www.gollahalli.com/"
 
 # S3
 AWS_ACCESS_KEY_ID = 'AKIAIPQQUJGYXMFFOASA'
 AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'gollahalli-me-django'
+AWS_STORAGE_BUCKET_NAME = 'gollahalli-com-django'
 AWS_HEADERS = {
     'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
     'Cache-Control': 'max-age=86400',
 }
 AWS_QUERYSTRING_AUTH = False
-AWS_S3_CUSTOM_DOMAIN = 'cdn.gollahalli.me'
+AWS_S3_CUSTOM_DOMAIN = 'cdn.gollahalli.com'
 # AWS_S3_CUSTOM_DOMAIN = 's3.amazonaws.com/gollahalli-me-django'
 
 STATICFILES_LOCATION = 'static'
