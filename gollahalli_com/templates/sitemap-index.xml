@@ -8,7 +8,7 @@
         </sitemap>
     {% endfor %}
     <sitemap>
-        <loc>https://blog.gollahalli.me/sitemap.xml</loc>
+        <loc>https://blog.gollahalli.com/sitemap.xml</loc>
         <lastmod>{% now "Y-m-d" %}</lastmod>
     </sitemap>
 {% endspaceless %}
