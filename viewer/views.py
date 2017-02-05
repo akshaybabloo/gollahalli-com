@@ -152,9 +152,9 @@ class ContentDecode:
 
         <meta property="og:title" content="Akshay Raj Gollahalli"/>
         <meta property="og:type" content="website"/>
-        <meta property="og:url" content="https://www.gollahalli.me/"/>
-        <meta property="og:image" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
-        <meta property="og:image:secure_url" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
+        <meta property="og:url" content="https://www.gollahalli.com/"/>
+        <meta property="og:image" content="https://cdn.gollahalli.com/assets/img/logo.jpg"/>
+        <meta property="og:image:secure_url" content="https://cdn.gollahalli.com/assets/img/logo.jpg"/>
         <meta property="og:description"
               content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
 
@@ -162,8 +162,8 @@ class ContentDecode:
         <meta name="twitter:title" content="Akshay Raj Gollahalli"/>
         <meta name="twitter:description"
               content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work."/>
-        <meta name="twitter:image:src" content="https://cdn.gollahalli.me/assets/img/logo.jpg"/>
-        <meta name="twitter:url" content="https://www.gollahalli.me"/>
+        <meta name="twitter:image:src" content="https://cdn.gollahalli.com/assets/img/logo.jpg"/>
+        <meta name="twitter:url" content="https://www.gollahalli.com"/>
 
         <meta property="fb:app_id" content="1562596197364195"/>
             """
@@ -193,7 +193,7 @@ class ContentDecode:
               "@type": "person",
               "name": "Akshay Raj Gollahalli",
               "image" : "https://res.cloudinary.com/gollahalli/image/upload/c_lfill,g_auto,h_200,q_auto:best,w_200/v1477524340/akshay_b8wb1x.jpg",
-              "url": "https://www.gollahalli.me/",
+              "url": "https://www.gollahalli.com/",
               "homeLocation": {
                 "@type": "PostalAddress",
                 "addressLocality": "Auckland",
@@ -289,7 +289,7 @@ class ContentDecode:
         <meta name="author" content="Akshay Raj Gollahalli" />
         <meta name="description" content="Akshay Raj Gollahalli is a Computer Science researcher currently doing his Ph.D. This website showcases his work." />
         <meta name="keywords" content="computer science, brain computer interface, artificial intelligence" />
-        <link rel="canonical" href="https://www.gollahalli.me" />
+        <link rel="canonical" href="https://www.gollahalli.com" />
         <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1">
 
         """
