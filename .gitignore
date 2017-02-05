@@ -134,12 +134,13 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-/gollahalli_me/settings/local.py
+/gollahalli_com/settings/local.py
 
-/gollahalli_me/db.sqlite3
+/gollahalli_com/db.sqlite3
 
 .idea/workspace.xml
 /vendor/
 
-gollahalli_me/templates/test.html
+gollahalli_com/templates/test.html
 /node_modules/
+gollahalli_com/settings/local.py
