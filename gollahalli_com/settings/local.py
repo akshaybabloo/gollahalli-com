@@ -37,9 +37,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-ROOT_URLCONF = 'gollahalli_me.urls'
+ROOT_URLCONF = 'gollahalli_com.urls'
 
-WSGI_APPLICATION = 'gollahalli_me.wsgi.application'
+WSGI_APPLICATION = 'gollahalli_com.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
