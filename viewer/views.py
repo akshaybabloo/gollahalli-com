@@ -136,7 +136,7 @@ class ContentDecode:
     # Blog
     @staticmethod
     def get_blog():
-        data = feedparser.parse("https://blog.gollahalli.me/?format=rss")
+        data = feedparser.parse("https://blog.gollahalli.com/?format=rss")
         return data.entries
 
     # Other
