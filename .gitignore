@@ -145,3 +145,4 @@ gollahalli_com/templates/test.html
 /node_modules/
 gollahalli_com/settings/local.py
 test.py
+/gollahalli_com/settings/secrets.py
