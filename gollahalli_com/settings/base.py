@@ -109,9 +109,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# heroku config:set AWS_ACCESS_KEY_ID=AKIAIPQQUJGYXMFFOASA AWS_SECRET_ACCESS_KEY=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
-
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
@@ -142,6 +139,3 @@ TEMPLATES = [
         },
     },
 ]
-
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
