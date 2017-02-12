@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-from .secrets import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = In secrets.py
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -44,7 +43,7 @@ INSTALLED_APPS = [
     'viewer',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.gzip.GZipMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -109,9 +108,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# heroku config:set AWS_ACCESS_KEY_ID=AKIAIPQQUJGYXMFFOASA AWS_SECRET_ACCESS_KEY=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
-
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
@@ -142,6 +138,3 @@ TEMPLATES = [
         },
     },
 ]
-
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

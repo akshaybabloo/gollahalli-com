@@ -19,3 +19,8 @@ def markdown_data(value):
 @register.filter()
 def url_replace(value):
     return value.replace("http://", "https://")
+
+
+@register.filter()
+def custom_blog_tags(value):
+    return ', '.join([str(i.term) for i in value])

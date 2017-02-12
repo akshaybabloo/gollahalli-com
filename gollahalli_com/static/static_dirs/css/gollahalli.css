@@ -29,3 +29,10 @@
 .cookie-policy{
     font-family:'Roboto Mono', monospace;
 }
+
+.timeline-block-custom{
+    padding: 0 0 50px;
+}
+.timeline-block-custom .section-header{
+	margin-bottom:80px;
+}

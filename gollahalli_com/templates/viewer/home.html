@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% load custom_tags %}
 {% block body %}
-<body>
+    <body>
     {{ content.get_site_performance_body | safe }}
 
     <!--=============================================
@@ -143,7 +143,7 @@
                     <div class='person-img text-center'>
 
                         <!-- Your Image -->
-                        {{ content.get_my_image | safe}}
+                        {{ content.get_my_image | safe }}
 
                     </div>
 
@@ -399,7 +399,7 @@
             </div>
 
 
-            <div class='section-block timeline-block'>
+            <div class='section-block timeline-block-custom'>
                 <div class='container-fluid'>
 
                     <div class='section-header text-center'>
@@ -458,11 +458,11 @@
                             <div class='inner'>
                                 {% if 'media_content' in data %}
                                     <figure>
-                                        <img src='{{ data.media_content.0.url | url_replace}}' alt>
+                                        <img src='{{ data.media_content.0.url | url_replace }}' alt>
                                     </figure>
                                 {% endif %}
                                 <div class='content'>
-                                    <h4>{{ data.title }}</h4>
+                                    <h4><a href='{{ data.link }}' style="color: #000000 !important; text-decoration: none !important;">{{ data.title }}</a></h4>
                                     <ul class='post-icons'>
                                         <li>
                                             <i class='ion-ios-person-outline'></i>
@@ -470,7 +470,7 @@
                                         </li>
                                         <li>
                                             <i class='ion-ios-pricetag-outline'></i>
-                                            <span>{{ data.category }}</span>
+                                            <span>{{ data.tags | custom_blog_tags }}</span>
                                         </li>
                                         <li>
                                             <i class='ion-ios-clock-outline'></i>
@@ -489,7 +489,9 @@
                     {% endfor %}
 
                 </div>
-            </div>
+                <div class='section-header text-center'>
+                    <a href="https://blog.gollahalli.com" class="btn btn-info">Read More</a>
+                </div>
         </section>
 
         <!--=============================================
@@ -507,49 +509,6 @@
 
                 <div class='row'>
                     <div class='col-md-8 col-md-offset-2'>
-
-                        {#                        <form id='contact-form' class='contact-form font-alt' data-toggle='validator' method='post'>#}
-                        {##}
-                        {#                            <!--contact-form-result-->#}
-                        {#                            <div id='contact-form-result'></div>#}
-                        {##}
-                        {#                            <div class='row'>#}
-                        {##}
-                        {#                                <div class='col-md-6'>#}
-                        {#                                    <div class='form-group'>#}
-                        {#                                        <input type='text' name='name' class='form-control' placeholder='Name' required>#}
-                        {#                                        <div class='help-block with-errors'></div>#}
-                        {#                                    </div>#}
-                        {#                                </div>#}
-                        {##}
-                        {#                                <div class='col-md-6'>#}
-                        {#                                    <div class='form-group'>#}
-                        {#                                        <input type='email' name='email' class='form-control' placeholder='Email'#}
-                        {#                                               required>#}
-                        {#                                        <div class='help-block with-errors'></div>#}
-                        {#                                    </div>#}
-                        {#                                </div>#}
-                        {##}
-                        {#                            </div>#}
-                        {##}
-                        {#                            <div class='form-group'>#}
-                        {#                                <input type='text' name='subject' class='form-control' placeholder='Subject' required>#}
-                        {#                                <div class='help-block with-errors'></div>#}
-                        {#                            </div>#}
-                        {##}
-                        {#                            <div class='form-group'>#}
-                        {#                                <textarea class='form-control' name='message' rows='6' placeholder='Message'#}
-                        {#                                          required></textarea>#}
-                        {#                                <div class='help-block with-errors'></div>#}
-                        {#                            </div>#}
-                        {##}
-                        {#                            <div class='form-group text-center'>#}
-                        {#                                <button type='submit' class='btn-custom'>#}
-                        {#                                    Send Message#}
-                        {#                                </button>#}
-                        {#                            </div>#}
-                        {##}
-                        {#                        </form>#}
                         <div class="font-alt text-center">
                             <h3>
                                 <i class="ion-ios-email-outline"></i>
@@ -558,24 +517,25 @@
                         </div>
                     </div>
                     <div class="col-lg-8 col-lg-offset-2 text-center">
-                            <a class="twitter-timeline" data-dnt="true" data-theme="dark" href="https://twitter.com/akshaybabloo"
-                               data-widget-id="690023186424012800">Tweets
-                                by @akshaybabloo</a>
-                        </div>
+                        <a class="twitter-timeline" data-dnt="true" data-theme="dark"
+                           href="https://twitter.com/akshaybabloo"
+                           data-widget-id="690023186424012800">Tweets
+                            by @akshaybabloo</a>
+                    </div>
                 </div>
             </div>
         </section>
         {# footer content see gollahalli.js #}
         <div id="popup-334" class="popup-box zoom-anim-dialog mfp-hide">
-           <div class="content">
+            <div class="content">
 
-               <h4>{{ content.get_version.name }}</h4>
+                <h4>{{ content.get_version.name }}</h4>
 
-               {{ content.get_version.body | markdown_data | safe}}
+                {{ content.get_version.body | markdown_data | safe }}
 
-               <p class="text-center"><a href="{% url 'change-log' %}">Change Log</a></p>
+                <p class="text-center"><a href="{% url 'change-log' %}">Change Log</a></p>
 
-           </div>
+            </div>
         </div>
     </div>
 {% endblock %}

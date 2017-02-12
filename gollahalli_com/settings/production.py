@@ -36,7 +36,6 @@ AWS_HEADERS = {
 }
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_CUSTOM_DOMAIN = 'cdn.gollahalli.com'
-# AWS_S3_CUSTOM_DOMAIN = 's3.amazonaws.com/gollahalli-me-django'
 
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storage.StaticStorage'
@@ -46,6 +45,4 @@ MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'custom_storage.MediaStorage'
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'  # Uncomment this for local storage insted of AWS S3
-# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
