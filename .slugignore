@@ -15,4 +15,4 @@ prism.css
 prism.js
 bootstrap.js
 content.json
-.idea/
+/.idea
