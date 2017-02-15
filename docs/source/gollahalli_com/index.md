@@ -6,3 +6,6 @@ Gollahalli.com Django Application
    :caption: Contents:
 
    settings
+   sitemaps
+   urls
+   wsgi

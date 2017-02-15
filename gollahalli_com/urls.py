@@ -1,3 +1,6 @@
+"""
+Main URL settings page. See https://docs.djangoproject.com/en/1.10/topics/http/urls/ for more information.
+"""
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.sitemaps import views
