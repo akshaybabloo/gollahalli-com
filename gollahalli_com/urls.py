@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^', include('viewer.urls')),
     url(r'^editor/', include('editor.urls'), name='editor_urls'),
     url(r'^admin/', admin.site.urls, name='admin_urls'),
-    url(r'^accounts/login/$', login, {'template_name': 'admin/login.html'}, name="my_login"),
+    url(r'^accounts/login/$', login, {'template_name': 'login.html'}, name="login"),
     url(r'^accounts/logout/$', logout),
     url(r'^robots.txt',
         lambda x: HttpResponse("Sitemap: https://www.gollahalli.com/sitemap.xml\nUser-agent: *\nDisallow: /admin/",
