@@ -7,3 +7,4 @@ class ContentModel(models.Model):
     content = JSONField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    website_name = models.CharField(max_length=300, default="Enter your companies name")
