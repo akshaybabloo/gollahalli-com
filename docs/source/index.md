@@ -11,6 +11,7 @@ Welcome to Akshay Raj Gollahalli's documentation!
    :caption: Contents:
 
    gollahalli_com/index
+   viewer/index
    utility
 
 
