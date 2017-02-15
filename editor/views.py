@@ -3,10 +3,13 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseServerError
 from django.shortcuts import redirect
 from django.shortcuts import render, HttpResponseRedirect
+from django.core.exceptions import ObjectDoesNotExist
 
 from .models import ContentModel
 from .forms import ContentFormModel
 import json
+from utility import format_date_time
+
 
 # ============================================================================================
 #                                       Form Main
@@ -19,8 +22,8 @@ def index(request):
 
     try:
         json_content = ContentModel.objects.get(ref_id='1')
-    except Exception:
-        raise HttpResponseServerError
+    except ObjectDoesNotExist:
+        return HttpResponseServerError
 
     if request.method == 'POST':
         form = ContentFormModel(request.POST)
@@ -34,7 +37,9 @@ def index(request):
     else:
         form = ContentFormModel()
 
-    context = {'content': json.dumps(json_content.content), 'form': form}
+    context = {'content': json.dumps(json_content.content), 'form': form,
+               'created': format_date_time(json_content.created),
+               'updated': format_date_time(json_content.updated)}
     return render(request, template, context)
 
 

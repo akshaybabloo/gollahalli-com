@@ -38,10 +38,12 @@
 </head>
 <body>
 {% if user.is_authenticated %}
-    <p>Welcome, {{ user.username | title }} [<a href="{% url 'logout' %}">logout</a>]</p>
+    <p>Welcome, {{ user.get_full_name | title }} [<a href="{% url 'logout' %}">logout</a>]</p>
 {% else %}
     <p>Welcome, Guest <a href="{% url 'login' %}">[login]</a></p>
 {% endif %}
+Created: {{ created }} <br>
+Last Updated: {{ updated }}
 
 <form action="" method="post">
     {% csrf_token %}
@@ -49,7 +51,7 @@
         <th><label for="id_content">Content:</label></th>
         <td><textarea name="content" id="id_content" data-editor="json" data-gutter="1"></textarea></td>
     </tr>
-    <p><input type="submit" value="Send message"/></p>
+    <p><input type="submit" value="Update"/></p>
 </form>
 
 <script src="{% static 'js/ace/ace.js' %}" type="text/javascript" charset="utf-8"></script>

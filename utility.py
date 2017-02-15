@@ -1,5 +1,7 @@
 import json
 
+from django.utils.dateparse import parse_datetime
+
 
 def is_json(my_json):
     try:
@@ -9,5 +11,7 @@ def is_json(my_json):
         return False
     return True
 
-# if __name__ == '__main__':
-#     convert_to_json()
+
+def format_date_time(date_time):
+    formatted_dt = parse_datetime(str(date_time))
+    return formatted_dt.strftime('%b. %d, %Y, %I:%M %p')
