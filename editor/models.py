@@ -5,4 +5,5 @@ from django.contrib.postgres.fields import JSONField
 class ContentModel(models.Model):
     ref_id = models.IntegerField(primary_key=True)
     content = JSONField()
-    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
