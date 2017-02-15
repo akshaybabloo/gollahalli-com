@@ -1,17 +1,208 @@
 {% load custom_tags %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Change Log</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="shortcut icon" href="{% static 'img/favicons/favicon.ico' %}"/>
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="{% static 'img/favicons/favicon.ico' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{% static 'img/favicons/favicon-152.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'img/favicons/favicon-144.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{% static 'img/favicons/favicon-120.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'img/favicons/favicon-114.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="{% static 'img/favicons/favicon-180.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'img/favicons/favicon-72.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'img/favicons/favicon-57.png' %}">
+    <link rel="icon" href="{% static 'img/favicons/favicon-32.png' %}" sizes="32x32">
+
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="{% static 'img/favicons/favicon-144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="manifest" href="{% static 'img/favicons/manifest.json' %}">
+    <link rel="icon" sizes="192x192" href="{% static 'img/favicons/favicon-192.png' %}">
+
+    <title>Gollahalli.com Change Log</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/editor/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style type="text/css">
+        * {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .timeline {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .timeline h2.break {
+            display: block;
+            width: 100%;
+            font-family: arial, serif;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            margin: 0;
+            padding: 25px 0 25px 25px;
+            position: relative;
+            left: -5px;
+        }
+
+        .timeline ul {
+            color: #282828;
+            list-style-type: none;
+            position: relative;
+            padding: 25px 0 25px 10px;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .timeline ul:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -4.5px;
+            bottom: 0;
+            border-left: 1px solid #ccc;
+            height: 100%;
+        }
+
+        .timeline ul li {
+            margin: 15px 0 35px 10px;
+            position: relative;
+            display: block;
+        }
+
+        .timeline ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline ul li .card {
+            display: block;
+            border: 1px solid #ccc;
+            padding: 15px;
+            background: #f1f1f1;
+        }
+
+        .timeline ul li h1 {
+            font-family: georgia, serif;
+            color: #282828;
+            margin: 0 0 15px 0;
+        }
+
+        .timeline ul li p {
+            color: rgba(40, 40, 40, 0.5);
+            font-family: arial, serif;
+            margin: 0 0 15px 0;
+        }
+
+        .timeline ul li .eyebrow {
+            display: table;
+            color: white;
+            background-color: #282828;
+            font-size: 9px;
+            padding: 4px 7px;
+            font-family: arial;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            position: relative;
+            top: 3.5px;
+            outline: 2px solid white;
+            z-index: 0;
+            max-width: 300px;
+            line-height: 1.2;
+        }
+
+        .timeline ul li .eyebrow:before {
+            content: "";
+            position: absolute;
+            left: -20px;
+            border-bottom: 1px solid #ccc;
+            width: 20px;
+            top: 9px;
+            z-index: -1;
+        }
+
+        .timeline ul li:before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px solid rgba(40, 40, 40, 0.5);
+            position: absolute;
+            z-index: 2;
+            left: -30px;
+            outline: 2px solid white;
+            top: 7.5px;
+        }
+        .timeline-custom ol li{
+            padding: 0;
+            margin: 0;
+            display: list-item;
+            color: rgba(40, 40, 40, 0.5);
+        }
+        .timeline-custom ol li:before{
+            content: "";
+            width: 0;
+            height: 0;
+            border-radius: 0;
+            background-color: white;
+            border: 0;
+            position: absolute;
+            z-index: 2;
+            left: -30px;
+            outline: 2px solid white;
+            top: 7.5px;
+        }
+
+    </style>
+
 </head>
+
 <body>
-{% for log in content reversed %}
-    {{ log.name }} <br>
-    {{ log.tag_name }} <br>
-    {{ log.body | markdown_data | safe}} <br><br>
-{% endfor %}
 
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Gollahalli.com Change Log</a>
+        </div>
+    </div>
+</nav>
 
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="timeline">
+                    <ul>
+                        <div class="timeline-custom">
+                            {% for log in content reversed %}
+                                <li>
+                                    <span class="eyebrow">{{ log.tag_name }}</span>
+                                    <h1>{{ log.name }}</h1>
+                                    {{ log.body | markdown_data | safe }}
+                                </li>
+                            {% endfor %}
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /.container -->
 </body>
 </html>

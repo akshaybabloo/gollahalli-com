@@ -146,3 +146,4 @@ gollahalli_com/templates/test.html
 gollahalli_com/settings/local.py
 test.py
 /gollahalli_com/settings/secrets.py
+gollahalli_com/static/static_dirs/css/editor/fonts/.DS_Store
