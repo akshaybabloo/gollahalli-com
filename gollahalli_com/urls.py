@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.sitemaps import views
-from django.contrib.auth.views import login, logout
+from django.contrib.auth.views import login, logout, password_reset, password_change_done
 from django.http import HttpResponse
 
 from .sitemaps import *
@@ -17,6 +17,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls, name='admin_urls'),
     url(r'^accounts/login/$', login, {'template_name': 'login.html'}, name="login"),
     url(r'^accounts/logout/$', logout),
+    # url(r'^accounts/password/reset/$', password_reset, {'template_name': 'userauth/password_change_form.html'}, name="password_reset"),
+    # url(r'^accounts/password/password-change-done/$', password_change_done, {'template_name': 'userauth/password_change_done.html'}, name="password_change_done"),
     url(r'^accounts/profile/', include('editor.urls'), name="profile"),
     url(r'^robots.txt',
         lambda x: HttpResponse("Sitemap: https://www.gollahalli.com/sitemap.xml\nUser-agent: *\nDisallow: /admin/",

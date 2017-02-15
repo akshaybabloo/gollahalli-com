@@ -155,5 +155,5 @@ texinfo_documents = [
      'Miscellaneous'),
 ]
 
-
+autodoc_mock_imports = ['dj_database_url', 'settings']
 
