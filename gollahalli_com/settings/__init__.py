@@ -12,7 +12,7 @@ try:
     from .local import *
 
     live = False
-except:
+except ImportError:
     live = True
 
 if live:

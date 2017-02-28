@@ -8,7 +8,10 @@ Production file for Heroku.
 
 import os
 
-import dj_database_url
+try:
+    import dj_database_url
+except ImportError:
+    pass
 from django.conf import settings
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
