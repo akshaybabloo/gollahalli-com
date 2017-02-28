@@ -175,7 +175,7 @@
 
 <body>
 
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Gollahalli.com Change Log</a>
@@ -194,6 +194,7 @@
                                 <li>
                                     <span class="eyebrow">{{ log.tag_name }}</span>
                                     <h1>{{ log.name }}</h1>
+                                    <p class="small">Release Date: {{ log.published_at | custom_date_releases }}</p>
                                     {{ log.body | markdown_data | safe }}
                                 </li>
                             {% endfor %}
