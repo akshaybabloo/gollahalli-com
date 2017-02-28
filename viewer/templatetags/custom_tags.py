@@ -12,6 +12,12 @@ def custom_date(value):
 
 
 @register.filter()
+def custom_date_releases(value):
+    date = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%Sz')
+    return date.strftime('%d, %b %Y')
+
+
+@register.filter()
 def markdown_data(value):
     return markdown.markdown(value)
 
