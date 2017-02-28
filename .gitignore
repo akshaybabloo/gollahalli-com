@@ -134,8 +134,6 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-/gollahalli_com/settings/local.py
-
 /gollahalli_com/db.sqlite3
 
 .idea/workspace.xml
@@ -143,7 +141,6 @@ fabric.properties
 
 gollahalli_com/templates/test.html
 /node_modules/
-gollahalli_com/settings/local.py
 test.py
 /gollahalli_com/settings/secrets.py
 .DS_Store
