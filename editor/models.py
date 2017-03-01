@@ -8,6 +8,9 @@ class ContentModel(models.Model):
     updated = models.DateTimeField(auto_now=True)
     website_name = models.CharField(max_length=300, default="Enter your companies name")
 
+    def __str__(self):
+        return str(self.ref_id)
+
 
 class AboutMeModel(models.Model):
     ref_id = models.ForeignKey(ContentModel)
