@@ -11,7 +11,7 @@ class ContentModel(models.Model):
     bio = models.CharField(default='Your Bio', max_length=1000)
     url = models.URLField(default='Website URL', max_length=400)
     name = models.CharField(default='Your Name', max_length=400)
-    contact = models.EmailField(default='Your email ID', max_length=400)
+    email_id = models.EmailField(default='Your email ID', max_length=400)
     github = models.URLField(default='GitHub URL', max_length=400)
     twitter = models.URLField(default='Twitter URL', max_length=400)
     linkedin = models.URLField(default='LinkedIn URL', max_length=400)
