@@ -4,6 +4,7 @@ from django.http import HttpResponseServerError
 from django.shortcuts import redirect
 from django.shortcuts import render, HttpResponseRedirect
 from django.core.exceptions import ObjectDoesNotExist
+from django.forms.models import model_to_dict
 
 from .models import ContentModel
 from .forms import ContentFormModel
@@ -21,7 +22,7 @@ def index(request):
     template = "editor/home.html"
 
     try:
-        json_content = ContentModel.objects.get(ref_id='1')
+        content = ContentModel.objects.get(ref_id='1')
     except ObjectDoesNotExist:
         return HttpResponseServerError
 
@@ -37,10 +38,10 @@ def index(request):
     else:
         form = ContentFormModel()
 
-    context = {'content': json.dumps(json_content.content), 'form': form,
-               'created': format_date_time(json_content.created),
-               'updated': format_date_time(json_content.updated),
-               'website_name': json_content.website_name}
+    context = {'content': content, 'form': form,
+               'created': format_date_time(content.created),
+               'updated': format_date_time(content.updated),
+               'website_name': content.website_name}
     return render(request, template, context)
 
 
