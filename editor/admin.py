@@ -1,27 +1,21 @@
 from django.contrib import admin
-from .models import ContentModel, AboutMeModel, PortfolioModel
+from django import forms
+from singlemodeladmin import SingleModelAdmin
+
+from .models import ContentModel
 
 
-class ContentAdmin(admin.ModelAdmin):
-    list_display = ['ref_id', 'created', 'updated', 'website_name']
+class ContentAdminForm(forms.ModelForm):
+    bio = forms.CharField(widget=forms.Textarea)
 
     class Meta:
         model = ContentModel
+        fields = '__all__'
 
 
-class AboutMeAdmin(admin.ModelAdmin):
-    list_display = ['cv']
+class ContentAdmin(SingleModelAdmin):
+    list_display = ['ref_id', 'created', 'updated', 'website_name']
+    form = ContentAdminForm
 
-    class Meta:
-        model = AboutMeModel
-
-
-class PortfolioAdmin(admin.ModelAdmin):
-    list_display = ['projects_json', 'tutorials_json']
-
-    class Meta:
-        model = AboutMeModel
 
 admin.site.register(ContentModel, ContentAdmin)
-admin.site.register(AboutMeModel, AboutMeAdmin)
-admin.site.register(PortfolioModel, PortfolioAdmin)

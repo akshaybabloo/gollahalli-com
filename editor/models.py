@@ -7,13 +7,6 @@ class ContentModel(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     website_name = models.CharField(max_length=300, default="Enter your companies name")
-
-    def __str__(self):
-        return str(self.ref_id)
-
-
-class AboutMeModel(models.Model):
-    ref_id = models.ForeignKey(ContentModel)
     cv = models.CharField(default='CV URL', max_length=400)
     bio = models.CharField(default='Your Bio', max_length=1000)
     url = models.URLField(default='Website URL', max_length=400)
@@ -22,15 +15,11 @@ class AboutMeModel(models.Model):
     github = models.URLField(default='GitHub URL', max_length=400)
     twitter = models.URLField(default='Twitter URL', max_length=400)
     linkedin = models.URLField(default='LinkedIn URL', max_length=400)
-    education_json = JSONField()
-    experience_json = JSONField()
-    publication_json = JSONField()
-    research_area_json = JSONField()
-    skills_t1_json = JSONField()
-    skills_t2_json = JSONField()
-
-
-class PortfolioModel(models.Model):
-    ref_id = models.ForeignKey(ContentModel)
-    projects_json = JSONField()
-    tutorials_json = JSONField()
+    education_json = JSONField(default={})
+    experience_json = JSONField(default={})
+    publication_json = JSONField(default={})
+    research_area_json = JSONField(default={})
+    skills_t1_json = JSONField(default={})
+    skills_t2_json = JSONField(default={})
+    projects_json = JSONField(default={})
+    tutorials_json = JSONField(default={})
