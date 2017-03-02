@@ -1,243 +1,251 @@
 {
-  "skills": {
-    "t1": {
-      "programming": [
-        "Java",
-        "Python",
-        "Ruby",
-        "C",
-        "C++",
-        "Matlab",
-        "Swift"
-      ],
-      "web development": [
-        "PHP",
-        "HTML",
-        "CSS",
-        "Django",
-        "Rails"
-      ]
-    },
-    "t2": {
-      "others": [
-        "Git",
-        "SQL"
-      ],
-      "data mining": [
-        "Weka",
-        "NeuCube"
-      ],
-      "gaming engines": [
-        "Unreal Engine",
-        "Unity"
-      ],
-      "Graphics/3D rendering": [
-        "Maya",
-        "Photoshop",
-        "Illustrator"
-      ]
-    }
-  },
-  "about_me": {
-    "cv": "assets/downloads/Gollahalli-CV-Web.pdf",
-    "bio": [
-      "My name is Akshay Raj Gollahalli (Akshay for short). I survive mostly on coffee. I am a designer, developer, software engineer, animal lover, [Ph.D. student](https://kedri.aut.ac.nz/staff/staff-profiles/akshay-raj-gollahalli)",
-      "In the year 1998, I went out with my mother, who is a social worker, to a free plastic surgery camp for poor in Hyderabad, India and then decided to become a doctor (a real one). That same year my father, who is an engineer, took me to a steel rolling mill, and then I decided to become an engineer. On 12th October 1999, my father bought me a computer, Intel Pentium III with 256 MB RAM (WHAT!?). I instantly fell in love with it.",
-      "My journey started with computers nearly 17 years ago, and I am very passionate about it. My interests are in research and development of Machine Learning, Neurocomputational Intelligence and Brain Computer Interface.",
-      "I constantly enjoy developing new software with functionality that would provide better user experience. I believe open sourcing software produces good and better results.",
-      "This website showcases my personal work, publications and tutorials. While you are at it, don't forget to see me blog and please feel free to [contact me](#contact)."
-    ],
-    "url": "https://www.gollahalli.me",
-    "name": "Akshay Raj Gollahalli",
-    "github": "https://github.com/akshaybabloo",
-    "contact": "akshay@gollahalli.com",
-    "twitter": "https://twitter.com/akshaybabloo",
-    "linkedin": "https://nz.linkedin.com/in/gollahalli",
-    "education": {
-      "1": {
-        "to": 2011,
-        "from": 2007,
-        "title": "Bachelor of Technology (B.Tech)",
-        "where": "Jawaharlal Nehru Technological University, Hyderabad",
-        "current": false
-      },
-      "2": {
-        "to": 2014,
-        "from": 2013,
-        "title": "Postgraduate Diploma in Computer and Information Sciences (PgDipCIS)",
-        "where": "Auckland University of Technology",
-        "current": false
-      },
-      "3": {
-        "to": 2015,
-        "from": 2014,
-        "title": "Master of Computer and Information Sciences (MCIS) (First Class Honors)",
-        "where": "Auckland University of Technology",
-        "current": false
-      },
-      "4": {
-        "to": "Present",
-        "from": 2016,
-        "title": "Doctor of Philosophy (PhD)",
-        "where": "Auckland University of Technology",
-        "current": true
-      }
-    }
-  },
-  "projects": {
-    "1": {
-      "link": "https://github.com/akshaybabloo/JCal",
-      "title": "JCal",
-      "category": "software",
-      "file_name": "JCal.jpg",
-      "long_description": "JCal is a Mortgage calculator and Unit conversion software written purely in Java. You can fork the repository [here](hhttps://github.com/akshaybabloo/JCal)",
-      "short_description": "Mortgage Calculator"
-    },
-    "2": {
-      "link": "https://github.com/akshaybabloo/JMark",
-      "title": "JMark",
-      "category": "software",
-      "file_name": "JMark.jpg",
-      "long_description": "JMark is a Markdown editor written purely in Java. You can fork the repository [here](https://github.com/akshaybabloo/JMark)",
-      "short_description": "Markdown Editor"
-    },
-    "3": {
-      "link": "https://github.com/akshaybabloo/EEGRotor-VE",
-      "title": "EEGRotor-VE",
-      "category": "Games-VE",
-      "file_name": "EEGRotor-VE.jpg",
-      "long_description": "EEGRotor was developed in Unity 4 using C# and Javascript for a Brain Computer Interface (BCI) software. You can fork the repository [here](https://github.com/akshaybabloo/EEGRotor-VE)",
-      "short_description": "A Virtual Environment for Brain Computer Interface Applications"
-    },
-    "4": {
-      "link": "http://www.smallurl.cc",
-      "title": "SmallURL",
-      "category": "software",
-      "file_name": "SmallURL.jpg",
-      "long_description": "SmallURL is a URL shortening tool written in Python3 using Django web framework. You can visit [http://www.smallurl.cc](http://www.smallurl.cc)",
-      "short_description": "Mortgage Calculator"
-    }
-  },
-  "tutorials": {
-    "1": {
-      "link": "https://github.com/akshaybabloo/Ruby-notes",
-      "title": "Ruby",
-      "category": "tutorial",
-      "file_name": "Ruby.jpg",
-      "long_description": "A tutorial on Ruby 4. You can fork the repository [here](https://github.com/akshaybabloo/Ruby-notes)."
-    },
-    "2": {
-      "link": "https://github.com/akshaybabloo/Python3-notes",
-      "title": "Python3",
-      "category": "tutorial",
-      "file_name": "Python3.jpg",
-      "long_description": "A tutorial on Python 3. You can fork the repository [here](https://github.com/akshaybabloo/Python3-notes)."
-    },
-    "3": {
-      "link": "https://github.com/akshaybabloo/UnrealEngine_4_Notes",
-      "title": "UnrealEngine",
-      "category": "tutorial",
-      "file_name": "UnrealEngine.jpg",
-      "long_description": "A tutorial on using node based Unreal Engine 4. You can fork the repository [here](https://github.com/akshaybabloo/UnrealEngine_4_Notes)."
-    },
-    "4": {
-      "link": "https://github.com/akshaybabloo/Java-JDBC-notes",
-      "title": "Java",
-      "category": "tutorial",
-      "file_name": "Java.jpg",
-      "long_description": "A tutorial on using Java 8 and JDBC. You can fork the repository [here](https://github.com/akshaybabloo/Java-JDBC-notes)."
-    },
-    "5": {
-      "link": "https://github.com/akshaybabloo/JavaFX",
-      "title": "JavaFX",
-      "category": "tutorial",
-      "file_name": "JavaFX.jpg",
-      "long_description": "A tutorial on using JavaFX 8. You can fork the repository [here](https://github.com/akshaybabloo/JavaFX)."
-    },
-    "6": {
-      "link": "https://github.com/akshaybabloo/Python-opengl-notes",
-      "title": "OpenGL",
-      "category": "tutorial",
-      "file_name": "OpenGL.jpg",
-      "long_description": "A tutorial on using OpenGL with Python 3. You can fork the repository [here](https://github.com/akshaybabloo/Python-opengl-notes)."
-    },
-    "7": {
-      "link": "https://github.com/akshaybabloo/Swift-notes",
-      "title": "Swift",
-      "category": "tutorial",
-      "file_name": "Swift.jpg",
-      "long_description": "A tutorial on Swift programming language. You can fork the repository [here](https://github.com/akshaybabloo/Swift-notes)."
-    },
-    "8": {
-      "link": "https://github.com/akshaybabloo/GearVR-UnrealEngine4",
-      "title": "GearVR",
-      "category": "tutorial",
-      "file_name": "GearVR.jpg",
-      "long_description": "A tutorial on Gear VR with Unreal Engine 4. You can fork the repository [here](https://github.com/akshaybabloo/GearVR-UnrealEngine4)."
-    }
-  },
-  "experience": {
-    "1": {
-      "to": "February, 2013",
-      "from": "May, 2012",
-      "title": "Jr. Systems Engineer",
-      "where": "Hyderabad, India",
-      "company": "Cheminnova Group of Companies.",
-      "current": false
-    },
-    "2": {
-      "to": "December, 2015",
-      "from": "July, 2015",
-      "title": "Research Assistant",
-      "where": "Auckland, New Zealand",
-      "company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
-      "current": false
-    },
-    "3": {
-      "to": "Present",
-      "from": "2015",
-      "title": "Technical Support",
-      "where": "Auckland, New Zealand",
-      "company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
-      "current": true
-    },
-    "4": {
-      "to": "October, 2016",
-      "from": "April, 2016",
-      "title": "Research Assistant",
-      "where": "Auckland, New Zealand",
-      "company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
-      "current": false
-    },
-    "5": {
-      "to": "November, 2016",
-      "from": "July, 2016",
-      "title": "Teaching Assistant",
-      "where": "Auckland, New Zealand",
-      "company": "Computer and Mathematical Sciences , AUT University.",
-      "current": false
-    }
-  },
-  "publication": {
-    "poster": [
-      "Gollahalli, A. R., &amp; Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland."
-    ],
-    "thesis": [
-      "Gollahalli, A. R. (2015). Brain-computer interfaces for virtual Quadcopters based on a spiking-neural network architecture - NeuCube. AUT University, Auckland. Retrieved from http://hdl.handle.net/10292/9249"
-    ],
-    "abstract": [
-      "Gollahalli, A. R., &amp; Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland. Retrieved from http://www.aut.ac.nz/__data/assets/pdf_file/0018/525051/Booklet-NCEI15.pdf"
-    ]
-  },
-  "research_area": [
-    "Machine Learning (Mainly in Spiking Neural Networks)",
-    "Computational Neuroscience",
-    "Brain Computer Interface",
-    "Robotics",
-    "Neuromorphic Systems",
-    "Serious Games",
-    "Self-Driving Cars",
-    "Computer Vision",
-    "Deep Learning"
-  ]
+	"skills": {
+		"t1": {
+			"programming": [
+				"Java",
+				"Python",
+				"Ruby",
+				"C",
+				"C++",
+				"Matlab",
+				"Swift"
+			],
+			"web development": [
+				"PHP",
+				"HTML",
+				"CSS",
+				"Django",
+				"Rails"
+			]
+		},
+		"t2": {
+			"others": [
+				"Git",
+				"SQL"
+			],
+			"data mining": [
+				"Weka",
+				"NeuCube"
+			],
+			"gaming engines": [
+				"Unreal Engine",
+				"Unity"
+			],
+			"Graphics/3D rendering": [
+				"Maya",
+				"Photoshop",
+				"Illustrator"
+			]
+		}
+	},
+	"about_me": {
+		"cv": "assets/downloads/Gollahalli-CV-Web.pdf",
+		"bio": [
+			"My name is Akshay Raj Gollahalli (Akshay for short). I survive mostly on coffee. I am a designer, developer, software engineer, animal lover, [Ph.D. student](https://kedri.aut.ac.nz/staff/staff-profiles/akshay-raj-gollahalli)",
+			"In the year 1998, I went out with my mother, who is a social worker, to a free plastic surgery camp for poor in Hyderabad, India and then decided to become a doctor (a real one). That same year my father, who is an engineer, took me to a steel rolling mill, and then I decided to become an engineer. On 12th October 1999, my father bought me a computer, Intel Pentium III with 256 MB RAM (WHAT!?). I instantly fell in love with it.",
+			"My journey started with computers nearly 17 years ago, and I am very passionate about it. My interests are in research and development of Machine Learning, Neurocomputational Intelligence and Brain Computer Interface.",
+			"I constantly enjoy developing new software with functionality that would provide better user experience. I believe open sourcing software produces good and better results.",
+			"This website showcases my personal work, publications and tutorials. While you are at it, don't forget to see me blog and please feel free to [contact me](#contact)."
+		],
+		"url": "https://www.gollahalli.com",
+		"name": "Akshay Raj Gollahalli",
+		"github": "https://github.com/akshaybabloo",
+		"contact": "akshay@gollahalli.com",
+		"twitter": "https://twitter.com/akshaybabloo",
+		"linkedin": "https://nz.linkedin.com/in/gollahalli",
+		"education": {
+			"1": {
+				"to": 2011,
+				"from": 2007,
+				"title": "Bachelor of Technology (B.Tech)",
+				"where": "Jawaharlal Nehru Technological University, Hyderabad",
+				"current": false
+			},
+			"2": {
+				"to": 2014,
+				"from": 2013,
+				"title": "Postgraduate Diploma in Computer and Information Sciences (PgDipCIS)",
+				"where": "Auckland University of Technology",
+				"current": false
+			},
+			"3": {
+				"to": 2015,
+				"from": 2014,
+				"title": "Master of Computer and Information Sciences (MCIS) (First Class Honors)",
+				"where": "Auckland University of Technology",
+				"current": false
+			},
+			"4": {
+				"to": "Present",
+				"from": 2016,
+				"title": "Doctor of Philosophy (PhD)",
+				"where": "Auckland University of Technology",
+				"current": true
+			}
+		}
+	},
+	"projects": {
+		"1": {
+			"link": "https://github.com/akshaybabloo/JCal",
+			"title": "JCal",
+			"category": "software",
+			"file_name": "JCal.jpg",
+			"long_description": "JCal is a Mortgage calculator and Unit conversion software written purely in Java. You can fork the repository [here](hhttps://github.com/akshaybabloo/JCal)",
+			"short_description": "Mortgage Calculator"
+		},
+		"2": {
+			"link": "https://github.com/akshaybabloo/JMark",
+			"title": "JMark",
+			"category": "software",
+			"file_name": "JMark.jpg",
+			"long_description": "JMark is a Markdown editor written purely in Java. You can fork the repository [here](https://github.com/akshaybabloo/JMark)",
+			"short_description": "Markdown Editor"
+		},
+		"3": {
+			"link": "https://github.com/akshaybabloo/EEGRotor-VE",
+			"title": "EEGRotor-VE",
+			"category": "Games-VE",
+			"file_name": "EEGRotor-VE.jpg",
+			"long_description": "EEGRotor was developed in Unity 4 using C# and Javascript for a Brain Computer Interface (BCI) software. You can fork the repository [here](https://github.com/akshaybabloo/EEGRotor-VE)",
+			"short_description": "A Virtual Environment for Brain Computer Interface Applications"
+		},
+		"4": {
+			"link": "http://www.smallurl.cc",
+			"title": "SmallURL",
+			"category": "software",
+			"file_name": "SmallURL.jpg",
+			"long_description": "SmallURL is a URL shortening tool written in Python3 using Django web framework. You can visit [http://www.smallurl.cc](http://www.smallurl.cc)",
+			"short_description": "Mortgage Calculator"
+		}
+	},
+	"tutorials": {
+		"1": {
+			"link": "https://github.com/akshaybabloo/Ruby-notes",
+			"title": "Ruby",
+			"category": "tutorial",
+			"file_name": "Ruby.jpg",
+			"long_description": "A tutorial on Ruby 4. You can fork the repository [here](https://github.com/akshaybabloo/Ruby-notes)."
+		},
+		"2": {
+			"link": "https://github.com/akshaybabloo/Python3-notes",
+			"title": "Python3",
+			"category": "tutorial",
+			"file_name": "Python3.jpg",
+			"long_description": "A tutorial on Python 3. You can fork the repository [here](https://github.com/akshaybabloo/Python3-notes)."
+		},
+		"3": {
+			"link": "https://github.com/akshaybabloo/UnrealEngine_4_Notes",
+			"title": "UnrealEngine",
+			"category": "tutorial",
+			"file_name": "UnrealEngine.jpg",
+			"long_description": "A tutorial on using node based Unreal Engine 4. You can fork the repository [here](https://github.com/akshaybabloo/UnrealEngine_4_Notes)."
+		},
+		"4": {
+			"link": "https://github.com/akshaybabloo/Java-JDBC-notes",
+			"title": "Java",
+			"category": "tutorial",
+			"file_name": "Java.jpg",
+			"long_description": "A tutorial on using Java 8 and JDBC. You can fork the repository [here](https://github.com/akshaybabloo/Java-JDBC-notes)."
+		},
+		"5": {
+			"link": "https://github.com/akshaybabloo/JavaFX",
+			"title": "JavaFX",
+			"category": "tutorial",
+			"file_name": "JavaFX.jpg",
+			"long_description": "A tutorial on using JavaFX 8. You can fork the repository [here](https://github.com/akshaybabloo/JavaFX)."
+		},
+		"6": {
+			"link": "https://github.com/akshaybabloo/Python-opengl-notes",
+			"title": "OpenGL",
+			"category": "tutorial",
+			"file_name": "OpenGL.jpg",
+			"long_description": "A tutorial on using OpenGL with Python 3. You can fork the repository [here](https://github.com/akshaybabloo/Python-opengl-notes)."
+		},
+		"7": {
+			"link": "https://github.com/akshaybabloo/Swift-notes",
+			"title": "Swift",
+			"category": "tutorial",
+			"file_name": "Swift.jpg",
+			"long_description": "A tutorial on Swift programming language. You can fork the repository [here](https://github.com/akshaybabloo/Swift-notes)."
+		},
+		"8": {
+			"link": "https://github.com/akshaybabloo/GearVR-UnrealEngine4",
+			"title": "GearVR",
+			"category": "tutorial",
+			"file_name": "GearVR.jpg",
+			"long_description": "A tutorial on Gear VR with Unreal Engine 4. You can fork the repository [here](https://github.com/akshaybabloo/GearVR-UnrealEngine4)."
+		}
+	},
+	"experience": {
+		"1": {
+			"to": "February, 2013",
+			"from": "May, 2012",
+			"title": "Jr. Systems Engineer",
+			"where": "Hyderabad, India",
+			"company": "Cheminnova Group of Companies.",
+			"current": false
+		},
+		"2": {
+			"to": "December, 2015",
+			"from": "July, 2015",
+			"title": "Research Assistant",
+			"where": "Auckland, New Zealand",
+			"company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
+			"current": false
+		},
+		"3": {
+			"to": "Present",
+			"from": "2015",
+			"title": "Technical Support",
+			"where": "Auckland, New Zealand",
+			"company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
+			"current": true
+		},
+		"4": {
+			"to": "October, 2016",
+			"from": "April, 2016",
+			"title": "Research Assistant",
+			"where": "Auckland, New Zealand",
+			"company": "Knowledge Engineering and Discovery Research Institute (KEDRI), AUT University.",
+			"current": false
+		},
+		"5": {
+			"to": "November, 2016",
+			"from": "July, 2016",
+			"title": "Teaching Assistant",
+			"where": "Auckland, New Zealand",
+			"company": "Computer and Mathematical Sciences , AUT University.",
+			"current": false
+		},
+		"6": {
+			"to": "Present",
+			"from": "February, 2017",
+			"title": "Teaching Assistant",
+			"where": "Auckland, New Zealand",
+			"company": "Computer and Mathematical Sciences , AUT University.",
+			"current": true
+		}
+	},
+	"publication": {
+		"poster": [
+			"Gollahalli, A. R., &amp; Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland."
+		],
+		"thesis": [
+			"Gollahalli, A. R. (2015). Brain-computer interfaces for virtual Quadcopters based on a spiking-neural network architecture - NeuCube. AUT University, Auckland. Retrieved from http://hdl.handle.net/10292/9249"
+		],
+		"abstract": [
+			"Gollahalli, A. R., &amp; Kasabov, N. (2015). EEGRotor: A virtual Quad-Copter based on Brain Computer Interface. presented at the meeting of the 13<sup>th</sup> International Conference on Neuro-Computing and Evolving Intelligence 2015 (NCEI ‘15) Auckland. Retrieved from http://www.aut.ac.nz/__data/assets/pdf_file/0018/525051/Booklet-NCEI15.pdf"
+		]
+	},
+	"research_area": [
+		"Machine Learning (Mainly in Spiking Neural Networks)",
+		"Computational Neuroscience",
+		"Brain Computer Interface",
+		"Robotics",
+		"Neuromorphic Systems",
+		"Serious Games",
+		"Self-Driving Cars",
+		"Computer Vision",
+		"Deep Learning"
+	]
 }
