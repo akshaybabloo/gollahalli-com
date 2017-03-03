@@ -25,4 +25,7 @@ class ContentModel(models.Model):
     projects_json = JSONField(default={'example': 1})
     tutorials_json = JSONField(default={'example': 1})
 
+    def __str__(self):
+        return str(self.ref_id)
+
 
