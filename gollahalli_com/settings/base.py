@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'storages',  # django-storages
+    'crispy_forms',  # Crispy forms for editor
     'editor',
     'viewer',
 ]
@@ -141,3 +142,5 @@ TEMPLATES = [
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 60*60  # set just 1 hour to test
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
