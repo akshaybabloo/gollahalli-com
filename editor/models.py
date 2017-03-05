@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.postgres.fields import JSONField
+# from django.contrib.postgres.fields import JSONField
 
 
 class ContentModel(models.Model):
@@ -16,14 +16,14 @@ class ContentModel(models.Model):
     github = models.URLField(default='https://www.example.com', max_length=400)
     twitter = models.URLField(default='https://www.example.com', max_length=400)
     linkedin = models.URLField(default='https://www.example.com', max_length=400)
-    education_json = JSONField(default={'example': 1})
-    experience_json = JSONField(default={'example': 1})
-    publication_json = JSONField(default={'example': 1})
-    research_area_json = JSONField(default={'example': 1})
-    skills_t1_json = JSONField(default={'example': 1})
-    skills_t2_json = JSONField(default={'example': 1})
-    projects_json = JSONField(default={'example': 1})
-    tutorials_json = JSONField(default={'example': 1})
+    # education_json = JSONField(default={'example': 1})
+    # experience_json = JSONField(default={'example': 1})
+    # publication_json = JSONField(default={'example': 1})
+    # research_area_json = JSONField(default={'example': 1})
+    # skills_t1_json = JSONField(default={'example': 1})
+    # skills_t2_json = JSONField(default={'example': 1})
+    # projects_json = JSONField(default={'example': 1})
+    # tutorials_json = JSONField(default={'example': 1})
 
     def __str__(self):
         return str(self.ref_id)
@@ -71,7 +71,7 @@ class SkillsModel(models.Model):
     ref_id = models.ForeignKey(ContentModel)
 
 
-class ContentSkillModel:
+class ContentSkillModel(models.Model):
     type_of_skill = models.ForeignKey(SkillsModel)
     content = models.CharField(default='content', max_length=500)
 
