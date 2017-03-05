@@ -29,3 +29,73 @@ class ContentModel(models.Model):
         return str(self.ref_id)
 
 
+class EducationModel(models.Model):
+    ref_id = models.ForeignKey(ContentModel)
+    to_date = models.DateField()
+    from_date = models.DateField()
+    where = models.CharField(default='where', max_length=500)
+    current = models.BooleanField(default=False)
+
+
+class ProjectsModel(models.Model):
+    ref_id = models.ForeignKey(ContentModel)
+    link = models.URLField(default='https://www.example.com', max_length=500)
+    title = models.CharField(default='title', max_length=500)
+    category = models.CharField(default='category', max_length=500)
+    file_name = models.CharField(default='file name', max_length=500)
+    long_description = models.CharField(default='long description', max_length=10000)
+    short_description = models.CharField(default='short description', max_length=500)
+
+
+class TutorialsModel(models.Model):
+    ref_id = models.ForeignKey(ContentModel)
+    link = models.URLField(default='https://www.example.com', max_length=500)
+    title = models.CharField(default='title', max_length=500)
+    file_name = models.CharField(default='file name', max_length=500)
+    long_description = models.CharField(default='long description', max_length=10000)
+
+
+class ExperienceModel(models.Model):
+    ref_id = models.ForeignKey(ContentModel)
+    to_date = models.DateField()
+    from_date = models.DateField()
+    title = models.CharField(default='title', max_length=500)
+    where_city = models.CharField(default='where city', max_length=100)
+    where_country = models.CharField(default='where country', max_length=100)
+    company = models.CharField(default='company', max_length=500)
+    current = models.BooleanField(default=False)
+
+
+class SkillsModel(models.Model):
+    type_of_skill = models.CharField(default='type', primary_key=True, max_length=500)
+    ref_id = models.ForeignKey(ContentModel)
+
+
+class ContentSkillModel:
+    type_of_skill = models.ForeignKey(SkillsModel)
+    content = models.CharField(default='content', max_length=500)
+
+
+class PublicationModel(models.Model):
+    ref_id = models.ForeignKey(ContentModel)
+    type_of_publication = models.CharField(default='type', primary_key=True, max_length=500)
+
+
+class PosterPublicationModel(models.Model):
+    type_of_publication = models.ForeignKey(PublicationModel)
+    content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
+
+
+class JournalPublicationModel(models.Model):
+    type_of_publication = models.ForeignKey(PublicationModel)
+    content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
+
+
+class ThesisPublicationModel(models.Model):
+    type_of_publication = models.ForeignKey(PublicationModel)
+    content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
+
+
+class AbstractPublicationModel(models.Model):
+    type_of_publication = models.ForeignKey(PublicationModel)
+    content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
