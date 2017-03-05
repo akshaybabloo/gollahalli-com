@@ -6,13 +6,25 @@ from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel,
     ContentSkillModel, PublicationModel, PosterPublicationModel, AbstractPublicationModel, JournalPublicationModel, \
     ThesisPublicationModel
 
+# ----------------------------------------------------------------------------
+# Admin Forms
+# ----------------------------------------------------------------------------
+
 
 class ContentAdminForm(forms.ModelForm):
+    """
+    This object changes the bio CharField to Textarea.
+    """
     bio = forms.CharField(widget=forms.Textarea)
 
     class Meta:
         model = ContentModel
         fields = '__all__'
+
+
+# ----------------------------------------------------------------------------
+# Admin Models
+# ----------------------------------------------------------------------------
 
 
 class ContentAdmin(SingleModelAdmin):
@@ -96,6 +108,9 @@ class ThesisPublicationAdmin(admin.ModelAdmin):
     class Meta:
         model = ThesisPublicationModel
 
+# ----------------------------------------------------------------------------
+# Admin Registrations
+# ----------------------------------------------------------------------------
 
 admin.site.register(ContentModel, ContentAdmin)
 admin.site.register(EducationModel, EducationAdmin)
