@@ -90,31 +90,7 @@ class PublicationModel(models.Model):
         return self.type_of_publication
 
 
-class PosterPublicationModel(models.Model):
-    type_of_publication = models.ForeignKey(PublicationModel)
-    content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
-
-    def __str__(self):
-        return self.content
-
-
-class JournalPublicationModel(models.Model):
-    type_of_publication = models.ForeignKey(PublicationModel)
-    content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
-
-    def __str__(self):
-        return self.content
-
-
-class ThesisPublicationModel(models.Model):
-    type_of_publication = models.ForeignKey(PublicationModel)
-    content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
-
-    def __str__(self):
-        return self.content
-
-
-class AbstractPublicationModel(models.Model):
+class ContentPublicationModel(models.Model):
     type_of_publication = models.ForeignKey(PublicationModel)
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
 

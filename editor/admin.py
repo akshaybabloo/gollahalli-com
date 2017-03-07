@@ -3,8 +3,7 @@ from django.contrib import admin
 from singlemodeladmin import SingleModelAdmin
 
 from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
-    ContentSkillModel, PublicationModel, PosterPublicationModel, AbstractPublicationModel, JournalPublicationModel, \
-    ThesisPublicationModel
+    ContentSkillModel, PublicationModel, ContentPublicationModel
 
 # ----------------------------------------------------------------------------
 # Admin Forms
@@ -81,32 +80,11 @@ class PublicationAdmin(admin.ModelAdmin):
         model = PublicationModel
 
 
-class PosterPublicationAdmin(admin.ModelAdmin):
+class ContentPublicationAdmin(admin.ModelAdmin):
     list_display = ['type_of_publication', 'content']
 
     class Mata:
-        model = PosterPublicationModel
-
-
-class AbstractPublicationAdmin(admin.ModelAdmin):
-    list_display = ['type_of_publication', 'content']
-
-    class Meta:
-        model = AbstractPublicationModel
-
-
-class JournalPublicationAdmin(admin.ModelAdmin):
-    list_display = ['type_of_publication', 'content']
-
-    class Meta:
-        model = JournalPublicationModel
-
-
-class ThesisPublicationAdmin(admin.ModelAdmin):
-    list_display = ['type_of_publication', 'content']
-
-    class Meta:
-        model = ThesisPublicationModel
+        model = ContentPublicationModel
 
 # ----------------------------------------------------------------------------
 # Admin Registrations
@@ -120,7 +98,4 @@ admin.site.register(ExperienceModel, ExperienceAdmin)
 admin.site.register(SkillsModel, SkillAdmin)
 admin.site.register(ContentSkillModel, ContentSkillAdmin)
 admin.site.register(PublicationModel, PublicationAdmin)
-admin.site.register(AbstractPublicationModel, AbstractPublicationAdmin)
-admin.site.register(PosterPublicationModel, PosterPublicationAdmin)
-admin.site.register(JournalPublicationModel, JournalPublicationAdmin)
-admin.site.register(ThesisPublicationModel, ThesisPublicationAdmin)
+admin.site.register(ContentPublicationModel, ContentPublicationAdmin)
