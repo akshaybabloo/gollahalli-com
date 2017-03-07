@@ -67,35 +67,56 @@ class ExperienceModel(models.Model):
 
 
 class SkillsModel(models.Model):
-    type_of_skill = models.CharField(default='type', primary_key=True, max_length=500)
     ref_id = models.ForeignKey(ContentModel)
+    type_of_skill = models.CharField(default='type', primary_key=True, max_length=500)
+
+    def __str__(self):
+        return self.type_of_skill
 
 
 class ContentSkillModel(models.Model):
     type_of_skill = models.ForeignKey(SkillsModel)
     content = models.CharField(default='content', max_length=500)
 
+    def __str__(self):
+        return self.content
+
 
 class PublicationModel(models.Model):
     ref_id = models.ForeignKey(ContentModel)
     type_of_publication = models.CharField(default='type', primary_key=True, max_length=500)
+
+    def __str__(self):
+        return self.type_of_publication
 
 
 class PosterPublicationModel(models.Model):
     type_of_publication = models.ForeignKey(PublicationModel)
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
 
+    def __str__(self):
+        return self.content
+
 
 class JournalPublicationModel(models.Model):
     type_of_publication = models.ForeignKey(PublicationModel)
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
+
+    def __str__(self):
+        return self.content
 
 
 class ThesisPublicationModel(models.Model):
     type_of_publication = models.ForeignKey(PublicationModel)
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
 
+    def __str__(self):
+        return self.content
+
 
 class AbstractPublicationModel(models.Model):
     type_of_publication = models.ForeignKey(PublicationModel)
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
+
+    def __str__(self):
+        return self.content
