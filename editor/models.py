@@ -76,7 +76,7 @@ class SkillsModel(models.Model):
 
 class ContentSkillModel(models.Model):
     type_of_skill = models.ForeignKey(SkillsModel)
-    content = models.CharField(default='content', max_length=500)
+    content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
 
     def __str__(self):
         return self.content
