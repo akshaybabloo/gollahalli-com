@@ -3,7 +3,7 @@ from django.db import models
 
 
 class ContentModel(models.Model):
-    ref_id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False, verbose_name='ID')
+    ref_id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     website_name = models.CharField(max_length=300, default="Enter your companies name")
@@ -30,6 +30,7 @@ class ContentModel(models.Model):
 
 
 class EducationModel(models.Model):
+    id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     ref_id = models.ForeignKey(ContentModel)
     to_date = models.DateField()
     from_date = models.DateField()
@@ -38,6 +39,7 @@ class EducationModel(models.Model):
 
 
 class ProjectsModel(models.Model):
+    id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     ref_id = models.ForeignKey(ContentModel)
     link = models.URLField(default='https://www.example.com', max_length=500)
     title = models.CharField(default='title', max_length=500)
@@ -48,6 +50,7 @@ class ProjectsModel(models.Model):
 
 
 class TutorialsModel(models.Model):
+    id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     ref_id = models.ForeignKey(ContentModel)
     link = models.URLField(default='https://www.example.com', max_length=500)
     title = models.CharField(default='title', max_length=500)
@@ -56,6 +59,7 @@ class TutorialsModel(models.Model):
 
 
 class ExperienceModel(models.Model):
+    id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     ref_id = models.ForeignKey(ContentModel)
     to_date = models.DateField()
     from_date = models.DateField()
@@ -75,6 +79,7 @@ class SkillsModel(models.Model):
 
 
 class ContentSkillModel(models.Model):
+    id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     type_of_skill = models.ForeignKey(SkillsModel)
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
 
@@ -91,6 +96,7 @@ class PublicationModel(models.Model):
 
 
 class ContentPublicationModel(models.Model):
+    id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     type_of_publication = models.ForeignKey(PublicationModel)
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
 
