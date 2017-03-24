@@ -25,8 +25,8 @@ class EducationModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     ref_id = models.ForeignKey(ContentModel)
     title = models.CharField(default='title', max_length=500)
-    to_date = models.DateField()
     from_date = models.DateField()
+    to_date = models.DateField()
     where = models.CharField(default='where', max_length=500)
     current = models.BooleanField(default=False)
 
@@ -38,7 +38,7 @@ class ProjectsModel(models.Model):
     title = models.CharField(default='title', max_length=500)
     category = models.CharField(default='category', max_length=500)
     file_name = models.CharField(default='file name', max_length=500)
-    long_description = models.CharField(default='long description', max_length=10000)
+    long_description = models.CharField(default='long description', max_length=10000, help_text="Markdown Enabled")
     short_description = models.CharField(default='short description', max_length=500)
 
 
@@ -48,14 +48,14 @@ class TutorialsModel(models.Model):
     link = models.URLField(default='https://www.example.com', max_length=500)
     title = models.CharField(default='title', max_length=500)
     file_name = models.CharField(default='file name', max_length=500)
-    long_description = models.CharField(default='long description', max_length=10000)
+    long_description = models.CharField(default='long description', max_length=10000, help_text="Markdown Enabled")
 
 
 class ExperienceModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     ref_id = models.ForeignKey(ContentModel)
-    to_date = models.DateField()
     from_date = models.DateField()
+    to_date = models.DateField()
     title = models.CharField(default='title', max_length=500)
     where_city = models.CharField(default='where city', max_length=100)
     where_country = models.CharField(default='where country', max_length=100)
