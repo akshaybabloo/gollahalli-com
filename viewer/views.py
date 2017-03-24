@@ -8,7 +8,7 @@ import cloudinary.api
 import feedparser
 import markdown
 from django.conf import settings
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import HttpResponseServerError, HttpResponse
 
 from editor.models import ContentModel
