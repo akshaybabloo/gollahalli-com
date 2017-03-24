@@ -16,14 +16,6 @@ class ContentModel(models.Model):
     github = models.URLField(default='https://www.example.com', max_length=400)
     twitter = models.URLField(default='https://www.example.com', max_length=400)
     linkedin = models.URLField(default='https://www.example.com', max_length=400)
-    # education_json = JSONField(default={'example': 1})
-    # experience_json = JSONField(default={'example': 1})
-    # publication_json = JSONField(default={'example': 1})
-    # research_area_json = JSONField(default={'example': 1})
-    # skills_t1_json = JSONField(default={'example': 1})
-    # skills_t2_json = JSONField(default={'example': 1})
-    # projects_json = JSONField(default={'example': 1})
-    # tutorials_json = JSONField(default={'example': 1})
 
     def __str__(self):
         return str(self.ref_id)
