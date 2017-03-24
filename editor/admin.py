@@ -5,6 +5,7 @@ from singlemodeladmin import SingleModelAdmin
 from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
     ContentSkillModel, PublicationModel, ContentPublicationModel
 
+
 # ----------------------------------------------------------------------------
 # Admin Forms
 # ----------------------------------------------------------------------------
@@ -21,6 +22,29 @@ class ContentAdminForm(forms.ModelForm):
         fields = '__all__'
 
 
+class EducationAdminForm(forms.ModelForm):
+    """
+    This object changes the bio CharField to Textarea.
+    """
+    to_date = forms.DateField(input_formats='%d-%m-%Y', help_text='dd-mm-yyyy')
+    from_date = forms.DateField(input_formats='%d-%m-%Y', help_text='dd-mm-yyyy')
+
+    class Meta:
+        model = EducationModel
+        fields = '__all__'
+
+
+class ExperienceAdminForm(forms.ModelForm):
+    """
+    This object changes the bio CharField to Textarea.
+    """
+    to_date = forms.DateField(input_formats='%d-%m-%Y', help_text='dd-mm-yyyy')
+    from_date = forms.DateField(input_formats='%d-%m-%Y', help_text='dd-mm-yyyy')
+
+    class Meta:
+        model = ExperienceModel
+        fields = '__all__'
+
 # ----------------------------------------------------------------------------
 # Admin Models
 # ----------------------------------------------------------------------------
@@ -33,9 +57,7 @@ class ContentAdmin(SingleModelAdmin):
 
 class EducationAdmin(admin.ModelAdmin):
     list_display = ['ref_id', 'to_date', 'from_date', 'where', 'current']
-
-    class Meta:
-        model = EducationModel
+    form = EducationAdminForm
 
 
 class ProjectAdmin(admin.ModelAdmin):
@@ -54,9 +76,7 @@ class TutorialsAdmin(admin.ModelAdmin):
 
 class ExperienceAdmin(admin.ModelAdmin):
     list_display = ['ref_id', 'to_date', 'from_date', 'title', 'where_city', 'where_country', 'company', 'current']
-
-    class Meta:
-        model = ExperienceModel
+    form = ExperienceAdminForm
 
 
 class SkillAdmin(admin.ModelAdmin):
@@ -85,6 +105,7 @@ class ContentPublicationAdmin(admin.ModelAdmin):
 
     class Mata:
         model = ContentPublicationModel
+
 
 # ----------------------------------------------------------------------------
 # Admin Registrations
