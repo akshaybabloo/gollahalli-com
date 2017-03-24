@@ -67,7 +67,7 @@ class SkillAdmin(admin.ModelAdmin):
 
 
 class ContentSkillAdmin(admin.ModelAdmin):
-    list_display = ['type_of_skill', 'content']
+    list_display = ['id', 'type_of_skill', 'content']
 
     class Meta:
         model = ContentSkillModel
@@ -81,7 +81,7 @@ class PublicationAdmin(admin.ModelAdmin):
 
 
 class ContentPublicationAdmin(admin.ModelAdmin):
-    list_display = ['type_of_publication', 'content']
+    list_display = ['id', 'type_of_publication', 'content']
 
     class Mata:
         model = ContentPublicationModel
