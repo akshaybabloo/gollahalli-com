@@ -32,6 +32,7 @@ class ContentModel(models.Model):
 class EducationModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     ref_id = models.ForeignKey(ContentModel)
+    title = models.CharField(default='title', max_length=500)
     to_date = models.DateField()
     from_date = models.DateField()
     where = models.CharField(default='where', max_length=500)
