@@ -24,10 +24,10 @@ class ContentAdminForm(forms.ModelForm):
 
 class EducationAdminForm(forms.ModelForm):
     """
-    This object changes the bio CharField to Textarea.
+    This object changes the ``to`` and ``from`` CharField to formatted date field.
     """
-    to_date = forms.DateField(input_formats='%d-%m-%Y', help_text='dd-mm-yyyy')
-    from_date = forms.DateField(input_formats='%d-%m-%Y', help_text='dd-mm-yyyy')
+    to_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy', )
+    from_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
 
     class Meta:
         model = EducationModel
@@ -36,10 +36,10 @@ class EducationAdminForm(forms.ModelForm):
 
 class ExperienceAdminForm(forms.ModelForm):
     """
-    This object changes the bio CharField to Textarea.
+    This object changes the ``to`` and ``from`` CharField to formatted date field.
     """
-    to_date = forms.DateField(input_formats='%d-%m-%Y', help_text='dd-mm-yyyy')
-    from_date = forms.DateField(input_formats='%d-%m-%Y', help_text='dd-mm-yyyy')
+    to_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
+    from_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
 
     class Meta:
         model = ExperienceModel
@@ -56,7 +56,7 @@ class ContentAdmin(SingleModelAdmin):
 
 
 class EducationAdmin(admin.ModelAdmin):
-    list_display = ['ref_id', 'to_date', 'from_date', 'where', 'current']
+    list_display = ['id', 'to_date', 'from_date', 'where', 'current']
     form = EducationAdminForm
 
 
@@ -75,7 +75,7 @@ class TutorialsAdmin(admin.ModelAdmin):
 
 
 class ExperienceAdmin(admin.ModelAdmin):
-    list_display = ['ref_id', 'to_date', 'from_date', 'title', 'where_city', 'where_country', 'company', 'current']
+    list_display = ['id', 'to_date', 'from_date', 'title', 'where_city', 'where_country', 'company', 'current']
     form = ExperienceAdminForm
 
 
