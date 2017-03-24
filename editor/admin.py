@@ -15,7 +15,7 @@ class ContentAdminForm(forms.ModelForm):
     """
     This object changes the bio CharField to Textarea.
     """
-    bio = forms.CharField(widget=forms.Textarea)
+    bio = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
 
     class Meta:
         model = ContentModel
@@ -45,6 +45,28 @@ class ExperienceAdminForm(forms.ModelForm):
         model = ExperienceModel
         fields = '__all__'
 
+
+class ProjectAdminForm(forms.ModelForm):
+    """
+    This object changes the bio CharField to Textarea.
+    """
+    long_description = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
+
+    class Meta:
+        model = ProjectsModel
+        fields = '__all__'
+
+
+class TutorialsAdminForm(forms.ModelForm):
+    """
+    This object changes the bio CharField to Textarea.
+    """
+    long_description = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
+
+    class Meta:
+        model = TutorialsModel
+        fields = '__all__'
+
 # ----------------------------------------------------------------------------
 # Admin Models
 # ----------------------------------------------------------------------------
@@ -61,17 +83,13 @@ class EducationAdmin(admin.ModelAdmin):
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['ref_id', 'link', 'title', 'category', 'file_name', 'short_description', 'long_description']
-
-    class Mata:
-        model = ProjectsModel
+    list_display = ['id', 'link', 'title', 'category', 'file_name', 'short_description', 'long_description']
+    form = ProjectAdminForm
 
 
 class TutorialsAdmin(admin.ModelAdmin):
-    list_display = ['ref_id', 'link', 'title', 'file_name', 'long_description']
-
-    class Meta:
-        model = TutorialsModel
+    list_display = ['id', 'link', 'title', 'file_name', 'long_description']
+    form = TutorialsAdminForm
 
 
 class ExperienceAdmin(admin.ModelAdmin):
