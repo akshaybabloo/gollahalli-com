@@ -7,7 +7,7 @@ register = template.Library()
 
 @register.filter()
 def custom_date(value):
-    date = datetime.datetime.strptime(value, '%a, %d %b %Y %H:%M:%S %z')
+    date = datetime.datetime.strptime(value, '%a, %d %b %Y %H:%M:%S %Z')
     return date.strftime('%d, %b %Y')
 
 
