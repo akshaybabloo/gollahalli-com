@@ -80,7 +80,7 @@ class SkillsContentModel(models.Model):
 
 
 class PublicationsModel(models.Model):
-    ref_id = models.ForeignKey(ContentModel)
+    ref_id = models.ForeignKey(ContentModel, related_name='publications')
     type_of_publication = models.CharField(default='type', primary_key=True, max_length=500)
 
     def __str__(self):
@@ -89,7 +89,7 @@ class PublicationsModel(models.Model):
 
 class PublicationsContentModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    type_of_publication = models.ForeignKey(PublicationsModel)
+    type_of_publication = models.ForeignKey(PublicationsModel, related_name='publications_content')
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
 
     def __str__(self):
