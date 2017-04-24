@@ -43,7 +43,7 @@ class ProjectsModel(models.Model):
 
 class TutorialsModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    ref_id = models.ForeignKey(ContentModel)
+    ref_id = models.ForeignKey(ContentModel, related_name='tutorials')
     link = models.URLField(default='https://www.example.com', max_length=500)
     title = models.CharField(default='title', max_length=500)
     file_name = models.CharField(default='file name', max_length=500)
