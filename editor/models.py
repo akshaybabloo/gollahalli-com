@@ -70,16 +70,16 @@ class SkillsModel(models.Model):
         return self.type_of_skill
 
 
-class ContentSkillModel(models.Model):
+class SkillsContentModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    type_of_skill = models.ForeignKey(SkillsModel, related_name='content_skill')
+    type_of_skill = models.ForeignKey(SkillsModel, related_name='skills_content')
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
 
     def __str__(self):
         return self.content
 
 
-class PublicationModel(models.Model):
+class PublicationsModel(models.Model):
     ref_id = models.ForeignKey(ContentModel)
     type_of_publication = models.CharField(default='type', primary_key=True, max_length=500)
 
@@ -87,9 +87,9 @@ class PublicationModel(models.Model):
         return self.type_of_publication
 
 
-class ContentPublicationModel(models.Model):
+class PublicationsContentModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    type_of_publication = models.ForeignKey(PublicationModel)
+    type_of_publication = models.ForeignKey(PublicationsModel)
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
 
     def __str__(self):

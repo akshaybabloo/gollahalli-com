@@ -3,7 +3,7 @@ from django.contrib import admin
 from singlemodeladmin import SingleModelAdmin
 
 from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
-    ContentSkillModel, PublicationModel, ContentPublicationModel
+    SkillsContentModel, PublicationsModel, PublicationsContentModel
 
 
 # ----------------------------------------------------------------------------
@@ -108,21 +108,21 @@ class ContentSkillAdmin(admin.ModelAdmin):
     list_display = ['id', 'type_of_skill', 'content']
 
     class Meta:
-        model = ContentSkillModel
+        model = SkillsContentModel
 
 
 class PublicationAdmin(admin.ModelAdmin):
     list_display = ['ref_id', 'type_of_publication']
 
     class Meta:
-        model = PublicationModel
+        model = PublicationsModel
 
 
 class ContentPublicationAdmin(admin.ModelAdmin):
     list_display = ['id', 'type_of_publication', 'content']
 
     class Mata:
-        model = ContentPublicationModel
+        model = PublicationsContentModel
 
 
 # ----------------------------------------------------------------------------
@@ -135,6 +135,6 @@ admin.site.register(ProjectsModel, ProjectAdmin)
 admin.site.register(TutorialsModel, TutorialsAdmin)
 admin.site.register(ExperienceModel, ExperienceAdmin)
 admin.site.register(SkillsModel, SkillAdmin)
-admin.site.register(ContentSkillModel, ContentSkillAdmin)
-admin.site.register(PublicationModel, PublicationAdmin)
-admin.site.register(ContentPublicationModel, ContentPublicationAdmin)
+admin.site.register(SkillsContentModel, ContentSkillAdmin)
+admin.site.register(PublicationsModel, PublicationAdmin)
+admin.site.register(PublicationsContentModel, ContentPublicationAdmin)
