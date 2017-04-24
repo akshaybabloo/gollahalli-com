@@ -22,7 +22,7 @@ class ContentModel(models.Model):
 
 class EducationModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    ref_id = models.ForeignKey(ContentModel)
+    ref_id = models.ForeignKey(ContentModel, related_name='education')
     title = models.CharField(default='title', max_length=500)
     from_date = models.DateField()
     to_date = models.DateField()
@@ -32,7 +32,7 @@ class EducationModel(models.Model):
 
 class ProjectsModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    ref_id = models.ForeignKey(ContentModel)
+    ref_id = models.ForeignKey(ContentModel, related_name='projects')
     link = models.URLField(default='https://www.example.com', max_length=500)
     title = models.CharField(default='title', max_length=500)
     category = models.CharField(default='category', max_length=500)
@@ -52,7 +52,7 @@ class TutorialsModel(models.Model):
 
 class ExperienceModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    ref_id = models.ForeignKey(ContentModel)
+    ref_id = models.ForeignKey(ContentModel, related_name='experience')
     from_date = models.DateField()
     to_date = models.DateField()
     title = models.CharField(default='title', max_length=500)
@@ -63,7 +63,7 @@ class ExperienceModel(models.Model):
 
 
 class SkillsModel(models.Model):
-    ref_id = models.ForeignKey(ContentModel)
+    ref_id = models.ForeignKey(ContentModel, related_name='skills')
     type_of_skill = models.CharField(default='type', primary_key=True, max_length=500)
 
     def __str__(self):
@@ -72,7 +72,7 @@ class SkillsModel(models.Model):
 
 class ContentSkillModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    type_of_skill = models.ForeignKey(SkillsModel)
+    type_of_skill = models.ForeignKey(SkillsModel, related_name='content_skill')
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
 
     def __str__(self):
