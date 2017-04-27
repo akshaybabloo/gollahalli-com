@@ -7,7 +7,6 @@ from django.contrib.sitemaps import views
 from django.contrib.auth.views import login, logout, password_reset, password_change_done
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-
 from graphene_django.views import GraphQLView
 
 from .sitemaps import *
