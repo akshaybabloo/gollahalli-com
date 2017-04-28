@@ -6,10 +6,10 @@ from django.contrib import admin
 from django.contrib.sitemaps import views
 from django.contrib.auth.views import login, logout, password_reset, password_change_done
 from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
 from graphene_django.views import GraphQLView
 
 from .sitemaps import *
+from .schema import *
 
 sitemaps = {
     'pages': Sitemap(['index'], 1.0),
@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^sitemap\.xml$', views.index, {'sitemaps': sitemaps, 'template_name': 'sitemap-index.xml'}),
     url(r'^sitemap-(?P<section>.+).xml$', views.sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
-    url(r'^graphql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
+    url(r'^graphql', GraphQLView.as_view(graphiql=True, schema=query)),
 ]
 
 handler404 = 'viewer.views.page_not_found'
