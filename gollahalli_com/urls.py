@@ -26,8 +26,9 @@ urlpatterns = [
     # url(r'^accounts/password/password-change-done/$', password_change_done, {'template_name': 'userauth/password_change_done.html'}, name="password_change_done"),
     url(r'^accounts/profile/', include('editor.urls'), name="profile"),
     url(r'^robots.txt',
-        lambda x: HttpResponse("Sitemap: https://www.gollahalli.com/sitemap.xml\nUser-agent: *\nDisallow: /admin/",
-                               content_type="text/plain"), name="robots_file"),
+        lambda x: HttpResponse(
+            "Sitemap: https://www.gollahalli.com/sitemap.xml\nUser-agent: *\nDisallow: /admin/\nDisallow: /cdn-cgi/",
+            content_type="text/plain"), name="robots_file"),
     url(r'^sitemap\.xml$', views.index, {'sitemaps': sitemaps, 'template_name': 'sitemap-index.xml'}),
     url(r'^sitemap-(?P<section>.+).xml$', views.sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
