@@ -531,7 +531,9 @@
 
                 <h4>{{ content.get_version.name }}</h4>
                 <p class="small">Release Date: {{ content.get_version.published_at | custom_date_releases }}</p>
+                <div style="color: rgba(0,0,0,.45);">
                 {{ content.get_version.body | markdown_data | safe }}
+                </div>
                 <p class="text-center"><a href="{% url 'change-log' %}" target="_blank">Change Log</a></p>
 
             </div>
