@@ -5,7 +5,7 @@ from urllib.request import urlopen
 
 import cloudinary
 import cloudinary.api
-import feedparser
+# import feedparser
 import markdown
 from django.conf import settings
 from django.shortcuts import render, redirect
@@ -133,11 +133,11 @@ class ContentDecode:
 
         return {'portfolio': a_data, 'category': list(set(category))}
 
-    # Blog
-    @staticmethod
-    def get_blog():
-        data = feedparser.parse("https://blog.gollahalli.com/rss")
-        return data.entries
+    # # Blog
+    # @staticmethod
+    # def get_blog():
+    #     data = feedparser.parse("https://blog.gollahalli.com/rss")
+    #     return data.entries
 
     # Other
     @staticmethod

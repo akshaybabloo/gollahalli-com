@@ -55,15 +55,15 @@
                         </a>
                     </li>
                     <li>
-                        <a id="blog-me" href='#blog'>
-                            <i class='icon-basic-book-pen'></i>
-                            <span>Blog</span>
-                        </a>
-                    </li>
-                    <li>
                         <a id="contact-me" href='#contact'>
                             <i class='icon-basic-mail'></i>
                             <span>Contact</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="blog-me" href='https://blog.gollahalli.com'>
+                            <i class='icon-basic-book-pen'></i>
+                            <span>Blog <i class="ion-android-open" style="vertical-align: super;"></i></span>
                         </a>
                     </li>
                 </ul>
@@ -436,63 +436,63 @@
 
         </section>
 
-        <!--=============================================
-            Blog Section
-        =============================================-->
-        <section id='blog' class='section blog-section' data-bg='#F0F0F0' data-color='dark'>
-            <div class='container-fluid'>
-
-                <div class='section-header text-center'>
-                    <h2>My Blog</h2>
-                    <div class='divider'>
-                        <img src='{% static 'img/wave.png' %}' alt>
-                    </div>
-                </div>
-
-                <div class='blog-posts'>
-
-
-                    {% for data in content.get_blog %}
-
-                        <div class='blog-post'>
-                            <div class='inner'>
-                                {% if 'media_content' in data %}
-                                    <figure>
-                                        <img src='{{ data.media_content.0.url | url_replace }}' alt>
-                                    </figure>
-                                {% endif %}
-                                <div class='content'>
-                                    <h4><a href='{{ data.link }}' style="color: #000000 !important; text-decoration: none !important;">{{ data.title }}</a></h4>
-                                    <ul class='post-icons'>
-                                        <li>
-                                            <i class='ion-ios-person-outline'></i>
-                                            <span>{{ data.author }}</span>
-                                        </li>
-                                        <li>
-                                            <i class='ion-ios-pricetag-outline'></i>
-                                            <span>{{ data.tags | custom_blog_tags }}</span>
-                                        </li>
-                                        <li>
-                                            <i class='ion-ios-clock-outline'></i>
-                                            <span>{{ data.published | custom_date }}</span>
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        {{ data.description }}
-                                    </p>
-                                    <a href='{{ data.link }}' class='read-more'>
-                                        Read More <i class='ion-ios-arrow-thin-right'></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-
-                </div>
-                <div class='section-header text-center'>
-                    <a href="https://blog.gollahalli.com" class="btn btn-info">Read More</a>
-                </div>
-        </section>
+{#        <!--=============================================#}
+{#            Blog Section#}
+{#        =============================================-->#}
+{#        <section id='blog' class='section blog-section' data-bg='#F0F0F0' data-color='dark'>#}
+{#            <div class='container-fluid'>#}
+{##}
+{#                <div class='section-header text-center'>#}
+{#                    <h2>My Blog</h2>#}
+{#                    <div class='divider'>#}
+{#                        <img src='{% static 'img/wave.png' %}' alt>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class='blog-posts'>#}
+{##}
+{##}
+{#                    {% for data in content.get_blog %}#}
+{##}
+{#                        <div class='blog-post'>#}
+{#                            <div class='inner'>#}
+{#                                {% if 'media_content' in data %}#}
+{#                                    <figure>#}
+{#                                        <img src='{{ data.media_content.0.url | url_replace }}' alt>#}
+{#                                    </figure>#}
+{#                                {% endif %}#}
+{#                                <div class='content'>#}
+{#                                    <h4><a href='{{ data.link }}' style="color: #000000 !important; text-decoration: none !important;">{{ data.title }}</a></h4>#}
+{#                                    <ul class='post-icons'>#}
+{#                                        <li>#}
+{#                                            <i class='ion-ios-person-outline'></i>#}
+{#                                            <span>{{ data.author }}</span>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <i class='ion-ios-pricetag-outline'></i>#}
+{#                                            <span>{{ data.tags | custom_blog_tags }}</span>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <i class='ion-ios-clock-outline'></i>#}
+{#                                            <span>{{ data.published | custom_date }}</span>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                    <p>#}
+{#                                        {{ data.description }}#}
+{#                                    </p>#}
+{#                                    <a href='{{ data.link }}' class='read-more'>#}
+{#                                        Read More <i class='ion-ios-arrow-thin-right'></i>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{##}
+{#                </div>#}
+{#                <div class='section-header text-center'>#}
+{#                    <a href="https://blog.gollahalli.com" class="btn btn-info">Read More</a>#}
+{#                </div>#}
+{#        </section>#}
 
         <!--=============================================
             Contact Section
