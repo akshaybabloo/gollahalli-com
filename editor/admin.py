@@ -1,6 +1,5 @@
 from django import forms
 from django.contrib import admin
-from singlemodeladmin import SingleModelAdmin
 
 from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
     SkillsContentModel, PublicationsModel, PublicationsContentModel
@@ -72,7 +71,7 @@ class TutorialsAdminForm(forms.ModelForm):
 # ----------------------------------------------------------------------------
 
 
-class ContentAdmin(SingleModelAdmin):
+class ContentAdmin(admin.ModelAdmin):
     list_display = ['ref_id', 'created', 'updated', 'website_name']
     form = ContentAdminForm
 
