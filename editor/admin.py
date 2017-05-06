@@ -2,7 +2,7 @@ from django import forms
 from django.contrib import admin
 
 from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
-    SkillsContentModel, PublicationsModel, PublicationsContentModel
+    SkillsContentModel, PublicationsModel, PublicationsContentModel, TestModel
 
 
 # ----------------------------------------------------------------------------
@@ -15,6 +15,7 @@ class ContentAdminForm(forms.ModelForm):
     This object changes the bio CharField to Textarea.
     """
     bio = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
+    image = forms.ImageField()
 
     class Meta:
         model = ContentModel
@@ -27,6 +28,7 @@ class EducationAdminForm(forms.ModelForm):
     """
     to_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy', )
     from_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
+    image = forms.ImageField()
 
     class Meta:
         model = EducationModel
@@ -39,6 +41,7 @@ class ExperienceAdminForm(forms.ModelForm):
     """
     to_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
     from_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
+    image = forms.ImageField()
 
     class Meta:
         model = ExperienceModel
@@ -50,6 +53,7 @@ class ProjectAdminForm(forms.ModelForm):
     This object changes the bio CharField to Textarea.
     """
     long_description = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
+    image = forms.ImageField()
 
     class Meta:
         model = ProjectsModel
@@ -61,9 +65,21 @@ class TutorialsAdminForm(forms.ModelForm):
     This object changes the bio CharField to Textarea.
     """
     long_description = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
+    image = forms.ImageField()
 
     class Meta:
         model = TutorialsModel
+        fields = '__all__'
+
+
+class PublicationContentAdminForm(forms.ModelForm):
+    """
+    
+    """
+    image = forms.ImageField()
+
+    class Meta:
+        model = PublicationsContentModel
         fields = '__all__'
 
 # ----------------------------------------------------------------------------
@@ -121,7 +137,7 @@ class ContentPublicationAdmin(admin.ModelAdmin):
     list_display = ['id', 'type_of_publication', 'content']
 
     class Mata:
-        model = PublicationsContentModel
+        model = PublicationContentAdminForm
 
 
 # ----------------------------------------------------------------------------
@@ -137,3 +153,6 @@ admin.site.register(SkillsModel, SkillAdmin)
 admin.site.register(SkillsContentModel, ContentSkillAdmin)
 admin.site.register(PublicationsModel, PublicationAdmin)
 admin.site.register(PublicationsContentModel, ContentPublicationAdmin)
+
+# test
+admin.site.register(TestModel)
