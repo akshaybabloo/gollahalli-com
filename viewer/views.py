@@ -1,5 +1,5 @@
 import json
-import requests
+import os
 import re
 from urllib.request import urlopen
 
@@ -7,14 +7,15 @@ import cloudinary
 import cloudinary.api
 # import feedparser
 import markdown
+import requests
 from django.conf import settings
-from django.shortcuts import render, redirect
 from django.http import HttpResponseServerError, HttpResponse
+from django.shortcuts import render
 
 from editor.models import ContentModel
 
 DEFAULT_BASE_URL = "https://api.github.com/users/akshaybabloo/repos"
-GITHUB_KEY = "4921a93fdc0a50ec345ef541a715bf07000303d1"
+GITHUB_KEY = os.environ['GITHUB_KEY']
 
 
 def index(request):
