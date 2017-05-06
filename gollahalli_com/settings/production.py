@@ -19,7 +19,7 @@ DATABASES = settings.DATABASES
 
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
-DATABASES['default'] = dj_database_url.config(conn_max_age=500) 
+DATABASES['default'] = dj_database_url.config(conn_max_age=500)
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['*']
 SHARE_URL = "http://www.gollahalli.com/"
 
 # S3
+AWS_S3_CALLING_FORMAT = 'boto.s3.connection.OrdinaryCallingFormat'
 AWS_ACCESS_KEY_ID = 'AKIAIPQQUJGYXMFFOASA'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'cdn.gollahalli.com'
