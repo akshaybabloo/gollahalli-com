@@ -32,7 +32,7 @@ SHARE_URL = "http://www.gollahalli.com/"
 # S3
 AWS_ACCESS_KEY_ID = 'AKIAIPQQUJGYXMFFOASA'
 AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'gollahalli-com-django'
+AWS_STORAGE_BUCKET_NAME = 'cdn.gollahalli.com'
 AWS_HEADERS = {
     'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
     'Cache-Control': 'max-age=86400',
