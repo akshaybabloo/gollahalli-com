@@ -31,8 +31,8 @@ SHARE_URL = "http://www.gollahalli.com/"
 
 # S3
 AWS_S3_CALLING_FORMAT = 'boto.s3.connection.OrdinaryCallingFormat'
-AWS_ACCESS_KEY_ID = 'AKIAIPQQUJGYXMFFOASA'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME = 'cdn.gollahalli.com'
 AWS_HEADERS = {
     'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
