@@ -1,15 +1,17 @@
 """
 Main URL settings page. See https://docs.djangoproject.com/en/1.10/topics/http/urls/ for more information.
 """
+from django.conf import settings
 from django.conf.urls import url, include
+from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth.views import login, logout
 from django.contrib.sitemaps import views
-from django.contrib.auth.views import login, logout, password_reset, password_change_done
 from django.http import HttpResponse
 from graphene_django.views import GraphQLView
 
-from .sitemaps import *
 from .schema import *
+from .sitemaps import *
 
 sitemaps = {
     'pages': Sitemap(['index'], 1.0),
@@ -34,6 +36,7 @@ urlpatterns = [
         name='django.contrib.sitemaps.views.sitemap'),
     url(r'^graphql', GraphQLView.as_view(graphiql=True, schema=query)),
 ]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'viewer.views.page_not_found'
 handler500 = 'viewer.views.server_error'
