@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'storages',  # django-storages
     'crispy_forms',  # Crispy forms for editor
     'graphene_django',  # GraphQL
+    'easy_thumbnails',  # Django-filer
+    'filer',  # Django-filer
+    'mptt',  # Django-filer
     'editor',
     'viewer',
 ]
