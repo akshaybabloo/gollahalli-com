@@ -35,7 +35,7 @@ urlpatterns = [
     url(r'^sitemap-(?P<section>.+).xml$', views.sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
     url(r'^graphql', GraphQLView.as_view(graphiql=True, schema=query)),
-]
+    url(r'^filer/', include('filer.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'viewer.views.page_not_found'
