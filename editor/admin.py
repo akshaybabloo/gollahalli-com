@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib import admin
+from singlemodeladmin import SingleModelAdmin
 
 from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
     SkillsContentModel, PublicationsModel, PublicationsContentModel, TestModel, MetaContentModel
@@ -100,7 +101,7 @@ class MetaContentAdminForm(forms.ModelForm):
 # ----------------------------------------------------------------------------
 
 
-class ContentAdmin(admin.ModelAdmin):
+class ContentAdmin(SingleModelAdmin):
     list_display = ['ref_id', 'created', 'updated', 'website_name']
     form = ContentAdminForm
 
@@ -153,7 +154,7 @@ class ContentPublicationAdmin(admin.ModelAdmin):
         model = PublicationContentAdminForm
 
 
-class MetaContentAdmin(admin.ModelAdmin):
+class MetaContentAdmin(SingleModelAdmin):
     list_display = ['id', 'header', 'footer', 'meta']
 
     class Mata:
