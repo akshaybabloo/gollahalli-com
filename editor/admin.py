@@ -149,16 +149,12 @@ class PublicationAdmin(admin.ModelAdmin):
 
 class ContentPublicationAdmin(admin.ModelAdmin):
     list_display = ['id', 'type_of_publication', 'content']
-
-    class Mata:
-        model = PublicationContentAdminForm
+    form = PublicationContentAdminForm
 
 
 class MetaContentAdmin(SingleModelAdmin):
     list_display = ['id', 'header', 'footer', 'meta']
-
-    class Mata:
-        model = MetaContentAdminForm
+    form = MetaContentAdminForm
 
 
 # ----------------------------------------------------------------------------
