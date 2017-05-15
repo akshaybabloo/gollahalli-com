@@ -111,3 +111,10 @@ class PublicationsContentModel(models.Model):
 
 class TestModel(models.Model):
     test_file_path = models.FilePathField(path=settings.MEDIA_ROOT)
+
+
+class MetaContentModel(models.Model):
+    id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
+    header = models.TextField(default="Header content.", help_text="{{header}}")
+    footer = models.TextField(default="Footer Content", help_text="{{footer}}")
+    meta = models.TextField(default="Meta tags", help_text="{{meta_header}}")

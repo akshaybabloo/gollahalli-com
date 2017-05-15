@@ -2,7 +2,7 @@ from django import forms
 from django.contrib import admin
 
 from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
-    SkillsContentModel, PublicationsModel, PublicationsContentModel, TestModel
+    SkillsContentModel, PublicationsModel, PublicationsContentModel, TestModel, MetaContentModel
 
 
 # ----------------------------------------------------------------------------
@@ -82,6 +82,19 @@ class PublicationContentAdminForm(forms.ModelForm):
         model = PublicationsContentModel
         fields = '__all__'
 
+
+class MetaContentAdminForm(forms.ModelForm):
+    """
+    This object has header, footer and meta CharField to Textarea
+    """
+    header = forms.CharField(widget=forms.Textarea, help_text="{{header}}")
+    footer = forms.CharField(widget=forms.Textarea, help_text="{{footer}}")
+    meta = forms.CharField(widget=forms.Textarea, help_text="{{meta_header}}")
+
+    class Meta:
+        model = MetaContentModel
+        fields = '__all__'
+
 # ----------------------------------------------------------------------------
 # Admin Models
 # ----------------------------------------------------------------------------
@@ -140,6 +153,13 @@ class ContentPublicationAdmin(admin.ModelAdmin):
         model = PublicationContentAdminForm
 
 
+class MetaContentAdmin(admin.ModelAdmin):
+    list_display = ['id', 'header', 'footer', 'meta']
+
+    class Mata:
+        model = MetaContentAdminForm
+
+
 # ----------------------------------------------------------------------------
 # Admin Registrations
 # ----------------------------------------------------------------------------
@@ -153,6 +173,7 @@ admin.site.register(SkillsModel, SkillAdmin)
 admin.site.register(SkillsContentModel, ContentSkillAdmin)
 admin.site.register(PublicationsModel, PublicationAdmin)
 admin.site.register(PublicationsContentModel, ContentPublicationAdmin)
+admin.site.register(MetaContentModel, MetaContentAdmin)
 
 # test
 admin.site.register(TestModel)
