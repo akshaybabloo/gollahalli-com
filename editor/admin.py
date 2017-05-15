@@ -16,7 +16,6 @@ class ContentAdminForm(forms.ModelForm):
     This object changes the bio CharField to Textarea.
     """
     bio = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
-    image = forms.ImageField()
 
     class Meta:
         model = ContentModel
@@ -29,7 +28,6 @@ class EducationAdminForm(forms.ModelForm):
     """
     to_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy', )
     from_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
-    image = forms.ImageField()
 
     class Meta:
         model = EducationModel
@@ -42,7 +40,6 @@ class ExperienceAdminForm(forms.ModelForm):
     """
     to_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
     from_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
-    image = forms.ImageField()
 
     class Meta:
         model = ExperienceModel
@@ -54,7 +51,6 @@ class ProjectAdminForm(forms.ModelForm):
     This object changes the bio CharField to Textarea.
     """
     long_description = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
-    image = forms.ImageField()
 
     class Meta:
         model = ProjectsModel
@@ -66,7 +62,6 @@ class TutorialsAdminForm(forms.ModelForm):
     This object changes the bio CharField to Textarea.
     """
     long_description = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
-    image = forms.ImageField()
 
     class Meta:
         model = TutorialsModel
@@ -77,7 +72,6 @@ class PublicationContentAdminForm(forms.ModelForm):
     """
     
     """
-    image = forms.ImageField()
 
     class Meta:
         model = PublicationsContentModel

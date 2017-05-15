@@ -17,7 +17,7 @@ class ContentModel(models.Model):
     twitter = models.URLField(default='https://www.example.com', max_length=400)
     linkedin = models.URLField(default='https://www.example.com', max_length=400)
     file = models.FileField(null=True, blank=True)
-    image = models.FileField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return str(self.ref_id)
@@ -32,7 +32,7 @@ class EducationModel(models.Model):
     where = models.CharField(default='where', max_length=500)
     current = models.BooleanField(default=False)
     file = models.FileField(null=True, blank=True)
-    image = models.FileField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
 
 class ProjectsModel(models.Model):
@@ -45,7 +45,7 @@ class ProjectsModel(models.Model):
     long_description = models.CharField(default='long description', max_length=10000, help_text="Markdown Enabled")
     short_description = models.CharField(default='short description', max_length=500)
     file = models.FileField(null=True, blank=True)
-    image = models.FileField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
 
 class TutorialsModel(models.Model):
@@ -56,7 +56,7 @@ class TutorialsModel(models.Model):
     file_name = models.CharField(default='file name', max_length=500)
     long_description = models.CharField(default='long description', max_length=10000, help_text="Markdown Enabled")
     file = models.FileField(null=True, blank=True)
-    image = models.FileField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
 
 class ExperienceModel(models.Model):
@@ -84,7 +84,7 @@ class SkillsContentModel(models.Model):
     type_of_skill = models.ForeignKey(SkillsModel, related_name='skills_content')
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
     file = models.FileField(null=True, blank=True)
-    image = models.FileField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.content
@@ -103,7 +103,7 @@ class PublicationsContentModel(models.Model):
     type_of_publication = models.ForeignKey(PublicationsModel, related_name='publications_content')
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
     file = models.FileField(null=True, blank=True)
-    image = models.FileField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.content
