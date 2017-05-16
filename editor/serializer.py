@@ -99,7 +99,7 @@ class Serialize:
         self.data = query.execute(QUERY)
         self.data = json.dumps(self.data.data)
 
-    def dump(self, files=False):
+    def dump(self, files=False, verbose=False):
         pass
 
     def __zip(self):
@@ -110,3 +110,12 @@ class Serialize:
 
     def log(self):
         print(self.data)
+
+    def loads(self, verbose=False):
+        pass
+
+    def __unzip(self):
+        pass
+
+    def __put_files(self):
+        pass
