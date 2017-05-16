@@ -106,12 +106,12 @@ class EducationAdmin(admin.ModelAdmin):
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['id', 'link', 'title', 'category', 'file_name', 'short_description', 'long_description']
+    list_display = ['id', 'link', 'title', 'category', 'short_description', 'long_description']
     form = ProjectAdminForm
 
 
 class TutorialsAdmin(admin.ModelAdmin):
-    list_display = ['id', 'link', 'title', 'file_name', 'long_description']
+    list_display = ['id', 'link', 'title', 'long_description']
     form = TutorialsAdminForm
 
 
