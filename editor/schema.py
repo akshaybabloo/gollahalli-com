@@ -7,7 +7,7 @@ from graphene_django.debug import DjangoDebug
 from graphene_django.types import DjangoObjectType
 
 from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
-    SkillsContentModel, PublicationsModel, PublicationsContentModel
+    SkillsContentModel, PublicationsModel, PublicationsContentModel, MetaContentModel
 
 
 class ContentSchema(DjangoObjectType):
@@ -279,6 +279,13 @@ class PublicationContentSchema(DjangoObjectType):
             return settings.SHARE_URL[:-1] + self.image.file
 
 
+class MetaContentSchema(DjangoObjectType):
+    """
+    Schema DjangoObjectType for `MetaContentModel`
+    """
+    class Meta:
+        model = MetaContentModel
+
 # ----------------------------------------------------------------------------
 # Query object
 # ----------------------------------------------------------------------------
@@ -297,6 +304,7 @@ class Query(graphene.AbstractType):
     all_skills_content = graphene.List(SkillsContentSchema)
     all_publications = graphene.List(PublicationsSchema)
     all_publications_content = graphene.List(PublicationContentSchema)
+    all_meta_content = graphene.List(MetaContentSchema)
 
     debug = graphene.Field(DjangoDebug, name='__debug')
 
@@ -354,3 +362,9 @@ class Query(graphene.AbstractType):
         Returns all contents of `PublicationsContentModel`
         """
         return PublicationsContentModel.objects.select_related('publications_content').all()
+
+    def resolve_all_meta_content(self, args, context, info):
+        """
+        Returns all content for `MetaContentModel`
+        """
+        return MetaContentModel.objects.all()
