@@ -2,10 +2,9 @@
 Schema file for retrieving all the contents of the `editor` models.
 """
 import graphene
-from graphene_django.types import DjangoObjectType
-from graphene_django.debug import DjangoDebug
 from django.conf import settings
-
+from graphene_django.debug import DjangoDebug
+from graphene_django.types import DjangoObjectType
 
 from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
     SkillsContentModel, PublicationsModel, PublicationsContentModel
@@ -15,6 +14,7 @@ class ContentSchema(DjangoObjectType):
     """
     Schema DjangoObjectType for `ContentModel`
     """
+
     class Meta:
         model = ContentModel
 
@@ -66,6 +66,7 @@ class EducationSchema(DjangoObjectType):
     """
     Schema DjangoObjectType for `EducationModel`
     """
+
     class Meta:
         model = EducationModel
 
@@ -103,6 +104,7 @@ class ProjectsSchema(DjangoObjectType):
     """
     Schema DjangoObjectType for `ProjectsModel`
     """
+
     class Meta:
         model = ProjectsModel
 
@@ -140,6 +142,7 @@ class TutorialsSchema(DjangoObjectType):
     """
     Schema DjangoObjectType for `TutorialsModel`
     """
+
     class Meta:
         model = TutorialsModel
 
@@ -177,6 +180,7 @@ class ExperienceSchema(DjangoObjectType):
     """
     Schema DjangoObjectType for `ExperienceModel`
     """
+
     class Meta:
         model = ExperienceModel
 
@@ -185,6 +189,7 @@ class SkillsSchema(DjangoObjectType):
     """
     Schema DjangoObjectType for `SkillsModel`
     """
+
     class Meta:
         model = SkillsModel
 
@@ -193,6 +198,7 @@ class SkillsContentSchema(DjangoObjectType):
     """
     Schema DjangoObjectType for `SkillsContentModel`
     """
+
     class Meta:
         model = SkillsContentModel
 
@@ -230,6 +236,7 @@ class PublicationsSchema(DjangoObjectType):
     """
     Schema DjangoObjectType for `PublicationsModel`
     """
+
     class Meta:
         model = PublicationsModel
 
@@ -238,6 +245,7 @@ class PublicationContentSchema(DjangoObjectType):
     """
     Schema DjangoObjectType for `PublicationsContentModel`
     """
+
     class Meta:
         model = PublicationsContentModel
 
