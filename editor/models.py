@@ -19,6 +19,80 @@ class ContentModel(models.Model):
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
+    def removed_on_cv_update(self):
+        """
+        Replaces the file if `CV` already present.
+        """
+        try:
+            obj = ContentModel.objects.get(ref_id=self.ref_id)
+        except ContentModel.DoesNotExist:
+            return
+
+        if obj.cv and self.cv and obj.cv != self.cv:
+            obj.cv.delete()
+
+    def removed_on_file_update(self):
+        """
+        Replaces the file if `file` already present.
+        """
+        try:
+            obj = ContentModel.objects.get(ref_id=self.ref_id)
+        except ContentModel.DoesNotExist:
+            return
+
+        if obj.file and self.file and obj.file != self.file:
+            obj.file.delete()
+
+    def removed_on_image_update(self):
+        """
+        Replaces the file if `image` already present.
+        """
+        try:
+            obj = ContentModel.objects.get(ref_id=self.ref_id)
+        except ContentModel.DoesNotExist:
+            return
+
+        if obj.image and self.image and obj.image != self.image:
+            obj.image.delete()
+
+    def delete(self, using=None, keep_parents=False):
+        """
+        Overriding `delete` method of `models.Model`
+         
+        Parameters
+        ----------
+        using
+        keep_parents
+
+        Returns
+        -------
+        super
+        """
+        self.cv.delete()
+        self.file.delete()
+        self.image.delete()
+        return super(ContentModel, self).delete()
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        """
+        Overriding `save` method of `models.Model`
+        
+        Parameters
+        ----------
+        force_insert
+        force_update
+        using
+        update_fields
+
+        Returns
+        -------
+        super
+        """
+        self.removed_on_cv_update()
+        self.removed_on_file_update()
+        self.removed_on_image_update()
+        return super(ContentModel, self).save()
+
     def __str__(self):
         return str(self.ref_id)
 
@@ -34,6 +108,66 @@ class EducationModel(models.Model):
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
+    def removed_on_file_update(self):
+        """
+        Replaces the file if `file` already present.
+        """
+        try:
+            obj = EducationModel.objects.get(id=self.id)
+        except EducationModel.DoesNotExist:
+            return
+
+        if obj.file and self.file and obj.file != self.file:
+            obj.file.delete()
+
+    def removed_on_image_update(self):
+        """
+        Replaces the file if `image` already present.
+        """
+        try:
+            obj = EducationModel.objects.get(id=self.id)
+        except EducationModel.DoesNotExist:
+            return
+
+        if obj.image and self.image and obj.image != self.image:
+            obj.image.delete()
+
+    def delete(self, using=None, keep_parents=False):
+        """
+        Overriding `delete` method of `models.Model`
+
+        Parameters
+        ----------
+        using
+        keep_parents
+
+        Returns
+        -------
+        super
+        """
+        self.file.delete()
+        self.image.delete()
+        return super(EducationModel, self).delete()
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        """
+        Overriding `save` method of `models.Model`
+
+        Parameters
+        ----------
+        force_insert
+        force_update
+        using
+        update_fields
+
+        Returns
+        -------
+        super
+        """
+        self.removed_on_file_update()
+        self.removed_on_image_update()
+        return super(EducationModel, self).save()
+
 
 class ProjectsModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
@@ -47,6 +181,66 @@ class ProjectsModel(models.Model):
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
+    def removed_on_file_update(self):
+        """
+        Replaces the file if `file` already present.
+        """
+        try:
+            obj = ProjectsModel.objects.get(id=self.id)
+        except ProjectsModel.DoesNotExist:
+            return
+
+        if obj.file and self.file and obj.file != self.file:
+            obj.file.delete()
+
+    def removed_on_image_update(self):
+        """
+        Replaces the file if `image` already present.
+        """
+        try:
+            obj = ProjectsModel.objects.get(id=self.id)
+        except ProjectsModel.DoesNotExist:
+            return
+
+        if obj.image and self.image and obj.image != self.image:
+            obj.image.delete()
+
+    def delete(self, using=None, keep_parents=False):
+        """
+        Overriding `delete` method of `models.Model`
+
+        Parameters
+        ----------
+        using
+        keep_parents
+
+        Returns
+        -------
+        super
+        """
+        self.file.delete()
+        self.image.delete()
+        return super(ProjectsModel, self).delete()
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        """
+        Overriding `save` method of `models.Model`
+
+        Parameters
+        ----------
+        force_insert
+        force_update
+        using
+        update_fields
+
+        Returns
+        -------
+        super
+        """
+        self.removed_on_file_update()
+        self.removed_on_image_update()
+        return super(ProjectsModel, self).save()
+
 
 class TutorialsModel(models.Model):
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
@@ -57,6 +251,66 @@ class TutorialsModel(models.Model):
     long_description = models.CharField(default='long description', max_length=10000, help_text="Markdown Enabled")
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    def removed_on_file_update(self):
+        """
+        Replaces the file if `file` already present.
+        """
+        try:
+            obj = TutorialsModel.objects.get(id=self.id)
+        except TutorialsModel.DoesNotExist:
+            return
+
+        if obj.file and self.file and obj.file != self.file:
+            obj.file.delete()
+
+    def removed_on_image_update(self):
+        """
+        Replaces the file if `image` already present.
+        """
+        try:
+            obj = TutorialsModel.objects.get(id=self.id)
+        except TutorialsModel.DoesNotExist:
+            return
+
+        if obj.image and self.image and obj.image != self.image:
+            obj.image.delete()
+
+    def delete(self, using=None, keep_parents=False):
+        """
+        Overriding `delete` method of `models.Model`
+
+        Parameters
+        ----------
+        using
+        keep_parents
+
+        Returns
+        -------
+        super
+        """
+        self.file.delete()
+        self.image.delete()
+        return super(TutorialsModel, self).delete()
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        """
+        Overriding `save` method of `models.Model`
+
+        Parameters
+        ----------
+        force_insert
+        force_update
+        using
+        update_fields
+
+        Returns
+        -------
+        super
+        """
+        self.removed_on_file_update()
+        self.removed_on_image_update()
+        return super(TutorialsModel, self).save()
 
 
 class ExperienceModel(models.Model):
@@ -86,6 +340,66 @@ class SkillsContentModel(models.Model):
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
+    def removed_on_file_update(self):
+        """
+        Replaces the file if `file` already present.
+        """
+        try:
+            obj = SkillsContentModel.objects.get(id=self.id)
+        except SkillsContentModel.DoesNotExist:
+            return
+
+        if obj.file and self.file and obj.file != self.file:
+            obj.file.delete()
+
+    def removed_on_image_update(self):
+        """
+        Replaces the file if `image` already present.
+        """
+        try:
+            obj = SkillsContentModel.objects.get(id=self.id)
+        except SkillsContentModel.DoesNotExist:
+            return
+
+        if obj.image and self.image and obj.image != self.image:
+            obj.image.delete()
+
+    def delete(self, using=None, keep_parents=False):
+        """
+        Overriding `delete` method of `models.Model`
+
+        Parameters
+        ----------
+        using
+        keep_parents
+
+        Returns
+        -------
+        super
+        """
+        self.file.delete()
+        self.image.delete()
+        return super(SkillsContentModel, self).delete()
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        """
+        Overriding `save` method of `models.Model`
+
+        Parameters
+        ----------
+        force_insert
+        force_update
+        using
+        update_fields
+
+        Returns
+        -------
+        super
+        """
+        self.removed_on_file_update()
+        self.removed_on_image_update()
+        return super(SkillsContentModel, self).save()
+
     def __str__(self):
         return self.content
 
@@ -104,6 +418,66 @@ class PublicationsContentModel(models.Model):
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    def removed_on_file_update(self):
+        """
+        Replaces the file if `file` already present.
+        """
+        try:
+            obj = PublicationsContentModel.objects.get(id=self.id)
+        except PublicationsContentModel.DoesNotExist:
+            return
+
+        if obj.file and self.file and obj.file != self.file:
+            obj.file.delete()
+
+    def removed_on_image_update(self):
+        """
+        Replaces the file if `image` already present.
+        """
+        try:
+            obj = PublicationsContentModel.objects.get(id=self.id)
+        except PublicationsContentModel.DoesNotExist:
+            return
+
+        if obj.image and self.image and obj.image != self.image:
+            obj.image.delete()
+
+    def delete(self, using=None, keep_parents=False):
+        """
+        Overriding `delete` method of `models.Model`
+
+        Parameters
+        ----------
+        using
+        keep_parents
+
+        Returns
+        -------
+        super
+        """
+        self.file.delete()
+        self.image.delete()
+        return super(PublicationsContentModel, self).delete()
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        """
+        Overriding `save` method of `models.Model`
+
+        Parameters
+        ----------
+        force_insert
+        force_update
+        using
+        update_fields
+
+        Returns
+        -------
+        super
+        """
+        self.removed_on_file_update()
+        self.removed_on_image_update()
+        return super(PublicationsContentModel, self).save()
 
     def __str__(self):
         return self.content
