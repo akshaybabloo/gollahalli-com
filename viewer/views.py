@@ -5,7 +5,6 @@ from urllib.request import urlopen
 
 import cloudinary
 import cloudinary.api
-# import feedparser
 import markdown
 import requests
 from django.conf import settings
@@ -13,6 +12,7 @@ from django.http import HttpResponseServerError, HttpResponse
 from django.shortcuts import render
 
 from editor.models import ContentModel
+from gollahalli_com.schema import query
 
 DEFAULT_BASE_URL = "https://api.github.com/users/akshaybabloo/repos"
 GITHUB_KEY = os.environ['GITHUB_KEY']
@@ -20,19 +20,20 @@ GITHUB_KEY = os.environ['GITHUB_KEY']
 
 def index(request):
     try:
-        json_content = ContentModel.objects.get(ref_id='1')
-        content_object = ContentDecode(json_content.content)
+        content_object = ContentDecode(None)
     except ContentModel.DoesNotExist as e:
         raise HttpResponseServerError
 
     if request.GET.get('format') == 'amp':
         template = "viewer/amp.html"
     elif request.GET.get('format') == 'json':
-        return HttpResponse(json.dumps(json_content.content, indent=4, sort_keys=True), content_type="application/json")
+        return HttpResponse(json.dumps(content_object.get_content.data, indent=4, sort_keys=True),
+                            content_type="application/json")
     else:
         template = "viewer/home.html"
 
-    context = {'content': content_object}
+    context = {'content': json.dumps(content_object.get_content.data)}
+
     return render(request, template, context)
 
 
@@ -90,6 +91,100 @@ class ContentDecode:
     # ToDo: Change this into nested classes
     def __init__(self, json_object):
         self.json = json_object
+
+    @property
+    def get_content(self):
+        query_local = '''
+        {
+          allContents {
+            refId
+            created
+            updated
+            websiteName
+            cv
+            bio
+            url
+            firstName
+            lastName
+            emailId
+            github
+            twitter
+            linkedin
+            file
+            image
+            education {
+              id
+              title
+              fromDate
+              toDate
+              where
+              current
+              file
+              image
+            }
+            projects {
+              id
+              link
+              title
+              category
+              longDescription
+              shortDescription
+              file
+              image
+            }
+            tutorials {
+              id
+              link
+              title
+              longDescription
+              file
+              image
+            }
+            experience {
+              id
+              fromDate
+              toDate
+              title
+              whereCity
+              whereCountry
+              company
+              current
+            }
+            skills {
+              skillsContent {
+                id
+                typeOfSkill {
+                  typeOfSkill
+                }
+                content
+                file
+                image
+              }
+            }
+            publications {
+              publicationsContent {
+                id
+                typeOfPublication {
+                  typeOfPublication
+                }
+                content
+                file
+                image
+              }
+            }
+          }
+          allMetaContent {
+            id
+            header
+            footer
+            meta
+          }
+        }
+
+        '''
+        content = query.execute(query_local)
+        # content = json.dumps(content.data)
+        return content
 
     # Bio
     def get_name(self):
