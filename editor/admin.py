@@ -82,9 +82,9 @@ class MetaContentAdminForm(forms.ModelForm):
     """
     This object has header, footer and meta CharField to Textarea
     """
-    header = forms.CharField(widget=forms.Textarea, help_text="{{header}}")
-    footer = forms.CharField(widget=forms.Textarea, help_text="{{footer}}")
-    meta = forms.CharField(widget=forms.Textarea, help_text="{{meta_header}}")
+    header = forms.CharField(widget=forms.Textarea, help_text="{{header}}", required=False)
+    footer = forms.CharField(widget=forms.Textarea, help_text="{{footer}}", required=False)
+    meta = forms.CharField(widget=forms.Textarea, help_text="{{meta_header}}", required=False)
 
     class Meta:
         model = MetaContentModel
