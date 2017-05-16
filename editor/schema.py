@@ -45,7 +45,7 @@ class ContentSchema(DjangoObjectType):
 
         """
         if self.file and hasattr(self.file, 'url'):
-            return settings.SHARE_URL[:-1] + self.file.file
+            return settings.SHARE_URL[:-1] + self.file.url
 
     def resolve_image(self, args, context, info):
         """
@@ -83,7 +83,7 @@ class EducationSchema(DjangoObjectType):
 
         """
         if self.file and hasattr(self.file, 'url'):
-            return settings.SHARE_URL[:-1] + self.file.file
+            return settings.SHARE_URL[:-1] + self.file.url
 
     def resolve_image(self, args, context, info):
         """
@@ -121,7 +121,7 @@ class ProjectsSchema(DjangoObjectType):
 
         """
         if self.file and hasattr(self.file, 'url'):
-            return settings.SHARE_URL[:-1] + self.file.file
+            return settings.SHARE_URL[:-1] + self.file.url
 
     def resolve_image(self, args, context, info):
         """
@@ -159,7 +159,7 @@ class TutorialsSchema(DjangoObjectType):
 
         """
         if self.file and hasattr(self.file, 'url'):
-            return settings.SHARE_URL[:-1] + self.file.file
+            return settings.SHARE_URL[:-1] + self.file.url
 
     def resolve_image(self, args, context, info):
         """
@@ -215,7 +215,7 @@ class SkillsContentSchema(DjangoObjectType):
 
         """
         if self.file and hasattr(self.file, 'url'):
-            return settings.SHARE_URL[:-1] + self.file.file
+            return settings.SHARE_URL[:-1] + self.file.url
 
     def resolve_image(self, args, context, info):
         """
@@ -262,7 +262,7 @@ class PublicationContentSchema(DjangoObjectType):
 
         """
         if self.file and hasattr(self.file, 'url'):
-            return settings.SHARE_URL[:-1] + self.file.file
+            return settings.SHARE_URL[:-1] + self.file.url
 
     def resolve_image(self, args, context, info):
         """
