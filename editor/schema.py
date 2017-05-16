@@ -4,6 +4,7 @@ Schema file for retrieving all the contents of the `editor` models.
 import graphene
 from graphene_django.types import DjangoObjectType
 from graphene_django.debug import DjangoDebug
+from django.conf import settings
 
 
 from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
@@ -17,6 +18,49 @@ class ContentSchema(DjangoObjectType):
     class Meta:
         model = ContentModel
 
+    def resolve_cv(self, args, context, info):
+        """
+        Resolves CV URL
+        
+        Parameters
+        ----------
+        args
+        context
+        info
+
+        """
+        if self.cv and hasattr(self.cv, 'url'):
+            return settings.SHARE_URL[:-1] + self.cv.url
+
+    def resolve_file(self, args, context, info):
+        """
+        Resolves file URL
+        
+        Parameters
+        ----------
+        self
+        args
+        context
+        info
+
+        """
+        if self.file and hasattr(self.file, 'url'):
+            return settings.SHARE_URL[:-1] + self.file.file
+
+    def resolve_image(self, args, context, info):
+        """
+        Resolves image URL
+        
+        Parameters
+        ----------
+        args
+        context
+        info
+
+        """
+        if self.image and hasattr(self.image, 'url'):
+            return settings.SHARE_URL[:-1] + self.image.file
+
 
 class EducationSchema(DjangoObjectType):
     """
@@ -24,6 +68,35 @@ class EducationSchema(DjangoObjectType):
     """
     class Meta:
         model = EducationModel
+
+    def resolve_file(self, args, context, info):
+        """
+        Resolves file URL
+
+        Parameters
+        ----------
+        self
+        args
+        context
+        info
+
+        """
+        if self.file and hasattr(self.file, 'url'):
+            return settings.SHARE_URL[:-1] + self.file.file
+
+    def resolve_image(self, args, context, info):
+        """
+        Resolves image URL
+
+        Parameters
+        ----------
+        args
+        context
+        info
+
+        """
+        if self.image and hasattr(self.image, 'url'):
+            return settings.SHARE_URL[:-1] + self.image.file
 
 
 class ProjectsSchema(DjangoObjectType):
@@ -33,6 +106,35 @@ class ProjectsSchema(DjangoObjectType):
     class Meta:
         model = ProjectsModel
 
+    def resolve_file(self, args, context, info):
+        """
+        Resolves file URL
+
+        Parameters
+        ----------
+        self
+        args
+        context
+        info
+
+        """
+        if self.file and hasattr(self.file, 'url'):
+            return settings.SHARE_URL[:-1] + self.file.file
+
+    def resolve_image(self, args, context, info):
+        """
+        Resolves image URL
+
+        Parameters
+        ----------
+        args
+        context
+        info
+
+        """
+        if self.image and hasattr(self.image, 'url'):
+            return settings.SHARE_URL[:-1] + self.image.file
+
 
 class TutorialsSchema(DjangoObjectType):
     """
@@ -40,6 +142,35 @@ class TutorialsSchema(DjangoObjectType):
     """
     class Meta:
         model = TutorialsModel
+
+    def resolve_file(self, args, context, info):
+        """
+        Resolves file URL
+
+        Parameters
+        ----------
+        self
+        args
+        context
+        info
+
+        """
+        if self.file and hasattr(self.file, 'url'):
+            return settings.SHARE_URL[:-1] + self.file.file
+
+    def resolve_image(self, args, context, info):
+        """
+        Resolves image URL
+
+        Parameters
+        ----------
+        args
+        context
+        info
+
+        """
+        if self.image and hasattr(self.image, 'url'):
+            return settings.SHARE_URL[:-1] + self.image.file
 
 
 class ExperienceSchema(DjangoObjectType):
@@ -65,6 +196,35 @@ class SkillsContentSchema(DjangoObjectType):
     class Meta:
         model = SkillsContentModel
 
+    def resolve_file(self, args, context, info):
+        """
+        Resolves file URL
+
+        Parameters
+        ----------
+        self
+        args
+        context
+        info
+
+        """
+        if self.file and hasattr(self.file, 'url'):
+            return settings.SHARE_URL[:-1] + self.file.file
+
+    def resolve_image(self, args, context, info):
+        """
+        Resolves image URL
+
+        Parameters
+        ----------
+        args
+        context
+        info
+
+        """
+        if self.image and hasattr(self.image, 'url'):
+            return settings.SHARE_URL[:-1] + self.image.file
+
 
 class PublicationsSchema(DjangoObjectType):
     """
@@ -80,6 +240,40 @@ class PublicationContentSchema(DjangoObjectType):
     """
     class Meta:
         model = PublicationsContentModel
+
+    def resolve_file(self, args, context, info):
+        """
+        Resolves file URL
+
+        Parameters
+        ----------
+        self
+        args
+        context
+        info
+
+        """
+        if self.file and hasattr(self.file, 'url'):
+            return settings.SHARE_URL[:-1] + self.file.file
+
+    def resolve_image(self, args, context, info):
+        """
+        Resolves image URL
+
+        Parameters
+        ----------
+        args
+        context
+        info
+
+        """
+        if self.image and hasattr(self.image, 'url'):
+            return settings.SHARE_URL[:-1] + self.image.file
+
+
+# ----------------------------------------------------------------------------
+# Query object
+# ----------------------------------------------------------------------------
 
 
 class Query(graphene.AbstractType):
