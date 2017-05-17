@@ -145,3 +145,4 @@ test.py
 /gollahalli_com/settings/secrets.py
 .DS_Store
 /gollahalli_com/static/media/
+/gollahalli_com/templates/viewer/test.html
