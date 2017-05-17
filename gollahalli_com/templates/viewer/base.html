@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{ content.get_meta|safe }}
+    {{ allMetaContent.0.header | safe}}
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{{ content.get_name }}</title>
 
@@ -49,6 +49,8 @@
     <link rel='stylesheet' type='text/css' href='{% static 'css/content.min.css' %}'>
 
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
+
+    {{ allMetaContent.0.header | safe}}
 
     {{ content.get_schema_data | safe }}
     {{ content.get_site_performance_header | safe }}
@@ -139,6 +141,8 @@
             fjs.parentNode.insertBefore(js, fjs);
         }
     }(document, "script", "twitter-wjs");</script>
+
+{{ allMetaContent.0.footer | safe}}
 
 </body>
 </html>
