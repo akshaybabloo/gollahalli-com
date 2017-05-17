@@ -32,7 +32,7 @@ def index(request):
     else:
         template = "viewer/home.html"
 
-    context = {'content': json.dumps(content_object.get_content.data)}
+    context = json.loads(json.dumps(content_object.get_content.data))
 
     return render(request, template, context)
 
