@@ -21,19 +21,18 @@ GITHUB_KEY = os.environ['GITHUB_KEY']
 
 def index(request):
     try:
-        content_object = ContentDecode(None)
+        content_object = ContentDecode()
     except ContentModel.DoesNotExist as e:
         raise HttpResponseServerError
 
     if request.GET.get('format') == 'amp':
         template = "viewer/amp.html"
     elif request.GET.get('format') == 'json':
-        return HttpResponse(json.dumps(content_object.get_content.data, indent=4, sort_keys=True),
-                            content_type="application/json")
+        return HttpResponse(json.dumps(content_object.get_json), content_type="application/json")
     else:
         template = "viewer/home.html"
 
-    context = json.loads(json.dumps(content_object.get_content.data))
+    context = {'content': content_object}
 
     return render(request, template, context)
 
@@ -179,28 +178,33 @@ class ContentDecode:
 
                 '''
         self.content = query.execute(query_local)
-        self.json = json.dumps(self.content.data)
+        self.json = json.loads(json.dumps(self.content.data))
+
+    # JSON format
+    @property
+    def get_json(self):
+        return self.json
 
     # Bio
     @property
     def get_name(self):
-        return self.json['about_me']['name']
+        return self.json['allContents'][0]['firstName'] + ' ' + self.json['allContents'][0]['lastName']
 
     @property
     def get_bio(self):
-        return "".join([markdown.markdown(a) for a in self.json['about_me']['bio']])
+        return "".join([markdown.markdown(a) for a in self.json['allContents'][0]['bio']])
 
     @property
     def get_twitter(self):
-        return self.json['about_me']['twitter']
+        return self.json['allContents'][0]['twitter']
 
     @property
     def get_linkedin(self):
-        return self.json['about_me']['linkedin']
+        return self.json['allContents'][0]['linkedin']
 
     @property
     def get_github(self):
-        return self.json['about_me']['github']
+        return self.json['allContents'][0]['github']
 
     @property
     def get_education(self):
