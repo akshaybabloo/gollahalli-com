@@ -15,6 +15,7 @@ class ContentAdminForm(forms.ModelForm):
     """
     This object changes the bio CharField to Textarea.
     """
+    ref_id = forms.CharField(widget=forms.NumberInput, initial=1, disabled=True)
     bio = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
 
     class Meta:
@@ -28,6 +29,7 @@ class EducationAdminForm(forms.ModelForm):
     """
     to_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy', )
     from_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
+    ref_id = forms.ModelChoiceField(queryset=ContentModel.objects.all(), initial=1)
 
     class Meta:
         model = EducationModel
@@ -40,6 +42,7 @@ class ExperienceAdminForm(forms.ModelForm):
     """
     to_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
     from_date = forms.DateField(input_formats=['%d/%m/%Y'], help_text='dd/mm/yyyy')
+    ref_id = forms.ModelChoiceField(queryset=ContentModel.objects.all(), initial=1)
 
     class Meta:
         model = ExperienceModel
@@ -51,6 +54,7 @@ class ProjectAdminForm(forms.ModelForm):
     This object changes the bio CharField to Textarea.
     """
     long_description = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
+    ref_id = forms.ModelChoiceField(queryset=ContentModel.objects.all(), initial=1)
 
     class Meta:
         model = ProjectsModel
@@ -62,9 +66,22 @@ class TutorialsAdminForm(forms.ModelForm):
     This object changes the bio CharField to Textarea.
     """
     long_description = forms.CharField(widget=forms.Textarea, help_text="Markdown Enabled")
+    ref_id = forms.ModelChoiceField(queryset=ContentModel.objects.all(), initial=1)
 
     class Meta:
         model = TutorialsModel
+        fields = '__all__'
+
+
+class PublicationAdminForm(forms.ModelForm):
+    """
+    Initialises `ref_id=1`.
+    """
+
+    ref_id = forms.ModelChoiceField(queryset=ContentModel.objects.all(), initial=1)
+
+    class Meta:
+        model = PublicationsModel
         fields = '__all__'
 
 
@@ -75,6 +92,17 @@ class PublicationContentAdminForm(forms.ModelForm):
 
     class Meta:
         model = PublicationsContentModel
+        fields = '__all__'
+
+
+class SkillsAdminForm(forms.ModelForm):
+    """
+    Initialises `ref_id=1`.
+    """
+    ref_id = forms.ModelChoiceField(queryset=ContentModel.objects.all(), initial=1)
+
+    class Meta:
+        model = SkillsModel
         fields = '__all__'
 
 
@@ -122,9 +150,7 @@ class ExperienceAdmin(admin.ModelAdmin):
 
 class SkillAdmin(admin.ModelAdmin):
     list_display = ['ref_id', 'type_of_skill']
-
-    class Meta:
-        model = SkillsModel
+    form = SkillsAdminForm
 
 
 class ContentSkillAdmin(admin.ModelAdmin):
@@ -136,9 +162,7 @@ class ContentSkillAdmin(admin.ModelAdmin):
 
 class PublicationAdmin(admin.ModelAdmin):
     list_display = ['ref_id', 'type_of_publication']
-
-    class Meta:
-        model = PublicationsModel
+    form = PublicationAdminForm
 
 
 class ContentPublicationAdmin(admin.ModelAdmin):
