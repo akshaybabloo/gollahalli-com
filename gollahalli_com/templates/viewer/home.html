@@ -92,23 +92,23 @@
 
                                     <!-- Your Name -->
                                     <h2 class='name'>
-                                        {{ allContents.0.firstName|add:" "|add:allContents.0.firstName}}.
+                                        {{ content.get_name }}.
                                     </h2>
 
                                     <!-- Social Icons -->
                                     <ul class='main-social'>
                                         <li>
-                                            <a href='{{ allContents.0.twitter }}'>
+                                            <a href='{{ content.get_twitter }}'>
                                                 <i class='ion-social-twitter-outline'></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href='{{ allContents.0.github }}'>
+                                            <a href='{{ content.get_github }}'>
                                                 <i class='ion-social-github-outline'></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href='{{ allContents.0.linkedin }}'>
+                                            <a href='{{ content.get_linkedin }}'>
                                                 <i class='ion-social-linkedin-outline'></i>
                                             </a>
                                         </li>
@@ -143,7 +143,7 @@
                     <div class='person-img text-center'>
 
                         <!-- Your Image -->
-                        {{ allContents.0.image }}
+                        {{ content.get_my_image | safe }}
 
                     </div>
 
@@ -151,7 +151,7 @@
                         <div class='col-md-6 col-md-offset-3'>
 
                             <div class='about-text'>
-                                {{ allContents.0.bio | safe }}{# comes with the P tag #}
+                                {{ content.get_bio | safe }} {# comes with the P tag #}
                             </div>
 
                         </div>

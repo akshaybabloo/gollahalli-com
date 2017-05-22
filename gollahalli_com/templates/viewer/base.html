@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{ allMetaContent.0.header | safe}}
+    {{ content.get_meta|safe }}
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{{ content.get_name }}</title>
 
@@ -39,18 +39,17 @@
     <!--=============================================
         CSS Stylesheets
     =============================================-->
-{#    <link rel='stylesheet' type='text/css' href='{% static 'bootstrap/css/bootstrap.min.css' %}'>#}
-{#    <link rel='stylesheet' type='text/css' href='{% static 'css/ionicons.min.css' %}'>#}
-{#    <link rel='stylesheet' type='text/css' href='{% static 'css/linea.min.css' %}'>#}
-{#    <link rel='stylesheet' type='text/css' href='{% static 'css/magnific-popup.min.css' %}'>#}
-{#    <link rel='stylesheet' type='text/css' href='{% static 'css/owl.carousel.min.css' %}'>#}
-{#    <link rel='stylesheet' type='text/css' href='{% static 'css/style.min.css' %}'>#}
-{#    <link rel='stylesheet' type='text/css' href='{% static 'css/gollahalli.min.css' %}'>#}
+    {#    <link rel='stylesheet' type='text/css' href='{% static 'bootstrap/css/bootstrap.min.css' %}'>#}
+    {#    <link rel='stylesheet' type='text/css' href='{% static 'css/ionicons.min.css' %}'>#}
+    {#    <link rel='stylesheet' type='text/css' href='{% static 'css/linea.min.css' %}'>#}
+    {#    <link rel='stylesheet' type='text/css' href='{% static 'css/magnific-popup.min.css' %}'>#}
+    {#    <link rel='stylesheet' type='text/css' href='{% static 'css/owl.carousel.min.css' %}'>#}
+    {#    <link rel='stylesheet' type='text/css' href='{% static 'css/style.min.css' %}'>#}
+    {#    <link rel='stylesheet' type='text/css' href='{% static 'css/gollahalli.min.css' %}'>#}
     <link rel='stylesheet' type='text/css' href='{% static 'css/content.min.css' %}'>
 
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
-
-    {{ allMetaContent.0.header | safe}}
+    <link rel="stylesheet" type="text/css"
+          href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
 
     {{ content.get_schema_data | safe }}
     {{ content.get_site_performance_header | safe }}
@@ -60,7 +59,7 @@
 {% block body %}
 {% endblock %}
 
-{{ content.get_site_performance_footer | safe}}
+{{ content.get_site_performance_footer | safe }}
 
 <!--=============================================
     JavaScript Files
@@ -97,7 +96,6 @@
 <script>
     $(function () {
         "use strict";
-
         var content = '<footer class="footer">\
              <small class="text-muted"> <div class="container-fluid">\
                     <a href="#popup-334" class="has-popup">{{ content.get_version.tag_name }}</a>\
@@ -108,41 +106,34 @@
                 endorsement by them.</small>\
               </div>\
             </footer>';
-
-         $('.section:not(.main-section)').append(content);
-
-
-         /*=========================================================================
-      		Magnific Popup (Project Popup initialization)
-      	=========================================================================*/
-      	$('.has-popup').magnificPopup({
-      		type: 'inline',
-      		fixedContentPos: false,
-      		fixedBgPos: true,
-      		overflowY: 'auto',
-      		closeBtnInside: true,
-      		preloader: false,
-      		midClick: true,
-      		removalDelay: 300,
-      		mainClass: 'my-mfp-zoom-in'
-      	});
-
+        $('.section:not(.main-section)').append(content);
+        /*=========================================================================
+         Magnific Popup (Project Popup initialization)
+         =========================================================================*/
+        $('.has-popup').magnificPopup({
+            type: 'inline',
+            fixedContentPos: false,
+            fixedBgPos: true,
+            overflowY: 'auto',
+            closeBtnInside: true,
+            preloader: false,
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-zoom-in'
+        });
     });
-
 </script>
 
 <!-- Twitter -->
 <script>!function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = p + "://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-    }(document, "script", "twitter-wjs");</script>
-
-{{ allMetaContent.0.footer | safe}}
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + "://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, "script", "twitter-wjs");</script>
 
 </body>
 </html>
