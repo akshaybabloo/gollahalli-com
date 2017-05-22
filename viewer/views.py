@@ -89,102 +89,97 @@ def server_error(request):
 
 
 class ContentDecode:
-    def __init__(self, json_object):
-        self.json = json_object
-
-    @property
-    def get_content(self):
+    def __init__(self):
         query_local = '''
-        {
-          allContents {
-            refId
-            created
-            updated
-            websiteName
-            cv
-            bio
-            url
-            firstName
-            lastName
-            emailId
-            github
-            twitter
-            linkedin
-            file
-            image
-            education {
-              id
-              title
-              fromDate
-              toDate
-              where
-              current
-              file
-              image
-            }
-            projects {
-              id
-              link
-              title
-              category
-              longDescription
-              shortDescription
-              file
-              image
-            }
-            tutorials {
-              id
-              link
-              title
-              longDescription
-              file
-              image
-            }
-            experience {
-              id
-              fromDate
-              toDate
-              title
-              whereCity
-              whereCountry
-              company
-              current
-            }
-            skills {
-              skillsContent {
-                id
-                typeOfSkill {
-                  typeOfSkill
+                {
+                  allContents {
+                    refId
+                    created
+                    updated
+                    websiteName
+                    cv
+                    bio
+                    url
+                    firstName
+                    lastName
+                    emailId
+                    github
+                    twitter
+                    linkedin
+                    file
+                    image
+                    education {
+                      id
+                      title
+                      fromDate
+                      toDate
+                      where
+                      current
+                      file
+                      image
+                    }
+                    projects {
+                      id
+                      link
+                      title
+                      category
+                      longDescription
+                      shortDescription
+                      file
+                      image
+                    }
+                    tutorials {
+                      id
+                      link
+                      title
+                      longDescription
+                      file
+                      image
+                    }
+                    experience {
+                      id
+                      fromDate
+                      toDate
+                      title
+                      whereCity
+                      whereCountry
+                      company
+                      current
+                    }
+                    skills {
+                      skillsContent {
+                        id
+                        typeOfSkill {
+                          typeOfSkill
+                        }
+                        content
+                        file
+                        image
+                      }
+                    }
+                    publications {
+                      publicationsContent {
+                        id
+                        typeOfPublication {
+                          typeOfPublication
+                        }
+                        content
+                        file
+                        image
+                      }
+                    }
+                  }
+                  allMetaContent {
+                    id
+                    header
+                    footer
+                    meta
+                  }
                 }
-                content
-                file
-                image
-              }
-            }
-            publications {
-              publicationsContent {
-                id
-                typeOfPublication {
-                  typeOfPublication
-                }
-                content
-                file
-                image
-              }
-            }
-          }
-          allMetaContent {
-            id
-            header
-            footer
-            meta
-          }
-        }
 
-        '''
-        content = query.execute(query_local)
-        content = json.dumps(content.data)
-        return content
+                '''
+        self.content = query.execute(query_local)
+        self.json = json.dumps(self.content.data)
 
     # Bio
     @property
