@@ -118,6 +118,7 @@ class MetaContentAdminForm(forms.ModelForm):
         model = MetaContentModel
         fields = '__all__'
 
+
 # ----------------------------------------------------------------------------
 # Admin Models
 # ----------------------------------------------------------------------------
