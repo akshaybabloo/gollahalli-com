@@ -89,7 +89,6 @@ def server_error(request):
 
 
 class ContentDecode:
-    # ToDo: Change this into nested classes
     def __init__(self, json_object):
         self.json = json_object
 
@@ -184,41 +183,51 @@ class ContentDecode:
 
         '''
         content = query.execute(query_local)
-        # content = json.dumps(content.data)
+        content = json.dumps(content.data)
         return content
 
     # Bio
+    @property
     def get_name(self):
         return self.json['about_me']['name']
 
+    @property
     def get_bio(self):
         return "".join([markdown.markdown(a) for a in self.json['about_me']['bio']])
 
+    @property
     def get_twitter(self):
         return self.json['about_me']['twitter']
 
+    @property
     def get_linkedin(self):
         return self.json['about_me']['linkedin']
 
+    @property
     def get_github(self):
         return self.json['about_me']['github']
 
+    @property
     def get_education(self):
         json_data = self.json['about_me']['education']
         a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
         return a
 
+    @property
     def get_experience(self):
         json_data = self.json['experience']
         a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
         return a
 
+    @property
     def get_skills(self):
         return self.json['skills']
 
+    @property
     def get_research_area(self):
         return self.json['research_area']
 
+    @property
     def get_publications(self):
         return self.json['publication']
 
@@ -230,6 +239,7 @@ class ContentDecode:
         return json.loads(response.text)
 
     # Portfolio
+    @property
     def get_portfolio(self):
         json_data = self.json['projects']
         json_data1 = self.json['tutorials']
@@ -410,10 +420,12 @@ class ContentDecode:
 
         """
 
+    @property
     def get_projects_amp(self):
         json_data = self.json['projects']
         return [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
 
+    @property
     def get_tutorials_amp(self):
         json_data = self.json['tutorials']
         return [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
