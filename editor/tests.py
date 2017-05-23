@@ -386,7 +386,25 @@ class PublicationsModelTest(TestCase):
     """
     Test case for `PublicationsModel`
     """
-    pass
+
+    @mock.patch('django.utils.timezone.now', mock_datetime_now)
+    def setUp(self):
+        """
+        Sets up the `PublicationsModel` and mocks django `timezone`
+
+        """
+
+        model = ContentModel.objects.create(ref_id=1)
+        PublicationsModel.objects.create(ref_id=model, type_of_publication="some publication")
+
+    def test_model(self):
+        """
+        Tests `type_of_publication`
+        """
+
+        content = PublicationsModel.objects.get(type_of_publication="some publication")
+
+        self.assertEqual(content.type_of_publication, "some publication")
 
 
 class PublicationsContentModelTest(TestCase):
