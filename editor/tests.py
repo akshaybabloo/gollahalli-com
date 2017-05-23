@@ -17,13 +17,21 @@ def mock_datetime_now():
 
     Returns
     -------
-    datetime- datetime
+    datetime: datetime
         Datetime object.
     """
     return datetime.datetime(2013, 11, 20, 20, 8, 7, 127325, tzinfo=pytz.UTC)
 
 
 def mock_date():
+    """
+    Mocks date.
+    
+    Returns
+    -------
+    datetime: datetime
+        Datetime object.
+    """
     return datetime.date(2013, 11, 20)
 
 
