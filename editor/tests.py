@@ -364,7 +364,7 @@ class SkillsContentModelTest(TestCase):
 
     def test_model(self):
         """
-        Tests `type_of_skill`
+        Tests `id` and `content`
         """
 
         content = SkillsContentModel.objects.get(id=1)
