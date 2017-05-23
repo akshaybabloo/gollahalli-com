@@ -50,9 +50,9 @@ class ContentModelTest(TestCase):
                                     github="https://www.github.com",
                                     twitter="https://www.twitter.com",
                                     linkedin="https://www.linkedin.com",
-                                    file=SimpleUploadedFile('best_file_eva1.txt',
+                                    file=SimpleUploadedFile('content_model.txt',
                                                             'these are the file contents!'.encode('utf-8')),
-                                    image=InMemoryUploadedFile(im_io, None, 'random-name.jpg', 'image/jpeg', im_io,
+                                    image=InMemoryUploadedFile(im_io, None, 'content_model.jpg', 'image/jpeg', im_io,
                                                                None))
 
     def test_model(self):
