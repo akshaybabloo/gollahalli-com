@@ -8,7 +8,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
 
-from editor.models import ContentModel, EducationModel
+from editor.models import ContentModel, EducationModel, ProjectsModel
 
 
 def mock_datetime_now():
@@ -165,7 +165,56 @@ class ProjectsModelTest(TestCase):
     """
     Test case for `ProjectsModel`
     """
-    pass
+
+    @mock.patch('django.utils.timezone.now', mock_datetime_now)
+    def setUp(self):
+        """
+        Sets up the `ProjectsModel` and mocks django `timezone`
+
+        """
+
+        im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
+        im_io = BytesIO()  # a BytesIO object for saving image
+        im.save(im_io, 'JPEG')  # save the image to im_io
+        im_io.seek(0)
+
+        model = ContentModel.objects.create(ref_id=1)
+        ProjectsModel.objects.create(id=1,
+                                     ref_id=model,
+                                     link="https://www.example.com",
+                                     title="some title",
+                                     category="some category",
+                                     long_description="very long description\n yes very long",
+                                     short_description="short description",
+                                     file=SimpleUploadedFile('project_model.txt',
+                                                             'these are the file contents!'.encode('utf-8')),
+                                     image=InMemoryUploadedFile(im_io, None, 'project_model.jpg', 'image/jpeg',
+                                                                im_io,
+                                                                None))
+
+    def test_model(self):
+        """
+        Tests `id`, `link`, `title`, `category`, `long_description`, and `short_description`
+        """
+
+        content = ProjectsModel.objects.get(id=1)
+
+        self.assertEqual(content.id, 1)
+        self.assertEqual(content.link, "https://www.example.com")
+        self.assertEqual(content.title, "some title")
+        self.assertEqual(content.category, "some category")
+        self.assertEqual(content.long_description, "very long description\n yes very long")
+        self.assertEqual(content.short_description, "short description")
+
+    def test_files(self):
+        """
+        Tests `file` and `image`.
+        """
+
+        content = ProjectsModel.objects.get(id=1)
+
+        self.assertEqual(content.file, content.file.name)
+        self.assertEqual(content.image, content.image.name)
 
 
 class TutorialsModelTest(TestCase):
