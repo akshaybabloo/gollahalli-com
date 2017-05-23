@@ -1,13 +1,14 @@
-from io import BytesIO
-from django.test import TestCase
-from django.core.files.uploadedfile import SimpleUploadedFile
-from django.core.files.uploadedfile import InMemoryUploadedFile
-from editor.models import ContentModel, EducationModel
-from PIL import Image
-
-import unittest.mock as mock
-import pytz
 import datetime
+import unittest.mock as mock
+from io import BytesIO
+
+import pytz
+from PIL import Image
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.core.files.uploadedfile import SimpleUploadedFile
+from django.test import TestCase
+
+from editor.models import ContentModel, EducationModel
 
 
 def mock_datetime_now():
@@ -102,6 +103,7 @@ class EducationModelTest(TestCase):
     """
     Test case for `EducationModel`
     """
+
     @mock.patch('django.utils.timezone.now', mock_datetime_now)
     def setUp(self):
         """
@@ -124,7 +126,8 @@ class EducationModelTest(TestCase):
                                       current=True,
                                       file=SimpleUploadedFile('education_model.txt',
                                                               'these are the file contents!'.encode('utf-8')),
-                                      image=InMemoryUploadedFile(im_io, None, 'education_model.jpg', 'image/jpeg', im_io,
+                                      image=InMemoryUploadedFile(im_io, None, 'education_model.jpg', 'image/jpeg',
+                                                                 im_io,
                                                                  None))
 
     def test_model(self):
