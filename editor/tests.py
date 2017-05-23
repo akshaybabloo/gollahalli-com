@@ -8,7 +8,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
 
-from editor.models import ContentModel, EducationModel, ProjectsModel
+from editor.models import ContentModel, EducationModel, ProjectsModel, TutorialsModel
 
 
 def mock_datetime_now():
@@ -221,7 +221,50 @@ class TutorialsModelTest(TestCase):
     """
     Test case for `TutorialsModel`
     """
-    pass
+
+    def setUp(self):
+        """
+        
+        """
+
+        im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
+        im_io = BytesIO()  # a BytesIO object for saving image
+        im.save(im_io, 'JPEG')  # save the image to im_io
+        im_io.seek(0)
+
+        model = ContentModel.objects.create(ref_id=1)
+        TutorialsModel.objects.create(id=1,
+                                      ref_id=model,
+                                      link="https://www.example.com",
+                                      title="some title",
+                                      long_description="very long description\n yes very long",
+                                      file=SimpleUploadedFile('tutorials_model.txt',
+                                                              'these are the file contents!'.encode('utf-8')),
+                                      image=InMemoryUploadedFile(im_io, None, 'tutorials_model.jpg', 'image/jpeg',
+                                                                 im_io,
+                                                                 None))
+
+    def test_model(self):
+        """
+        Tests `id`, `link`, `title` and `long_description`
+        """
+
+        content = TutorialsModel.objects.get(id=1)
+
+        self.assertEqual(content.id, 1)
+        self.assertEqual(content.link, "https://www.example.com")
+        self.assertEqual(content.title, "some title")
+        self.assertEqual(content.long_description, "very long description\n yes very long")
+
+    def test_files(self):
+        """
+        Tests `file` and `image`.
+        """
+
+        content = TutorialsModel.objects.get(id=1)
+
+        self.assertEqual(content.file, content.file.name)
+        self.assertEqual(content.image, content.image.name)
 
 
 class ExperienceModelTest(TestCase):
