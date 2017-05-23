@@ -8,7 +8,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
 
-from editor.models import ContentModel, EducationModel, ProjectsModel, TutorialsModel
+from editor.models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel
 
 
 def mock_datetime_now():
@@ -272,7 +272,39 @@ class ExperienceModelTest(TestCase):
     """
     Test case for `ExperienceModel`
     """
-    pass
+
+    @mock.patch('django.utils.timezone.now', mock_datetime_now)
+    def setUp(self):
+        """
+        Sets up the `ExperienceModel` and mocks django `timezone`
+
+        """
+
+        model = ContentModel.objects.create(ref_id=1)
+        ExperienceModel.objects.create(id=1,
+                                       ref_id=model,
+                                       title="some title",
+                                       from_date=mock_date(),
+                                       to_date=mock_date(),
+                                       where_city="some city",
+                                       where_country="some country",
+                                       current=True,
+                                       company="some company")
+
+    def test_model(self):
+        """
+        Tests `id`, `title`, `from_date`, `to_date`, `where_city`, `where_country`, `company` and `current`.
+        """
+        content = ExperienceModel.objects.get(id=1)
+
+        self.assertEqual(content.id, 1)
+        self.assertEqual(content.title, "some title")
+        self.assertEqual(content.from_date, mock_date())
+        self.assertEqual(content.to_date, mock_date())
+        self.assertEqual(content.where_city, "some city")
+        self.assertEqual(content.where_country, "some country")
+        self.assertEqual(content.company, "some company")
+        self.assertEqual(content.current, True)
 
 
 class SkillsModelTest(TestCase):
