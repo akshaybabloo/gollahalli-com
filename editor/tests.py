@@ -151,32 +151,56 @@ class EducationModelTest(TestCase):
 
 
 class ProjectsModelTest(TestCase):
+    """
+    Test case for `ProjectsModel`
+    """
     pass
 
 
 class TutorialsModelTest(TestCase):
+    """
+    Test case for `TutorialsModel`
+    """
     pass
 
 
 class ExperienceModelTest(TestCase):
+    """
+    Test case for `ExperienceModel`
+    """
     pass
 
 
 class SkillsModelTest(TestCase):
+    """
+    Test case for `SkillsModel`
+    """
     pass
 
 
 class SkillsContentModelTest(TestCase):
+    """
+    Test case for `SkillsContentModel`
+    """
     pass
 
 
 class PublicationsModelTest(TestCase):
+    """
+    Test case for `PublicationsModel`
+    """
     pass
 
 
 class PublicationsContentModelTest(TestCase):
+    """
+    Test case for `PublicationsContentMode`
+    """
     pass
 
 
 class MetaContentModelTest(TestCase):
+    """
+    Test case for `MetaContentModel`
+    """
     pass
