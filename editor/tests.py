@@ -341,7 +341,7 @@ class SkillsContentModelTest(TestCase):
     @mock.patch('django.utils.timezone.now', mock_datetime_now)
     def setUp(self):
         """
-        Sets up the `SkillsModel` and mocks django `timezone`
+        Sets up the `SkillsContentModel` and mocks django `timezone`
 
         """
 
