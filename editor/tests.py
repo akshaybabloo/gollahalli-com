@@ -411,7 +411,49 @@ class PublicationsContentModelTest(TestCase):
     """
     Test case for `PublicationsContentMode`
     """
-    pass
+
+    @mock.patch('django.utils.timezone.now', mock_datetime_now)
+    def setUp(self):
+        """
+        Sets up the `PublicationsModel` and mocks django `timezone`
+
+        """
+
+        im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
+        im_io = BytesIO()  # a BytesIO object for saving image
+        im.save(im_io, 'JPEG')  # save the image to im_io
+        im_io.seek(0)
+
+        model = ContentModel.objects.create(ref_id=1)
+        publication_model = PublicationsModel.objects.create(ref_id=model, type_of_publication="some publication")
+        PublicationsContentModel.objects.create(id=1,
+                                                type_of_publication=publication_model,
+                                                content="some content",
+                                                file=SimpleUploadedFile('publication_content_model.txt',
+                                                                        'these are the file contents!'.encode('utf-8')),
+                                                image=InMemoryUploadedFile(im_io, None, 'publication_content_model.jpg',
+                                                                           'image/jpeg',
+                                                                           im_io,
+                                                                           None))
+
+    def test_model(self):
+        """
+        Tests `id` and `content`
+        """
+
+        content = PublicationsContentModel.objects.get(id=1)
+
+        self.assertEqual(content.id, 1)
+        self.assertEqual(content.content, "some content")
+
+    def test_files(self):
+        """
+        Tests `file` and `image`.
+        """
+        content = PublicationsContentModel.objects.get(id=1)
+
+        self.assertEqual(content.file, content.file.name)
+        self.assertEqual(content.image, content.image.name)
 
 
 class MetaContentModelTest(TestCase):
