@@ -2,7 +2,7 @@ from io import BytesIO
 from django.test import TestCase
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.core.files.uploadedfile import InMemoryUploadedFile
-from editor.models import ContentModel
+from editor.models import ContentModel, EducationModel
 from PIL import Image
 
 import unittest.mock as mock
@@ -20,6 +20,10 @@ def mock_datetime_now():
         Datetime object.
     """
     return datetime.datetime(2013, 11, 20, 20, 8, 7, 127325, tzinfo=pytz.UTC)
+
+
+def mock_date():
+    return datetime.date(2013, 11, 20)
 
 
 class ContentModelTest(TestCase):
@@ -95,7 +99,55 @@ class ContentModelTest(TestCase):
 
 
 class EducationModelTest(TestCase):
-    pass
+    """
+    Test case for `EducationModel`
+    """
+    @mock.patch('django.utils.timezone.now', mock_datetime_now)
+    def setUp(self):
+        """
+        Sets up the `EducationModel` and mocks django `timezone`
+        
+        """
+
+        im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
+        im_io = BytesIO()  # a BytesIO object for saving image
+        im.save(im_io, 'JPEG')  # save the image to im_io
+        im_io.seek(0)
+
+        model = ContentModel.objects.create(ref_id=1)
+        EducationModel.objects.create(id=1,
+                                      ref_id=model,
+                                      title="some title",
+                                      from_date=mock_date(),
+                                      to_date=mock_date(),
+                                      where="somewhere",
+                                      current=True,
+                                      file=SimpleUploadedFile('education_model.txt',
+                                                              'these are the file contents!'.encode('utf-8')),
+                                      image=InMemoryUploadedFile(im_io, None, 'education_model.jpg', 'image/jpeg', im_io,
+                                                                 None))
+
+    def test_model(self):
+        """
+        Tests `id`, `title`, `from_date`, `to_date`, `where` and `current`.
+        """
+        content = EducationModel.objects.get(id=1)
+
+        self.assertEqual(content.id, 1)
+        self.assertEqual(content.title, "some title")
+        self.assertEqual(content.from_date, mock_date())
+        self.assertEqual(content.to_date, mock_date())
+        self.assertEqual(content.where, "somewhere")
+        self.assertEqual(content.current, True)
+
+    def test_files(self):
+        """
+        Tests `file` and `image`.
+        """
+        content = EducationModel.objects.get(id=1)
+
+        self.assertEqual(content.file, content.file.name)
+        self.assertEqual(content.image, content.image.name)
 
 
 class ProjectsModelTest(TestCase):
