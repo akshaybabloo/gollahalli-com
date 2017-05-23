@@ -24,13 +24,13 @@ def mock_datetime_now():
 
 class ContentModelTest(TestCase):
     """
-    Test case for 
+    Test case for `ContentModel`
     """
 
     @mock.patch('django.utils.timezone.now', mock_datetime_now)
     def setUp(self):
         """
-        Created the field entry and mocks django `timezone`
+        Sets up the `ContentModel` and mocks django `timezone`
         
         """
         im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
