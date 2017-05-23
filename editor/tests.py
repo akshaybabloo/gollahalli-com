@@ -224,7 +224,8 @@ class TutorialsModelTest(TestCase):
 
     def setUp(self):
         """
-        
+        Sets up the `TutorialsModel` and mocks django `timezone`
+
         """
 
         im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
