@@ -304,8 +304,8 @@ class ContentDecode:
     def get_my_image():
         cloudinary.config(
             cloud_name='gollahalli',
-            api_key='623378689359255',
-            api_secret='bJPo6rNjc9IIDB5ihoyK-ogsRic',
+            api_key=os.environ['cloudinary_api'],
+            api_secret=os.environ['cloudinary_api_secret'],
             secure=True
         )
 
