@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-print(os.environ)
 if os.environ['DEBUG'] == 1:
     DEBUG = True
+    print("In debug mode")
 else:
     DEBUG = False
 
