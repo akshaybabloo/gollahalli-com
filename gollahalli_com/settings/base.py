@@ -22,10 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if os.environ['DEBUG'] == 1:
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -66,7 +68,6 @@ ROOT_URLCONF = 'gollahalli_com.urls'
 
 WSGI_APPLICATION = 'gollahalli_com.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
@@ -76,7 +77,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -96,7 +96,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
@@ -105,7 +104,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
@@ -121,7 +119,6 @@ STATICFILES_DIRS = (
 )
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
-
 
 TEMPLATES = [
     {
@@ -144,14 +141,14 @@ TEMPLATES = [
 ]
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-SESSION_COOKIE_AGE = 60*60  # set just 1 hour to test
+SESSION_COOKIE_AGE = 60 * 60  # set just 1 hour to test
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 GRAPHENE = {
     'SCHEMA': 'gollahalli_com.schema.query',
     'MIDDLEWARE': [
-            'graphene_django.debug.DjangoDebugMiddleware',
-        ],
+        'graphene_django.debug.DjangoDebugMiddleware',
+    ],
     'SCHEMA_INDENT': 2
 }
