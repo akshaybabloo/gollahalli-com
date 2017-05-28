@@ -17,3 +17,4 @@ singlemodeladmin==0.7
 boto
 feedparser>=5.2.1
 django-filer>=1.2.7
+easy-thumbnails>=2.4.1
