@@ -3,6 +3,10 @@ from django.conf import settings
 
 
 class ContentModel(models.Model):
+    """
+    `ContentModel`, primary model has `ref_id`-PK, `created`, `updated`, `website_name`, `cv`, `bio`, `url`, `first_name`
+    `last_name`, `email_id`, `github`, `twitter`, `linkedin`, `file` and `image`
+    """
     ref_id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -98,6 +102,9 @@ class ContentModel(models.Model):
 
 
 class EducationModel(models.Model):
+    """
+    `EducationModel` has `id`-PK, `ref_id`-FK, `title`, `from_date`, `to_date`, `where`, `current`, `file`, and `image`.
+    """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     ref_id = models.ForeignKey(ContentModel, related_name='education')
     title = models.CharField(default='title', max_length=500)
@@ -170,6 +177,10 @@ class EducationModel(models.Model):
 
 
 class ProjectsModel(models.Model):
+    """
+    `ProjectModel` has `id`-PK, `ref_id`-FK, `link`, `title`, `category`, `long_description`, `short_description`
+    `file` and `image`.
+    """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     ref_id = models.ForeignKey(ContentModel, related_name='projects')
     link = models.URLField(default='https://www.example.com', max_length=500)
@@ -242,6 +253,9 @@ class ProjectsModel(models.Model):
 
 
 class TutorialsModel(models.Model):
+    """
+    `TutorialsModel` has `id`-PK, `ref_id`-FK, `link`, `title`, `long_description`, `short_description`, `file` and `image`.
+    """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     ref_id = models.ForeignKey(ContentModel, related_name='tutorials')
     link = models.URLField(default='https://www.example.com', max_length=500)
@@ -312,6 +326,10 @@ class TutorialsModel(models.Model):
 
 
 class ExperienceModel(models.Model):
+    """
+    `ExperienceModel` has `id`-PK, `ref_id`-FK, `from_date`, `to_date`, `title`, `where_city`, `where_country`, `company` and
+    `current`.
+    """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     ref_id = models.ForeignKey(ContentModel, related_name='experience')
     from_date = models.DateField()
@@ -324,6 +342,9 @@ class ExperienceModel(models.Model):
 
 
 class SkillsModel(models.Model):
+    """
+    `SkillsModel` has `ref_id`-FK and `type_of_skill`.
+    """
     ref_id = models.ForeignKey(ContentModel, related_name='skills')
     type_of_skill = models.CharField(default='type', primary_key=True, max_length=500)
 
@@ -332,6 +353,9 @@ class SkillsModel(models.Model):
 
 
 class SkillsContentModel(models.Model):
+    """
+    `SkillsContentModel` has `id`-PK, `type_of_skill`-FK, `content`, `file` and `image`
+    """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     type_of_skill = models.ForeignKey(SkillsModel, related_name='skills_content')
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
@@ -403,6 +427,9 @@ class SkillsContentModel(models.Model):
 
 
 class PublicationsModel(models.Model):
+    """
+    `PublicationsModel` has `ref_id`-FK and `type_of_publication`.
+    """
     ref_id = models.ForeignKey(ContentModel, related_name='publications')
     type_of_publication = models.CharField(default='type', primary_key=True, max_length=500)
 
@@ -411,6 +438,9 @@ class PublicationsModel(models.Model):
 
 
 class PublicationsContentModel(models.Model):
+    """
+    `PublicationsContentModel` has `id`-PK, `type_of_publication`-FK, `content`, `file` and `image`.
+    """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     type_of_publication = models.ForeignKey(PublicationsModel, related_name='publications_content')
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
@@ -486,6 +516,9 @@ class TestModel(models.Model):
 
 
 class MetaContentModel(models.Model):
+    """
+    `MetaContentModel` has `id`-PK, `header`, `footer` and `meta`.
+    """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
     header = models.TextField(default="Header content.", help_text="{{header}}")
     footer = models.TextField(default="Footer Content", help_text="{{footer}}")
