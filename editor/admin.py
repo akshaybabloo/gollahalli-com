@@ -125,36 +125,57 @@ class MetaContentAdminForm(forms.ModelForm):
 
 
 class ContentAdmin(SingleModelAdmin):
+    """
+    Admin model for `ContentModel`, it takes only one input.
+    """
     list_display = ['ref_id', 'created', 'updated', 'website_name']
     form = ContentAdminForm
 
 
 class EducationAdmin(admin.ModelAdmin):
+    """
+    Admin model for `EducationModel`.
+    """
     list_display = ['id', 'to_date', 'from_date', 'where', 'current']
     form = EducationAdminForm
 
 
 class ProjectAdmin(admin.ModelAdmin):
+    """
+    Admin model for `ProjectsModel`.
+    """
     list_display = ['id', 'link', 'title', 'category', 'short_description', 'long_description']
     form = ProjectAdminForm
 
 
 class TutorialsAdmin(admin.ModelAdmin):
+    """
+    Admin model for `TutorialsModel`.
+    """
     list_display = ['id', 'link', 'title', 'long_description']
     form = TutorialsAdminForm
 
 
 class ExperienceAdmin(admin.ModelAdmin):
+    """
+    Admin model for `ExperienceModel`.
+    """
     list_display = ['id', 'to_date', 'from_date', 'title', 'where_city', 'where_country', 'company', 'current']
     form = ExperienceAdminForm
 
 
 class SkillAdmin(admin.ModelAdmin):
+    """
+    Admin model for `SkillsModel`.
+    """
     list_display = ['ref_id', 'type_of_skill']
     form = SkillsAdminForm
 
 
 class ContentSkillAdmin(admin.ModelAdmin):
+    """
+    Admin model for `SkillsContentModel`.
+    """
     list_display = ['id', 'type_of_skill', 'content']
 
     class Meta:
@@ -162,16 +183,25 @@ class ContentSkillAdmin(admin.ModelAdmin):
 
 
 class PublicationAdmin(admin.ModelAdmin):
+    """
+    Admin model for `PublicationsModel`.
+    """
     list_display = ['ref_id', 'type_of_publication']
     form = PublicationAdminForm
 
 
 class ContentPublicationAdmin(admin.ModelAdmin):
+    """
+    Admin model for `PublicationsContentModel`.
+    """
     list_display = ['id', 'type_of_publication', 'content']
     form = PublicationContentAdminForm
 
 
 class MetaContentAdmin(SingleModelAdmin):
+    """
+    Admin model for `MetaContentModel`, it takes only single entry.
+    """
     list_display = ['id', 'header', 'footer', 'meta']
     form = MetaContentAdminForm
 
