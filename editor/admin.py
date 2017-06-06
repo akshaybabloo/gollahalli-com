@@ -3,7 +3,7 @@ from django.contrib import admin
 from singlemodeladmin import SingleModelAdmin
 
 from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
-    SkillsContentModel, PublicationsModel, PublicationsContentModel, TestModel, MetaContentModel
+    SkillsContentModel, PublicationsModel, PublicationsContentModel, MetaContentModel
 
 
 # ----------------------------------------------------------------------------
@@ -220,6 +220,3 @@ admin.site.register(SkillsContentModel, ContentSkillAdmin)
 admin.site.register(PublicationsModel, PublicationAdmin)
 admin.site.register(PublicationsContentModel, ContentPublicationAdmin)
 admin.site.register(MetaContentModel, MetaContentAdmin)
-
-# test
-admin.site.register(TestModel)

@@ -514,10 +514,6 @@ class PublicationsContentModel(models.Model):
         return self.content
 
 
-class TestModel(models.Model):
-    test_file_path = models.FilePathField(path=settings.MEDIA_ROOT)
-
-
 class MetaContentModel(models.Model):
     """
     `MetaContentModel` has `id`-PK, `header`, `footer` and `meta`.
