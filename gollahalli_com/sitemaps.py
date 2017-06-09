@@ -9,17 +9,23 @@ class Sitemap(sitemaps.Sitemap):
 
     def __init__(self, names, priority, changefreq, lastmod):
         """
+        The values should be of list and should have the same length as the `names`.
 
         Parameters
         ----------
-        names
-        priority
+        names: list
+            List of url names.
+        priority: list
+            list of priority values.
+        changefreq: list
+            list of change frequency.
+        lastmod: list
+            List datetime objects.
         """
         self.names = names
         self.priority = priority
         self.changefreq = self._changefreq(changefreq)
         self.lastmod = self._lastmod(lastmod)
-        # self.
 
     def items(self):
         """
@@ -38,24 +44,29 @@ class Sitemap(sitemaps.Sitemap):
 
         Parameters
         ----------
-        obj
+        obj: str
+            Change frequencies.
 
         Returns
         -------
         string: str
-            Return `weekly`
+            Return change frequency.
         """
         return obj
 
     def _lastmod(self, obj):
         """
+        Returns datetime object.
 
         Parameters
         ----------
-        obj
+        obj: datetiime
+            Datetime format.
 
         Returns
         -------
+        obj: datetime
+            Returns datetime.
 
         """
 
@@ -66,11 +77,13 @@ class Sitemap(sitemaps.Sitemap):
 
         Parameters
         ----------
-        obj
+        obj: str
+            URL name.
 
         Returns
         -------
-
+        obj: str
+            Returns reverse URL.
         """
         return reverse(obj)
 
