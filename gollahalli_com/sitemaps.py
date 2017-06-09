@@ -44,7 +44,7 @@ class Sitemap(sitemaps.Sitemap):
 
         Parameters
         ----------
-        obj: str
+        obj: list
             Change frequencies.
 
         Returns
