@@ -103,7 +103,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-SHARE_URL = "https://www.gollahalli.com/"
+SHARE_URL = "http://127.0.0.1:8000"
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
 
