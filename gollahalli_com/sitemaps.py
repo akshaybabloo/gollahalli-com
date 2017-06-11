@@ -133,6 +133,6 @@ def xsl_content_type(request):
 
     """
 
-    filename = settings.SHARE_URL + static('sitemap.xsl')
+    filename = static('sitemap.xsl')
     data = requests.get(filename)
     return HttpResponse(data, content_type="text/xsl")
