@@ -126,6 +126,6 @@ def xsl_content_type(request):
 
     """
 
-    filename = settings.AWS_S3_CUSTOM_DOMAIN + os.sep + static('sitemap.xsl')
+    filename = static('sitemap.xsl')
     data = requests.get(filename)
     return HttpResponse(data, content_type="text/xsl")
