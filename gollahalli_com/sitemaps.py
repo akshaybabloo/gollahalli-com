@@ -1,3 +1,5 @@
+import os
+
 import requests
 from django.conf import settings
 from django.contrib import sitemaps
@@ -124,6 +126,6 @@ def xsl_content_type(request):
 
     """
 
-    filename = settings.SHARE_URL + static('sitemap.xsl')
+    filename = settings.AWS_S3_CUSTOM_DOMAIN + os.sep + static('sitemap.xsl')
     data = requests.get(filename)
     return HttpResponse(data, content_type="text/xsl")
