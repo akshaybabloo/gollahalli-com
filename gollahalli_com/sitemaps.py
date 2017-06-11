@@ -1,4 +1,8 @@
+import requests
+from django.conf import settings
 from django.contrib import sitemaps
+from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.http import HttpResponse
 from django.urls import reverse
 
 
@@ -103,3 +107,23 @@ class Sitemap(sitemaps.Sitemap):
         if all_items_lastmod and latest_lastmod:
             self.latest_lastmod = latest_lastmod
         return urls
+
+
+def xsl_content_type(request):
+    """
+    Converts the MIME type of `sitemap.xsl`.
+
+    Parameters
+    ----------
+    request: WSGIRequest
+
+    Returns
+    -------
+    HttpResponse: HttpResponse
+        Returns `sitemap.xsl`.
+
+    """
+
+    filename = settings.SHARE_URL + static('sitemap.xsl')
+    data = requests.get(filename)
+    return HttpResponse(data, content_type="text/xsl")
