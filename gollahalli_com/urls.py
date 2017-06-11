@@ -93,7 +93,7 @@ urlpatterns = [
     url(r'^sitemap\.xml$', views.index, {'sitemaps': sitemaps, 'template_name': 'sitemap-index.xml'}),
     url(r'^sitemap-(?P<section>.+).xml$', views.sitemap, {'sitemaps': sitemaps, 'template_name': 'sitemap.xml'},
         name='django.contrib.sitemaps.views.sitemap'),
-    url(r'sitemap\.xsl$', xsl_content_type, name='sitemap_xsl'),
+    url(r'^sitemap\.xsl$', xsl_content_type, name='sitemap_xsl'),
 ]
 
 handler404 = 'viewer.views.page_not_found'
