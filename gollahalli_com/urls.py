@@ -1,17 +1,81 @@
 """
 Main URL settings page. See https://docs.djangoproject.com/en/1.10/topics/http/urls/ for more information.
 """
+import datetime
+import json
+import os
+
+import requests
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.sitemaps import views
 from django.contrib.auth.views import login, logout, password_reset, password_change_done
 from django.http import HttpResponse
 
-from .sitemaps import *
+from .sitemaps import Sitemap, xsl_content_type
+
+GITHUB_KEY = os.environ['GITHUB_KEY']
+
+
+def get_version():
+    """
+    Get's the latest released version.
+    Returns
+    -------
+    response: dict:
+        A dictionary of GitHub content.
+    """
+    response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest',
+                            auth=('akshaybabloo', GITHUB_KEY))
+    return json.loads(response.text)
+
+
+def github_date_time_format(value):
+    """
+    Strips the date and time of GitHub's format.
+    Parameters
+    ----------
+    value: str
+        The vale should be of format `%Y-%m-%dT%H:%M:%Sz`.
+    Returns
+    -------
+    date: datetime
+        datetime object.
+    """
+    date = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%Sz')
+    return date
+
+
+def custom_date(value):
+    """
+    Strips users date.
+    >>> c_date = custom_date('10/10/2010')
+    Parameters
+    ----------
+    value: str
+        The vale should be of format `%d/%m/%Y`.
+    Returns
+    -------
+    date: datetime
+        datetime object
+    """
+    date = datetime.datetime.strptime(value, '%d/%m/%Y')
+    return date
 
 sitemaps = {
-    'pages': Sitemap(['index'], 1.0),
-    'other': Sitemap(['repo', 'change-log'], 0.5)
+    'pages': Sitemap(
+                ['index'],
+                [1.0],
+                ['monthly'],
+                [datetime.date.today()]
+            ),
+
+    'other': Sitemap(
+                ['repo', 'change-log'],
+                [0.5, 0.5],
+                ['monthly', 'monthly'],
+                [custom_date('10/01/2017'), github_date_time_format(get_version()['published_at'])]
+            )
 }
 
 urlpatterns = [
@@ -27,8 +91,9 @@ urlpatterns = [
         "Sitemap: https://www.gollahalli.com/sitemap.xml\nUser-agent: *\nDisallow: /admin/\nDisallow: /cdn-cgi/",
         content_type="text/plain"), name="robots_file"),
     url(r'^sitemap\.xml$', views.index, {'sitemaps': sitemaps, 'template_name': 'sitemap-index.xml'}),
-    url(r'^sitemap-(?P<section>.+).xml$', views.sitemap, {'sitemaps': sitemaps},
+    url(r'^sitemap-(?P<section>.+).xml$', views.sitemap, {'sitemaps': sitemaps, 'template_name': 'sitemap.xml'},
         name='django.contrib.sitemaps.views.sitemap'),
+    url(r'^sitemap\.xsl$', xsl_content_type, name='sitemap_xsl'),
 ]
 
 handler404 = 'viewer.views.page_not_found'
