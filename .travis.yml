@@ -9,6 +9,9 @@ services: postgresql
 env:
   - DJANGO=1.11.1
 
+addons:
+  postgresql: "9.4"
+
 before_install:
   - export DJANGO_SETTINGS_MODULE=gollahalli_com.settings
 #  - export PYTHONPATH=$HOME/builds/akshaybabloo/gollahalli_com
@@ -24,3 +27,7 @@ before_script:
 
 script:
   - python manage.py test
+
+branches:
+  only:
+  - v3
