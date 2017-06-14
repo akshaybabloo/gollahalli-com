@@ -225,15 +225,14 @@ class ContentDecode:
 
     @property
     def get_education(self):
-        json_data = self.json['about_me']['education']
-        a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
-        return a
+        json_data = self.json['allContents'][0]['education']
+
+        return reversed(json_data)
 
     @property
     def get_experience(self):
-        json_data = self.json['experience']
-        a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
-        return a
+        json_data = self.json['allContents'][0]['experience']
+        return reversed(json_data)
 
     @property
     def get_skills(self):
