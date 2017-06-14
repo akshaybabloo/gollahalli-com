@@ -20,6 +20,20 @@ GITHUB_KEY = os.environ['GITHUB_KEY']
 
 
 def index(request):
+    """
+    Entry point.
+
+    Parameters
+    ----------
+    request: WSGIRequest
+        WSGI request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns renderer's.
+
+    """
     try:
         content_object = ContentDecode()
     except ContentModel.DoesNotExist as e:
@@ -88,6 +102,9 @@ def server_error(request):
 
 
 class ContentDecode:
+    """
+    Content decoder object.
+    """
     def __init__(self):
         query_local = '''
                 {
