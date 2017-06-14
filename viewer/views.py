@@ -234,58 +234,58 @@ class ContentDecode:
         json_data = self.json['allContents'][0]['experience']
         return reversed(json_data)
 
-    @property
-    def get_skills(self):
-        return self.json['skills']
-
-    @property
-    def get_research_area(self):
-        return self.json['research_area']
-
-    @property
-    def get_publications(self):
-        return self.json['publication']
-
-    @staticmethod
-    def get_version():
-        response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest',
-                                auth=('akshaybabloo', GITHUB_KEY))
-
-        return json.loads(response.text)
-
-    # Portfolio
-    @property
-    def get_portfolio(self):
-        json_data = self.json['projects']
-        json_data1 = self.json['tutorials']
-        a_data = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
-
-        b1 = 0
-        for a1 in a_data:
-            a_data[b1]['long_description'] = markdown.markdown(a1['long_description'])
-            b1 += 1
-
-        a_data1 = [json_data1[a] for a in sorted(json_data1.keys(), reverse=True)]
-
-        b2 = 0
-        for a2 in a_data1:
-            a_data1[b2]['long_description'] = markdown.markdown(a2['long_description'])
-            b2 += 1
-
-        a_data += a_data1
-
-        category = []
-        for a in a_data:
-            category.append(a['category'])
-        list(set(category))
-
-        return {'portfolio': a_data, 'category': list(set(category))}
-
-    # Blog
-    @staticmethod
-    def get_blog():
-        data = feedparser.parse("https://blog.gollahalli.com/rss")
-        return data.entries
+    # @property
+    # def get_skills(self):
+    #     return self.json['skills']
+    #
+    # @property
+    # def get_research_area(self):
+    #     return self.json['research_area']
+    #
+    # @property
+    # def get_publications(self):
+    #     return self.json['publication']
+    #
+    # @staticmethod
+    # def get_version():
+    #     response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest',
+    #                             auth=('akshaybabloo', GITHUB_KEY))
+    #
+    #     return json.loads(response.text)
+    #
+    # # Portfolio
+    # @property
+    # def get_portfolio(self):
+    #     json_data = self.json['projects']
+    #     json_data1 = self.json['tutorials']
+    #     a_data = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
+    #
+    #     b1 = 0
+    #     for a1 in a_data:
+    #         a_data[b1]['long_description'] = markdown.markdown(a1['long_description'])
+    #         b1 += 1
+    #
+    #     a_data1 = [json_data1[a] for a in sorted(json_data1.keys(), reverse=True)]
+    #
+    #     b2 = 0
+    #     for a2 in a_data1:
+    #         a_data1[b2]['long_description'] = markdown.markdown(a2['long_description'])
+    #         b2 += 1
+    #
+    #     a_data += a_data1
+    #
+    #     category = []
+    #     for a in a_data:
+    #         category.append(a['category'])
+    #     list(set(category))
+    #
+    #     return {'portfolio': a_data, 'category': list(set(category))}
+    #
+    # # Blog
+    # @staticmethod
+    # def get_blog():
+    #     data = feedparser.parse("https://blog.gollahalli.com/rss")
+    #     return data.entries
 
     # Other
     @staticmethod
