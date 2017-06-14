@@ -1,3 +1,7 @@
 branches:
   only:
   - v3
+
+script:
+  - if [ "$TRAVIS_BRANCH" = "v3" ]; then ./ci/deploy.rb envdev.tld; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then ./ci/deploy.rb envprod.tld; fi
