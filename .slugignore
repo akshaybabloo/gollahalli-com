@@ -9,3 +9,4 @@ README.md
 /.idea
 /docs
 local.py
+.travis.yml
