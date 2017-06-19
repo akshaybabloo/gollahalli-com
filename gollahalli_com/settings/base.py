@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'mptt',  # Django-filer
     'editor',
     'viewer',
+    'auth',
 ]
 
 MIDDLEWARE = [
