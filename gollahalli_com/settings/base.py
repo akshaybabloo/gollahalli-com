@@ -152,3 +152,5 @@ GRAPHENE = {
     ],
     'SCHEMA_INDENT': 2
 }
+
+AUTHY_API = os.environ['AUTHY_API']

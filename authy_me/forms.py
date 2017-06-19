@@ -9,6 +9,8 @@ class AuthenticatorAdminForm(forms.ModelForm):
     AuthenticatorModel form for admin view.
     """
 
+    authy_id = forms.CharField(widget=forms.NumberInput, disabled=True, required=False)
+
     class Meta:
         model = AuthenticatorModel
         fields = '__all__'
