@@ -1,5 +1,4 @@
 from django import forms
-from django.contrib.auth.models import (User, Group)
 
 from .models import AuthenticatorModel
 
@@ -18,4 +17,3 @@ class AuthenticatorAdminForm(forms.ModelForm):
     class Media:
         js = ('//code.jquery.com/jquery-3.2.1.min.js',
               'js/users.js',)
-
