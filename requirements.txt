@@ -18,3 +18,4 @@ feedparser>=5.2.1
 django-filer>=1.2.7
 easy-thumbnails>=2.4.1
 authy>=2.1
+django-phonenumber-field
