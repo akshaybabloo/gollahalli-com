@@ -60,7 +60,7 @@ else:
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'gollahalli_com_django_test',
             'USER': 'akshay',
-            'PASSWORD': 'akshay12',
+            'PASSWORD': '',
             'HOST': 'localhost',
             'PORT': '',
         }
