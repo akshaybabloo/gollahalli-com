@@ -73,7 +73,7 @@ def log_me_in(request):
             if user.is_staff and not has_2fa(user):
                 logger.info('is staff but does not have 2FA, redirecting to Authy account creator')
                 login(request, user)
-                return redirect('?next=/admin/')
+                return redirect('/admin/authy_me/authenticatormodel/')
             elif user.is_staff and has_2fa(user):
                 logger.info("is staff and 2FA enabled redirecting to Authy verification")
                 return redirect('2fa')
