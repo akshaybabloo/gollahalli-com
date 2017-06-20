@@ -10,14 +10,15 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.auth.views import login, logout
+from django.contrib.auth import views as auth_views
 from django.contrib.sitemaps import views
 from django.http import HttpResponse
 from graphene_django.views import GraphQLView
 
+from authy_me import views as authy_views
+from authy_me.forms import LoginForm
 from .schema import *
 from .sitemaps import Sitemap, xsl_content_type
-from authy_me.views import users_js
 
 GITHUB_KEY = os.environ['GITHUB_KEY']
 
@@ -91,13 +92,17 @@ sitemaps = {
     )
 }
 
+admin.autodiscover()
+admin.site.login_form = LoginForm
+
 urlpatterns = [
                   url(r'^', include('viewer.urls')),
                   url(r'^editor/', include('editor.urls'), name='editor_urls'),
-                  url(r'^static/js/users\.js', users_js, name='authy_me_urls'),
+                  url(r'^static/js/users\.js', authy_views.users_js, name='authy_me_urls'),
                   url(r'^admin/', admin.site.urls, name='admin_urls'),
-                  url(r'^accounts/login/$', login, {'template_name': 'login.html'}, name="login"),
-                  url(r'^accounts/logout/$', logout),
+                  url(r'^login/$', authy_views.log_me_in, name="login"),
+                  url(r'^logout/$', auth_views.logout, name='logout'),
+                  # url(r'^admin/login/$', authy_views.log_me_in, name="admin_login"),
                   # url(r'^accounts/password/reset/$', password_reset, {'template_name': 'userauth/password_change_form.html'}, name="password_reset"),
                   # url(r'^accounts/password/password-change-done/$', password_change_done, {'template_name': 'userauth/password_change_done.html'}, name="password_change_done"),
                   url(r'^accounts/profile/', include('editor.urls'), name="profile"),
