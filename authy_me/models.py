@@ -95,7 +95,7 @@ class AuthenticatorModel(models.Model):
 
     def clean(self):
 
-        if 'errors' in self.status:
+        if self.authy_id == 'error':
             raise ValidationError({
                 'authy_id': _(self.status)
             })
