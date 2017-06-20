@@ -23,8 +23,9 @@ class AuthenticatorModel(models.Model):
     phone_number = PhoneNumberField()
     email_id = models.CharField(default='email ID', help_text='Enter the email ID used to register the Django user',
                                 max_length=50)
-    authy_id = models.CharField(null=True, help_text='This ID is provided by Authy and cannot be changed.',
+    authy_id = models.CharField(null=True,
                                 max_length=50)
+    session_id = models.CharField(null=True, max_length=100)
 
     def create_authy(self):
         """
