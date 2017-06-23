@@ -54,6 +54,7 @@ class LoginForm(AuthenticationForm):
     """
     Custom `AuthenticationForm` that forces staff to create a two-factor authentication.
     """
+    remember_me = forms.BooleanField(required=False)
 
     def clean(self):
         username = self.cleaned_data.get('username')
