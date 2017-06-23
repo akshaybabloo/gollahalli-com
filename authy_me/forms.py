@@ -15,9 +15,9 @@ class AuthenticatorAdminForm(forms.ModelForm):
     AuthenticatorModel form for admin view.
     """
 
-    authy_id = forms.CharField(widget=forms.NumberInput, disabled=True, required=False,
+    authy_id = forms.CharField(widget=forms.NumberInput, required=False,
                                help_text='This ID is provided by Authy and cannot be changed.')
-    session_id = forms.CharField(disabled=True, required=False, help_text='This field is auto generated.')
+    session_id = forms.CharField(required=False, help_text='This field is auto generated.')
 
     class Meta:
         model = AuthenticatorModel
