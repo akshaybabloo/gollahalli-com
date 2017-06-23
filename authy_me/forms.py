@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
 
 from .models import AuthenticatorModel
+from .utils import is_int
 
 logger = logging.getLogger(__name__)
 
@@ -27,8 +28,25 @@ class AuthenticatorAdminForm(forms.ModelForm):
               'js/users.js',)
 
 
-class OTPForm(forms.Form):
-    pass
+class AuthyForm(forms.Form):
+    """
+    Authy Form
+    """
+    authy = forms.CharField(required=True,
+                            help_text="Enter the number provided by the Authy application on your mobile.")
+
+    def clean(self):
+
+        cd = self.cleaned_data
+
+        if not is_int(cd.get('authy')):
+            raise forms.ValidationError('The string should be all numbers.')
+
+        length = len(cd.get('authy'))
+        if length < 6 or length > 12:
+            raise forms.ValidationError('Unexpected length of input.')
+
+        return cd
 
 
 class LoginForm(AuthenticationForm):

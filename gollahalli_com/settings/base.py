@@ -192,3 +192,6 @@ LOGGING = {
 # LOGIN_REDIRECT_URL='/admin/'
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
+
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
+SESSION_COOKIE_HTTPONLY = True

@@ -98,10 +98,11 @@ admin.site.login_form = LoginForm
 urlpatterns = [
                   url(r'^', include('viewer.urls')),
                   url(r'^editor/', include('editor.urls'), name='editor_urls'),
-                  url(r'^static/js/users\.js', authy_views.users_js, name='authy_me_urls'),
+                  # url(r'^static/js/users\.js', authy_views.users_js, name='authy_me_urls'),
                   url(r'^admin/', admin.site.urls, name='admin_urls'),
-                  url(r'^login/$', authy_views.log_me_in, name="login"),
+                  url(r'^', include('authy_me.urls'), name="login"),
                   url(r'^logout/$', auth_views.logout, name='logout'),
+
                   # url(r'^admin/login/$', authy_views.log_me_in, name="admin_login"),
                   # url(r'^accounts/password/reset/$', password_reset, {'template_name': 'userauth/password_change_form.html'}, name="password_reset"),
                   # url(r'^accounts/password/password-change-done/$', password_change_done, {'template_name': 'userauth/password_change_done.html'}, name="password_change_done"),

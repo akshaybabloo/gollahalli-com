@@ -1,5 +1,7 @@
 import logging
 
+from authy.api import AuthyApiClient
+from django.conf import settings
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.middleware import get_user
 from django.contrib.auth.models import (User)
@@ -9,8 +11,8 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.cache import never_cache
 
-from .forms import LoginForm
-from .models import AuthenticatorModel
+from .forms import LoginForm, AuthyForm
+from .utils import get_user_from_sid, has_2fa
 
 logger = logging.getLogger(__name__)
 
@@ -76,6 +78,7 @@ def log_me_in(request):
                 return redirect('/admin/authy_me/authenticatormodel/')
             elif user.is_staff and has_2fa(user):
                 logger.info("is staff and 2FA enabled redirecting to Authy verification")
+                login(request, user)
                 return redirect('2fa')
             elif not request.user.is_staff and not has_2fa(user):
                 logger.info('is not staff and does not have 2FA')
@@ -88,35 +91,40 @@ def log_me_in(request):
     return auth_login(request, **defaults)
 
 
-def has_2fa(request):
-    """
-    Checks if `AuthenticatorModel` is associated with `User` model.
-
-    Returns
-    -------
-    content: bool
-        Returns True is if `AuthenticatorModel` is associated with `User` else returns False.
-    """
-
-    content = True
-
-    try:
-        user = User.objects.get(username=request.username)
-    except User.DoesNotExist:
-        content = False
-        pass
-
-    try:
-        user_auth = user.auth_user.get(id=user.id)
-    except AuthenticatorModel.DoesNotExist:
-        content = False
-        pass
-
-    return content
-
-
 def auth_2fa(request):
-    if request.user.is_authenticated():
-        print('yes')
+    """
+    Authenticates the user using Authy's 2-factor authentication.
 
-    return HttpResponse('hello')
+    Parameters
+    ----------
+    request: WSGIRequest
+        Request.
+    """
+    session_key = request.session.session_key
+
+    user_id = get_user_from_sid(session_key)
+
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        return redirect('login')
+
+    user_auth = user.auth_user.get(id=user.id)
+
+    template = 'auth.html'
+    if request.method == 'POST':
+        form = AuthyForm(request.POST)
+        if form.is_valid():
+            token = request.POST.get('authy', None)
+            authy_api = AuthyApiClient(settings.AUTHY_API)
+            verification = authy_api.tokens.verify(user_auth.authy_id, str(token))
+            if verification.ok():
+                redirect('/admin/')
+            else:
+                form.add_error(None, verification.errors()['message'])
+    else:
+        form = AuthyForm()
+
+    context = {'form': form}
+
+    return render(request, template, context)
