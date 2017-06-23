@@ -56,6 +56,16 @@ def log_me_in(request):
     auth_login: object
 
     """
+    session_key = request.session.session_key
+
+    user_id = get_user_from_sid(session_key)
+
+    try:
+        user = User.objects.get(id=user_id)
+        return redirect('/admin/')
+    except User.DoesNotExist:
+        pass
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -70,9 +80,12 @@ def log_me_in(request):
             elif user.is_staff and has_2fa(user):
                 logger.info("is staff and 2FA enabled redirecting to Authy verification")
                 login(request, user)
+                if request.POST.get('remember_me'):
+                    request.session.set_expiry(31557600)
                 return redirect('2fa')
-            elif not request.user.is_staff and not has_2fa(user):
+            else:
                 logger.info('is not staff and does not have 2FA')
+                return redirect('/')
 
     defaults = {
         'authentication_form': LoginForm,
