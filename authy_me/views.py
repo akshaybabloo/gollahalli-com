@@ -101,11 +101,11 @@ def auth_2fa(request):
     except User.DoesNotExist:
         return redirect('login')
 
-    if 'is_personal' in request.COOKIES:
-        if request.COOKIES['is_personal'] == 'yes':
-            return redirect('/admin/')
-
     user_auth = user.auth_user.get(id=user.id)
+
+    if 'is_personal' in request.COOKIES:
+        if request.get_signed_cookie('is_personal', salt='#c}jbb9j>c.oMKP=T)M.3%fe') == 'yes':
+            return redirect('/admin/')
 
     template = 'auth.html'
     if request.method == 'POST':
@@ -121,7 +121,7 @@ def auth_2fa(request):
                     expires = datetime.datetime.strftime(
                         datetime.datetime.utcnow() + datetime.timedelta(seconds=max_age),
                         "%a, %d-%b-%Y %H:%M:%S GMT")
-                    response.set_cookie('is_personal', 'yes', expires=expires)
+                    response.set_signed_cookie('is_personal', 'yes', salt='#c}jbb9j>c.oMKP=T)M.3%fe', expires=expires)
                     return response
                 return redirect('/admin/')
             else:
