@@ -4,7 +4,6 @@ import logging
 from authy.api import AuthyApiClient
 from django.conf import settings
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.middleware import get_user
 from django.contrib.auth.models import (User)
 from django.contrib.auth.views import login as auth_login
 from django.http import HttpResponse
@@ -16,15 +15,6 @@ from .forms import LoginForm, AuthyForm
 from .utils import get_user_from_sid, has_2fa
 
 logger = logging.getLogger(__name__)
-
-
-def get_user_auth(request):
-    user = get_user(request)
-
-    if user.is_authenticated():
-        return user
-    else:
-        return user
 
 
 @never_cache
