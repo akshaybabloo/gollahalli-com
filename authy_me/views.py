@@ -1,3 +1,4 @@
+import datetime
 import logging
 
 from authy.api import AuthyApiClient
@@ -93,7 +94,8 @@ def log_me_in(request):
 
 def auth_2fa(request):
     """
-    Authenticates the user using Authy's 2-factor authentication.
+    Authenticates the user using Authy's 2-factor authentication. If the user checked the tick box to save the
+    authentication then a cookie is set and expires after one year.
 
     Parameters
     ----------
@@ -109,6 +111,10 @@ def auth_2fa(request):
     except User.DoesNotExist:
         return redirect('login')
 
+    if 'is_personal' in request.COOKIES:
+        if request.COOKIES['is_personal'] == 'yes':
+            return redirect('/admin/')
+
     user_auth = user.auth_user.get(id=user.id)
 
     template = 'auth.html'
@@ -119,7 +125,15 @@ def auth_2fa(request):
             authy_api = AuthyApiClient(settings.AUTHY_API)
             verification = authy_api.tokens.verify(user_auth.authy_id, str(token))
             if verification.ok():
-                redirect('/admin/')
+                if request.POST.get('is_personal') == 'on':
+                    response = redirect('/admin/')
+                    max_age = 365 * 24 * 60 * 60  # one year
+                    expires = datetime.datetime.strftime(
+                        datetime.datetime.utcnow() + datetime.timedelta(seconds=max_age),
+                        "%a, %d-%b-%Y %H:%M:%S GMT")
+                    response.set_cookie('is_personal', 'yes', expires=expires)
+                    return response
+                return redirect('/admin/')
             else:
                 form.add_error(None, verification.errors()['message'])
     else:

@@ -34,6 +34,7 @@ class AuthyForm(forms.Form):
     """
     authy = forms.CharField(required=True,
                             help_text="Enter the number provided by the Authy application on your mobile.")
+    is_personal = forms.BooleanField(required=False)
 
     def clean(self):
 
