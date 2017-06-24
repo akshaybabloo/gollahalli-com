@@ -14,6 +14,7 @@ from django.contrib.auth import views as auth_views
 from django.contrib.sitemaps import views
 from django.http import HttpResponse
 from graphene_django.views import GraphQLView
+from django.contrib.auth.decorators import login_required
 
 from authy_me import views as authy_views
 from authy_me.forms import LoginForm
@@ -93,7 +94,7 @@ sitemaps = {
 }
 
 admin.autodiscover()
-admin.site.login_form = LoginForm
+admin.site.login = login_required(admin.site.login)
 
 urlpatterns = [
                   url(r'^', include('viewer.urls')),
