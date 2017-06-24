@@ -1,5 +1,4 @@
 import requests
-from django.conf import settings
 from django.contrib import sitemaps
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.http import HttpResponse
