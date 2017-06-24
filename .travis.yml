@@ -9,6 +9,9 @@ services: postgresql
 env:
   - DJANGO=1.11.1
 
+addons:
+  postgresql: "9.4"
+
 before_install:
   - export DJANGO_SETTINGS_MODULE=gollahalli_com.settings
 #  - export PYTHONPATH=$HOME/builds/akshaybabloo/gollahalli_com
@@ -18,12 +21,17 @@ install:
   - pip install -r requirements.txt
   - pip install django==$DJANGO --quiet
   - pip install psycopg2 --quiet
+  - pip install codecov
 
 before_script:
   - psql -c "CREATE DATABASE mydb;" -U postgres
 
 script:
-  - python manage.py test
+#  - python manage.py test
+  - coverage run manage.py test
+
+after_success:
+  - codecov
 
 branches:
   only:

@@ -1,7 +1,4 @@
-import os
-
 import requests
-from django.conf import settings
 from django.contrib import sitemaps
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.http import HttpResponse
@@ -16,6 +13,7 @@ class Sitemap(sitemaps.Sitemap):
     def __init__(self, names, priority, changefreq, lastmod):
         """
         The values should be of list and should have the same length as the `names`.
+
         Parameters
         ----------
         names: list
@@ -35,6 +33,7 @@ class Sitemap(sitemaps.Sitemap):
     def items(self):
         """
         Returns URL.
+
         Returns
         -------
         name: str
@@ -45,10 +44,12 @@ class Sitemap(sitemaps.Sitemap):
     def _changefreq(self, obj):
         """
         Frequency of updates.
+
         Parameters
         ----------
         obj: list
             Change frequencies.
+
         Returns
         -------
         string: str
@@ -59,14 +60,17 @@ class Sitemap(sitemaps.Sitemap):
     def _lastmod(self, obj):
         """
         Returns datetime object.
+
         Parameters
         ----------
         obj: datetiime
             Datetime format.
+
         Returns
         -------
         obj: datetime
             Returns datetime.
+
         """
 
         return obj
@@ -77,6 +81,7 @@ class Sitemap(sitemaps.Sitemap):
         ----------
         obj: str
             URL name.
+
         Returns
         -------
         obj: str

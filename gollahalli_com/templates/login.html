@@ -64,7 +64,7 @@
 										<span class="input-group-addon">
 											<i class="material-icons">face</i>
 										</span>
-                                    <input type="text" id="id_username" maxlength="254" name="username" class="form-control" placeholder="Username..." required />
+                                    <input type="text" id="id_username" maxlength="254" name="username" class="form-control" placeholder="Username..." autofocus required />
                                 </div>
 
                                 <div class="input-group">
@@ -73,6 +73,17 @@
 										</span>
                                     <input type="password" id="id_password" name="password" placeholder="Password..." class="form-control" required />
                                     <input type="hidden" name="next" value="{{ next }}"/>
+                                </div>
+
+                                <div class="input-group">
+										<span class="input-group-addon">
+										</span>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="id_remember_me" name="remember_me">
+                                            Remember me
+                                        </label>
+                                    </div>
                                 </div>
 
                             </div>

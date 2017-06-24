@@ -48,7 +48,8 @@
     <link rel='stylesheet' type='text/css' href='{% static 'css/gollahalli.css' %}'>
 {#    <link rel='stylesheet' type='text/css' href='{% static 'css/content.min.css' %}'>#}
 
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
 
     {{ content.get_schema_data | safe }}
     {{ content.get_site_performance_header | safe }}
@@ -58,7 +59,7 @@
 {% block body %}
 {% endblock %}
 
-{{ content.get_site_performance_footer | safe}}
+{{ content.get_site_performance_footer | safe }}
 
 <!--=============================================
     JavaScript Files
@@ -94,7 +95,6 @@
 <script>
     $(function () {
         "use strict";
-
         var content = '<footer class="footer">\
              <small class="text-muted"> <div class="container-fluid">\
                     <a href="#popup-334" class="has-popup">{{ content.get_version.tag_name }}</a>\
@@ -105,39 +105,34 @@
                 endorsement by them.</small>\
               </div>\
             </footer>';
-
-         $('.section:not(.main-section)').append(content);
-
-
-         /*=========================================================================
-      		Magnific Popup (Project Popup initialization)
-      	=========================================================================*/
-      	$('.has-popup').magnificPopup({
-      		type: 'inline',
-      		fixedContentPos: false,
-      		fixedBgPos: true,
-      		overflowY: 'auto',
-      		closeBtnInside: true,
-      		preloader: false,
-      		midClick: true,
-      		removalDelay: 300,
-      		mainClass: 'my-mfp-zoom-in'
-      	});
-
+        $('.section:not(.main-section)').append(content);
+        /*=========================================================================
+         Magnific Popup (Project Popup initialization)
+         =========================================================================*/
+        $('.has-popup').magnificPopup({
+            type: 'inline',
+            fixedContentPos: false,
+            fixedBgPos: true,
+            overflowY: 'auto',
+            closeBtnInside: true,
+            preloader: false,
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-zoom-in'
+        });
     });
-
 </script>
 
 <!-- Twitter -->
 <script>!function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = p + "://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-    }(document, "script", "twitter-wjs");</script>
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + "://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, "script", "twitter-wjs");</script>
 
 </body>
 </html>

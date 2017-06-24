@@ -13,43 +13,84 @@ from django.http import HttpResponseServerError, HttpResponse
 from django.shortcuts import render
 
 from editor.models import ContentModel
+from gollahalli_com.schema import query
 
 DEFAULT_BASE_URL = "https://api.github.com/users/akshaybabloo/repos"
 GITHUB_KEY = os.environ['GITHUB_KEY']
 
 
 def index(request):
+    """
+    Entry point.
+
+    Parameters
+    ----------
+    request: WSGIRequest
+        WSGI request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns renderer's.
+
+    """
     try:
-        json_content = ContentModel.objects.get(ref_id='1')
-        content_object = ContentDecode(json_content.content)
+        content_object = ContentDecode()
     except ContentModel.DoesNotExist as e:
         raise HttpResponseServerError
 
     if request.GET.get('format') == 'amp':
         template = "viewer/amp.html"
     elif request.GET.get('format') == 'json':
-        return HttpResponse(json.dumps(json_content.content, indent=4, sort_keys=True), content_type="application/json")
+        return HttpResponse(json.dumps(content_object.get_json), content_type="application/json")
     else:
         template = "viewer/home.html"
 
     context = {'content': content_object}
+
     return render(request, template, context)
 
 
 def page_not_found(request):
+    """
+    Page not found - 404 page.
+    
+    Parameters
+    ----------
+    request: WSGIRequest
+        URL request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns an rendered HTML page.
+    """
     url = request.get_full_path()
     home_link = settings.SHARE_URL
     template = "error.html"
-    context = {"url": home_link + url, "error_code": 404,
+    context = {"url": home_link + url[1:], "error_code": 404,
                "error_message": "Oops, the page you're <br/> looking for does not exist.", "home_link": home_link}
     return render(request, template, context)
 
 
 def server_error(request):
+    """
+    Server error - 500 page.
+    
+    Parameters
+    ----------
+    request: WSGIRequest
+        URL request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns an rendered HTML page.
+    """
     url = request.get_full_path()
     home_link = settings.SHARE_URL
     template = "error.html"
-    context = {"url": home_link + url, "error_code": 500,
+    context = {"url": home_link + url[1:], "error_code": 500,
                "error_message": "Sorry, but the requested page is unavailable <br/> due to a server hiccup.",
                "home_link": home_link}
     return render(request, template, context)
@@ -61,84 +102,190 @@ def server_error(request):
 
 
 class ContentDecode:
-    # ToDo: Change this into nested classes
-    def __init__(self, json_object):
-        self.json = json_object
+    """
+    Content decoder object.
+    """
+    def __init__(self):
+        query_local = '''
+                {
+                  allContents {
+                    refId
+                    created
+                    updated
+                    websiteName
+                    cv
+                    bio
+                    url
+                    firstName
+                    lastName
+                    emailId
+                    github
+                    twitter
+                    linkedin
+                    file
+                    image
+                    education {
+                      id
+                      title
+                      fromDate
+                      toDate
+                      where
+                      current
+                      file
+                      image
+                    }
+                    projects {
+                      id
+                      link
+                      title
+                      category
+                      longDescription
+                      shortDescription
+                      file
+                      image
+                    }
+                    tutorials {
+                      id
+                      link
+                      title
+                      longDescription
+                      file
+                      image
+                    }
+                    experience {
+                      id
+                      fromDate
+                      toDate
+                      title
+                      whereCity
+                      whereCountry
+                      company
+                      current
+                    }
+                    skills {
+                      skillsContent {
+                        id
+                        typeOfSkill {
+                          typeOfSkill
+                        }
+                        content
+                        file
+                        image
+                      }
+                    }
+                    publications {
+                      publicationsContent {
+                        id
+                        typeOfPublication {
+                          typeOfPublication
+                        }
+                        content
+                        file
+                        image
+                      }
+                    }
+                  }
+                  allMetaContent {
+                    id
+                    header
+                    footer
+                    meta
+                  }
+                }
+
+                '''
+        self.content = query.execute(query_local)
+        self.json = json.loads(json.dumps(self.content.data))
+
+    # JSON format
+    @property
+    def get_json(self):
+        return self.json
 
     # Bio
+    @property
     def get_name(self):
-        return self.json['about_me']['name']
+        return self.json['allContents'][0]['firstName'] + ' ' + self.json['allContents'][0]['lastName']
 
+    @property
     def get_bio(self):
-        return "".join([markdown.markdown(a) for a in self.json['about_me']['bio']])
+        return "".join([markdown.markdown(a) for a in self.json['allContents'][0]['bio']])
 
+    @property
     def get_twitter(self):
-        return self.json['about_me']['twitter']
+        return self.json['allContents'][0]['twitter']
 
+    @property
     def get_linkedin(self):
-        return self.json['about_me']['linkedin']
+        return self.json['allContents'][0]['linkedin']
 
+    @property
     def get_github(self):
-        return self.json['about_me']['github']
+        return self.json['allContents'][0]['github']
 
+    @property
     def get_education(self):
-        json_data = self.json['about_me']['education']
-        a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
-        return a
+        json_data = self.json['allContents'][0]['education']
 
+        return reversed(json_data)
+
+    @property
     def get_experience(self):
-        json_data = self.json['experience']
-        a = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
-        return a
+        json_data = self.json['allContents'][0]['experience']
+        return reversed(json_data)
 
-    def get_skills(self):
-        return self.json['skills']
-
-    def get_research_area(self):
-        return self.json['research_area']
-
-    def get_publications(self):
-        return self.json['publication']
-
-    @staticmethod
-    def get_version():
-        response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest',
-                                auth=('akshaybabloo', GITHUB_KEY))
-
-        return json.loads(response.text)
-
-    # Portfolio
-    def get_portfolio(self):
-        json_data = self.json['projects']
-        json_data1 = self.json['tutorials']
-        a_data = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
-
-        b1 = 0
-        for a1 in a_data:
-            a_data[b1]['long_description'] = markdown.markdown(a1['long_description'])
-            b1 += 1
-
-        a_data1 = [json_data1[a] for a in sorted(json_data1.keys(), reverse=True)]
-
-        b2 = 0
-        for a2 in a_data1:
-            a_data1[b2]['long_description'] = markdown.markdown(a2['long_description'])
-            b2 += 1
-
-        a_data += a_data1
-
-        category = []
-        for a in a_data:
-            category.append(a['category'])
-        list(set(category))
-
-        return {'portfolio': a_data, 'category': list(set(category))}
-
-    # Blog
-    @staticmethod
-    def get_blog():
-        data = feedparser.parse("https://blog.gollahalli.com/rss")
-        return data.entries
+    # @property
+    # def get_skills(self):
+    #     return self.json['skills']
+    #
+    # @property
+    # def get_research_area(self):
+    #     return self.json['research_area']
+    #
+    # @property
+    # def get_publications(self):
+    #     return self.json['publication']
+    #
+    # @staticmethod
+    # def get_version():
+    #     response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest',
+    #                             auth=('akshaybabloo', GITHUB_KEY))
+    #
+    #     return json.loads(response.text)
+    #
+    # # Portfolio
+    # @property
+    # def get_portfolio(self):
+    #     json_data = self.json['projects']
+    #     json_data1 = self.json['tutorials']
+    #     a_data = [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
+    #
+    #     b1 = 0
+    #     for a1 in a_data:
+    #         a_data[b1]['long_description'] = markdown.markdown(a1['long_description'])
+    #         b1 += 1
+    #
+    #     a_data1 = [json_data1[a] for a in sorted(json_data1.keys(), reverse=True)]
+    #
+    #     b2 = 0
+    #     for a2 in a_data1:
+    #         a_data1[b2]['long_description'] = markdown.markdown(a2['long_description'])
+    #         b2 += 1
+    #
+    #     a_data += a_data1
+    #
+    #     category = []
+    #     for a in a_data:
+    #         category.append(a['category'])
+    #     list(set(category))
+    #
+    #     return {'portfolio': a_data, 'category': list(set(category))}
+    #
+    # # Blog
+    # @staticmethod
+    # def get_blog():
+    #     data = feedparser.parse("https://blog.gollahalli.com/rss")
+    #     return data.entries
 
     # Other
     @staticmethod
@@ -288,10 +435,12 @@ class ContentDecode:
 
         """
 
+    @property
     def get_projects_amp(self):
         json_data = self.json['projects']
         return [json_data[a] for a in sorted(json_data.keys(), reverse=True)]
 
+    @property
     def get_tutorials_amp(self):
         json_data = self.json['tutorials']
         return [json_data[a] for a in sorted(json_data.keys(), reverse=True)]

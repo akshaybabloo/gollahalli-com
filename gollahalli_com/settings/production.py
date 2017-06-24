@@ -8,7 +8,10 @@ Production file for Heroku.
 
 import os
 
-import dj_database_url
+try:
+    import dj_database_url
+except ImportError:
+    pass
 from django.conf import settings
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +30,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-SHARE_URL = "http://www.gollahalli.com/"
+SHARE_URL = "https://www.gollahalli.com/"
 
 # S3
 AWS_S3_CALLING_FORMAT = 'boto.s3.connection.OrdinaryCallingFormat'

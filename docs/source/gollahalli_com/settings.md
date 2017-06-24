@@ -36,15 +36,6 @@ Unlike the regular settings [1]_ the application is converted into a package tha
 
 See
 
-`secrets.py`
-------------
-
-.. automodule:: gollahalli_com.settings.secrets
-   :members:
-   :undoc-members:
-   :show-inheritance:
-   :private-members:
-
 Reference
 ---------
 
