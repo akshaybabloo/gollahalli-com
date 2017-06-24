@@ -7,7 +7,7 @@ python:
 services: postgresql
 
 env:
-  - DJANGO=1.11.1
+  - DJANGO=1.11.2
 
 addons:
   postgresql: "9.4"
@@ -19,7 +19,6 @@ before_install:
 
 install:
   - pip install -r requirements.txt
-  - pip install django==$DJANGO --quiet
   - pip install psycopg2 --quiet
   - pip install codecov
 
