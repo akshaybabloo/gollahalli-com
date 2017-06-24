@@ -105,6 +105,8 @@ def auth_2fa(request):
     request: WSGIRequest
         Request.
     """
+
+    context = {}
     session_key = request.session.session_key
 
     user_id = get_user_from_sid(session_key)
@@ -120,12 +122,20 @@ def auth_2fa(request):
         if request.get_signed_cookie('is_personal', salt='#c}jbb9j>c.oMKP=T)M.3%fe') == 'yes':
             return redirect('/admin/')
 
+    authy_api = AuthyApiClient(settings.AUTHY_API)
+
     template = 'auth.html'
+    if request.GET.get('sms') == 'yes':
+        sms = authy_api.users.request_sms(user_auth.authy_id, {'force': True})
+        if sms.ok():
+            context['sms'] = True
+        else:
+            context['sms'] = sms.errors()['message']
+
     if request.method == 'POST':
         form = AuthyForm(request.POST)
         if form.is_valid():
             token = request.POST.get('authy', None)
-            authy_api = AuthyApiClient(settings.AUTHY_API)
             verification = authy_api.tokens.verify(user_auth.authy_id, str(token))
             if verification.ok():
                 if request.POST.get('is_personal') == 'on':
@@ -142,6 +152,6 @@ def auth_2fa(request):
     else:
         form = AuthyForm()
 
-    context = {'form': form}
+    context['form'] = form
 
     return render(request, template, context)

@@ -22,7 +22,7 @@
     <link rel="manifest" href="{% static 'img/favicons/manifest.json' %}">
     <link rel="icon" sizes="192x192" href="{% static 'img/favicons/favicon-192.png' %}">
 
-    <title>Login</title>
+    <title>Authenticate Login</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
 
@@ -44,7 +44,33 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+
                     <div class="card card-signup">
+                        {% if sms == True %}
+                            <div class="alert alert-success">
+                                <div class="container-fluid">
+                                    <div class="alert-icon">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                    </button>
+                                    <b>Success:</b> Authentication code sent.
+                                </div>
+                            </div>
+                        {% elif sms != None %}
+                            <div class="alert alert-danger">
+                                <div class="container-fluid">
+                                    <div class="alert-icon">
+                                        <i class="material-icons">error_outline</i>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                    </button>
+                                    <b>Error</b> {{ sms }}
+                                </div>
+                            </div>
+                        {% endif %}
                         {% if form.errors %}
                             {% for key, error in form.errors.items %}
                                 <p class="text-divider" style="color: red">{{ error|striptags }}</p>
@@ -66,13 +92,14 @@
 										<span class="input-group-addon">
 										</span>
                                     <div class="checkbox">
-								<label>
-									<input type="checkbox" id="id_is_personal" name="is_personal">
-                                    Personal Computer?
-								</label>
-							</div>
+                                        <label>
+                                            <input type="checkbox" id="id_is_personal" name="is_personal">
+                                            Personal Computer?
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
+                            <p class="text-divider"><a href="{% url '2fa' %}?sms=yes">Send SMS instead?</a></p>
                             <div class="footer text-center">
                                 <input type="submit" class="btn btn-simple btn-primary btn-lg" value="Submit">
                             </div>
