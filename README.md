@@ -1,7 +1,7 @@
 # Gollahalli Website
 
 [![codecov](https://codecov.io/gh/akshaybabloo/gollahalli-com/branch/master/graph/badge.svg)](https://codecov.io/gh/akshaybabloo/gollahalli-com)
-[![Build Status](https://travis-ci.org/akshaybabloo/gollahalli-com.svg?branch=v3)](https://travis-ci.org/akshaybabloo/gollahalli-com)
+[![Build Status](https://travis-ci.org/akshaybabloo/gollahalli-com.svg?branch=master)](https://travis-ci.org/akshaybabloo/gollahalli-com)
 
 ## 1 Django Template Tags
 
