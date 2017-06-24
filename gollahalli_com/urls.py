@@ -99,7 +99,6 @@ admin.site.login = login_required(admin.site.login)
 urlpatterns = [
                   url(r'^', include('viewer.urls')),
                   url(r'^editor/', include('editor.urls'), name='editor_urls'),
-                  # url(r'^static/js/users\.js', authy_views.users_js, name='authy_me_urls'),
                   url(r'^admin/', admin.site.urls, name='admin_urls'),
                   url(r'^', include('authy_me.urls'), name="login"),
                   url(r'^logout/$', auth_views.logout, name='logout'),
