@@ -11,13 +11,11 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
 from django.contrib.sitemaps import views
 from django.http import HttpResponse
 from graphene_django.views import GraphQLView
-from django.contrib.auth.decorators import login_required
 
-from authy_me import views as authy_views
-from authy_me.forms import LoginForm
 from .schema import *
 from .sitemaps import Sitemap, xsl_content_type
 
