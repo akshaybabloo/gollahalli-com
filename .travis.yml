@@ -1,56 +1,65 @@
 language: python
 
-python:
-  - 3.5
-  - 3.6
-  - 3.4
+#python:
+#  - 3.5
+#  - 3.6
+#  - 3.4
 
 services: postgresql
 
-env:
-    - DJANGO=1.8
-    - DJANGO=1.9
-    - DJANGO=1.10
-    - DJANGO=1.11
-    - DJANGO=master
+#env:
+#    - DJANGO=1.8
+#    - DJANGO=1.9
+#    - DJANGO=1.10
+#    - DJANGO=1.11
+#    - DJANGO=master
 
 addons:
   postgresql: "9.4"
 
-matrix:
-    fast_finish: true
-    include:
-      - python: "3.6"
-        env: DJANGO=master
-      - python: "3.6"
-        env: DJANGO=1.11
-      - python: "3.5"
-        env: DJANGO=1.10
-      - python: "3.4"
-        env: DJANGO=1.9
+#matrix:
+#    fast_finish: true
+#    include:
+#      - python: "3.6"
+#        env: DJANGO=master
+#      - python: "3.6"
+#        env: DJANGO=1.11
+#      - python: "3.5"
+#        env: DJANGO=1.10
+#      - python: "3.4"
+#        env: DJANGO=1.9
+#
+#    allow_failures:
+#      - env: DJANGO=master
 
-    allow_failures:
-      - env: DJANGO=master
+#before_install:
+##  - export PYTHONPATH=$HOME/builds/akshaybabloo/gollahalli_com
+#  - export PIP_USE_MIRRORS=true
 
-before_install:
-#  - export PYTHONPATH=$HOME/builds/akshaybabloo/gollahalli_com
-  - export PIP_USE_MIRRORS=true
-
-install:
-    - pip install tox tox-travis
+#install:
+#    - pip install tox tox-travis
 
 before_script:
   - psql -c "CREATE DATABASE mydb;" -U postgres
 
-script:
-#  - python manage.py test
-  - tox
+#script:
+##  - python manage.py test
+#  - tox
 
-after_success:
-    - pip install codecov
-    - codecov -e TOXENV,DJANGO
+#after_success:
+#    - pip install codecov
+#    - codecov -e TOXENV,DJANGO
 
 branches:
   only:
   - master
   - v3
+
+install:
+  - pip install tox tox-travis
+script:
+  - tox
+env:
+  - TOXENV=django15
+  - TOXENV=django16
+  - TOXENV=coverage
