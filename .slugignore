@@ -1,12 +1,9 @@
 db.sqlite3
-/node_modules
 content.json
-gulpfile.js
-gulpfile.old.js
 LICENSE.md
-package.json
 README.md
 /.idea
 /docs
 local.py
 .travis.yml
+tox.ini
