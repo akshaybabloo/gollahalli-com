@@ -56,9 +56,13 @@ branches:
 
 install:
   - pip install tox tox-travis
+  - pip install -r requirements-testing.exe
 script:
   - tox
 env:
   - TOXENV=django19
   - TOXENV=django110
   - TOXENV=coverage
+
+notifications:
+  email: false
