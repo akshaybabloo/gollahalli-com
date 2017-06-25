@@ -56,7 +56,7 @@ branches:
 
 install:
   - pip install tox tox-travis
-  - pip install -r requirements-testing.exe
+  - pip install -r requirements-testing.txt
 script:
   - tox
 env:
