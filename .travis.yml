@@ -24,8 +24,8 @@ script:
   - tox
 
 env:
-  - TOXENV=django19
   - TOXENV=django110
+  - TOXENV=django111
   - TOXENV=coverage
 
 notifications:
