@@ -47,9 +47,9 @@ if 'TRAVIS' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE':   'django.db.backends.postgresql_psycopg2',
-            'NAME':     'travisci',
+            'NAME':     'akshay',
             'USER':     'postgres',
-            'PASSWORD': '',
+            'PASSWORD': 'bar',
             'HOST':     'localhost',
             'PORT':     '',
         }

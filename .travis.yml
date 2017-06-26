@@ -11,6 +11,7 @@ addons:
 
 before_script:
   - psql -c "CREATE DATABASE mydb;" -U postgres
+  - psql -c "CREATE USER akshay WITH PASSWORD 'bar';" -U postgres
 
 branches:
   only:
