@@ -10,8 +10,8 @@ addons:
   postgresql: "9.4"
 
 before_script:
-  - psql -c "CREATE DATABASE mydb;" -U postgres
-  - psql -c "CREATE USER akshay WITH PASSWORD 'bar';" -U postgres
+  - sudo psql -c "CREATE DATABASE mydb;" -U postgres
+  - sudo psql -c "CREATE USER akshay WITH PASSWORD 'bar';" -U postgres
 
 branches:
   only:
@@ -23,6 +23,8 @@ install:
 
 script:
   - tox
+
+sudo: required
 
 env:
   - TOXENV=django110
