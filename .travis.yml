@@ -12,6 +12,7 @@ addons:
 before_script:
   - sudo psql -c "CREATE DATABASE mydb;" -U postgres
   - sudo psql -c "CREATE USER akshay WITH PASSWORD 'bar';" -U postgres
+  - sudo psql -c "ALTER USER akshay CREATEDB;" -U postgres
 
 branches:
   only:
