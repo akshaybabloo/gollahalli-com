@@ -25,7 +25,7 @@ install:
 script:
   - tox
 
-sudo: required
+sudo: false
 
 env:
   - TOXENV=django110
