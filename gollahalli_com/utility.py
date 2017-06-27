@@ -1,4 +1,10 @@
+import datetime
 import json
+import os
+
+import requests
+
+GITHUB_KEY = os.environ['GITHUB_KEY']
 
 
 def is_json(my_json):
@@ -55,3 +61,56 @@ def format_date_time(date_time):
 
     """
     return date_time.strftime('%b. %d, %Y, %I:%M %p')
+
+
+def get_version():
+    """
+    Get's the latest released version.
+
+    Returns
+    -------
+    response: dict:
+        A dictionary of GitHub content.
+
+    """
+    response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest',
+                            auth=('akshaybabloo', GITHUB_KEY))
+    return json.loads(response.text)
+
+
+def github_date_time_format(value):
+    """
+    Strips the date and time of GitHub's format.
+
+    Parameters
+    ----------
+    value: str
+        The vale should be of format `%Y-%m-%dT%H:%M:%Sz`.
+
+    Returns
+    -------
+    date: datetime
+        datetime object.
+    """
+    date = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%Sz')
+    return date
+
+
+def custom_date(value):
+    """
+    Strips users date.
+
+    >>> c_date = custom_date('10/10/2010')
+
+    Parameters
+    ----------
+    value: str
+        The vale should be of format `%d/%m/%Y`.
+
+    Returns
+    -------
+    date: datetime
+        datetime object
+    """
+    date = datetime.datetime.strptime(value, '%d/%m/%Y')
+    return date
