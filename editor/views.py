@@ -1,14 +1,14 @@
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect
-from django.shortcuts import render, HttpResponseRedirect
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import ProgrammingError
 from django.forms.models import model_to_dict
+from django.shortcuts import redirect
+from django.shortcuts import render, HttpResponseRedirect
 
-from .models import ContentModel
+from gollahalli_com.utility import format_date_time
 from .forms import ContentFormModel
-from utility import format_date_time
+from .models import ContentModel
 
 
 # ============================================================================================
