@@ -101,6 +101,7 @@ def custom_date(value):
     Strips users date.
 
     >>> c_date = custom_date('10/10/2010')
+    2010-10-10 00:00:00
 
     Parameters
     ----------
