@@ -21,8 +21,9 @@ class AuthenticatorModel(models.Model):
     first_name = models.CharField(default='First Name', max_length=50)
     last_name = models.CharField(default='Last Name', max_length=50)
     phone_number = PhoneNumberField()
-    email_id = models.CharField(default='email ID', help_text='Enter the email ID used to register the Django user',
-                                max_length=50)
+    email_id = models.EmailField(default='test@test.com',
+                                 help_text='Enter the email ID used to register the Django user',
+                                 max_length=50)
     authy_id = models.CharField(null=True,
                                 max_length=50)
     session_id = models.CharField(null=True, max_length=100)
