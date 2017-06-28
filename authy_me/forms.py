@@ -32,7 +32,7 @@ class AuthyForm(forms.Form):
     """
     Authy Form
     """
-    authy = forms.CharField(required=True,
+    authy = forms.CharField(widget=forms.NumberInput, required=True,
                             help_text="Enter the number provided by the Authy application on your mobile.")
     is_personal = forms.BooleanField(required=False)
 
