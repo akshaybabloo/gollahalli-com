@@ -1,5 +1,5 @@
-from django.test import TestCase
-from gollahalli_com.sitemaps import Sitemap
+from django.test import TestCase, RequestFactory
+from gollahalli_com.sitemaps import Sitemap, xsl_content_type
 from gollahalli_com.utility import custom_date
 from django.test import Client
 
@@ -105,3 +105,10 @@ class XlsTest(TestCase):
         self.assertTrue(response.status_code, 200)
         content = list(response.streaming_content)[0].decode('utf-8')
         self.assertTrue('xsl' in content)
+
+    def test_xls_content_type(self):
+        """
+        Testing ``xsl_content_type`` type
+        """
+        content_type = xsl_content_type()
+        self.assertTrue(content_type['Content-Type'], 'text/xsl')
