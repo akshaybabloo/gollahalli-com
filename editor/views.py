@@ -6,7 +6,7 @@ from django.forms.models import model_to_dict
 from django.shortcuts import redirect
 from django.shortcuts import render, HttpResponseRedirect
 
-from gollahalli_com.utility import format_date_time
+from gollahalli_com.utils import format_date_time
 from .forms import ContentFormModel
 from .models import ContentModel
 
