@@ -1,7 +1,8 @@
-from django.test import TestCase, RequestFactory
-from gollahalli_com.sitemaps import Sitemap, xsl_content_type
-from gollahalli_com.utility import custom_date
 from django.test import Client
+from django.test import TestCase
+
+from gollahalli_com.sitemaps import Sitemap, xsl_content_type
+from gollahalli_com.utils import custom_date
 
 
 class SiteMapTest(TestCase):

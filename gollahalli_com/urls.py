@@ -14,7 +14,7 @@ from graphene_django.views import GraphQLView
 
 from .schema import *
 from .sitemaps import Sitemap, xsl_content_type
-from .utility import *
+from .utils import *
 
 sitemaps = {
     'pages': Sitemap(
