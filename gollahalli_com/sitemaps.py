@@ -1,4 +1,3 @@
-import requests
 from django.contrib import sitemaps
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.http import HttpResponse
@@ -116,13 +115,9 @@ class Sitemap(sitemaps.Sitemap):
         return urls
 
 
-def xsl_content_type(request):
+def xsl_content_type():
     """
     Converts the MIME type of `sitemap.xsl`.
-
-    Parameters
-    ----------
-    request: WSGIRequest
 
     Returns
     -------
@@ -132,5 +127,4 @@ def xsl_content_type(request):
     """
 
     filename = static('sitemap.xsl')
-    data = requests.get(filename)
-    return HttpResponse(data, content_type="text/xsl")
+    return HttpResponse(filename, content_type="text/xsl")
