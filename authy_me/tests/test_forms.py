@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.test import TestCase, Client
 from django.urls import reverse
 
-from authy_me.forms import AuthenticatorAdminForm, AuthyForm
+from authy_me.forms import AuthenticatorAdminForm, AuthyForm, LoginForm
 from authy_me.models import AuthenticatorModel
 
 
@@ -90,4 +90,40 @@ class AuthyFormTests(TestCase):
         form = AuthyForm(data=form_data)
         self.assertFalse(form.is_valid())
         self.assertIn('The string should be all numbers.', str(form.errors))
+        self.assertRaises(forms.ValidationError)
+
+
+class LoginFormTests(TestCase):
+    """
+    Test case for ``LoginForm``
+    """
+
+    def setUp(self):
+        password = 'mypassword'
+        self.my_admin = User.objects.create_superuser('myuser', 'myemail@test.com', password)
+
+        c = Client()
+        c.login(username=self.my_admin.username, password=password)
+
+    def test_login_form(self):
+        """
+        Testing ``login_form`` fail.
+        """
+
+        form_data = {'remember_me': True, 'username': 'myuser', 'password': 'mypassword'}
+
+        form = LoginForm(data=form_data)
+        self.assertTrue(form.is_valid())
+
+    def test_login_form_fail(self):
+        """
+        Testing ``login_form`` fail.
+        """
+
+        form_data = {'remember_me': True}
+
+        form = LoginForm(data=form_data)
+
+        self.assertFalse(form.is_valid())
+        self.assertIn('Sorry, that login was invalid. Please try again.', str(form.errors))
         self.assertRaises(forms.ValidationError)
