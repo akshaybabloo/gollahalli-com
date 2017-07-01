@@ -16,14 +16,14 @@ class AuthenticatorModelTest(TestCase):
         """
         password = 'mypassword'
 
-        my_admin = User.objects.create_superuser('myuser', 'myemail@test.com', password)
+        self.my_admin = User.objects.create_superuser('myuser', 'myemail@test.com', password)
 
         c = Client()
-        c.login(username=my_admin.username, password=password)
+        c.login(username=self.my_admin.username, password=password)
 
-        AuthenticatorModel.objects.create(id=3, user_id=my_admin, first_name='Akshay Raj',
-                                          last_name='Gollahalli', phone_number='+123456789',
-                                          email_id='example@example.com', authy_id='1234567')
+        self.auth = AuthenticatorModel.objects.create(id=3, user_id=self.my_admin, first_name='Akshay Raj',
+                                                      last_name='Gollahalli', phone_number='+123456789',
+                                                      email_id='example@example.com', authy_id='1234567')
 
     def test_model(self):
         """
@@ -37,3 +37,7 @@ class AuthenticatorModelTest(TestCase):
         self.assertEqual(content.phone_number, '+123456789')
         self.assertEqual(content.email_id, 'example@example.com')
         self.assertEqual(content.authy_id, 'error')
+
+    def tearDown(self):
+        self.auth.delete()
+        self.my_admin.delete()
