@@ -41,15 +41,16 @@ def has_2fa(request):
 
     try:
         user = User.objects.get(username=request.username)
+        print(user)
     except User.DoesNotExist:
         content = False
-        pass
+        return content
 
     try:
         user_auth = user.auth_user.get(id=user.id)
     except AuthenticatorModel.DoesNotExist:
         content = False
-        pass
+        return content
 
     return content
 
