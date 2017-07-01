@@ -49,6 +49,15 @@ class UtilityTests(TestCase):
         self.assertTrue(response)
         self.assertFalse(response_false)
 
+    def test_has_2fa_assertion(self):
+        """
+        Testing ``has_2fa``
+        """
+        response = has_2fa(Mock())
+
+        self.assertFalse(response)
+        self.assertRaises(User.DoesNotExist)
+
     def test_get_user_from_sid(self):
         """
         Testing ``get_user_from_sid``
@@ -63,3 +72,11 @@ class UtilityTests(TestCase):
         self.auth.delete()
         self.my_admin.delete()
         self.my_admin_false.delete()
+
+
+class Mock:
+    """
+    Mock object for username.
+    """
+    def username(self):
+        return "unknown_user"
