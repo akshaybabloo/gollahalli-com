@@ -41,7 +41,6 @@ def has_2fa(request):
 
     try:
         user = User.objects.get(username=request.username)
-        print(user)
     except User.DoesNotExist:
         content = False
         return content
