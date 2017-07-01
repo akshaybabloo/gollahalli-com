@@ -21,7 +21,7 @@ class AuthenticatorModelTest(TestCase):
         c = Client()
         c.login(username=self.my_admin.username, password=password)
 
-        self.auth = AuthenticatorModel.objects.create(id=3, user_id=self.my_admin, first_name='Akshay Raj',
+        self.auth = AuthenticatorModel.objects.create(id=self.my_admin.id, user_id=self.my_admin, first_name='Akshay Raj',
                                                       last_name='Gollahalli', phone_number='+123456789',
                                                       email_id='example@example.com', authy_id='1234567')
 
@@ -29,9 +29,9 @@ class AuthenticatorModelTest(TestCase):
         """
         Tests `id`, `first_name`, `last_name`, `phone_number`, `email_id` and `authy_id`
         """
-        content = AuthenticatorModel.objects.get(id=3)
+        content = AuthenticatorModel.objects.get(id=self.my_admin.id)
 
-        self.assertEqual(content.id, 3)
+        self.assertEqual(content.id, self.my_admin.id)
         self.assertEqual(content.first_name, 'Akshay Raj')
         self.assertEqual(content.last_name, 'Gollahalli')
         self.assertEqual(content.phone_number, '+123456789')
