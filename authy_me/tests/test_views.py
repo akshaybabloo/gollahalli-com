@@ -26,8 +26,17 @@ class ViewsTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response['Content-Type'], 'text/javascript')
 
-    def test_log_me_in(self):
-        pass
+    def test_log_me_in_admin(self):
+        """
+        Testing ``log_me_in`` redirect to admin if already logged in.
+        """
+        c = Client()
+        c.login(username='myuser', password='mypassword')
+        response = c.get('/login/')
+
+        self.assertRedirects(response, '/admin/')
+
+
 
     def test_auth_2fa(self):
         pass
