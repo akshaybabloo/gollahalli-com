@@ -107,6 +107,29 @@ class ContentModelTest(TestCase):
         self.assertEqual(content.file, content.file.name)
         self.assertEqual(content.image, content.image.name)
 
+    def test_re_upload(self):
+        """
+        Testing re-uploads for `cv`, `file`, and `image`
+        """
+        im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
+        im_io = BytesIO()  # a BytesIO object for saving image
+        im.save(im_io, 'JPEG')  # save the image to im_io
+        im_io.seek(0)
+
+        ContentModel.objects.update(ref_id=1,
+                                    cv=SimpleUploadedFile('best_file_eva_1.txt',
+                                                          'these are the file contents!'.encode('utf-8')),
+                                    file=SimpleUploadedFile('content_model_1.txt',
+                                                            'these are the file contents!'.encode('utf-8')),
+                                    image=InMemoryUploadedFile(im_io, None, 'content_model_1.jpg', 'image/jpeg', im_io,
+                                                               None))
+
+        content = ContentModel.objects.get(ref_id=1)
+
+        self.assertEqual(content.cv, content.cv.name)
+        self.assertEqual(content.file, content.file.name)
+        self.assertEqual(content.image, content.image.name)
+
 
 class EducationModelTest(TestCase):
     """
@@ -156,6 +179,27 @@ class EducationModelTest(TestCase):
         """
         Tests `file` and `image`.
         """
+        content = EducationModel.objects.get(id=1)
+
+        self.assertEqual(content.file, content.file.name)
+        self.assertEqual(content.image, content.image.name)
+
+    def test_re_upload(self):
+        """
+        Testing re-uploads for `file`, and `image`
+        """
+        im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
+        im_io = BytesIO()  # a BytesIO object for saving image
+        im.save(im_io, 'JPEG')  # save the image to im_io
+        im_io.seek(0)
+
+        EducationModel.objects.update(id=1,
+                                      file=SimpleUploadedFile('education_model_1.txt',
+                                                              'these are the file contents!'.encode('utf-8')),
+                                      image=InMemoryUploadedFile(im_io, None, 'education_model_1.jpg', 'image/jpeg',
+                                                                 im_io,
+                                                                 None))
+
         content = EducationModel.objects.get(id=1)
 
         self.assertEqual(content.file, content.file.name)
@@ -217,6 +261,27 @@ class ProjectsModelTest(TestCase):
         self.assertEqual(content.file, content.file.name)
         self.assertEqual(content.image, content.image.name)
 
+    def test_re_upload(self):
+        """
+        Testing re-uploads for `file`, and `image`
+        """
+        im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
+        im_io = BytesIO()  # a BytesIO object for saving image
+        im.save(im_io, 'JPEG')  # save the image to im_io
+        im_io.seek(0)
+
+        ProjectsModel.objects.update(id=1,
+                                     file=SimpleUploadedFile('project_model_1.txt',
+                                                             'these are the file contents!'.encode('utf-8')),
+                                     image=InMemoryUploadedFile(im_io, None, 'project_model_1.jpg', 'image/jpeg',
+                                                                im_io,
+                                                                None))
+
+        content = ProjectsModel.objects.get(id=1)
+
+        self.assertEqual(content.file, content.file.name)
+        self.assertEqual(content.image, content.image.name)
+
 
 class TutorialsModelTest(TestCase):
     """
@@ -262,6 +327,27 @@ class TutorialsModelTest(TestCase):
         """
         Tests `file` and `image`.
         """
+
+        content = TutorialsModel.objects.get(id=1)
+
+        self.assertEqual(content.file, content.file.name)
+        self.assertEqual(content.image, content.image.name)
+
+    def test_re_upload(self):
+        """
+        Testing re-uploads for `file`, and `image`
+        """
+        im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
+        im_io = BytesIO()  # a BytesIO object for saving image
+        im.save(im_io, 'JPEG')  # save the image to im_io
+        im_io.seek(0)
+
+        TutorialsModel.objects.update(id=1,
+                                      file=SimpleUploadedFile('tutorial_model_1.txt',
+                                                              'these are the file contents!'.encode('utf-8')),
+                                      image=InMemoryUploadedFile(im_io, None, 'tutorial_model_1.jpg', 'image/jpeg',
+                                                                 im_io,
+                                                                 None))
 
         content = TutorialsModel.objects.get(id=1)
 
@@ -381,6 +467,26 @@ class SkillsContentModelTest(TestCase):
         self.assertEqual(content.file, content.file.name)
         self.assertEqual(content.image, content.image.name)
 
+    def test_re_upload(self):
+        """
+        Testing re-uploads for `file`, and `image`
+        """
+        im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
+        im_io = BytesIO()  # a BytesIO object for saving image
+        im.save(im_io, 'JPEG')  # save the image to im_io
+        im_io.seek(0)
+
+        SkillsContentModel.objects.update(id=1,
+                                          file=SimpleUploadedFile('skills_content_model_1.txt',
+                                                                  'these are the file contents!'.encode('utf-8')),
+                                          image=InMemoryUploadedFile(im_io, None, 'skills_content_model_1.jpg',
+                                                                     'image/jpeg', im_io, None))
+
+        content = SkillsContentModel.objects.get(id=1)
+
+        self.assertEqual(content.file, content.file.name)
+        self.assertEqual(content.image, content.image.name)
+
 
 class PublicationsModelTest(TestCase):
     """
@@ -450,6 +556,27 @@ class PublicationsContentModelTest(TestCase):
         """
         Tests `file` and `image`.
         """
+        content = PublicationsContentModel.objects.get(id=1)
+
+        self.assertEqual(content.file, content.file.name)
+        self.assertEqual(content.image, content.image.name)
+
+    def test_re_upload(self):
+        """
+        Testing re-uploads for `file`, and `image`
+        """
+        im = Image.new(mode='RGB', size=(200, 200))  # create a new image using PIL
+        im_io = BytesIO()  # a BytesIO object for saving image
+        im.save(im_io, 'JPEG')  # save the image to im_io
+        im_io.seek(0)
+
+        PublicationsContentModel.objects.update(id=1,
+                                                file=SimpleUploadedFile('publication_content_model_1.txt',
+                                                                        'these are the file contents!'.encode('utf-8')),
+                                                image=InMemoryUploadedFile(im_io, None,
+                                                                           'publication_content_model_1.jpg',
+                                                                           'image/jpeg', im_io, None))
+
         content = PublicationsContentModel.objects.get(id=1)
 
         self.assertEqual(content.file, content.file.name)
