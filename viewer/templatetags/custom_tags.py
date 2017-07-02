@@ -29,4 +29,4 @@ def url_replace(value):
 
 @register.filter()
 def custom_blog_tags(value):
-    return ', '.join([str(i.term) for i in value])
+    return ', '.join([str(i['term']) for i in value])
