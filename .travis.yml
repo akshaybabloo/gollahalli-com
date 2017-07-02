@@ -31,7 +31,6 @@ env:
   - TOXENV=django110
   - TOXENV=django111
   - TOXENV=coverage
-  - BOTO_CONFIG=/tmp/nowhere
 
 notifications:
   email: false
