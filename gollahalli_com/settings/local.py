@@ -132,3 +132,6 @@ TEMPLATES = [
         },
     },
 ]
+
+MEDIAFILES_LOCATION = 'media'
+STATICFILES_LOCATION = 'static'
