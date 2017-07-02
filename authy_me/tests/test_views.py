@@ -74,7 +74,7 @@ class ViewsTests(TestCase):
                                                  email_id='example@example.com', authy_id='1234567')
 
         c = Client()
-        response = c.post('/login/', data={'username': 'myuser', 'password': 'mypassword'})
+        response = c.post('/login/', data={'username': 'myuser', 'password': 'mypassword', 'remember_me': True})
 
         self.assertRedirects(response, '/login/2fa/')
         auth.delete()
