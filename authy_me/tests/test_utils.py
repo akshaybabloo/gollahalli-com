@@ -68,6 +68,15 @@ class UtilityTests(TestCase):
 
         self.assertEqual(session_id, str(self.my_admin_false.id))
 
+    def test_mock_class(self):
+        """
+        Testing ``Mock`` class
+        """
+
+        cl = Mock()
+
+        self.assertEqual(cl.username(), 'unknown_user')
+
     def tearDown(self):
         self.auth.delete()
         self.my_admin.delete()
