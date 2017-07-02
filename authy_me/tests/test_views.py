@@ -45,6 +45,7 @@ class ViewsTests(TestCase):
         c = Client()
         response = c.post('/login/', data={'username': 'user', 'password': 'pass'})
         self.assertIn("Your username and password didn\'t match. Please try again.", response.content.decode('utf-8'))
+        self.assertRaises(User.DoesNotExist)
 
     # def test_log_me_in_post_not_staff(self):
     #     """
