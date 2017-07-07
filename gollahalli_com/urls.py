@@ -62,20 +62,21 @@ def custom_date(value):
     date = datetime.datetime.strptime(value, '%d/%m/%Y')
     return date
 
+
 sitemaps = {
     'pages': Sitemap(
-                ['index'],
-                [1.0],
-                ['monthly'],
-                [datetime.date.today()]
-            ),
+        ['index'],
+        [1.0],
+        ['monthly'],
+        [datetime.date.today()]
+    ),
 
     'other': Sitemap(
-                ['repo', 'change-log'],
-                [0.5, 0.5],
-                ['monthly', 'monthly'],
-                [custom_date('10/01/2017'), github_date_time_format(get_version()['published_at'])]
-            )
+        ['repo', 'change-log'],
+        [0.5, 0.5],
+        ['monthly', 'monthly'],
+        [custom_date('10/01/2017'), github_date_time_format(get_version()['published_at'])]
+    )
 }
 
 urlpatterns = [
