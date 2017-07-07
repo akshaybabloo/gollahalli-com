@@ -124,7 +124,7 @@ def auth_2fa(request):
 
     authy_api = AuthyApiClient(settings.AUTHY_API)
 
-    template = 'auth.html'
+    template = '2fa/auth.html'
     if request.GET.get('sms') == 'yes':
         sms = authy_api.users.request_sms(user_auth.authy_id, {'force': True})
         if sms.ok():
