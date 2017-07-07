@@ -1,3 +1,4 @@
+django-1.11.3
 codecov
 pytest-django
 pytest-cov
