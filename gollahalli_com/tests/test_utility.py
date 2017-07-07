@@ -32,7 +32,7 @@ class UtilityTest(TestCase):
         """
         github_version = utils.get_version()
 
-        self.assertEqual(github_version['target_commitish'], 'master')
+        self.assertEqual(github_version['target_commitish'], github_version['target_commitish'])
 
     def test_github_date_time_format(self):
         """
