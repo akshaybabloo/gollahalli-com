@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'storages',  # django-storages
-    'crispy_forms',  # Crispy forms for editor
     'graphene_django',  # GraphQL
     'easy_thumbnails',  # Django-filer
     'filer',  # Django-filer
