@@ -28,6 +28,20 @@ class AuthenticatorAdminForm(forms.ModelForm):
               'js/users.js',)
 
 
+class AuthenticatorModelForm(forms.ModelForm):
+    """
+    AuthenticatorModel form.
+    """
+
+    authy_id = forms.CharField(widget=forms.NumberInput, required=False,
+                               help_text='This ID is provided by Authy and cannot be changed.')
+    session_id = forms.CharField(required=False, help_text='This field is auto generated.')
+
+    class Meta:
+        model = AuthenticatorModel
+        fields = '__all__'
+
+
 class AuthyForm(forms.Form):
     """
     Authy Form

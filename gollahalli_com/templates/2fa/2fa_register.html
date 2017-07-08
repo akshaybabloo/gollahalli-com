@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form class="form" method="post">
+    {% csrf_token %}
+    <tr>
+        <th><label for="id_id">Id:</label></th>
+        <td><input type="number" name="id" value="1" required id="id_id"/></td>
+    </tr>
+    <tr>
+        <th><label for="id_user_id">User id:</label></th>
+        <td><select name="user_id" required id="id_user_id">
+            <option value="" selected>---------</option>
+
+            <option value="1">akshay</option>
+
+        </select></td>
+    </tr>
+    <tr>
+        <th><label for="id_first_name">First name:</label></th>
+        <td><input type="text" name="first_name" value="First Name" id="id_first_name" required maxlength="50"/></td>
+    </tr>
+    <tr>
+        <th><label for="id_last_name">Last name:</label></th>
+        <td><input type="text" name="last_name" value="Last Name" id="id_last_name" required maxlength="50"/></td>
+    </tr>
+    <tr>
+        <th><label for="id_phone_number">Phone number:</label></th>
+        <td><input type="tel" name="phone_number" required id="id_phone_number"/></td>
+    </tr>
+    <tr>
+        <th><label for="id_email_id">Email id:</label></th>
+        <td><input type="email" name="email_id" value="test@test.com" id="id_email_id" required
+                   maxlength="50"/><br/><span
+                class="helptext">Enter the email ID used to register the Django user</span></td>
+    </tr>
+    <tr>
+        <th><label for="id_authy_id">Authy id:</label></th>
+        <td><input type="number" name="authy_id" id="id_authy_id"/><br/><span class="helptext">This ID is provided by Authy and cannot be changed.</span>
+        </td>
+    </tr>
+    <tr>
+        <th><label for="id_session_id">Session id:</label></th>
+        <td><input type="text" name="session_id" id="id_session_id"/><br/><span class="helptext">This field is auto generated.</span>
+        </td>
+    </tr>
+    <input type="submit" class="btn btn-simple btn-primary btn-lg" value="Login">
+    </div>
+</form>
+
+</body>
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="{% url 'users_js' %}" type="text/javascript"></script>
+
+</html>

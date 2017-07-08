@@ -11,8 +11,9 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.cache import never_cache
 
-from .forms import LoginForm, AuthyForm
+from .forms import LoginForm, AuthyForm, AuthenticatorModelForm
 from .utils import get_user_from_sid, has_2fa
+from .models import AuthenticatorModel
 
 logger = logging.getLogger(__name__)
 
@@ -153,5 +154,61 @@ def auth_2fa(request):
         form = AuthyForm()
 
     context['form'] = form
+
+    return render(request, template, context)
+
+
+def auth_2fa_register(request):
+    """
+    Registration form for 2FA.
+
+    Parameters
+    ----------
+    request: WSGIRequest
+        WSGI request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns renderer's.
+
+    """
+    template = "2fa/2fa_register.html"
+
+    session_key = request.session.session_key
+
+    user_id = get_user_from_sid(session_key)
+
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        return redirect('login')
+
+    form = AuthenticatorModelForm()
+
+    if request.method == "POST":
+        form = AuthenticatorModelForm(request.POST)
+
+        if form.is_valid():
+            id = request.POST.get('id')
+            user_id = request.POST.get('user_id')
+            first_name = request.POST.get('first_name')
+            last_name = request.POST.get('last_name')
+            phone_number = request.POST.get('phone_number')
+            email_id = request.POST.get('email_id')
+            authy_id = request.POST.get('authy_id')
+            session_id = request.POST.get('session_id')
+
+            authenticator_model, created = AuthenticatorModel.objects.update_or_create(id=id, user_id=user_id,
+                                                                                       first_name=first_name,
+                                                                                       last_name=last_name,
+                                                                                       phone_number=phone_number,
+                                                                                       email_id=email_id,
+                                                                                       authy_id=authy_id,
+                                                                                       session_id=session_id)
+            if created:
+                authenticator_model.save()
+
+    context = {'form': form}
 
     return render(request, template, context)
