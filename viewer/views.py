@@ -16,7 +16,6 @@ from editor.models import ContentModel
 from gollahalli_com.schema import query
 
 DEFAULT_BASE_URL = "https://api.github.com/users/akshaybabloo/repos"
-GITHUB_KEY = os.environ['GITHUB_KEY']
 
 
 def index(request):
@@ -105,6 +104,7 @@ class ContentDecode:
     """
     Content decoder object.
     """
+
     def __init__(self):
         query_local = '''
                 {
@@ -248,8 +248,7 @@ class ContentDecode:
     #
     # @staticmethod
     # def get_version():
-    #     response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest',
-    #                             auth=('akshaybabloo', GITHUB_KEY))
+    #     response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest')
     #
     #     return json.loads(response.text)
     #
@@ -482,8 +481,7 @@ def get_github_repo(request):
 
 class GitHubReleases:
     def __init__(self):
-        response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases',
-                                auth=('akshaybabloo', GITHUB_KEY))
+        response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases')
 
         self.data = json.loads(response.text)
         self.index = len(self.data)
