@@ -38,6 +38,15 @@ def users_js(request):
     """
     template = 'js/users.js'
 
+    session_key = request.session.session_key
+
+    user_id = get_user_from_sid(session_key)
+
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        return HttpResponse('console.log("Not authorised")', content_type='text/javascript')
+
     users = User.objects.all()
 
     context = {'users': users}
