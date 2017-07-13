@@ -35,5 +35,25 @@
 {% endblock %}
 
 {% block content %}
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Two-Factor Authentication</h4>
+            </div>
+            <div class="card-content">
+                <p class="text-success">2FA is activated on your account</p>
+                <p>
+                    <b>Username:</b> {{ user.username }} <br>
+                    <b>Authy ID:</b> {{ auth.authy_id }} <br>
+                    <b>Phone Number:</b> {{ auth.phone_number }} <br>
+                </p>
+                <p class="text-muted">Note: You cannot change your mobile number. You need to deactivate the current one
+                    and recreate a new one using a new mobile number.</p>
 
+                <p>
+                    <a href="{% url 'delete_2fa' %}"> Deactivate? </a>
+                </p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
