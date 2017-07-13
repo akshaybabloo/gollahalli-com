@@ -11,6 +11,8 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.cache import never_cache
+from django.contrib.auth import logout
+
 
 from .forms import LoginForm, AuthyForm, AuthenticatorModelForm
 from .models import AuthenticatorModel
@@ -308,3 +310,24 @@ def delete_auth():
             return _user.errors()['message']
         else:
             return "Two-factor authentication removed."
+
+
+def log_me_out(request):
+    """
+    Logout user and clear all the cookies.
+
+    Parameters
+    ----------
+    request: WSGIRequest
+        WSGI request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns renderer's.
+
+    """
+    logout(request)
+    response = redirect('login')
+    response.delete_cookie('is_personal')
+    return response
