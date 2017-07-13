@@ -148,7 +148,7 @@ def log_me_in(request):
                 login(request, user)
                 if request.POST.get('remember_me'):
                     request.session.set_expiry(31557600)
-                return redirect('2fa')
+                return redirect('2fa_auth')
             else:
                 logger.info('is not staff and does not have 2FA')
                 return redirect('/')
