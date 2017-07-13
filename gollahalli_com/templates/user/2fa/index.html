@@ -38,7 +38,8 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h4>Two-Factor Authentication</h4>
+                <h4 class="card-title">Two-Factor Authentication</h4>
+                <p class="category">It's all about double security</p>
             </div>
             <div class="card-content">
                 <p class="text-success">2FA is activated on your account</p>
@@ -49,9 +50,20 @@
                 </p>
                 <p class="text-muted">Note: You cannot change your mobile number. You need to deactivate the current one
                     and recreate a new one using a new mobile number.</p>
+            </div>
+        </div>
 
+        <div class="card" data-background-color="orange">
+            <div class="card-header">
+                <h4 class="card-title">Danger Zone</h4>
+                <p class="category">OK!</p>
+            </div>
+            <div class="card-content">
                 <p>
-                    <a href="{% url 'delete_2fa' %}"> Deactivate? </a>
+                    Do you want to deactivate Two-Factor Authentication?
+                </p>
+                <p>
+                    <a class="btn btn-danger btn-fill btn-wd" href="{% url 'delete_2fa' %}"> Yes </a>
                 </p>
             </div>
         </div>
