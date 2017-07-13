@@ -42,6 +42,33 @@ def users_js(request):
 
     return render(request, template, context, content_type='text/javascript')
 
+def security(request):
+    """
+    Security page.
+
+    Parameters
+    ----------
+    request
+
+    Returns
+    -------
+
+    """
+
+    template = 'security/index.html'
+
+    session_key = request.session.session_key
+
+    user_id = get_user_from_sid(session_key)
+
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        return redirect('login')
+
+    context = {}
+
+    return render(request, template, context)
 
 def log_me_in(request):
     """
