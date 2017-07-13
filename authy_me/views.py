@@ -13,8 +13,8 @@ from django.shortcuts import render
 from django.views.decorators.cache import never_cache
 
 from .forms import LoginForm, AuthyForm, AuthenticatorModelForm
-from .utils import get_user_from_sid, has_2fa
 from .models import AuthenticatorModel
+from .utils import get_user_from_sid, has_2fa
 
 logger = logging.getLogger(__name__)
 
@@ -22,19 +22,19 @@ logger = logging.getLogger(__name__)
 @never_cache
 def users_js(request):
     """
-        Returns a `user` JavaScript for Authenticator model.
+    Returns a `user` JavaScript for Authenticator model.
 
-        Parameters
-        ----------
-        request: WSGIRequest
-            WSGI request.
+    Parameters
+    ----------
+    request: WSGIRequest
+        WSGI request.
 
-        Returns
-        -------
-        render: HttpResponse
-            Returns renderer's.
+    Returns
+    -------
+    render: HttpResponse
+        Returns renderer's.
 
-        """
+    """
     template = 'js/users.js'
 
     users = User.objects.all()
@@ -50,10 +50,13 @@ def user(request):
 
     Parameters
     ----------
-    request
+    request: WSGIRequest
+        WSGI request.
 
     Returns
     -------
+    render: HttpResponse
+        Returns renderer's.
 
     """
     template = 'user/index.html'
@@ -78,10 +81,13 @@ def security(request):
 
     Parameters
     ----------
-    request
+    request: WSGIRequest
+        WSGI request.
 
     Returns
     -------
+    render: HttpResponse
+        Returns renderer's.
 
     """
 
