@@ -72,7 +72,6 @@ def user(request):
     return render(request, template, context)
 
 
-
 def security(request):
     """
     Security page.
@@ -235,13 +234,14 @@ def auth_2fa_register(request):
     template = "user/security/2fa/2fa_register.html"
 
     session_key = request.session.session_key
-
     user_id = get_user_from_sid(session_key)
-
     try:
         user = User.objects.get(id=user_id)
     except User.DoesNotExist:
         return redirect('login')
+
+    if request.GET.get('auth') == 'delete':
+        delete_auth()
 
     if request.method == "POST":
         form = AuthenticatorModelForm(request.POST)
@@ -276,3 +276,29 @@ def auth_2fa_register(request):
     context = {'form': form}
 
     return render(request, template, context)
+
+
+def delete_auth():
+    """
+    Deletes Authy user.
+
+    Returns
+    -------
+    content: str
+        Conformation string.
+    """
+
+    try:
+        auth_model = AuthenticatorModel.objects.get(id=1)
+    except AuthenticatorModel.DoesNotExist:
+        redirect('2fa_register')
+
+    if auth_model.authy_id is not None:
+        authy_api = AuthyApiClient(settings.AUTHY_API)
+
+        _user = authy_api.users.delete(auth_model.authy_id)
+
+        if _user.errors():
+            return _user.errors()['message']
+        else:
+            return "Two-factor authentication removed."
