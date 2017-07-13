@@ -36,7 +36,7 @@ class AuthenticatorModelTest(TestCase):
         self.assertEqual(content.last_name, 'Gollahalli')
         self.assertEqual(content.phone_number, '+123456789')
         self.assertEqual(content.email_id, 'example@example.com')
-        self.assertEqual(content.authy_id, 'error')
+        self.assertEqual(content.authy_id, '1234567')
 
     def tearDown(self):
         self.auth.delete()

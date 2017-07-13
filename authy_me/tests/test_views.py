@@ -26,7 +26,7 @@ class ViewsTests(TestCase):
         response = c.get('/static/js/users.js', follow=True)
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response['Content-Type'], 'text/javascript')
+        self.assertEqual(response['Content-Type'], 'application/javascript')
 
     def test_log_me_in_admin(self):
         """
