@@ -75,9 +75,9 @@ def user(request):
     return render(request, template, context)
 
 
-def security(request):
+def two_fa(request):
     """
-    Security page.
+    Two-Factor authentication home page.
 
     Parameters
     ----------
@@ -91,7 +91,7 @@ def security(request):
 
     """
 
-    template = 'user/security/index.html'
+    template = 'user/2fa/index.html'
 
     session_key = request.session.session_key
 
@@ -189,7 +189,7 @@ def auth_2fa(request):
 
     authy_api = AuthyApiClient(settings.AUTHY_API)
 
-    template = 'user/security/2fa/auth.html'
+    template = 'user/2fa/auth.html'
     if request.GET.get('sms') == 'yes':
         sms = authy_api.users.request_sms(user_auth.authy_id, {'force': True})
         if sms.ok():
@@ -237,7 +237,7 @@ def auth_2fa_register(request):
         Returns renderer's.
 
     """
-    template = "user/security/2fa/2fa_register.html"
+    template = "user/2fa/2fa_register.html"
 
     session_key = request.session.session_key
     user_id = get_user_from_sid(session_key)
