@@ -110,11 +110,16 @@ def two_fa(request):
     user_id = get_user_from_sid(session_key)
 
     try:
-        user = User.objects.get(id=user_id)
+        _user = User.objects.get(id=user_id)
     except User.DoesNotExist:
         return redirect('login')
 
-    context = {}
+    try:
+        _auth = AuthenticatorModel.objects.get(id=user_id)
+    except AuthenticatorModel.DoesNotExist:
+        return redirect('2fa_register')
+
+    context = {'user': _user, 'auth': _auth}
 
     return render(request, template, context)
 
