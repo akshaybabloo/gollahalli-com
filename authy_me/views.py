@@ -45,13 +45,15 @@ def users_js(request):
     try:
         user = User.objects.get(id=user_id)
     except User.DoesNotExist:
-        return HttpResponse('console.log("Not authorised")', content_type='text/javascript')
+        data = 'console.log("Not authorised")'
+        response = HttpResponse('console.log("Not authorised")', content_type='application/javascript')
+        return response
 
     users = User.objects.all()
 
     context = {'users': users}
 
-    return render(request, template, context, content_type='text/javascript')
+    return render(request, template, context, content_type='application/javascript')
 
 
 def user(request):
