@@ -293,7 +293,7 @@ def two_fa_register(request):
     else:
         form = AuthenticatorModelForm()
 
-    context = {'form': form}
+    context = {'form': form, 'user': _user}
 
     return render(request, template, context)
 

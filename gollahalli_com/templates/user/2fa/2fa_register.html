@@ -88,3 +88,14 @@
     </div>
 
 {% endblock %}
+
+{% block script %}
+    <script type="application/javascript">
+        $().ready(function () {
+            $('#2faRegForm').validate();
+            $("#id_first_name").val('{{user.first_name}}');
+            $("#id_last_name").val('{{user.last_name}}');
+            $("#id_email_id").val('{{user.email}}');
+        })
+    </script>
+{% endblock %}
