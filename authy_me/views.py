@@ -243,25 +243,27 @@ def two_fa_register(request):
     session_key = request.session.session_key
     user_id = get_user_from_sid(session_key)
     try:
-        user = User.objects.get(id=user_id)
+        _user = User.objects.get(id=user_id)
     except User.DoesNotExist:
         return redirect('login')
 
     if request.GET.get('auth') == 'delete':
         delete_auth()
 
+    logger.info('User: "' + _user.username + '" registering for 2FA')
+
     if request.method == "POST":
         form = AuthenticatorModelForm(request.POST)
 
         if form.is_valid():
-            id = request.POST.get('id')
-            user_id = request.POST.get('user_id')
+            _id = request.POST.get('id')
             first_name = request.POST.get('first_name')
             last_name = request.POST.get('last_name')
             phone_number = request.POST.get('phone_number')
             email_id = request.POST.get('email_id')
 
-            authenticator_model, created = AuthenticatorModel.objects.update_or_create(id=id, user_id=user_id,
+            authenticator_model, created = AuthenticatorModel.objects.update_or_create(id=_id,
+                                                                                       user_id=str(_user.username),
                                                                                        first_name=first_name,
                                                                                        last_name=last_name,
                                                                                        phone_number=phone_number,
@@ -270,11 +272,11 @@ def two_fa_register(request):
             if created:
                 phone_number = phonenumbers.parse(str(phone_number))
                 authy_api = AuthyApiClient(settings.AUTHY_API)
-                user = authy_api.users.create(email_id, phone_number.national_number, phone_number.country_code)
+                _user = authy_api.users.create(email_id, phone_number.national_number, phone_number.country_code)
                 authenticator_model.save()
 
-                if user.ok():
-                    authenticator_model, created = AuthenticatorModel.objects.update(authy_id=user.id)
+                if _user.ok():
+                    authenticator_model, created = AuthenticatorModel.objects.update(authy_id=_user.id)
                     if created:
                         authenticator_model.save()
     else:
