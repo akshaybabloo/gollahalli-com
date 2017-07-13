@@ -1,6 +1,7 @@
 import datetime
 import logging
 
+import phonenumbers
 from authy.api import AuthyApiClient
 from django.conf import settings
 from django.contrib.auth import authenticate, login
@@ -42,6 +43,7 @@ def users_js(request):
 
     return render(request, template, context, content_type='text/javascript')
 
+
 def security(request):
     """
     Security page.
@@ -55,7 +57,7 @@ def security(request):
 
     """
 
-    template = 'security/index.html'
+    template = 'user/security/index.html'
 
     session_key = request.session.session_key
 
@@ -69,6 +71,7 @@ def security(request):
     context = {}
 
     return render(request, template, context)
+
 
 def log_me_in(request):
     """
@@ -152,7 +155,7 @@ def auth_2fa(request):
 
     authy_api = AuthyApiClient(settings.AUTHY_API)
 
-    template = 'security/2fa/auth.html'
+    template = 'user/security/2fa/auth.html'
     if request.GET.get('sms') == 'yes':
         sms = authy_api.users.request_sms(user_auth.authy_id, {'force': True})
         if sms.ok():
@@ -200,7 +203,7 @@ def auth_2fa_register(request):
         Returns renderer's.
 
     """
-    template = "security/2fa/2fa_register.html"
+    template = "user/security/2fa/2fa_register.html"
 
     session_key = request.session.session_key
 
@@ -210,8 +213,6 @@ def auth_2fa_register(request):
         user = User.objects.get(id=user_id)
     except User.DoesNotExist:
         return redirect('login')
-
-    form = AuthenticatorModelForm()
 
     if request.method == "POST":
         form = AuthenticatorModelForm(request.POST)
@@ -223,18 +224,25 @@ def auth_2fa_register(request):
             last_name = request.POST.get('last_name')
             phone_number = request.POST.get('phone_number')
             email_id = request.POST.get('email_id')
-            authy_id = request.POST.get('authy_id')
-            session_id = request.POST.get('session_id')
 
             authenticator_model, created = AuthenticatorModel.objects.update_or_create(id=id, user_id=user_id,
                                                                                        first_name=first_name,
                                                                                        last_name=last_name,
                                                                                        phone_number=phone_number,
                                                                                        email_id=email_id,
-                                                                                       authy_id=authy_id,
-                                                                                       session_id=session_id)
+                                                                                       )
             if created:
+                phone_number = phonenumbers.parse(str(phone_number))
+                authy_api = AuthyApiClient(settings.AUTHY_API)
+                user = authy_api.users.create(email_id, phone_number.national_number, phone_number.country_code)
                 authenticator_model.save()
+
+                if user.ok():
+                    authenticator_model, created = AuthenticatorModel.objects.update(authy_id=user.id)
+                    if created:
+                        authenticator_model.save()
+    else:
+        form = AuthenticatorModelForm()
 
     context = {'form': form}
 
