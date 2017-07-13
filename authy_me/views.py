@@ -223,7 +223,7 @@ def auth_2fa(request):
     return render(request, template, context)
 
 
-def auth_2fa_register(request):
+def two_fa_register(request):
     """
     Registration form for 2FA.
 
