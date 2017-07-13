@@ -125,7 +125,7 @@ def auth_2fa(request):
 
     authy_api = AuthyApiClient(settings.AUTHY_API)
 
-    template = '2fa/auth.html'
+    template = 'security/2fa/auth.html'
     if request.GET.get('sms') == 'yes':
         sms = authy_api.users.request_sms(user_auth.authy_id, {'force': True})
         if sms.ok():
@@ -173,7 +173,7 @@ def auth_2fa_register(request):
         Returns renderer's.
 
     """
-    template = "2fa/2fa_register.html"
+    template = "security/2fa/2fa_register.html"
 
     session_key = request.session.session_key
 
