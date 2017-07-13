@@ -1,8 +1,4 @@
-import phonenumbers
-from authy.api import AuthyApiClient
-from django.conf import settings
 from django.contrib.auth.models import (User, Group)
-from django.core.exceptions import ValidationError
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -27,43 +23,6 @@ class AuthenticatorModel(models.Model):
     authy_id = models.CharField(null=True,
                                 max_length=50)
     session_id = models.CharField(null=True, max_length=100)
-
-    def create_authy(self):
-        """
-        Creates a Authy user account and returns an unique ID
-
-        Returns
-        -------
-        user: object
-            object by Authy.
-        """
-        phone_number = phonenumbers.parse(str(self.phone_number))
-
-        authy_api = AuthyApiClient(settings.AUTHY_API)
-
-        user = authy_api.users.create(self.email_id, phone_number.national_number, phone_number.country_code)
-
-        if user.ok():
-            return user.id
-        else:
-            self.status = user.errors()
-            return 'error'
-
-    def delete_authy(self):
-        """
-        Deletes Authy user.
-
-        Returns
-        -------
-        user: object
-            object of Authy.
-        """
-        authy_api = AuthyApiClient(settings.AUTHY_API)
-
-        user = authy_api.users.delete(self.authy_id)
-
-        if user.errors():
-            self.status = user.errors()
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         """
@@ -91,31 +50,4 @@ class AuthenticatorModel(models.Model):
         obj.email = self.email_id
         obj.save()
 
-        self.authy_id = self.create_authy()
-
         return super(AuthenticatorModel, self).save()
-
-    def clean(self):
-
-        if self.authy_id == 'error':
-            raise ValidationError({
-                'authy_id': _(self.status)
-            })
-
-    def delete(self, using=None, keep_parents=False):
-        """
-        Deletes Authy user and the model content.
-
-        Parameters
-        ----------
-        using
-        keep_parents
-
-        Returns
-        -------
-        super
-        """
-
-        self.delete_authy()
-
-        return super(AuthenticatorModel, self).delete()
