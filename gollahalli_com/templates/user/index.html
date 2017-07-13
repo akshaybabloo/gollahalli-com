@@ -1,10 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'admin_base.html' %}
+{% load staticfiles %}
 
-</body>
-</html>
+{% block page_title %}
+    <a class="navbar-brand" href="{% url 'user_home' %}">User Profile</a>
+{% endblock %}
+
+{% block nav %}
+    <li class="active">
+        <a data-toggle="collapse" href="#userOverview" aria-expanded="true">
+            <i class="ti-user"></i>
+            <p>User
+                <b class="caret"></b>
+            </p>
+        </a>
+        <div class="collapse in" id="userOverview" aria-expanded="true">
+            <ul class="nav">
+                <li>
+                    <a href="dashboard/stats.html">
+                        <span class="sidebar-mini">UP</span>
+                        <span class="sidebar-normal">Update Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url '2fa_home' %}">
+                        <span class="sidebar-mini">2FA</span>
+                        <span class="sidebar-normal">Two-Factor Auth</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard/stats.html">
+                        <span class="sidebar-mini">CP</span>
+                        <span class="sidebar-normal">Change Password</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-content">
+                <h3>Number of Users</h3>
+                <br>
+
+                <h3>Security</h3>
+                <br>
+            </div>
+        </div>
+
+{% endblock %}
