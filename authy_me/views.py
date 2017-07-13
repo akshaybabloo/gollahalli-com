@@ -317,7 +317,7 @@ def delete_auth():
     try:
         auth_model = AuthenticatorModel.objects.get(id=1)
     except AuthenticatorModel.DoesNotExist:
-        redirect('2fa_register')
+        return redirect('2fa_register')
 
     if auth_model.authy_id is not None:
         authy_api = AuthyApiClient(settings.AUTHY_API)
@@ -326,8 +326,10 @@ def delete_auth():
 
         if _user.errors():
             return _user.errors()['message']
-        else:
-            return "Two-factor authentication removed."
+
+    auth_model.delete()
+
+    return "Two-factor authentication removed."
 
 
 def log_me_out(request):
