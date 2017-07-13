@@ -5,14 +5,13 @@ import phonenumbers
 from authy.api import AuthyApiClient
 from django.conf import settings
 from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
 from django.contrib.auth.models import (User)
 from django.contrib.auth.views import login as auth_login
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.cache import never_cache
-from django.contrib.auth import logout
-
 
 from .forms import LoginForm, AuthyForm, AuthenticatorModelForm
 from .models import AuthenticatorModel
