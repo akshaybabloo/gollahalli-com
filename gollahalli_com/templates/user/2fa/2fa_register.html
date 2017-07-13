@@ -42,6 +42,11 @@
                 <h4>Two-Factor Authentication Registration</h4>
             </div>
             <div class="card-content">
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        {{ form.errors }}
+                    </div>
+                {% endif %}
                 <form method="post" action="" class="form-horizontal" novalidate="novalidate" id="2faRegForm">
                     {% csrf_token %}
 
