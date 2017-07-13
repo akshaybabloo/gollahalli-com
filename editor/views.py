@@ -65,13 +65,3 @@ def index(request):
                'website_name': content.website_name}
     return render(request, template, context)
 
-
-def login(request):
-    context = {}
-    template = "editor/login.html"
-    return render(request, template, context)
-
-
-def log_out(request):
-    logout(request)
-    return redirect('index')
