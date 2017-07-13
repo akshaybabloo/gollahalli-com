@@ -3,6 +3,7 @@ import logging
 from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
+from django.utils.translation import gettext as _
 
 from .models import AuthenticatorModel
 from .utils import is_int
@@ -28,18 +29,36 @@ class AuthenticatorAdminForm(forms.ModelForm):
               'js/users.js',)
 
 
-class AuthenticatorModelForm(forms.ModelForm):
+class AuthenticatorModelForm(forms.Form):
     """
     AuthenticatorModel form.
     """
 
-    authy_id = forms.CharField(widget=forms.NumberInput, required=False,
-                               help_text='This ID is provided by Authy and cannot be changed.')
-    session_id = forms.CharField(required=False, help_text='This field is auto generated.')
+    first_name = forms.CharField(max_length=50)
+    last_name = forms.CharField(max_length=50)
+    phone_number = forms.CharField(max_length=50)
+    email_id = forms.EmailField()
 
-    class Meta:
-        model = AuthenticatorModel
-        fields = '__all__'
+    def clean(self):
+
+        cd = self.cleaned_data
+
+        if cd.get('phone_number') is None:
+            raise forms.ValidationError(_("Phone number is required."))
+
+        if cd.get('first_name') is None:
+            raise forms.ValidationError(_("First name is required."))
+
+        if cd.get('last_name') is None:
+            raise forms.ValidationError(_("Last name is required."))
+
+        if cd.get('phone_number') is None:
+            raise forms.ValidationError(_("Phone name is empty or invalid."))
+
+        if cd.get('email_id') is None:
+            raise forms.ValidationError(_("Email ID name is required."))
+
+        return cd
 
 
 class AuthyForm(forms.Form):
