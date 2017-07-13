@@ -44,7 +44,9 @@
             <div class="card-content">
                 {% if form.errors %}
                     <div class="alert alert-danger">
-                        {{ form.errors }}
+                        {% for errors in form.non_field_errors %}
+                            {{ errors }}
+                        {% endfor %}
                     </div>
                 {% endif %}
                 <form method="post" action="" class="form-horizontal" novalidate="novalidate" id="2faRegForm">
