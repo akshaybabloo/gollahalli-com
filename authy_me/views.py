@@ -261,35 +261,41 @@ def two_fa_register(request):
     if request.GET.get('auth') == 'delete':
         delete_auth()
 
+    try:
+        auth = AuthenticatorModel.objects.get(id=1)
+        if auth.authy_id is not None:
+            return redirect('2fa_home')
+    except AuthenticatorModel.DoesNotExist:
+        pass
+
     logger.info('User: "' + _user.username + '" registering for 2FA')
 
     if request.method == "POST":
         form = AuthenticatorModelForm(request.POST)
 
         if form.is_valid():
-            _id = request.POST.get('id')
             first_name = request.POST.get('first_name')
             last_name = request.POST.get('last_name')
             phone_number = request.POST.get('phone_number')
             email_id = request.POST.get('email_id')
 
-            authenticator_model, created = AuthenticatorModel.objects.update_or_create(id=_id,
-                                                                                       user_id=str(_user.username),
+            authenticator_model, created = AuthenticatorModel.objects.update_or_create(id=1,
+                                                                                       user_id=_user,
                                                                                        first_name=first_name,
                                                                                        last_name=last_name,
                                                                                        phone_number=phone_number,
-                                                                                       email_id=email_id,
-                                                                                       )
+                                                                                       email_id=email_id)
             if created:
                 phone_number = phonenumbers.parse(str(phone_number))
                 authy_api = AuthyApiClient(settings.AUTHY_API)
-                _user = authy_api.users.create(email_id, phone_number.national_number, phone_number.country_code)
+                authy_user = authy_api.users.create(email_id, phone_number.national_number, phone_number.country_code)
                 authenticator_model.save()
+                logger.info('User: "' + _user.username + '" created 2FA.')
 
-                if _user.ok():
-                    authenticator_model, created = AuthenticatorModel.objects.update(authy_id=_user.id)
-                    if created:
-                        authenticator_model.save()
+                if authy_user.ok():
+                    AuthenticatorModel.objects.filter(id=1).update(
+                        authy_id=str(authy_user.id))
+                    return redirect('2fa_home')
     else:
         form = AuthenticatorModelForm()
 
