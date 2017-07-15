@@ -2,6 +2,7 @@
 
 [![codecov](https://codecov.io/gh/akshaybabloo/gollahalli-com/branch/master/graph/badge.svg)](https://codecov.io/gh/akshaybabloo/gollahalli-com)
 [![Build Status](https://travis-ci.org/akshaybabloo/gollahalli-com.svg?branch=master)](https://travis-ci.org/akshaybabloo/gollahalli-com)
+[![Requirements Status](https://requires.io/github/akshaybabloo/gollahalli-com/requirements.svg?branch=master)](https://requires.io/github/akshaybabloo/gollahalli-com/requirements/?branch=master)
 
 ## 1 Django Template Tags
 
