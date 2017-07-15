@@ -4,7 +4,6 @@ import re
 from urllib.request import urlopen
 
 import cloudinary
-import cloudinary.api
 import feedparser
 import markdown
 import requests
