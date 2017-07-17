@@ -15,6 +15,8 @@ from .models import ContentModel
 #                                       Form Main
 # ============================================================================================
 
+def portal(request):
+    pass
 
 @login_required
 def index(request):
