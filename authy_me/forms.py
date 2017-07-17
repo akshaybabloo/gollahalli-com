@@ -42,21 +42,30 @@ class AuthenticatorModelForm(forms.Form):
     def clean(self):
 
         cd = self.cleaned_data
+        error_message = []
 
         if cd.get('phone_number') is None:
-            raise forms.ValidationError(_("Phone number is required."))
+            error_message.append("Phone number is empty.")
+            self.add_error('phone_number', 'Please enter a phone number.')
 
         if cd.get('first_name') is None:
-            raise forms.ValidationError(_("First name is required."))
+            error_message.append("First name is empty.")
+            self.add_error('first_name', 'Please enter your first name.')
 
         if cd.get('last_name') is None:
-            raise forms.ValidationError(_("Last name is required."))
+            error_message.append("Last name is empty.")
+            self.add_error('last_name', "Please enter your last name.")
 
         if cd.get('phone_number') is None:
-            raise forms.ValidationError(_("Phone name is empty or invalid."))
+            error_message.append("Phone number is empty.")
+            self.add_error('phone_number', "Please enter your phone number.")
 
         if cd.get('email_id') is None:
-            raise forms.ValidationError(_("Email ID name is required."))
+            error_message.append("Email ID is empty")
+            self.add_error('email_id', "Please enter your email ID.")
+
+        if len(error_message):
+            raise forms.ValidationError(' & '.join(error_message))
 
         return cd
 
