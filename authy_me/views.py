@@ -263,9 +263,6 @@ def two_fa_register(request):
     except User.DoesNotExist:
         return redirect('login')
 
-    if request.GET.get('auth') == 'delete':
-        delete_auth()
-
     try:
         auth = AuthenticatorModel.objects.get(id=1)
         if auth.authy_id is not None:
