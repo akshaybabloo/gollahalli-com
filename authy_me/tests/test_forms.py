@@ -70,17 +70,6 @@ class AuthyFormTests(TestCase):
 
         self.assertTrue(form.is_valid())
 
-    def test_authy_form_fail(self):
-        """
-        Testing ``AuthyForm`` fail.
-        """
-
-        form_data = {'authy': 12345, 'is_personal': True}
-        form = AuthyForm(data=form_data)
-        self.assertFalse(form.is_valid())
-        self.assertIn('Unexpected length of input.', str(form.errors))
-        self.assertRaises(forms.ValidationError)
-
     def test_authy_form_fail2(self):
         """
         Testing ``AuthyForm`` fail.
