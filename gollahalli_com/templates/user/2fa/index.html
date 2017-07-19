@@ -53,7 +53,7 @@
 
                 <h5>Backup Code</h5>
 
-                <a id="show">Show Code</a>
+                <button id="show" class="btn">Show Code</button>
                 <p id="hide_text"></p>
             </div>
         </div>
@@ -78,10 +78,18 @@
 {% block script %}
     <script type="application/javascript">
 
-        var data = "<br><pre>{% for code in auth.uuids.uuid %}{{ code }} <br>{% endfor %}</pre>";
+        var data = "<br><pre>{% for code in auth.uuids.uuid %}{{ code }} <br>{% endfor %}</pre><p class='text-muted'>* = Used Code</p>";
 
         $('#show').click(function () {
-            $('#hide_text').html(data);
+
+            if ($('#hide_text').is(':empty')) {
+                $(this).text('Hide Code');
+                $('#hide_text').html(data).slideDown('slow');
+            }
+            else {
+                $(this).text('Show Code');
+                $('#hide_text').text('');
+            }
         });
     </script>
 {% endblock %}
