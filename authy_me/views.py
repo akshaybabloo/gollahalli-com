@@ -16,7 +16,7 @@ from django.views.decorators.cache import never_cache
 
 from .forms import LoginForm, AuthyForm, AuthenticatorModelForm, MobileCheckerForm
 from .models import AuthenticatorModel
-from .utils import get_user_from_sid, has_2fa
+from .utils import get_user_from_sid, has_2fa, get_uuid_json
 
 logger = logging.getLogger(__name__)
 
@@ -220,7 +220,23 @@ def auth_2fa(request):
     if request.method == 'POST':
         form = AuthyForm(request.POST)
         if form.is_valid():
+
+            # Checks if the entered token is a backup code.
             token = request.POST.get('authy', None)
+            if '-' in token:
+                logger.info('Could be backup code')
+                content = {}
+                uuids = user_auth.uuids['uuid']
+                if token in uuids:
+                    logger.info('Backup code found')
+                    data = uuids.index(token)
+                    uuids[data] = '*'
+                    content['uuid'] = uuids
+                    AuthenticatorModel.objects.filter(id=1).update(uuids=content)
+                    logger.info('Backup code replaced.')
+                    return redirect('/admin/')
+
+            # Checks using Authy's code.
             verification = authy_api.tokens.verify(user_auth.authy_id, str(token))
             if verification.ok():
                 if request.POST.get('is_personal') == 'on':
@@ -302,7 +318,6 @@ def two_fa_register(request):
                                                                                        last_name=last_name,
                                                                                        phone_number=phone_number,
                                                                                        email_id=email_id)
-            print(first_name, last_name, phone_number, email_id)
             if created:
                 request.session['phone_number'] = str(phone_number)
                 phone_number = phonenumbers.parse(str(phone_number))
@@ -311,7 +326,7 @@ def two_fa_register(request):
 
                 # Create unique session ID.
                 unique_id = get_random_string(length=32)
-                AuthenticatorModel.objects.filter(id=1).update(session_id=unique_id)
+                AuthenticatorModel.objects.filter(id=1).update(session_id=unique_id, uuids=get_uuid_json())
 
                 logger.info('User: "' + _user.username + '" redirected to confirm phone number.')
 

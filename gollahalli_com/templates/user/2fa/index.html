@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="#">
+                    <a href="{% url '2fa_home' %}">
                         <span class="sidebar-mini">2FA</span>
                         <span class="sidebar-normal">Two-Factor Auth</span>
                     </a>
@@ -50,6 +50,11 @@
                 </p>
                 <p class="text-muted">Note: You cannot change your mobile number. You need to deactivate the current one
                     and recreate a new one using a new mobile number.</p>
+
+                <h5>Backup Code</h5>
+
+                <a id="show">Show Code</a>
+                <p id="hide_text"></p>
             </div>
         </div>
 
@@ -68,4 +73,15 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block script %}
+    <script type="application/javascript">
+
+        var data = "<br><pre>{% for code in auth.uuids.uuid %}{{ code }} <br>{% endfor %}</pre>";
+
+        $('#show').click(function () {
+            $('#hide_text').html(data);
+        });
+    </script>
 {% endblock %}

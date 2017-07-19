@@ -1,4 +1,5 @@
-from django.contrib.auth.models import (User, Group)
+from django.contrib.auth.models import User
+from django.contrib.postgres.fields import JSONField
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -23,6 +24,7 @@ class AuthenticatorModel(models.Model):
     authy_id = models.CharField(null=True,
                                 max_length=50)
     session_id = models.CharField(null=True, max_length=100)
+    uuids = JSONField()
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         """

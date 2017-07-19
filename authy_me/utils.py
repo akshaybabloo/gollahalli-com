@@ -1,3 +1,6 @@
+import json
+import uuid
+
 from django.conf import settings
 from django.contrib.auth.models import (User)
 from django.utils.module_loading import import_module
@@ -72,3 +75,22 @@ def get_user_from_sid(session_key):
     session = django_session_engine.SessionStore(session_key)
     uid = session.get('_auth_user_id')
     return uid
+
+
+def get_uuid_json():
+    """
+    Returns a JSON string of 10 UUID's.
+
+    Returns
+    -------
+    content: dict
+        A dictionary.
+
+    """
+
+    content = {"uuid": []}
+
+    for i in range(10):
+        content['uuid'].append(str(uuid.uuid4())[:13])
+
+    return content
