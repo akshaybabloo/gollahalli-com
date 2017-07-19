@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.test import TestCase, Client
 from django.urls import reverse
+import json
 
 from authy_me.forms import AuthenticatorAdminForm, AuthyForm, LoginForm
 from authy_me.models import AuthenticatorModel
@@ -45,7 +46,7 @@ class AuthenticatorAdminFormTests(TestCase):
         """
         form_data = {'id': 2, 'user_id': 1, 'first_name': 'Akshay Raj', 'last_name': 'Gollahalli',
                      'phone_number': '+64211111111',
-                     'email_id': 'example@example.com', 'authy_id': '1234567'}
+                     'email_id': 'example@example.com', 'authy_id': '1234567', 'uuids': json.dumps({'test': 1})}
 
         form = AuthenticatorAdminForm(data=form_data)
         self.assertTrue(form.is_valid())
