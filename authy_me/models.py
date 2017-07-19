@@ -24,7 +24,7 @@ class AuthenticatorModel(models.Model):
     authy_id = models.CharField(null=True,
                                 max_length=50)
     session_id = models.CharField(null=True, max_length=100)
-    uuids = JSONField()
+    uuids = JSONField(default={})
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         """
