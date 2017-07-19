@@ -92,6 +92,21 @@ class AuthyForm(forms.Form):
         return cd
 
 
+class MobileCheckerForm(forms.Form):
+    """
+    Check for mobile number before registering for Authy.
+    """
+    auth_code = forms.CharField(widget=forms.NumberInput, required=True)
+
+    def clean(self):
+        cd = self.cleaned_data
+
+        if not is_int(cd.get('auth_code')):
+            raise forms.ValidationError("The authentication should be only numbers. Please re-enter.")
+
+        return cd
+
+
 class LoginForm(AuthenticationForm):
     """
     Custom `AuthenticationForm` that forces staff to create a two-factor authentication.

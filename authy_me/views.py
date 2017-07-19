@@ -13,7 +13,7 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.cache import never_cache
 
-from .forms import LoginForm, AuthyForm, AuthenticatorModelForm
+from .forms import LoginForm, AuthyForm, AuthenticatorModelForm, MobileCheckerForm
 from .models import AuthenticatorModel
 from .utils import get_user_from_sid, has_2fa
 
@@ -116,6 +116,8 @@ def two_fa(request):
 
     try:
         _auth = AuthenticatorModel.objects.get(id=user_id)
+        if _auth.authy_id is None:
+            return redirect('2fa_register')
     except AuthenticatorModel.DoesNotExist:
         return redirect('2fa_register')
 
@@ -267,6 +269,18 @@ def two_fa_register(request):
         auth = AuthenticatorModel.objects.get(id=1)
         if auth.authy_id is not None:
             return redirect('2fa_home')
+        elif auth.authy_id is None and auth.phone_number is not None:
+
+            phone_number = phonenumbers.parse(str(auth.phone_number))
+
+            logger.info('User: "' + _user.username + '" phone number found but not Authy ID, forwarding to '
+                                                     '"confirm_mobile".')
+
+            authy_api = AuthyApiClient(settings.AUTHY_API)
+            authy_mobile = authy_api.phones.verification_start(phone_number.national_number,
+                                                               phone_number.country_code, via='sms')
+
+            return redirect('confirm_mobile')
     except AuthenticatorModel.DoesNotExist:
         pass
 
@@ -287,17 +301,23 @@ def two_fa_register(request):
                                                                                        last_name=last_name,
                                                                                        phone_number=phone_number,
                                                                                        email_id=email_id)
+            print(first_name, last_name, phone_number, email_id)
             if created:
+                request.session['phone_number'] = str(phone_number)
                 phone_number = phonenumbers.parse(str(phone_number))
-                authy_api = AuthyApiClient(settings.AUTHY_API)
-                authy_user = authy_api.users.create(email_id, phone_number.national_number, phone_number.country_code)
-                authenticator_model.save()
-                logger.info('User: "' + _user.username + '" created 2FA.')
 
-                if authy_user.ok():
-                    AuthenticatorModel.objects.filter(id=1).update(
-                        authy_id=str(authy_user.id))
-                    return redirect('2fa_home')
+                authenticator_model.save()
+                logger.info('User: "' + _user.username + '" redirected to confirm phone number.')
+
+                authy_api = AuthyApiClient(settings.AUTHY_API)
+                authy_mobile = authy_api.phones.verification_start(phone_number.national_number,
+                                                                   phone_number.country_code, via='sms')
+
+                if authy_mobile.ok():
+                    return redirect('confirm_mobile')
+                else:
+                    print(authy_mobile.errors())
+
     else:
         form = AuthenticatorModelForm()
 
@@ -341,6 +361,61 @@ def delete_auth(request):
     logger.info('User: "' + _user.username + '" removed 2FA')
 
     return redirect('2fa_register')
+
+
+def confirm_mobile(request):
+    """
+    Confirm mobile number before creating an Authy account.
+
+    Parameters
+    ----------
+    request: WSGIRequest
+        WSGI request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns renderer's.
+    """
+    template = "user/2fa/confirm_mobile.html"
+
+    try:
+        auth = AuthenticatorModel.objects.get(id=1)
+        if auth.authy_id is not None:
+            return redirect('2fa_home')
+    except AuthenticatorModel.DoesNotExist:
+        pass
+
+    if request.method == 'POST':
+        form = MobileCheckerForm(request.POST)
+
+        if form.is_valid():
+            auth_code = request.POST.get('auth_code')
+            authy_api = AuthyApiClient(settings.AUTHY_API)
+
+            phone_number = phonenumbers.parse(request.session.get('phone_number'))
+
+            authy_mobile = authy_api.phones.verification_check(phone_number.national_number, phone_number.country_code,
+                                                               int(auth_code))
+
+            if authy_mobile.ok():
+                auth_model_data = AuthenticatorModel.objects.get(id=1)
+                authy_user = authy_api.users.create(str(auth_model_data.email_id), phone_number.national_number,
+                                                    phone_number.country_code)
+                AuthenticatorModel.objects.filter(id=1).update(authy_id=str(authy_user.id))
+
+                del request.session['phone_number']
+
+                request.session.modified = True
+
+                return redirect('2fa_home')
+
+    else:
+        form = MobileCheckerForm()
+
+    context = {'form': form}
+
+    return render(request, template, context)
 
 
 def log_me_out(request):

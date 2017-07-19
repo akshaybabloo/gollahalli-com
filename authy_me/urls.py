@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'portal/user/2fa/$', views.two_fa, name='2fa_home'),
     url(r'portal/user/2fa/delete/$', views.delete_auth, name='delete_2fa'),
     url(r'portal/user/2fa/register/$', views.two_fa_register, name='2fa_register'),
+    url(r'portal/user/2fa/register/confirm$', views.confirm_mobile, name='confirm_mobile'),
     url(r'^static/js/users\.js', views.users_js, name='users_js'),
 ]
