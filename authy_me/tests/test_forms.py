@@ -71,17 +71,6 @@ class AuthyFormTests(TestCase):
 
         self.assertTrue(form.is_valid())
 
-    def test_authy_form_fail2(self):
-        """
-        Testing ``AuthyForm`` fail.
-        """
-
-        form_data = {'authy': "123eew#$$", 'is_personal': True}
-        form = AuthyForm(data=form_data)
-        self.assertFalse(form.is_valid())
-        self.assertIn('The string should be all numbers.', str(form.errors))
-        self.assertRaises(forms.ValidationError)
-
 
 class LoginFormTests(TestCase):
     """
