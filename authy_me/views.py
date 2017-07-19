@@ -11,6 +11,7 @@ from django.contrib.auth.views import login as auth_login
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
+from django.utils.crypto import get_random_string
 from django.views.decorators.cache import never_cache
 
 from .forms import LoginForm, AuthyForm, AuthenticatorModelForm, MobileCheckerForm
@@ -203,7 +204,7 @@ def auth_2fa(request):
     user_auth = user.auth_user.get(id=user.id)
 
     if 'is_personal' in request.COOKIES:
-        if request.get_signed_cookie('is_personal', salt='#c}jbb9j>c.oMKP=T)M.3%fe') == 'yes':
+        if request.get_signed_cookie('is_personal', salt=str(user_auth.session_id)) == 'yes':
             return redirect('/admin/')
 
     authy_api = AuthyApiClient(settings.AUTHY_API)
@@ -307,6 +308,11 @@ def two_fa_register(request):
                 phone_number = phonenumbers.parse(str(phone_number))
 
                 authenticator_model.save()
+
+                # Create unique session ID.
+                unique_id = get_random_string(length=32)
+                AuthenticatorModel.objects.filter(id=1).update(session_id=unique_id)
+
                 logger.info('User: "' + _user.username + '" redirected to confirm phone number.')
 
                 authy_api = AuthyApiClient(settings.AUTHY_API)
@@ -405,7 +411,6 @@ def confirm_mobile(request):
                 AuthenticatorModel.objects.filter(id=1).update(authy_id=str(authy_user.id))
 
                 del request.session['phone_number']
-
                 request.session.modified = True
 
                 return redirect('2fa_home')
