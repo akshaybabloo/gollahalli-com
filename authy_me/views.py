@@ -72,7 +72,7 @@ def user(request):
         Returns renderer's.
 
     """
-    template = 'portal/user/index.html'
+    template = 'portal/user/user_index.html'
 
     session_key = request.session.session_key
 
