@@ -122,25 +122,7 @@ def two_fa_home(request):
     except AuthenticatorModel.DoesNotExist:
         return redirect('2fa_register')
 
-    # Change password
-    pwd_msg = ''
-    if request.method == 'POST':
-        form = ChangePasswordForm(request.POST)
-
-        if form.is_valid():
-            current_pwd = request.POST.get('current_password')
-            new_pwd = request.POST.get('password')
-
-            if _user.check_password(str(current_pwd)):
-                _user.set_password(str(new_pwd))
-                logger.info("Password changed.")
-                pwd_msg = 'Password successfully changed.'
-            else:
-                form.add_error(None, 'The password you have entered did not match in our system.')
-    else:
-        form = ChangePasswordForm()
-
-    context = {'user': _user, 'auth': _auth, 'pwd': form, 'pwd_msg': pwd_msg}
+    context = {'user': _user, 'auth': _auth}
 
     return render(request, template, context)
 
@@ -475,3 +457,53 @@ def log_me_out(request):
     response = redirect('login')
     response.delete_cookie('is_personal')
     return response
+
+
+def profile_home(request):
+    """
+    Profile homepage.
+
+    Parameters
+    ----------
+    request: WSGIRequest
+        WSGI request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns renderer's.
+
+    """
+    session_key = request.session.session_key
+
+    user_id = get_user_from_sid(session_key)
+
+    try:
+        _user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        return redirect('login')
+
+    template = 'portal/user/profile/profile_index.html'
+
+    # Change password
+    pwd_msg = ''
+    if request.method == 'POST':
+        form = ChangePasswordForm(request.POST)
+
+        if form.is_valid():
+            current_pwd = request.POST.get('current_password')
+            new_pwd = request.POST.get('password')
+
+            if _user.check_password(str(current_pwd)):
+                _user.set_password(str(new_pwd))
+                logger.info("Password changed.")
+                pwd_msg = 'Password successfully changed'
+            else:
+                form.add_error(None, 'The password you have entered did not match in our system')
+    else:
+        form = ChangePasswordForm()
+
+    context = {'pwd': form, 'pwd_msg': pwd_msg}
+
+    return render(request, template, context)
+
