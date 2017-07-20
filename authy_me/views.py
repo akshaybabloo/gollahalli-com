@@ -104,7 +104,7 @@ def two_fa_home(request):
 
     """
 
-    template = 'portal/user/2fa/index.html'
+    template = 'portal/user/2fa/2fa_index.html'
 
     session_key = request.session.session_key
 
