@@ -125,3 +125,6 @@ class ChangePasswordForm(forms.Form):
         if cd.get('password') != cd.get('re_password'):
             raise forms.ValidationError("Both password did not match, please re-enter them.")
 
+        if cd.get('password') == '':
+            raise forms.ValidationError("Password cannot be empty.")
+
