@@ -92,7 +92,7 @@
                         </table>
                     </xsl:if>
                     <xsl:if test="count(sitemap:sitemapindex/sitemap:sitemap) &lt; 1">
-                        <p class="desc"><a href="https://blog.gollahalli.com/sitemap.xml" class="back-link">&#8592; Back to index</a></p>
+                        <p class="desc"><a href="https://www.gollahalli.com/sitemap.xml" class="back-link">&#8592; Back to index</a></p>
                         <table id="sitemap" cellpadding="3">
                             <thead>
                                 <tr>
