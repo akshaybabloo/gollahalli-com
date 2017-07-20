@@ -88,7 +88,7 @@ def user(request):
     return render(request, template, context)
 
 
-def two_fa(request):
+def two_fa_home(request):
     """
     Two-Factor authentication home page.
 
