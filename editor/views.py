@@ -15,8 +15,26 @@ from .models import ContentModel
 #                                       Form Main
 # ============================================================================================
 
-def portal(request):
-    pass
+def portal_home(request):
+    """
+    Portal Home page.
+
+    Parameters
+    ----------
+    request: WSGIRequest
+        WSGI request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns renderer's.
+    """
+    template = 'portal/portal_index.html'
+
+    context = {}
+
+    return render(request, template, context)
+
 
 @login_required
 def index(request):
