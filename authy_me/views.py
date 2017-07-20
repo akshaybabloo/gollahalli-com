@@ -72,7 +72,7 @@ def user(request):
         Returns renderer's.
 
     """
-    template = 'user/index.html'
+    template = 'portal/user/index.html'
 
     session_key = request.session.session_key
 
@@ -104,7 +104,7 @@ def two_fa_home(request):
 
     """
 
-    template = 'user/2fa/index.html'
+    template = 'portal/user/2fa/index.html'
 
     session_key = request.session.session_key
 
@@ -227,7 +227,7 @@ def auth_2fa(request):
 
     authy_api = AuthyApiClient(settings.AUTHY_API)
 
-    template = 'user/2fa/auth.html'
+    template = 'portal/user/2fa/auth.html'
     if request.GET.get('sms') == 'yes':
         sms = authy_api.users.request_sms(user_auth.authy_id, {'force': True})
         if sms.ok():
@@ -291,7 +291,7 @@ def two_fa_register(request):
         Returns renderer's.
 
     """
-    template = "user/2fa/2fa_register.html"
+    template = "portal/user/2fa/2fa_register.html"
 
     session_key = request.session.session_key
     user_id = get_user_from_sid(session_key)
@@ -416,7 +416,7 @@ def confirm_mobile(request):
     render: HttpResponse
         Returns renderer's.
     """
-    template = "user/2fa/confirm_mobile.html"
+    template = "portal/user/2fa/confirm_mobile.html"
 
     try:
         auth = AuthenticatorModel.objects.get(id=1)
