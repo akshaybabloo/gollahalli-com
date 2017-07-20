@@ -109,3 +109,19 @@ class LoginForm(AuthenticationForm):
         if not user or not user.is_active:
             raise forms.ValidationError("Sorry, that login was invalid. Please try again.")
         return self.cleaned_data
+
+
+class ChangePasswordForm(forms.Form):
+    """
+    Change password form.
+    """
+    current_password = forms.CharField(widget=forms.PasswordInput, required=True)
+    password = forms.CharField(widget=forms.PasswordInput, required=True)
+    re_password = forms.CharField(widget=forms.PasswordInput, required=True)
+
+    def clean(self):
+        cd = self.cleaned_data
+
+        if cd.get('password') != cd.get('re_password'):
+            raise forms.ValidationError("Both password did not match, please re-enter them.")
+

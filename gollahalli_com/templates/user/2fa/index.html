@@ -58,6 +58,77 @@
             </div>
         </div>
 
+        <div class="card">
+            <form id="password_change_form" action="" method="post" novalidate="">
+                {% csrf_token %}
+                <div class="card-header">
+                    <h4 class="card-title">
+                        Change Password
+                    </h4>
+                    {% if pwd.non_field_errors %}
+                        <p>
+                        <div class="alert alert-danger">
+                            {% for error in pwd.non_field_errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        </p>
+                    {% endif %}
+                    {% if pwd_msg.strip  %}
+                        <p>
+                        <div class="alert alert-success">
+                            <span>{{ pwd_msg }}</span>
+                        </div>
+                        </p>
+                    {% endif %}
+                </div>
+                <div class="card-content">
+                    <div class="form-group">
+                        <label class="control-label">Current Password
+                            <star>*</star>
+                        </label>
+                        <input class="form-control"
+                               name="current_password"
+                               id="id_current_password"
+                               type="password"
+                               required="true"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Password
+                            <star>*</star>
+                        </label>
+                        <input class="form-control"
+                               name="password"
+                               id="id_password"
+                               type="password"
+                               required="true"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Confirm Password
+                            <star>*</star>
+                        </label>
+                        <input class="form-control"
+                               name="re_password"
+                               id="id_re_password"
+                               type="password"
+                               required="true"
+                               equalTo="#id_password"
+                        />
+                    </div>
+                    <div class="category">
+                        <star>*</star>
+                        Required fields
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-info btn-fill pull-right">Change Password</button>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+
         <div class="card" data-background-color="orange">
             <div class="card-header">
                 <h4 class="card-title">Danger Zone</h4>
@@ -78,7 +149,7 @@
 {% block script %}
     <script type="application/javascript">
 
-        var data = "<br><pre>{% for code in auth.uuids.uuid %}{{ code }} <br>{% endfor %}</pre><p class='text-muted'>* = Used Code</p>";
+        var data = "<br><pre>{% for code in auth.uuids.uuid %}{{ code }} <br>{% endfor %}</pre><div class='category'>* = Used Code</div>";
 
         $('#show').click(function () {
 
@@ -90,6 +161,11 @@
                 $(this).text('Show Code');
                 $('#hide_text').text('');
             }
+        });
+    </script>
+    <script type="application/javascript">
+        $().ready(function () {
+            $('#password_change_form').validate();
         });
     </script>
 {% endblock %}

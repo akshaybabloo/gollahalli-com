@@ -14,7 +14,7 @@ from django.shortcuts import render
 from django.utils.crypto import get_random_string
 from django.views.decorators.cache import never_cache
 
-from .forms import LoginForm, AuthyForm, AuthenticatorModelForm, MobileCheckerForm
+from .forms import LoginForm, AuthyForm, AuthenticatorModelForm, MobileCheckerForm, ChangePasswordForm
 from .models import AuthenticatorModel
 from .utils import get_user_from_sid, has_2fa, get_uuid_json
 
@@ -122,7 +122,25 @@ def two_fa_home(request):
     except AuthenticatorModel.DoesNotExist:
         return redirect('2fa_register')
 
-    context = {'user': _user, 'auth': _auth}
+    # Change password
+    pwd_msg = ''
+    if request.method == 'POST':
+        form = ChangePasswordForm(request.POST)
+
+        if form.is_valid():
+            current_pwd = request.POST.get('current_password')
+            new_pwd = request.POST.get('password')
+
+            if _user.check_password(str(current_pwd)):
+                _user.set_password(str(new_pwd))
+                logger.info("Password changed.")
+                pwd_msg = 'Password successfully changed.'
+            else:
+                form.add_error(None, 'The password you have entered did not match in our system.')
+    else:
+        form = ChangePasswordForm()
+
+    context = {'user': _user, 'auth': _auth, 'pwd': form, 'pwd_msg': pwd_msg}
 
     return render(request, template, context)
 
