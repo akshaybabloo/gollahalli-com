@@ -38,6 +38,19 @@ def portal_home(request):
 
 @login_required
 def editor_home(request):
+    """
+    Editor home page.
+
+    Parameters
+    ----------
+    request: WSGIRequest
+        WSGI request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns renderer's.
+    """
     template = "portal/editor/editor_index.html"
 
     try:
