@@ -10,7 +10,6 @@ class ContentModel(models.Model):
     `last_name`, `email_id`, `github`, `twitter`, `linkedin`, `file` and `image`
     """
     ref_id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     website_name = models.CharField(max_length=300, default="Enter your companies name")
     cv = models.FileField(null=True, blank=True)

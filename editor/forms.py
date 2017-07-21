@@ -3,9 +3,11 @@ from django import forms
 from .models import ContentModel
 
 
-class ContentFormModel(forms.ModelForm):
+class ContentModelForm(forms.ModelForm):
+    ref_id = forms.CharField(required=False)
     bio = forms.CharField(widget=forms.Textarea)
+    created = forms.DateTimeField(required=False)
 
     class Meta:
         model = ContentModel
-        fields = ['cv', 'bio', 'url', 'first_name', 'last_name', 'email_id', 'github', 'twitter', 'linkedin']
+        fields = "__all__"

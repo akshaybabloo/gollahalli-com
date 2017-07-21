@@ -128,7 +128,7 @@ class ContentAdmin(SingleModelAdmin):
     """
     Admin model for `ContentModel`, it takes only one input.
     """
-    list_display = ['ref_id', 'created', 'updated', 'website_name']
+    list_display = ['ref_id', 'updated', 'website_name']
     form = ContentAdminForm
 
 

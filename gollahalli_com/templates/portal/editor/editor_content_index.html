@@ -1,0 +1,163 @@
+{% extends 'admin_base.html' %}
+{% load staticfiles %}
+
+{% block nav %}
+    <li class="active">
+        <a data-toggle="collapse" href="#editorOverview" aria-expanded="true">
+            <i class="ti-user"></i>
+            <p>Editor
+                <b class="caret"></b>
+            </p>
+        </a>
+        <div class="collapse in" id="editorOverview" aria-expanded="true">
+            <ul class="nav">
+                <li class="active">
+                    <a href="{% url 'content_home' %}">
+                        <span class="sidebar-mini">MC</span>
+                        <span class="sidebar-normal">Main Content</span>
+                    </a>
+                </li>
+                {% if content %}
+                    <li>
+                        <a href="{% url '2fa_home' %}">
+                            <span class="sidebar-mini">2FA</span>
+                            <span class="sidebar-normal">Two-Factor Auth</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard/stats.html">
+                            <span class="sidebar-mini">CP</span>
+                            <span class="sidebar-normal">Change Password</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </li>
+    <li>
+        <a data-toggle="collapse" href="#userOverview" class="collapsed" aria-expanded="false">
+            <i class="ti-user"></i>
+            <p>User
+                <b class="caret"></b>
+            </p>
+        </a>
+        <div class="collapse" id="userOverview" aria-expanded="false">
+            <ul class="nav">
+                <li>
+                    <a href="{% url 'profile_home' %}">
+                        <span class="sidebar-mini">UP</span>
+                        <span class="sidebar-normal">Update Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url '2fa_home' %}">
+                        <span class="sidebar-mini">2FA</span>
+                        <span class="sidebar-normal">Two-Factor Auth</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard/stats.html">
+                        <span class="sidebar-mini">CP</span>
+                        <span class="sidebar-normal">Change Password</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+{% endblock %}
+
+{% block page_title %}
+    <a class="navbar-brand" href="{% url 'editor_home' %}">Editor</a>
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-12">
+        <div class="card">
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="card-header">
+                    <h4 class="card-title">
+                        Stacked Form
+                    </h4>
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            {% for errors in form.non_field_errors %}
+                                {{ errors }}
+                            {% endfor %}
+                        {{ form.errors }}
+                        </div>
+                    {% endif %}
+                {% if form_msg.strip %}
+                        <p>
+                        <div class="alert alert-success">
+                            <span>{{ form_msg }}</span>
+                        </div>
+                        </p>
+                    {% endif %}
+                </div>
+                <div class="card-content">
+                    <div class="form-group">
+                        <label>Website Name</label>
+                        <input type="text" placeholder="Website Name" class="form-control" name="website_name" required
+                               id="id_website_name" value="{{ content.website_name }}">
+                    </div>
+                    <div class="form-group">
+                        <label>Biography</label>
+                        <textarea name="bio" id="id_bio" required cols="40" rows="10"
+                                  class="form-control" placeholder="Biography">{{ content.bio }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Web Site URL</label>
+                        <input type="text" placeholder="Web Site URL" class="form-control" name="url" required
+                               id="id_url" value="{{ content.url }}">
+                    </div>
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" placeholder="First Name" class="form-control" name="first_name" required
+                               id="id_first_name" value="{{ content.first_name }}">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Last Name" class="form-control" name="last_name" required
+                               id="id_last_name" value="{{ content.last_name }}">
+                    </div>
+                    <div class="form-group">
+                        <label>Email ID</label>
+                        <input type="email" placeholder="Email ID" class="form-control" name="email_id" required
+                               id="id_email_id" value="{{ content.email_id }}">
+                    </div>
+                    <div class="form-group">
+                        <label>GitHub URL</label>
+                        <input type="text" placeholder="GitHub URL" class="form-control" name="github" required
+                               id="id_github" value="{{ content.github }}">
+                    </div>
+                    <div class="form-group">
+                        <label>Twitter URL</label>
+                        <input type="text" placeholder="Twitter URL" class="form-control" name="twitter" required
+                               id="id_twitter" value="{{ content.twitter }}">
+                    </div>
+                    <div class="form-group">
+                        <label>LinkedIn URL</label>
+                        <input type="text" placeholder="LinkedIn URL" class="form-control" name="linkedin" required
+                               id="id_linkedin" value="{{ content.linkedin }}">
+                    </div>
+                    <div class="form-group">
+                        <label>Upload CV</label>
+                        <input type="file">
+                    </div>
+                    <div class="form-group">
+                        <label>Upload Extra File</label>
+                        <input type="file">
+                    </div>
+                    <div class="form-group">
+                        <label>Upload Image</label>
+                        <input type="file">
+                    </div>
+                    <button type="submit" class="btn btn-fill btn-info">Save</button>
+                </div>
+            </form>
+            {#            <p>{{ form.as_p }}</p>#}
+        </div>
+
+    </div>
+{% endblock %}
