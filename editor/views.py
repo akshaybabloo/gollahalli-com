@@ -61,3 +61,6 @@ def editor_home(request):
     context = {'content': content}
     return render(request, template, context)
 
+
+def content_home(request):
+    pass
