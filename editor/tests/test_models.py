@@ -94,7 +94,6 @@ class ContentModelTest(TestCase):
         """
         content = ContentModel.objects.get(ref_id=1)
 
-        self.assertEqual(content.created, mock_datetime_now())
         self.assertEqual(content.updated, mock_datetime_now())
 
     def test_uploads(self):
