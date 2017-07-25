@@ -17,6 +17,7 @@ class ContentSchema(DjangoObjectType):
 
     class Meta:
         model = ContentModel
+        description = "Main content schema."
 
     def resolve_cv(self, args, context, info):
         """
@@ -69,6 +70,7 @@ class EducationSchema(DjangoObjectType):
 
     class Meta:
         model = EducationModel
+        description = "Education schema"
 
     def resolve_file(self, args, context, info):
         """
@@ -107,6 +109,7 @@ class ProjectsSchema(DjangoObjectType):
 
     class Meta:
         model = ProjectsModel
+        description = "Number of projects"
 
     def resolve_file(self, args, context, info):
         """
@@ -145,6 +148,7 @@ class TutorialsSchema(DjangoObjectType):
 
     class Meta:
         model = TutorialsModel
+        description = "All tutorial developed"
 
     def resolve_file(self, args, context, info):
         """
@@ -183,6 +187,7 @@ class ExperienceSchema(DjangoObjectType):
 
     class Meta:
         model = ExperienceModel
+        description = "All experiences"
 
 
 class SkillsSchema(DjangoObjectType):
@@ -192,6 +197,7 @@ class SkillsSchema(DjangoObjectType):
 
     class Meta:
         model = SkillsModel
+        description = "All skills"
 
 
 class SkillsContentSchema(DjangoObjectType):
@@ -201,6 +207,7 @@ class SkillsContentSchema(DjangoObjectType):
 
     class Meta:
         model = SkillsContentModel
+        description = "All skills contents"
 
     def resolve_file(self, args, context, info):
         """
@@ -239,6 +246,7 @@ class PublicationsSchema(DjangoObjectType):
 
     class Meta:
         model = PublicationsModel
+        description = "Type of publications"
 
 
 class PublicationContentSchema(DjangoObjectType):
@@ -248,6 +256,7 @@ class PublicationContentSchema(DjangoObjectType):
 
     class Meta:
         model = PublicationsContentModel
+        description = "All publication contents"
 
     def resolve_file(self, args, context, info):
         """
@@ -285,6 +294,7 @@ class MetaContentSchema(DjangoObjectType):
     """
     class Meta:
         model = MetaContentModel
+        description = "All meta tags, headers and footers."
 
 # ----------------------------------------------------------------------------
 # Query object
