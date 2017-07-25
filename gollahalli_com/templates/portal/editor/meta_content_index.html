@@ -11,7 +11,7 @@
         </a>
         <div class="collapse in" id="editorOverview" aria-expanded="true">
             <ul class="nav">
-                <li class="active">
+                <li>
                     <a href="{% url 'content_home' %}">
                         <span class="sidebar-mini">MC</span>
                         <span class="sidebar-normal">Main Content</span>
@@ -25,7 +25,7 @@
                         </a>
                     </li>
                 {% endif %}
-                <li>
+                <li class="active">
                     <a href="{% url 'meta_home' %}">
                         <span class="sidebar-mini">ME</span>
                         <span class="sidebar-normal">Meta</span>
@@ -97,61 +97,19 @@
                 </div>
                 <div class="card-content">
                     <div class="form-group">
-                        <label>Website Name</label>
-                        <input type="text" placeholder="Website Name" class="form-control" name="website_name" required
-                               id="id_website_name" value="{{ content.website_name }}">
+                        <label>Header</label>
+                        <textarea name="header" id="id_header" cols="40" rows="10"
+                                  class="form-control" placeholder="Biography">{{ content.header }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label>Biography</label>
-                        <textarea name="bio" id="id_bio" required cols="40" rows="10"
-                                  class="form-control" placeholder="Biography">{{ content.bio }}</textarea>
+                        <label>Footer</label>
+                        <textarea name="footer" id="id_footer" cols="40" rows="10"
+                                  class="form-control" placeholder="Biography">{{ content.footer }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label>Web Site URL</label>
-                        <input type="text" placeholder="Web Site URL" class="form-control" name="url" required
-                               id="id_url" value="{{ content.url }}">
-                    </div>
-                    <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" placeholder="First Name" class="form-control" name="first_name" required
-                               id="id_first_name" value="{{ content.first_name }}">
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" placeholder="Last Name" class="form-control" name="last_name" required
-                               id="id_last_name" value="{{ content.last_name }}">
-                    </div>
-                    <div class="form-group">
-                        <label>Email ID</label>
-                        <input type="email" placeholder="Email ID" class="form-control" name="email_id" required
-                               id="id_email_id" value="{{ content.email_id }}">
-                    </div>
-                    <div class="form-group">
-                        <label>GitHub URL</label>
-                        <input type="text" placeholder="GitHub URL" class="form-control" name="github" required
-                               id="id_github" value="{{ content.github }}">
-                    </div>
-                    <div class="form-group">
-                        <label>Twitter URL</label>
-                        <input type="text" placeholder="Twitter URL" class="form-control" name="twitter" required
-                               id="id_twitter" value="{{ content.twitter }}">
-                    </div>
-                    <div class="form-group">
-                        <label>LinkedIn URL</label>
-                        <input type="text" placeholder="LinkedIn URL" class="form-control" name="linkedin" required
-                               id="id_linkedin" value="{{ content.linkedin }}">
-                    </div>
-                    <div class="form-group">
-                        <label>Upload CV</label>
-                        <input type="file">
-                    </div>
-                    <div class="form-group">
-                        <label>Upload Extra File</label>
-                        <input type="file">
-                    </div>
-                    <div class="form-group">
-                        <label>Upload Image</label>
-                        <input type="file">
+                        <label>Meta</label>
+                        <textarea name="meta" id="id_meta" cols="40" rows="10"
+                                  class="form-control" placeholder="Biography">{{ content.meta }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-fill btn-info">Save</button>
                 </div>

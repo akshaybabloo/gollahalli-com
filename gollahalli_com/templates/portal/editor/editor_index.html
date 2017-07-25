@@ -18,12 +18,7 @@
                     </a>
                 </li>
                 {% if content %}
-                    <li>
-                        <a href="{% url '2fa_home' %}">
-                            <span class="sidebar-mini">2FA</span>
-                            <span class="sidebar-normal">Two-Factor Auth</span>
-                        </a>
-                    </li>
+
                     <li>
                         <a href="dashboard/stats.html">
                             <span class="sidebar-mini">CP</span>
@@ -31,6 +26,13 @@
                         </a>
                     </li>
                 {% endif %}
+
+                <li>
+                    <a href="{% url 'meta_home' %}">
+                        <span class="sidebar-mini">ME</span>
+                        <span class="sidebar-normal">Meta</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </li>
@@ -83,25 +85,25 @@
                     <button class="btn btn-default btn-fill btn-wd" href="{% url 'content_home' %}">Add content</button>
                 {% else %}
                     <p>
-                        <h5>Main Content</h5>
-                        <b>Website Name:</b> {{ content.website_name }} <br>
-                        {% if content.cv %}
-                            <b>CV:</b> <a href="{{ content.cv }}">Download</a><br>
-                        {% endif %}
-                        <b>Biography:</b> {{ content.bio }}<br>
-                        <b>Website URL:</b> <a href="{{ content.url }}">{{ content.url }}</a><br>
-                        <b>First Name:</b> {{ content.first_name }}<br>
-                        <b>Last Name:</b> {{ content.last_name }}<br>
-                        <b>Email ID:</b> {{ content.email_id }}<br>
-                        <b>GitHub:</b> <a href="{{ content.github }}">{{ content.github }}</a><br>
-                        <b>Twitter:</b> <a href="{{ content.twitter }}">{{ content.twitter }}</a><br>
-                        <b>LinkedIn:</b> <a href="{{ content.linkedin }}">{{ content.linkedin }}</a><br>
-                        {% if content.file %}
-                            <b>Extra File:</b> <a href="{{ content.file }}">Download</a><br>
-                        {% endif %}
-                        {% if content.image %}
-                            <b>Image:</b> <a href="{{ content.image }}">Download</a><br>
-                        {% endif %}
+                    <h5>Main Content</h5>
+                    <b>Website Name:</b> {{ content.website_name }} <br>
+                    {% if content.cv %}
+                        <b>CV:</b> <a href="{{ content.cv }}">Download</a><br>
+                    {% endif %}
+                    <b>Biography:</b> {{ content.bio }}<br>
+                    <b>Website URL:</b> <a href="{{ content.url }}">{{ content.url }}</a><br>
+                    <b>First Name:</b> {{ content.first_name }}<br>
+                    <b>Last Name:</b> {{ content.last_name }}<br>
+                    <b>Email ID:</b> {{ content.email_id }}<br>
+                    <b>GitHub:</b> <a href="{{ content.github }}">{{ content.github }}</a><br>
+                    <b>Twitter:</b> <a href="{{ content.twitter }}">{{ content.twitter }}</a><br>
+                    <b>LinkedIn:</b> <a href="{{ content.linkedin }}">{{ content.linkedin }}</a><br>
+                    {% if content.file %}
+                        <b>Extra File:</b> <a href="{{ content.file }}">Download</a><br>
+                    {% endif %}
+                    {% if content.image %}
+                        <b>Image:</b> <a href="{{ content.image }}">Download</a><br>
+                    {% endif %}
                     </p>
                 {% endif %}
 

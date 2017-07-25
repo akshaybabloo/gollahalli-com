@@ -7,8 +7,8 @@ from django.shortcuts import redirect
 from django.shortcuts import render, HttpResponseRedirect
 
 from gollahalli_com.utils import format_date_time
-from .forms import ContentModelForm
-from .models import ContentModel
+from .forms import ContentModelForm, MetaContentModelForm
+from .models import ContentModel, MetaContentModel
 
 
 # ============================================================================================
@@ -102,7 +102,6 @@ def content_home(request):
             linkedin = form.cleaned_data.get("linkedin")
             file = form.cleaned_data.get("file")
             image = form.cleaned_data.get("image")
-            print("success")
 
             content_model, created = ContentModel.objects.update_or_create(ref_id=1,
                                                                            website_name=website_name,
@@ -124,6 +123,52 @@ def content_home(request):
                 content = content_model
     else:
         form = ContentModelForm()
+
+    context = {'form': form, 'content': content, 'form_msg': form_msg}
+
+    return render(request, template, context)
+
+
+def meta_home(request):
+    """
+    Meta content home page.
+
+    Parameters
+    ----------
+    request: WSGIRequest
+        WSGI request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns renderer's.
+    """
+    template = "portal/editor/meta_content_index.html"
+
+    try:
+        content = MetaContentModel.objects.get(ref_id=1)
+    except MetaContentModel.DoesNotExist:
+        content = False
+
+    form_msg = ''
+
+    if request.method == "POST":
+        form = MetaContentModelForm(request.POST)
+
+        if form.is_valid():
+            header = form.cleaned_data.get('header')
+            footer = form.cleaned_data.get('footer')
+            meta = form.cleaned_data.get('meta')
+
+            content_model, created = MetaContentModel.objects.update_or_create(ref_id=1, header=header, footer=footer,
+                                                                               meta=meta)
+
+            if created:
+                content_model.save()
+                form_msg = "Updates saved"
+                content = content_model
+    else:
+        form = MetaContentModelForm()
 
     context = {'form': form, 'content': content, 'form_msg': form_msg}
 

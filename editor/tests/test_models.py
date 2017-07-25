@@ -591,7 +591,7 @@ class MetaContentModelTest(TestCase):
         """
         Sets up `MetaContentModel`
         """
-        MetaContentModel.objects.create(id=1,
+        MetaContentModel.objects.create(ref_id=1,
                                         header="some header",
                                         footer="some footer",
                                         meta="some meta")
@@ -600,9 +600,9 @@ class MetaContentModelTest(TestCase):
         """
         Tests `id`, `header`, `footer` and `meta`
         """
-        content = MetaContentModel.objects.get(id=1)
+        content = MetaContentModel.objects.get(ref_id=1)
 
-        self.assertEqual(content.id, 1)
+        self.assertEqual(content.ref_id, 1)
         self.assertEqual(content.header, "some header")
         self.assertEqual(content.footer, "some footer")
         self.assertEqual(content.meta, "some meta")

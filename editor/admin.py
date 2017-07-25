@@ -202,7 +202,7 @@ class MetaContentAdmin(SingleModelAdmin):
     """
     Admin model for `MetaContentModel`, it takes only single entry.
     """
-    list_display = ['id', 'header', 'footer', 'meta']
+    list_display = ['ref_id', 'header', 'footer', 'meta']
     form = MetaContentAdminForm
 
 
