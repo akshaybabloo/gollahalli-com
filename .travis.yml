@@ -23,6 +23,7 @@ install:
   - pip install tox-travis
 
 script:
+  - python manage.py collectstatic
   - tox
 
 sudo: required
