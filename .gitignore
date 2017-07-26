@@ -144,3 +144,4 @@ gollahalli_com/templates/test.html
 test.py
 /gollahalli_com/settings/secrets.py
 .DS_Store
+/gollahalli_com/static/static_root/
