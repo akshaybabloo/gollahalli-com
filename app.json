@@ -1,9 +1,23 @@
-
 {
   "name": "Gollahalli micro CMS",
   "description": "A very simple one page micro cms for personal page.",
   "repository": "https://github.com/akshaybabloo/gollahalli-com",
   "logo": "https://cdn.gollahalli.com/static/img/favicons/favicon-192.png",
-  "keywords": ["python", "micro cms", "heroku"],
-  "image": "heroku/python"
+  "keywords": [
+    "python",
+    "micro cms",
+    "heroku"
+  ],
+  "image": "heroku/python",
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "A secret key for Django.",
+      "generator": "secret"
+    }
+  }
 }
