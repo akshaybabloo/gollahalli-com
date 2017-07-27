@@ -17,7 +17,25 @@
   "env": {
     "SECRET_KEY": {
       "description": "A secret key for Django.",
-      "generator": "secret"
+      "generator": "secret",
+      "required": true
+    },
+    "DEBUG":{
+      "description": "Debug mode. By default its set to false.",
+      "value": 0
+    },
+    "CLOUDINARY_API":{
+      "description": "Your Cloudinary API key.",
+      "required": true
+    },
+    "CLOUDINARY_API_SECRET":{
+      "description": "Your Cloudinary API secret key",
+      "required": true
+    },
+    "AUTHY_API":{
+      "description": "YOur Authy API.",
+      "required": true
     }
+
   }
 }
