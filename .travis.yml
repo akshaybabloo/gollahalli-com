@@ -7,7 +7,7 @@ python:
 services: postgresql
 
 addons:
-  postgresql: "9.6"
+  postgresql: "9.5"
 
 before_script:
   - sudo psql -c "CREATE DATABASE mydb;" -U postgres
