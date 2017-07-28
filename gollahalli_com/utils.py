@@ -1,10 +1,7 @@
 import datetime
 import json
-import os
 
 import requests
-
-GITHUB_KEY = os.environ['GITHUB_KEY']
 
 
 def is_json(my_json):
@@ -73,8 +70,7 @@ def get_version():
         A dictionary of GitHub content.
 
     """
-    response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest',
-                            auth=('akshaybabloo', GITHUB_KEY))
+    response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest')
     return json.loads(response.text)
 
 
