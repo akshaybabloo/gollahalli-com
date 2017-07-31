@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.test.client import Client
 
 from authy_me.models import AuthenticatorModel
-from authy_me.utils import is_int, has_2fa, get_user_from_sid
+from authy_me.utils import is_int, has_2fa, get_user_from_sid, get_uuid_json
 
 
 class UtilityTests(TestCase):
@@ -76,6 +76,16 @@ class UtilityTests(TestCase):
         cl = Mock()
 
         self.assertEqual(cl.username(), 'unknown_user')
+
+    def test_uuid(self):
+        """
+        Testing uuids.
+        """
+
+        content = get_uuid_json()
+
+        self.assertTrue(type(content), type(dict))
+        self.assertTrue(type(content['uuid']), type(list))
 
     def tearDown(self):
         self.auth.delete()
