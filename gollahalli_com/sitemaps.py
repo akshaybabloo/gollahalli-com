@@ -91,7 +91,7 @@ class Sitemap(sitemaps.Sitemap):
     def _urls(self, page, protocol, domain):
         urls = []
         latest_lastmod = None
-        all_items_lastmod = False  # track if all items have a lastmod
+        all_items_lastmod = True  # track if all items have a lastmod
         for count, item in enumerate(self.paginator.page(page).object_list):
             loc = "%s://%s%s" % (protocol, domain, self.__get('location', item))
             priority = self.__get('priority', item)
