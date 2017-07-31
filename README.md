@@ -10,15 +10,38 @@
 
 ## Introduction
 
+I have been sick of complicated CMS, so I set out to develop a micro-CMS. A very simple one-page website creator that supports Django Templates and GraphQL API calls.
+
+For extra security, I have included Authy's two-factor authentication with Django's built-in user authentication system.
+
+**Portal**
+
+![Portal](https://raw.githubusercontent.com/akshaybabloo/gollahalli-com/master/screenshot/portal.JPG)
+
 ## Requirements
+
+This library heavily depends on the following services:
+
+1. Heroku (web deployment)
+2. Amazon AWS S3 (storage) - That's because Heroku doesnt provide storage system.
+3. Authy (Two-factor authentication)
+4. Cloudinary (Optional, for images)
 
 ## GraphQL as an API
 
+Content coming soon.
+
 ## Template Usage
+
+Content coming soon.
 
 ### Regular Pages
 
-### AMP
+Content coming soon.
+
+### Google AMP
+
+Content coming soon.
 
 ## License
 
