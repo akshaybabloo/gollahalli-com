@@ -43,6 +43,26 @@
     "AWS_SECRET_ACCESS_KEY": {
       "description": "Your AWS access key.",
       "required": true
+    },
+    "EMAIL_HOST": {
+      "description": "Your email host address. eg: smtp.mailgun.com",
+      "required": true
+    },
+    "EMAIL_PORT": {
+      "description": "Email port number. Usually 587",
+      "required": true
+    },
+    "EMAIL_HOST_USER": {
+      "description": "Your username. eg: postmaster@domain.com",
+      "required": true
+    },
+    "EMAIL_HOST_PASSWORD": {
+      "description": "Your SMTP provider password.",
+      "required": true
+    },
+    "EMAIL_USE_TLS": {
+      "description": "If your email provider supports Transport Layer Security (TLS) put 1 else 0.",
+      "required": true
     }
   }
 }
