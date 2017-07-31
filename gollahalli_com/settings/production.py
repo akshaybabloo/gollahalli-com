@@ -19,9 +19,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATABASES = settings.DATABASES
 
 # Parse database configuration from $DATABASE_URL
-
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
 DATABASES['default'] = dj_database_url.config(conn_max_age=500)
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_SSL_REDIRECT = True
