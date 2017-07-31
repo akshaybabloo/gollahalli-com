@@ -40,9 +40,6 @@ urlpatterns = [
                   url(r'^admin/', admin.site.urls, name='admin_urls'),
                   url(r'^', include('authy_me.urls'), name="login"),
 
-                  # url(r'^admin/login/$', authy_views.log_me_in, name="admin_login"),
-                  # url(r'^accounts/password/reset/$', password_reset, {'template_name': 'userauth/password_change_form.html'}, name="password_reset"),
-                  # url(r'^accounts/password/password-change-done/$', password_change_done, {'template_name': 'userauth/password_change_done.html'}, name="password_change_done"),
                   url(r'^accounts/profile/', include('editor.urls'), name="profile"),
                   url(r'^robots.txt',
                       lambda x: HttpResponse(
