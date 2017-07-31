@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'editor',
     'viewer',
     'authy_me',
+    'backup_restore'
 ]
 
 MIDDLEWARE = [
