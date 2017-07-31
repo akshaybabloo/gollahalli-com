@@ -28,6 +28,20 @@ class ViewsTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response['Content-Type'], 'application/javascript')
 
+    def test_user_js_auth(self):
+        """
+        Testing ``user_js`` after auth.
+        """
+
+        c = Client()
+        c.login(username=self.my_admin.username, password='mypassword')
+
+        response = c.get('/static/js/users.js', follow=True)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response['Content-Type'], 'application/javascript')
+        self.assertIn('myemail@test.com', str(response.content))
+
     def test_log_me_in_admin(self):
         """
         Testing ``log_me_in`` redirect to admin if already logged in.
