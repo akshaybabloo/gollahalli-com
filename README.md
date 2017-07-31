@@ -1,4 +1,4 @@
-# Gollahalli Website
+# Gollahalli Micro CMS
 
 [![codecov](https://codecov.io/gh/akshaybabloo/gollahalli-com/branch/master/graph/badge.svg)](https://codecov.io/gh/akshaybabloo/gollahalli-com)
 [![Build Status](https://travis-ci.org/akshaybabloo/gollahalli-com.svg?branch=master)](https://travis-ci.org/akshaybabloo/gollahalli-com)
@@ -6,69 +6,20 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/akshaybabloo/gollahalli-com)
 
-## 1 Django Template Tags
+> Warning: Master branch is not production ready (yet) :warning:. Use [Django-Python-3](https://github.com/akshaybabloo/gollahalli-com/tree/Django-Python-3), to create your website based on JSON. If you like PHP then see [PHP5](https://github.com/akshaybabloo/gollahalli-com/tree/PHP5) branch.
 
-These are the tags that were used in this project:
+## Introduction
 
-1. To get name
+## Requirements
 
-  ```python
-  {{ content.get_name }}
-  ```
-2. To get Twitter
+## GraphQL as an API
 
-  ```python
-  {{ content.get_twitter }}
-  ```
-3. To get GitHub
+## Template Usage
 
-  ```python
-  {{ content.get_github }}
-  ```
-4. To get Linkedin
+### Regular Pages
 
-  ```python
-  {{ content.get_linkedin }}
-  ```
-5. To get my image
+### AMP
 
-  ```
-  {{ content.get_my_image | safe }}
-  ```
-6. To get my Bio
+## License
 
-  ```
-  {{ content.get_bio | safe }}
-  ```
-
-7. To get my skills
-
-For Table 1
-
-```
-{% for data, key in content.get_skills.t1.items %}
-  {% for data_of_key in key %}
-      {% if forloop.first %}
-        {{ data | title }}
-      {% else %}
-          {# Do something #}
-      {% endif %}
-        {{ data_of_key }}
-  {% endfor %}
-{% endfor %}
-```
-
-For Table 2
-
-```
-{% for data, key in content.get_skills.t2.items %}
-  {% for data_of_key in key %}
-      {% if forloop.first %}
-        {{ data | title }}
-      {% else %}
-          {# Do something #}
-      {% endif %}
-        {{ data_of_key }}
-  {% endfor %}
-{% endfor %}
-```
+Provided under [MIT License](https://github.com/akshaybabloo/gollahalli-com/blob/master/LICENSE.md).
