@@ -44,9 +44,8 @@ def users_js(request):
     user_id = get_user_from_sid(session_key)
 
     try:
-        user = User.objects.get(id=user_id)
+        _user = User.objects.get(id=user_id)
     except User.DoesNotExist:
-        data = 'console.log("Not authorised")'
         response = HttpResponse('console.log("Not authorised")', content_type='application/javascript')
         return response
 
@@ -79,7 +78,7 @@ def user(request):
     user_id = get_user_from_sid(session_key)
 
     try:
-        user = User.objects.get(id=user_id)
+        _user = User.objects.get(id=user_id)
     except User.DoesNotExist:
         return redirect('login')
 
@@ -146,7 +145,7 @@ def log_me_in(request):
     user_id = get_user_from_sid(session_key)
 
     try:
-        user = User.objects.get(id=user_id)
+        _user = User.objects.get(id=user_id)
         return redirect('/admin/')
     except User.DoesNotExist:
         pass
@@ -155,16 +154,16 @@ def log_me_in(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        user = authenticate(username=username, password=password)
+        _user = authenticate(username=username, password=password)
 
-        if user is not None and user.is_active:
-            if user.is_staff and not has_2fa(user):
+        if _user is not None and _user.is_active:
+            if _user.is_staff and not has_2fa(_user):
                 logger.info('is staff but does not have 2FA, redirecting to Authy account creator')
-                login(request, user)
+                login(request, _user)
                 return redirect('/admin/authy_me/authenticatormodel/')
-            elif user.is_staff and has_2fa(user):
+            elif _user.is_staff and has_2fa(_user):
                 logger.info("is staff and 2FA enabled redirecting to Authy verification")
-                login(request, user)
+                login(request, _user)
                 if request.POST.get('remember_me'):
                     request.session.set_expiry(31557600)
                 return redirect('2fa_auth')
@@ -197,11 +196,11 @@ def auth_2fa(request):
     user_id = get_user_from_sid(session_key)
 
     try:
-        user = User.objects.get(id=user_id)
+        _user = User.objects.get(id=user_id)
     except User.DoesNotExist:
         return redirect('login')
 
-    user_auth = user.auth_user.get(id=user.id)
+    user_auth = _user.auth_user.get(id=_user.id)
 
     if 'is_personal' in request.COOKIES:
         if request.get_signed_cookie('is_personal', salt=str(user_auth.session_id)) == 'yes':
