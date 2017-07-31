@@ -18,6 +18,14 @@ class UtilityTest(TestCase):
         json_string = {"hello": "hi"}
         self.assertTrue(utils.is_json(json.dumps(json_string)))
 
+    def test_json_false(self):
+        """
+        Testing ``is_json`` false
+        """
+        json_string = 'test'
+        self.assertFalse(utils.is_json(json_string))
+        self.assertRaises(ValueError)
+
     def test_format_date_time(self):
         """
         Testing ``format_date_time``
