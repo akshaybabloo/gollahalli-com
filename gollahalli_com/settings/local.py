@@ -3,11 +3,6 @@
 #
 # Copyright 2016 Akshay Raj Gollahalli
 
-# !/usr/bin/env python
-# -*- coding: utf-8 -*-
-#
-# Copyright 2016 Akshay Raj Gollahalli
-
 """
 Django local settings for gollahalli_com project.
 
