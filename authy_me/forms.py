@@ -122,9 +122,9 @@ class ChangePasswordForm(forms.Form):
     def clean(self):
         cd = self.cleaned_data
 
+        if cd.get('password') is None:
+            raise forms.ValidationError("Password cannot be empty.")
+
         if cd.get('password') != cd.get('re_password'):
             raise forms.ValidationError("Both password did not match, please re-enter them.")
-
-        if cd.get('password') == '':
-            raise forms.ValidationError("Password cannot be empty.")
 

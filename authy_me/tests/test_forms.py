@@ -4,7 +4,8 @@ from django.test import TestCase, Client
 from django.urls import reverse
 import json
 
-from authy_me.forms import AuthenticatorAdminForm, AuthyForm, LoginForm
+from authy_me.forms import AuthenticatorAdminForm, AuthyForm, LoginForm, AuthenticatorModelForm, MobileCheckerForm, \
+    ChangePasswordForm
 from authy_me.models import AuthenticatorModel
 
 
@@ -72,6 +73,70 @@ class AuthyFormTests(TestCase):
         self.assertTrue(form.is_valid())
 
 
+class AuthenticatorModelFormTests(TestCase):
+    """
+    Test case for ``AuthenticatorModelForm``
+    """
+
+    def test_valid(self):
+        form_data = {'first_name': 'akshay', 'last_name': 'gollahalli', 'phone_number': '+1123456789',
+                     'email_id': 'example@example.com'}
+
+        form = AuthenticatorModelForm(form_data)
+
+        self.assertTrue(form.is_valid())
+
+    def test_first_name(self):
+        """
+        Tests ``first_name`` field.
+        """
+        form_data = {'last_name': 'gollahalli', 'phone_number': '+1123456789',
+                     'email_id': 'example@example.com'}
+
+        form = AuthenticatorModelForm(form_data)
+
+        self.assertFalse(form.is_valid())
+        self.assertIn('Please enter your first name.', str(form.errors))
+
+    def test_last_name(self):
+        """
+        Tests ``last_name`` field.
+        """
+
+        form_data = {'first_name': 'akshay', 'phone_number': '+1123456789',
+                     'email_id': 'example@example.com'}
+
+        form = AuthenticatorModelForm(form_data)
+
+        self.assertFalse(form.is_valid())
+        self.assertIn('Please enter your last name.', str(form.errors))
+
+    def test_phone_number(self):
+        form_data = {'first_name': 'akshay', 'last_name': 'gollahalli',
+                     'email_id': 'example@example.com'}
+
+        form = AuthenticatorModelForm(form_data)
+
+        self.assertFalse(form.is_valid())
+        self.assertIn('Please enter a phone number.', str(form.errors))
+
+    def test_email_id(self):
+        form_data = {'first_name': 'akshay', 'last_name': 'gollahalli', 'phone_number': '+1123456789'}
+
+        form = AuthenticatorModelForm(form_data)
+
+        self.assertFalse(form.is_valid())
+        self.assertIn('Please enter your email ID.', str(form.errors))
+
+    def test_all_invalid(self):
+        form_data = {}
+
+        form = AuthenticatorModelForm(form_data)
+
+        self.assertFalse(form.is_valid())
+        self.assertRaises(forms.ValidationError)
+
+
 class LoginFormTests(TestCase):
     """
     Test case for ``LoginForm``
@@ -106,3 +171,67 @@ class LoginFormTests(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('Sorry, that login was invalid. Please try again.', str(form.errors))
         self.assertRaises(forms.ValidationError)
+
+
+class MobileCheckerFormTests(TestCase):
+    """
+    Tests for ``MobileCheckerForm``.
+    """
+
+    def test_valid(self):
+        """
+        Testing form validity.
+        """
+        form_data = {'auth_code': 12345}
+        form = MobileCheckerForm(form_data)
+
+        self.assertTrue(form.is_valid())
+
+    def test_invalid(self):
+        """
+        Testing if the input is not an integer.
+        """
+        form_data = {'auth_code': '12sdd345'}
+        form = MobileCheckerForm(form_data)
+
+        self.assertFalse(form.is_valid())
+        self.assertIn('The authentication should be only numbers. Please re-enter.', str(form.errors))
+
+
+class ChangePasswordFormTests(TestCase):
+    """
+    Tests for ``ChangePasswordForm``.
+    """
+
+    def test_valid(self):
+        """
+        Testing form validity.
+        """
+        form_data = {'current_password': 'test', 'password': 'hello', 're_password': 'hello'}
+
+        form = ChangePasswordForm(form_data)
+
+        self.assertTrue(form.is_valid())
+
+    def test_password(self):
+        """
+        Testing validity of ``password`` field.
+        """
+        form_data = {'current_password': 'test', 're_password': 'hello'}
+
+        form = ChangePasswordForm(form_data)
+
+        self.assertFalse(form.is_valid())
+        self.assertIn('Password cannot be empty.', str(form.errors))
+
+    def test_re_password(self):
+        """
+        Testing password fields not equal.
+        """
+
+        form_data = {'current_password': 'test','password': 'hello_hello', 're_password': 'hello'}
+
+        form = ChangePasswordForm(form_data)
+
+        self.assertFalse(form.is_valid())
+        self.assertIn('Both password did not match, please re-enter them.', str(form.errors))
