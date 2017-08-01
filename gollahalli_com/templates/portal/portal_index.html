@@ -2,7 +2,39 @@
 {% load staticfiles %}
 
 {% block nav %}
-<li>
+    <li>
+        <a data-toggle="collapse" href="#editorOverview" class="collapsed" aria-expanded="false">
+            <i class="ti-user"></i>
+            <p>Editor
+                <b class="caret"></b>
+            </p>
+        </a>
+        <div class="collapse" id="editorOverview" aria-expanded="false">
+            <ul class="nav">
+                <li>
+                    <a href="{% url 'content_home' %}">
+                        <span class="sidebar-mini">MC</span>
+                        <span class="sidebar-normal">Main Content</span>
+                    </a>
+                </li>
+                {% if content %}
+
+                    <li>
+                        <a href="dashboard/stats.html">
+                            <span class="sidebar-mini">CP</span>
+                            <span class="sidebar-normal">Change Password</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                <li>
+                    <a href="{% url 'meta_home' %}">
+                        <span class="sidebar-mini">ME</span>
+                        <span class="sidebar-normal">Meta</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
         <a data-toggle="collapse" href="#userOverview" class="collapsed" aria-expanded="false">
             <i class="ti-user"></i>
             <p>User
@@ -35,7 +67,7 @@
 {% endblock %}
 
 {% block page_title %}
-<a class="navbar-brand" href="{% url 'portal_home' %}">Portal</a>
+    <a class="navbar-brand" href="{% url 'portal_home' %}">Portal</a>
 {% endblock %}
 
 {% block content %}
