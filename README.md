@@ -18,6 +18,60 @@ For extra security, I have included Authy's two-factor authentication with Djang
 
 ![Portal](https://raw.githubusercontent.com/akshaybabloo/gollahalli-com/master/screenshot/portal.JPG)
 
+## Running Locally
+
+If you want to test how it works, you might want to install `PostgreSQL` from [bigsql.org](http://bigsql.org/), because I have used JSON field inside the models, which will only work on PostgreSQL.
+
+Then search for `plsql` and type in the following SQL query to create the `user` and the `table`
+
+```sql
+CREATE USER akshay WITH PASSWORD 'akshay12';
+CREATE DATABASE gollahalli_com_django_test;
+GRANT ALL PRIVILEGES ON DATABASE "gollahalli_com_django_test" to akshay;
+```
+
+Once you have created the user and database, install these dependencies (Python 3.5 or 3.6)
+
+```
+Django==1.11.3
+psycopg2>=2.7.1
+whitenoise>=3.3.0
+django-storages>=1.6.0
+boto3>==1.4.0
+Pillow>=4.2.0
+Markdown>=2.6.7
+cloudinary>=1.5.0
+requests>=2.0
+graphene-django>=1.3
+graphene>=1.4
+singlemodeladmin==0.7
+boto
+feedparser>=5.2.1
+django-filer>=1.2.7
+easy-thumbnails>=2.4.1
+authy>=2.1
+django-phonenumber-field
+```
+
+Now, clone the repo and open your `cmd` or `terminal`. Change to the cloned directory and type in the following commands.
+
+```cmd
+python managey.py makemigration
+python manage.py collectstatic
+```
+
+Also, create a superuser by typing in
+
+```cmd
+python manage.py createsuperuser
+```
+
+If there are no errors, then type in
+
+```cmd
+python manage.py runserver
+```
+
 ## Requirements
 
 This library heavily depends on the following services:
@@ -26,6 +80,7 @@ This library heavily depends on the following services:
 2. Amazon AWS S3 (storage) - That's because Heroku doesnt provide storage system.
 3. Authy (Two-factor authentication)
 4. Cloudinary (Optional, for images)
+5. PostgreSQL (database)
 
 ## GraphQL as an API
 
