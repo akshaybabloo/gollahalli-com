@@ -8,6 +8,21 @@
 
 > Warning: Master branch is not production ready (yet) :warning:. Use [Django-Python-3](https://github.com/akshaybabloo/gollahalli-com/tree/Django-Python-3), to create your website based on JSON. If you like PHP then see [PHP5](https://github.com/akshaybabloo/gollahalli-com/tree/PHP5) branch.
 
+**TOC**
+
+<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Introduction](#introduction)
+- [Running Locally](#running-locally)
+- [Requirements](#requirements)
+- [GraphQL as an API](#graphql-as-an-api)
+- [Template Usage](#template-usage)
+	- [Regular Pages](#regular-pages)
+	- [Google AMP](#google-amp)
+- [License](#license)
+
+<!-- /TOC -->
+
 ## Introduction
 
 I have been sick of complicated CMS, so I set out to develop a micro-CMS. A very simple one-page website creator that supports Django Templates and GraphQL API calls.
