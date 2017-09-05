@@ -6,7 +6,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/akshaybabloo/gollahalli-com)
 
-> Warning: Master branch is not production ready (yet) :warning:. Use [Django-Python-3](https://github.com/akshaybabloo/gollahalli-com/tree/Django-Python-3), to create your website based on JSON. If you like PHP then see [PHP5](https://github.com/akshaybabloo/gollahalli-com/tree/PHP5) branch.
+> Warning: Master branch is not production ready (yet) :warning:. Use [Django-Python-3](https://github.com/akshaybabloo/gollahalli-com/tree/Django-Python-3), to create your website based on JSON ([![Requirements Status](https://requires.io/github/akshaybabloo/gollahalli-com/requirements.svg?branch=Django-Python-3)](https://requires.io/github/akshaybabloo/gollahalli-com/requirements/?branch=Django-Python-3)). If you like PHP then see [PHP5](https://github.com/akshaybabloo/gollahalli-com/tree/PHP5) branch.
 
 **TOC**
 
