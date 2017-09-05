@@ -14,8 +14,6 @@ from django.http import HttpResponse
 
 from .sitemaps import Sitemap, xsl_content_type
 
-GITHUB_KEY = os.environ['GITHUB_KEY']
-
 
 def get_version():
     """
@@ -25,8 +23,7 @@ def get_version():
     response: dict:
         A dictionary of GitHub content.
     """
-    response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest',
-                            auth=('akshaybabloo', GITHUB_KEY))
+    response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest')
     return json.loads(response.text)
 
 

@@ -15,8 +15,6 @@ from django.shortcuts import render
 from editor.models import ContentModel
 
 DEFAULT_BASE_URL = "https://api.github.com/users/akshaybabloo/repos"
-GITHUB_KEY = os.environ['GITHUB_KEY']
-
 
 def index(request):
     try:
@@ -102,8 +100,7 @@ class ContentDecode:
 
     @staticmethod
     def get_version():
-        response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest',
-                                auth=('akshaybabloo', GITHUB_KEY))
+        response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest')
 
         return json.loads(response.text)
 
@@ -333,8 +330,7 @@ def get_github_repo(request):
 
 class GitHubReleases:
     def __init__(self):
-        response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases',
-                                auth=('akshaybabloo', GITHUB_KEY))
+        response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases')
 
         self.data = json.loads(response.text)
         self.index = len(self.data)
