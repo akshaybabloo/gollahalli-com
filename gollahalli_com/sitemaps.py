@@ -107,7 +107,7 @@ class Sitemap(sitemaps.Sitemap):
         return urls
 
 
-def xsl_content_type():
+def xsl_content_type(request):
     """
     Converts the MIME type of `sitemap.xsl`.
 
