@@ -1,5 +1,5 @@
 {% spaceless %}
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="{% url 'sitemap_xsl' %}"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="{% if debug %}{% url 'sitemap_xsl' %}{% else %}https://cdn.gollahalli.com/static/sitemap.xsl{% endif %}"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {% for url in urlset %}
   <url>
