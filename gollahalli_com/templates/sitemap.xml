@@ -9,5 +9,5 @@
     {% if url.priority %}<priority>{{ url.priority }}</priority>{% endif %}
    </url>
 {% endfor %}
-{% endspaceless %}
 </urlset>
+{% endspaceless %}
