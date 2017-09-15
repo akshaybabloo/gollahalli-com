@@ -1,4 +1,5 @@
 import os
+import urllib.request
 
 from django.conf import settings
 from django.contrib import sitemaps
@@ -120,6 +121,8 @@ def xsl_content_type(request):
 
     """
 
-    filename = open(os.path.join(settings.STATIC_ROOT, 'sitemap.xsl'))
-    print(filename)
+    if settings.DEBUG:
+        filename = open(os.path.join(settings.STATIC_ROOT, 'sitemap.xsl'))
+    else:
+        filename = urllib.request.urlopen(os.path.join(settings.STATIC_URL, 'sitemap.xsl')).read()
     return HttpResponse(filename.read(), content_type="text/xsl")
