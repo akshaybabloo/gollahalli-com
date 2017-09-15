@@ -1,9 +1,9 @@
-from django.contrib import sitemaps
+import os
+
 from django.conf import settings
-from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.contrib import sitemaps
 from django.http import HttpResponse
 from django.urls import reverse
-import urllib.request
 
 
 class Sitemap(sitemaps.Sitemap):
@@ -120,6 +120,5 @@ def xsl_content_type(request):
 
     """
 
-    filename = request.build_absolute_uri(static('sitemap.xsl'))
-    data = urllib.request.urlopen(filename).read()
-    return HttpResponse(data, content_type="text/xsl")
+    filename = open(os.path.join(settings.STATIC_ROOT, 'sitemap.xsl')).read()
+    return HttpResponse(filename, content_type="text/xsl")
