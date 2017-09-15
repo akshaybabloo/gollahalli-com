@@ -120,5 +120,6 @@ def xsl_content_type(request):
 
     """
 
-    filename = open(os.path.join(settings.STATIC_ROOT, 'sitemap.xsl')).read()
-    return HttpResponse(filename, content_type="text/xsl")
+    filename = open(os.path.join(settings.STATIC_ROOT, 'sitemap.xsl'))
+    print(filename)
+    return HttpResponse(filename.read(), content_type="text/xsl")
