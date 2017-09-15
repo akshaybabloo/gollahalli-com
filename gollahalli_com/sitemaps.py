@@ -1,5 +1,8 @@
+import os
+import urllib.request
+
+from django.conf import settings
 from django.contrib import sitemaps
-from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.http import HttpResponse
 from django.urls import reverse
 
