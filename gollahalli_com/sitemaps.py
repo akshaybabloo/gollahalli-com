@@ -121,8 +121,9 @@ def xsl_content_type(request):
 
     """
 
-    if settings.DEBUG:
-        filename = open(os.path.join(settings.STATIC_ROOT, 'sitemap.xsl'))
-    else:
+    if 'DYNO' in os.environ:
         filename = urllib.request.urlopen(os.path.join(settings.STATIC_URL, 'sitemap.xsl')).read()
-    return HttpResponse(filename.read(), content_type="text/xsl")
+    else:
+        filename = open(os.path.join(settings.STATIC_ROOT, 'sitemap.xsl')).read()
+
+    return HttpResponse(filename, content_type="text/xsl")
