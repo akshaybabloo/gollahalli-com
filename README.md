@@ -1,9 +1,8 @@
 # Gollahalli Micro CMS
 
-| Version | Codecov | CI | Requirements |
-|---------|--------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Master | [![codecov](https://codecov.io/gh/akshaybabloo/gollahalli-com/branch/master/graph/badge.svg)](https://codecov.io/gh/akshaybabloo/gollahalli-com) | [![Build Status](https://travis-ci.org/akshaybabloo/gollahalli-com.svg?branch=master)](https://travis-ci.org/akshaybabloo/gollahalli-com) | [![Requirements Status](https://requires.io/github/akshaybabloo/gollahalli-com/requirements.svg?branch=master)](https://requires.io/github/akshaybabloo/gollahalli-com/requirements/?branch=master) |
-| V2 | N/A | N/A | [![Requirements Status](https://requires.io/github/akshaybabloo/gollahalli-com/requirements.svg?branch=Django-Python-3)](https://requires.io/github/akshaybabloo/gollahalli-com/requirements/?branch=Django-Python-3) |
+[![codecov](https://codecov.io/gh/akshaybabloo/gollahalli-com/branch/master/graph/badge.svg)](https://codecov.io/gh/akshaybabloo/gollahalli-com)
+[![Build Status](https://travis-ci.org/akshaybabloo/gollahalli-com.svg?branch=master)](https://travis-ci.org/akshaybabloo/gollahalli-com)
+[![Requirements Status](https://requires.io/github/akshaybabloo/gollahalli-com/requirements.svg?branch=master)](https://requires.io/github/akshaybabloo/gollahalli-com/requirements/?branch=master)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/akshaybabloo/gollahalli-com)
 
@@ -14,7 +13,7 @@
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Introduction](#introduction)
-- [Running Locally](#running-locally)
+- [Running Locally (Development)](#running-locally-development)
 - [Requirements](#requirements)
 - [GraphQL as an API](#graphql-as-an-api)
 - [Template Usage](#template-usage)
@@ -34,7 +33,7 @@ For extra security, I have included Authy's two-factor authentication with Djang
 
 ![Portal](https://raw.githubusercontent.com/akshaybabloo/gollahalli-com/master/screenshot/portal.JPG)
 
-## Running Locally
+## Running Locally (Development)
 
 If you want to test how it works, you might want to install `PostgreSQL` from [bigsql.org](http://bigsql.org/), because I have used JSON field inside the models, which will only work on PostgreSQL.
 
