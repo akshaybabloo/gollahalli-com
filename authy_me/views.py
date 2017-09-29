@@ -506,3 +506,42 @@ def profile_home(request):
 
     return render(request, template, context)
 
+
+def rebp(request):
+    """
+    Regenerate backup codes.
+
+    Parameters
+    ----------
+    request
+
+    Returns
+    -------
+
+    """
+
+    template = 'portal/user/2fa/2fa_index.html'
+
+    session_key = request.session.session_key
+
+    user_id = get_user_from_sid(session_key)
+
+    try:
+        _user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        return redirect('login')
+
+    try:
+        _auth = AuthenticatorModel.objects.get(id=user_id)
+        if _auth.authy_id is None:
+            return redirect('2fa_register')
+    except AuthenticatorModel.DoesNotExist:
+        return redirect('2fa_register')
+
+    # Create unique session ID.
+    unique_id = get_random_string(length=32)
+    AuthenticatorModel.objects.filter(id=1).update(session_id=unique_id, uuids=get_uuid_json())
+
+    context = {'user': _user, 'auth': _auth}
+
+    return render(request, template, context)
