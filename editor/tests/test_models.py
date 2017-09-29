@@ -1,9 +1,12 @@
 import datetime
+import os
+import shutil
 import unittest.mock as mock
 from io import BytesIO
 
 import pytz
 from PIL import Image
+from django.conf import settings
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
@@ -129,6 +132,15 @@ class ContentModelTest(TestCase):
         self.assertEqual(content.file, content.file.name)
         self.assertEqual(content.image, content.image.name)
 
+    def tearDown(self):
+
+        for file_object in os.listdir(settings.MEDIA_ROOT):
+            file_object_path = os.path.join(settings.MEDIA_ROOT, file_object)
+            if os.path.isfile(file_object_path):
+                os.unlink(file_object_path)
+            else:
+                shutil.rmtree(file_object_path)
+
 
 class EducationModelTest(TestCase):
     """
@@ -203,6 +215,15 @@ class EducationModelTest(TestCase):
 
         self.assertEqual(content.file, content.file.name)
         self.assertEqual(content.image, content.image.name)
+
+    def tearDown(self):
+
+        for file_object in os.listdir(settings.MEDIA_ROOT):
+            file_object_path = os.path.join(settings.MEDIA_ROOT, file_object)
+            if os.path.isfile(file_object_path):
+                os.unlink(file_object_path)
+            else:
+                shutil.rmtree(file_object_path)
 
 
 class ProjectsModelTest(TestCase):
@@ -281,6 +302,15 @@ class ProjectsModelTest(TestCase):
         self.assertEqual(content.file, content.file.name)
         self.assertEqual(content.image, content.image.name)
 
+    def tearDown(self):
+
+        for file_object in os.listdir(settings.MEDIA_ROOT):
+            file_object_path = os.path.join(settings.MEDIA_ROOT, file_object)
+            if os.path.isfile(file_object_path):
+                os.unlink(file_object_path)
+            else:
+                shutil.rmtree(file_object_path)
+
 
 class TutorialsModelTest(TestCase):
     """
@@ -352,6 +382,15 @@ class TutorialsModelTest(TestCase):
 
         self.assertEqual(content.file, content.file.name)
         self.assertEqual(content.image, content.image.name)
+
+    def tearDown(self):
+
+        for file_object in os.listdir(settings.MEDIA_ROOT):
+            file_object_path = os.path.join(settings.MEDIA_ROOT, file_object)
+            if os.path.isfile(file_object_path):
+                os.unlink(file_object_path)
+            else:
+                shutil.rmtree(file_object_path)
 
 
 class ExperienceModelTest(TestCase):
@@ -486,6 +525,15 @@ class SkillsContentModelTest(TestCase):
         self.assertEqual(content.file, content.file.name)
         self.assertEqual(content.image, content.image.name)
 
+    def tearDown(self):
+
+        for file_object in os.listdir(settings.MEDIA_ROOT):
+            file_object_path = os.path.join(settings.MEDIA_ROOT, file_object)
+            if os.path.isfile(file_object_path):
+                os.unlink(file_object_path)
+            else:
+                shutil.rmtree(file_object_path)
+
 
 class PublicationsModelTest(TestCase):
     """
@@ -580,6 +628,15 @@ class PublicationsContentModelTest(TestCase):
 
         self.assertEqual(content.file, content.file.name)
         self.assertEqual(content.image, content.image.name)
+
+    def tearDown(self):
+
+        for file_object in os.listdir(settings.MEDIA_ROOT):
+            file_object_path = os.path.join(settings.MEDIA_ROOT, file_object)
+            if os.path.isfile(file_object_path):
+                os.unlink(file_object_path)
+            else:
+                shutil.rmtree(file_object_path)
 
 
 class MetaContentModelTest(TestCase):
