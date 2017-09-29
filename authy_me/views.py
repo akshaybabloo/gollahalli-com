@@ -87,7 +87,7 @@ def user(request):
     return render(request, template, context)
 
 
-def two_fa_home(request):
+def two_fa_home(request, options):
     """
     Two-Factor authentication home page.
 
@@ -95,6 +95,8 @@ def two_fa_home(request):
     ----------
     request: WSGIRequest
         WSGI request.
+    options: str
+        Optional strings.
 
     Returns
     -------
@@ -120,6 +122,11 @@ def two_fa_home(request):
             return redirect('2fa_register')
     except AuthenticatorModel.DoesNotExist:
         return redirect('2fa_register')
+
+    if options == 'reset_backup_codes':
+        # Create unique session ID.
+        unique_id = get_random_string(length=32)
+        AuthenticatorModel.objects.filter(id=1).update(session_id=unique_id, uuids=get_uuid_json())
 
     context = {'user': _user, 'auth': _auth}
 
@@ -503,45 +510,5 @@ def profile_home(request):
         form = ChangePasswordForm()
 
     context = {'pwd': form, 'pwd_msg': pwd_msg}
-
-    return render(request, template, context)
-
-
-def rebp(request):
-    """
-    Regenerate backup codes.
-
-    Parameters
-    ----------
-    request
-
-    Returns
-    -------
-
-    """
-
-    template = 'portal/user/2fa/2fa_index.html'
-
-    session_key = request.session.session_key
-
-    user_id = get_user_from_sid(session_key)
-
-    try:
-        _user = User.objects.get(id=user_id)
-    except User.DoesNotExist:
-        return redirect('login')
-
-    try:
-        _auth = AuthenticatorModel.objects.get(id=user_id)
-        if _auth.authy_id is None:
-            return redirect('2fa_register')
-    except AuthenticatorModel.DoesNotExist:
-        return redirect('2fa_register')
-
-    # Create unique session ID.
-    unique_id = get_random_string(length=32)
-    AuthenticatorModel.objects.filter(id=1).update(session_id=unique_id, uuids=get_uuid_json())
-
-    context = {'user': _user, 'auth': _auth}
 
     return render(request, template, context)

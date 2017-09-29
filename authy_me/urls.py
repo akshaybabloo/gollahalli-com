@@ -19,10 +19,9 @@ urlpatterns = [
         {'template_name': 'portal/user/auth/password_reset_done.html'}, name='password_reset_done'),
     url(r'portal/user/reset_done/$', password_reset_complete, name='password_reset_complete'),
     url(r'portal/user/profile$', views.profile_home, name='profile_home'),
-    url(r'portal/user/2fa/$', views.two_fa_home, name='2fa_home'),
+    url(r'portal/user/2fa/(?P<options>\w+)?$', views.two_fa_home, name='2fa_home'),
     url(r'portal/user/2fa/delete/$', views.delete_auth, name='delete_2fa'),
     url(r'portal/user/2fa/register/$', views.two_fa_register, name='2fa_register'),
     url(r'portal/user/2fa/register/confirm$', views.confirm_mobile, name='confirm_mobile'),
-    url(r'portal/user/2fa/rebp/$', views.rebp, name='regenerate_backup_codes'),
     url(r'^static/js/users\.js', views.users_js, name='users_js'),
 ]
