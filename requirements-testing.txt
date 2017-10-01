@@ -4,7 +4,7 @@ pytest-cov
 dj-database-url==0.4.2
 gunicorn==19.7.1
 psycopg2==2.7.3.1
-whitenoise==3.3.0
+whitenoise==3.3.1
 django-storages==1.6.5
 boto3==1.4.7
 Pillow==4.2.1
@@ -17,6 +17,6 @@ singlemodeladmin==0.7
 boto
 feedparser==5.2.1
 django-filer==1.2.8
-easy-thumbnails==2.4.1
+easy-thumbnails==2.4.2
 authy==2.1.5
 django-phonenumber-field==1.3.0
