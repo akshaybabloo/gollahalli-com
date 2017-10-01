@@ -1,8 +1,10 @@
 # Gollahalli Micro CMS
 
-[![codecov](https://codecov.io/gh/akshaybabloo/gollahalli-com/branch/master/graph/badge.svg)](https://codecov.io/gh/akshaybabloo/gollahalli-com)
-[![Build Status](https://travis-ci.org/akshaybabloo/gollahalli-com.svg?branch=master)](https://travis-ci.org/akshaybabloo/gollahalli-com)
-[![Requirements Status](https://requires.io/github/akshaybabloo/gollahalli-com/requirements.svg?branch=master)](https://requires.io/github/akshaybabloo/gollahalli-com/requirements/?branch=master)
+| Version | Codecov | CI | Requirements |
+|---------|--------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Master | [![codecov](https://codecov.io/gh/akshaybabloo/gollahalli-com/branch/master/graph/badge.svg)](https://codecov.io/gh/akshaybabloo/gollahalli-com) | [![Build Status](https://travis-ci.org/akshaybabloo/gollahalli-com.svg?branch=master)](https://travis-ci.org/akshaybabloo/gollahalli-com) | [![Requirements Status](https://requires.io/github/akshaybabloo/gollahalli-com/requirements.svg?branch=master)](https://requires.io/github/akshaybabloo/gollahalli-com/requirements/?branch=master) |
+| V2 | N/A | N/A | [![Requirements Status](https://requires.io/github/akshaybabloo/gollahalli-com/requirements.svg?branch=Django-Python-3)](https://requires.io/github/akshaybabloo/gollahalli-com/requirements/?branch=Django-Python-3) |
+
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/akshaybabloo/gollahalli-com)
 
