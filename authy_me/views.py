@@ -173,6 +173,11 @@ def log_me_in(request):
                 login(request, _user)
                 if request.POST.get('remember_me'):
                     request.session.set_expiry(31557600)
+                is_personal_cookie_exist = request.COOKIES.get('is_personal', None)
+                if is_personal_cookie_exist is not None:
+                    response = redirect('2fa_auth')
+                    response.delete_cookie('is_personal')
+                    return response
                 return redirect('2fa_auth')
             else:
                 logger.info('is not staff and does not have 2FA')
