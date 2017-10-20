@@ -292,9 +292,11 @@ class MetaContentSchema(DjangoObjectType):
     """
     Schema DjangoObjectType for `MetaContentModel`
     """
+
     class Meta:
         model = MetaContentModel
         description = "All meta tags, headers and footers."
+
 
 # ----------------------------------------------------------------------------
 # Query object

@@ -11,4 +11,5 @@ class AuthenticatorAdmin(admin.ModelAdmin):
     list_display = ['id', 'user_id', 'phone_number', 'authy_id']
     form = AuthenticatorAdminForm
 
+
 admin.site.register(AuthenticatorModel, AuthenticatorAdmin)
