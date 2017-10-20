@@ -14,7 +14,7 @@ class AuthenticatorModel(models.Model):
         super().__init__(*args, **kwargs)
 
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    user_id = models.ForeignKey(User, related_name='auth_user', null=True)
+    user_id = models.ForeignKey(User, related_name='auth_user', null=True, on_delete=None)
     first_name = models.CharField(default='First Name', max_length=50)
     last_name = models.CharField(default='Last Name', max_length=50)
     phone_number = PhoneNumberField()

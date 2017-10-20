@@ -107,7 +107,7 @@ class EducationModel(models.Model):
     `EducationModel` has `id`-PK, `ref_id`-FK, `title`, `from_date`, `to_date`, `where`, `current`, `file`, and `image`.
     """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    ref_id = models.ForeignKey(ContentModel, related_name='education')
+    ref_id = models.ForeignKey(ContentModel, related_name='education', on_delete=None)
     title = models.CharField(default='title', max_length=500)
     from_date = models.DateField()
     to_date = models.DateField()
@@ -183,7 +183,7 @@ class ProjectsModel(models.Model):
     `file` and `image`.
     """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    ref_id = models.ForeignKey(ContentModel, related_name='projects')
+    ref_id = models.ForeignKey(ContentModel, related_name='projects', on_delete=None)
     link = models.URLField(default='https://www.example.com', max_length=500)
     title = models.CharField(default='title', max_length=500)
     category = models.CharField(default='category', max_length=500)
@@ -258,7 +258,7 @@ class TutorialsModel(models.Model):
     `TutorialsModel` has `id`-PK, `ref_id`-FK, `link`, `title`, `long_description`, `short_description`, `file` and `image`.
     """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    ref_id = models.ForeignKey(ContentModel, related_name='tutorials')
+    ref_id = models.ForeignKey(ContentModel, related_name='tutorials', on_delete=None)
     link = models.URLField(default='https://www.example.com', max_length=500)
     title = models.CharField(default='title', max_length=500)
     long_description = models.CharField(default='long description', max_length=10000, help_text="Markdown Enabled")
@@ -332,7 +332,7 @@ class ExperienceModel(models.Model):
     `current`.
     """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    ref_id = models.ForeignKey(ContentModel, related_name='experience')
+    ref_id = models.ForeignKey(ContentModel, related_name='experience', on_delete=None)
     from_date = models.DateField()
     to_date = models.DateField()
     title = models.CharField(default='title', max_length=500)
@@ -346,7 +346,7 @@ class SkillsModel(models.Model):
     """
     `SkillsModel` has `ref_id`-FK and `type_of_skill`.
     """
-    ref_id = models.ForeignKey(ContentModel, related_name='skills')
+    ref_id = models.ForeignKey(ContentModel, related_name='skills', on_delete=None)
     type_of_skill = models.CharField(default='type', primary_key=True, max_length=500)
 
     def __str__(self):
@@ -358,7 +358,7 @@ class SkillsContentModel(models.Model):
     `SkillsContentModel` has `id`-PK, `type_of_skill`-FK, `content`, `file` and `image`
     """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    type_of_skill = models.ForeignKey(SkillsModel, related_name='skills_content')
+    type_of_skill = models.ForeignKey(SkillsModel, related_name='skills_content', on_delete=None)
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
@@ -431,7 +431,7 @@ class PublicationsModel(models.Model):
     """
     `PublicationsModel` has `ref_id`-FK and `type_of_publication`.
     """
-    ref_id = models.ForeignKey(ContentModel, related_name='publications')
+    ref_id = models.ForeignKey(ContentModel, related_name='publications', on_delete=None)
     type_of_publication = models.CharField(default='type', primary_key=True, max_length=500)
 
     def __str__(self):
@@ -443,7 +443,7 @@ class PublicationsContentModel(models.Model):
     `PublicationsContentModel` has `id`-PK, `type_of_publication`-FK, `content`, `file` and `image`.
     """
     id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
-    type_of_publication = models.ForeignKey(PublicationsModel, related_name='publications_content')
+    type_of_publication = models.ForeignKey(PublicationsModel, related_name='publications_content', on_delete=None)
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
