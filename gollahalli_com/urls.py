@@ -49,7 +49,6 @@ urlpatterns = [
                       {'sitemaps': sitemaps, 'template_name': 'sitemap.xml'},
                       name='django.contrib.sitemaps.views.sitemap'),
                   url(r'^graphql', GraphQLView.as_view(graphiql=True, schema=query)),
-                  url(r'^filer/', include('filer.urls')),
                   url(r'^sitemap\.xsl', xsl_content_type, name='sitemap_xsl')
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
