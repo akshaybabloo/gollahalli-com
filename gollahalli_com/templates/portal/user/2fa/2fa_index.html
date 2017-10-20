@@ -1,38 +1,5 @@
-{% extends 'portal/user/user_index.html' %}
+{% extends 'portal/portal_index.html' %}
 {% load staticfiles %}
-
-{% block nav %}
-    <li class="active">
-        <a data-toggle="collapse" href="#userOverview" aria-expanded="true">
-            <i class="ti-user"></i>
-            <p>User
-                <b class="caret"></b>
-            </p>
-        </a>
-        <div class="collapse in" id="userOverview" aria-expanded="true">
-            <ul class="nav">
-                <li>
-                    <a href="{% url 'profile_home' %}">
-                        <span class="sidebar-mini">UP</span>
-                        <span class="sidebar-normal">Update Profile</span>
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="{% url '2fa_home' %}">
-                        <span class="sidebar-mini">2FA</span>
-                        <span class="sidebar-normal">Two-Factor Auth</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="dashboard/stats.html">
-                        <span class="sidebar-mini">CP</span>
-                        <span class="sidebar-normal">Change Password</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </li>
-{% endblock %}
 
 {% block content %}
     <div class="col-md-12">
