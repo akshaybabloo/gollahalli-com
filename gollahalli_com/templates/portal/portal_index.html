@@ -39,7 +39,7 @@
             </ul>
         </div>
     </li>
-    <li {% if request.path|has_string_in_path:'profile' %}
+    <li {% if request.path|has_string_in_path:'profile,user' %}
             class="active"
         {% endif %}>
         <a data-toggle="collapse" href="#userOverview" class="collapsed"
