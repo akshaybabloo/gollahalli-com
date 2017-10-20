@@ -39,8 +39,6 @@ urlpatterns = [
                   url(r'^', include('editor.urls'), name='editor_urls'),
                   url(r'^admin/', admin.site.urls, name='admin_urls'),
                   url(r'^', include('authy_me.urls'), name="login"),
-
-                  url(r'^accounts/profile/', include('editor.urls'), name="profile"),
                   url(r'^robots.txt',
                       lambda x: HttpResponse(
                           "Sitemap: https://www.gollahalli.com/sitemap.xml\nUser-agent: *\nDisallow: "
