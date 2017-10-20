@@ -91,6 +91,7 @@
                                 </p>
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a href="{% url 'profile_home' %}">Profile</a></li>
                                 <li class="divider"></li>
                                 <li><a href="{% url 'logout' %}">Logout</a></li>
                             </ul>
@@ -196,8 +197,8 @@
 {#<!--  Full Calendar Plugin    -->#}
 {#<script src="../assets/js/fullcalendar.min.js"></script>#}
 
-<!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
-<script src="{% static 'js/paper/paper-dashboard.js' %}"></script>
+{#<!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->#}
+{#<script src="{% static 'js/paper/paper-dashboard.js' %}"></script>#}
 
 {% block script %}
 {% endblock %}
