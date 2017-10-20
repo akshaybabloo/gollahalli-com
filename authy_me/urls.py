@@ -8,7 +8,6 @@ urlpatterns = [
     url(r'login/$', views.log_me_in, name='login'),
     url(r'login/2fa/$', views.auth_2fa, name='2fa_auth'),
     url(r'logout', views.log_me_out, name='logout'),
-    url(r'portal/user/$', views.user, name='user_home'),
     url(r'portal/user/reset/$', password_reset, {'template_name': 'portal/user/auth/password_reset.html'},
         name='password_reset'),
     url(r'portal/user/reset/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$', password_reset_confirm,

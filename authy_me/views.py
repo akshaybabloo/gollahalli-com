@@ -56,37 +56,6 @@ def users_js(request):
     return render(request, template, context, content_type='application/javascript')
 
 
-def user(request):
-    """
-    Users page.
-
-    Parameters
-    ----------
-    request: WSGIRequest
-        WSGI request.
-
-    Returns
-    -------
-    render: HttpResponse
-        Returns renderer's.
-
-    """
-    template = 'portal/user/user_index.html'
-
-    session_key = request.session.session_key
-
-    user_id = get_user_from_sid(session_key)
-
-    try:
-        _user = User.objects.get(id=user_id)
-    except User.DoesNotExist:
-        return redirect('login')
-
-    context = {}
-
-    return render(request, template, context)
-
-
 def two_fa_home(request, options):
     """
     Two-Factor authentication home page.
