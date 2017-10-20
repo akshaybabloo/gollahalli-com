@@ -12,5 +12,4 @@ urlpatterns = [
     url(r'portal/editor$', views.editor_home, name='editor_home'),
     url(r'portal/editor/content$', views.content_home, name='content_home'),
     url(r'portal/editor/meta', views.meta_home, name='meta_home'),
-    # url(r'^login/', views.login, name='index_login'),  # for custom login's
 ]
