@@ -30,6 +30,7 @@ sudo: required
 env:
   - TOXENV=django110
   - TOXENV=django111
+  - TOXENV=django2
   - TOXENV=coverage
 
 notifications:
