@@ -1,29 +1,36 @@
 {% extends 'admin_base.html' %}
 {% load staticfiles %}
+{% load nav_tags %}
 
 {% block nav %}
-    <li>
-        <a data-toggle="collapse" href="#editorOverview" class="collapsed" aria-expanded="false">
+    <li {% if request.path|has_string_in_path:'content,meta' %}
+            class="active"
+        {% endif %}>
+        <a data-toggle="collapse" href="#editorOverview" class="collapsed"
+           {% if request.path|has_string_in_path:'content,meta'  %}
+                aria-expanded="true"
+           {% else %}
+                aria-expanded="false"
+           {% endif %}>
             <i class="ti-user"></i>
             <p>Editor
                 <b class="caret"></b>
             </p>
         </a>
-        <div class="collapse" id="editorOverview" aria-expanded="false">
+        <div {% if request.path|has_string_in_path:'content,meta' %}
+                class="collapse in" aria-expanded="true"
+           {% else %}
+                class="collapse" aria-expanded="false"
+            {% endif %}
+                id="editorOverview">
             <ul class="nav">
-                <li>
+                <li {% if request.path|has_string_in_path:'content' %}class="active" {% endif %}>
                     <a href="{% url 'content_home' %}">
                         <span class="sidebar-mini">MC</span>
                         <span class="sidebar-normal">Main Content</span>
                     </a>
                 </li>
-                    <li>
-                        <a href="dashboard/stats.html">
-                            <span class="sidebar-mini">CP</span>
-                            <span class="sidebar-normal">Change Password</span>
-                        </a>
-                    </li>
-                <li>
+                <li {% if request.path|has_string_in_path:'meta' %}class="active" {% endif %}>
                     <a href="{% url 'meta_home' %}">
                         <span class="sidebar-mini">ME</span>
                         <span class="sidebar-normal">Meta</span>
@@ -31,30 +38,38 @@
                 </li>
             </ul>
         </div>
-        <a data-toggle="collapse" href="#userOverview" class="collapsed" aria-expanded="false">
+    </li>
+    <li {% if request.path|has_string_in_path:'profile' %}
+            class="active"
+        {% endif %}>
+        <a data-toggle="collapse" href="#userOverview" class="collapsed"
+        {% if request.path|has_string_in_path:'profile'  %}
+                aria-expanded="true"
+           {% else %}
+                aria-expanded="false"
+           {% endif %}>
             <i class="ti-user"></i>
             <p>User
                 <b class="caret"></b>
             </p>
         </a>
-        <div class="collapse" id="userOverview" aria-expanded="false">
+        <div id="userOverview"
+        {% if request.path|has_string_in_path:'user' %}
+                class="collapse in" aria-expanded="true"
+           {% else %}
+                class="collapse" aria-expanded="false"
+            {% endif %}>
             <ul class="nav">
-                <li>
+                <li {% if request.path|has_string_in_path:'profile' %}class="active" {% endif %}>
                     <a href="{% url 'profile_home' %}">
                         <span class="sidebar-mini">UP</span>
                         <span class="sidebar-normal">Update Profile</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{% url '2fa_home' %}">
+                <li {% if request.path|has_string_in_path:'2fa' %}class="active" {% endif %}>
+                    <a href="{% url '2fa_home' options='none' %}">
                         <span class="sidebar-mini">2FA</span>
                         <span class="sidebar-normal">Two-Factor Auth</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="dashboard/stats.html">
-                        <span class="sidebar-mini">CP</span>
-                        <span class="sidebar-normal">Change Password</span>
                     </a>
                 </li>
             </ul>
