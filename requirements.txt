@@ -11,10 +11,8 @@ cloudinary==1.8.0
 requests==2.18.4
 graphene-django==1.3
 graphene==1.4.1
-singlemodeladmin==0.7
+singlemodeladmin==0.8
 boto
 feedparser==5.2.1
-django-filer==1.2.8
-easy-thumbnails==2.4.2
 authy==2.1.5
 django-phonenumber-field==1.3.0
