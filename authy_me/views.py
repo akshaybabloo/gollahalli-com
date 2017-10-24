@@ -13,7 +13,6 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 from django.utils.crypto import get_random_string
 from django.views.decorators.cache import never_cache
-from django.contrib.auth import get_user
 
 from .forms import LoginForm, AuthyForm, AuthenticatorModelForm, MobileCheckerForm, ChangePasswordForm
 from .models import AuthenticatorModel
