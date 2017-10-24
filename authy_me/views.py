@@ -13,6 +13,7 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 from django.utils.crypto import get_random_string
 from django.views.decorators.cache import never_cache
+from django.contrib.auth import get_user
 
 from .forms import LoginForm, AuthyForm, AuthenticatorModelForm, MobileCheckerForm, ChangePasswordForm
 from .models import AuthenticatorModel
@@ -128,6 +129,15 @@ def log_me_in(request):
     # except User.DoesNotExist:
     #     pass
     _user = None
+    context ={}
+    defaults = {
+        'authentication_form': LoginForm,
+        'template_name': 'login.html',
+    }
+
+    if request.user.is_anonymous is False:
+        logout(request)
+        context['error'] = 'For security reason your previous session has expired. Please login again.'
 
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -158,13 +168,7 @@ def log_me_in(request):
                 logger.info('is not staff and does not have 2FA')
                 return redirect('/')
 
-    defaults = {
-        'authentication_form': LoginForm,
-        'template_name': 'login.html',
-        # 'redirect_field_name': _next
-    }
-
-    return auth_login(request, **defaults)
+    return auth_login(request, extra_context=context, **defaults)
 
 
 def auth_2fa(request):
