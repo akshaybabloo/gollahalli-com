@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.test.client import Client
 
 from authy_me.models import AuthenticatorModel
-from authy_me.utils import is_int, has_2fa, get_user_from_sid, get_uuid_json
+from authy_me.utils import is_int, has_2fa, get_user_from_sid, get_uuid_json, generate_password, check_hashed_password
 
 
 class UtilityTests(TestCase):
@@ -86,6 +86,35 @@ class UtilityTests(TestCase):
 
         self.assertTrue(type(content), type(dict))
         self.assertTrue(type(content['uuid']), type(list))
+
+    def test_generate_password(self):
+        """
+        Tests `generate_password`
+        """
+
+        content = generate_password('hello', '123')
+
+        self.assertTrue(type(content), type(str))
+
+    def test_check_hashed_password(self):
+        """
+        Tests `check_hashed_password`
+        """
+
+        content = generate_password('hello')
+        content = check_hashed_password('hello', content)
+
+        self.assertTrue(content, True)
+
+    def test_check_hashed_password_false(self):
+        """
+        Tests `check_hashed_password` false.
+        """
+
+        content = generate_password('hello')
+        content = check_hashed_password('hello1', content)
+
+        self.assertFalse(content, False)
 
     def tearDown(self):
         self.auth.delete()
