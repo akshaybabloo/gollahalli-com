@@ -109,27 +109,29 @@ def log_me_in(request):
 
     Parameters
     ----------
-    request: WSGIRequest
+    request: object
+        Django request.
 
     Returns
     -------
     auth_login: object
+        Renders template.
 
     """
-    session_key = request.session.session_key
-
-    user_id = get_user_from_sid(session_key)
-
-    try:
-        _user = User.objects.get(id=user_id)
-        return redirect('/admin/')
-    except User.DoesNotExist:
-        pass
+    # session_key = request.session.session_key
+    #
+    # user_id = get_user_from_sid(session_key)
+    #
+    # try:
+    #     _user = User.objects.get(id=user_id)
+    #     return redirect('/admin/')
+    # except User.DoesNotExist:
+    #     pass
+    _user = None
 
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-
         _user = authenticate(username=username, password=password)
 
         if _user is not None and _user.is_active:
@@ -137,16 +139,20 @@ def log_me_in(request):
                 logger.info('is staff but does not have 2FA, redirecting to Authy account creator')
                 login(request, _user)
                 return redirect('/admin/authy_me/authenticatormodel/')
+
             elif _user.is_staff and has_2fa(_user):
                 logger.info("is staff and 2FA enabled redirecting to Authy verification")
-                login(request, _user)
+
                 if request.POST.get('remember_me'):
                     request.session.set_expiry(31557600)
+
                 is_personal_cookie_exist = request.COOKIES.get('is_personal', None)
                 if is_personal_cookie_exist is not None:
                     response = redirect('2fa_auth')
                     response.delete_cookie('is_personal')
                     return response
+
+                request.session['auth'] = {'username': _user.username, 'password': _user.password, 'id': _user.id}
                 return redirect('2fa_auth')
             else:
                 logger.info('is not staff and does not have 2FA')
@@ -155,6 +161,7 @@ def log_me_in(request):
     defaults = {
         'authentication_form': LoginForm,
         'template_name': 'login.html',
+        # 'redirect_field_name': _next
     }
 
     return auth_login(request, **defaults)
@@ -167,21 +174,17 @@ def auth_2fa(request):
 
     Parameters
     ----------
-    request: WSGIRequest
+    request: object
         Request.
     """
+    user = request.session.get('auth', None)
 
     context = {}
     session_key = request.session.session_key
 
-    user_id = get_user_from_sid(session_key)
+    _user = User.objects.get(id=user['id'])
 
-    try:
-        _user = User.objects.get(id=user_id)
-    except User.DoesNotExist:
-        return redirect('login')
-
-    user_auth = _user.auth_user.get(id=_user.id)
+    user_auth = _user.auth_user.get(id=user['id'])
 
     if 'is_personal' in request.COOKIES:
         if request.get_signed_cookie('is_personal', salt=str(user_auth.session_id)) == 'yes':
@@ -227,7 +230,9 @@ def auth_2fa(request):
                         "%a, %d-%b-%Y %H:%M:%S GMT")
                     response.set_signed_cookie('is_personal', 'yes', salt='#c}jbb9j>c.oMKP=T)M.3%fe', expires=expires)
                     return response
-                return redirect('/admin/')
+                _user = authenticate(request, username=user['username'], password=user['password'])
+                login(request, _user)
+                return redirect('portal_home')
             else:
                 form.add_error(None, verification.errors()['message'])
     else:
