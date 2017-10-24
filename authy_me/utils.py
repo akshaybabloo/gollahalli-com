@@ -4,6 +4,7 @@ import uuid
 from django.conf import settings
 from django.contrib.auth.models import (User)
 from django.utils.module_loading import import_module
+from django.contrib.auth.hashers import make_password, check_password
 
 from .models import AuthenticatorModel
 
@@ -94,3 +95,46 @@ def get_uuid_json():
         content['uuid'].append(str(uuid.uuid4())[:13])
 
     return content
+
+
+def generate_password(pwd, salt=None):
+    """
+    Generates a new password based on salt.
+
+    Parameters
+    ----------
+    salt : str
+        Alpha-numeric string.
+
+    Returns
+    -------
+    hashed_password: str
+        Hashed password.
+
+    """
+    hashed_password = make_password(pwd, salt)
+
+    return hashed_password
+
+
+def check_hashed_password(password, hash_value):
+    """
+    Checks the hashed password with original password.
+
+    Parameters
+    ----------
+    password: str
+        Original password.
+    hash_value: str
+        Hashed password.
+
+    Returns
+    -------
+    yea_or_ney: bool
+        Yes or no.
+
+    """
+
+    yea_or_nay = check_password(password, hash_value)
+
+    return yea_or_nay
