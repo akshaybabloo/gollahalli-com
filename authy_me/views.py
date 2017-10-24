@@ -185,7 +185,7 @@ def auth_2fa(request):
 
     if 'is_personal' in request.COOKIES:
         if request.get_signed_cookie('is_personal', salt=str(user_auth.session_id)) == 'yes':
-            return redirect('/admin/')
+            return redirect('{}'.format(request.GET.get('next')))
 
     authy_api = AuthyApiClient(settings.AUTHY_API)
 

@@ -56,7 +56,7 @@
                                 <p class="text-divider">Please login to see this page.</p>
                             {% endif %}
                         {% endif %}
-                        <form class="form" method="post" action="{% url 'login' %}">
+                        <form class="form" method="post" action="{{ request.path }}{% if request.GET.next %}?next={{ request.GET.next }}{% endif %}">
                             {% csrf_token %}
                             <div class="content">
 
