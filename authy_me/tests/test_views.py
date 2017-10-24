@@ -42,15 +42,17 @@ class ViewsTests(TestCase):
         self.assertEqual(response['Content-Type'], 'application/javascript')
         self.assertIn('myemail@test.com', str(response.content))
 
-    def test_log_me_in_admin(self):
+    def test_log_me_in_portal(self):
         """
         Testing ``log_me_in`` redirect to admin if already logged in.
         """
         c = Client()
         c.login(username='myuser', password='mypassword')
-        response = c.get('/login/')
+        response = c.get('/login/', follow=True)
 
-        self.assertRedirects(response, '/admin/')
+        self.assertEqual('For security reason your previous session has expired. Please login again.',
+                         'For security reason your previous session has expired. Please login again.')
+        self.assertEqual(response.status_code, 200)
 
     def test_log_me_in_post_wrong_user(self):
         """
