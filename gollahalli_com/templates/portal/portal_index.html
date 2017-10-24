@@ -4,25 +4,25 @@
 
 {% block nav %}
     <li {% if request.path|has_string_in_path:'content,meta' %}
-            class="active"
-        {% endif %}>
+        class="active"
+    {% endif %}>
         <a data-toggle="collapse" href="#editorOverview" class="collapsed"
-           {% if request.path|has_string_in_path:'content,meta'  %}
-                aria-expanded="true"
-           {% else %}
-                aria-expanded="false"
-           {% endif %}>
+                {% if request.path|has_string_in_path:'content,meta' %}
+           aria-expanded="true"
+                {% else %}
+           aria-expanded="false"
+                {% endif %}>
             <i class="ti-user"></i>
             <p>Editor
                 <b class="caret"></b>
             </p>
         </a>
         <div {% if request.path|has_string_in_path:'content,meta' %}
-                class="collapse in" aria-expanded="true"
-           {% else %}
-                class="collapse" aria-expanded="false"
-            {% endif %}
-                id="editorOverview">
+            class="collapse in" aria-expanded="true"
+        {% else %}
+            class="collapse" aria-expanded="false"
+        {% endif %}
+            id="editorOverview">
             <ul class="nav">
                 <li {% if request.path|has_string_in_path:'content' %}class="active" {% endif %}>
                     <a href="{% url 'content_home' %}">
@@ -40,25 +40,25 @@
         </div>
     </li>
     <li {% if request.path|has_string_in_path:'profile,user' %}
-            class="active"
-        {% endif %}>
+        class="active"
+    {% endif %}>
         <a data-toggle="collapse" href="#userOverview" class="collapsed"
-        {% if request.path|has_string_in_path:'profile'  %}
-                aria-expanded="true"
-           {% else %}
-                aria-expanded="false"
-           {% endif %}>
+                {% if request.path|has_string_in_path:'profile' %}
+           aria-expanded="true"
+                {% else %}
+           aria-expanded="false"
+                {% endif %}>
             <i class="ti-user"></i>
             <p>User
                 <b class="caret"></b>
             </p>
         </a>
         <div id="userOverview"
-        {% if request.path|has_string_in_path:'user' %}
-                class="collapse in" aria-expanded="true"
-           {% else %}
-                class="collapse" aria-expanded="false"
-            {% endif %}>
+                {% if request.path|has_string_in_path:'user' %}
+             class="collapse in" aria-expanded="true"
+                {% else %}
+             class="collapse" aria-expanded="false"
+                {% endif %}>
             <ul class="nav">
                 <li {% if request.path|has_string_in_path:'profile' %}class="active" {% endif %}>
                     <a href="{% url 'profile_home' %}">
