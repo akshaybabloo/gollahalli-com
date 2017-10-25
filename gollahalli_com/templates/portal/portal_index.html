@@ -1,6 +1,7 @@
 {% extends 'admin_base.html' %}
 {% load staticfiles %}
 {% load nav_tags %}
+{% load model_tags %}
 
 {% block nav %}
     <li {% if request.path|has_string_in_path:'content,meta' %}
@@ -31,6 +32,45 @@
                         <span class="sidebar-normal">Main Content</span>
                     </a>
                 </li>
+                {% contentmodelexist ContentModel %}
+                    <li {% if request.path|has_string_in_path:'education' %}class="active" {% endif %}>
+                        <a href="{% url 'education_home' %}">
+                            <span class="sidebar-mini">ED</span>
+                            <span class="sidebar-normal">Education Content</span>
+                        </a>
+                    </li>
+                    <li {% if request.path|has_string_in_path:'project' %}class="active" {% endif %}>
+                        <a href="{% url 'project_home' %}">
+                            <span class="sidebar-mini">PJ</span>
+                            <span class="sidebar-normal">Project Content</span>
+                        </a>
+                    </li>
+                    <li {% if request.path|has_string_in_path:'tutorial' %}class="active" {% endif %}>
+                        <a href="{% url 'tutorial_home' %}">
+                            <span class="sidebar-mini">TU</span>
+                            <span class="sidebar-normal">Tutorial Content</span>
+                        </a>
+                    </li>
+                    <li {% if request.path|has_string_in_path:'experience' %}class="active" {% endif %}>
+                        <a href="{% url 'experience_home' %}">
+                            <span class="sidebar-mini">EX</span>
+                            <span class="sidebar-normal">Experience Content</span>
+                        </a>
+                    </li>
+                    <li {% if request.path|has_string_in_path:'skills' %}class="active" {% endif %}>
+                        <a href="{% url 'skills_home' %}">
+                            <span class="sidebar-mini">SK</span>
+                            <span class="sidebar-normal">Skills Content</span>
+                        </a>
+                    </li>
+                    <li {% if request.path|has_string_in_path:'publication' %}class="active" {% endif %}>
+                        <a href="{% url 'publication_home' %}">
+                            <span class="sidebar-mini">PB</span>
+                            <span class="sidebar-normal">Publication Content</span>
+                        </a>
+                    </li>
+                {% endcontentmodelexist %}
+
                 <li {% if request.path|has_string_in_path:'meta' %}class="active" {% endif %}>
                     <a href="{% url 'meta_home' %}">
                         <span class="sidebar-mini">ME</span>
