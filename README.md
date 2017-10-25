@@ -50,24 +50,7 @@ GRANT ALL PRIVILEGES ON DATABASE "gollahalli_com_django_test" to akshay;
 Once you have created the user and database, install these dependencies (Python 3.5 or 3.6)
 
 ```
-Django==1.11.3
-psycopg2>=2.7.1
-whitenoise>=3.3.0
-django-storages>=1.6.0
-boto3>==1.4.0
-Pillow>=4.2.0
-Markdown>=2.6.7
-cloudinary>=1.5.0
-requests>=2.0
-graphene-django>=1.3
-graphene>=1.4
-singlemodeladmin==0.7
-boto
-feedparser>=5.2.1
-django-filer>=1.2.7
-easy-thumbnails>=2.4.1
-authy>=2.1
-django-phonenumber-field
+See requirements.txt
 ```
 
 Now, clone the repo and open your `cmd` or `terminal`. Change to the cloned directory and type in the following commands.
