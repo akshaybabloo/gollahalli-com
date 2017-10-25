@@ -17,12 +17,13 @@
                 <b class="caret"></b>
             </p>
         </a>
-        <div {% if request.path|has_string_in_path:'content,meta' %}
-            class="collapse in" aria-expanded="true"
-        {% else %}
-            class="collapse" aria-expanded="false"
-        {% endif %}
-            id="editorOverview">
+        <div
+                {% if request.path|has_string_in_path:'content,meta,education,project,tutorial,experience,skills,publication' %}
+                    class="collapse in" aria-expanded="true"
+                {% else %}
+                    class="collapse" aria-expanded="false"
+                {% endif %}
+                    id="editorOverview">
             <ul class="nav">
                 <li {% if request.path|has_string_in_path:'content' %}class="active" {% endif %}>
                     <a href="{% url 'content_home' %}">
