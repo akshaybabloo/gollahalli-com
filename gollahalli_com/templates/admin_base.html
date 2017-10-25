@@ -180,25 +180,25 @@
 {#<script src="{% static 'js/paper/sweetalert2.js' %}"></script>#}
 {##}
 {#<!-- Vector Map plugin -->#}
-{#<script src="../assets/js/jquery-jvectormap.js"></script>#}
-
+{#<script src="{% static 'js/paper/jquery-jvectormap.js' %}"></script>#}
+{##}
 {#<!--  Google Maps Plugin    -->#}
 {#<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>#}
-
+{##}
 {#<!-- Wizard Plugin    -->#}
-{#<script src="../assets/js/jquery.bootstrap.wizard.min.js"></script>#}
+{#<script src="{% static 'js/paper/jquery.bootstrap.wizard.min.js' %}"></script>#}
 {##}
 {#<!--  Bootstrap Table Plugin    -->#}
-{#<script src="../assets/js/bootstrap-table.js"></script>#}
+{#<script src="{% static 'js/paper/bootstrap-table.js' %}"></script>#}
 {##}
 {#<!--  Plugin for DataTables.net  -->#}
-{#<script src="../assets/js/jquery.datatables.js"></script>#}
+{#<script src="{% static 'js/paper/jquery.datatables.js' %}"></script>#}
 {##}
 {#<!--  Full Calendar Plugin    -->#}
-{#<script src="../assets/js/fullcalendar.min.js"></script>#}
+{#<script src="{% static 'js/paper/fullcalendar.min.js' %}"></script>#}
 
-{#<!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->#}
-{#<script src="{% static 'js/paper/paper-dashboard.js' %}"></script>#}
+<!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
+<script src="{% static 'js/paper/paper-dashboard.js' %}"></script>
 
 {% block script %}
 {% endblock %}

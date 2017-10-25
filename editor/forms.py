@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import ContentModel, MetaContentModel
+from editor.models import ContentModel, MetaContentModel, EducationModel
 
 
 class ContentModelForm(forms.ModelForm):
@@ -10,6 +10,18 @@ class ContentModelForm(forms.ModelForm):
 
     class Meta:
         model = ContentModel
+        fields = "__all__"
+
+
+class EducationContentModelForm(forms.ModelForm):
+    """
+    Education content form.
+    """
+    id = forms.CharField(required=False)
+    ref_id = forms.CharField(required=False)
+
+    class Meta:
+        model = EducationModel
         fields = "__all__"
 
 

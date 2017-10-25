@@ -1,8 +1,8 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-from .forms import ContentModelForm, MetaContentModelForm
-from .models import ContentModel, MetaContentModel
+from editor.forms import ContentModelForm, MetaContentModelForm, EducationContentModelForm
+from editor.models import ContentModel, MetaContentModel, EducationModel
 
 
 # ============================================================================================
@@ -132,44 +132,30 @@ def education_content(request):
         content = ContentModel.objects.get(ref_id='1')
     except ContentModel.DoesNotExist:
         content = False
+        return redirect('content_home')
 
     form_msg = ''
 
     if request.method == 'POST':
-        form = ContentModelForm(request.POST)
+        form = EducationContentModelForm(request.POST)
 
         if form.is_valid():
-            website_name = form.cleaned_data.get('website_name')
-            cv = form.cleaned_data.get("cv")
-            bio = form.cleaned_data.get("bio")
-            url = form.cleaned_data.get("url")
-            first_name = form.cleaned_data.get("first_name")
-            last_name = form.cleaned_data.get("last_name")
-            email_id = form.cleaned_data.get("email_id")
-            github = form.cleaned_data.get("github")
-            twitter = form.cleaned_data.get("twitter")
-            linkedin = form.cleaned_data.get("linkedin")
-            file = form.cleaned_data.get("file")
-            image = form.cleaned_data.get("image")
+            title = form.cleaned_data.get('website_name')
+            from_date = form.cleaned_data.get('website_name')
+            to_date = form.cleaned_data.get('website_name')
+            where = form.cleaned_data.get('website_name')
+            current = form.cleaned_data.get('website_name')
+            file = form.cleaned_data.get('website_name')
+            image = form.cleaned_data.get('website_name')
 
-            content_model, created = ContentModel.objects.update_or_create(ref_id=1,
-                                                                           website_name=website_name,
-                                                                           cv=cv,
-                                                                           bio=bio,
-                                                                           url=url,
-                                                                           first_name=first_name,
-                                                                           last_name=last_name,
-                                                                           email_id=email_id,
-                                                                           github=github,
-                                                                           twitter=twitter,
-                                                                           linkedin=linkedin,
-                                                                           file=file,
-                                                                           image=image)
+            education_model, created = content.education.update_or_create(ref_id=1, title=title, from_date=from_date,
+                                                                          to_date=to_date, where=where, current=current,
+                                                                          file=file, image=image)
 
             if created:
-                content_model.save()
+                education_model.save()
                 form_msg = "Updates saved"
-                content = content_model
+                content = education_model
     else:
         form = ContentModelForm()
 
