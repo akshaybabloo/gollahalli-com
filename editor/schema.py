@@ -19,7 +19,7 @@ class ContentSchema(DjangoObjectType):
         model = ContentModel
         description = "Main content schema."
 
-    def resolve_cv(self, args, context, info):
+    def resolve_cv(self, info, **kwargs):
         """
         Resolves CV URL
         
@@ -33,7 +33,7 @@ class ContentSchema(DjangoObjectType):
         if self.cv and hasattr(self.cv, 'url'):
             return settings.SHARE_URL[:-1] + self.cv.url
 
-    def resolve_file(self, args, context, info):
+    def resolve_file(self, info, **kwargs):
         """
         Resolves file URL
         
@@ -48,7 +48,7 @@ class ContentSchema(DjangoObjectType):
         if self.file and hasattr(self.file, 'url'):
             return settings.SHARE_URL[:-1] + self.file.url
 
-    def resolve_image(self, args, context, info):
+    def resolve_image(self, info, **kwargs):
         """
         Resolves image URL
         
@@ -72,7 +72,7 @@ class EducationSchema(DjangoObjectType):
         model = EducationModel
         description = "Education schema"
 
-    def resolve_file(self, args, context, info):
+    def resolve_file(self, info, **kwargs):
         """
         Resolves file URL
 
@@ -87,7 +87,7 @@ class EducationSchema(DjangoObjectType):
         if self.file and hasattr(self.file, 'url'):
             return settings.SHARE_URL[:-1] + self.file.url
 
-    def resolve_image(self, args, context, info):
+    def resolve_image(self, info, **kwargs):
         """
         Resolves image URL
 
@@ -111,7 +111,7 @@ class ProjectsSchema(DjangoObjectType):
         model = ProjectsModel
         description = "Number of projects"
 
-    def resolve_file(self, args, context, info):
+    def resolve_file(self, info, **kwargs):
         """
         Resolves file URL
 
@@ -126,7 +126,7 @@ class ProjectsSchema(DjangoObjectType):
         if self.file and hasattr(self.file, 'url'):
             return settings.SHARE_URL[:-1] + self.file.url
 
-    def resolve_image(self, args, context, info):
+    def resolve_image(self, info, **kwargs):
         """
         Resolves image URL
 
@@ -150,7 +150,7 @@ class TutorialsSchema(DjangoObjectType):
         model = TutorialsModel
         description = "All tutorial developed"
 
-    def resolve_file(self, args, context, info):
+    def resolve_file(self, info, **kwargs):
         """
         Resolves file URL
 
@@ -165,7 +165,7 @@ class TutorialsSchema(DjangoObjectType):
         if self.file and hasattr(self.file, 'url'):
             return settings.SHARE_URL[:-1] + self.file.url
 
-    def resolve_image(self, args, context, info):
+    def resolve_image(self, info, **kwargs):
         """
         Resolves image URL
 
@@ -209,7 +209,7 @@ class SkillsContentSchema(DjangoObjectType):
         model = SkillsContentModel
         description = "All skills contents"
 
-    def resolve_file(self, args, context, info):
+    def resolve_file(self, info, **kwargs):
         """
         Resolves file URL
 
@@ -224,7 +224,7 @@ class SkillsContentSchema(DjangoObjectType):
         if self.file and hasattr(self.file, 'url'):
             return settings.SHARE_URL[:-1] + self.file.url
 
-    def resolve_image(self, args, context, info):
+    def resolve_image(self, info, **kwargs):
         """
         Resolves image URL
 
@@ -258,7 +258,7 @@ class PublicationContentSchema(DjangoObjectType):
         model = PublicationsContentModel
         description = "All publication contents"
 
-    def resolve_file(self, args, context, info):
+    def resolve_file(self, info, **kwargs):
         """
         Resolves file URL
 
@@ -273,7 +273,7 @@ class PublicationContentSchema(DjangoObjectType):
         if self.file and hasattr(self.file, 'url'):
             return settings.SHARE_URL[:-1] + self.file.url
 
-    def resolve_image(self, args, context, info):
+    def resolve_image(self, info, **kwargs):
         """
         Resolves image URL
 
@@ -303,7 +303,7 @@ class MetaContentSchema(DjangoObjectType):
 # ----------------------------------------------------------------------------
 
 
-class Query(graphene.AbstractType):
+class Query:
     """
     Query all the contents.
     """
@@ -320,62 +320,62 @@ class Query(graphene.AbstractType):
 
     debug = graphene.Field(DjangoDebug, name='__debug')
 
-    def resolve_all_contents(self, args, context, info):
+    def resolve_all_contents(self, info, **kwargs):
         """
         Returns all contents of `ContentModel`
         """
         return ContentModel.objects.all()
 
-    def resolve_all_educations(self, args, context, info):
+    def resolve_all_educations(self, info, **kwargs):
         """
         Returns all contents of `EducationModel`
         """
         # We can easily optimize query count in the resolve method
         return EducationModel.objects.select_related('education').all()
 
-    def resolve_all_projects(self, args, context, info):
+    def resolve_all_projects(self, info, **kwargs):
         """
         Returns all contents of `ProjectsModel`
         """
         return ProjectsModel.objects.select_related('projects').all()
 
-    def resolve_all_tutorials(self, args, context, info):
+    def resolve_all_tutorials(self, info, **kwargs):
         """
         Returns all contents of `TutorialsModel`
         """
         return TutorialsModel.objects.select_related('tutorials').all()
 
-    def resolve_all_experience(self, args, context, info):
+    def resolve_all_experience(self, info, **kwargs):
         """
         Returns all contents of `ExperienceModel`
         """
         return ExperienceModel.objects.select_related('experience').all()
 
-    def resolve_all_skills(self, args, context, info):
+    def resolve_all_skills(self, info, **kwargs):
         """
         Returns all contents of `SkillsModel`
         """
         return SkillsModel.objects.select_related('skills').all()
 
-    def resolve_all_skills_content(self, args, context, info):
+    def resolve_all_skills_content(self, info, **kwargs):
         """
         Returns all contents of `SkillsContentModel`
         """
         return SkillsContentModel.objects.select_related('skills_content').all()
 
-    def resolve_all_publications(self, args, context, info):
+    def resolve_all_publications(self, info, **kwargs):
         """
         Returns all contents of `PublicationsModel`
         """
         return PublicationsModel.objects.select_related('publications').all()
 
-    def resolve_all_publications_content(self, args, context, info):
+    def resolve_all_publications_content(self, info, **kwargs):
         """
         Returns all contents of `PublicationsContentModel`
         """
         return PublicationsContentModel.objects.select_related('publications_content').all()
 
-    def resolve_all_meta_content(self, args, context, info):
+    def resolve_all_meta_content(self, info, **kwargs):
         """
         Returns all content for `MetaContentModel`
         """
