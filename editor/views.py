@@ -72,7 +72,7 @@ def content_home(request):
         Returns renderer's.
     """
 
-    template = "portal/editor/editor_content_index.html"
+    template = "portal/editor/editor_content_form_index.html"
 
     try:
         content = ContentModel.objects.get(ref_id='1')
@@ -126,7 +126,7 @@ def content_home(request):
 
 @login_required()
 def education_content(request):
-    template = "portal/editor/editor_education_index.html"
+    template = "portal/editor/editor_education_form_index.html"
 
     try:
         content = ContentModel.objects.get(ref_id='1')
