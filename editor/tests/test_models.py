@@ -317,6 +317,7 @@ class TutorialsModelTest(TestCase):
     Test case for `TutorialsModel`
     """
 
+    @mock.patch('django.utils.timezone.now', mock_datetime_now)
     def setUp(self):
         """
         Sets up the `TutorialsModel` and mocks django `timezone`
@@ -644,6 +645,7 @@ class MetaContentModelTest(TestCase):
     Test case for `MetaContentModel`
     """
 
+    @mock.patch('django.utils.timezone.now', mock_datetime_now)
     def setUp(self):
         """
         Sets up `MetaContentModel`
