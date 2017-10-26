@@ -164,6 +164,206 @@ def education_content(request):
     return render(request, template, context)
 
 
+@login_required()
+def projects_content(request):
+    template = "portal/editor/education/editor_education_form_index.html"
+
+    try:
+        content = ContentModel.objects.get(ref_id='1')
+    except ContentModel.DoesNotExist:
+        content = False
+        return redirect('content_home')
+
+    form_msg = ''
+
+    if request.method == 'POST':
+        form = EducationContentModelForm(request.POST)
+
+        if form.is_valid():
+            title = form.cleaned_data.get('website_name')
+            from_date = form.cleaned_data.get('website_name')
+            to_date = form.cleaned_data.get('website_name')
+            where = form.cleaned_data.get('website_name')
+            current = form.cleaned_data.get('website_name')
+            file = form.cleaned_data.get('website_name')
+            image = form.cleaned_data.get('website_name')
+
+            education_model, created = content.education.update_or_create(ref_id=1, title=title, from_date=from_date,
+                                                                          to_date=to_date, where=where, current=current,
+                                                                          file=file, image=image)
+
+            if created:
+                education_model.save()
+                form_msg = "Updates saved"
+                content = education_model
+    else:
+        form = ContentModelForm()
+
+    context = {'form': form, 'content': content, 'form_msg': form_msg}
+
+    return render(request, template, context)
+
+
+@login_required()
+def tutorials_content(request):
+    template = "portal/editor/education/editor_education_form_index.html"
+
+    try:
+        content = ContentModel.objects.get(ref_id='1')
+    except ContentModel.DoesNotExist:
+        content = False
+        return redirect('content_home')
+
+    form_msg = ''
+
+    if request.method == 'POST':
+        form = EducationContentModelForm(request.POST)
+
+        if form.is_valid():
+            title = form.cleaned_data.get('website_name')
+            from_date = form.cleaned_data.get('website_name')
+            to_date = form.cleaned_data.get('website_name')
+            where = form.cleaned_data.get('website_name')
+            current = form.cleaned_data.get('website_name')
+            file = form.cleaned_data.get('website_name')
+            image = form.cleaned_data.get('website_name')
+
+            education_model, created = content.education.update_or_create(ref_id=1, title=title, from_date=from_date,
+                                                                          to_date=to_date, where=where, current=current,
+                                                                          file=file, image=image)
+
+            if created:
+                education_model.save()
+                form_msg = "Updates saved"
+                content = education_model
+    else:
+        form = ContentModelForm()
+
+    context = {'form': form, 'content': content, 'form_msg': form_msg}
+
+    return render(request, template, context)
+
+
+@login_required()
+def experience_content(request):
+    template = "portal/editor/education/editor_education_form_index.html"
+
+    try:
+        content = ContentModel.objects.get(ref_id='1')
+    except ContentModel.DoesNotExist:
+        content = False
+        return redirect('content_home')
+
+    form_msg = ''
+
+    if request.method == 'POST':
+        form = EducationContentModelForm(request.POST)
+
+        if form.is_valid():
+            title = form.cleaned_data.get('website_name')
+            from_date = form.cleaned_data.get('website_name')
+            to_date = form.cleaned_data.get('website_name')
+            where = form.cleaned_data.get('website_name')
+            current = form.cleaned_data.get('website_name')
+            file = form.cleaned_data.get('website_name')
+            image = form.cleaned_data.get('website_name')
+
+            education_model, created = content.education.update_or_create(ref_id=1, title=title, from_date=from_date,
+                                                                          to_date=to_date, where=where, current=current,
+                                                                          file=file, image=image)
+
+            if created:
+                education_model.save()
+                form_msg = "Updates saved"
+                content = education_model
+    else:
+        form = ContentModelForm()
+
+    context = {'form': form, 'content': content, 'form_msg': form_msg}
+
+    return render(request, template, context)
+
+
+@login_required()
+def skills_content(request):
+    template = "portal/editor/education/editor_education_form_index.html"
+
+    try:
+        content = ContentModel.objects.get(ref_id='1')
+    except ContentModel.DoesNotExist:
+        content = False
+        return redirect('content_home')
+
+    form_msg = ''
+
+    if request.method == 'POST':
+        form = EducationContentModelForm(request.POST)
+
+        if form.is_valid():
+            title = form.cleaned_data.get('website_name')
+            from_date = form.cleaned_data.get('website_name')
+            to_date = form.cleaned_data.get('website_name')
+            where = form.cleaned_data.get('website_name')
+            current = form.cleaned_data.get('website_name')
+            file = form.cleaned_data.get('website_name')
+            image = form.cleaned_data.get('website_name')
+
+            education_model, created = content.education.update_or_create(ref_id=1, title=title, from_date=from_date,
+                                                                          to_date=to_date, where=where, current=current,
+                                                                          file=file, image=image)
+
+            if created:
+                education_model.save()
+                form_msg = "Updates saved"
+                content = education_model
+    else:
+        form = ContentModelForm()
+
+    context = {'form': form, 'content': content, 'form_msg': form_msg}
+
+    return render(request, template, context)
+
+
+@login_required()
+def publications_content(request):
+    template = "portal/editor/education/editor_education_form_index.html"
+
+    try:
+        content = ContentModel.objects.get(ref_id='1')
+    except ContentModel.DoesNotExist:
+        content = False
+        return redirect('content_home')
+
+    form_msg = ''
+
+    if request.method == 'POST':
+        form = EducationContentModelForm(request.POST)
+
+        if form.is_valid():
+            title = form.cleaned_data.get('website_name')
+            from_date = form.cleaned_data.get('website_name')
+            to_date = form.cleaned_data.get('website_name')
+            where = form.cleaned_data.get('website_name')
+            current = form.cleaned_data.get('website_name')
+            file = form.cleaned_data.get('website_name')
+            image = form.cleaned_data.get('website_name')
+
+            education_model, created = content.education.update_or_create(ref_id=1, title=title, from_date=from_date,
+                                                                          to_date=to_date, where=where, current=current,
+                                                                          file=file, image=image)
+
+            if created:
+                education_model.save()
+                form_msg = "Updates saved"
+                content = education_model
+    else:
+        form = ContentModelForm()
+
+    context = {'form': form, 'content': content, 'form_msg': form_msg}
+
+    return render(request, template, context)
+
+
 @login_required
 def meta_home(request):
     """
