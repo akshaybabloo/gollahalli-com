@@ -115,6 +115,7 @@ class EducationModel(models.Model):
     current = models.BooleanField(default=False)
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def removed_on_file_update(self):
         """
@@ -191,6 +192,7 @@ class ProjectsModel(models.Model):
     short_description = models.CharField(default='short description', max_length=500)
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def removed_on_file_update(self):
         """
@@ -264,6 +266,7 @@ class TutorialsModel(models.Model):
     long_description = models.CharField(default='long description', max_length=10000, help_text="Markdown Enabled")
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def removed_on_file_update(self):
         """
@@ -340,6 +343,7 @@ class ExperienceModel(models.Model):
     where_country = models.CharField(default='where country', max_length=100)
     company = models.CharField(default='company', max_length=500)
     current = models.BooleanField(default=False)
+    updated = models.DateTimeField(auto_now=True)
 
 
 class SkillsModel(models.Model):
@@ -362,6 +366,7 @@ class SkillsContentModel(models.Model):
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def removed_on_file_update(self):
         """
@@ -433,6 +438,7 @@ class PublicationsModel(models.Model):
     """
     ref_id = models.ForeignKey(ContentModel, related_name='publications', on_delete=None)
     type_of_publication = models.CharField(default='type', primary_key=True, max_length=500)
+    updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.type_of_publication
@@ -447,6 +453,7 @@ class PublicationsContentModel(models.Model):
     content = models.CharField(default='content', help_text='Markdown Enabled', max_length=500)
     file = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def removed_on_file_update(self):
         """
@@ -520,3 +527,4 @@ class MetaContentModel(models.Model):
     header = models.TextField(default="Header content.", help_text="{{header}}")
     footer = models.TextField(default="Footer Content", help_text="{{footer}}")
     meta = models.TextField(default="Meta tags", help_text="{{meta_header}}")
+    updated = models.DateTimeField(auto_now=True)
