@@ -8,7 +8,6 @@ QUERY = '''
         {
           allContents {
             refId
-            created
             updated
             websiteName
             cv
@@ -31,6 +30,7 @@ QUERY = '''
               current
               file
               image
+              updated
             }
             projects {
               id
@@ -41,6 +41,7 @@ QUERY = '''
               shortDescription
               file
               image
+              updated
             }
             tutorials {
               id
@@ -49,6 +50,7 @@ QUERY = '''
               longDescription
               file
               image
+              updated
             }
             experience {
               id
@@ -59,6 +61,7 @@ QUERY = '''
               whereCountry
               company
               current
+              updated
             }
             skills {
               skillsContent {
@@ -69,6 +72,7 @@ QUERY = '''
                 content
                 file
                 image
+                updated
               }
             }
             publications {
@@ -80,6 +84,7 @@ QUERY = '''
                 content
                 file
                 image
+                updated
               }
             }
           }
@@ -88,6 +93,7 @@ QUERY = '''
             header
             footer
             meta
+            updated
           }
         }
 
