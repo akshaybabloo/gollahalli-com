@@ -141,12 +141,12 @@ def education_content(request):
 
         if form.is_valid():
             title = form.cleaned_data.get('website_name')
-            from_date = form.cleaned_data.get('website_name')
-            to_date = form.cleaned_data.get('website_name')
-            where = form.cleaned_data.get('website_name')
-            current = form.cleaned_data.get('website_name')
-            file = form.cleaned_data.get('website_name')
-            image = form.cleaned_data.get('website_name')
+            from_date = form.cleaned_data.get('from_date')
+            to_date = form.cleaned_data.get('to_date')
+            where = form.cleaned_data.get('where')
+            current = form.cleaned_data.get('current')
+            file = form.cleaned_data.get('file')
+            image = form.cleaned_data.get('image')
 
             education_model, created = content.education.update_or_create(ref_id=1, title=title, from_date=from_date,
                                                                           to_date=to_date, where=where, current=current,
