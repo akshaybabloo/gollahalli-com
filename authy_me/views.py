@@ -118,15 +118,12 @@ def log_me_in(request):
         Renders template.
 
     """
-    # session_key = request.session.session_key
-    #
-    # user_id = get_user_from_sid(session_key)
-    #
-    # try:
-    #     _user = User.objects.get(id=user_id)
-    #     return redirect('/admin/')
-    # except User.DoesNotExist:
-    #     pass
+
+    # Check if user already logged in.
+    if request.user.is_authenticated:
+        if request.user.is_staff:
+            return redirect('{}'.format(request.GET.get('next', 'portal')))
+
     _user = None
     context ={}
     defaults = {
