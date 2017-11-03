@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 
 from editor.forms import ContentModelForm, MetaContentModelForm, EducationContentModelForm, ProjectContentModelForm, \
     TutorialContentModelForm, ExperienceContentModelForm
-from editor.models import ContentModel, MetaContentModel, EducationModel
+from editor.models import ContentModel, MetaContentModel
 
 
 # ============================================================================================
