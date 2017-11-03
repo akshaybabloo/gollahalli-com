@@ -1,0 +1,158 @@
+{% extends 'portal/portal_index.html' %}
+{% load staticfiles %}
+
+{% block page_title %}
+    <a class="navbar-brand" href="{% url 'editor_home' %}">Editor</a>
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-12">
+        <div class="card">
+
+            {% csrf_token %}
+            <div class="card-header">
+                <h4 class="card-title">
+                    Education
+                </h4>
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        {% for errors in form.non_field_errors %}
+                            {{ errors }}
+                        {% endfor %}
+                        {{ form.errors }}
+                    </div>
+                {% endif %}
+                {% if form_msg.strip %}
+                    <p>
+                    <div class="alert alert-success">
+                        <span>{{ form_msg }}</span>
+                    </div>
+                    </p>
+                {% endif %}
+            </div>
+            <form method="post" action="" class="form-horizontal">
+                <div class="card-content">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="Title" class="form-control" name="title" required
+                                       id="id_title">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Duration</label>
+                            <div class="col-sm-10">
+                                <div class="row" style="margin-bottom: -15px">
+                                    <div class="col-md-6">
+                                        <div class="input-group" >
+                                            <input type="text" placeholder="From" class="form-control datepicker"
+                                                   name="from_date"
+                                                   required id="id_from_date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"
+                                                                               aria-hidden="true"></i></span>
+                                        </div>
+                                        <span class="help-block">DD/MM/YYY</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <input type="text" placeholder="To" class="form-control datepicker"
+                                                   name="to_date" required
+                                                   id="id_to_date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"
+                                                                               aria-hidden="true"></i></span>
+                                        </div>
+                                        <span class="help-block">DD/MM/YYY</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Location</label>
+                            <div class="col-sm-10">
+                                <div class="row" style="margin-bottom: -15px">
+                                    <div class="col-md-6">
+                                            <input type="text" placeholder="City" class="form-control"
+                                                   name="where_city"
+                                                   required id="id_where_city">
+                                    </div>
+                                    <div class="col-md-6">
+                                            <input type="text" placeholder="Country" class="form-control"
+                                                   name="where_country" required
+                                                   id="id_where_country">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Company</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="Company" class="form-control" name="company" required
+                                       id="id_company">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-10">
+                                <div class="checkbox">
+                                    <input type="checkbox" data-toggle="checkbox" name="current" id="id_current">
+                                    <label for="id_current">Current?</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="card-footer">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-md-3"></label>
+                            <div class="col-md-9">
+                                <button type="submit" class="btn btn-fill btn-info">Save</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+
+
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block script %}
+
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+    <script src="{% static 'js/paper/moment.min.js' %}"></script>
+    <!--  Date Time Picker Plugin is included in this js file -->
+    <script src="{% static 'js/paper/bootstrap-datetimepicker.js' %}"></script>
+
+
+    <script type="text/javascript">
+        $('.datepicker').datetimepicker({
+            format: 'DD/MM/YYYY',
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-chevron-up",
+                down: "fa fa-chevron-down",
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-screenshot',
+                clear: 'fa fa-trash',
+                close: 'fa fa-remove'
+            }
+        });
+
+    </script>
+{% endblock %}

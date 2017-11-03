@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from editor.forms import ContentModelForm, MetaContentModelForm, EducationContentModelForm, ProjectContentModelForm, \
-    TutorialContentModelForm
+    TutorialContentModelForm, ExperienceContentModelForm
 from editor.models import ContentModel, MetaContentModel, EducationModel
 
 
@@ -187,9 +187,9 @@ def projects_content(request):
             file = form.cleaned_data.get('file')
             image = form.cleaned_data.get('image')
 
-            project_model, created = content.tutorials.update_or_create(ref_id=1, link=link, title=title,
-                                                                        long_description=long_description,
-                                                                        file=file, image=image)
+            project_model, created = content.projects.update_or_create(ref_id=1, link=link, title=title,
+                                                                       long_description=long_description,
+                                                                       file=file, image=image)
 
             if created:
                 project_model.save()
@@ -243,7 +243,7 @@ def tutorials_content(request):
 
 @login_required()
 def experience_content(request):
-    template = "portal/editor/education/editor_education_form_index.html"
+    template = "portal/editor/experience/experience_content_form_index.html"
 
     try:
         content = ContentModel.objects.get(ref_id='1')
@@ -254,27 +254,29 @@ def experience_content(request):
     form_msg = ''
 
     if request.method == 'POST':
-        form = EducationContentModelForm(request.POST)
+        form = ExperienceContentModelForm(request.POST)
 
         if form.is_valid():
-            title = form.cleaned_data.get('website_name')
-            from_date = form.cleaned_data.get('website_name')
-            to_date = form.cleaned_data.get('website_name')
-            where = form.cleaned_data.get('website_name')
-            current = form.cleaned_data.get('website_name')
-            file = form.cleaned_data.get('website_name')
-            image = form.cleaned_data.get('website_name')
 
-            education_model, created = content.education.update_or_create(ref_id=1, title=title, from_date=from_date,
-                                                                          to_date=to_date, where=where, current=current,
-                                                                          file=file, image=image)
+            from_date = form.cleaned_data.get('from_date')
+            to_date = form.cleaned_data.get('to_date')
+            title = form.cleaned_data.get('title')
+            where_city = form.cleaned_data.get('where_city')
+            where_country = form.cleaned_data.get('where_country')
+            company = form.cleaned_data.get('company')
+            current = form.cleaned_data.get('current')
+
+            experience_model, created = content.experience.update_or_create(ref_id=1, title=title, from_date=from_date,
+                                                                            to_date=to_date, where_city=where_city,
+                                                                            where_country=where_country,
+                                                                            current=current, company=company)
 
             if created:
-                education_model.save()
+                experience_model.save()
                 form_msg = "Updates saved"
-                content = education_model
+                content = experience_model
     else:
-        form = ContentModelForm()
+        form = ExperienceContentModelForm()
 
     context = {'form': form, 'content': content, 'form_msg': form_msg}
 
