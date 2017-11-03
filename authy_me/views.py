@@ -226,7 +226,7 @@ def auth_2fa(request):
                     expires = datetime.datetime.strftime(
                         datetime.datetime.utcnow() + datetime.timedelta(seconds=max_age),
                         "%a, %d-%b-%Y %H:%M:%S GMT")
-                    response.set_signed_cookie('is_personal', 'yes', salt='#c}jbb9j>c.oMKP=T)M.3%fe', expires=expires)
+                    response.set_signed_cookie('is_personal', 'yes', salt=str(user_auth.session_id), expires=expires)
                     return response
                 _user = authenticate(request, username=_user.username, password=_user.password)
                 login(request, _user)
