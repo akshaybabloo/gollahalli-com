@@ -157,7 +157,7 @@ def education_content(request):
                 form_msg = "Updates saved"
                 content = education_model
     else:
-        form = ContentModelForm()
+        form = EducationContentModelForm()
 
     context = {'form': form, 'content': content, 'form_msg': form_msg}
 
@@ -195,7 +195,7 @@ def projects_content(request):
                 form_msg = "Updates saved"
                 content = project_model
     else:
-        form = ContentModelForm()
+        form = ProjectContentModelForm()
 
     context = {'form': form, 'content': content, 'form_msg': form_msg}
 
@@ -235,7 +235,7 @@ def tutorials_content(request):
                 form_msg = "Updates saved"
                 content = education_model
     else:
-        form = ContentModelForm()
+        form = EducationContentModelForm()
 
     context = {'form': form, 'content': content, 'form_msg': form_msg}
 
