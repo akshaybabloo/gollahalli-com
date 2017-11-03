@@ -158,7 +158,7 @@ def log_me_in(request):
                     response.delete_cookie('is_personal')
                     return response
 
-                request.session['auth'] = {'username': _user.username, 'password': _user.password, 'id': _user.id}
+                request.session['auth'] = _user.id
                 return redirect('2fa_auth')
             else:
                 logger.info('is not staff and does not have 2FA')
@@ -177,14 +177,12 @@ def auth_2fa(request):
     request: object
         Request.
     """
-    user = request.session.get('auth', None)
+    user_id = request.session.get('auth', None)
 
     context = {}
-    session_key = request.session.session_key
 
-    _user = User.objects.get(id=user['id'])
-
-    user_auth = _user.auth_user.get(id=user['id'])
+    _user = User.objects.get(id=user_id)
+    user_auth = _user.auth_user.get(id=user_id)
 
     if 'is_personal' in request.COOKIES:
         if request.get_signed_cookie('is_personal', salt=str(user_auth.session_id)) == 'yes':
@@ -230,7 +228,7 @@ def auth_2fa(request):
                         "%a, %d-%b-%Y %H:%M:%S GMT")
                     response.set_signed_cookie('is_personal', 'yes', salt='#c}jbb9j>c.oMKP=T)M.3%fe', expires=expires)
                     return response
-                _user = authenticate(request, username=user['username'], password=user['password'])
+                _user = authenticate(request, username=_user.username, password=_user.password)
                 login(request, _user)
                 return redirect('portal_home')
             else:
