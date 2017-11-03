@@ -5,6 +5,7 @@ from django.contrib.auth.views import password_reset, password_reset_done, passw
 from . import views
 
 urlpatterns = [
+    url(r'welcome/$', views.welcome, name='welcome'),
     url(r'login/$', views.log_me_in, name='login'),
     url(r'login/2fa/$', views.auth_2fa, name='2fa_auth'),
     url(r'logout', views.log_me_out, name='logout'),

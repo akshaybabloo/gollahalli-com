@@ -490,3 +490,26 @@ def profile_home(request):
     context = {'pwd': form, 'pwd_msg': pwd_msg}
 
     return render(request, template, context)
+
+
+def welcome(request):
+    """
+    Welcome page for new setup.
+
+    Parameters
+    ----------
+    request: WSGIRequest
+        WSGI request.
+
+    Returns
+    -------
+    render: HttpResponse
+        Returns renderer's.
+
+    """
+
+    template = 'welcome/welcome.html'
+
+    context = {}
+
+    return render(request, template, context)
