@@ -124,8 +124,7 @@ def log_me_in(request):
         if request.user.is_staff:
             return redirect('{}'.format(request.GET.get('next', 'portal_home')))
 
-    _user = None
-    context ={}
+    context = {}
     defaults = {
         'authentication_form': LoginForm,
         'template_name': 'login.html',
