@@ -219,11 +219,11 @@ def tutorials_content(request):
         form = TutorialContentModelForm(request.POST)
 
         if form.is_valid():
-            link = form.cleaned_data.get('website_name')
-            title = form.cleaned_data.get('website_name')
-            long_description = form.cleaned_data.get('website_name')
-            file = form.cleaned_data.get('website_name')
-            image = form.cleaned_data.get('website_name')
+            link = form.cleaned_data.get('link')
+            title = form.cleaned_data.get('title')
+            long_description = form.cleaned_data.get('long_description')
+            file = form.cleaned_data.get('file')
+            image = form.cleaned_data.get('image')
 
             tutorial_model, created = content.tutorials.update_or_create(ref_id=1, link=link, title=title,
                                                                          long_description=long_description,
