@@ -122,7 +122,7 @@ def log_me_in(request):
     # Check if user already logged in.
     if request.user.is_authenticated:
         if request.user.is_staff:
-            return redirect('{}'.format(request.GET.get('next', 'portal')))
+            return redirect('{}'.format(request.GET.get('next', 'portal_home')))
 
     _user = None
     context ={}
