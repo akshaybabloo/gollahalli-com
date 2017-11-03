@@ -221,7 +221,9 @@ def auth_2fa(request):
             verification = authy_api.tokens.verify(user_auth.authy_id, str(token))
             if verification.ok():
                 if request.POST.get('is_personal') == 'on':
-                    response = redirect('/admin/')
+                    _user = authenticate(request, username=_user.username, password=_user.password)
+                    login(request, _user)
+                    response = redirect('portal_home')
                     max_age = 365 * 24 * 60 * 60  # one year
                     expires = datetime.datetime.strftime(
                         datetime.datetime.utcnow() + datetime.timedelta(seconds=max_age),
