@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
-from editor.forms import ContentModelForm, MetaContentModelForm, EducationContentModelForm, ProjectContentModelForm
+from editor.forms import ContentModelForm, MetaContentModelForm, EducationContentModelForm, ProjectContentModelForm, \
+    TutorialContentModelForm
 from editor.models import ContentModel, MetaContentModel, EducationModel
 
 
@@ -204,7 +205,7 @@ def projects_content(request):
 
 @login_required()
 def tutorials_content(request):
-    template = "portal/editor/education/editor_education_form_index.html"
+    template = "portal/editor/tutorial/tutorial_content_form_index.html"
 
     try:
         content = ContentModel.objects.get(ref_id='1')
@@ -215,27 +216,25 @@ def tutorials_content(request):
     form_msg = ''
 
     if request.method == 'POST':
-        form = EducationContentModelForm(request.POST)
+        form = TutorialContentModelForm(request.POST)
 
         if form.is_valid():
+            link = form.cleaned_data.get('website_name')
             title = form.cleaned_data.get('website_name')
-            from_date = form.cleaned_data.get('website_name')
-            to_date = form.cleaned_data.get('website_name')
-            where = form.cleaned_data.get('website_name')
-            current = form.cleaned_data.get('website_name')
+            long_description = form.cleaned_data.get('website_name')
             file = form.cleaned_data.get('website_name')
             image = form.cleaned_data.get('website_name')
 
-            education_model, created = content.education.update_or_create(ref_id=1, title=title, from_date=from_date,
-                                                                          to_date=to_date, where=where, current=current,
-                                                                          file=file, image=image)
+            tutorial_model, created = content.tutorials.update_or_create(ref_id=1, link=link, title=title,
+                                                                         long_description=long_description,
+                                                                         file=file, image=image)
 
             if created:
-                education_model.save()
+                tutorial_model.save()
                 form_msg = "Updates saved"
-                content = education_model
+                content = tutorial_model
     else:
-        form = EducationContentModelForm()
+        form = TutorialContentModelForm()
 
     context = {'form': form, 'content': content, 'form_msg': form_msg}
 

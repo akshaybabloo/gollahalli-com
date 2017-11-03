@@ -1,0 +1,63 @@
+{% extends 'portal/portal_index.html' %}
+{% load staticfiles %}
+
+{% block page_title %}
+    <a class="navbar-brand" href="{% url 'editor_home' %}">Editor</a>
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-12">
+        <div class="card">
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="card-header">
+                    <h4 class="card-title">
+                        Main Content
+                    </h4>
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            {% for errors in form.non_field_errors %}
+                                {{ errors }}
+                            {% endfor %}
+                            {{ form.errors }}
+                        </div>
+                    {% endif %}
+                    {% if form_msg.strip %}
+                        <p>
+                        <div class="alert alert-success">
+                            <span>{{ form_msg }}</span>
+                        </div>
+                        </p>
+                    {% endif %}
+                </div>
+                <div class="card-content">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" placeholder="Website Name" class="form-control" name="title" required
+                               id="id_title" value="{{ content.website_name }}">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea name="long_description" id="id_long_description" required cols="40" rows="10"
+                                  class="form-control" placeholder="Biography">{{ content.bio }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Link to Tutorial</label>
+                        <input type="text" placeholder="Web Site URL" class="form-control" name="link" required
+                               id="id_link" value="{{ content.url }}">
+                    </div>
+                    <div class="form-group">
+                        <label>Upload Extra File</label>
+                        <input type="file" id="id_file" name="file">
+                    </div>
+                    <div class="form-group">
+                        <label>Upload Image</label>
+                        <input type="file" id="id_image" name="image">
+                    </div>
+                    <button type="submit" class="btn btn-fill btn-info">Save</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+{% endblock %}
