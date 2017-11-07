@@ -492,24 +492,27 @@ def profile_home(request):
     return render(request, template, context)
 
 
-def welcome(request):
+def welcome(request, register='new_registration'):
     """
     Welcome page for new setup.
 
     Parameters
     ----------
-    request: WSGIRequest
+    request: object
         WSGI request.
+    register: bool
+        Defaults to False.
 
     Returns
     -------
-    render: HttpResponse
+    render: object
         Returns renderer's.
 
     """
 
     template = 'welcome/welcome.html'
 
-    context = {}
+    context = {'check_db_connection': False, 'check_ssl': False, 'check_users': False, 'check_authy': False,
+               'check_smtp': False, 'check_aws': False, 'check_cloudinary': False}
 
     return render(request, template, context)
