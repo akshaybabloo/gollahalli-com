@@ -152,10 +152,13 @@ def check_users():
     """
     has_n_staff = False
 
-    users = User.objects.all()
+    try:
+        users = User.objects.all()
 
-    for user in users:
-        if user.is_staff:
-            has_n_staff = True
+        for user in users:
+            if user.is_staff:
+                has_n_staff = True
+    except User.DoesNotExist:
+        return has_n_staff
 
     return has_n_staff

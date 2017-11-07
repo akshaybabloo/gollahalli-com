@@ -132,6 +132,26 @@ class UtilityTests(TestCase):
         self.my_admin_false.delete()
 
 
+class UtilityTestsNoUser(TestCase):
+    """
+    Tests without user.
+    """
+
+    def setUp(self):
+        try:
+            User.objects.all().delete()
+        except User.DoesNotExist:
+            pass
+
+    def test_check_users_false(self):
+        """
+        Tests ``check_users`` false.
+        """
+
+        content = check_users()
+        self.assertFalse(content, False)
+
+
 class Mock:
     """
     Mock object for username.
