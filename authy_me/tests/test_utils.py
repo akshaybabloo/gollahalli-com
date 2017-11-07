@@ -4,7 +4,15 @@ from django.test.client import Client
 
 from authy_me.models import AuthenticatorModel
 from authy_me.utils import is_int, has_2fa, get_user_from_sid, get_uuid_json, generate_password, check_hashed_password, \
-    check_users
+    check_users, check_db_conn
+
+import mock
+from mock import Mock
+from django.utils.functional import curry
+
+no_database = curry(
+    mock.patch, 'django.db.backends.util.CursorWrapper',
+    Mock(side_effect=RuntimeError("Using the database is not permitted")))
 
 
 class UtilityTests(TestCase):
@@ -149,6 +157,31 @@ class UtilityTestsNoUser(TestCase):
         """
 
         content = check_users()
+        self.assertFalse(content, False)
+
+    def test_check_db_conn(self):
+        """
+        Tests ``check_db_conn``.
+        """
+
+        content = check_db_conn()
+
+        self.assertTrue(content, True)
+
+
+@no_database
+class NoDBTest(TestCase):
+    """
+    Tests with no Database.
+    """
+
+    def test_check_db_conn_false(self):
+        """
+        Tests ``check_db_conn`` false.
+        """
+
+        content = check_db_conn()
+
         self.assertFalse(content, False)
 
 

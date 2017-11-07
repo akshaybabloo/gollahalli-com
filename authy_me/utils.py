@@ -1,10 +1,11 @@
-import json
 import uuid
 
 from django.conf import settings
-from django.contrib.auth.models import (User)
-from django.utils.module_loading import import_module
 from django.contrib.auth.hashers import make_password, check_password
+from django.contrib.auth.models import (User)
+from django.db import connections
+from django.db.utils import OperationalError
+from django.utils.module_loading import import_module
 
 from .models import AuthenticatorModel
 
@@ -162,3 +163,25 @@ def check_users():
         return has_n_staff
 
     return has_n_staff
+
+
+def check_db_conn():
+    """
+    Checks connection to 'default' database.
+
+    Returns
+    -------
+    reachable : bool
+        True if BD connects else False.
+    """
+
+    conn = connections['default']
+
+    try:
+        c = conn.cursor()  # this will take some time if error
+    except OperationalError:
+        reachable = False
+    else:
+        reachable = True
+
+    return reachable
