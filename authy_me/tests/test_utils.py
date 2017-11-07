@@ -3,7 +3,8 @@ from django.test import TestCase
 from django.test.client import Client
 
 from authy_me.models import AuthenticatorModel
-from authy_me.utils import is_int, has_2fa, get_user_from_sid, get_uuid_json, generate_password, check_hashed_password
+from authy_me.utils import is_int, has_2fa, get_user_from_sid, get_uuid_json, generate_password, check_hashed_password, \
+    check_users
 
 
 class UtilityTests(TestCase):
@@ -116,6 +117,15 @@ class UtilityTests(TestCase):
 
         self.assertFalse(content, False)
 
+    def test_check_users(self):
+        """
+        Tests ``check_users``
+        """
+
+        content = check_users()
+
+        self.assertTrue(content, True)
+
     def tearDown(self):
         self.auth.delete()
         self.my_admin.delete()
@@ -126,5 +136,6 @@ class Mock:
     """
     Mock object for username.
     """
+
     def username(self):
         return "unknown_user"

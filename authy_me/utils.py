@@ -138,3 +138,24 @@ def check_hashed_password(password, hash_value):
     yea_or_nay = check_password(password, hash_value)
 
     return yea_or_nay
+
+
+def check_users():
+    """
+    Checks if the CMS has any user and at least one of them is a staff.
+
+    Returns
+    -------
+    has_n_staff: bool
+        Has users and at least one of them is a staff.
+
+    """
+    has_n_staff = False
+
+    users = User.objects.all()
+
+    for user in users:
+        if user.is_staff:
+            has_n_staff = True
+
+    return has_n_staff
