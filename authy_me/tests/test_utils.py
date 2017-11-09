@@ -54,7 +54,7 @@ class UtilityTests(TestCase):
         """
         Testing ``has_2fa``
         """
-        response = has_2fa(Mock())
+        response = has_2fa(MockUserName())
 
         self.assertFalse(response)
         self.assertRaises(User.DoesNotExist)
