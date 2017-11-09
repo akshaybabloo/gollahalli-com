@@ -40,6 +40,7 @@ urlpatterns = [
                   url(r'^admin/', admin.site.urls, name='admin_urls'),
                   url(r'^', include('authy_me.urls'), name="login"),
                   url(r'^', include('welcome.urls')),
+                  url(r'^', include('blog.urls')),
                   url(r'^robots.txt',
                       lambda x: HttpResponse(
                           "Sitemap: https://www.gollahalli.com/sitemap.xml\nUser-agent: *\nDisallow: "
