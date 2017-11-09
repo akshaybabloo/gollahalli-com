@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storages',  # django-storages
     'graphene_django',  # GraphQL
+    'welcome',
     'editor',
     'viewer',
     'authy_me',
