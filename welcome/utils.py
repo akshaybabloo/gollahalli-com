@@ -1,6 +1,9 @@
+from authy.api import AuthyApiClient
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.db.utils import OperationalError
 from django.db import connections
+from django.http import HttpRequest
 
 
 def check_users():
@@ -47,3 +50,39 @@ def check_db_conn():
         reachable = True
 
     return reachable
+
+
+def check_ssl():
+    """
+    Checks if the connection is secured.
+
+    Returns
+    -------
+    secured : bool
+        True if secured else False.
+    """
+
+    http_response = HttpRequest()
+
+    secured = http_response.is_secure()
+
+    return secured
+
+
+def check_authy():
+    """
+    Checks if authy key is added and works.
+
+    Returns
+    -------
+    reachable : bool
+        True if connected else False.
+    """
+
+    authy_api = AuthyApiClient(settings.AUTHY_API)
+    stats = authy_api.apps.fetch()
+    if stats.ok():
+        return True
+    else:
+        return False
+
