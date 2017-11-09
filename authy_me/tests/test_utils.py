@@ -1,18 +1,10 @@
 from django.contrib.auth.models import User
 from django.test import TestCase
 from django.test.client import Client
+from mock import Mock
 
 from authy_me.models import AuthenticatorModel
-from authy_me.utils import is_int, has_2fa, get_user_from_sid, get_uuid_json, generate_password, check_hashed_password, \
-    check_users, check_db_conn
-
-import mock
-from mock import Mock
-from django.utils.functional import curry
-
-no_database = curry(
-    mock.patch, 'django.db.backends.util.CursorWrapper',
-    Mock(side_effect=RuntimeError("Using the database is not permitted")))
+from authy_me.utils import is_int, has_2fa, get_user_from_sid, get_uuid_json, generate_password, check_hashed_password
 
 
 class UtilityTests(TestCase):
@@ -82,7 +74,7 @@ class UtilityTests(TestCase):
         Testing ``Mock`` class
         """
 
-        cl = Mock()
+        cl = MockUserName()
 
         self.assertEqual(cl.username(), 'unknown_user')
 
@@ -125,67 +117,13 @@ class UtilityTests(TestCase):
 
         self.assertFalse(content, False)
 
-    def test_check_users(self):
-        """
-        Tests ``check_users``
-        """
-
-        content = check_users()
-
-        self.assertTrue(content, True)
-
     def tearDown(self):
         self.auth.delete()
         self.my_admin.delete()
         self.my_admin_false.delete()
 
 
-class UtilityTestsNoUser(TestCase):
-    """
-    Tests without user.
-    """
-
-    def setUp(self):
-        try:
-            User.objects.all().delete()
-        except User.DoesNotExist:
-            pass
-
-    def test_check_users_false(self):
-        """
-        Tests ``check_users`` false.
-        """
-
-        content = check_users()
-        self.assertFalse(content, False)
-
-    def test_check_db_conn(self):
-        """
-        Tests ``check_db_conn``.
-        """
-
-        content = check_db_conn()
-
-        self.assertTrue(content, True)
-
-
-@no_database
-class NoDBTest(TestCase):
-    """
-    Tests with no Database.
-    """
-
-    def test_check_db_conn_false(self):
-        """
-        Tests ``check_db_conn`` false.
-        """
-
-        content = check_db_conn()
-
-        self.assertFalse(content, False)
-
-
-class Mock:
+class MockUserName:
     """
     Mock object for username.
     """
