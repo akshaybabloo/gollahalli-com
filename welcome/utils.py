@@ -1,12 +1,15 @@
+import os
 import smtplib
 
+import boto3
 from authy.api import AuthyApiClient
+from botocore.exceptions import ClientError
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.db.utils import OperationalError
-from django.db import connections
-from django.http import HttpRequest
 from django.core import mail
+from django.db import connections
+from django.db.utils import OperationalError
+from django.http import HttpRequest
 
 
 def check_users():
@@ -113,3 +116,50 @@ def check_smtp():
         reachable = False
 
     return reachable
+
+
+def check_aws():
+    """
+    Checks for AWS connection.
+
+    Returns
+    -------
+    reachable : bool
+        True if connected else False.
+    """
+
+    session = boto3.Session(aws_access_key_id=os.environ.get('AWS_ACCESS_KEY_ID', 'a'),
+                            aws_secret_access_key=os.environ.get('AWS_SECRET_ACCESS_KEY', 'a'))
+    s3 = session.client('s3')
+    try:
+        response = s3.list_buckets()
+    except ClientError:
+        reachable = False
+    else:
+        reachable = True
+
+    return reachable
+
+
+def check_aws_s3():
+    """
+    Once ``check_aws`` returns true, this will check for the required S3 bucket.
+
+    Returns
+    -------
+    available: bool
+        True if bucket available else False.
+    """
+
+    session = boto3.Session(aws_access_key_id=os.environ.get('AWS_ACCESS_KEY_ID', 'a'),
+                            aws_secret_access_key=os.environ.get('AWS_SECRET_ACCESS_KEY', 'a'))
+    s3 = session.client('s3')
+    available = False
+
+    if check_aws():
+        for bucket_list in s3.list_buckets()['Buckets']:
+            if bucket_list['Name'] == settings.AWS_STORAGE_BUCKET_NAME:
+                available = True
+                break
+
+    return available
