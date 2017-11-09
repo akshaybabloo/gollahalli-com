@@ -104,7 +104,7 @@ def check_smtp():
     try:
         user = User.objects.get(id=1)
     except User.DoesNotExist:
-        reachable = False
+        return reachable
 
     try:
         mail.send_mail("Checking SMTP", "Test email for checking SMTP.", "test@"+settings.SHARE_URL, [user.email])
