@@ -1,9 +1,12 @@
+import smtplib
+
 from authy.api import AuthyApiClient
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.db.utils import OperationalError
 from django.db import connections
 from django.http import HttpRequest
+from django.core import mail
 
 
 def check_users():
@@ -86,3 +89,27 @@ def check_authy():
     else:
         return False
 
+
+def check_smtp():
+    """
+    Checks if SMTP connection is possible or not.
+
+    Returns
+    -------
+    reachable : bool
+        True if connected else False.
+    """
+    reachable = False
+
+    try:
+        user = User.objects.get(id=1)
+    except User.DoesNotExist:
+        reachable = False
+
+    try:
+        mail.send_mail("Checking SMTP", "Test email for checking SMTP.", "test@"+settings.SHARE_URL, [user.email])
+        reachable = True
+    except smtplib.SMTPException:
+        reachable = False
+
+    return reachable
