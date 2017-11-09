@@ -107,7 +107,7 @@ def check_smtp():
         return reachable
 
     try:
-        mail.send_mail("Checking SMTP", "Test email for checking SMTP.", "test@"+settings.SHARE_URL, [user.email])
+        mail.send_mail("Checking SMTP", "Test email for checking SMTP.", "test@" + settings.SHARE_URL, [user.email])
         reachable = True
     except smtplib.SMTPException:
         reachable = False
