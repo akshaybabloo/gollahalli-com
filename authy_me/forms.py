@@ -3,7 +3,6 @@ import logging
 from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
-from django.utils.translation import gettext as _
 
 from .models import AuthenticatorModel
 from .utils import is_int
@@ -127,4 +126,3 @@ class ChangePasswordForm(forms.Form):
 
         if cd.get('password') != cd.get('re_password'):
             raise forms.ValidationError("Both password did not match, please re-enter them.")
-
