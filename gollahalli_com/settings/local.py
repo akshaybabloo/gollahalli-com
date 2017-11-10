@@ -53,7 +53,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'gollahalli_v2_django',
+            'NAME': 'gollahalli_com_django_test',
             'USER': 'akshay',
             'PASSWORD': '',
             'HOST': 'localhost',
