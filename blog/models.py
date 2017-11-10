@@ -7,7 +7,7 @@ class BlogModel(models.Model):
     Blog model.
     """
 
-    ref_id = models.IntegerField(auto_created=True, default=1, primary_key=True, serialize=False)
+    blog_id = models.AutoField(auto_created=True, primary_key=True)
     title = models.CharField(max_length=1000)
     body = models.TextField()
     tags = models.CharField(max_length=10000)
