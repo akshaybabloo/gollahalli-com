@@ -140,26 +140,27 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <form method="#" action="#">
+                        <form method="post" action="">
+                            {% csrf_token %}
                             <div class="card card-plain">
                                 <div class="content">
                                     <div class="form-group">
-                                        <input type="email" placeholder="Your First Name" class="form-control">
+                                        <input type="text" placeholder="Your First Name" class="form-control" id="id_first_name" name="first_name">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" placeholder="Your Last Name" class="form-control">
+                                        <input type="text" placeholder="Your Last Name" class="form-control" id="id_last_name" name="last_name">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" placeholder="Company" class="form-control">
+                                        <input type="text" placeholder="Username" class="form-control" id="id_username" name="username">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" placeholder="Enter email" class="form-control">
+                                        <input type="email" placeholder="Enter email" class="form-control" id="id_email" name="email">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" placeholder="Password" class="form-control">
+                                        <input type="password" placeholder="Password" class="form-control" id="id_password" name="password">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" placeholder="Password Confirmation" class="form-control">
+                                        <input type="password" placeholder="Password Confirmation" class="form-control" id="id_re_password" name="re_password">
                                     </div>
                                 </div>
                                 <div class="footer text-center">
