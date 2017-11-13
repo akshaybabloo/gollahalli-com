@@ -4,8 +4,8 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
 
-from .models import AuthenticatorModel
-from .utils import is_int
+from authy_me.models import AuthenticatorModel
+from authy_me.utils import is_int
 
 logger = logging.getLogger(__name__)
 

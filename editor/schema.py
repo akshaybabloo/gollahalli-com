@@ -6,7 +6,7 @@ from django.conf import settings
 from graphene_django.debug import DjangoDebug
 from graphene_django.types import DjangoObjectType
 
-from .models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
+from editor.models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
     SkillsContentModel, PublicationsModel, PublicationsContentModel, MetaContentModel
 
 

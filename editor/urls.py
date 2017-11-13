@@ -5,7 +5,7 @@
 
 from django.conf.urls import url
 
-from . import views
+from editor import views
 
 urlpatterns = [
     url(r'portal/$', views.portal_home, name='portal_home'),

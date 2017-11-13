@@ -2,7 +2,7 @@ from django.conf.urls import url
 from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm, \
     password_reset_complete
 
-from . import views
+from authy_me import views
 
 urlpatterns = [
     url(r'login/$', views.log_me_in, name='login'),

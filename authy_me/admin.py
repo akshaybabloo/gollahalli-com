@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .models import AuthenticatorModel
-from .forms import AuthenticatorAdminForm
+from authy_me.models import AuthenticatorModel
+from authy_me.forms import AuthenticatorAdminForm
 
 
 class AuthenticatorAdmin(admin.ModelAdmin):

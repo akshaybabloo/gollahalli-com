@@ -5,7 +5,7 @@ from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth.models import (User)
 from django.utils.module_loading import import_module
 
-from .models import AuthenticatorModel
+from authy_me.models import AuthenticatorModel
 
 
 def is_int(s):
