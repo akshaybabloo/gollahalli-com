@@ -5,7 +5,7 @@ from welcome.forms import WelcomeForm
 from welcome.utils import check_users
 
 
-def home(request, register='new_registration'):
+def home(request, options=None):
     """
     Welcome page for new setup.
 
@@ -13,8 +13,8 @@ def home(request, register='new_registration'):
     ----------
     request: object
         WSGI request.
-    register: bool
-        Defaults to False.
+    options: str
+        Defaults to None.
 
     Returns
     -------
