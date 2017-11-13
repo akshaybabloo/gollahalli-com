@@ -24,28 +24,31 @@ def home(request, options=None):
     """
 
     template = 'welcome/welcome.html'
+    context = {}
 
     if not check_users():
 
-        if request.method == 'POST':
-            form = WelcomeForm(request.POST)
-            if form.is_valid():
-                first_name = form.cleaned_data.get('first_name')
-                last_name = form.cleaned_data.get('last_name')
-                username = form.cleaned_data.get('username')
-                email = form.cleaned_data.get('email')
-                password = form.cleaned_data.get('first_name')
+        if options is None:
 
-                user_model, created = User.objects.create_superuser(username=username, email=email, password=password,
-                                                                    first_name=first_name, last_name=last_name)
-                if created:
-                    user_model.save()
-        else:
-            form = WelcomeForm()
+            if request.method == 'POST':
+                form = WelcomeForm(request.POST)
+                if form.is_valid():
+                    first_name = form.cleaned_data.get('first_name')
+                    last_name = form.cleaned_data.get('last_name')
+                    username = form.cleaned_data.get('username')
+                    email = form.cleaned_data.get('email')
+                    password = form.cleaned_data.get('first_name')
 
+                    user_model, created = User.objects.create_superuser(username=username, email=email,
+                                                                        password=password, first_name=first_name,
+                                                                        last_name=last_name)
+                    if created:
+                        user_model.save()
+            else:
+                form = WelcomeForm()
+
+            context['form'] = form
     else:
         return redirect('portal_home')
-
-    context = {'form': form}
 
     return render(request, template, context)
