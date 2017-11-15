@@ -175,6 +175,7 @@ def check_smtp(request):
         return JsonResponse(reachable)
 
     try:
+        # TODO: Ask user to give a default email ID in app.json
         mail.send_mail("Checking SMTP", "Test email for checking SMTP.", "test@" + settings.SHARE_URL, [user.email])
         reachable['expression'] = True
     except smtplib.SMTPException as e:
