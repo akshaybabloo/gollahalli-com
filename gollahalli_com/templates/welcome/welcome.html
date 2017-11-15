@@ -85,8 +85,10 @@
                                         <tbody>
                                         <tr>
                                             <td>
-                                                <div class="icon icon-danger">
-                                                    <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                <div id="check_db">
+                                                    <div class="icon icon-success">
+                                                        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td>Database Connection</td>
@@ -94,40 +96,50 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="icon icon-success">
-                                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                <div id="check_ssl">
+                                                    <div class="icon icon-success">
+                                                        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td>SSL</td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="icon icon-success">
-                                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                <div id="check_authy">
+                                                    <div class="icon icon-success">
+                                                        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td>Authy</td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="icon icon-success">
-                                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                <div id="check_smtp">
+                                                    <div class="icon icon-success">
+                                                        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td>SMTP (email)</td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="icon icon-success">
-                                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                <div id="check_aws">
+                                                    <div class="icon icon-success">
+                                                        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td>AWS Connection</td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="icon icon-success">
-                                                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                                                <div id="check_s3">
+                                                    <div class="icon icon-success">
+                                                        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td>S3 Bucket</td>
@@ -201,5 +213,76 @@
 
 <!--  Forms Validations Plugin -->
 <script src="{% static 'js/paper/jquery.validate.min.js' %}"></script>
+
+<script type="text/javascript">
+
+    let avaliable = `
+    <div class="icon icon-success">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
+    </div>
+    `;
+    let notAvaliable = `
+    <div class="icon icon-danger">
+        <i class="fa fa-times-circle" aria-hidden="true"></i>
+    </div>
+    `;
+
+    let globalObject = {};
+    $.when(
+        $.get("/welcome/check/db", function (j) {
+            globalObject.db = j;
+        }),
+
+        $.get("/welcome/check/aws", function (j) {
+            globalObject.aws = j;
+        }),
+
+        $.get("/welcome/check/ssl", function (j) {
+            globalObject.ssl = j;
+        }),
+
+        $.get("/welcome/check/s3", function (j) {
+            globalObject.s3 = j;
+        }),
+
+        //$.get("/welcome/check/smtp", function (j) {
+        //    globalObject.smtp = j;
+        //}),
+
+        $.get("/welcome/check/authy", function (j) {
+            globalObject.authy = j;
+        })
+    ).then(function () {
+        if (globalObject.db.expression) {
+            $('#check_db').html(avaliable);
+        }
+        else $('#check_db').html(notAvaliable);
+
+        if (globalObject.aws.expression) {
+            $('#check_aws').html(avaliable);
+        }
+        else $('#check_aws').html(notAvaliable);
+
+        if (globalObject.ssl.expression) {
+            $('#check_ssl').html(avaliable);
+        }
+        else $('#check_ssl').html(notAvaliable);
+
+        if (globalObject.s3.expression) {
+            $('#check_s3').html(avaliable);
+        }
+        else $('#check_s3').html(notAvaliable);
+
+        //if (globalObject.smtp.expression) {
+        //    $('#check_smtp').html(avaliable);
+        //}
+        //else $('#check_smtp').html(notAvaliable);
+
+        if (globalObject.authy.expression) {
+            $('#check_authy').html(avaliable);
+        }
+        else $('#check_authy').html(notAvaliable);
+    })
+</script>
 
 </html>
