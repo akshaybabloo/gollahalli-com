@@ -1,5 +1,5 @@
 from django.test import TestCase, Client
-
+import json
 
 class JSONReturnTest(TestCase):
     """
@@ -24,8 +24,9 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/aws', follow=True)
 
-        self.assertEqual(response.content,
-                         b'{"expression": false, "error": "An error occurred (InvalidAccessKeyId) when calling the ListBuckets operation: The AWS Access Key Id you provided does not exist in our records."}')
+        content = json.loads(response.content)
+
+        self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
 
     def test_ssl_url(self):
         """
@@ -35,9 +36,9 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/ssl', follow=True)
 
-        self.assertEqual(response.content,
-                         b'{"expression": false, "error": "This connection is not secured, you can still continue but I would\'nt recommend it."}'
-                         )
+        content = json.loads(response.content)
+
+        self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
 
     def test_s3_url(self):
         """
@@ -47,7 +48,9 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/s3', follow=True)
 
-        self.assertEqual(response.content, b'{"expression": false}')
+        content = json.loads(response.content)
+
+        self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
 
     def test_smtp_url(self):
         """
@@ -57,7 +60,9 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/smtp', follow=True)
 
-        self.assertEqual(response.content, b'{"expression": false, "error": "User matching query does not exist."}')
+        content = json.loads(response.content)
+
+        self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
 
     def test_authy_url(self):
         """
@@ -67,4 +72,6 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/authy', follow=True)
 
-        self.assertEqual(response.content, b'{"expression": true}')
+        content = json.loads(response.content)
+
+        self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
