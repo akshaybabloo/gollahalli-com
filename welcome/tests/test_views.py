@@ -24,7 +24,7 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/aws', follow=True)
 
-        content = json.loads(response.content)
+        content = json.loads(response.content.decode('utf-8'))
 
         self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
 
@@ -36,7 +36,7 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/ssl', follow=True)
 
-        content = json.loads(response.content)
+        content = json.loads(response.content.decode('utf-8'))
 
         self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
 
@@ -48,7 +48,7 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/s3', follow=True)
 
-        content = json.loads(response.content)
+        content = json.loads(response.content.decode('utf-8'))
 
         self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
 
@@ -60,7 +60,7 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/smtp', follow=True)
 
-        content = json.loads(response.content)
+        content = json.loads(response.content.decode('utf-8'))
 
         self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
 
@@ -72,6 +72,6 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/authy', follow=True)
 
-        content = json.loads(response.content)
+        content = json.loads(response.content.decode('utf-8'))
 
         self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
