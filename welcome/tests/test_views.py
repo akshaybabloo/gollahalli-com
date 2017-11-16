@@ -1,5 +1,43 @@
-from django.test import TestCase, Client
 import json
+
+from django.contrib.auth.models import User
+from django.test import TestCase, Client
+
+
+class PagesTest(TestCase):
+    """
+    Tests HTML pages.
+    """
+    # def setUp(self):
+    #     User.objects.all().delete()
+
+    def test_home(self):
+        """
+        Tests ``home`` page.
+        """
+
+        c = Client()
+        response = c.get('/welcome', follow=True)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertInHTML('Welcome!', response.content.decode('utf-8'))
+
+    # def test_home_post(self):
+    #     """
+    #     Tests ``home`` post.
+    #     """
+    #
+    #     c = Client()
+    #     response = c.post('/welcome/',
+    #                       data={'first_name': 'John', 'last_name': 'Doe', 'username': 'john',
+    #                             'email': 'test@testing.com', 'password': 'testpassword'})
+    #
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertInHTML('Welcome!', response.content.decode('utf-8'))
+
+    # def tearDown(self):
+    #     User.objects.all().delete()
+
 
 class JSONReturnTest(TestCase):
     """
