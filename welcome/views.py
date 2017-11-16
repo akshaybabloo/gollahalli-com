@@ -48,7 +48,7 @@ def home(request, options=None):
                     last_name = form.cleaned_data.get('last_name')
                     username = form.cleaned_data.get('username')
                     email = form.cleaned_data.get('email')
-                    password = form.cleaned_data.get('first_name')
+                    password = form.cleaned_data.get('password')
 
                     user_model, created = User.objects.create_superuser(username=username, email=email,
                                                                         password=password, first_name=first_name,
