@@ -89,7 +89,7 @@ def check_db_conn(request):
         c = conn.cursor()  # this will take some time if error
     except OperationalError as e:
         reachable['expression'] = False
-        reachable['error'] = e
+        reachable['error'] = str(e)
     else:
         reachable['expression'] = True
 
@@ -171,7 +171,7 @@ def check_smtp(request):
         user = User.objects.get(id=1)
     except User.DoesNotExist as e:
         reachable['expression'] = False
-        reachable['error'] = e
+        reachable['error'] = str(e)
         return JsonResponse(reachable)
 
     try:
@@ -180,7 +180,7 @@ def check_smtp(request):
         reachable['expression'] = True
     except smtplib.SMTPException as e:
         reachable['expression'] = False
-        reachable['error'] = e
+        reachable['error'] = str(e)
 
     return JsonResponse(reachable)
 
