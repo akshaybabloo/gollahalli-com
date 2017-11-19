@@ -65,7 +65,9 @@ def home(request, options=None):
     return render(request, template, context)
 
 
-# JSON objects
+# ============================================================================================
+#                                      JSON Objects
+# ============================================================================================
 
 def check_db_conn(request):
     """
