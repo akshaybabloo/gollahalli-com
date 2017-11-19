@@ -52,7 +52,7 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/db', follow=True)
 
-        self.assertEqual(response.content, b'{"expression": true}')
+        self.assertIn('expression', response.content.decode('utf-8'))
 
     def test_aws_url(self):
         """
@@ -62,9 +62,7 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/aws', follow=True)
 
-        content = json.loads(response.content.decode('utf-8'))
-
-        self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
+        self.assertIn('expression', response.content.decode('utf-8'))
 
     def test_ssl_url(self):
         """
@@ -74,9 +72,7 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/ssl', follow=True)
 
-        content = json.loads(response.content.decode('utf-8'))
-
-        self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
+        self.assertIn('expression', response.content.decode('utf-8'))
 
     def test_s3_url(self):
         """
@@ -86,9 +82,7 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/s3', follow=True)
 
-        content = json.loads(response.content.decode('utf-8'))
-
-        self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
+        self.assertIn('expression', response.content.decode('utf-8'))
 
     def test_smtp_url(self):
         """
@@ -98,9 +92,7 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/smtp', follow=True)
 
-        content = json.loads(response.content.decode('utf-8'))
-
-        self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
+        self.assertIn('expression', response.content.decode('utf-8'))
 
     def test_authy_url(self):
         """
@@ -110,6 +102,4 @@ class JSONReturnTest(TestCase):
         c = Client()
         response = c.get('/welcome/check/authy', follow=True)
 
-        content = json.loads(response.content.decode('utf-8'))
-
-        self.assertEqual(response.content.decode('utf-8'), json.dumps(content))
+        self.assertIn('expression', response.content.decode('utf-8'))
