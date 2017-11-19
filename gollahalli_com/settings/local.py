@@ -54,7 +54,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'gollahalli_v3_django',
-            'USER': 'akshay',
+            'USER': 'gollahalli',
             'PASSWORD': '',
             'HOST': 'localhost',
             'PORT': '',
