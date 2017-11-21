@@ -245,9 +245,9 @@
             globalObject.s3 = j;
         }),
 
-        //$.get("/welcome/check/smtp", function (j) {
-        //    globalObject.smtp = j;
-        //}),
+        $.get("/welcome/check/smtp", function (j) {
+            globalObject.smtp = j;
+        }),
 
         $.get("/welcome/check/authy", function (j) {
             globalObject.authy = j;
@@ -273,10 +273,10 @@
         }
         else $('#check_s3').html(notAvaliable);
 
-        //if (globalObject.smtp.expression) {
-        //    $('#check_smtp').html(avaliable);
-        //}
-        //else $('#check_smtp').html(notAvaliable);
+        if (globalObject.smtp.expression) {
+            $('#check_smtp').html(avaliable);
+        }
+        else $('#check_smtp').html(notAvaliable);
 
         if (globalObject.authy.expression) {
             $('#check_authy').html(avaliable);
