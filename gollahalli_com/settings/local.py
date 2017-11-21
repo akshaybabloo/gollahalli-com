@@ -41,7 +41,7 @@ WSGI_APPLICATION = 'gollahalli_com.wsgi.application'
 if os.environ.get('TRAVIS') == 'true':
     DATABASES = {
         'default': {
-            'ENGINE':   'django.db.backends.postgresql_psycopg2',
+            'ENGINE':   'django.db.backends.postgresql',
             'NAME':     'gollahalli',
             'USER':     'postgres',
             'PASSWORD': 'bar',
@@ -52,7 +52,7 @@ if os.environ.get('TRAVIS') == 'true':
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'gollahalli_v3_django',
             'USER': 'gollahalli',
             'PASSWORD': '',
