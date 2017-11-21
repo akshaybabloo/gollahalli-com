@@ -1,4 +1,5 @@
 from django.test import TestCase
+from django.apps import apps
 
 from authy_me.apps import AuthyMeConfig
 
@@ -14,4 +15,5 @@ class AuthyMeConfigTests(TestCase):
         """
         app = AuthyMeConfig
 
-        self.assertTrue(app.name, 'authy_me')
+        self.assertEqual(app.name, 'authy_me')
+        self.assertEqual(apps.get_app_config('authy_me').name, 'authy_me')

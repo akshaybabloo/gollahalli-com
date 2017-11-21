@@ -1,3 +1,4 @@
+from django.apps import apps
 from django.test import TestCase
 
 from editor.apps import EditorConfig
@@ -14,4 +15,5 @@ class EditorConfigTests(TestCase):
         """
         app = EditorConfig
 
-        self.assertTrue(app.name, 'editor')
+        self.assertEqual(app.name, 'editor')
+        self.assertEqual(apps.get_app_config('editor').name, 'editor')

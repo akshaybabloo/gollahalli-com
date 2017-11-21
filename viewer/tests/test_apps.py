@@ -1,3 +1,4 @@
+from django.apps import apps
 from django.test import TestCase
 
 from viewer.apps import ViewerConfig
@@ -8,10 +9,11 @@ class ViewerConfigTests(TestCase):
     Test case for ``ViewerConfig``
     """
 
-    def test_editor_config(self):
+    def test_viewer_config(self):
         """
         Testing ``ViewerConfig`` class.
         """
         app = ViewerConfig
 
-        self.assertTrue(app.name, 'viewer')
+        self.assertEqual(app.name, 'viewer')
+        self.assertEqual(apps.get_app_config('viewer').name, 'viewer')
