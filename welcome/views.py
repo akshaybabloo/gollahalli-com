@@ -94,6 +94,7 @@ def check_db_conn(request):
         reachable['error'] = str(e)
     else:
         reachable['expression'] = True
+        reachable['error'] = ''
 
     return JsonResponse(reachable)
 
@@ -123,6 +124,7 @@ def check_ssl(request):
         secured['error'] = "This connection is not secured, you can still continue but I would'nt recommend it."
     else:
         secured['expression'] = True
+        secured['error'] = ''
 
     return JsonResponse(secured)
 
@@ -146,6 +148,7 @@ def check_authy(request):
     stats = authy_api.apps.fetch()
     if stats.ok():
         reachable['expression'] = True
+        reachable['error'] = ''
     else:
         reachable['expression'] = False
         reachable['error'] = stats.errors()
@@ -180,6 +183,7 @@ def check_smtp(request):
         # TODO: Ask user to give a default email ID in app.json
         mail.send_mail("Checking SMTP", "Test email for checking SMTP.", "test@" + settings.SHARE_URL, [user.email])
         reachable['expression'] = True
+        reachable['error'] = ''
     except smtplib.SMTPException as e:
         reachable['expression'] = False
         reachable['error'] = str(e)
@@ -214,6 +218,7 @@ def check_aws(request):
         reachable['error'] = str(e)
     else:
         reachable['expression'] = True
+        reachable['error'] = ''
 
     return JsonResponse(reachable)
 
@@ -242,6 +247,7 @@ def check_aws_s3(request):
         for bucket_list in s3.list_buckets()['Buckets']:
             if bucket_list['Name'] == settings.AWS_STORAGE_BUCKET_NAME:
                 available['expression'] = True
+                available['error'] = ''
                 break
 
     return JsonResponse(available)
