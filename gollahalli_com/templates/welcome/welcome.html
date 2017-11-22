@@ -215,74 +215,19 @@
 <script src="{% static 'js/paper/jquery.validate.min.js' %}"></script>
 
 <script type="text/javascript">
-
-    let avaliable = `
-    <div class="icon icon-success">
-        <i class="fa fa-check-circle" aria-hidden="true"></i>
-    </div>
-    `;
-    let notAvaliable = `
-    <div class="icon icon-danger">
-        <i class="fa fa-times-circle" aria-hidden="true"></i>
-    </div>
-    `;
-
-    let globalObject = {};
-    $.when(
-        $.get("/welcome/check/db", function (j) {
-            globalObject.db = j;
-        }),
-
-        $.get("/welcome/check/aws", function (j) {
-            globalObject.aws = j;
-        }),
-
-        $.get("/welcome/check/ssl", function (j) {
-            globalObject.ssl = j;
-        }),
-
-        $.get("/welcome/check/s3", function (j) {
-            globalObject.s3 = j;
-        }),
-
-        $.get("/welcome/check/smtp", function (j) {
-            globalObject.smtp = j;
-        }),
-
-        $.get("/welcome/check/authy", function (j) {
-            globalObject.authy = j;
-        })
-    ).then(function () {
-        if (globalObject.db.expression) {
-            $('#check_db').html(avaliable);
-        }
-        else $('#check_db').html(notAvaliable);
-
-        if (globalObject.aws.expression) {
-            $('#check_aws').html(avaliable);
-        }
-        else $('#check_aws').html(notAvaliable);
-
-        if (globalObject.ssl.expression) {
-            $('#check_ssl').html(avaliable);
-        }
-        else $('#check_ssl').html(notAvaliable);
-
-        if (globalObject.s3.expression) {
-            $('#check_s3').html(avaliable);
-        }
-        else $('#check_s3').html(notAvaliable);
-
-        if (globalObject.smtp.expression) {
-            $('#check_smtp').html(avaliable);
-        }
-        else $('#check_smtp').html(notAvaliable);
-
-        if (globalObject.authy.expression) {
-            $('#check_authy').html(avaliable);
-        }
-        else $('#check_authy').html(notAvaliable);
-    })
+var check_db = "/welcome/check/db";
+var check_aws = "/welcome/check/aws";
+var check_ssl = "/welcome/check/ssl";
+var check_s3 = "/welcome/check/s3";
+var check_smtp = "/welcome/check/smtp";
+var check_authy = "/welcome/check/authy";
+var check_db_ajax = $.get(check_db);
+var check_aws_ajax = $.get(check_aws);
+var check_ssl_ajax = $.get(check_ssl);
+var check_s3_ajax = $.get(check_s3);
+var check_smtp_ajax = $.get(check_smtp);
+var check_authy_ajax = $.get(check_authy);
+console.log(check_db_ajax);
 </script>
 
 </html>
