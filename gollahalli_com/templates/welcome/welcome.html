@@ -215,19 +215,34 @@
 <script src="{% static 'js/paper/jquery.validate.min.js' %}"></script>
 
 <script type="text/javascript">
-var check_db = "/welcome/check/db";
-var check_aws = "/welcome/check/aws";
-var check_ssl = "/welcome/check/ssl";
-var check_s3 = "/welcome/check/s3";
-var check_smtp = "/welcome/check/smtp";
-var check_authy = "/welcome/check/authy";
-var check_db_ajax = $.get(check_db);
-var check_aws_ajax = $.get(check_aws);
-var check_ssl_ajax = $.get(check_ssl);
-var check_s3_ajax = $.get(check_s3);
-var check_smtp_ajax = $.get(check_smtp);
-var check_authy_ajax = $.get(check_authy);
-console.log(check_db_ajax);
+    var replace_with = {
+        available: "\n<div class=\"icon icon-success\">\n    <i class=\"fa fa-check-circle\" aria-hidden=\"true\"></i>\n</div>\n",
+        notAvailable: "\n<div class=\"icon icon-danger\">\n    <i class=\"fa fa-times-circle\" aria-hidden=\"true\"></i>\n</div>\n"
+    };
+    var to_check = {
+        "db": "/welcome/check/db",
+        "aws": "/welcome/check/aws",
+        "ssl": "/welcome/check/ssl",
+        "s3": "/welcome/check/s3",
+        "smtp": "/welcome/check/smtp",
+        "authy": "/welcome/check/authy"
+    };
+    var _loop_1 = function (key) {
+        if (to_check.hasOwnProperty(key)) {
+            var element = to_check[key];
+            $.getJSON(element).done(function (data) {
+                if (data.expression) {
+                    $('#check_' + key).html(replace_with.available);
+                }
+                else {
+                    $('#check_' + key).html(replace_with.notAvailable);
+                }
+            });
+        }
+    };
+    for (var key in to_check) {
+        _loop_1(key);
+    }
 </script>
 
 </html>
