@@ -23,10 +23,10 @@ def check_users():
         for user in users:
             if user.is_staff:
                 has_n_staff = True
+                break
+        return has_n_staff
     except User.DoesNotExist:
         return has_n_staff
-
-    return has_n_staff
 
 
 def check_aws_utils():
