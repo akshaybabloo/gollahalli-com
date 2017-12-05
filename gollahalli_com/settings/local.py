@@ -47,7 +47,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'gollahalli_me_django',
-        'USER': 'akshay',
+        'USER': 'gollahalli',
         'PASSWORD': 'akshay12',
         'HOST': 'localhost',
         'PORT': '',
