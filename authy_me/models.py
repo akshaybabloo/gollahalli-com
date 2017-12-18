@@ -43,7 +43,7 @@ class AuthenticatorModel(models.Model):
         """
 
         try:
-            obj = User.objects.get(id=self.id)
+            obj = User.objects.get(username=self.user_id)
         except User.DoesNotExist:
             return
 
