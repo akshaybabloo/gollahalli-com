@@ -125,6 +125,7 @@ def index_view(request, sitemaps,
     req_protocol = request.scheme
     req_site = get_current_site(request)
     maps = sitemaps.values()
+    all_sites_lastmod = True
 
     sites = []  # all sections' sitemap URLs
     lastmod = []
