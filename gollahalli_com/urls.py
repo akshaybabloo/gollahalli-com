@@ -12,7 +12,7 @@ from django.contrib.sitemaps import views
 from django.contrib.auth.views import login, logout, password_reset, password_change_done
 from django.http import HttpResponse
 
-from .sitemaps import Sitemap, xsl_content_type
+from .sitemaps import Sitemap, xsl_content_type, index_view
 
 
 def get_version():
@@ -24,7 +24,11 @@ def get_version():
         A dictionary of GitHub content.
     """
     response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest')
-    return json.loads(response.text)
+    content = json.loads(response.text)
+    if 'message' in content:
+        return datetime.datetime.now().isoformat()
+    else:
+        return content
 
 
 def github_date_time_format(value):
@@ -88,7 +92,7 @@ urlpatterns = [
     url(r'^robots.txt', lambda x: HttpResponse(
         "Sitemap: https://www.gollahalli.com/sitemap.xml\nUser-agent: *\nDisallow: /admin/\nDisallow: /cdn-cgi/",
         content_type="text/plain"), name="robots_file"),
-    url(r'^sitemap\.xml$', views.index, {'sitemaps': sitemaps, 'template_name': 'sitemap-index.xml'}),
+    url(r'^sitemap\.xml$', index_view, {'sitemaps': sitemaps, 'template_name': 'sitemap-index.xml'}),
     url(r'^sitemap-(?P<section>.+).xml$', views.sitemap, {'sitemaps': sitemaps, 'template_name': 'sitemap.xml'},
         name='django.contrib.sitemaps.views.sitemap'),
     url(r'^sitemap\.xsl', xsl_content_type, name='sitemap_xsl'),
