@@ -71,7 +71,11 @@ def get_version():
 
     """
     response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest')
-    return json.loads(response.text)
+    content = json.loads(response.text)
+    if 'message' in content:
+        return datetime.datetime.now().isoformat()
+    else:
+        return content
 
 
 def github_date_time_format(value):
