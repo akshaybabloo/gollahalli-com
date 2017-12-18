@@ -111,5 +111,5 @@ class XlsTest(TestCase):
         """
         Testing ``xsl_content_type`` type
         """
-        content_type = xsl_content_type()
+        content_type = xsl_content_type('')
         self.assertTrue(content_type['Content-Type'], 'text/xsl')
