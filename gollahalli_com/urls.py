@@ -13,6 +13,7 @@ from django.contrib.auth.views import login, logout, password_reset, password_ch
 from django.http import HttpResponse
 
 from .sitemaps import Sitemap, xsl_content_type, index_view
+from editor.models import ContentModel
 
 
 def get_version():
@@ -69,14 +70,14 @@ sitemaps = {
         ['index'],
         [1.0],
         ['monthly'],
-        [datetime.date.today()]
+        [ContentModel.objects.get(ref_id=1).updated]
     ),
 
     'other': Sitemap(
         ['repo', 'change-log'],
         [0.5, 0.5],
         ['monthly', 'monthly'],
-        [custom_date('10/01/2017'), github_date_time_format(get_version()['published_at'])]
+        [datetime.datetime.now(), github_date_time_format(get_version()['published_at'])]
     )
 }
 
