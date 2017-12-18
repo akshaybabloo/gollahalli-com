@@ -121,6 +121,7 @@ def index_view(request, sitemaps,
     """
     Returns a zipped list of urls and their latest modified date.
     """
+    content = {}
     req_protocol = request.scheme
     req_site = get_current_site(request)
     maps = sitemaps.values()
@@ -148,13 +149,16 @@ def index_view(request, sitemaps,
             _site = _site()
         if all_sites_lastmod:
             site_lastmod = getattr(_site, 'lastmod', None)
-            print(site_lastmod)
             if len(site_lastmod) > 1:
                 lastmod.append(max(site_lastmod))
             else:
                 lastmod.append(site_lastmod[0])
 
-    response = TemplateResponse(request, template_name, {'sitemaps': zip(sites, lastmod)},
+    content['sitemaps'] = list(zip(sites, lastmod))
+
+    print(content)
+
+    response = TemplateResponse(request, template_name, content,
                                 content_type=content_type)
 
     return response
