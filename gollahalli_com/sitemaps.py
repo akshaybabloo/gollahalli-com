@@ -162,8 +162,6 @@ def index_view(request, sitemaps,
 
     content['sitemaps'] = list(zip(sites, lastmod))
 
-    print(content)
-
     response = TemplateResponse(request, template_name, content,
                                 content_type=content_type)
 
