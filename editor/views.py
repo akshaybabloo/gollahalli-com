@@ -38,7 +38,6 @@ def index(request):
         form = ContentFormModel()
 
     context = {'content': json.dumps(json_content.content), 'form': form,
-               'created': format_date_time(json_content.created),
                'updated': format_date_time(json_content.updated),
                'website_name': json_content.website_name}
     return render(request, template, context)
