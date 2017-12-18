@@ -20,14 +20,14 @@ sitemaps = {
         ['index'],
         [1.0],
         ['monthly'],
-        [datetime.date.today()]
+        [datetime.datetime.today()]
     ),
 
     'other': Sitemap(
         ['repo', 'change-log'],
         [0.5, 1.0],
         ['monthly', 'monthly'],
-        [custom_date('10/01/2017'), github_date_time_format(get_version()['published_at'])]
+        [datetime.datetime.today(), github_date_time_format(get_version()['published_at'])]
     )
 }
 
