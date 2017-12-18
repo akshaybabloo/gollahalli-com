@@ -76,17 +76,16 @@ def two_fa_home(request, options):
 
     template = 'portal/user/2fa/2fa_index.html'
 
-    session_key = request.session.session_key
-
-    user_id = get_user_from_sid(session_key)
+    if request.user.is_anonymous:
+        return redirect('login')
 
     try:
-        _user = User.objects.get(id=user_id)
+        _user = User.objects.get(username=request.user)
     except User.DoesNotExist:
         return redirect('login')
 
     try:
-        _auth = AuthenticatorModel.objects.get(id=user_id)
+        _auth = AuthenticatorModel.objects.get(user_id=request.user)
         if _auth.authy_id is None:
             return redirect('2fa_register')
     except AuthenticatorModel.DoesNotExist:
