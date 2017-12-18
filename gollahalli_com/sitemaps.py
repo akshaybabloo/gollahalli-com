@@ -135,7 +135,6 @@ def index_view(request, sitemaps,
     maps = sitemaps.values()
 
     all_sites_lastmod = True
-    lastmod = None
 
     sites = []  # all sections' sitemap URLs
     lastmod = []
@@ -163,8 +162,6 @@ def index_view(request, sitemaps,
                 lastmod.append(site_lastmod[0])
 
     content['sitemaps'] = list(zip(sites, lastmod))
-
-    print(content)
 
     response = TemplateResponse(request, template_name, content,
                                 content_type=content_type)
