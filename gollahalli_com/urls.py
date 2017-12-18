@@ -12,7 +12,7 @@ from django.http import HttpResponse
 from graphene_django.views import GraphQLView
 
 from gollahalli_com.schema import query
-from gollahalli_com.sitemaps import Sitemap, xsl_content_type
+from gollahalli_com.sitemaps import Sitemap, xsl_content_type, index_view
 from gollahalli_com.utils import *
 
 sitemaps = {
@@ -46,7 +46,7 @@ urlpatterns = [
                           "Sitemap: https://www.gollahalli.com/sitemap.xml\nUser-agent: *\nDisallow: "
                           "/admin/\nDisallow: /cdn-cgi/\nDisallow: /portal/",
                           content_type="text/plain"), name="robots_file"),
-                  url(r'^sitemap\.xml$', views.index, {'sitemaps': sitemaps, 'template_name': 'sitemap-index.xml'}),
+                  url(r'^sitemap\.xml$', index_view, {'sitemaps': sitemaps, 'template_name': 'sitemap-index.xml'}),
                   url(r'^sitemap-(?P<section>.+).xml$', views.sitemap,
                       {'sitemaps': sitemaps, 'template_name': 'sitemap.xml'},
                       name='django.contrib.sitemaps.views.sitemap'),
