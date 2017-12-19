@@ -73,7 +73,9 @@ def get_version():
     response = requests.get('https://api.github.com/repos/akshaybabloo/gollahalli-me/releases/latest')
     content = json.loads(response.text)
     if 'message' in content:
-        return datetime.datetime.now().isoformat()
+        now_datetime = datetime.datetime.now()
+        content['published_at'] = now_datetime.strftime('%Y-%m-%dT%H:%M:%Sz')
+        return content
     else:
         return content
 
