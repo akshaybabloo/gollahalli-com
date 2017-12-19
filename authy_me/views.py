@@ -111,12 +111,11 @@ class CustomLoginView(LoginView):
     form_class = LoginForm
     template_name = 'login.html'
 
-    def get_initial(self):
+    def get(self, request, *args, **kwargs):
         if self.request.user.is_authenticated and self.request.user.is_staff and has_2fa(self.request):
-            print(self.request.user.is_authenticated, self.request.user.is_staff, has_2fa(self.request))
             return redirect('{}'.format(self.request.GET.get('next', 'portal_home')))
-        else:
-            return self.initial.copy()
+
+        return super(CustomLoginView, self).get(request, *args, **kwargs)
 
     def form_valid(self, form):
 
