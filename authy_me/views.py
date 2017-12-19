@@ -124,9 +124,7 @@ class CustomLoginView(LoginView):
             auth_login(self.request, form.get_user(), backend='django.contrib.auth.backends.ModelBackend')
             return redirect('2fa_register')
 
-        auth_login(self.request, form.get_user(), backend='django.contrib.auth.backends.ModelBackend')
-
-        return HttpResponseRedirect(self.get_success_url())
+        return super(CustomLoginView, self).form_valid(form)
 
 
 def log_me_in(request):
