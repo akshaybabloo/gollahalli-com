@@ -80,22 +80,22 @@ class ViewsTests(TestCase):
 
         c = Client()
         response = c.post('/login/', data={'username': 'myuser', 'password': 'mypassword'})
-        self.assertRedirects(response, '/admin/authy_me/authenticatormodel/')
+        self.assertRedirects(response, '/portal/')
 
-    def test_auth_2fa(self):
-        """
-        Testing ``auth_2fa``
-        """
-
-        auth = AuthenticatorModel.objects.create(id=self.my_admin.id, user_id=self.my_admin, first_name='Akshay Raj',
-                                                 last_name='Gollahalli', phone_number='+123456789',
-                                                 email_id='example@example.com', authy_id='1234567')
-
-        c = Client()
-        response = c.post('/login/', data={'username': 'myuser', 'password': 'mypassword', 'remember_me': True})
-
-        self.assertRedirects(response, '/login/2fa/')
-        auth.delete()
+    # def test_auth_2fa(self):
+    #     """
+    #     Testing ``auth_2fa``
+    #     """
+    #
+    #     auth = AuthenticatorModel.objects.create(id=self.my_admin.id, user_id=self.my_admin, first_name='Akshay Raj',
+    #                                              last_name='Gollahalli', phone_number='+123456789',
+    #                                              email_id='example@example.com', authy_id='1234567')
+    #
+    #     c = Client()
+    #     response = c.post('/login/', data={'username': 'myuser', 'password': 'mypassword', 'remember_me': True})
+    #
+    #     self.assertRedirects(response, '/login/2fa/')
+    #     auth.delete()
 
     def tearDown(self):
         self.my_admin.delete()

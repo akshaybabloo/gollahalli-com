@@ -1,6 +1,7 @@
+from django.contrib.auth import get_user
 from django.contrib.auth.models import User
 from django.test import TestCase
-from django.test.client import Client
+from django.test.client import Client, RequestFactory
 from mock import Mock
 
 from authy_me.models import AuthenticatorModel
@@ -18,17 +19,24 @@ class UtilityTests(TestCase):
         self.my_admin = User.objects.create_superuser('myuser', 'myemail@test.com', password)
         self.my_admin_false = User.objects.create_superuser('myuser1', 'myemail@test.com', password)
 
-        c = Client()
-        c.login(username=self.my_admin.username, password=password)
+        self.c = Client()
+        self.c.login(username=self.my_admin.username, password=password)
+
+        self.factory = RequestFactory()
+        self.request = self.factory.get("/admin/auth/user/{}/change/".format(self.my_admin.id), follow=True)
+        self.factory.user = self.my_admin
+
+        self.c2 = Client()
+        self.c2.login(username=self.my_admin_false.username, password=password)
+
+        self.factory2 = RequestFactory()
+        self.request2 = self.factory.get("/admin/auth/user/{}/change/".format(self.my_admin_false.id), follow=True)
+        self.factory2.user = self.my_admin_false
 
         self.auth = AuthenticatorModel.objects.create(id=self.my_admin.id, user_id=self.my_admin,
                                                       first_name='Akshay Raj',
                                                       last_name='Gollahalli', phone_number='+123456789',
                                                       email_id='example@example.com', authy_id='1234567')
-        self.auth_false = AuthenticatorModel.objects.create(id=43, user_id=self.my_admin_false,
-                                                            first_name='Akshay Raj',
-                                                            last_name='Gollahalli', phone_number='+123456789',
-                                                            email_id='example@example.com', authy_id='1234567')
 
     def test_is_int(self):
         """
@@ -44,8 +52,9 @@ class UtilityTests(TestCase):
         """
         Testing ``has_2fa``
         """
-        response = has_2fa(self.my_admin)
-        response_false = has_2fa(self.my_admin_false)
+
+        response = has_2fa(self.factory)
+        response_false = has_2fa(self.factory2)
 
         self.assertTrue(response)
         self.assertFalse(response_false)
@@ -76,7 +85,7 @@ class UtilityTests(TestCase):
 
         cl = MockUserName()
 
-        self.assertEqual(cl.username(), 'unknown_user')
+        self.assertEqual(cl.user(), 'unknown_user')
 
     def test_uuid(self):
         """
@@ -120,7 +129,7 @@ class UtilityTests(TestCase):
     def tearDown(self):
         self.auth.delete()
         self.my_admin.delete()
-        self.my_admin_false.delete()
+        # self.my_admin_false.delete()
 
 
 class MockUserName:
@@ -128,5 +137,5 @@ class MockUserName:
     Mock object for username.
     """
 
-    def username(self):
+    def user(self):
         return "unknown_user"

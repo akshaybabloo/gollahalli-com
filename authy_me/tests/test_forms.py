@@ -164,12 +164,13 @@ class LoginFormTests(TestCase):
         Testing ``login_form`` fail.
         """
 
-        form_data = {'remember_me': True}
+        form_data = {'remember_me': True, 'username': 'myuser44', 'password': 'mypaffssword'}
 
         form = LoginForm(data=form_data)
 
         self.assertFalse(form.is_valid())
-        self.assertIn('Sorry, that login was invalid. Please try again.', str(form.errors))
+        self.assertIn('Please enter a correct username and password. Note that both fields may be case-sensitive.',
+                      str(form.errors))
         self.assertRaises(forms.ValidationError)
 
 
@@ -229,7 +230,7 @@ class ChangePasswordFormTests(TestCase):
         Testing password fields not equal.
         """
 
-        form_data = {'current_password': 'test','password': 'hello_hello', 're_password': 'hello'}
+        form_data = {'current_password': 'test', 'password': 'hello_hello', 're_password': 'hello'}
 
         form = ChangePasswordForm(form_data)
 
