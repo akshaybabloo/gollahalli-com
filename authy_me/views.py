@@ -4,15 +4,12 @@ import logging
 import phonenumbers
 from authy.api import AuthyApiClient
 from django.conf import settings
-from django.contrib.auth import authenticate, login
-from django.contrib.auth import logout
+from django.contrib.auth import login as auth_login, logout, authenticate
 from django.contrib.auth.models import (User)
 from django.contrib.auth.views import LoginView
-from django.contrib.auth import login as auth_login
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import redirect, resolve_url
+from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.shortcuts import render
-from django.urls import reverse
 from django.utils.crypto import get_random_string
 from django.views.decorators.cache import never_cache
 
