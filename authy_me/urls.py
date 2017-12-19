@@ -5,7 +5,7 @@ from django.contrib.auth.views import password_reset, password_reset_done, passw
 from authy_me import views
 
 urlpatterns = [
-    url(r'login/$', views.log_me_in, name='login'),
+    url(r'login/$', views.CustomLoginView.as_view(), name='login'),
     url(r'login/2fa/$', views.auth_2fa, name='2fa_auth'),
     url(r'logout', views.log_me_out, name='logout'),
     url(r'portal/user/reset/$', password_reset, {'template_name': 'portal/user/auth/password_reset.html'},

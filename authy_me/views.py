@@ -7,10 +7,12 @@ from django.conf import settings
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.models import (User)
-from django.contrib.auth.views import login as auth_login
-from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.contrib.auth.views import LoginView
+from django.contrib.auth import login as auth_login
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import redirect, resolve_url
 from django.shortcuts import render
+from django.urls import reverse
 from django.utils.crypto import get_random_string
 from django.views.decorators.cache import never_cache
 
@@ -99,6 +101,33 @@ def two_fa_home(request, options):
     context = {'user': _user, 'auth': _auth}
 
     return render(request, template, context)
+
+
+class CustomLoginView(LoginView):
+    """
+    Custom login view.
+    """
+
+    form_class = LoginForm
+    template_name = 'login.html'
+
+    def get_initial(self):
+        if self.request.user.is_authenticated and self.request.user.is_staff and has_2fa(self.request):
+            print(self.request.user.is_authenticated, self.request.user.is_staff, has_2fa(self.request))
+            return redirect('{}'.format(self.request.GET.get('next', 'portal_home')))
+        else:
+            return self.initial.copy()
+
+    def form_valid(self, form):
+
+        if self.request.user.is_staff and not has_2fa(self.request.user):
+            logger.info('is staff but does not have 2FA, redirecting to Authy account creator')
+            auth_login(self.request, form.get_user(), backend='django.contrib.auth.backends.ModelBackend')
+            return redirect('2fa_register')
+
+        auth_login(self.request, form.get_user(), backend='django.contrib.auth.backends.ModelBackend')
+
+        return HttpResponseRedirect(self.get_success_url())
 
 
 def log_me_in(request):
