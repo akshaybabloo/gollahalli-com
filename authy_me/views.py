@@ -120,7 +120,7 @@ class CustomLoginView(LoginView):
 
     def form_valid(self, form):
 
-        if self.request.user.is_staff and not has_2fa(self.request.user):
+        if self.request.user.is_staff and not has_2fa(self.request):
             logger.info('is staff but does not have 2FA, redirecting to Authy account creator')
             auth_login(self.request, form.get_user(), backend='django.contrib.auth.backends.ModelBackend')
             return redirect('2fa_register')
