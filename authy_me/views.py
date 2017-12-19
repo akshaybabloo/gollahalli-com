@@ -167,7 +167,7 @@ def log_me_in(request):
         if _user is not None and _user.is_active:
             if _user.is_staff and not has_2fa(_user):
                 logger.info('is staff but does not have 2FA, redirecting to Authy account creator')
-                login(request, _user)
+                auth_login(request, _user)
                 return redirect('2fa_register')
 
             elif _user.is_staff and has_2fa(_user):
@@ -246,7 +246,7 @@ def auth_2fa(request):
             if verification.ok():
                 if request.POST.get('is_personal') == 'on':
                     _user = authenticate(request, username=_user.username, password=_user.password)
-                    login(request, _user)
+                    auth_login(request, _user)
                     response = redirect('portal_home')
                     max_age = 365 * 24 * 60 * 60  # one year
                     expires = datetime.datetime.strftime(
@@ -255,7 +255,7 @@ def auth_2fa(request):
                     response.set_signed_cookie('is_personal', 'yes', salt=str(user_auth.session_id), expires=expires)
                     return response
                 _user = authenticate(request, username=_user.username, password=_user.password)
-                login(request, _user)
+                auth_login(request, _user)
                 return redirect('portal_home')
             else:
                 form.add_error(None, verification.errors()['message'])
