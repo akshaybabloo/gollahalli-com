@@ -193,6 +193,7 @@ AUTHENTICATION_BACKENDS = [
 # LOGIN_REDIRECT_URL='/admin/'
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
+LOGIN_REDIRECT_URL = reverse_lazy('portal_home')
 
 SESSION_COOKIE_HTTPONLY = True
 SESSION_SAVE_EVERY_REQUEST = True
