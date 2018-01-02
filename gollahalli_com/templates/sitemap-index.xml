@@ -5,12 +5,12 @@
     {% for location in sitemaps %}
         <sitemap>
             <loc>{{location.0}}</loc>
-            <lastmod>{{ location.1|date:"Y-m-d H:i" }}</lastmod>
+            <lastmod>{{ location.1|date:"c" }}</lastmod>
         </sitemap>
     {% endfor %}
     <sitemap>
         <loc>https://blog.gollahalli.com/sitemap.xml</loc>
-        <lastmod>{% now "Y-m-d H:i" %}</lastmod>
+        <lastmod>{% now "c" %}</lastmod>
     </sitemap>
 </sitemapindex>
 {% endspaceless %}
