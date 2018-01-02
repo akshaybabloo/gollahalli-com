@@ -1,16 +1,17 @@
 {% spaceless %}
 {% load staticfiles %}
+{% load custom_tags %}
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="{% url "sitemap_xsl" %}"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for location in sitemaps %}
         <sitemap>
             <loc>{{location.0}}</loc>
-            <lastmod>{{ location.1|date:"c" }}</lastmod>
+            <lastmod>{{ location.1|to_iso8601 }}</lastmod>
         </sitemap>
     {% endfor %}
     <sitemap>
         <loc>https://blog.gollahalli.com/sitemap.xml</loc>
-        <lastmod>{% now "c" %}</lastmod>
+        <lastmod>{{ None|to_iso8601 }}</lastmod>
     </sitemap>
 </sitemapindex>
 {% endspaceless %}
