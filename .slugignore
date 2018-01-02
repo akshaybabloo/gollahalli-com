@@ -8,3 +8,4 @@ local.py
 .travis.yml
 tox.ini
 /screenshot
+/.vscode
