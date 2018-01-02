@@ -1,15 +1,15 @@
 from django.contrib import admin
 
-from blog.forms import BlogForm
-from blog.models import BlogModel
+from blog.forms import PostForm
+from blog.models import PostModel
 
 
-class BlogAdmin(admin.ModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     """
     AuthenticatorModel admin.
     """
-    list_display = ['blog_id', 'author', 'title', 'body']
-    form = BlogForm
+    list_display = ['author', 'title']
+    form = PostForm
 
 
-admin.site.register(BlogModel, BlogAdmin)
+admin.site.register(PostModel, PostAdmin)

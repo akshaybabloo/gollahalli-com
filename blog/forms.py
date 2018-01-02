@@ -1,14 +1,13 @@
 from django import forms
 
-from blog.models import BlogModel
+from blog.models import PostModel
 
 
-class BlogForm(forms.ModelForm):
+class PostForm(forms.ModelForm):
     """
     Model form for BlogModel.
     """
 
-    tags = forms.CharField(required=False)
     meta_title = forms.CharField(required=False)
     meta_body = forms.CharField(widget=forms.Textarea(), required=False)
     code_injection_header = forms.CharField(widget=forms.Textarea(), required=False)
@@ -19,5 +18,5 @@ class BlogForm(forms.ModelForm):
     facebook_card_body = forms.CharField(widget=forms.Textarea(), required=False)
 
     class Meta:
-        model = BlogModel
+        model = PostModel
         fields = '__all__'
