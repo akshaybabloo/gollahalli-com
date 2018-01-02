@@ -1,10 +1,11 @@
 {% spaceless %}
+{% load custom_tags %}
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="{% url 'sitemap_xsl' %}"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {% for url in urlset %}
   <url>
     <loc>{{ url.location }}</loc>
-    {% if url.lastmod %}<lastmod>{{ url.lastmod|date:"Y-m-d H:i" }}</lastmod>{% endif %}
+    {% if url.lastmod %}<lastmod>{{ url.lastmod|to_iso8601 }}</lastmod>{% endif %}
     {% if url.changefreq %}<changefreq>{{ url.changefreq }}</changefreq>{% endif %}
     {% if url.priority %}<priority>{{ url.priority }}</priority>{% endif %}
    </url>
