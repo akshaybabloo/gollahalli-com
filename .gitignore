@@ -126,3 +126,5 @@ test.py
 /gollahalli_com/static/media/
 /gollahalli_com/templates/viewer/test.html
 /gollahalli_com/static/static_root/
+
+\.vscode/
