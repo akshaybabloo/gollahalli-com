@@ -4,6 +4,11 @@ from django.utils import timezone
 from taggit.managers import TaggableManager
 
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super(PublishedManager, self).get_queryset().filter(status='published')
+
+
 class PostModel(models.Model):
     """
     Blog model.
@@ -22,6 +27,9 @@ class PostModel(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
+
+    objects = models.Manager() # default manager
+    published = PublishedManager()
 
     tags = TaggableManager()
     meta_title = models.CharField(max_length=70)
