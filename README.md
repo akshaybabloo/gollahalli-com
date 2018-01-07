@@ -42,9 +42,9 @@ If you want to test how it works, you might want to install `PostgreSQL` from [b
 Then search for `plsql` and type in the following SQL query to create the `user` and the `table`
 
 ```sql
-CREATE USER akshay WITH PASSWORD 'akshay12';
-CREATE DATABASE gollahalli_com_django_test;
-GRANT ALL PRIVILEGES ON DATABASE "gollahalli_com_django_test" to akshay;
+CREATE USER gollahalli WITH PASSWORD '';
+CREATE DATABASE gollahalli_v3_django;
+GRANT ALL PRIVILEGES ON DATABASE "gollahalli_v3_django" to gollahalli;
 ```
 
 Once you have created the user and database, install these dependencies (Python 3.5 or 3.6)
