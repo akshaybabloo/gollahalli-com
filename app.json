@@ -22,15 +22,8 @@
     },
     "DEBUG": {
       "description": "Debug mode. By default its set to false.",
-      "value": 0
-    },
-    "CLOUDINARY_API": {
-      "description": "Your Cloudinary API key.",
-      "required": true
-    },
-    "CLOUDINARY_API_SECRET": {
-      "description": "Your Cloudinary API secret key.",
-      "required": true
+      "value": 0,
+      "required": false
     },
     "AUTHY_API": {
       "description": "Your Authy API.",
@@ -46,23 +39,23 @@
     },
     "EMAIL_HOST": {
       "description": "Your email host address. eg: smtp.mailgun.com",
-      "required": true
+      "required": false
     },
     "EMAIL_PORT": {
       "description": "Email port number. Usually 587",
-      "required": true
+      "required": false
     },
     "EMAIL_HOST_USER": {
       "description": "Your username. eg: postmaster@domain.com",
-      "required": true
+      "required": false
     },
     "EMAIL_HOST_PASSWORD": {
       "description": "Your SMTP provider password.",
-      "required": true
+      "required": false
     },
     "EMAIL_USE_TLS": {
       "description": "If your email provider supports Transport Layer Security (TLS) put 1 else 0.",
-      "required": true
+      "required": false
     },
     "SENTRY_URL":{
       "description": "Logging and event listening.",

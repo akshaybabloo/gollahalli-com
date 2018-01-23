@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storages',  # django-storages
     'graphene_django',  # GraphQL
-    'taggit', # Tags manager,
+    'taggit',  # Tags manager,
     'raven.contrib.django.raven_compat',
     'welcome',
     'editor',
@@ -163,7 +163,7 @@ LOGGING = {
     },
     'handlers': {
         'sentry': {
-            'level': 'ERROR', # To capture more than ERROR, change to WARNING, INFO, etc.
+            'level': 'ERROR',  # To capture more than ERROR, change to WARNING, INFO, etc.
             'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
             'tags': {'custom-tag': 'x'},
         },
@@ -213,12 +213,15 @@ LOGIN_REDIRECT_URL = reverse_lazy('portal_home')
 SESSION_COOKIE_HTTPONLY = True
 SESSION_SAVE_EVERY_REQUEST = True
 
-# SMTP setup for password reset.
-EMAIL_HOST = os.environ['EMAIL_HOST']
-EMAIL_PORT = os.environ['EMAIL_PORT']
-EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
-EMAIL_USE_TLS = True if os.environ['EMAIL_USE_TLS'] == 1 else False
+if os.environ.get('EMAIL_HOST', None) or os.environ.get('EMAIL_PORT', None) or os.environ.get('EMAIL_HOST_USER',
+                                                                                              None) or os.environ.get(
+        'EMAIL_HOST_PASSWORD', None) or os.environ.get('EMAIL_USE_TLS', None) is not None:
+    # SMTP setup for password reset.
+    EMAIL_HOST = os.environ['EMAIL_HOST']
+    EMAIL_PORT = os.environ['EMAIL_PORT']
+    EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+    EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+    EMAIL_USE_TLS = True if os.environ['EMAIL_USE_TLS'] == 1 else False
 
 if os.environ.get('SENTRY_URL', None) is not None:
     RAVEN_CONFIG = {
