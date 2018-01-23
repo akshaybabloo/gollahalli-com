@@ -14,6 +14,7 @@ import logging
 import os
 
 from django.urls import reverse_lazy
+import raven
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storages',  # django-storages
     'graphene_django',  # GraphQL
-    'taggit', # Tags manager
+    'taggit', # Tags manager,
+    'raven.contrib.django.raven_compat',
     'welcome',
     'editor',
     'viewer',
@@ -148,34 +150,46 @@ AUTHY_API = os.environ['AUTHY_API']
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
+    'root': {
+        'level': 'WARNING',
+        'handlers': ['sentry'],
+    },
     'formatters': {
         'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d: %(message)s'
-        },
-        'simple': {
-            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+            'format': '%(levelname)s %(asctime)s %(module)s '
+                      '%(process)d %(thread)d %(message)s'
         },
     },
     'handlers': {
+        'sentry': {
+            'level': 'ERROR', # To capture more than ERROR, change to WARNING, INFO, etc.
+            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+            'tags': {'custom-tag': 'x'},
+        },
         'console': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'simple'
+            'formatter': 'verbose'
         }
     },
     'loggers': {
-        '': {
-            'handlers': ['console'],
+        'django.db.backends': {
             'level': 'INFO',
-            'propagate': True
-        },
-        'django.request': {
             'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': False
+            'propagate': False,
         },
-    }
+        'raven': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+        'sentry.errors': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+    },
 }
 
 # Password hashers
@@ -205,3 +219,11 @@ EMAIL_PORT = os.environ['EMAIL_PORT']
 EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS = True if os.environ['EMAIL_USE_TLS'] == 1 else False
+
+if os.environ.get('SENTRY_URL', None) is not None:
+    RAVEN_CONFIG = {
+        'dsn': os.environ['SENTRY_URL'],
+        # If you are using git, you can also automatically configure the
+        # release based on the git info.
+        'release': raven.fetch_git_sha(os.path.abspath('.'))
+    }
