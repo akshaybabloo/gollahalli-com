@@ -22,7 +22,7 @@
     },
     "DEBUG": {
       "description": "Debug mode. By default its set to false.",
-      "value": 0,
+      "value": "0",
       "required": false
     },
     "AUTHY_API": {
