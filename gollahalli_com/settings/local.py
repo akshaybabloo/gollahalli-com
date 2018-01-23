@@ -43,3 +43,7 @@ else:
 MEDIA_URL = '/media/'
 
 SHARE_URL = "http://127.0.0.1:8000"
+
+# For test
+MEDIAFILES_LOCATION = 'media'
+STATICFILES_LOCATION = 'static'
