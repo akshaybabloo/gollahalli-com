@@ -63,6 +63,10 @@
     "EMAIL_USE_TLS": {
       "description": "If your email provider supports Transport Layer Security (TLS) put 1 else 0.",
       "required": true
+    },
+    "SENTRY_URL":{
+      "description": "Logging and event listening.",
+      "required": false
     }
   }
 }
