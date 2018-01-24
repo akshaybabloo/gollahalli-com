@@ -224,7 +224,15 @@ if os.environ.get('EMAIL_HOST', None) or os.environ.get('EMAIL_PORT', None) or o
     EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
     EMAIL_USE_TLS = True if os.environ['EMAIL_USE_TLS'] == 1 else False
 
+# if 'ON_HEROKU' in os.environ:
+#     release = raven.fetch_git_sha(os.path.abspath(os.pardir))
+# else:
+#     release = raven.fetch_git_sha(os.path.abspath('.'))
+
 if os.environ.get('SENTRY_URL', None) is not None:
     RAVEN_CONFIG = {
-        'dsn': os.environ['SENTRY_URL']
+        'dsn': os.environ['SENTRY_URL'],
+        # # If you are using git, you can also automatically configure the
+        # # release based on the git info.
+        # 'release': release
     }
