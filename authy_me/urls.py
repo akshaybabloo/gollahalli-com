@@ -23,5 +23,5 @@ urlpatterns = [
     path('portal/user/2fa/delete/', views.delete_auth, name='delete_2fa'),
     path('portal/user/2fa/register/', views.two_fa_register, name='2fa_register'),
     path('portal/user/2fa/register/confirm', views.confirm_mobile, name='confirm_mobile'),
-    path('static/js/users\.js', views.users_js, name='users_js'),
+    path('static/js/users.js', views.users_js, name='users_js'),
 ]
