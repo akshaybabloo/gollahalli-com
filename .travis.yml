@@ -28,7 +28,6 @@ script:
 sudo: required
 
 env:
-  - TOXENV=django111
   - TOXENV=django2
   - TOXENV=coverage
 
