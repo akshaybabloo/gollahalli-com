@@ -189,6 +189,7 @@ def xsl_content_type(request):
         response = urllib.request.urlopen(request)
         data = response.read().decode('UTF-8')
     else:
-        data = open(os.path.join(settings.STATIC_ROOT, 'sitemap.xsl')).read()
+        with open(os.path.join(settings.STATIC_ROOT, 'sitemap.xsl')) as sitemap_file:
+            data = sitemap_file.read()
 
     return HttpResponse(data, content_type="text/xsl")
