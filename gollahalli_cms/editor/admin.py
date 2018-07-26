@@ -2,7 +2,7 @@ from django import forms
 from django.contrib import admin
 from singlemodeladmin import SingleModelAdmin
 
-from editor.models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
+from gollahalli_cms.editor.models import ContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel, SkillsModel, \
     SkillsContentModel, PublicationsModel, PublicationsContentModel, MetaContentModel
 
 

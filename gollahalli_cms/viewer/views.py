@@ -11,8 +11,8 @@ from django.conf import settings
 from django.http import HttpResponseServerError, HttpResponse
 from django.shortcuts import render
 
-from editor.models import ContentModel
-from gollahalli.schema import query
+from gollahalli_cms.editor.models import ContentModel
+from gollahalli_cms.gollahalli.schema import query
 
 DEFAULT_BASE_URL = "https://api.github.com/users/akshaybabloo/repos"
 

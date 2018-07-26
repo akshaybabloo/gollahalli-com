@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from blog.forms import PostForm
-from blog.models import PostModel
+from gollahalli_cms.blog.forms import PostForm
+from gollahalli_cms.blog.models import PostModel
 
 
 class PostAdmin(admin.ModelAdmin):

@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from viewer.templatetags.custom_tags import custom_date, custom_date_releases, markdown_data, url_replace, \
+from gollahalli_cms.viewer.templatetags.custom_tags import custom_date, custom_date_releases, markdown_data, url_replace, \
     custom_blog_tags
 
 

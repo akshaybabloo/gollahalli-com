@@ -1,6 +1,6 @@
 import graphene
 
-from editor import schema
+from gollahalli_cms.editor import schema
 
 
 class Query(schema.Query, graphene.ObjectType):

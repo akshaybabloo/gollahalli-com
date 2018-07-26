@@ -5,7 +5,7 @@
 
 from django.urls import path
 
-from editor import views
+from gollahalli_cms.editor import views
 
 urlpatterns = [
     path('portal/', views.portal_home, name='portal_home'),

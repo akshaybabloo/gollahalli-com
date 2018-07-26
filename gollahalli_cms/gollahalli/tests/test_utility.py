@@ -3,7 +3,7 @@ import json
 
 from django.test import TestCase
 
-from gollahalli import utils
+from gollahalli_cms.gollahalli import utils
 
 
 class UtilityTest(TestCase):

@@ -1,6 +1,6 @@
 from django import forms
 
-from editor.models import ContentModel, MetaContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel
+from gollahalli_cms.editor.models import ContentModel, MetaContentModel, EducationModel, ProjectsModel, TutorialsModel, ExperienceModel
 
 
 class ContentModelForm(forms.ModelForm):

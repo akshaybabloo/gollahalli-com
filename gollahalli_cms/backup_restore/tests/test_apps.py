@@ -1,7 +1,7 @@
 from django.apps import apps
 from django.test import TestCase
 
-from backup_restore.apps import BackupRestoreConfig
+from gollahalli_cms.backup_restore.apps import BackupRestoreConfig
 
 
 class BackupRestoreConfigTests(TestCase):

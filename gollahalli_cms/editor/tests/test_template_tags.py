@@ -7,9 +7,9 @@ from django.conf import settings
 from django.core.files.uploadedfile import SimpleUploadedFile, InMemoryUploadedFile
 from django.test import TestCase
 
-from editor.models import ContentModel
-from editor.templatetags.model_tags import check_model_exists
-from editor.templatetags.nav_tags import has_string_in_path
+from gollahalli_cms.editor.models import ContentModel
+from gollahalli_cms.editor.templatetags.model_tags import check_model_exists
+from gollahalli_cms.editor.templatetags.nav_tags import has_string_in_path
 
 
 class TestTemplateTagsNav(TestCase):

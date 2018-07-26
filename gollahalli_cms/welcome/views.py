@@ -12,8 +12,8 @@ from django.db.utils import OperationalError
 from django.http import HttpRequest, JsonResponse
 from django.shortcuts import render, redirect
 
-from welcome.forms import WelcomeForm
-from welcome.utils import check_users, check_aws_utils
+from gollahalli_cms.welcome.forms import WelcomeForm
+from gollahalli_cms.welcome.utils import check_users, check_aws_utils
 
 
 def home(request, options=None):

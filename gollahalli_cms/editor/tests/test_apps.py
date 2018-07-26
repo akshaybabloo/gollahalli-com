@@ -1,7 +1,7 @@
 from django.apps import apps
 from django.test import TestCase
 
-from editor.apps import EditorConfig
+from gollahalli_cms.editor.apps import EditorConfig
 
 
 class EditorConfigTests(TestCase):

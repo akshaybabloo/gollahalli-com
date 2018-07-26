@@ -1,7 +1,7 @@
 from django.apps import apps
 from django.test import TestCase
 
-from viewer.apps import ViewerConfig
+from gollahalli_cms.viewer.apps import ViewerConfig
 
 
 class ViewerConfigTests(TestCase):

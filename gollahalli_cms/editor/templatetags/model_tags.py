@@ -1,7 +1,7 @@
 from django import template
 from django.template import NodeList
 
-from editor.models import ContentModel
+from gollahalli_cms.editor.models import ContentModel
 
 register = template.Library()
 

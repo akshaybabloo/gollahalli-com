@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
-from editor.forms import ContentModelForm, MetaContentModelForm, EducationContentModelForm, ProjectContentModelForm, \
+from gollahalli_cms.editor.forms import ContentModelForm, MetaContentModelForm, EducationContentModelForm, ProjectContentModelForm, \
     TutorialContentModelForm, ExperienceContentModelForm
 from editor.models import ContentModel, MetaContentModel
 

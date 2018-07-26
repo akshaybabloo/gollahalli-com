@@ -1,5 +1,5 @@
 from django.test import TestCase
-from custom_storage import MediaStorage, StaticStorage
+from gollahalli_cms.custom_storage import MediaStorage, StaticStorage
 from django.conf import settings
 
 

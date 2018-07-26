@@ -1,6 +1,6 @@
 from django import forms
 
-from blog.models import PostModel
+from gollahalli_cms.blog.models import PostModel
 
 
 class PostForm(forms.ModelForm):

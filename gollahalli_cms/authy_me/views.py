@@ -13,9 +13,9 @@ from django.shortcuts import render
 from django.utils.crypto import get_random_string
 from django.views.decorators.cache import never_cache
 
-from authy_me.forms import LoginForm, AuthyForm, AuthenticatorModelForm, MobileCheckerForm, ChangePasswordForm
-from authy_me.models import AuthenticatorModel
-from authy_me.utils import get_user_from_sid, has_2fa, get_uuid_json
+from gollahalli_cms.authy_me.forms import LoginForm, AuthyForm, AuthenticatorModelForm, MobileCheckerForm, ChangePasswordForm
+from gollahalli_cms.authy_me.models import AuthenticatorModel
+from gollahalli_cms.authy_me.utils import get_user_from_sid, has_2fa, get_uuid_json
 
 logger = logging.getLogger(__name__)
 
