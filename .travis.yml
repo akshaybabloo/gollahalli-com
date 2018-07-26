@@ -3,11 +3,16 @@ language: python
 python:
   - 3.5
   - 3.6
+  - 3.7
 
 services: postgresql
 
 addons:
-  postgresql: "9.5"
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
 
 before_script:
   - sudo psql -c "CREATE DATABASE mydb;" -U postgres
@@ -30,6 +35,8 @@ sudo: required
 env:
   - TOXENV=django2
   - TOXENV=coverage
+  global:
+    - PGPORT=5433
 
 notifications:
   email:
