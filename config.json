@@ -1,0 +1,50 @@
+{
+  "name": "Gollahalli micro CMS",
+  "baseURL": "",
+  "env": {
+    "SECRET_KEY": {
+      "description": "A secret key for Django.",
+      "value": ""
+    },
+    "DEBUG": {
+      "description": "Debug mode. By default its set to false.",
+      "value": false
+    },
+    "AUTHY_API": {
+      "description": "Your Authy API.",
+      "value": ""
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "description": "Your AWS ID.",
+      "value": ""
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "description": "Your AWS access key.",
+      "value": ""
+    },
+    "EMAIL_HOST": {
+      "description": "Your email host address. eg: smtp.mailgun.com",
+      "value": ""
+    },
+    "EMAIL_PORT": {
+      "description": "Email port number. Usually 587",
+      "value": ""
+    },
+    "EMAIL_HOST_USER": {
+      "description": "Your username. eg: postmaster@domain.com",
+      "value": ""
+    },
+    "EMAIL_HOST_PASSWORD": {
+      "description": "Your SMTP provider password.",
+      "value": ""
+    },
+    "EMAIL_USE_TLS": {
+      "description": "If your email provider supports Transport Layer Security (TLS) put 1 else 0.",
+      "value": ""
+    },
+    "SENTRY_URL": {
+      "description": "Logging and event listening.",
+      "value": ""
+    }
+  }
+}
