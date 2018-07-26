@@ -115,16 +115,16 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-/gollahalli/db.sqlite3
+/gollahalli_cms/gollahalli/db.sqlite3
 /vendor/
 
-gollahalli/templates/test.html
+gollahalli_cms/gollahalli/templates/test.html
 /node_modules/
 test.py
-/gollahalli/settings/secrets.py
+/gollahalli_cms/gollahalli/settings/secrets.py
 .DS_Store
-/gollahalli/static/media/
-/gollahalli/templates/viewer/test.html
-/gollahalli/static/static_root/
+/gollahalli_cms/gollahalli/static/media/
+/gollahalli_cms/gollahalli/templates/viewer/test.html
+/gollahalli_cms/gollahalli/static/static_root/
 
 \.vscode/

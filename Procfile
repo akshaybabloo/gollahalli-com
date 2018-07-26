@@ -1,1 +1,1 @@
-web: gunicorn gollahalli_com.wsgi
+web: gunicorn gollahalli_cms/gollahalli.wsgi
