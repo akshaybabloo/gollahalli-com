@@ -1,6 +1,6 @@
 codecov
 pytest-django
-pytest-cov
+pytest-cov==2.5.1
 dj-database-url==0.5
 gunicorn==19.7.1
 psycopg2==2.7.5
