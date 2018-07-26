@@ -16,7 +16,7 @@ graphene==2.0.1
 singlemodeladmin==0.8
 boto
 feedparser==5.2.1
-authy==2.1.5
+authy==2.2.1
 django-phonenumber-field==2.0.0
 django-taggit==0.22.2
 raven==6.9.0
