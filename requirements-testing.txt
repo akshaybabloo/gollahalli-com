@@ -1,4 +1,4 @@
-codecov
+codecov==2.0.15
 pytest-django
 pytest-cov==2.5.1
 dj-database-url==0.5
