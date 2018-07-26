@@ -1,5 +1,5 @@
 """
-WSGI config for gollahalli_com project.
+WSGI config for gollahalli project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -12,6 +12,6 @@ import os
 from raven.contrib.django.raven_compat.middleware.wsgi import Sentry
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gollahalli_com.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gollahalli.settings")
 
 application = Sentry(get_wsgi_application())

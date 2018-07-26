@@ -11,9 +11,9 @@ from django.contrib.sitemaps import views
 from django.http import HttpResponse
 from graphene_django.views import GraphQLView
 
-from gollahalli_com.schema import query
-from gollahalli_com.sitemaps import Sitemap, xsl_content_type, index_view
-from gollahalli_com.utils import *
+from gollahalli.schema import query
+from gollahalli.sitemaps import Sitemap, xsl_content_type, index_view
+from gollahalli.utils import *
 
 sitemaps = {
     'pages': Sitemap(

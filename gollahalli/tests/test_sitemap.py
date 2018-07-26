@@ -1,8 +1,8 @@
 from django.test import Client
 from django.test import TestCase
 
-from gollahalli_com.sitemaps import Sitemap, xsl_content_type
-from gollahalli_com.utils import custom_date
+from gollahalli.sitemaps import Sitemap, xsl_content_type
+from gollahalli.utils import custom_date
 
 
 class SiteMapTest(TestCase):

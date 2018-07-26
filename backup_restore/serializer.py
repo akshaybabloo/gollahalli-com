@@ -1,7 +1,7 @@
 """
 Serializes and makes a zip file to back up the data.
 """
-from gollahalli_com.schema import query
+from gollahalli.schema import query
 import json
 
 QUERY = '''

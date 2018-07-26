@@ -12,7 +12,7 @@ from django.http import HttpResponseServerError, HttpResponse
 from django.shortcuts import render
 
 from editor.models import ContentModel
-from gollahalli_com.schema import query
+from gollahalli.schema import query
 
 DEFAULT_BASE_URL = "https://api.github.com/users/akshaybabloo/repos"
 
