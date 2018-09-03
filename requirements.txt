@@ -3,7 +3,7 @@ Django==2.1.1
 gunicorn==19.8.1
 psycopg2==2.7.5
 whitenoise==4.0
-django-storages==1.6.6
+django-storages==1.7
 Pillow==5.2.0
 Markdown==2.6.11
 requests==2.19.1
