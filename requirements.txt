@@ -15,5 +15,5 @@ feedparser==5.2.1
 authy==2.2.2
 django-phonenumber-field==2.0.1
 django-taggit==0.23.0
-pytz==2018.5
+pytz==2018.6
 raven==6.9.0
